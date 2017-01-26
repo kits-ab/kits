@@ -1,0 +1,16 @@
+<ul class="c-medarbetare-list">
+	{% for medarbetare in site.medarbetare %}
+	<li class="c-medarbetare">
+		<a class="c-medarbetare__link" href="/om/{{ medarbetare.uid }}">
+			<div class="c-medarbetare__image-wrapper">
+				<img alt="" class="c-medarbetare__image" src="/images/medarbetare/{{ medarbetare.image }}-small.jpg"
+						srcset="/images/medarbetare/{{ medarbetare.image }}-small@2x.jpg 2x">
+			</div>
+			<div class="c-medarbetare__info">
+				<p class="c-medarbetare__name">{{ medarbetare.name }}</p>
+				<p class="c-medarbetare__tagline">{{ medarbetare.tagline }}</p>
+			</div>
+		</a>
+	</li>
+	{% endfor %}
+</ul>

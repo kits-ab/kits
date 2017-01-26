@@ -1,0 +1,9 @@
+---
+sitemap_exclude: true
+---
+callback([
+{% for medarbetare in site.medarbetare %}{
+  "name": "{{ medarbetare.name }}",
+  "value": "{{ medarbetare.uid }}"
+},{% endfor %}
+])

@@ -1,0 +1,34 @@
+<article class="c-post">
+	{% assign hasMore = false %}
+
+	{% if include.post.content contains '<!--more-->' %}
+
+	{% assign sections = include.post.content | split: '<!--more-->' %}
+	{% assign sectionsSize = sections | size %}
+
+	{% assign excerpt = sections[0] %}
+	{% assign more = sections[1] %}
+	{% assign moreSize = more | strip_newlines | size %}
+
+	{% if sectionsSize > 1 and moreSize > 0 %}
+	{% assign hasMore = true %}
+	{% endif %}
+
+	{% else %}
+
+	{% assign excerpt = include.post.excerpt %}
+	{% if excerpt != include.post.content %}
+	{% assign hasMore = true %}
+	{% endif %}
+
+	{% endif %}
+
+	{% include blogg_header.html post=include.post link=true %}
+
+	<div class="c-post__content">
+		{{ excerpt | replace: '<!--more-->','' | markdownify | replace: '<h6>','<div class="c-image-grid">' | replace: '</h6>','</div>' | replace: '<pre><code class="language-','<div class="highlight"><pre class=" line-numbers"><code class="language-' | replace: '</code></pre>','</code></pre></div>' }}
+		{% if hasMore %}
+		<p><a href="{{ post.url }}">Läs mer &#8594;</a></p>
+		{% endif %}
+	</div>
+</article>

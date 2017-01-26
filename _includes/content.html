@@ -1,0 +1,1 @@
+{{ include.content | replace: '<!--more-->','' | markdownify | replace: 'title="float-left"','class="float-left"' | replace: '<h6>','<div class="c-image-grid">' | replace: '</h6>','</div>' | replace: '<pre><code class="language-','<div class="highlight"><pre class=" line-numbers"><code class="language-' | replace: '</code></pre>','</code></pre></div>' }}

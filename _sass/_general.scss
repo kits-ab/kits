@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+@import "mixins";
+@import "theme";
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+a {
+	color: $linkColor;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+b, strong {
+	@include font-standard-normal(16px);
+}
+
+body {
+	background-color: $backgroundColor1;
+	margin: 0;
+	min-height: 100%;
+	overflow-x: hidden;
+	padding-bottom: $footerHeight;
+	padding-top: 140px;
+	position: relative;
+	width: 100%;
+}
+
+code {
+	background-color: $backgroundColor2;
+	border-radius: 2px;
+	color: $textColor1;
+	font-family: "Courier New", monospace;
+	padding: 3px 5px 3px 5px;
+}
+
+h1 {
+	@include font-thin-normal(64px);
+	@include wrapper;
+
+	color: $textColor1;
+	margin-bottom: 32px;
+	text-align: center;
+
+	@media screen and (max-width: $widthMobile) {
+		font-size: 48px;
+		margin-bottom: 24px;
+	}
+}
+
+h2 {
+	@include font-thin-normal(26px);
+
+	color: darken($primary1, 10%);
+	margin-bottom: 13px;
+}
+
+h3 {
+	@include font-thin-normal(20px);
+
+	color: $textColor2;
+	margin-bottom: 10px;
+}
+
+h4 {
+	@include font-thin-normal(18px);
+
+	color: $textColor2;
+	margin-bottom: 10px;
+}
+
+html {
+	height: 100%;
+	overflow-x: hidden;
+
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+i, em {
+	@include font-light-italic(16px);
+}
+
+li {
+	@include font-light-normal(16px);
+
+	color: $textColor1;
+	line-height: 1.4;
+}
+
+p {
+	@include font-light-normal(16px);
+
+	color: $textColor1;
+	line-height: 1.4;
+	margin-bottom: 10px;
+}

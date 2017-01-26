@@ -1,0 +1,43 @@
+<footer class="c-footer">
+	<div class="u-wrapper-small">
+		<address class="c-footer__address">
+
+			<h3>{{ site.data.kits.name }}</h3>
+			<p>
+				{{ site.data.kits.address.street }}<br>
+				{{ site.data.kits.address.zip }} {{ site.data.kits.address.city }}
+			</p>
+			<p>
+				{% assign phone = site.data.kits.phone | remove: ' ' | remove: '-' | remove: '–' | remove_first: '0' %}
+				<a href="tel:+46{{ phone }}">{{ site.data.kits.phone }}</a>
+			</p>
+
+			<ul class="c-social">
+				<li class="c-social__item">
+					<a href="mailto:{{ site.data.kits.email }}">
+						<img alt="E-post" class="c-social__icon" src="/images/icons/email.png"
+								srcset="/images/icons/email@2x.png 2x">
+					</a>
+				</li>
+				<li class="c-social__item">
+					<a href="https://twitter.com/{{ site.data.kits.social.twitter }}">
+						<img alt="Twitter" class="c-social__icon" src="/images/icons/twitter.png"
+								srcset="/images/icons/twitter@2x.png 2x">
+					</a>
+				</li>
+				<li class="c-social__item">
+					<a href="https://www.linkedin.com/company/{{ site.data.kits.social.linkedin }}">
+						<img alt="LinkedIn" class="c-social__icon" src="/images/icons/linkedin.png"
+								srcset="/images/icons/linkedin@2x.png 2x">
+					</a>
+				</li>
+				<li class="c-social__item">
+					<a href="https://github.com/{{ site.data.kits.social.github }}">
+						<img alt="GitHub" class="c-social__icon" src="/images/icons/github.png"
+								srcset="/images/icons/github@2x.png 2x">
+					</a>
+				</li>
+			</ul>
+		</address>
+	</div>
+</footer>

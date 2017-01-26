@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+@import "theme";
+
+.highlight {
+	background-color: $backgroundColor2;
+	margin-bottom: $paddingMedium;
+	margin-top: $paddingMedium;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+
+	code {
+		background-color: transparent;
+		border-radius: 0;
+		direction: ltr;
+
+		-moz-hyphens: none;
+		-ms-hyphens: none;
+		-webkit-hyphens: none;
+		hyphens: none;
+
+		line-height: 1.4;
+		padding: 0;
+
+		-moz-tab-size: 3;
+		-o-tab-size: 3;
+		tab-size: 3;
+
+		text-align: left;
+		white-space: pre;
+		word-break: normal;
+		word-spacing: normal;
+	}
+
+	pre {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: $widthSmall;
+		padding: $padding;
+
+		&.line-numbers[class*=language] {
+			@media screen and (max-width: ($widthSmall + $padding * 2 + 40)) and (min-width: $widthMobile + 1) {
+				max-width: ($widthSmall - 40);
+				padding-left: $padding + 40;
+			}
+
+			@media screen and (min-width: $widthMobile) {
+				counter-reset: linenumber;
+				position: relative;
+
+				& > code {
+					position: relative;
+				}
+
+				.line-numbers-rows {
+					border-right: 1px solid $lineColor;
+					font-size: 100%;
+					left: -40px;
+					letter-spacing: -1px;
+					position: absolute;
+					pointer-events: none;
+					top: 0;
+					width: 30px;
+
+					-moz-user-select: none;
+					-ms-user-select: none;
+					-webkit-user-select: none;
+					user-select: none;
+
+					& > span {
+						counter-increment: linenumber;
+						display: block;
+						pointer-events: none;
+
+						&:before {
+							content: counter(linenumber);
+							color: #999;
+							display: block;
+							padding-right: 0.8em;
+							text-align: right;
+						}
+
+						&:last-child {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.token.comment,
+	.token.prolog,
+	.token.doctype,
+	.token.cdata {
+		color: slategray;
+	}
+
+	.token.punctuation {
+		color: #999;
+	}
+
+	.namespace {
+		opacity: .7;
+	}
+
+	.token.property,
+	.token.tag,
+	.token.boolean,
+	.token.number,
+	.token.constant,
+	.token.symbol {
+		color: #905;
+	}
+
+	.token.selector,
+	.token.attr-name,
+	.token.string,
+	.token.builtin {
+		color: #690;
+	}
+
+	.token.operator,
+	.token.entity,
+	.token.url,
+	.language-css .token.string,
+	.style .token.string,
+	.token.variable {
+		background: hsla(0, 0%, 100%, .5);
+		color: #a67f59;
+	}
+
+	.token.atrule,
+	.token.attr-value,
+	.token.keyword {
+		color: #07a;
+	}
+
+	.token.regex,
+	.token.important {
+		color: #e90;
+	}
+
+	.token.important {
+		font-weight: bold;
+	}
+
+	.token.entity {
+		cursor: help;
+	}
+}

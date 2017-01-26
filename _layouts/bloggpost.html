@@ -1,0 +1,44 @@
+---
+layout: base
+---
+
+{% assign bloggPage = site.pages | where: 'layout', 'blogg' | first %}
+
+<h1>{{ bloggPage.heading }}</h1>
+
+<p class="c-intro">{{ bloggPage.intro }}</p>
+
+<article class="c-post">
+	{% include blogg_header.html post=page link=false %}
+
+	<div class="c-post__content">
+		{% include content.html content=page.content %}
+	</div>
+</article>
+
+{% for post in site.categories.blogg %}
+{% if post.url == page.url %}
+    {% assign postIndex0 = forloop.index0 %}
+	{% assign postIndex1 = forloop.index %}
+{% endif %}
+{% endfor %}
+
+{% for post in site.categories.blogg %}
+{% if postIndex1 == forloop.index0 %}
+	{% assign prevPost = post %}
+{% endif %}
+{% if postIndex0 == forloop.index %}
+	{% assign nextPost = post %}
+{% endif %}
+{% endfor %}
+
+{% if prevPost or nextPost %}
+<nav class="c-post-nav">
+	{% if prevPost %}
+	<a class="c-post-nav__prev" href="{{ prevPost.url }}" rel="prev">&#8592; {{ prevPost.heading }}</a>
+	{% endif %}
+	{% if nextPost %}
+	<a class="c-post-nav__next" href="{{ nextPost.url }}" rel="next">{{ nextPost.heading }} &#8594;</a>
+	{% endif %}
+</nav>
+{% endif %}

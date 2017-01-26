@@ -1,0 +1,68 @@
+---
+layout: base
+---
+
+<div class="c-medarbetare-details">
+	<div class="c-medarbetare-details__content">
+		<div class="c-medarbetare-details__image-placeholder">
+			<div class="c-medarbetare-details__image-wrapper">
+				<img class="c-medarbetare-details__image" src="/images/medarbetare/{{ page.image }}-small@2x.jpg">
+			</div>
+		</div>
+
+		<h1 class="c-medarbetare-details__name">{{ page.name }}</h1>
+		<h2 class="c-medarbetare-details__tagline">{{ page.tagline }}</h2>
+
+		{{ content }}
+
+		{% if page.phone and page.phone != '' %}
+		<p>
+			{% assign phone = page.phone | remove: ' ' | remove: '-+' | remove: '–' | remove_first: '0' %}
+			<a href="tel:+46{{ phone }}">{{ page.phone }}</a>
+		</p>
+		{% endif %}
+
+		<ul class="c-social">
+			{% if page.email and page.email != '' %}
+			<li class="c-social__item">
+				<a href="mailto:{{ page.email }}">
+					<img alt="E-post" class="c-social__icon" src="/images/icons/email.png"
+							srcset="/images/icons/email@2x.png 2x">
+				</a>
+			</li>
+			{% endif %}
+			{% if page.twitter and page.twitter != '' %}
+			<li class="c-social__item">
+				<a href="https://twitter.com/{{ page.twitter }}">
+					<img alt="Twitter" class="c-social__icon" src="/images/icons/twitter.png"
+							srcset="/images/icons/twitter@2x.png 2x">
+				</a>
+			</li>
+			{% endif %}
+			{% if page.linkedin and page.linkedin != '' %}
+			<li class="c-social__item">
+				<a href="{{ page.linkedin }}">
+					<img alt="LinkedIn" class="c-social__icon" src="/images/icons/linkedin.png"
+							srcset="/images/icons/linkedin@2x.png 2x">
+				</a>
+			</li>
+			{% endif %}
+			{% if page.github and page.github != '' %}
+			<li class="c-social__item">
+				<a href="https://github.com/{{ page.github }}">
+					<img alt="GitHub" class="c-social__icon" src="/images/icons/github.png"
+							srcset="/images/icons/github@2x.png 2x">
+				</a>
+			</li>
+			{% endif %}
+		</ul>
+	</div>
+</div>
+
+{% assign firstName = page.name | split: ' ' | first %}
+{% assign lastLetter = firstName | split: '' | last %}
+{% if lastLetter != 's' %}{% assign firstName = firstName | append: 's' %}{% endif %}
+
+<h2 class="c-section-header c-section-header--big"><span>{{ firstName }} kollegor</span></h2>
+
+{% include medarbetare_list.html %}
