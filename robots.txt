@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://www.kits.se/sitemap.xml
+Sitemap: https://kits.se/sitemap.xml

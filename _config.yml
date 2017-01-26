@@ -4,7 +4,7 @@ exclude: [.editorconfig, .gitignore, Gemfile, Gemfile.lock, LICENSE.md, README.m
 permalink: pretty
 relative_permalinks: false
 timezone: Europe/Stockholm
-url: http://www.kits.se
+url: https://kits.se
 
 markdown: kramdown
 kramdown:
@@ -67,7 +67,7 @@ defaults:
       categories: nyheter
 
 prose:
-  relativeLinks: 'http://www.kits.se/api/prose/links.jsonp'
+  relativeLinks: 'https://kits.se/api/prose/links.jsonp'
   ignore:
     - _includes
     - _layouts

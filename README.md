@@ -1,6 +1,6 @@
-# www.kits.se
+# kits.se
 
-This project contains the source code and content for [www.kits.se](http://www.kits.se).
+This project contains the source code and content for [kits.se](https://kits.se).
 
 ### License
 
