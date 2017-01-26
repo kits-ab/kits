@@ -4,6 +4,8 @@ This project contains the source code and content for [kits.se](https://kits.se)
 
 ### License
 
+Copyright 2015-2017 KITS AB
+
 The source code for this project is licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 
 <http://www.apache.org/licenses/LICENSE-2.0>
