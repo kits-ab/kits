@@ -4,7 +4,7 @@ heading: Serverless 1
 authors:
   - joakimkemeny
 category: blogg
-published: false
+published: true
 ---
 
 To be written...
