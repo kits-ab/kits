@@ -52,12 +52,17 @@
 	}
 
 	img {
+		margin-bottom: $paddingMedium;
+		margin-top: $paddingMedium;
 		max-width: 100%;
 
 		&.float-left {
 			float: left;
-			margin-right: $paddingMedium;
+			margin-bottom: 0;
 			margin-left: -$paddingMedium;
+			margin-right: $paddingMedium;
+			margin-top: 0;
+
 			width: 50%;
 
 			@media screen and (max-width: $widthMobileMenu) {
