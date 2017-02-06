@@ -519,6 +519,11 @@
 	margin-bottom: $paddingMedium;
 	margin-top: $paddingMedium;
 
+	img {
+		margin-bottom: 0 !important;
+		margin-top: 0 !important;
+	}
+
 	:first-child:not(:last-child) {
 		float: left;
 		width: 66.6666666666%;
