@@ -100,7 +100,7 @@ Now open a browser and paste the url from output into a browser. Congratulations
 
 ### What just happened?
 
-Let’s dive into what happened. Serverless created a new stack for you in your AWS account. A stack is like an environment and since you can have multiple stacks you can create one for development, one for testing and one for production or why not one stack for each pull request. Next it deployed the function as a Lambda and configured API Gateway so that when you call the GET endpoint it calls the Lambda.  It also created the neccessary roles for the services to comunicate with each other. 
+Let’s dive into what happened. Serverless created a new stack for you in your AWS account. A stack is like an environment and since you can have multiple stacks you can create one for development, one for testing and one for production or why not one stack for each pull request. Next it deployed the function as a Lambda and configured API Gateway so that when you call the GET endpoint it calls the Lambda.  It also created the neccessary roles for the services to communicate with each other. 
 
 Serverless doesn't have a magic wand to do this, instead it uses CloudFormation which is the solution that AWS provides to automate deployments. CloudFormation is quite complicated though so Serverless makes this much easier.
 
