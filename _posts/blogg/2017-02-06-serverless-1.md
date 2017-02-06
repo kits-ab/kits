@@ -17,7 +17,7 @@ For the last year I've been working on a project where we use this kind of archi
 
 First of all, serverless is a really bad name. Not only because it both describes an architectural pattern, a specific framework and the company that makes that framework but also because it's not even true. There is of course always a server somewhere so maybe serveradministrationless would be a better name but that's not as catchy so let's stick with serverless for now.
 
-I don't think there's a strict definition of what serverless is and there have definitely been several services in the past that you might call serverless but what really caused serverless to take of was when people started using the term to talk about "Functions as a Service". The idea is that as a developer you should have full control of the code that is run but that is all you need to worry about. How the functions are actually run is not important. Just focus on creating beautiful code and it will be run and scaled for you automatically.
+I don't think there's a strict definition of what serverless is and there have definitely been several services in the past that you might call serverless but what really caused serverless to take of was when people started using the term to talk about "Functions as a Service". The idea is that as a developer you should have full control of the code behind your application but that is all you need to worry about. How the functions are actually executed is not important. Just focus on creating beautiful code and it will be run and scaled for you automatically.
 
 A typical serverless function can look like this:
 
@@ -42,7 +42,7 @@ Still not convinced? Let's try it for real to give you an idea of what to expect
 
 ## Getting started
 
-Just as pretty much every cloud provider has its own solution for running containers, many of them are starting go gain support for serverless architectures. I’ll get back to this in a later post but for now I’ll be focusing on AWS' implementation called Lambda just because it’s the most mature solution and it also happens to be the one that I’ve been working with for the last year.
+Just as pretty much every cloud provider has its own solution for running containers, many of them are starting to gain support for serverless architectures. I’ll get back to this in a later post but for now I’ll be focusing on AWS' implementation called Lambda just because it’s the most mature solution and it also happens to be the one that I’ve been working with for the last year.
 
 ### Preparations
 
@@ -77,7 +77,7 @@ This will create a normal Node.js project and install its dependencies. The inte
 
 ### Events
 
-Even if functions are the heros of serverless architectures they still need to be triggered somehow. The trigger can be a lot of things; a message on a queue, an event from an IoT device or maybe another function. I'll get back to these in a later post but for now we are going to use a normal HTTP request to trigger the function.
+Even if functions are the heroes of serverless architectures they still need to be triggered somehow. The trigger can be a lot of things; a message on a queue, an event from an IoT device or maybe another function. I'll get back to these in a later post but for now we are going to use a normal HTTP request to trigger the function.
 
 Open the file `serverless.yml` and locate the events section. Uncomment the following lines to instruct AWS to setup API Gateway to provide the GET endpoint `/hello` that calls the function.
 
@@ -96,11 +96,13 @@ serverless deploy
 
 This will take a couple of minutes since it creates a new stack on AWS and deploys the function. The next deployment will be much faster.
 
-Now open a browser and paste the url from from output into a browser. Congratulations, you’ve just created and deployed your first serverless service and exposed it to the world on an HTTP endpoint.
+Now open a browser and paste the url from output into a browser. Congratulations, you’ve just created and deployed your first serverless service and exposed it to the world on an HTTP endpoint.
 
 ### What just happened?
 
-Let’s dive into what happened. Serverless created a new stack for you in your AWS account. A stack is like an environment and since you can have multiple stacks you can create one for development, one for testing and one for production or why not one stack for each pull request. Next it deployed the function as a Lambda and configured API Gateway so that when you call the GET endpoint it calls the Lambda. 
+Let’s dive into what happened. Serverless created a new stack for you in your AWS account. A stack is like an environment and since you can have multiple stacks you can create one for development, one for testing and one for production or why not one stack for each pull request. Next it deployed the function as a Lambda and configured API Gateway so that when you call the GET endpoint it calls the Lambda.  It also created the neccessary roles for the services to comunicate with each other. 
+
+Serverless doesn't have a magic wand to do this, instead it uses CloudFormation which is the solution that AWS provides to automate deployments. CloudFormation is quite complicated though so Serverless makes this much easier.
 
 You can deploy your code to a new stack by adding the `--stage` parameter (the default stack is dev).
 
