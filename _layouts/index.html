@@ -34,16 +34,18 @@ layout: base
 <h2 class="c-section-header"><span>Senaste nytt från KITS</span></h2>
 
 <ul class="c-nyhet-list">
+	{% assign imageSuffix = "-small" %}
 	{% for nyhet in site.categories.nyheter %}
 	{% if forloop.index > 2 %}
 	{% assign className = "c-nyhet--small" %}
+	{% assign imageSuffix = "-mini" %}
 	{% endif %}
 
 	<li class="c-nyhet {{ className }}">
 		<a class="c-nyhet__link" href="{{ nyhet.url }}">
 			<div class="c-nyhet__image-wrapper">
-				<img alt="" class="c-nyhet__image" src="/images/nyheter/{{ nyhet.image }}.jpg"
-						srcset="/images/nyheter/{{ nyhet.image }}@2x.jpg 2x">
+				<img alt="" class="c-nyhet__image" src="/images/nyheter/{{ nyhet.image }}{{ imageSuffix }}.jpg"
+						srcset="/images/nyheter/{{ nyhet.image }}{{ imageSuffix }}@2x.jpg 2x">
 			</div>
 			<div class="c-nyhet__info">
 				<p class="c-nyhet__heading">{{ nyhet.heading }}</p>

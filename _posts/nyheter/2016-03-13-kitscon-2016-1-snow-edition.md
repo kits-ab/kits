@@ -1,7 +1,7 @@
 ---
 layout: nyhet
 heading: KitsCon 16.1 Snow Edition
-image: kitscon-16-1-skidor-1-small
+image: kitscon-16-1-skidor-1
 authors:
   - gustavjorlov
 category: nyheter
