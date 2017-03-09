@@ -360,7 +360,8 @@
 
 	@include element("address") {
 		float: right;
-		padding-top: 35px;
+		margin-right: 10px;
+		padding-top: 28px;
 		position: relative;
 
 		&:before {
@@ -371,9 +372,9 @@
 			background-size: 400px 370px;
 			content: "";
 			height: 370px;
-			left: -(400px + $paddingBig);
+			left: -(391px + $paddingBig);
 			position: absolute;
-			top: -1px;
+			top: 0;
 			width: 400px;
 		}
 	}
@@ -1515,7 +1516,7 @@
 }
 
 @include component("social") {
-	margin-top: 30px;
+	margin-top: 25px;
 
 	@include element("item") {
 		display: inline-block;
