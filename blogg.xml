@@ -16,7 +16,7 @@ layout: null
       <title>{{ post.heading | xml_escape }}</title>
       <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
       <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-      <author>{% for authorId in post.authors %}{% assign author = site.medarbetare | where: "uid", authorId | first %}{% unless forloop.first %}, {% endunless %}{{ author.name }}{% endfor %}</author>
+      <author>{% for authorId in post.authors %}{% assign author = site.medarbetare | concat: site.medarbetare_old | where: "uid", authorId | first %}{% unless forloop.first %}, {% endunless %}{{ author.name }}{% endfor %}</author>
       <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
       <description>{{ post.content | replace: '<!--more-->','' | markdownify | replace: '<h6>','<div class="c-image-grid">' | replace: '</h6>','</div>' | xml_escape }}</description>
       <category>{{ post.categories | last | xml_escape }}</category>

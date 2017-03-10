@@ -29,6 +29,8 @@ collections:
   medarbetare:
     output: true
     permalink: /om/:path/
+  medarbetare_old:
+    output: false
   projekt:
     output: false
 

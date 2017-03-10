@@ -13,7 +13,7 @@
 			{{ include.post.date | date: "%-d M%m %Y" | replace: 'M01', 'januari' | replace: 'M02', 'februari' | replace: 'M03', 'mars' | replace: 'M04', 'april' | replace: 'M05', 'maj' | replace: 'M06', 'juni' | replace: 'M07', 'juli' | replace: 'M08', 'augusti' | replace: 'M09', 'september' | replace: 'M10', 'oktober' | replace: 'M11', 'november' | replace: 'M12', 'december'}}
 		</time>
 		<span class="c-post__authors">
-			{% for authorId in include.post.authors %}{% assign author = site.medarbetare | where: "uid", authorId | first %}{% unless forloop.first %}, {% endunless %}<a href="/om/{{ authorId }}">{{ author.name }}</a>{% endfor %}
+			{% for authorId in include.post.authors %}{% assign author = site.medarbetare | concat: site.medarbetare_old | where: "uid", authorId | first %}{% unless forloop.first %}, {% endunless %}{% if author.collection == 'medarbetare' %}<a href="/om/{{ authorId }}">{{ author.name }}</a>{% else %}{{ author.name }}{% endif %}{% endfor %}
 		</span>
 	</div>
 </header>
