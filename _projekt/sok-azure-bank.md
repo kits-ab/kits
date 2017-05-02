@@ -1,5 +1,5 @@
 ---
-heading: sok azure bank
+heading: Elastic Stack i Azure
 image: place_holder_small
 link: https://www.collector.se
 ---
