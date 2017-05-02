@@ -1,5 +1,5 @@
 ---
-heading: IoT i molnet
+heading: Serverless IoT
 image: Telenor_Connexion_logo_pos
 link: http://www.telenorconnexion.se/erbjudande/cloud-connect
 ---
