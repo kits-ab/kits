@@ -1,5 +1,5 @@
 ---
-heading: telematik i moln
+heading: telematik i ett moln
 image: place_holder_small
 link: http://www.volvocars.com/us/cars/new-models/all-new-xc90/technology
 ---
