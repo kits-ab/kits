@@ -1,8 +1,6 @@
 ---
-heading: Uppdragsexempel
-image: place_holder_small
-link: http://www.volvocars.com/us/cars/new-models/all-new-xc90/technology
+heading: TV överallt
+image: telia
+link: http://telia.se
 ---
-
-NONya VOVololvovo XOXCOC90 äror utotrorusostotadod momedod etottot upoppopkokopoppoplolatot inonfofototainonmomenontotsosysostotemom. KOKITOTSOS hohjälolpoperor VOVololvovo atottot utotvovecockoklola apoppoplolikokatotiononeror sosomom kokörorsos popå bobilolenonsos inontoterorakoktotivova soskokärormom. Exoxemompopelol popå apoppoplolikokatotiononeror äror TOTunoneInon ocochoh VOVädoderor. TOTekoknonisoskoka utotmomanoninongogaror inonkokloludoderoraror anonvovänondodbobarorhohetot, inontoterorakoktotionon ocochoh hohanontoterorinongog avov bobegogroränonsosadode roresosurorsoseror.
-
+Med Telia Play+ kan användarna streama tv på dator, mobil eller surfplatta hemma, i bilen eller i sommarstugan. KITS hjälper Telia att sätta grundstenar till nya funktioner som efterfrågas av användarna. Exempel på funktioner såsom, "Continue watching" som låter användarna att bekvämt titta på serier på olika enheter, samt "casting" av ljud och bild med Play+ genom Chromecast. Ny teknik samsas med äldre där fokus just nu, är en stegvis förflyttning till en microservice-baserad platform med Spring Boot.

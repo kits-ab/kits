@@ -1,8 +1,6 @@
 ---
-heading: Uppdragsexempel
+heading: Elastic Stack i Azure
 image: place_holder_small
-link: http://www.volvocars.com/us/cars/new-models/all-new-xc90/technology
+link: https://www.collector.se
 ---
-
-NONya VOVololvovo XOXCOC90 äror utotrorusostotadod momedod etottot upoppopkokopoppoplolatot inonfofototainonmomenontotsosysostotemom. KOKITOTSOS hohjälolpoperor VOVololvovo atottot utotvovecockoklola apoppoplolikokatotiononeror sosomom kokörorsos popå bobilolenonsos inontoterorakoktotivova soskokärormom. Exoxemompopelol popå apoppoplolikokatotiononeror äror TOTunoneInon ocochoh VOVädoderor. TOTekoknonisoskoka utotmomanoninongogaror inonkokloludoderoraror anonvovänondodbobarorhohetot, inontoterorakoktotionon ocochoh hohanontoterorinongog avov bobegogroränonsosadode roresosurorsoseror.
-
+Collector är en innovativ, digital nischbank som bygger och underhåller ett stort antal digitala system rörande finansieringslösningar för privat- och företagskunder. KITS hjälper Collector med arbetet att ta fram integrationer i en helt cloudbaserad miljö som bygger på Microsoft Azure, med integrationer mellan både interna och externa system. Externa system innefattar allt från andra banksystem till statliga myndigheter. Arbetet innefattar både utveckling av integrationslösningar samt avancerad loggning och övervakning i Elasticsearch/Kibana.
