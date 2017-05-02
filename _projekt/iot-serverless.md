@@ -1,6 +1,6 @@
 ---
-heading: iot-serverless
-image: place_holder_small
+heading: Telenor Connexion
+image: Telenor_Connexion_logo_pos
 link: http://www.telenorconnexion.se/erbjudande/cloud-connect
 ---
 
