@@ -84,7 +84,7 @@ The rendering engine operates on what's called the `layout viewport` and the phy
 
 ![Layout viewport](/images/blogg/layout.png)
 
-The third and last viewport, the `ideal viewport`, is an abstract notion of the best layout viewport for a particular device. The ideal viewport might as well be `physical pixels / devicePixelRatio`, but in many cases it differs slightly from that (see this list for details: TODO). Luckily the developer has an easy way of using the ideal viewport:
+The third and last viewport, the `ideal viewport`, is an abstract notion of the best layout viewport for a particular device. The ideal viewport might as well be `physical pixels / devicePixelRatio`, but in many cases it differs slightly from that. Luckily the developer has an easy way of using the ideal viewport:
 
 ~~~ html
 <meta name="viewport" content="width=device-width,initial-scale=1">
