@@ -10,6 +10,6 @@ github: "https://github.com/nejads"
 tagline: Backendutvecklare
 published: true
 ---
-Soroush är en passionerad programmerare. Security specialization och distribuerade system var hans fokus i studier. Hans största erfarenheter finns i Back-end och databaser och har intresse för säkerhet.
+Soroush är en passionerad programmerare. [Security specialization](http://www.cse.chalmers.se/edu/master/secspec/) och distribuerade system var hans fokus i studier. Hans största erfarenheter är i Backend och databaser och har intresse för säkerhet.
 
-Soroush gillar problemlösning och i sin fritid hjälper andra med matematik. Han är noggrant och brinner för nya kunskaper och vill gärna håll sig uppdaterat med ny tekniker och metoder. 
+Soroush gillar problemlösning och i sin fritid hjälper han andra med matematik. Han är noggrann och brinner för nya kunskaper och vill gärna håll sig uppdaterat med ny tekniker och metoder. 
