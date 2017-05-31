@@ -61,7 +61,7 @@ type Company {
 
 type Address {
   street: String,
-  city: Address
+  city: String
 }
 ~~~
 
@@ -72,6 +72,12 @@ As well as common primitive types (i.e. Int and String) your own types can be co
 You might ask what a challenge the backend developers have at hand. But the answer is that it's not that complex. This is a place where strong typing shines.
 
 For every type, you specify a resolver function. Code of your choice. This makes GraphQL database agnostic, or you might not want a database at all, files on the disk will do perfectly fine (at least as far as GraphQL concerns). The resolver function will receive context parameters to make resolving of the correct data possible. This context consist of `arguments` (like `id` from out type above) , `parent` and `context`. Parent in our case above will for the `Address` resolver be the resulting `Company`. The last context parameter can be things like the logged in user or other things you need to decide upon the right data.
+
+~~~ javascript
+const resolver = (arguments, parent, context) => {
+  // invoke your business layer and pass along needed context
+};
+~~~
 
 ## GraphQL vs. REST
 
