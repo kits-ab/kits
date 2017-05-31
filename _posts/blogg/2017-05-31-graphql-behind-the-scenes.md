@@ -7,6 +7,7 @@ category: blogg
 published: true
 ---
 
+
 ## Intro
 
 GraphQL is a query language for APIs. It was created with the client in mind, enabling easier and less network activity as well as hiding data transformations in the backend. It has an appealing syntax, which might be the only thing you'll ever care about if you are the client developer. It sure sounds like a lot of complexity is hidden on the backend. That's true, and it would be very hard to develop the backend if you needed to do all the data assembling by yourself. In this post I'll walk you through how that's done and some patterns and new best practices along the way.
@@ -30,7 +31,7 @@ query {
 }
 ~~~
 Will end up in a response like this:
-~~~
+~~~ javascript
 company {
   id: 1,
   name: 'KITS AB',
