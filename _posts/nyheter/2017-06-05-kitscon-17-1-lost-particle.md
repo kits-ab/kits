@@ -8,7 +8,7 @@ category: nyheter
 published: true
 ---
 
-Denna vår styrde vi kosan till Geneve i Schweiz! Efter en tidig morgon, kickade vi raskt igång konferensen med att lyssna till massor med intressanta föreläsningar (utan innbördes ranordning) om
+Denna vår styrde vi kosan till Geneve i Schweiz! Efter en tidig morgon, kickade vi raskt igång konferensen med att lyssna till massor med intressanta föreläsningar (utan inbördes rangordning) om
 * Azure
 * Swagger
 * Ledarskap, chef och/eller ledare
@@ -22,4 +22,6 @@ Denna vår styrde vi kosan till Geneve i Schweiz! Efter en tidig morgon, kickade
 
 Även om det som vanligt var väldigt bra innehåll, kloka diskussioner och gott kaffe på vår egna konferens, var nog besöket på CERN resans höjdpunkt. Vi fick där en övergripande föreläsning om CERN:s historia, genomgång av både stort och smått; big bang, stjärnor, galaxer, atomer, kvarkar, elementärparticklar och antimateria.
 
-Efter föreläsningen fick vi besöka CERN datacenter och deras antimateria fabrik inkl två av deras mindre acceleratorer. En av höjdpunkterna från datacentret var förstås en gammal dammig NeXt som https://en.wikipedia.org/wiki/Tim_Berners-Lee utvecklade och körde världens första web-server på.
+Efter föreläsningen fick vi besöka CERN datacenter och deras antimateria fabrik inkl två av deras mindre acceleratorer. En av höjdpunkterna från datacentret var förstås en gammal dammig NeXT som https://en.wikipedia.org/wiki/Tim_Berners-Lee utvecklade och körde världens första web-server på.
+
+Vi hittade inte den saknade partikeln, CERN får leta vidare utan vår hjälp.
