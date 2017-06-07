@@ -9,6 +9,7 @@ published: true
 ---
 
 Denna vår styrde vi kosan till Geneve i Schweiz! Efter en tidig morgon, kickade vi raskt igång konferensen med att lyssna till massor med intressanta föreläsningar (utan inbördes rangordning) om
+![](/images/nyheter/kitscon2017-1-3.jpg "float-left")
 * Azure
 * Swagger
 * Ledarskap, chef och/eller ledare
@@ -24,4 +25,6 @@ Denna vår styrde vi kosan till Geneve i Schweiz! Efter en tidig morgon, kickade
 
 Efter föreläsningen fick vi besöka CERN datacenter och deras antimateria fabrik inkl två av deras mindre acceleratorer. En av höjdpunkterna från datacentret var förstås en gammal dammig NeXT som https://en.wikipedia.org/wiki/Tim_Berners-Lee utvecklade och körde världens första web-server på.
 
-Vi hittade inte den saknade partikeln, CERN får leta vidare utan vår hjälp.
+###### ![](/images/nyheter/kitscon2017-1-4.jpg)![](/images/nyheter/kitscon2017-1-1.jpg)![](/images/nyheter/kitscon2017-1-5.jpg)
+
+Vi hittade tyvärr inte den saknade partikeln, CERN får leta vidare utan vår hjälp.
