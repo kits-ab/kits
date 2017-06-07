@@ -12,7 +12,7 @@ Denna vår styrde vi kosan till Geneve i Schweiz! Efter en tidig morgon, kickade
 
 ![](/images/nyheter/kitscon2017-1-3.jpg "float-left")
 
-Tex: Azure,  Swagger, Ledarskap, chef och/eller ledare, GraphQL, Kotlin, Virtual-dom, IOT labbande, Genomlysning av en JWT websårbarhet, Erfarenhetsåterkoppling från datavalideringsprojekt, Tankar från en junior Java utvecklare på väg mot att bli expert. 
+Följande är titlar på de kompetensspridande föreläsningar vi genomförde under konferensen: Azure,  Swagger, Ledarskap, chef och/eller ledare, GraphQL, Kotlin, Virtual-dom, IOT labbande, Genomlysning av en JWT websårbarhet, Erfarenhetsåterkoppling från datavalideringsprojekt, Tankar från en junior Java utvecklare på väg mot att bli expert.
 
 Även om det som vanligt var väldigt bra innehåll, kloka diskussioner och gott kaffe på vår egna konferens, var nog besöket på CERN resans höjdpunkt. Vi fick där en övergripande föreläsning om CERN:s historia, genomgång av både stort och smått; big bang, stjärnor, galaxer, atomer, kvarkar, elementärparticklar och antimateria.
 
