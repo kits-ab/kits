@@ -1,6 +1,6 @@
 ---
 uid: soroushnejad
-image: konsult
+image: soroushnejad
 name: Soroush Nejad
 email: soroush.nejad@kits.se
 phone: 0738 - 13 43 83

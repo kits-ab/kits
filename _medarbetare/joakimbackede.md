@@ -1,6 +1,6 @@
 ---
 uid: joakimbackede
-image: konsult
+image: joakimbackede
 name: Joakim Backede
 email: joakim.backede@kits.se
 phone: 0704 – 10 11 92
