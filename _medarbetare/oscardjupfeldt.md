@@ -1,6 +1,6 @@
 ---
 uid: oscardjupfeldt
-image: oscardjupfelt
+image: oscardjupfeldt
 name: Oscar Djupfeldt
 email: oscar.djupfeldt@kits.se
 phone: ""
