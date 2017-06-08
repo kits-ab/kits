@@ -1,6 +1,6 @@
 ---
 uid: oscardjupfeldt
-image: konsult
+image: oscardjupfelt
 name: Oscar Djupfeldt
 email: oscar.djupfeldt@kits.se
 phone: ""

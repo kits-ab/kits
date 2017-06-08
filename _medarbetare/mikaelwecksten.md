@@ -1,6 +1,6 @@
 ---
 uid: mikaelwecksten
-image: konsult
+image: mikaelwecksten
 name: Mikael Weckstén
 email: mikael.wecksten@kits.se
 phone: ""

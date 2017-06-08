@@ -1,6 +1,6 @@
 ---
 uid: pierresandboge
-image: konsult
+image: pierresandboge
 name: Pierre Sandboge
 email: pierre.sandboge@kits.se
 phone: 0706 - 30 03 22

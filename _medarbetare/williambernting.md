@@ -1,6 +1,6 @@
 ---
 uid: williambernting
-image: konsult
+image: williambernting
 name: William Bernting
 email: william.bernting@kits.se
 phone: 0706 - 67 60 47

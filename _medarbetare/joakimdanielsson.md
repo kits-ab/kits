@@ -1,6 +1,6 @@
 ---
 uid: joakimdanielsson
-image: konsult
+image: joakimdanielsson
 name: Joakim Danielsson
 email: joakim.danielsson@kits.se
 phone: 0706 - 04 35 24
