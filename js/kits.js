@@ -119,8 +119,8 @@ var KITS = function () {
 			var node;
 			while (node = textWalker.nextNode()) {
 				node.textContent = node.textContent
-					.replace(/([bcdfghklmnpqrstvwxz])/g, '$1o$1')
-					.replace(/([BCDFGHKLMNPQRSTVWXZ])/g, "$1O$1");
+					.replace(/([bcdfghjklmnpqrstvwxz])/g, '$1o$1')
+					.replace(/([BCDFGHJKLMNPQRSTVWXZ])/g, "$1O$1");
 			}
 		}
 	};
