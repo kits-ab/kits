@@ -1,6 +1,6 @@
 ---
 uid: sofiaedstrom
-image: sofiaedstrom
+image: konsult
 name: Sofia Edström
 email: sofia.edstrom@kits.se
 phone: 
