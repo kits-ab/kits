@@ -1,6 +1,6 @@
 ---
 uid: michaeldubell
-image: michaeldubell
+image: konsult
 name: Michael Dubell
 email: michael.dubell@kits.se
 phone: 
