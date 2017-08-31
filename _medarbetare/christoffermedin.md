@@ -1,6 +1,6 @@
 ---
 uid: christoffermedin
-image: christoffermedin
+image: konsult
 name: Christoffer Medin
 email: christoffer.medin@kits.se
 phone: 
