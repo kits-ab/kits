@@ -3,7 +3,7 @@ uid: dzenanbazdarevic
 image: konsult
 name: Dzenan Bazdarevic
 email: dzenan.bazdarevic@kits.se
-phone: 
+phone: 0733 - 03 24 95
 twitter: ""
 linkedin: ""
 github: ""
