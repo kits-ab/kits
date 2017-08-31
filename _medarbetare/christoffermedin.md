@@ -3,7 +3,7 @@ uid: christoffermedin
 image: konsult
 name: Christoffer Medin
 email: christoffer.medin@kits.se
-phone: 
+phone: 0738 - 14 34 09
 twitter: ""
 linkedin: ""
 github: ""
