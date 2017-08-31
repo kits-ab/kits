@@ -1,6 +1,6 @@
 ---
 uid: dzenanbazdarevic
-image: dzenanbazdarevic
+image: konsult
 name: Dzenan Bazdarevic
 email: dzenan.bazdarevic@kits.se
 phone: 
