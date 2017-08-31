@@ -1,6 +1,6 @@
 ---
 uid: fredrikoller
-image: fredrikoller
+image: konsult
 name: Fredrik Öller
 email: fredrik.oller@kits.se
 phone: 
