@@ -3,7 +3,7 @@ uid: sofiaedstrom
 image: konsult
 name: Sofia Edström
 email: sofia.edstrom@kits.se
-phone: 
+phone: 0738 - 14 34 09
 twitter: ""
 linkedin: ""
 github: ""
