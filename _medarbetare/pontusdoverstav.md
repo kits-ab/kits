@@ -1,6 +1,6 @@
 ---
 uid: pontusdoverstav
-image: pontusdoverstav
+image: konsult
 name: Pontus Doverstav
 email: pontus.doverstav@kits.se
 phone: 
