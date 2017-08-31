@@ -3,7 +3,7 @@ uid: michaeldubell
 image: konsult
 name: Michael Dubell
 email: michael.dubell@kits.se
-phone: 
+phone: 0733 - 03 25 53
 twitter: ""
 linkedin: ""
 github: ""
