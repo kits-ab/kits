@@ -3,7 +3,7 @@ uid: pontusdoverstav
 image: konsult
 name: Pontus Doverstav
 email: pontus.doverstav@kits.se
-phone: 
+phone: 0733 - 03 24 83
 twitter: ""
 linkedin: ""
 github: ""
