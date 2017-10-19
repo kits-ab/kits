@@ -1,6 +1,6 @@
 ---
 uid: christoffermedin
-image: konsult
+image: christoffermedin
 name: Christoffer Medin
 email: christoffer.medin@kits.se
 phone: 0738 - 14 34 09

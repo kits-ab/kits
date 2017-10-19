@@ -1,6 +1,6 @@
 ---
 uid: pontusdoverstav
-image: konsult
+image: pontusdoverstav
 name: Pontus Doverstav
 email: pontus.doverstav@kits.se
 phone: 0733 - 03 24 83

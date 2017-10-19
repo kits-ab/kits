@@ -1,6 +1,6 @@
 ---
 uid: parsvedberg
-image: konsult
+image: parsvedberg
 name: Pär Svedberg
 email: par.svedberg@kits.se
 phone: 0705 - 82 01 27

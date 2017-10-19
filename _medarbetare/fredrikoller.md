@@ -1,6 +1,6 @@
 ---
 uid: fredrikoller
-image: konsult
+image: fredrikoller
 name: Fredrik Öller
 email: fredrik.oller@kits.se
 phone: 0733 - 03 25 59
