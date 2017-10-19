@@ -3,7 +3,7 @@ uid: bjornlundqvist
 image: bjornlundqvist
 name: Bjorn Lundqvist
 email: bjorn.lundqvist@kits.se
-phone: 0733 - 03 24 83
+phone: 0766 - 48 87 14
 twitter: ""
 linkedin: ""
 github: ""
