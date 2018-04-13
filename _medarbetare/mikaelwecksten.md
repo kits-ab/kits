@@ -3,7 +3,7 @@ uid: mikaelwecksten
 image: mikaelwecksten
 name: Mikael Weckstén
 email: mikael.wecksten@kits.se
-phone: "076-7707002"
+phone: 0767 –70 70 02
 twitter: ""
 linkedin: https://www.linkedin.com/pub/mikael-wecksten/4b/609/14/en
 github: ""
