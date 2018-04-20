@@ -1,6 +1,6 @@
 ---
 uid: philipwallin
-image: konsult
+image: philipwallin
 name: Philip Wallin
 email: philip.wallin@kits.se
 phone: 0727 - 17 00 48

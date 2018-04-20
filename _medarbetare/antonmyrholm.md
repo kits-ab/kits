@@ -1,6 +1,6 @@
 ---
 uid: antonmyrholm
-image: konsult
+image: antonmyrholm
 name: Anton Myrholm
 email: anton.myrholm@kits.se
 phone: 0766 - 50 38 09
