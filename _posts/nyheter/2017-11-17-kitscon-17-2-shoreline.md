@@ -10,6 +10,8 @@ published: true
 
 Vi har under åren haft många fina KitsCon på olika platser, både inrikes och utrikes. Denna gången har vi valt natursköna Gullmarsstrand som ligger en dryg timme bilväg från Göteborg. Vi höll spännande föredrag, åt god mat i en härlig miljö, badade i havet och lärde känna varandra ännu mer i KitsQuiz där Kits:arna fick skicka in frågor om sig själva.
 
+![](/images/nyheter/kitscon2017-2-1.jpg "float-left")
+
 Ett axplock av de föredrag som hölls:
 
 * Cache – Det roligaste inom webb i en presentation
@@ -20,4 +22,3 @@ Ett axplock av de föredrag som hölls:
 * Webflux
 * The spec is out there – Extracting contracts from code
 
-![](/images/nyheter/kitscon2017-2-1.jpg "float-left")
