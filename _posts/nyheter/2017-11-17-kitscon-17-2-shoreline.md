@@ -14,11 +14,11 @@ Vi har under åren haft många fina KitsCon på olika platser, både inrikes och
 
 Ett axplock av de föredrag som hölls:
 
-* Cache – Det roligaste inom webb i en presentation
-* Collusion Attacks in Browser Extensions
-* Sekvensklassificering av användarloggar på Spotify
-* Hacking the Gibson – Minnesforensik med Volatility
-* GDPR: Från ett säkerhetsperspektiv
-* Webflux
-* The spec is out there – Extracting contracts from code
+* ***Cache*** – Det roligaste inom webb i en presentation
+* ***Collusion Attacks in Browser Extensions*** - Hur multipla extension i webläsare kan sammarbeta och samla data om användaren
+* ***Sekvensklassificering av användarloggar*** - Machine Learning FTW
+* ***Hacking the Gibson*** – Minnesforensik med Volatility
+* ***GDPR*** - Från ett säkerhetsperspektiv
+* ***Webflux***
+* ***The spec is out there*** – Extrahera kontrakt från kod
 
