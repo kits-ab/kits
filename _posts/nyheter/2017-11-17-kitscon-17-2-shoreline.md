@@ -8,20 +8,16 @@ category: nyheter
 published: true
 ---
 
-Denna vår styrde vi kosan till Geneve i Schweiz. Efter en tidig morgon, kickade vi raskt igång vår kompetensspridande konferens med att lyssna till massor med intressanta föreläsningar.
+Vi har under åren haft många fina KitsCon på olika platser, både inrikes och utrikes. Denna gången har vi valt natursköna Gullmarsstrand som ligger en dryg timme bilväg från Göteborg. Vi höll spännande föredrag, åt god mat i en härlig miljö, badade i havet och lärde känna varandra ännu mer i KitsQuiz där Kits:arna fick skicka in frågor om sig själva.
 
-![](/images/nyheter/kitscon2017-1-3.jpg "float-left")
+Ett axplock av de föredrag som hölls:
 
-Följande är titlar på föreläsningar vi genomförde: Azure, Swagger, Ledarskap - chef och/eller ledare, GraphQL, Kotlin, Virtual-dom, IOT labbande, Genomlysning av en JWT websårbarhet, Erfarenhetsåterkoppling från datavalideringsprojekt, Tankar från en junior Java utvecklare (på väg mot att bli expert).
+* Cache – Det roligaste inom webb i en presentation
+* Collusion Attacks in Browser Extensions
+* Sekvensklassificering av användarloggar på Spotify
+* Hacking the Gibson – Minnesforensik med Volatility
+* GDPR: Från ett säkerhetsperspektiv
+* Webflux
+* The spec is out there – Extracting contracts from code
 
-Även om det som vanligt var väldigt bra innehåll, kloka diskussioner och gott kaffe på vår egna konferens, var nog besöket på CERN resans höjdpunkt. Vi fick där en övergripande föreläsning om CERN:s historia, genomgång av både stort och smått; big bang, stjärnor, galaxer, atomer, kvarkar, elementärpartiklar och antimateria.
-
-Efter föreläsningen fick vi besöka CERN datacenter och deras antimateria fabrik inkl två av deras mindre acceleratorer. En av höjdpunkterna från datacentret var förstås en gammal dammig NeXT som [Tim_Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) utvecklade och körde världens första web-server på.
-
-###### ![](/images/nyheter/kitscon2017-1-4.jpg)![](/images/nyheter/kitscon2017-1-1.jpg)![](/images/nyheter/kitscon2017-1-5.jpg)
-
-På kvällarna utforskade vi Geneve både enskilt och i grupp. Vi gick bl.a. på en stadsvandring där vi blev lite uppdaterad på Geneves historia, samt på en båttur på Genevesjön.
-
-###### ![](/images/nyheter/kitscon2017-1-2.jpg)![](/images/nyheter/kitscon2017-1-6.jpg)![](/images/nyheter/kitscon2017-1-7.jpg)
-
-Hur vi än letade (och tro mig, det var många som var uppe sent på nätterna och försökte), hittade vi inte den saknade partikeln, CERN får leta vidare utan vår hjälp.
+![](/images/nyheter/kitscon2017-2-1.jpg "float-left")
