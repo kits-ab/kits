@@ -2,7 +2,7 @@
 layout: index
 heading: Välkommen till KITS
 page_title: Välkommen
-intro: KITS är ett konsultbolag i Göteborg som har många års erfarenhet och många duktiga konsulter. Hur kan vi hjälpa dig?
+intro: KITS är ett konsultbolag med många års erfarenhet och många duktiga konsulter. Hur kan vi hjälpa dig?
 description: Vi är engagerade och kreativa konsulter som gillar att "keep it simple" med stort fokus på att leverera resultat samtidigt som vi har kul.
 published: true
 ---
