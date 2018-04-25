@@ -1,9 +1,9 @@
 ---
 uid: johanherbo
-image: konsult
+image: johanherbo
 name: Johan Herbo
 email: johan.herbo@kits.se
-phone: "0730 – 74\_07\_18"
+phone: "0730 – 74 07 18"
 twitter: JohanHerbo
 linkedin: 'https://se.linkedin.com/in/herbo'
 github: jherbo
