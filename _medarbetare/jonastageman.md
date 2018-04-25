@@ -1,6 +1,6 @@
 ---
 uid: jonastageman
-image: konsult
+image: jonastageman
 name: Jonas Tageman
 email: jonas.tageman@kits.se
 phone: 0736 - 54 59 87
