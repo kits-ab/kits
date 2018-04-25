@@ -1303,6 +1303,9 @@
 		left: -30px;
 		position: absolute;
 		width: 120px;
+		border-radius: 60px;
+		-webkit-border-radius: 60px;
+		-moz-border-radius: 60px;
 
 		@media screen and (max-width: $widthMobile) {
 			bottom: auto;
