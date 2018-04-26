@@ -1,6 +1,6 @@
 ---
 uid: michaeldubell
-image: konsult
+image: michaeldubell
 name: Michael Dubell
 email: michael.dubell@kits.se
 phone: 0733 - 03 25 53
