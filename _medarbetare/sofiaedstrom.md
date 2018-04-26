@@ -1,6 +1,6 @@
 ---
 uid: sofiaedstrom
-image: konsult
+image: sofiaedstrom
 name: Sofia Edström
 email: sofia.edstrom@kits.se
 phone: 0738 - 14 34 09
