@@ -7,7 +7,7 @@ phone: 0708 – 27 74 99
 twitter: ""
 linkedin: https://se.linkedin.com/in/jenspatriknilsson
 github: kirtapnosslin
-pgp: https://keybase.io/jherbo/pgp_keys.asc
+pgp: https://keybase.io/patrik_nilsson/pgp_keys.asc
 tagline: Arkitekt &amp; full-stackutvecklare
 published: true
 ---
