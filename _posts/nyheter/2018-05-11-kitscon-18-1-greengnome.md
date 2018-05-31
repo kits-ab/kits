@@ -25,4 +25,4 @@ Ett axplock av de föredrag som hölls:
 
 Just det ... KitsCon sammanföll i år med den internationella TopGun dagen ...
 
-######![](/images/nyheter/kitscon2018-1-5.jpg )![](/images/nyheter/kitscon2018-1-3-small@2x.jpg )![](/images/nyheter/kitscon2018-1-7-small@2x.jpg )
+###### ![](/images/nyheter/kitscon2018-1-5.jpg )![](/images/nyheter/kitscon2018-1-3-small@2x.jpg )![](/images/nyheter/kitscon2018-1-7-small@2x.jpg )
