@@ -217,6 +217,12 @@ prose:
           label: "GitHub"
           help: "Kan vara tom"
           placeholder: "fornamnefternamn"
+      - name: "pgp"
+        field:
+          element: "text"
+          label: "Pgp"
+          help: "Kan vara tom"
+          placeholder: "https://keybase.io/fornamnefternamn/pgp_keys.asc"
       - name: "tagline"
         field:
           element: "text"
