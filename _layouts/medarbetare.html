@@ -55,6 +55,14 @@ layout: base
 				</a>
 			</li>
 			{% endif %}
+			{% if page.pgp and page.pgp != '' %}
+			<li class="c-social__item">
+				<a href="{{ page.pgp }}">
+					<img alt="Pgp" class="c-social__icon" src="/images/icons/pgp.png"
+							srcset="/images/icons/pgp@2x.png 2x">
+				</a>
+			</li>
+			{% endif %}
 		</ul>
 	</div>
 </div>
