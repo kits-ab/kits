@@ -25,12 +25,6 @@ layout: base
 	</div>
 </div>
 
-<h2 class="c-section-header"><span>Senaste inlägg i bloggen</span></h2>
-
-{% for post in site.categories.blogg limit:1 %}
-{% include blogg_intro.html post=post %}
-{% endfor %}
-
 <h2 class="c-section-header"><span>Senaste nytt från KITS</span></h2>
 
 <ul class="c-nyhet-list">
@@ -57,3 +51,9 @@ layout: base
 	</li>
 	{% endfor %}
 </ul>
+
+<h2 class="c-section-header"><span>Senaste inlägg i bloggen</span></h2>
+
+{% for post in site.categories.blogg limit:1 %}
+{% include blogg_intro.html post=post %}
+{% endfor %}
