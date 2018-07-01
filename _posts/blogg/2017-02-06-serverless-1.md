@@ -1,6 +1,6 @@
 ---
 layout: bloggpost
-heading: Going serverless, an introduction (part 1)
+heading: Going serverless, an introduction
 authors:
   - joakimkemeny
 category: blogg
