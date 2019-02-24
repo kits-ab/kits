@@ -1,0 +1,22 @@
+{
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "interface-name": {
+      "options": ["never-prefix"]
+    },
+    "max-line-length": false,
+    "member-access": false,
+    "no-implicit-dependencies": false,
+    "no-invalid-this": true,
+    "no-unused-variable": false,
+    "no-submodule-imports": [true, "date-fns/locale/sv"],
+    "semicolon": {
+      "options": ["never"]
+    },
+    "object-literal-sort-keys": false
+  },
+  "linterOptions": {
+    "exclude": ["src/types/graphql.ts"]
+  },
+  "defaultSeverity": "warning"
+}

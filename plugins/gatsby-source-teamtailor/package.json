@@ -1,0 +1,10 @@
+{
+  "name": "gatsby-source-teamtailor",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.2.0",
+    "query-string": "^6.2.0"
+  }
+}

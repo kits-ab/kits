@@ -1,0 +1,126 @@
+import { graphql } from "gatsby"
+import * as React from "react"
+import Helmet from "react-helmet"
+
+import {
+  Breakout,
+  Contact,
+  Horizontal,
+  Lead,
+  Location,
+  MainHeading,
+  SectionHeading,
+  spacing,
+  Text,
+  types,
+  Vertical,
+  width,
+  Wrapper
+} from "@kokitotsos/react-components"
+
+import { PersonList } from "../components/PersonList"
+import { DefaultLayout } from "../layouts/DefaultLayout"
+import { ContentYamlConnection, MarkdownRemarkConnection } from "../types/graphql"
+import { PageProps } from "../types/PageProps"
+import { edgeToPerson, findPersonById } from "../utils/personUtils"
+
+interface AboutPageProps extends PageProps {
+  data: {
+    page: MarkdownRemarkConnection
+    metadata: ContentYamlConnection
+    persons: MarkdownRemarkConnection
+  }
+}
+
+export default ({ data, location }: AboutPageProps) => {
+  const page = data.page.edges[0]
+  const metadata = data.metadata.edges[0]
+  const persons = data.persons.edges.map(edge => edgeToPerson(edge))
+
+  return (
+    <DefaultLayout location={location}>
+      <Helmet title={page.node.frontmatter.title} />
+
+      <Vertical spacing={spacing.large}>
+        <MainHeading>{page.node.frontmatter.heading}</MainHeading>
+        <Lead>{page.node.frontmatter.lead}</Lead>
+      </Vertical>
+
+      <Breakout>
+        <Location
+          coordinates={metadata.node.coordinates}
+          title={metadata.node.name}
+          subtitle={metadata.node.address.street}
+        />
+      </Breakout>
+
+      <Horizontal breakpoint={width.tablet} separator={true} spacing={spacing.large}>
+        <Text>{page.node.html}</Text>
+
+        <Vertical spacing={spacing.medium}>
+          {metadata.node.contacts.map(contact => {
+            const person = findPersonById(persons, contact.personId)
+            person.role = contact.role
+            return (
+              <Contact key={`contact_${person.id}`} info={person} type={types.ContactType.Role} />
+            )
+          })}
+        </Vertical>
+      </Horizontal>
+
+      <Breakout>
+        <Wrapper maxWidth={width.max} spacing={spacing.large}>
+          <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
+          <PersonList />
+        </Wrapper>
+      </Breakout>
+    </DefaultLayout>
+  )
+}
+
+export const pageQuery = graphql`
+  query AboutPageQuery {
+    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "aboutPage" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            heading
+            lead
+            section1 {
+              heading
+            }
+          }
+          html
+        }
+      }
+    }
+
+    metadata: allContentYaml {
+      edges {
+        node {
+          name
+          coordinates
+          address {
+            street
+          }
+          contacts {
+            role
+            personId
+          }
+        }
+      }
+    }
+
+    persons: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "person" }, alumni: { ne: true } } }
+      sort: { order: ASC, fields: [frontmatter___title] }
+    ) {
+      edges {
+        node {
+          ...PersonFragment
+        }
+      }
+    }
+  }
+`
