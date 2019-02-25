@@ -149,7 +149,7 @@ collections:
   fields:
   - { name: type, widget: hidden, default: person }
   - { name: id, label: ID }
-  - { name: title, label: Namn" }
+  - { name: title, label: Namn }
   - { name: alumni, label: Alumni?, widget: boolean, default: false }
   - { name: tagLine, label: Tagline }
   - {
@@ -166,6 +166,7 @@ collections:
     required: false,
     pattern: ["/assets/medarbetare_[a-z-]+-avatar\\.jpg"],
   }
+  - { name: phone, label: Telefon }
   - { name: email, label: E-mail }
   - name: social
     label: Social
@@ -173,10 +174,14 @@ collections:
     widget: "object"
     fields:
     - { name: github, label: GitHub, required: false }
-    - { name: linkedin, label: LinkedIn, required: false }
+    - { name: linkedin, label: LinkedIn (hela url:en), required: false }
     - { name: microblog, label: "Micro.blog", required: false }
     - { name: keybase, label: Keybase, required: false }
     - { name: twitter, label: Twitter, required: false }
+  - name: tags
+    label: Taggar
+    widget: list
+  - { name: body, label: Body, widget: markdown }
 
 - name: news
   label: Nyheter
