@@ -5,19 +5,16 @@ title: David Chang
 tagLine: Utvecklare
 image: /assets/medarbetare_davidchang.jpg
 avatar: /assets/medarbetare_davidchang-avatar.jpg
-phone: 0703 - 32 45 49
+phone: 0739 - 92 51 66
 email: david.chang@kits.se
 social:
   keybase: dach
 tags:
   - utveckling
+  - backend
   - java
-  - python
-  - c++
   - javascript
-  - groovy
   - react
-  - angular
   - maskininlärning
 ---
 
