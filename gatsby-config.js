@@ -27,6 +27,12 @@ module.exports = {
     "gatsby-plugin-netlify-cache",
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaultQuality: 85
+      }
+    },
     "gatsby-plugin-sharp",
     "gatsby-plugin-typescript",
     "gatsby-plugin-styled-components",
