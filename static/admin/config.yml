@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: kits-ab/kits
-  branch: master
+  branch: feature/v2-gatsby
   squash_merges: true
   commit_messages:
     create: Create {{collection}} "{{slug}}"
