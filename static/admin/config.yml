@@ -150,7 +150,7 @@ collections:
   - { name: type, widget: hidden, default: person }
   - { name: id, label: ID }
   - { name: title, label: Namn }
-  - { name: alumni, label: Alumni?, widget: boolean, default: false }
+  - { name: alumni, label: Alumni?, widget: boolean, default: false, required: false }
   - { name: tagLine, label: Tagline }
   - {
     name: image,
