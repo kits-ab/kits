@@ -33,7 +33,6 @@ module.exports = {
         defaultQuality: 100
       }
     },
-    "gatsby-plugin-sharp",
     "gatsby-plugin-typescript",
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
