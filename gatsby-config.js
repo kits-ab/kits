@@ -1,6 +1,9 @@
 require("dotenv").config()
 
 module.exports = {
+  siteMetadata: {
+    siteUrl: "https://kits.se"
+  },
   plugins: [
     {
       resolve: "gatsby-source-filesystem",
@@ -33,6 +36,7 @@ module.exports = {
         defaultQuality: 100
       }
     },
+    "gatsby-plugin-sitemap",
     "gatsby-plugin-typescript",
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
