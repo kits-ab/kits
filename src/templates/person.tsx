@@ -35,11 +35,13 @@ interface PersonPageProps extends PageProps {
 
 const StyledImage = styled(Image)`
   height: 400px;
+  flex: 0 0 300px;
   max-width: 300px;
   min-width: 300px;
 
   @media (max-width: ${width.tablet}px) {
     height: 300px;
+    flex: 0 0 200px;
     max-width: 200px;
     min-width: 200px;
   }
@@ -47,6 +49,7 @@ const StyledImage = styled(Image)`
   @media (max-width: ${width.mobileMenu}px) {
     border-left: 0;
     border-right: 0;
+    flex: auto;
     height: auto;
     left: 50%;
     margin-left: -50vw;
@@ -78,7 +81,7 @@ export default ({ data, location }: PersonPageProps) => {
 
       <Horizontal breakpoint={width.mobileMenu} spacing={spacing.large}>
         <StyledImage src={image && image.src} srcSet={image && image.srcSet} />
-        <Vertical spacing={spacing.medium}>
+        <Vertical spacing={spacing.medium} style={{ flex: "1 1 0%" }}>
           <MainHeading style={{ fontSize: 48, textAlign: "left" }}>{person.name}</MainHeading>
           <ContentHeading>{person.tagLine}</ContentHeading>
 
