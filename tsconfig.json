@@ -15,7 +15,7 @@
     "strictNullChecks": false,
     "stripInternal": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es2015"
+    "target": "es5"
   },
   "include": ["definitions/**/*", "src/**/*"]
 }
