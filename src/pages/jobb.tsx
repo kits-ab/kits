@@ -7,6 +7,7 @@ import {
   Breakout,
   Button,
   Collage,
+  colors,
   Horizontal,
   Lead,
   MainHeading,
@@ -34,6 +35,7 @@ import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath, findImagesByRelativePaths } from "../utils/imageUtils"
 
 const StyledBreakout = styled(Breakout)`
+  background-color: ${colors.background2};
   background-color: var(--background2);
   margin-top: 150px !important;
   padding: ${spacing.huge}px 0;

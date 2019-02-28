@@ -7,6 +7,7 @@ import styled from "styled-components"
 import {
   Breakout,
   Collage,
+  colors,
   ContentHeading,
   Horizontal,
   Lead,
@@ -37,6 +38,7 @@ import { toHTML } from "../utils/markdownUtils"
 import { edgeToPerson, findPersonsByIds } from "../utils/personUtils"
 
 const StyledBreakout = styled(Breakout)`
+  background-color: ${colors.background2};
   background-color: var(--background2);
   margin-bottom: 150px !important;
   padding: ${spacing.huge}px 0;
@@ -110,8 +112,10 @@ export default ({ data, location }: KitsConPageProps) => {
 
       <Vertical spacing={spacing.large}>
         <StyledHorizontal spacing={spacing.large} breakpoint={width.mobileMenu}>
-          <img src={kitscon.frontmatter.image} style={{ width: 200, height: 200 }} />
-          <Vertical style={{ flex: "1 1 auto" }}>
+          <div style={{ flex: "0 0 200px" }}>
+            <img src={kitscon.frontmatter.image} style={{ width: 200, height: 200 }} />
+          </div>
+          <Vertical style={{ flex: "1 1 0%" }}>
             <ContentHeading>{kitscon.frontmatter.title}</ContentHeading>
             <SubHeading>{kitscon.frontmatter.tagLine}</SubHeading>
             <SubHeading>
