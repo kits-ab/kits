@@ -852,10 +852,10 @@
     log-update "^2.3.0"
     strip-ansi "^3.0.1"
 
-"@kokitotsos/react-components@1.2.7":
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/@kokitotsos/react-components/-/react-components-1.2.7.tgz#0fbc1058bff6704eaf18c94511eaf26725895c64"
-  integrity sha512-LehvlgZQ2ou+CdvAyKna3klGI33Zfh2KtyUgH2NxR2BZnNwlWUXwPGqVFmlG4Vh3+yAKSqvkozpJXgF6uvTygg==
+"@kokitotsos/react-components@1.2.8":
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/@kokitotsos/react-components/-/react-components-1.2.8.tgz#264404aa2945eceb40b38eb42359b16617bb06be"
+  integrity sha512-KOTOrLI5NV2cYnPQTUoCnwj2aQMPeyh3pfKpqq+MjR9ra8sWV3LNnnuZksLK4xuetiNoAeMS4wBFfLSFYvd4rg==
   optionalDependencies:
     date-fns "1.30.1"
     mapbox-gl "0.53.0"
