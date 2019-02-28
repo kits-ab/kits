@@ -3,6 +3,8 @@ type: person
 id: joellajohannesson
 title: Joella Johannesson
 tagLine: Utvecklare
+image: /assets/medarbetare_joellajohannesson.jpg
+avatar: /assets/medarbetare_joellajohannesson-avatar.jpg
 phone: 0708 – 11 22 33
 email: joella.johannesson@kits.se
 social:

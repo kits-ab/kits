@@ -3,6 +3,8 @@ type: person
 id: emmastalesjo
 title: Emma Stålesjö
 tagLine: Frontendutvecklare
+image: /assets/medarbetare_emmastalesjo.jpg
+avatar: /assets/medarbetare_emmastalesjo-avatar.jpg
 phone: 0702 - 53 24 95
 email: emma.stalesjo@kits.se
 social:

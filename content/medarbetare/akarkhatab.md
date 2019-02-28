@@ -3,6 +3,8 @@ type: person
 id: akarkhatab
 title: Akar Khatab
 tagLine: Backendutvecklare
+image: /assets/medarbetare_akarkhatab.jpg
+avatar: /assets/medarbetare_akarkhatab-avatar.jpg
 phone: 0708 – 77 37 91
 email: akar.khatab@kits.se
 social:
