@@ -1,0 +1,22 @@
+name: KITS AB
+address:
+  street: Norra Allégatan 8
+  postalCode: 413 01
+  city: Göteborg
+coordinates:
+  - 57.7001813
+  - 11.9567863
+email: info@kits.se
+phone: 0708 – 27 74 99
+social:
+  bitbucket: kokitotsos
+  facebook: kokitotsos
+  github: kits-ab
+  instagram: kokitotsos
+  linkedin: kits-ab
+  twitter: kokitotsos
+contacts:
+  - role: VD
+    personId: patriknilsson
+  - role: Försäljning och marknad
+    personId: johanherbo

@@ -1,2 +1,13 @@
-[context.deploy-preview]
-  command = "jekyll build --future"
+[build]
+  command = "gatsby build"
+  publish = "public/"
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    Feature-Policy = "fullscreen 'self'"
