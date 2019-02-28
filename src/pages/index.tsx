@@ -100,20 +100,28 @@ export default ({ data, location }: IndexPageProps) => {
             spacing={spacing.large}
           >
             <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.large}>
-              <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.small}>
+              <Vertical
+                alignHorizontal={types.Alignment.Center}
+                spacing={spacing.small}
+                className="max-100"
+              >
                 <SubHeading>{page.node.frontmatter.section1.subheading}</SubHeading>
                 <ContentHeading>{page.node.frontmatter.section1.heading}</ContentHeading>
-                <Text className="is-flexed is-centered">
+                <Text className="is-flexed is-centered max-100">
                   <p>{page.node.frontmatter.section1.content}</p>
                 </Text>
               </Vertical>
               <Button href="/erbjudanden">Läs mer om vad vi kan erbjuda</Button>
             </Vertical>
             <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.large}>
-              <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.small}>
+              <Vertical
+                alignHorizontal={types.Alignment.Center}
+                spacing={spacing.small}
+                className="max-100"
+              >
                 <SubHeading>{page.node.frontmatter.section2.subheading}</SubHeading>
                 <ContentHeading>{page.node.frontmatter.section2.heading}</ContentHeading>
-                <Text className="is-flexed is-centered">
+                <Text className="is-flexed is-centered max-100">
                   <p>{page.node.frontmatter.section2.content}</p>
                 </Text>
               </Vertical>

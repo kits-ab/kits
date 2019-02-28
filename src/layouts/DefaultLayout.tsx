@@ -51,6 +51,10 @@ const GlobalSiteStyles = createGlobalStyle`
   .is-flexed {
     flex: 1 1 auto;
   }
+
+  .max-100 {
+    max-width: 100%;
+  }
 `
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
