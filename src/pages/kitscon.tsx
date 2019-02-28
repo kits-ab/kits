@@ -111,7 +111,7 @@ export default ({ data, location }: KitsConPageProps) => {
       <Vertical spacing={spacing.large}>
         <StyledHorizontal spacing={spacing.large} breakpoint={width.mobileMenu}>
           <img src={kitscon.frontmatter.image} style={{ width: 200, height: 200 }} />
-          <Vertical style={{ flex: 1 }}>
+          <Vertical style={{ flex: "1 1 auto" }}>
             <ContentHeading>{kitscon.frontmatter.title}</ContentHeading>
             <SubHeading>{kitscon.frontmatter.tagLine}</SubHeading>
             <SubHeading>
