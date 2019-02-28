@@ -49,7 +49,7 @@ const GlobalSiteStyles = createGlobalStyle`
   }
 
   .is-flexed {
-    flex: 1;
+    flex: 1 1 auto;
   }
 `
 
@@ -91,7 +91,7 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
                 ]}
               />
             </Breakout>
-            <Vertical spacing={spacing.huge} style={{ flex: 1, marginTop: 120 }}>
+            <Vertical spacing={spacing.huge} style={{ flex: "1 1 auto", marginTop: 120 }}>
               {this.props.children}
             </Vertical>
             <Breakout style={{ flex: 0 }}>
