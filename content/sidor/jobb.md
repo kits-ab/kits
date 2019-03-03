@@ -9,10 +9,9 @@ section1:
   heading: Så här jobbar vi på KITS
 section2:
   content: >-
-    Ta kontakt med oss och berätta vem du är och vad du vill göra eller sök
-    jobbet direkt ovan.
+    Ta kontakt med oss och berätta vem du är och vad du vill göra eller sök 
+    något av jobben direkt ovan.
   heading: Låter det intressant?
-  subheading: ""
 images:
   - /assets/formaner_kontoret01.jpg
   - /assets/formaner_kontoret02.jpg

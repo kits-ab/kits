@@ -6,7 +6,7 @@ export const imageFragmentCollage = graphql`
   fragment ImageFragmentCollage on File {
     relativePath
     childImageSharp {
-      fixed(height: 200, quality: 100) {
+      fixed(height: 200) {
         src
         srcSet
       }
@@ -18,7 +18,7 @@ export const imageFragmentPersona = graphql`
   fragment ImageFragmentPersona on File {
     relativePath
     childImageSharp {
-      fixed(height: 100, quality: 100) {
+      fixed(height: 100) {
         src
         srcSet
       }
@@ -30,7 +30,7 @@ export const imageFragment = graphql`
   fragment ImageFragment on File {
     relativePath
     childImageSharp {
-      fixed(width: 450, height: 250, quality: 100) {
+      fixed(width: 450, height: 250) {
         src
         srcSet
       }
@@ -42,7 +42,7 @@ export const imageFragmentAvatar = graphql`
   fragment ImageFragmentAvatar on File {
     relativePath
     childImageSharp {
-      fixed(width: 150, height: 150, cropFocus: CENTER, quality: 100) {
+      fixed(width: 150, height: 150, cropFocus: CENTER) {
         src
         srcSet
       }
@@ -54,7 +54,7 @@ export const imageFragmentSmall = graphql`
   fragment ImageFragmentSmall on File {
     relativePath
     childImageSharp {
-      fixed(width: 150, height: 83, quality: 100) {
+      fixed(width: 150, height: 83) {
         src
         srcSet
       }

@@ -2,7 +2,9 @@
 type: aboutPage
 title: Om
 heading: Om KITS
-lead: Vi är engagerade och kreativa konsulter som gillar att “keep it simple” med stort fokus på att leverera resultat samtidigt som vi har kul.
+lead: >-
+  Vi är engagerade och kreativa konsulter som gillar att "keep it simple" med
+  stort fokus på att leverera resultat samtidigt som vi har kul.
 section1:
   heading: Vi är KITS
 ---
