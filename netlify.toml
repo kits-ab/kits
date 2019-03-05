@@ -1,6 +1,6 @@
 [build]
-  command = "gatsby build"
-  publish = "public/"
+  command = "yarn build"
+  publish = "public"
 
 [[headers]]
   for = "/*"
