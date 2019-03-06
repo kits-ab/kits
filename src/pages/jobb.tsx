@@ -104,7 +104,7 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
           {jobs.map((edge, index) => {
             return (
               <Persona
-                key={edge.node.id}
+                key={"person" + index}
                 iconSrc={personaImages[index].node.childImageSharp.fixed.src}
                 iconSrcSet={personaImages[index].node.childImageSharp.fixed.srcSet}
                 isActive={
@@ -136,7 +136,7 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
         {benefitsWithImage.map((edge: MarkdownRemarkEdge, index: number) => {
           const image = findImageByRelativePath(images, edge.node.frontmatter.image)
           return (
-            <>
+            <React.Fragment key={"benefit" + index}>
               {index === 3 && (
                 <StyledBreakout>
                   <Collage className="collage" images={collageImages} />
@@ -147,8 +147,8 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
                       separator={true}
                       spacing={spacing.large}
                     >
-                      {benefitsWithoutImage.map(edge2 => (
-                        <Vertical spacing={spacing.small}>
+                      {benefitsWithoutImage.map((edge2, index2) => (
+                        <Vertical key={"benefit2" + index2} spacing={spacing.small}>
                           <SubHeading>{edge2.node.frontmatter.title}</SubHeading>
                           <Text>{edge2.node.html}</Text>
                         </Vertical>
@@ -164,7 +164,7 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
               >
                 {edge.node.html}
               </Media>
-            </>
+            </React.Fragment>
           )
         })}
 

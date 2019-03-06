@@ -146,7 +146,9 @@ const renderSchema = (persons: types.Person[], schema: Schema_2[]) => {
         schemaContent.push(renderPresentation(persons, previousSchema, connect, true))
         previousSchema = undefined
       }
-      schemaContent.push(<StyledSectionHeading>{formatWeekday(s.start)}</StyledSectionHeading>)
+      schemaContent.push(
+        <StyledSectionHeading key={"day" + s.start}>{formatWeekday(s.start)}</StyledSectionHeading>
+      )
     }
 
     if (previousSchema) {
@@ -178,6 +180,7 @@ const renderPresentation = (
     : undefined
   return (
     <Timeslot
+      key={"presentation" + presentation.start}
       presenters={presenters}
       heading={presentation.title}
       startTime={presentation.start as any}

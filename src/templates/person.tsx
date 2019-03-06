@@ -93,7 +93,7 @@ export default ({ data, location }: PersonPageProps) => {
             </Horizontal>
           )}
           <Text>{data.person.html}</Text>
-          <Horizontal separator={true} spacing={spacing.small}>
+          <Horizontal breakpoint={350} separator={true} spacing={spacing.small}>
             {person.phone && (
               <Text>
                 <p>

@@ -34,14 +34,14 @@ export default ({ data, location }: BloggPageProps) => {
         <Lead>{page.node.frontmatter.lead}</Lead>
       </Vertical>
 
-      {posts.map(post => {
+      {posts.map((post, index) => {
         const authors = findPersonsByIds(persons, post.node.frontmatter.authors)
         return (
           <Article
             authors={authors}
             heading={post.node.frontmatter.title}
             href={post.node.fields.href}
-            key={post.node.id}
+            key={"article" + index}
             publishTime={parse(post.node.fields.date)}
             showAvatars={true}
             showExcerpt={true}
