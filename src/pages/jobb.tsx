@@ -18,6 +18,7 @@ import {
   spacing,
   SubHeading,
   Text,
+  types,
   Vertical,
   width,
   Wrapper
@@ -166,6 +167,14 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
             </>
           )
         })}
+
+        <SectionHeading>{page.node.frontmatter.section2.heading}</SectionHeading>
+        <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.large}>
+          <Text>
+            <p>{page.node.frontmatter.section2.content}</p>
+          </Text>
+          <Button href="mailto:info@kits.se">Kontakta oss</Button>
+        </Vertical>
       </DefaultLayout>
     )
   }
@@ -188,6 +197,10 @@ export const pageQuery = graphql`
             heading
             lead
             section1 {
+              heading
+            }
+            section2 {
+              content
               heading
             }
             images

@@ -76,6 +76,7 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
         <GlobalSiteStyles />
         <LinkContext.Provider value={{ linkComponent: Link as any, navLinkComponent: Link as any }}>
           <Helmet>
+            <html lang="sv" />
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
