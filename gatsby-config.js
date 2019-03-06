@@ -117,7 +117,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sharp",
       options: {
-        defaultQuality: 85
+        defaultQuality: 100
       }
     },
     "gatsby-plugin-sitemap",
@@ -140,7 +140,7 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 1800,
-              quality: 85
+              quality: 100
             }
           },
           {
