@@ -158,6 +158,7 @@ export default ({ data, location }: IndexPageProps) => {
                 key={`news_small_${index}`}
                 src={image && image.src}
                 srcSet={image && image.srcSet}
+                tooltipText={edge.node.frontmatter.title}
               />
             )
           })}

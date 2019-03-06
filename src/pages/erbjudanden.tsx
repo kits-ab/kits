@@ -41,6 +41,11 @@ const StyledOffer = styled(Offer)`
 
   @media (max-width: ${width.tablet}px) {
     width: 100%;
+
+    > * {
+      padding-left: 55px;
+      padding-right: 55px;
+    }
   }
 `
 
