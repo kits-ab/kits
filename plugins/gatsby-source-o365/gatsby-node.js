@@ -57,20 +57,20 @@ graph.getUsers = async token => {
 exports.sourceNodes = async ({ actions, createNodeId }, configOptions) => {
   const { createNode } = actions
 
-  const processJob = job => {
-    const nodeId = createNodeId(`o365-job-${job.id}`)
-    const nodeContent = JSON.stringify(job)
+  const processUserInfo = uinfo => {
+    const nodeId = createNodeId(`o365-userinfo-${uinfo.id}`)
+    const nodeContent = JSON.stringify(uinfo)
     const nodeContentDigest = crypto
       .createHash("md5")
       .update(nodeContent)
       .digest("hex")
 
-    const nodeData = Object.assign({}, job, {
+    const nodeData = Object.assign({}, uinfo, {
       id: nodeId,
       parent: null,
       children: [],
       internal: {
-        type: `O365Job`,
+        type: `O365User`,
         content: nodeContent,
         contentDigest: nodeContentDigest
       }
@@ -84,8 +84,8 @@ exports.sourceNodes = async ({ actions, createNodeId }, configOptions) => {
       const token = await auth.getAccessToken(configOptions)
       const users = await graph.getUsers(token)
       if (users && users.value) {
-        users.value.forEach(user => {
-          createNode(processJob(user))
+        users.value.forEach(uinfo => {
+          createNode(processUserInfo(uinfo))
         })
       }
       console.log(": created user nodes from o365")
