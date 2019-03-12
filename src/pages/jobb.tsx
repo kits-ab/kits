@@ -229,7 +229,6 @@ export const pageQuery = graphql`
             body
             apply_button_text
             human_status
-            created_at
           }
         }
       }

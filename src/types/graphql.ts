@@ -205,11 +205,25 @@ export interface SitePageConnectionPluginCreatorPluginOptionsInputObject {
 
   path?: Maybe<SitePageConnectionPluginCreatorPluginOptionsPathQueryString>
 
+  clientId?: Maybe<SitePageConnectionPluginCreatorPluginOptionsClientIdQueryString>
+
+  clientSecret?: Maybe<SitePageConnectionPluginCreatorPluginOptionsClientSecretQueryString>
+
+  tokenEndpoint?: Maybe<SitePageConnectionPluginCreatorPluginOptionsTokenEndpointQueryString>
+
+  query?: Maybe<SitePageConnectionPluginCreatorPluginOptionsQueryQueryString>
+
+  feeds?: Maybe<SitePageConnectionPluginCreatorPluginOptionsFeedsQueryList>
+
+  defaultQuality?: Maybe<SitePageConnectionPluginCreatorPluginOptionsDefaultQualityQueryInteger>
+
   target?: Maybe<SitePageConnectionPluginCreatorPluginOptionsTargetQueryString>
 
   rel?: Maybe<SitePageConnectionPluginCreatorPluginOptionsRelQueryString>
 
   maxWidth?: Maybe<SitePageConnectionPluginCreatorPluginOptionsMaxWidthQueryInteger>
+
+  quality?: Maybe<SitePageConnectionPluginCreatorPluginOptionsQualityQueryInteger>
 
   wrapperStyle?: Maybe<SitePageConnectionPluginCreatorPluginOptionsWrapperStyleQueryString>
 
@@ -228,6 +242,8 @@ export interface SitePageConnectionPluginCreatorPluginOptionsInputObject {
   classPrefix?: Maybe<SitePageConnectionPluginCreatorPluginOptionsClassPrefixQueryString>
 
   pathCheck?: Maybe<SitePageConnectionPluginCreatorPluginOptionsPathCheckQueryBoolean>
+
+  apiKey?: Maybe<SitePageConnectionPluginCreatorPluginOptionsApiKeyQueryString>
 }
 
 export interface SitePageConnectionPluginCreatorPluginOptionsPluginsQueryList {
@@ -317,6 +333,10 @@ export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOption
     SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger
   >
 
+  quality?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsQualityQueryInteger
+  >
+
   wrapperStyle?: Maybe<
     SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsWrapperStyleQueryString
   >
@@ -375,6 +395,24 @@ export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOption
 }
 
 export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsQualityQueryInteger {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -534,6 +572,134 @@ export interface SitePageConnectionPluginCreatorPluginOptionsPathQueryString {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
+export interface SitePageConnectionPluginCreatorPluginOptionsClientIdQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsClientSecretQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsTokenEndpointQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsQueryQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsFeedsQueryList {
+  elemMatch?: Maybe<SitePageConnectionPluginCreatorPluginOptionsFeedsInputObject>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsFeedsInputObject {
+  query?: Maybe<SitePageConnectionPluginCreatorPluginOptionsFeedsQueryQueryString>
+
+  output?: Maybe<SitePageConnectionPluginCreatorPluginOptionsFeedsOutputQueryString>
+
+  title?: Maybe<SitePageConnectionPluginCreatorPluginOptionsFeedsTitleQueryString>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsFeedsQueryQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsFeedsOutputQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsFeedsTitleQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsDefaultQualityQueryInteger {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
 export interface SitePageConnectionPluginCreatorPluginOptionsTargetQueryString {
   eq?: Maybe<string>
 
@@ -563,6 +729,24 @@ export interface SitePageConnectionPluginCreatorPluginOptionsRelQueryString {
 }
 
 export interface SitePageConnectionPluginCreatorPluginOptionsMaxWidthQueryInteger {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsQualityQueryInteger {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -674,6 +858,20 @@ export interface SitePageConnectionPluginCreatorPluginOptionsPathCheckQueryBoole
   in?: Maybe<(Maybe<boolean>)[]>
 
   nin?: Maybe<(Maybe<boolean>)[]>
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsApiKeyQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
 }
 
 export interface SitePageConnectionPluginCreatorNodeApIsQueryList {
@@ -1217,11 +1415,25 @@ export interface SitePluginConnectionPluginOptionsInputObject_2 {
 
   path?: Maybe<SitePluginConnectionPluginOptionsPathQueryString_2>
 
+  clientId?: Maybe<SitePluginConnectionPluginOptionsClientIdQueryString_2>
+
+  clientSecret?: Maybe<SitePluginConnectionPluginOptionsClientSecretQueryString_2>
+
+  tokenEndpoint?: Maybe<SitePluginConnectionPluginOptionsTokenEndpointQueryString_2>
+
+  query?: Maybe<SitePluginConnectionPluginOptionsQueryQueryString_2>
+
+  feeds?: Maybe<SitePluginConnectionPluginOptionsFeedsQueryList_2>
+
+  defaultQuality?: Maybe<SitePluginConnectionPluginOptionsDefaultQualityQueryInteger_2>
+
   target?: Maybe<SitePluginConnectionPluginOptionsTargetQueryString_2>
 
   rel?: Maybe<SitePluginConnectionPluginOptionsRelQueryString_2>
 
   maxWidth?: Maybe<SitePluginConnectionPluginOptionsMaxWidthQueryInteger_2>
+
+  quality?: Maybe<SitePluginConnectionPluginOptionsQualityQueryInteger_2>
 
   wrapperStyle?: Maybe<SitePluginConnectionPluginOptionsWrapperStyleQueryString_2>
 
@@ -1238,6 +1450,8 @@ export interface SitePluginConnectionPluginOptionsInputObject_2 {
   classPrefix?: Maybe<SitePluginConnectionPluginOptionsClassPrefixQueryString_2>
 
   pathCheck?: Maybe<SitePluginConnectionPluginOptionsPathCheckQueryBoolean_2>
+
+  apiKey?: Maybe<SitePluginConnectionPluginOptionsApiKeyQueryString_2>
 }
 
 export interface SitePluginConnectionPluginOptionsPluginsQueryList_2 {
@@ -1323,6 +1537,8 @@ export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsInputObjec
 
   maxWidth?: Maybe<SitePluginConnectionPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2>
 
+  quality?: Maybe<SitePluginConnectionPluginOptionsPluginsPluginOptionsQualityQueryInteger_2>
+
   wrapperStyle?: Maybe<
     SitePluginConnectionPluginOptionsPluginsPluginOptionsWrapperStyleQueryString_2
   >
@@ -1375,6 +1591,24 @@ export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsRelQuerySt
 }
 
 export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsQualityQueryInteger_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -1534,6 +1768,134 @@ export interface SitePluginConnectionPluginOptionsPathQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
+export interface SitePluginConnectionPluginOptionsClientIdQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginConnectionPluginOptionsClientSecretQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginConnectionPluginOptionsTokenEndpointQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginConnectionPluginOptionsQueryQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginConnectionPluginOptionsFeedsQueryList_2 {
+  elemMatch?: Maybe<SitePluginConnectionPluginOptionsFeedsInputObject_2>
+}
+
+export interface SitePluginConnectionPluginOptionsFeedsInputObject_2 {
+  query?: Maybe<SitePluginConnectionPluginOptionsFeedsQueryQueryString_2>
+
+  output?: Maybe<SitePluginConnectionPluginOptionsFeedsOutputQueryString_2>
+
+  title?: Maybe<SitePluginConnectionPluginOptionsFeedsTitleQueryString_2>
+}
+
+export interface SitePluginConnectionPluginOptionsFeedsQueryQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginConnectionPluginOptionsFeedsOutputQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginConnectionPluginOptionsFeedsTitleQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginConnectionPluginOptionsDefaultQualityQueryInteger_2 {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
 export interface SitePluginConnectionPluginOptionsTargetQueryString_2 {
   eq?: Maybe<string>
 
@@ -1563,6 +1925,24 @@ export interface SitePluginConnectionPluginOptionsRelQueryString_2 {
 }
 
 export interface SitePluginConnectionPluginOptionsMaxWidthQueryInteger_2 {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
+export interface SitePluginConnectionPluginOptionsQualityQueryInteger_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -1674,6 +2054,20 @@ export interface SitePluginConnectionPluginOptionsPathCheckQueryBoolean_2 {
   in?: Maybe<(Maybe<boolean>)[]>
 
   nin?: Maybe<(Maybe<boolean>)[]>
+}
+
+export interface SitePluginConnectionPluginOptionsApiKeyQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
 }
 
 export interface SitePluginConnectionNodeApIsQueryList_2 {
@@ -2059,7 +2453,7 @@ export interface FilterDirectory {
 
   relativeDirectory?: Maybe<DirectoryConnectionRelativeDirectoryQueryString_2>
 
-  dev?: Maybe<DirectoryConnectionDevQueryInteger_2>
+  dev?: Maybe<DirectoryConnectionDevQueryFloat_2>
 
   mode?: Maybe<DirectoryConnectionModeQueryInteger_2>
 
@@ -2071,11 +2465,7 @@ export interface FilterDirectory {
 
   rdev?: Maybe<DirectoryConnectionRdevQueryInteger_2>
 
-  blksize?: Maybe<DirectoryConnectionBlksizeQueryInteger_2>
-
   ino?: Maybe<DirectoryConnectionInoQueryFloat_2>
-
-  blocks?: Maybe<DirectoryConnectionBlocksQueryInteger_2>
 
   atimeMs?: Maybe<DirectoryConnectionAtimeMsQueryFloat_2>
 
@@ -2402,7 +2792,7 @@ export interface DirectoryConnectionRelativeDirectoryQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
-export interface DirectoryConnectionDevQueryInteger_2 {
+export interface DirectoryConnectionDevQueryFloat_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -2510,43 +2900,7 @@ export interface DirectoryConnectionRdevQueryInteger_2 {
   nin?: Maybe<(Maybe<number>)[]>
 }
 
-export interface DirectoryConnectionBlksizeQueryInteger_2 {
-  eq?: Maybe<number>
-
-  ne?: Maybe<number>
-
-  gt?: Maybe<number>
-
-  gte?: Maybe<number>
-
-  lt?: Maybe<number>
-
-  lte?: Maybe<number>
-
-  in?: Maybe<(Maybe<number>)[]>
-
-  nin?: Maybe<(Maybe<number>)[]>
-}
-
 export interface DirectoryConnectionInoQueryFloat_2 {
-  eq?: Maybe<number>
-
-  ne?: Maybe<number>
-
-  gt?: Maybe<number>
-
-  gte?: Maybe<number>
-
-  lt?: Maybe<number>
-
-  lte?: Maybe<number>
-
-  in?: Maybe<(Maybe<number>)[]>
-
-  nin?: Maybe<(Maybe<number>)[]>
-}
-
-export interface DirectoryConnectionBlocksQueryInteger_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -2735,7 +3089,7 @@ export interface FilterFile {
 
   relativeDirectory?: Maybe<FileConnectionRelativeDirectoryQueryString_2>
 
-  dev?: Maybe<FileConnectionDevQueryInteger_2>
+  dev?: Maybe<FileConnectionDevQueryFloat_2>
 
   mode?: Maybe<FileConnectionModeQueryInteger_2>
 
@@ -2747,11 +3101,7 @@ export interface FilterFile {
 
   rdev?: Maybe<FileConnectionRdevQueryInteger_2>
 
-  blksize?: Maybe<FileConnectionBlksizeQueryInteger_2>
-
   ino?: Maybe<FileConnectionInoQueryFloat_2>
-
-  blocks?: Maybe<FileConnectionBlocksQueryInteger_2>
 
   atimeMs?: Maybe<FileConnectionAtimeMsQueryFloat_2>
 
@@ -3096,7 +3446,7 @@ export interface FileConnectionRelativeDirectoryQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
-export interface FileConnectionDevQueryInteger_2 {
+export interface FileConnectionDevQueryFloat_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -3204,43 +3554,7 @@ export interface FileConnectionRdevQueryInteger_2 {
   nin?: Maybe<(Maybe<number>)[]>
 }
 
-export interface FileConnectionBlksizeQueryInteger_2 {
-  eq?: Maybe<number>
-
-  ne?: Maybe<number>
-
-  gt?: Maybe<number>
-
-  gte?: Maybe<number>
-
-  lt?: Maybe<number>
-
-  lte?: Maybe<number>
-
-  in?: Maybe<(Maybe<number>)[]>
-
-  nin?: Maybe<(Maybe<number>)[]>
-}
-
 export interface FileConnectionInoQueryFloat_2 {
-  eq?: Maybe<number>
-
-  ne?: Maybe<number>
-
-  gt?: Maybe<number>
-
-  gte?: Maybe<number>
-
-  lt?: Maybe<number>
-
-  lte?: Maybe<number>
-
-  in?: Maybe<(Maybe<number>)[]>
-
-  nin?: Maybe<(Maybe<number>)[]>
-}
-
-export interface FileConnectionBlocksQueryInteger_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -5909,6 +6223,8 @@ export interface MarkdownRemarkConnectionFrontmatterInputObject_2 {
 
   social?: Maybe<MarkdownRemarkConnectionFrontmatterSocialInputObject_2>
 
+  tags?: Maybe<MarkdownRemarkConnectionFrontmatterTagsQueryList_2>
+
   alumni?: Maybe<MarkdownRemarkConnectionFrontmatterAlumniQueryBoolean_2>
 
   href?: Maybe<MarkdownRemarkConnectionFrontmatterHrefQueryString_2>
@@ -5920,8 +6236,6 @@ export interface MarkdownRemarkConnectionFrontmatterInputObject_2 {
   section1?: Maybe<MarkdownRemarkConnectionFrontmatterSection1InputObject_2>
 
   section2?: Maybe<MarkdownRemarkConnectionFrontmatterSection2InputObject_2>
-
-  images?: Maybe<MarkdownRemarkConnectionFrontmatterImagesQueryList_2>
 
   section3?: Maybe<MarkdownRemarkConnectionFrontmatterSection3InputObject_2>
 
@@ -5937,7 +6251,7 @@ export interface MarkdownRemarkConnectionFrontmatterInputObject_2 {
 
   schema?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaQueryList_2>
 
-  tags?: Maybe<MarkdownRemarkConnectionFrontmatterTagsQueryList_2>
+  images?: Maybe<MarkdownRemarkConnectionFrontmatterImagesQueryList_2>
 }
 
 export interface MarkdownRemarkConnectionFrontmatterTitleQueryString_2 {
@@ -6089,9 +6403,9 @@ export interface MarkdownRemarkConnectionFrontmatterSocialInputObject_2 {
 
   twitter?: Maybe<MarkdownRemarkConnectionFrontmatterSocialTwitterQueryString_2>
 
-  github?: Maybe<MarkdownRemarkConnectionFrontmatterSocialGithubQueryString_2>
-
   keybase?: Maybe<MarkdownRemarkConnectionFrontmatterSocialKeybaseQueryString_2>
+
+  github?: Maybe<MarkdownRemarkConnectionFrontmatterSocialGithubQueryString_2>
 
   microblog?: Maybe<MarkdownRemarkConnectionFrontmatterSocialMicroblogQueryString_2>
 }
@@ -6124,20 +6438,6 @@ export interface MarkdownRemarkConnectionFrontmatterSocialTwitterQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
-export interface MarkdownRemarkConnectionFrontmatterSocialGithubQueryString_2 {
-  eq?: Maybe<string>
-
-  ne?: Maybe<string>
-
-  regex?: Maybe<string>
-
-  glob?: Maybe<string>
-
-  in?: Maybe<(Maybe<string>)[]>
-
-  nin?: Maybe<(Maybe<string>)[]>
-}
-
 export interface MarkdownRemarkConnectionFrontmatterSocialKeybaseQueryString_2 {
   eq?: Maybe<string>
 
@@ -6152,7 +6452,35 @@ export interface MarkdownRemarkConnectionFrontmatterSocialKeybaseQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
+export interface MarkdownRemarkConnectionFrontmatterSocialGithubQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
 export interface MarkdownRemarkConnectionFrontmatterSocialMicroblogQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface MarkdownRemarkConnectionFrontmatterTagsQueryList_2 {
   eq?: Maybe<string>
 
   ne?: Maybe<string>
@@ -6318,20 +6646,6 @@ export interface MarkdownRemarkConnectionFrontmatterSection2SubheadingQueryStrin
   nin?: Maybe<(Maybe<string>)[]>
 }
 
-export interface MarkdownRemarkConnectionFrontmatterImagesQueryList_2 {
-  eq?: Maybe<string>
-
-  ne?: Maybe<string>
-
-  regex?: Maybe<string>
-
-  glob?: Maybe<string>
-
-  in?: Maybe<(Maybe<string>)[]>
-
-  nin?: Maybe<(Maybe<string>)[]>
-}
-
 export interface MarkdownRemarkConnectionFrontmatterSection3InputObject_2 {
   heading?: Maybe<MarkdownRemarkConnectionFrontmatterSection3HeadingQueryString_2>
 }
@@ -6425,6 +6739,8 @@ export interface MarkdownRemarkConnectionFrontmatterSchemaQueryList_2 {
 }
 
 export interface MarkdownRemarkConnectionFrontmatterSchemaInputObject_2 {
+  details?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaDetailsQueryString_2>
+
   type?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaTypeQueryString_2>
 
   title?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaTitleQueryString_2>
@@ -6433,17 +6749,29 @@ export interface MarkdownRemarkConnectionFrontmatterSchemaInputObject_2 {
 
   end?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaEndQueryString_2>
 
+  presenters?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaPresentersQueryList_2>
+
   href?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaHrefQueryString_2>
 
   location?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaLocationInputObject_2>
 
-  details?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaDetailsQueryString_2>
-
-  presenters?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaPresentersQueryList_2>
-
   presentation?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaPresentationQueryString_2>
 
   winner?: Maybe<MarkdownRemarkConnectionFrontmatterSchemaWinnerQueryBoolean_2>
+}
+
+export interface MarkdownRemarkConnectionFrontmatterSchemaDetailsQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
 }
 
 export interface MarkdownRemarkConnectionFrontmatterSchemaTypeQueryString_2 {
@@ -6489,6 +6817,20 @@ export interface MarkdownRemarkConnectionFrontmatterSchemaStartQueryString_2 {
 }
 
 export interface MarkdownRemarkConnectionFrontmatterSchemaEndQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface MarkdownRemarkConnectionFrontmatterSchemaPresentersQueryList_2 {
   eq?: Maybe<string>
 
   ne?: Maybe<string>
@@ -6554,34 +6896,6 @@ export interface MarkdownRemarkConnectionFrontmatterSchemaLocationTitleQueryStri
   nin?: Maybe<(Maybe<string>)[]>
 }
 
-export interface MarkdownRemarkConnectionFrontmatterSchemaDetailsQueryString_2 {
-  eq?: Maybe<string>
-
-  ne?: Maybe<string>
-
-  regex?: Maybe<string>
-
-  glob?: Maybe<string>
-
-  in?: Maybe<(Maybe<string>)[]>
-
-  nin?: Maybe<(Maybe<string>)[]>
-}
-
-export interface MarkdownRemarkConnectionFrontmatterSchemaPresentersQueryList_2 {
-  eq?: Maybe<string>
-
-  ne?: Maybe<string>
-
-  regex?: Maybe<string>
-
-  glob?: Maybe<string>
-
-  in?: Maybe<(Maybe<string>)[]>
-
-  nin?: Maybe<(Maybe<string>)[]>
-}
-
 export interface MarkdownRemarkConnectionFrontmatterSchemaPresentationQueryString_2 {
   eq?: Maybe<string>
 
@@ -6606,7 +6920,7 @@ export interface MarkdownRemarkConnectionFrontmatterSchemaWinnerQueryBoolean_2 {
   nin?: Maybe<(Maybe<boolean>)[]>
 }
 
-export interface MarkdownRemarkConnectionFrontmatterTagsQueryList_2 {
+export interface MarkdownRemarkConnectionFrontmatterImagesQueryList_2 {
   eq?: Maybe<string>
 
   ne?: Maybe<string>
@@ -6846,6 +7160,242 @@ export interface WordCountWordsQueryInt_4 {
   nin?: Maybe<(Maybe<number>)[]>
 }
 
+export interface O365UserConnectionSort {
+  fields: (Maybe<O365UserConnectionSortByFieldsEnum>)[]
+
+  order?: (Maybe<O365UserConnectionSortOrderValues>)[]
+}
+/** Filter connection on its fields */
+export interface FilterO365User {
+  businessPhones?: Maybe<O365UserConnectionBusinessPhonesQueryList_2>
+
+  displayName?: Maybe<O365UserConnectionDisplayNameQueryString_2>
+
+  givenName?: Maybe<O365UserConnectionGivenNameQueryString_2>
+
+  mail?: Maybe<O365UserConnectionMailQueryString_2>
+
+  mobilePhone?: Maybe<O365UserConnectionMobilePhoneQueryString_2>
+
+  officeLocation?: Maybe<O365UserConnectionOfficeLocationQueryString_2>
+
+  preferredLanguage?: Maybe<O365UserConnectionPreferredLanguageQueryString_2>
+
+  surname?: Maybe<O365UserConnectionSurnameQueryString_2>
+
+  userPrincipalName?: Maybe<O365UserConnectionUserPrincipalNameQueryString_2>
+
+  id?: Maybe<O365UserConnectionIdQueryString_2>
+
+  internal?: Maybe<O365UserConnectionInternalInputObject_2>
+}
+
+export interface O365UserConnectionBusinessPhonesQueryList_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionDisplayNameQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionGivenNameQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionMailQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionMobilePhoneQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionOfficeLocationQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionPreferredLanguageQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionSurnameQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionUserPrincipalNameQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionIdQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionInternalInputObject_2 {
+  type?: Maybe<O365UserConnectionInternalTypeQueryString_2>
+
+  content?: Maybe<O365UserConnectionInternalContentQueryString_2>
+
+  contentDigest?: Maybe<O365UserConnectionInternalContentDigestQueryString_2>
+
+  owner?: Maybe<O365UserConnectionInternalOwnerQueryString_2>
+}
+
+export interface O365UserConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionInternalContentQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
 export interface SitePageJsonNameQueryString {
   eq?: Maybe<string>
 
@@ -7021,11 +7571,25 @@ export interface SitePagePluginCreatorPluginOptionsInputObject {
 
   path?: Maybe<SitePagePluginCreatorPluginOptionsPathQueryString>
 
+  clientId?: Maybe<SitePagePluginCreatorPluginOptionsClientIdQueryString>
+
+  clientSecret?: Maybe<SitePagePluginCreatorPluginOptionsClientSecretQueryString>
+
+  tokenEndpoint?: Maybe<SitePagePluginCreatorPluginOptionsTokenEndpointQueryString>
+
+  query?: Maybe<SitePagePluginCreatorPluginOptionsQueryQueryString>
+
+  feeds?: Maybe<SitePagePluginCreatorPluginOptionsFeedsQueryList>
+
+  defaultQuality?: Maybe<SitePagePluginCreatorPluginOptionsDefaultQualityQueryInteger>
+
   target?: Maybe<SitePagePluginCreatorPluginOptionsTargetQueryString>
 
   rel?: Maybe<SitePagePluginCreatorPluginOptionsRelQueryString>
 
   maxWidth?: Maybe<SitePagePluginCreatorPluginOptionsMaxWidthQueryInteger>
+
+  quality?: Maybe<SitePagePluginCreatorPluginOptionsQualityQueryInteger>
 
   wrapperStyle?: Maybe<SitePagePluginCreatorPluginOptionsWrapperStyleQueryString>
 
@@ -7042,6 +7606,8 @@ export interface SitePagePluginCreatorPluginOptionsInputObject {
   classPrefix?: Maybe<SitePagePluginCreatorPluginOptionsClassPrefixQueryString>
 
   pathCheck?: Maybe<SitePagePluginCreatorPluginOptionsPathCheckQueryBoolean>
+
+  apiKey?: Maybe<SitePagePluginCreatorPluginOptionsApiKeyQueryString>
 }
 
 export interface SitePagePluginCreatorPluginOptionsPluginsQueryList {
@@ -7127,6 +7693,8 @@ export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsInputObje
 
   maxWidth?: Maybe<SitePagePluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger>
 
+  quality?: Maybe<SitePagePluginCreatorPluginOptionsPluginsPluginOptionsQualityQueryInteger>
+
   wrapperStyle?: Maybe<
     SitePagePluginCreatorPluginOptionsPluginsPluginOptionsWrapperStyleQueryString
   >
@@ -7179,6 +7747,24 @@ export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsRelQueryS
 }
 
 export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsQualityQueryInteger {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -7338,6 +7924,134 @@ export interface SitePagePluginCreatorPluginOptionsPathQueryString {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
+export interface SitePagePluginCreatorPluginOptionsClientIdQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePagePluginCreatorPluginOptionsClientSecretQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePagePluginCreatorPluginOptionsTokenEndpointQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePagePluginCreatorPluginOptionsQueryQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePagePluginCreatorPluginOptionsFeedsQueryList {
+  elemMatch?: Maybe<SitePagePluginCreatorPluginOptionsFeedsInputObject>
+}
+
+export interface SitePagePluginCreatorPluginOptionsFeedsInputObject {
+  query?: Maybe<SitePagePluginCreatorPluginOptionsFeedsQueryQueryString>
+
+  output?: Maybe<SitePagePluginCreatorPluginOptionsFeedsOutputQueryString>
+
+  title?: Maybe<SitePagePluginCreatorPluginOptionsFeedsTitleQueryString>
+}
+
+export interface SitePagePluginCreatorPluginOptionsFeedsQueryQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePagePluginCreatorPluginOptionsFeedsOutputQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePagePluginCreatorPluginOptionsFeedsTitleQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePagePluginCreatorPluginOptionsDefaultQualityQueryInteger {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
 export interface SitePagePluginCreatorPluginOptionsTargetQueryString {
   eq?: Maybe<string>
 
@@ -7367,6 +8081,24 @@ export interface SitePagePluginCreatorPluginOptionsRelQueryString {
 }
 
 export interface SitePagePluginCreatorPluginOptionsMaxWidthQueryInteger {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
+export interface SitePagePluginCreatorPluginOptionsQualityQueryInteger {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -7478,6 +8210,20 @@ export interface SitePagePluginCreatorPluginOptionsPathCheckQueryBoolean {
   in?: Maybe<(Maybe<boolean>)[]>
 
   nin?: Maybe<(Maybe<boolean>)[]>
+}
+
+export interface SitePagePluginCreatorPluginOptionsApiKeyQueryString {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
 }
 
 export interface SitePagePluginCreatorNodeApIsQueryList {
@@ -7991,11 +8737,25 @@ export interface SitePluginPluginOptionsInputObject_2 {
 
   path?: Maybe<SitePluginPluginOptionsPathQueryString_2>
 
+  clientId?: Maybe<SitePluginPluginOptionsClientIdQueryString_2>
+
+  clientSecret?: Maybe<SitePluginPluginOptionsClientSecretQueryString_2>
+
+  tokenEndpoint?: Maybe<SitePluginPluginOptionsTokenEndpointQueryString_2>
+
+  query?: Maybe<SitePluginPluginOptionsQueryQueryString_2>
+
+  feeds?: Maybe<SitePluginPluginOptionsFeedsQueryList_2>
+
+  defaultQuality?: Maybe<SitePluginPluginOptionsDefaultQualityQueryInteger_2>
+
   target?: Maybe<SitePluginPluginOptionsTargetQueryString_2>
 
   rel?: Maybe<SitePluginPluginOptionsRelQueryString_2>
 
   maxWidth?: Maybe<SitePluginPluginOptionsMaxWidthQueryInteger_2>
+
+  quality?: Maybe<SitePluginPluginOptionsQualityQueryInteger_2>
 
   wrapperStyle?: Maybe<SitePluginPluginOptionsWrapperStyleQueryString_2>
 
@@ -8012,6 +8772,8 @@ export interface SitePluginPluginOptionsInputObject_2 {
   classPrefix?: Maybe<SitePluginPluginOptionsClassPrefixQueryString_2>
 
   pathCheck?: Maybe<SitePluginPluginOptionsPathCheckQueryBoolean_2>
+
+  apiKey?: Maybe<SitePluginPluginOptionsApiKeyQueryString_2>
 }
 
 export interface SitePluginPluginOptionsPluginsQueryList_2 {
@@ -8097,6 +8859,8 @@ export interface SitePluginPluginOptionsPluginsPluginOptionsInputObject_2 {
 
   maxWidth?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2>
 
+  quality?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsQualityQueryInteger_2>
+
   wrapperStyle?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsWrapperStyleQueryString_2>
 
   backgroundColor?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2>
@@ -8143,6 +8907,24 @@ export interface SitePluginPluginOptionsPluginsPluginOptionsRelQueryString_2 {
 }
 
 export interface SitePluginPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
+export interface SitePluginPluginOptionsPluginsPluginOptionsQualityQueryInteger_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -8302,6 +9084,134 @@ export interface SitePluginPluginOptionsPathQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
+export interface SitePluginPluginOptionsClientIdQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginPluginOptionsClientSecretQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginPluginOptionsTokenEndpointQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginPluginOptionsQueryQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginPluginOptionsFeedsQueryList_2 {
+  elemMatch?: Maybe<SitePluginPluginOptionsFeedsInputObject_2>
+}
+
+export interface SitePluginPluginOptionsFeedsInputObject_2 {
+  query?: Maybe<SitePluginPluginOptionsFeedsQueryQueryString_2>
+
+  output?: Maybe<SitePluginPluginOptionsFeedsOutputQueryString_2>
+
+  title?: Maybe<SitePluginPluginOptionsFeedsTitleQueryString_2>
+}
+
+export interface SitePluginPluginOptionsFeedsQueryQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginPluginOptionsFeedsOutputQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginPluginOptionsFeedsTitleQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SitePluginPluginOptionsDefaultQualityQueryInteger_2 {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
 export interface SitePluginPluginOptionsTargetQueryString_2 {
   eq?: Maybe<string>
 
@@ -8331,6 +9241,24 @@ export interface SitePluginPluginOptionsRelQueryString_2 {
 }
 
 export interface SitePluginPluginOptionsMaxWidthQueryInteger_2 {
+  eq?: Maybe<number>
+
+  ne?: Maybe<number>
+
+  gt?: Maybe<number>
+
+  gte?: Maybe<number>
+
+  lt?: Maybe<number>
+
+  lte?: Maybe<number>
+
+  in?: Maybe<(Maybe<number>)[]>
+
+  nin?: Maybe<(Maybe<number>)[]>
+}
+
+export interface SitePluginPluginOptionsQualityQueryInteger_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -8442,6 +9370,20 @@ export interface SitePluginPluginOptionsPathCheckQueryBoolean_2 {
   in?: Maybe<(Maybe<boolean>)[]>
 
   nin?: Maybe<(Maybe<boolean>)[]>
+}
+
+export interface SitePluginPluginOptionsApiKeyQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
 }
 
 export interface SitePluginNodeApIsQueryList_2 {
@@ -8771,6 +9713,56 @@ export interface SitePluginInternalTypeQueryString_2 {
 }
 
 export interface SitePluginInternalOwnerQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SiteSiteMetadataInputObject_2 {
+  siteUrl?: Maybe<SiteSiteMetadataSiteUrlQueryString_2>
+
+  rssBlogTitle?: Maybe<SiteSiteMetadataRssBlogTitleQueryString_2>
+
+  rssBlogDescription?: Maybe<SiteSiteMetadataRssBlogDescriptionQueryString_2>
+}
+
+export interface SiteSiteMetadataSiteUrlQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SiteSiteMetadataRssBlogTitleQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface SiteSiteMetadataRssBlogDescriptionQueryString_2 {
   eq?: Maybe<string>
 
   ne?: Maybe<string>
@@ -9222,7 +10214,7 @@ export interface DirectoryRelativeDirectoryQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
-export interface DirectoryDevQueryInteger_2 {
+export interface DirectoryDevQueryFloat_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -9330,43 +10322,7 @@ export interface DirectoryRdevQueryInteger_2 {
   nin?: Maybe<(Maybe<number>)[]>
 }
 
-export interface DirectoryBlksizeQueryInteger_2 {
-  eq?: Maybe<number>
-
-  ne?: Maybe<number>
-
-  gt?: Maybe<number>
-
-  gte?: Maybe<number>
-
-  lt?: Maybe<number>
-
-  lte?: Maybe<number>
-
-  in?: Maybe<(Maybe<number>)[]>
-
-  nin?: Maybe<(Maybe<number>)[]>
-}
-
 export interface DirectoryInoQueryFloat_2 {
-  eq?: Maybe<number>
-
-  ne?: Maybe<number>
-
-  gt?: Maybe<number>
-
-  gte?: Maybe<number>
-
-  lt?: Maybe<number>
-
-  lte?: Maybe<number>
-
-  in?: Maybe<(Maybe<number>)[]>
-
-  nin?: Maybe<(Maybe<number>)[]>
-}
-
-export interface DirectoryBlocksQueryInteger_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -9836,7 +10792,7 @@ export interface FileRelativeDirectoryQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
-export interface FileDevQueryInteger_2 {
+export interface FileDevQueryFloat_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -9944,43 +10900,7 @@ export interface FileRdevQueryInteger_2 {
   nin?: Maybe<(Maybe<number>)[]>
 }
 
-export interface FileBlksizeQueryInteger_2 {
-  eq?: Maybe<number>
-
-  ne?: Maybe<number>
-
-  gt?: Maybe<number>
-
-  gte?: Maybe<number>
-
-  lt?: Maybe<number>
-
-  lte?: Maybe<number>
-
-  in?: Maybe<(Maybe<number>)[]>
-
-  nin?: Maybe<(Maybe<number>)[]>
-}
-
 export interface FileInoQueryFloat_2 {
-  eq?: Maybe<number>
-
-  ne?: Maybe<number>
-
-  gt?: Maybe<number>
-
-  gte?: Maybe<number>
-
-  lt?: Maybe<number>
-
-  lte?: Maybe<number>
-
-  in?: Maybe<(Maybe<number>)[]>
-
-  nin?: Maybe<(Maybe<number>)[]>
-}
-
-export interface FileBlocksQueryInteger_2 {
   eq?: Maybe<number>
 
   ne?: Maybe<number>
@@ -12507,6 +13427,8 @@ export interface MarkdownRemarkFrontmatterInputObject_2 {
 
   social?: Maybe<MarkdownRemarkFrontmatterSocialInputObject_2>
 
+  tags?: Maybe<MarkdownRemarkFrontmatterTagsQueryList_2>
+
   alumni?: Maybe<MarkdownRemarkFrontmatterAlumniQueryBoolean_2>
 
   href?: Maybe<MarkdownRemarkFrontmatterHrefQueryString_2>
@@ -12518,8 +13440,6 @@ export interface MarkdownRemarkFrontmatterInputObject_2 {
   section1?: Maybe<MarkdownRemarkFrontmatterSection1InputObject_2>
 
   section2?: Maybe<MarkdownRemarkFrontmatterSection2InputObject_2>
-
-  images?: Maybe<MarkdownRemarkFrontmatterImagesQueryList_2>
 
   section3?: Maybe<MarkdownRemarkFrontmatterSection3InputObject_2>
 
@@ -12535,7 +13455,7 @@ export interface MarkdownRemarkFrontmatterInputObject_2 {
 
   schema?: Maybe<MarkdownRemarkFrontmatterSchemaQueryList_2>
 
-  tags?: Maybe<MarkdownRemarkFrontmatterTagsQueryList_2>
+  images?: Maybe<MarkdownRemarkFrontmatterImagesQueryList_2>
 }
 
 export interface MarkdownRemarkFrontmatterTitleQueryString_2 {
@@ -12687,9 +13607,9 @@ export interface MarkdownRemarkFrontmatterSocialInputObject_2 {
 
   twitter?: Maybe<MarkdownRemarkFrontmatterSocialTwitterQueryString_2>
 
-  github?: Maybe<MarkdownRemarkFrontmatterSocialGithubQueryString_2>
-
   keybase?: Maybe<MarkdownRemarkFrontmatterSocialKeybaseQueryString_2>
+
+  github?: Maybe<MarkdownRemarkFrontmatterSocialGithubQueryString_2>
 
   microblog?: Maybe<MarkdownRemarkFrontmatterSocialMicroblogQueryString_2>
 }
@@ -12722,20 +13642,6 @@ export interface MarkdownRemarkFrontmatterSocialTwitterQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
-export interface MarkdownRemarkFrontmatterSocialGithubQueryString_2 {
-  eq?: Maybe<string>
-
-  ne?: Maybe<string>
-
-  regex?: Maybe<string>
-
-  glob?: Maybe<string>
-
-  in?: Maybe<(Maybe<string>)[]>
-
-  nin?: Maybe<(Maybe<string>)[]>
-}
-
 export interface MarkdownRemarkFrontmatterSocialKeybaseQueryString_2 {
   eq?: Maybe<string>
 
@@ -12750,7 +13656,35 @@ export interface MarkdownRemarkFrontmatterSocialKeybaseQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
+export interface MarkdownRemarkFrontmatterSocialGithubQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
 export interface MarkdownRemarkFrontmatterSocialMicroblogQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface MarkdownRemarkFrontmatterTagsQueryList_2 {
   eq?: Maybe<string>
 
   ne?: Maybe<string>
@@ -12916,20 +13850,6 @@ export interface MarkdownRemarkFrontmatterSection2SubheadingQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
-export interface MarkdownRemarkFrontmatterImagesQueryList_2 {
-  eq?: Maybe<string>
-
-  ne?: Maybe<string>
-
-  regex?: Maybe<string>
-
-  glob?: Maybe<string>
-
-  in?: Maybe<(Maybe<string>)[]>
-
-  nin?: Maybe<(Maybe<string>)[]>
-}
-
 export interface MarkdownRemarkFrontmatterSection3InputObject_2 {
   heading?: Maybe<MarkdownRemarkFrontmatterSection3HeadingQueryString_2>
 }
@@ -13023,6 +13943,8 @@ export interface MarkdownRemarkFrontmatterSchemaQueryList_2 {
 }
 
 export interface MarkdownRemarkFrontmatterSchemaInputObject_2 {
+  details?: Maybe<MarkdownRemarkFrontmatterSchemaDetailsQueryString_2>
+
   type?: Maybe<MarkdownRemarkFrontmatterSchemaTypeQueryString_2>
 
   title?: Maybe<MarkdownRemarkFrontmatterSchemaTitleQueryString_2>
@@ -13031,17 +13953,29 @@ export interface MarkdownRemarkFrontmatterSchemaInputObject_2 {
 
   end?: Maybe<MarkdownRemarkFrontmatterSchemaEndQueryString_2>
 
+  presenters?: Maybe<MarkdownRemarkFrontmatterSchemaPresentersQueryList_2>
+
   href?: Maybe<MarkdownRemarkFrontmatterSchemaHrefQueryString_2>
 
   location?: Maybe<MarkdownRemarkFrontmatterSchemaLocationInputObject_2>
 
-  details?: Maybe<MarkdownRemarkFrontmatterSchemaDetailsQueryString_2>
-
-  presenters?: Maybe<MarkdownRemarkFrontmatterSchemaPresentersQueryList_2>
-
   presentation?: Maybe<MarkdownRemarkFrontmatterSchemaPresentationQueryString_2>
 
   winner?: Maybe<MarkdownRemarkFrontmatterSchemaWinnerQueryBoolean_2>
+}
+
+export interface MarkdownRemarkFrontmatterSchemaDetailsQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
 }
 
 export interface MarkdownRemarkFrontmatterSchemaTypeQueryString_2 {
@@ -13087,6 +14021,20 @@ export interface MarkdownRemarkFrontmatterSchemaStartQueryString_2 {
 }
 
 export interface MarkdownRemarkFrontmatterSchemaEndQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface MarkdownRemarkFrontmatterSchemaPresentersQueryList_2 {
   eq?: Maybe<string>
 
   ne?: Maybe<string>
@@ -13152,34 +14100,6 @@ export interface MarkdownRemarkFrontmatterSchemaLocationTitleQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>
 }
 
-export interface MarkdownRemarkFrontmatterSchemaDetailsQueryString_2 {
-  eq?: Maybe<string>
-
-  ne?: Maybe<string>
-
-  regex?: Maybe<string>
-
-  glob?: Maybe<string>
-
-  in?: Maybe<(Maybe<string>)[]>
-
-  nin?: Maybe<(Maybe<string>)[]>
-}
-
-export interface MarkdownRemarkFrontmatterSchemaPresentersQueryList_2 {
-  eq?: Maybe<string>
-
-  ne?: Maybe<string>
-
-  regex?: Maybe<string>
-
-  glob?: Maybe<string>
-
-  in?: Maybe<(Maybe<string>)[]>
-
-  nin?: Maybe<(Maybe<string>)[]>
-}
-
 export interface MarkdownRemarkFrontmatterSchemaPresentationQueryString_2 {
   eq?: Maybe<string>
 
@@ -13204,7 +14124,7 @@ export interface MarkdownRemarkFrontmatterSchemaWinnerQueryBoolean_2 {
   nin?: Maybe<(Maybe<boolean>)[]>
 }
 
-export interface MarkdownRemarkFrontmatterTagsQueryList_2 {
+export interface MarkdownRemarkFrontmatterImagesQueryList_2 {
   eq?: Maybe<string>
 
   ne?: Maybe<string>
@@ -13444,6 +14364,212 @@ export interface WordCountWordsQueryInt_3 {
   nin?: Maybe<(Maybe<number>)[]>
 }
 
+export interface O365UserBusinessPhonesQueryList_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserDisplayNameQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserGivenNameQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserMailQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserMobilePhoneQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserOfficeLocationQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserPreferredLanguageQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserSurnameQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserUserPrincipalNameQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserIdQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserInternalInputObject_2 {
+  type?: Maybe<O365UserInternalTypeQueryString_2>
+
+  content?: Maybe<O365UserInternalContentQueryString_2>
+
+  contentDigest?: Maybe<O365UserInternalContentDigestQueryString_2>
+
+  owner?: Maybe<O365UserInternalOwnerQueryString_2>
+}
+
+export interface O365UserInternalTypeQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserInternalContentQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
+export interface O365UserInternalOwnerQueryString_2 {
+  eq?: Maybe<string>
+
+  ne?: Maybe<string>
+
+  regex?: Maybe<string>
+
+  glob?: Maybe<string>
+
+  in?: Maybe<(Maybe<string>)[]>
+
+  nin?: Maybe<(Maybe<string>)[]>
+}
+
 export enum SitePageConnectionSortByFieldsEnum {
   JsonName = "jsonName",
   InternalComponentName = "internalComponentName",
@@ -13508,9 +14634,16 @@ export enum SitePluginConnectionSortByFieldsEnum {
   PluginOptionsPlugins = "pluginOptions___plugins",
   PluginOptionsName = "pluginOptions___name",
   PluginOptionsPath = "pluginOptions___path",
+  PluginOptionsClientId = "pluginOptions___clientId",
+  PluginOptionsClientSecret = "pluginOptions___clientSecret",
+  PluginOptionsTokenEndpoint = "pluginOptions___tokenEndpoint",
+  PluginOptionsQuery = "pluginOptions___query",
+  PluginOptionsFeeds = "pluginOptions___feeds",
+  PluginOptionsDefaultQuality = "pluginOptions___defaultQuality",
   PluginOptionsTarget = "pluginOptions___target",
   PluginOptionsRel = "pluginOptions___rel",
   PluginOptionsMaxWidth = "pluginOptions___maxWidth",
+  PluginOptionsQuality = "pluginOptions___quality",
   PluginOptionsWrapperStyle = "pluginOptions___wrapperStyle",
   PluginOptionsBackgroundColor = "pluginOptions___backgroundColor",
   PluginOptionsLinkImagesToOriginal = "pluginOptions___linkImagesToOriginal",
@@ -13519,6 +14652,7 @@ export enum SitePluginConnectionSortByFieldsEnum {
   PluginOptionsWithWebp = "pluginOptions___withWebp",
   PluginOptionsClassPrefix = "pluginOptions___classPrefix",
   PluginOptionsPathCheck = "pluginOptions___pathCheck",
+  PluginOptionsApiKey = "pluginOptions___apiKey",
   NodeApIs = "nodeAPIs",
   BrowserApIs = "browserAPIs",
   SsrApIs = "ssrAPIs",
@@ -13551,9 +14685,16 @@ export enum SitePluginDistinctEnum {
   PluginOptionsPlugins = "pluginOptions___plugins",
   PluginOptionsName = "pluginOptions___name",
   PluginOptionsPath = "pluginOptions___path",
+  PluginOptionsClientId = "pluginOptions___clientId",
+  PluginOptionsClientSecret = "pluginOptions___clientSecret",
+  PluginOptionsTokenEndpoint = "pluginOptions___tokenEndpoint",
+  PluginOptionsQuery = "pluginOptions___query",
+  PluginOptionsFeeds = "pluginOptions___feeds",
+  PluginOptionsDefaultQuality = "pluginOptions___defaultQuality",
   PluginOptionsTarget = "pluginOptions___target",
   PluginOptionsRel = "pluginOptions___rel",
   PluginOptionsMaxWidth = "pluginOptions___maxWidth",
+  PluginOptionsQuality = "pluginOptions___quality",
   PluginOptionsWrapperStyle = "pluginOptions___wrapperStyle",
   PluginOptionsBackgroundColor = "pluginOptions___backgroundColor",
   PluginOptionsLinkImagesToOriginal = "pluginOptions___linkImagesToOriginal",
@@ -13562,6 +14703,7 @@ export enum SitePluginDistinctEnum {
   PluginOptionsWithWebp = "pluginOptions___withWebp",
   PluginOptionsClassPrefix = "pluginOptions___classPrefix",
   PluginOptionsPathCheck = "pluginOptions___pathCheck",
+  PluginOptionsApiKey = "pluginOptions___apiKey",
   NodeApIs = "nodeAPIs",
   BrowserApIs = "browserAPIs",
   SsrApIs = "ssrAPIs",
@@ -13589,9 +14731,16 @@ export enum SitePluginGroupEnum {
   PluginOptionsPlugins = "pluginOptions___plugins",
   PluginOptionsName = "pluginOptions___name",
   PluginOptionsPath = "pluginOptions___path",
+  PluginOptionsClientId = "pluginOptions___clientId",
+  PluginOptionsClientSecret = "pluginOptions___clientSecret",
+  PluginOptionsTokenEndpoint = "pluginOptions___tokenEndpoint",
+  PluginOptionsQuery = "pluginOptions___query",
+  PluginOptionsFeeds = "pluginOptions___feeds",
+  PluginOptionsDefaultQuality = "pluginOptions___defaultQuality",
   PluginOptionsTarget = "pluginOptions___target",
   PluginOptionsRel = "pluginOptions___rel",
   PluginOptionsMaxWidth = "pluginOptions___maxWidth",
+  PluginOptionsQuality = "pluginOptions___quality",
   PluginOptionsWrapperStyle = "pluginOptions___wrapperStyle",
   PluginOptionsBackgroundColor = "pluginOptions___backgroundColor",
   PluginOptionsLinkImagesToOriginal = "pluginOptions___linkImagesToOriginal",
@@ -13600,6 +14749,7 @@ export enum SitePluginGroupEnum {
   PluginOptionsWithWebp = "pluginOptions___withWebp",
   PluginOptionsClassPrefix = "pluginOptions___classPrefix",
   PluginOptionsPathCheck = "pluginOptions___pathCheck",
+  PluginOptionsApiKey = "pluginOptions___apiKey",
   NodeApIs = "nodeAPIs",
   BrowserApIs = "browserAPIs",
   SsrApIs = "ssrAPIs",
@@ -13647,9 +14797,7 @@ export enum DirectoryConnectionSortByFieldsEnum {
   Uid = "uid",
   Gid = "gid",
   Rdev = "rdev",
-  Blksize = "blksize",
   Ino = "ino",
-  Blocks = "blocks",
   AtimeMs = "atimeMs",
   MtimeMs = "mtimeMs",
   CtimeMs = "ctimeMs",
@@ -13693,9 +14841,7 @@ export enum DirectoryDistinctEnum {
   Uid = "uid",
   Gid = "gid",
   Rdev = "rdev",
-  Blksize = "blksize",
   Ino = "ino",
-  Blocks = "blocks",
   AtimeMs = "atimeMs",
   MtimeMs = "mtimeMs",
   CtimeMs = "ctimeMs",
@@ -13734,9 +14880,7 @@ export enum DirectoryGroupEnum {
   Uid = "uid",
   Gid = "gid",
   Rdev = "rdev",
-  Blksize = "blksize",
   Ino = "ino",
-  Blocks = "blocks",
   AtimeMs = "atimeMs",
   MtimeMs = "mtimeMs",
   CtimeMs = "ctimeMs",
@@ -13777,9 +14921,7 @@ export enum FileConnectionSortByFieldsEnum {
   Uid = "uid",
   Gid = "gid",
   Rdev = "rdev",
-  Blksize = "blksize",
   Ino = "ino",
-  Blocks = "blocks",
   AtimeMs = "atimeMs",
   MtimeMs = "mtimeMs",
   CtimeMs = "ctimeMs",
@@ -13870,9 +15012,7 @@ export enum FileDistinctEnum {
   Uid = "uid",
   Gid = "gid",
   Rdev = "rdev",
-  Blksize = "blksize",
   Ino = "ino",
-  Blocks = "blocks",
   AtimeMs = "atimeMs",
   MtimeMs = "mtimeMs",
   CtimeMs = "ctimeMs",
@@ -13913,9 +15053,7 @@ export enum FileGroupEnum {
   Uid = "uid",
   Gid = "gid",
   Rdev = "rdev",
-  Blksize = "blksize",
   Ino = "ino",
-  Blocks = "blocks",
   AtimeMs = "atimeMs",
   MtimeMs = "mtimeMs",
   CtimeMs = "ctimeMs",
@@ -14225,9 +15363,10 @@ export enum MarkdownRemarkConnectionSortByFieldsEnum {
   FrontmatterEmail = "frontmatter___email",
   FrontmatterSocialLinkedin = "frontmatter___social___linkedin",
   FrontmatterSocialTwitter = "frontmatter___social___twitter",
-  FrontmatterSocialGithub = "frontmatter___social___github",
   FrontmatterSocialKeybase = "frontmatter___social___keybase",
+  FrontmatterSocialGithub = "frontmatter___social___github",
   FrontmatterSocialMicroblog = "frontmatter___social___microblog",
+  FrontmatterTags = "frontmatter___tags",
   FrontmatterAlumni = "frontmatter___alumni",
   FrontmatterHref = "frontmatter___href",
   FrontmatterHeading = "frontmatter___heading",
@@ -14238,7 +15377,6 @@ export enum MarkdownRemarkConnectionSortByFieldsEnum {
   FrontmatterSection2Content = "frontmatter___section2___content",
   FrontmatterSection2Heading = "frontmatter___section2___heading",
   FrontmatterSection2Subheading = "frontmatter___section2___subheading",
-  FrontmatterImages = "frontmatter___images",
   FrontmatterSection3Heading = "frontmatter___section3___heading",
   FrontmatterSection4Heading = "frontmatter___section4___heading",
   FrontmatterLocation = "frontmatter___location",
@@ -14246,7 +15384,7 @@ export enum MarkdownRemarkConnectionSortByFieldsEnum {
   FrontmatterEnd = "frontmatter___end",
   FrontmatterActive = "frontmatter___active",
   FrontmatterSchema = "frontmatter___schema",
-  FrontmatterTags = "frontmatter___tags",
+  FrontmatterImages = "frontmatter___images",
   RawMarkdownBody = "rawMarkdownBody",
   FileAbsolutePath = "fileAbsolutePath",
   FieldsHref = "fields___href",
@@ -14287,9 +15425,10 @@ export enum MarkdownRemarkDistinctEnum {
   FrontmatterEmail = "frontmatter___email",
   FrontmatterSocialLinkedin = "frontmatter___social___linkedin",
   FrontmatterSocialTwitter = "frontmatter___social___twitter",
-  FrontmatterSocialGithub = "frontmatter___social___github",
   FrontmatterSocialKeybase = "frontmatter___social___keybase",
+  FrontmatterSocialGithub = "frontmatter___social___github",
   FrontmatterSocialMicroblog = "frontmatter___social___microblog",
+  FrontmatterTags = "frontmatter___tags",
   FrontmatterAlumni = "frontmatter___alumni",
   FrontmatterHref = "frontmatter___href",
   FrontmatterHeading = "frontmatter___heading",
@@ -14300,7 +15439,6 @@ export enum MarkdownRemarkDistinctEnum {
   FrontmatterSection2Content = "frontmatter___section2___content",
   FrontmatterSection2Heading = "frontmatter___section2___heading",
   FrontmatterSection2Subheading = "frontmatter___section2___subheading",
-  FrontmatterImages = "frontmatter___images",
   FrontmatterSection3Heading = "frontmatter___section3___heading",
   FrontmatterSection4Heading = "frontmatter___section4___heading",
   FrontmatterLocation = "frontmatter___location",
@@ -14308,7 +15446,7 @@ export enum MarkdownRemarkDistinctEnum {
   FrontmatterEnd = "frontmatter___end",
   FrontmatterActive = "frontmatter___active",
   FrontmatterSchema = "frontmatter___schema",
-  FrontmatterTags = "frontmatter___tags",
+  FrontmatterImages = "frontmatter___images",
   RawMarkdownBody = "rawMarkdownBody",
   FileAbsolutePath = "fileAbsolutePath",
   FieldsHref = "fields___href",
@@ -14336,9 +15474,10 @@ export enum MarkdownRemarkGroupEnum {
   FrontmatterEmail = "frontmatter___email",
   FrontmatterSocialLinkedin = "frontmatter___social___linkedin",
   FrontmatterSocialTwitter = "frontmatter___social___twitter",
-  FrontmatterSocialGithub = "frontmatter___social___github",
   FrontmatterSocialKeybase = "frontmatter___social___keybase",
+  FrontmatterSocialGithub = "frontmatter___social___github",
   FrontmatterSocialMicroblog = "frontmatter___social___microblog",
+  FrontmatterTags = "frontmatter___tags",
   FrontmatterAlumni = "frontmatter___alumni",
   FrontmatterHref = "frontmatter___href",
   FrontmatterHeading = "frontmatter___heading",
@@ -14349,7 +15488,6 @@ export enum MarkdownRemarkGroupEnum {
   FrontmatterSection2Content = "frontmatter___section2___content",
   FrontmatterSection2Heading = "frontmatter___section2___heading",
   FrontmatterSection2Subheading = "frontmatter___section2___subheading",
-  FrontmatterImages = "frontmatter___images",
   FrontmatterSection3Heading = "frontmatter___section3___heading",
   FrontmatterSection4Heading = "frontmatter___section4___heading",
   FrontmatterLocation = "frontmatter___location",
@@ -14357,11 +15495,67 @@ export enum MarkdownRemarkGroupEnum {
   FrontmatterEnd = "frontmatter___end",
   FrontmatterActive = "frontmatter___active",
   FrontmatterSchema = "frontmatter___schema",
-  FrontmatterTags = "frontmatter___tags",
+  FrontmatterImages = "frontmatter___images",
   RawMarkdownBody = "rawMarkdownBody",
   FileAbsolutePath = "fileAbsolutePath",
   FieldsHref = "fields___href",
   FieldsDate = "fields___date"
+}
+
+export enum O365UserConnectionSortByFieldsEnum {
+  BusinessPhones = "businessPhones",
+  DisplayName = "displayName",
+  GivenName = "givenName",
+  Mail = "mail",
+  MobilePhone = "mobilePhone",
+  OfficeLocation = "officeLocation",
+  PreferredLanguage = "preferredLanguage",
+  Surname = "surname",
+  UserPrincipalName = "userPrincipalName",
+  Id = "id",
+  InternalType = "internal___type",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalOwner = "internal___owner"
+}
+
+export enum O365UserConnectionSortOrderValues {
+  Asc = "ASC",
+  Desc = "DESC"
+}
+
+export enum O365UserDistinctEnum {
+  BusinessPhones = "businessPhones",
+  DisplayName = "displayName",
+  GivenName = "givenName",
+  Mail = "mail",
+  MobilePhone = "mobilePhone",
+  OfficeLocation = "officeLocation",
+  PreferredLanguage = "preferredLanguage",
+  Surname = "surname",
+  UserPrincipalName = "userPrincipalName",
+  Id = "id",
+  InternalType = "internal___type",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalOwner = "internal___owner"
+}
+
+export enum O365UserGroupEnum {
+  BusinessPhones = "businessPhones",
+  DisplayName = "displayName",
+  GivenName = "givenName",
+  Mail = "mail",
+  MobilePhone = "mobilePhone",
+  OfficeLocation = "officeLocation",
+  PreferredLanguage = "preferredLanguage",
+  Surname = "surname",
+  UserPrincipalName = "userPrincipalName",
+  Id = "id",
+  InternalType = "internal___type",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalOwner = "internal___owner"
 }
 
 /** A date string, such as 2007-12-03, compliant with the ISO 8601 standard  for representation of dates and times using the Gregorian calendar. */
@@ -14409,6 +15603,8 @@ export interface Query {
   allContentYaml?: Maybe<ContentYamlConnection>
   /** Connection to all MarkdownRemark nodes */
   allMarkdownRemark?: Maybe<MarkdownRemarkConnection>
+  /** Connection to all O365User nodes */
+  allO365User?: Maybe<O365UserConnection>
 
   sitePage?: Maybe<SitePage>
 
@@ -14427,6 +15623,8 @@ export interface Query {
   contentYaml?: Maybe<ContentYaml>
 
   markdownRemark?: Maybe<MarkdownRemark>
+
+  o365User?: Maybe<O365User>
 }
 
 /** A connection to a list of items. */
@@ -14486,7 +15684,7 @@ export interface SitePage extends Node {
 
   componentPath?: Maybe<string>
 
-  internal?: Maybe<Internal_10>
+  internal?: Maybe<Internal_11>
 }
 
 export interface Context {
@@ -14520,7 +15718,7 @@ export interface SitePlugin extends Node {
 
   packageJson?: Maybe<PackageJson_2>
 
-  internal?: Maybe<Internal_11>
+  internal?: Maybe<Internal_12>
 }
 
 export interface PluginOptions_3 {
@@ -14530,11 +15728,25 @@ export interface PluginOptions_3 {
 
   path?: Maybe<string>
 
+  clientId?: Maybe<string>
+
+  clientSecret?: Maybe<string>
+
+  tokenEndpoint?: Maybe<string>
+
+  query?: Maybe<string>
+
+  feeds?: Maybe<(Maybe<Feeds_2>)[]>
+
+  defaultQuality?: Maybe<number>
+
   target?: Maybe<string>
 
   rel?: Maybe<string>
 
   maxWidth?: Maybe<number>
+
+  quality?: Maybe<number>
 
   wrapperStyle?: Maybe<string>
 
@@ -14551,6 +15763,8 @@ export interface PluginOptions_3 {
   classPrefix?: Maybe<string>
 
   pathCheck?: Maybe<boolean>
+
+  apiKey?: Maybe<string>
 }
 
 export interface Plugins_2 {
@@ -14576,6 +15790,8 @@ export interface PluginOptions_4 {
 
   maxWidth?: Maybe<number>
 
+  quality?: Maybe<number>
+
   wrapperStyle?: Maybe<string>
 
   backgroundColor?: Maybe<string>
@@ -14589,6 +15805,14 @@ export interface PluginOptions_4 {
   withWebp?: Maybe<boolean>
 
   classPrefix?: Maybe<string>
+}
+
+export interface Feeds_2 {
+  query?: Maybe<string>
+
+  output?: Maybe<string>
+
+  title?: Maybe<string>
 }
 
 export interface PackageJson_2 {
@@ -14631,7 +15855,7 @@ export interface PeerDependencies_2 {
   version?: Maybe<string>
 }
 
-export interface Internal_11 {
+export interface Internal_12 {
   contentDigest?: Maybe<string>
 
   type?: Maybe<string>
@@ -14639,7 +15863,7 @@ export interface Internal_11 {
   owner?: Maybe<string>
 }
 
-export interface Internal_10 {
+export interface Internal_11 {
   type?: Maybe<string>
 
   contentDigest?: Maybe<string>
@@ -14754,7 +15978,7 @@ export interface Directory extends Node {
   /** The children of this node. */
   children?: Maybe<(Maybe<Node>)[]>
 
-  internal?: Maybe<Internal_12>
+  internal?: Maybe<Internal_13>
 
   sourceInstanceName?: Maybe<string>
 
@@ -14800,11 +16024,7 @@ export interface Directory extends Node {
 
   rdev?: Maybe<number>
 
-  blksize?: Maybe<number>
-
   ino?: Maybe<number>
-
-  blocks?: Maybe<number>
 
   atimeMs?: Maybe<number>
 
@@ -14823,7 +16043,7 @@ export interface Directory extends Node {
   birthtime?: Maybe<Date>
 }
 
-export interface Internal_12 {
+export interface Internal_13 {
   contentDigest?: Maybe<string>
 
   type?: Maybe<string>
@@ -14891,12 +16111,12 @@ export interface File extends Node {
   children?: Maybe<(Maybe<Node>)[]>
   /** The child of this node of type imageSharp */
   childImageSharp?: Maybe<ImageSharp>
-  /** The child of this node of type markdownRemark */
-  childMarkdownRemark?: Maybe<MarkdownRemark>
   /** The child of this node of type contentYaml */
   childContentYaml?: Maybe<ContentYaml>
+  /** The child of this node of type markdownRemark */
+  childMarkdownRemark?: Maybe<MarkdownRemark>
 
-  internal?: Maybe<Internal_13>
+  internal?: Maybe<Internal_14>
 
   sourceInstanceName?: Maybe<string>
 
@@ -14942,11 +16162,7 @@ export interface File extends Node {
 
   rdev?: Maybe<number>
 
-  blksize?: Maybe<number>
-
   ino?: Maybe<number>
-
-  blocks?: Maybe<number>
 
   atimeMs?: Maybe<number>
 
@@ -14976,7 +16192,7 @@ export interface ImageSharp extends Node {
   /** The children of this node. */
   children?: Maybe<(Maybe<Node>)[]>
 
-  internal?: Maybe<Internal_14>
+  internal?: Maybe<Internal_15>
 
   fixed?: Maybe<ImageSharpFixed>
 
@@ -14991,7 +16207,7 @@ export interface ImageSharp extends Node {
   resize?: Maybe<ImageSharpResize>
 }
 
-export interface Internal_14 {
+export interface Internal_15 {
   contentDigest?: Maybe<string>
 
   type?: Maybe<string>
@@ -15117,6 +16333,68 @@ export interface ImageSharpResize {
   originalName?: Maybe<string>
 }
 
+/** Node of type ContentYaml */
+export interface ContentYaml extends Node {
+  /** The id of this node. */
+  id: string
+  /** The parent of this node. */
+  parent?: Maybe<Node>
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>
+
+  name?: Maybe<string>
+
+  address?: Maybe<Address_2>
+
+  coordinates?: Maybe<(Maybe<number>)[]>
+
+  email?: Maybe<string>
+
+  phone?: Maybe<string>
+
+  social?: Maybe<Social_3>
+
+  contacts?: Maybe<(Maybe<Contacts_2>)[]>
+
+  internal?: Maybe<Internal_16>
+}
+
+export interface Address_2 {
+  street?: Maybe<string>
+
+  postalCode?: Maybe<string>
+
+  city?: Maybe<string>
+}
+
+export interface Social_3 {
+  bitbucket?: Maybe<string>
+
+  facebook?: Maybe<string>
+
+  github?: Maybe<string>
+
+  instagram?: Maybe<string>
+
+  linkedin?: Maybe<string>
+
+  twitter?: Maybe<string>
+}
+
+export interface Contacts_2 {
+  role?: Maybe<string>
+
+  personId?: Maybe<string>
+}
+
+export interface Internal_16 {
+  contentDigest?: Maybe<string>
+
+  type?: Maybe<string>
+
+  owner?: Maybe<string>
+}
+
 /** Node of type MarkdownRemark */
 export interface MarkdownRemark extends Node {
   /** The id of this node. */
@@ -15126,7 +16404,7 @@ export interface MarkdownRemark extends Node {
   /** The children of this node. */
   children?: Maybe<(Maybe<Node>)[]>
 
-  internal?: Maybe<Internal_15>
+  internal?: Maybe<Internal_17>
 
   frontmatter?: Maybe<Frontmatter_2>
 
@@ -15151,7 +16429,7 @@ export interface MarkdownRemark extends Node {
   wordCount?: Maybe<WordCount>
 }
 
-export interface Internal_15 {
+export interface Internal_17 {
   content?: Maybe<string>
 
   type?: Maybe<string>
@@ -15190,7 +16468,9 @@ export interface Frontmatter_2 {
 
   email?: Maybe<string>
 
-  social?: Maybe<Social_3>
+  social?: Maybe<Social_4>
+
+  tags?: Maybe<(Maybe<string>)[]>
 
   alumni?: Maybe<boolean>
 
@@ -15203,8 +16483,6 @@ export interface Frontmatter_2 {
   section1?: Maybe<Section1_2>
 
   section2?: Maybe<Section2_2>
-
-  images?: Maybe<(Maybe<string>)[]>
 
   section3?: Maybe<Section3_2>
 
@@ -15220,17 +16498,17 @@ export interface Frontmatter_2 {
 
   schema?: Maybe<(Maybe<Schema_2>)[]>
 
-  tags?: Maybe<(Maybe<string>)[]>
+  images?: Maybe<(Maybe<string>)[]>
 }
 
-export interface Social_3 {
+export interface Social_4 {
   linkedin?: Maybe<string>
 
   twitter?: Maybe<string>
 
-  github?: Maybe<string>
-
   keybase?: Maybe<string>
+
+  github?: Maybe<string>
 
   microblog?: Maybe<string>
 }
@@ -15260,6 +16538,8 @@ export interface Section4_2 {
 }
 
 export interface Schema_2 {
+  details?: Maybe<string>
+
   type?: Maybe<string>
 
   title?: Maybe<string>
@@ -15268,13 +16548,11 @@ export interface Schema_2 {
 
   end?: Maybe<string>
 
+  presenters?: Maybe<(Maybe<string>)[]>
+
   href?: Maybe<string>
 
   location?: Maybe<Location_3>
-
-  details?: Maybe<string>
-
-  presenters?: Maybe<(Maybe<string>)[]>
 
   presentation?: Maybe<string>
 
@@ -15307,69 +16585,7 @@ export interface WordCount {
   words?: Maybe<number>
 }
 
-/** Node of type ContentYaml */
-export interface ContentYaml extends Node {
-  /** The id of this node. */
-  id: string
-  /** The parent of this node. */
-  parent?: Maybe<Node>
-  /** The children of this node. */
-  children?: Maybe<(Maybe<Node>)[]>
-
-  name?: Maybe<string>
-
-  address?: Maybe<Address_2>
-
-  coordinates?: Maybe<(Maybe<number>)[]>
-
-  email?: Maybe<string>
-
-  phone?: Maybe<string>
-
-  social?: Maybe<Social_4>
-
-  contacts?: Maybe<(Maybe<Contacts_2>)[]>
-
-  internal?: Maybe<Internal_16>
-}
-
-export interface Address_2 {
-  street?: Maybe<string>
-
-  postalCode?: Maybe<string>
-
-  city?: Maybe<string>
-}
-
-export interface Social_4 {
-  bitbucket?: Maybe<string>
-
-  facebook?: Maybe<string>
-
-  github?: Maybe<string>
-
-  instagram?: Maybe<string>
-
-  linkedin?: Maybe<string>
-
-  twitter?: Maybe<string>
-}
-
-export interface Contacts_2 {
-  role?: Maybe<string>
-
-  personId?: Maybe<string>
-}
-
-export interface Internal_16 {
-  contentDigest?: Maybe<string>
-
-  type?: Maybe<string>
-
-  owner?: Maybe<string>
-}
-
-export interface Internal_13 {
+export interface Internal_14 {
   contentDigest?: Maybe<string>
 
   type?: Maybe<string>
@@ -15494,7 +16710,7 @@ export interface TeamtailorJob extends Node {
 
   relationships?: Maybe<Relationships_3>
 
-  internal?: Maybe<Internal_17>
+  internal?: Maybe<Internal_18>
 
   fields?: Maybe<Fields_4>
 }
@@ -15695,7 +16911,7 @@ export interface Links_24 {
   related?: Maybe<string>
 }
 
-export interface Internal_17 {
+export interface Internal_18 {
   type?: Maybe<string>
 
   content?: Maybe<string>
@@ -15835,6 +17051,94 @@ export interface MarkdownRemarkGroupConnectionEdge {
   previous?: Maybe<MarkdownRemark>
 }
 
+/** A connection to a list of items. */
+export interface O365UserConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<O365UserEdge>)[]>
+
+  totalCount?: Maybe<number>
+
+  distinct?: Maybe<(Maybe<string>)[]>
+
+  group?: Maybe<(Maybe<O365UserGroupConnectionConnection>)[]>
+}
+
+/** An edge in a connection. */
+export interface O365UserEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<O365User>
+  /** The next edge in the connection */
+  next?: Maybe<O365User>
+  /** The previous edge in the connection */
+  previous?: Maybe<O365User>
+}
+
+/** Node of type O365User */
+export interface O365User extends Node {
+  /** The id of this node. */
+  id: string
+  /** The parent of this node. */
+  parent?: Maybe<Node>
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>
+
+  businessPhones?: Maybe<(Maybe<string>)[]>
+
+  displayName?: Maybe<string>
+
+  givenName?: Maybe<string>
+
+  mail?: Maybe<string>
+
+  mobilePhone?: Maybe<string>
+
+  officeLocation?: Maybe<string>
+
+  preferredLanguage?: Maybe<string>
+
+  surname?: Maybe<string>
+
+  userPrincipalName?: Maybe<string>
+
+  internal?: Maybe<Internal_19>
+}
+
+export interface Internal_19 {
+  type?: Maybe<string>
+
+  content?: Maybe<string>
+
+  contentDigest?: Maybe<string>
+
+  owner?: Maybe<string>
+}
+
+/** A connection to a list of items. */
+export interface O365UserGroupConnectionConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<O365UserGroupConnectionEdge>)[]>
+
+  field?: Maybe<string>
+
+  fieldValue?: Maybe<string>
+
+  totalCount?: Maybe<number>
+}
+
+/** An edge in a connection. */
+export interface O365UserGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<O365User>
+  /** The next edge in the connection */
+  next?: Maybe<O365User>
+  /** The previous edge in the connection */
+  previous?: Maybe<O365User>
+}
+
 /** Node of type Site */
 export interface Site extends Node {
   /** The id of this node. */
@@ -15843,6 +17147,8 @@ export interface Site extends Node {
   parent?: Maybe<Node>
   /** The children of this node. */
   children?: Maybe<(Maybe<Node>)[]>
+
+  siteMetadata?: Maybe<SiteMetadata_2>
 
   port?: Maybe<Date>
 
@@ -15854,10 +17160,18 @@ export interface Site extends Node {
 
   buildTime?: Maybe<Date>
 
-  internal?: Maybe<Internal_18>
+  internal?: Maybe<Internal_20>
 }
 
-export interface Internal_18 {
+export interface SiteMetadata_2 {
+  siteUrl?: Maybe<string>
+
+  rssBlogTitle?: Maybe<string>
+
+  rssBlogDescription?: Maybe<string>
+}
+
+export interface Internal_20 {
   contentDigest?: Maybe<string>
 
   type?: Maybe<string>
@@ -15941,6 +17255,15 @@ export interface AllMarkdownRemarkQueryArgs {
 
   filter?: Maybe<FilterMarkdownRemark>
 }
+export interface AllO365UserQueryArgs {
+  skip?: Maybe<number>
+
+  limit?: Maybe<number>
+
+  sort?: Maybe<O365UserConnectionSort>
+
+  filter?: Maybe<FilterO365User>
+}
 export interface SitePageQueryArgs {
   jsonName?: Maybe<SitePageJsonNameQueryString>
 
@@ -15988,6 +17311,8 @@ export interface SitePluginQueryArgs {
   internal?: Maybe<SitePluginInternalInputObject_2>
 }
 export interface SiteQueryArgs {
+  siteMetadata?: Maybe<SiteSiteMetadataInputObject_2>
+
   port?: Maybe<SitePortQueryString_2>
 
   host?: Maybe<SiteHostQueryString_2>
@@ -16039,7 +17364,7 @@ export interface DirectoryQueryArgs {
 
   relativeDirectory?: Maybe<DirectoryRelativeDirectoryQueryString_2>
 
-  dev?: Maybe<DirectoryDevQueryInteger_2>
+  dev?: Maybe<DirectoryDevQueryFloat_2>
 
   mode?: Maybe<DirectoryModeQueryInteger_2>
 
@@ -16051,11 +17376,7 @@ export interface DirectoryQueryArgs {
 
   rdev?: Maybe<DirectoryRdevQueryInteger_2>
 
-  blksize?: Maybe<DirectoryBlksizeQueryInteger_2>
-
   ino?: Maybe<DirectoryInoQueryFloat_2>
-
-  blocks?: Maybe<DirectoryBlocksQueryInteger_2>
 
   atimeMs?: Maybe<DirectoryAtimeMsQueryFloat_2>
 
@@ -16110,7 +17431,7 @@ export interface FileQueryArgs {
 
   relativeDirectory?: Maybe<FileRelativeDirectoryQueryString_2>
 
-  dev?: Maybe<FileDevQueryInteger_2>
+  dev?: Maybe<FileDevQueryFloat_2>
 
   mode?: Maybe<FileModeQueryInteger_2>
 
@@ -16122,11 +17443,7 @@ export interface FileQueryArgs {
 
   rdev?: Maybe<FileRdevQueryInteger_2>
 
-  blksize?: Maybe<FileBlksizeQueryInteger_2>
-
   ino?: Maybe<FileInoQueryFloat_2>
-
-  blocks?: Maybe<FileBlocksQueryInteger_2>
 
   atimeMs?: Maybe<FileAtimeMsQueryFloat_2>
 
@@ -16221,6 +17538,29 @@ export interface MarkdownRemarkQueryArgs {
   tableOfContents?: Maybe<TableOfContentsQueryString_3>
 
   wordCount?: Maybe<WordCountTypeName_3>
+}
+export interface O365UserQueryArgs {
+  businessPhones?: Maybe<O365UserBusinessPhonesQueryList_2>
+
+  displayName?: Maybe<O365UserDisplayNameQueryString_2>
+
+  givenName?: Maybe<O365UserGivenNameQueryString_2>
+
+  mail?: Maybe<O365UserMailQueryString_2>
+
+  mobilePhone?: Maybe<O365UserMobilePhoneQueryString_2>
+
+  officeLocation?: Maybe<O365UserOfficeLocationQueryString_2>
+
+  preferredLanguage?: Maybe<O365UserPreferredLanguageQueryString_2>
+
+  surname?: Maybe<O365UserSurnameQueryString_2>
+
+  userPrincipalName?: Maybe<O365UserUserPrincipalNameQueryString_2>
+
+  id?: Maybe<O365UserIdQueryString_2>
+
+  internal?: Maybe<O365UserInternalInputObject_2>
 }
 export interface DistinctSitePageConnectionArgs {
   field?: Maybe<SitePageDistinctEnum>
@@ -16645,6 +17985,16 @@ export interface GroupMarkdownRemarkConnectionArgs {
   limit?: Maybe<number>
 
   field?: Maybe<MarkdownRemarkGroupEnum>
+}
+export interface DistinctO365UserConnectionArgs {
+  field?: Maybe<O365UserDistinctEnum>
+}
+export interface GroupO365UserConnectionArgs {
+  skip?: Maybe<number>
+
+  limit?: Maybe<number>
+
+  field?: Maybe<O365UserGroupEnum>
 }
 export interface PortSiteArgs {
   /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
