@@ -27,6 +27,7 @@ collections:
   folder: content/blogg
   create: true
   delete: false
+  extension: md
   slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
   preview_path: "blogg/{{year}}/{{month}}/{{day}}/{{slug}}"
   fields:
@@ -36,9 +37,9 @@ collections:
     label: Författare
     widget: relation
     collection: persons
-    displayFields: [title]
     searchFields: [title]
     valueField: id
+    displayFields: [title]
     multiple: true
   - { name: body, label: Text, widget: markdown }
 
@@ -49,6 +50,7 @@ collections:
   create: false
   delete: false
   extension: md
+  preview_path: "erbjudanden"
   fields:
   - { name: type, widget: hidden, default: offer }
   - { name: index, widget: hidden }
@@ -63,7 +65,7 @@ collections:
   create: true
   delete: true
   extension: md
-  slug: "{{slug}}"
+  preview_path: "jobb"
   fields:
   - { name: type, widget: hidden, default: benefit }
   - { name: index, label: Sorteringsindex, widget: number, valueType: int, min: 1 }
@@ -79,6 +81,7 @@ collections:
   delete: false
   extension: md
   slug: "{{slug}}"
+  preview_path: "kitscon/{{slug}}"
   fields:
   - { name: type, widget: hidden, default: conference }
   - { name: id, label: ID }
@@ -125,15 +128,12 @@ collections:
       - { label: "Workshop", value: "workshop" }
     - name: presenters
       label: Presentatörer
-      widget: list
-      field:
-      - name: presenter
-        label: Presentatör
-        widget: relation
-        collection: medarbetare
-        searchFields: [title]
-        valueField: id
-        displayFields: [title]
+      widget: relation
+      collection: persons
+      searchFields: [title]
+      valueField: id
+      displayFields: [title]
+      multiple: true
     - { name: presentation, label: Presentation, widget: file, required: false }
     - { name: winner, label: Bästa presentation, widget: boolean, default: false }
   - { name: body, label: Text, widget: markdown }
@@ -193,15 +193,12 @@ collections:
   - { name: image, label: Bild, widget: image }
   - name: authors
     label: Författare
-    widget: list
-    field:
-    - name: author
-      label: Författare
-      widget: relation
-      collection: medarbetare
-      searchFields: [title]
-      valueField: id
-      displayFields: [title]
+    widget: relation
+    collection: persons
+    searchFields: [title]
+    valueField: id
+    displayFields: [title]
+    multiple: true
   - { name: body, label: Body, widget: markdown }
 
 - name: projects
