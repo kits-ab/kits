@@ -2,7 +2,7 @@ import { graphql } from "gatsby"
 
 import { types } from "@kokitotsos/react-components"
 
-import { FileEdge, MarkdownRemarkEdge } from "../types/graphql"
+import { FileEdge, MarkdownRemarkEdge, O365User } from "../types/graphql"
 import { findImageByRelativePath } from "./imageUtils"
 
 export const personFragment = graphql`
@@ -93,4 +93,10 @@ export const findPersonById = (persons: types.Person[], id: string) => {
 
 export const findPersonsByIds = (persons: types.Person[], ids: string[]) => {
   return persons.filter(person => ids.indexOf(person.id) !== -1)
+}
+
+export const enrichPersonWithO365 = (person: types.Person, o365user: O365User) => {
+  if (o365user.mobilePhone) {
+    person.phone = new types.PhoneNumber(o365user.mobilePhone.replace(/\+46/, "0"))
+  }
 }
