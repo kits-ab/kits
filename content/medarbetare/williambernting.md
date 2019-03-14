@@ -25,8 +25,7 @@ tags:
   - .net
   - entity framework
 ---
-
-William är en utvecklare med siktet på framtiden men (vill få) upp till knäna i gammal kod. Uppskattar större företag på grund av dess krav på skalbarhet och efter personlig vana i den globala IT-serviceindustrin. Att få olika teknik-stackar från olika källor att fungera ihop med hjälp av bakåtkompatibilitetslager, smarta migrationsvägar och god ingenjörsskap, ihop med nya agnostiska tekniker, är något William brinner för mest av allt. Det är inte ovanligt att William får i uppdrag att sätta ihop två separata lösningar till en lösning, och ofta går det fort.
+William är en utvecklare med siktet på framtiden men (vill få) upp till knäna i gammal kod. Uppskattar större företag på grund av dess krav på skalbarhet och efter personlig vana i den globala IT-serviceindustrin. Att få olika teknik-stackar från olika källor att fungera ihop med hjälp av bakåtkompatibilitetslager, smarta migrationsvägar och god ingenjörskap, ihop med nya agnostiska tekniker, är något William brinner för mest av allt. Det är inte ovanligt att William får i uppdrag att sätta ihop två separata lösningar till en lösning, och ofta går det fort.
 
 När nyutveckling skall göras sitter gärna William med frontend-ramverket Vue och använder det han kan om CSS och Javascript för att matcha UX-skissernas utseende och funktionalitet. Micro-frontends och Monorepon för frontend-utveckling är också ett stort intresse just nu.
 
