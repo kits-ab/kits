@@ -11,4 +11,4 @@ social:
   linkedin: https://www.linkedin.com/in/bjornlundqvist/
 ---
 
-Björn är mycket bra, kanske en av det bästa.
+Björn är mycket bra, kanske en av de allra skickligaste utvecklarna på norra halvklotet..

@@ -12,4 +12,4 @@ social:
   linkedin: https://www.linkedin.com/in/fredrikoller/
 ---
 
-Fredrik är mycket bra, kanske en av det bästa.
+Fredrik är mycket bra, kanske en av de allra skickligaste utvecklarna på norra halvklotet..
