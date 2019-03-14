@@ -2,27 +2,34 @@
 type: person
 id: williambernting
 title: William Bernting
-tagLine: Frontendutvecklare
+tagLine: 'Frontendutvecklare, arkitektur'
 image: /assets/medarbetare_williambernting.jpg
 avatar: /assets/medarbetare_williambernting-avatar.jpg
-phone: 0706 - 67 60 47
+phone: 0702 - 69 96 18
 email: william.bernting@kits.se
 social:
   github: wbern
-  linkedin: https://se.linkedin.com/in/william-bernting-09996a41
+  linkedin: 'https://se.linkedin.com/in/william-bernting-09996a41'
 tags:
   - utveckling
   - javascript
-  - c#
+  - nodejs
+  - webpack
+  - web components
+  - monorepo
   - css
-  - python
-  - java
-  - .net
-  - entity framework
   - react
   - angular
+  - 'c#'
+  - python
+  - .net
+  - entity framework
 ---
 
-William är en gedigen utvecklare från en global IT-serviceindustri, där stabilitet och funktionalitet värdesätts likvärdigt. Teknikstackar har varit allt från gamla goda Excel VBA till de moderna ramverken som ASP.NET MVC, Entity Framework, Angular och React.
+William är en utvecklare med siktet på framtiden men (vill få) upp till knäna i gammal kod. Uppskattar större företag på grund av dess krav på skalbarhet och efter personlig vana i den globala IT-serviceindustrin. Att få olika teknik-stackar från olika källor att fungera ihop med hjälp av bakåtkompatibilitetslager, smarta migrationsvägar och god ingenjörsskap, ihop med nya agnostiska tekniker, är något William brinner för mest av allt. Det är inte ovanligt att William får i uppdrag att sätta ihop två separata lösningar till en lösning, och ofta går det fort.
 
-William är van end-to-end utvecklare som byggt egen deployment (Google API, Gitlab CI, Python), källkodsportal (GitLab) och ofta har en mer genomgående förståelse i teknikerna som flitigt används i dagens industri.
+När nyutveckling skall göras sitter gärna William med frontend-ramverket Vue och använder det han kan om CSS och Javascript för att matcha UX-skissernas utseende och funktionalitet. Micro-frontends och Monorepon för frontend-utveckling är också ett stort intresse just nu.
+
+William är en relativt bred utvecklare som byggt eller satt upp egen deployment (Google API, Gitlab CI, Python), källkodsportal (GitLab), testautomationssystem (Nightwatch, Selenium) och har inte sällan en mer genomgående förståelse i teknikerna som flitigt används idag.
+
+Slutligen har William haft ett eller flera uppdrag i följande ramverk och bibliotek: React, AngularJS, jQuery, Angular och Vue.
