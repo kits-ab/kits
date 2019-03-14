@@ -1,9 +1,9 @@
 ---
 type: person
-id: johansamulesson
+id: johansamuelsson
 title: Johan Samuelsson
 tagLine: Utvecklare
-email: johan.samulesson@kits.se
+email: johan.samuelsson@kits.se
 ---
 
 Johan är mycket bra, kanske en av det bästa.
