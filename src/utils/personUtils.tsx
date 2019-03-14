@@ -96,7 +96,7 @@ export const findPersonsByIds = (persons: types.Person[], ids: string[]) => {
 }
 
 export const enrichPersonWithO365 = (person: types.Person, o365user: O365User) => {
-  if (o365user.mobilePhone) {
+  if (o365user && o365user.mobilePhone) {
     person.phone = new types.PhoneNumber(o365user.mobilePhone.replace(/\+46/, "0"))
   }
 }
