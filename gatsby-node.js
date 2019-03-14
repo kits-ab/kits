@@ -39,6 +39,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
               frontmatter {
                 alumni
                 type
+                email
               }
             }
           }
@@ -75,7 +76,10 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           createPage({
             path: node.fields.href,
             component: path.resolve("./src/templates/person.tsx"),
-            context: { href: node.fields.href }
+            context: {
+              href: node.fields.href,
+              email: node.frontmatter.email ? node.frontmatter.email : ""
+            }
           })
         } else if (node.frontmatter && node.frontmatter.type === "conference") {
           createPage({

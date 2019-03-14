@@ -21,15 +21,16 @@ import {
 
 import { PersonList } from "../components/PersonList"
 import { DefaultLayout } from "../layouts/DefaultLayout"
-import { FileConnection, MarkdownRemark } from "../types/graphql"
+import { FileConnection, MarkdownRemark, O365User } from "../types/graphql"
 import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath } from "../utils/imageUtils"
-import { edgeToPerson } from "../utils/personUtils"
+import { edgeToPerson, enrichPersonWithO365 } from "../utils/personUtils"
 
 interface PersonPageProps extends PageProps {
   data: {
     person: MarkdownRemark
     images: FileConnection
+    o365person: O365User
   }
 }
 
@@ -74,6 +75,7 @@ export default ({ data, location }: PersonPageProps) => {
   const image =
     findImageByRelativePath(images.edges, person.imageSrc) ||
     findImageByRelativePath(images.edges, "/assets/medarbetare_default.jpg")
+  enrichPersonWithO365(person, data.o365person)
 
   return (
     <DefaultLayout location={location}>
@@ -127,10 +129,16 @@ export default ({ data, location }: PersonPageProps) => {
 }
 
 export const query = graphql`
-  query PersonPageQuery($href: String) {
+  query PersonPageQuery($href: String, $email: String) {
     person: markdownRemark(fields: { href: { eq: $href } }) {
       html
       ...PersonFragment
+    }
+
+    o365person: o365User(mail: {eq: $email})  {
+      mobilePhone
+      officeLocation
+      businessPhones
     }
 
     images: allFile(

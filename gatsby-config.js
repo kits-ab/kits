@@ -28,6 +28,14 @@ module.exports = {
         apiKey: process.env.TEAMTAILOR_API_KEY
       }
     },
+    {
+      resolve: "gatsby-source-o365",
+      options: {
+        clientId: process.env.O365_API_CLIENTID,
+        clientSecret: process.env.O365_API_CLIENTSECRET,
+        tokenEndpoint: process.env.O365_API_TOKENENDPOINT
+      }
+    },
     "gatsby-plugin-catch-links",
     {
       resolve: "gatsby-plugin-feed",
