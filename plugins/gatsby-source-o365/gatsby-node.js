@@ -2,6 +2,8 @@ const crypto = require("crypto")
 const fetch = require("node-fetch")
 const FormData = require("form-data")
 
+const fallbackUsers = require("./data/fallback_users")
+
 const form = new FormData()
 const auth = {}
 
@@ -83,6 +85,7 @@ exports.sourceNodes = async ({ actions, createNodeId }, configOptions) => {
     try {
       const token = await auth.getAccessToken(configOptions)
       const users = await graph.getUsers(token)
+      console.log(JSON.stringify(users, null, 2))
       if (users && users.value) {
         users.value.forEach(uinfo => {
           createNode(processUserInfo(uinfo))
@@ -94,6 +97,9 @@ exports.sourceNodes = async ({ actions, createNodeId }, configOptions) => {
       throw error
     }
   } else {
-    console.log(": Unable to fetch users from o365, need config")
+    fallbackUsers.forEach(uinfo => {
+      createNode(processUserInfo(uinfo))
+    })
+    console.log(": created user nodes from fallback data")
   }
 }
