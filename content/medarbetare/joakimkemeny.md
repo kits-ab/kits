@@ -1,7 +1,7 @@
 ---
 type: person
 id: joakimkemeny
-title: Joakim Kemeny
+title: Joakim Kemeny2
 tagLine: Arkitekt & frontendutvecklare
 image: /assets/medarbetare_joakimkemeny.jpg
 avatar: /assets/medarbetare_joakimkemeny-avatar.jpg
@@ -10,7 +10,7 @@ email: joakim.kemeny@kits.se
 social:
   github: joakimkemeny
   keybase: joakimkemeny
-  linkedin: https://se.linkedin.com/in/joakimkemeny
+  linkedin: 'https://se.linkedin.com/in/joakimkemeny'
   microblog: joakimkemeny
   twitter: joakimkemeny
 tags:
