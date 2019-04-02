@@ -107,7 +107,15 @@ collections:
     - { name: details, label: Detaljer, widget: markdown, required: false }
     - { name: start, label: Starttid, widget: datetime, format: "YYYY-MM-DD HH:mm" }
     - { name: end, label: Sluttid, widget: datetime, format: "YYYY-MM-DD HH:mm" }
-    - { name: location, label: Plats, required: false }
+    - name: location
+      label: Plats
+      widget: "object"
+      fields:
+        - name: coordinates
+          label: Koordinater
+          widget: list
+          hint: "Kommaseparerad, första värdet är latitud and det andra longitur, ex. 57.7001813, 11.9567863"
+        - { name: title, label: Namn, required: false }
     - { name: href, label: URL, required: false }
     - name: type
       label: Typ
@@ -134,8 +142,9 @@ collections:
       valueField: id
       displayFields: [title]
       multiple: true
+      required: false
     - { name: presentation, label: Presentation, widget: file, required: false }
-    - { name: winner, label: Bästa presentation, widget: boolean, default: false }
+    - { name: winner, label: Bästa presentation, widget: boolean, required: false, default: false }
   - { name: body, label: Text, widget: markdown }
 
 - name: persons
