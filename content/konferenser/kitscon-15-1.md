@@ -17,7 +17,7 @@ schema:
     type: hotel
     title: Incheckning Hotel Suave Mar
     location:
-      coordinates: 'List[41.540562, -8.786759]'
+      coordinates: 'List[ 41.540562, -8.786759 ]'
       title: Hotel Suave Mar
     start: '2015-05-21 23:00'
     end: '2015-05-21 23:30'
