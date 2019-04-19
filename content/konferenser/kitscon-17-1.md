@@ -8,6 +8,10 @@ start: "2017-05-25"
 end: "2017-05-28"
 image: /assets/kitscon_17-1.png
 active: true
+images:
+  - /assets/kitscon_collage_17-1-01.jpg
+  - /assets/kitscon_collage_17-1-02.jpg
+  - /assets/kitscon_collage_17-1-03.jpg
 schema:
   - type: airplane
     title: Resa Göteborg → Genève

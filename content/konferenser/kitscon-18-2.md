@@ -9,13 +9,9 @@ end: "2018-10-13"
 image: /assets/kitscon_18-2.png
 active: true
 images:
-  - /assets/kitscon_collage_18-2-01.jpg
   - /assets/kitscon_collage_18-2-02.jpg
+  - /assets/kitscon_collage_18-2-01.jpg
   - /assets/kitscon_collage_18-2-03.jpg
-  - /assets/kitscon_collage_18-2-04.jpg
-  - /assets/kitscon_collage_18-2-05.jpg
-  - /assets/kitscon_collage_18-2-06.jpg
-  - /assets/kitscon_collage_18-2-07.jpg
 schema:
   - details: "Vi åker från First Hotell G, Nils Ericsson-platsen 4"
     type: bus

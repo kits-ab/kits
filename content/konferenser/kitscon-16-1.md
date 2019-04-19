@@ -9,13 +9,9 @@ end: "2016-03-12"
 image: /assets/kitscon_16-1.png
 active: true
 images:
-  - /assets/kitscon_collage_16-1-07.jpg
   - /assets/kitscon_collage_16-1-01.jpg
-  - /assets/kitscon_collage_16-1-03.jpg
-  - /assets/kitscon_collage_16-1-04.jpg
-  - /assets/kitscon_collage_16-1-06.jpg
-  - /assets/kitscon_collage_16-1-05.jpg
   - /assets/kitscon_collage_16-1-02.jpg
+  - /assets/kitscon_collage_16-1-03.jpg
 schema:
   - type: airplane
     title: Resa Göteborg → Åre

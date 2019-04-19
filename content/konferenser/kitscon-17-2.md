@@ -8,6 +8,10 @@ start: "2017-11-16"
 end: "2017-11-17"
 image: /assets/kitscon_17-2.png
 active: true
+images:
+  - /assets/kitscon_collage_17-2-01.jpg
+  - /assets/kitscon_collage_17-2-02.jpg
+  - /assets/kitscon_collage_17-2-03.jpg
 schema:
   - type: bus
     title: Transport till Gullmarstrand
