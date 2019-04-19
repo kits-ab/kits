@@ -144,6 +144,7 @@ collections:
       multiple: true
       required: false
     - { name: presentation, label: Presentation, widget: file, required: false }
+    - { name: youtubeId, label: YouTube ID, widget: text, required: false }
     - { name: winner, label: Bästa presentation, widget: boolean, required: false, default: false }
   - { name: body, label: Text, widget: markdown }
 

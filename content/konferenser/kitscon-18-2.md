@@ -158,6 +158,7 @@ schema:
     title: Taking your website to the next level
     start: "2018-10-13 08:00"
     end: "2018-10-13 08:45"
+    youtubeId: 0CcnAIuCfSU
   - details: Denna dragning kommer att ge en överblick över de system som jag arbetar med på Cerner. Den kommer även ge en inblick i de krav som ställs på vårdsystemen och konsekvenserna det kan få om de inte uppfylls.
     presenters:
       - fredrikoller
