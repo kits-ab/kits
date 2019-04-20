@@ -20,7 +20,7 @@
     "test": "yarn lint"
   },
   "dependencies": {
-    "@kokitotsos/react-components": "1.2.9",
+    "@kokitotsos/react-components": "1.3.1",
     "babel-plugin-styled-components": "1.10.0",
     "date-fns": "1.30.1",
     "dotenv": "6.2.0",

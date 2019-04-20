@@ -193,6 +193,7 @@ const renderPresentation = (
       }
       type={presentation.type as types.TimeslotType}
       presentation={presentation.presentation}
+      youtubeId={presentation.youtubeId}
       connectToPrevious={connect}
       showEndTime={showEndTime}
     >
@@ -240,6 +241,7 @@ export const query = graphql`
           }
           presentation
           type
+          youtubeId
         }
       }
       html
@@ -276,6 +278,7 @@ export const query = graphql`
               }
               presentation
               type
+              youtubeId
             }
           }
           html

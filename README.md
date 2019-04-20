@@ -1,6 +1,75 @@
-# kits.se
+# KITS.se
 
 This project contains the source code and content for <https://kits.se>.
+
+## Overview
+
+This project uses the static site generator [Gatsby](https://www.gatsbyjs.org) to create a web site. Previously [Jekyll](https://jekyllrb.com) was used but since most of the developers at KITS prefer JavaScript we've moved on to a React based solution instead.
+
+The system context diagram below gives you an overview of how the different systems work together to create kits.se:
+
+#### System Context Diagram
+
+![](docs/SystemContextDiagram.png)
+
+There are quite a few systems involved for such a simple site but if we look at a container diagram for KITS.se it may be easier to see how each of the systems are used to generate the final site.
+
+#### Container Diagram
+
+![](docs/ContainerDiagram.png)
+
+## Adding content
+
+The easiste way to add content to the site is to use <https://kits.se/admin>. You can login using your GitHub account if you're a member of the KITS organization. The CMS is powered by [Netlify CMS](https://www.netlifycms.org) and all different content can be edited in a custom form for each type.
+
+When you add content it will be saved as a new branch on GitHub and a pull request will be created. This means you can play with the content without publishing changes.
+
+### Images
+
+TODO...
+
+## Development
+
+You can use any editor for development (Visual Studio Code, Atom, WebStorm, IntelliJ, Vim, ...) but you should make sure that it supports the following technologies:
+
+- [TypeScript](https://www.typescriptlang.org) – Since the project is written in TypeScript
+- [EditorConfig](https://editorconfig.org) – To help the editor use the correct encoding, indentation, ...
+- [Styled Components](https://www.styled-components.com) – To support styled component that we use for styling our components
+- [Prettier](https://prettier.io) – To format the code according to our coding conventions
+
+**The code is automatically formatted when you commit code. It is also linted before you push the commits to the server.**
+
+For debugging purposes you should install [React Developer Tools](https://github.com/facebook/react-devtools).
+
+### Preparations
+
+- Install all required tools
+
+  - Node 10.15 – <https://nodejs.org>
+  - Yarn 1.13 – <https://yarnpkg.com>
+
+- Checkout the code and fetch all dependencies
+  ```
+  $ git clone git@github.com:kits-ab/kits.git
+  $ yarn install
+  ```
+
+### Available scripts
+
+When you've checked out the code and all dependencies have been fetched you probably want to run `yarn start` but you can run any of the the following scripts:
+
+- `yarn build` – Creates a production ready builds in `public/`
+- `yarn clean` – Removes all generated files
+- `yarn format` – Format the entire codebase using [Prettier](https://prettier.io)
+- `yarn generateschema` – Reads the GraphQL schema from a started server and create TypeScript-types
+- `yarn lint` – Lints all code with [TSLint](https://palantir.github.io/tslint) and [Stylelint](https://stylelint.io)
+- `yarn start` – Starts a local server with hot reloading enabled on <http://8000>
+
+### GraphQL
+
+All content that is read from Markdown, YAML or image files is exposed through GraphQL.
+
+TODO...
 
 ### License
 

@@ -8,6 +8,10 @@ start: "2016-10-06"
 end: "2016-10-07"
 image: /assets/kitscon_16-2.png
 active: true
+images:
+  - /assets/kitscon_collage_16-2-01.jpg
+  - /assets/kitscon_collage_16-2-02.jpg
+  - /assets/kitscon_collage_16-2-03.jpg
 schema:
   - details: ""
     type: coffee

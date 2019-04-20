@@ -9,10 +9,9 @@ end: "2018-05-12"
 image: /assets/kitscon_18-1.png
 active: true
 images:
-  - /assets/kitscon_collage_18-1-01.jpg
   - /assets/kitscon_collage_18-1-02.jpg
   - /assets/kitscon_collage_18-1-03.jpg
-  - /assets/kitscon_collage_18-1-04.jpg
+  - /assets/kitscon_collage_18-1-01.jpg
 schema:
   - type: airplane
     title: Resa Göteborg → Dublin
