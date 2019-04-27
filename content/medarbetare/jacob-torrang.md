@@ -4,7 +4,7 @@ id: jacobtorrang
 title: Jacob Torrång
 alumni: false
 tagLine: Utvecklare
-phone: 0700-111111
+phone: ''
 email: jacob.torrang@kits.se
 social: {}
 ---
