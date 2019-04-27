@@ -174,7 +174,7 @@ collections:
     required: false,
     pattern: ["/assets/medarbetare_[a-z-]+-avatar\\.jpg"],
   }
-  - { name: phone, label: Telefon }
+  - { name: phone, label: Telefon, required: false }
   - { name: email, label: E-mail }
   - name: social
     label: Social
