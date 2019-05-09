@@ -8,7 +8,7 @@ authors:
 
 BankID is the leading identification solution in Sweden that allows companies and government agencies to authenticate individuals over the Internet. BankID offers an API which makes integration easy for companies.
 
-In this article I will describe BankID API features which developers should use to limit the effectiveness of today&#39;s phishing attacks against BankID. I will also cover how QR codes can be used as a method for authentication/signing with mobile BankID and how it can improve security.
+In this article I will describe BankID API features which developers should use to limit the effectiveness of today's phishing attacks against BankID. I will also cover how QR codes can be used as a method for authentication/signing with mobile BankID and how it can improve security.
 
 After reading this article, you will have learned different phishing techniques that exists and what you can do to limit their effectiveness.
 
@@ -22,13 +22,9 @@ What happened was that supershoes.se sent a _signing order_ with our PIN to Bank
 
 The BankID API offers a _&quot;requirement&quot;_ parameter which allows you to configure how orders should be created and verified. To configure an order to be limited to mobile BankID, set _certificatePolicies_ in the _requirement_ field:
 
-&quot;requirement&quot;: {
-
 ```
-&quot;certificatePolicies&quot;: [&quot;1.2.752.78.1.5&quot;]
+"requirement": {    "certificatePolicies": ["1.2.752.78.1.5"]}
 ```
-
-}
 
 This restricts an order to only be consumed on mobile devices. The same can be done for other platforms. If it is not evident why it is beneficial to control how an order should be consumed, the following example will why.
 
