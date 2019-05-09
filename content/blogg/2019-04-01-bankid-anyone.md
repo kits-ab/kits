@@ -1,13 +1,9 @@
 ---
 type: post
-title: BankID - anyone?
+title: Security recommendations for implementing BankID
 authors:
   - michaeldubell
 ---
-# Security recommendations for implementing BankID - draft
-
-Michael Dubell
-
 # 0x00 - Introduction
 
 BankID is the leading identification solution in Sweden that allows companies and government agencies to authenticate individuals over the Internet. BankID offers an API which makes integration easy for companies.
@@ -28,7 +24,9 @@ The BankID API offers a _&quot;requirement&quot;_ parameter which allows you to 
 
 &quot;requirement&quot;: {
 
-    &quot;certificatePolicies&quot;: [&quot;1.2.752.78.1.5&quot;]
+```
+&quot;certificatePolicies&quot;: [&quot;1.2.752.78.1.5&quot;]
+```
 
 }
 
@@ -52,7 +50,7 @@ bankid://?autostarttoken=463e5661-33a9-4738-ad1e-6c5ef1d732ce&amp;redirect=null
 
 Which can of course be semi-disguised as an HTML link, like so:
 
-\&lt;a href=&quot;bankid://?autostarttoken=463e5661-33a9-4738-ad1e-6c5ef1d732ce&amp;redirect=null&quot;\&gt;Click me!\&lt;/a\&gt;
+&lt;a href=&quot;bankid://?autostarttoken=463e5661-33a9-4738-ad1e-6c5ef1d732ce&amp;redirect=null&quot;&gt;Click me!&lt;/a&gt;
 
 Once the unknowing user clicks the link and identify using mobile BankID on their smartphone, the attacker will be successfully logged in as the user. Why this seemingly tiny detail matters is because most users today use mobile BankID which makes this scenario _easy_ for an attacker to perform. Had the token been limited to only be consumed using BankID on file, then this scenario had not been possible. The only thing an attacker could do is to trick someone to identify with the token using specifically BankID on file, which is _harder_ for an attacker to convince someone to do, since most people use mobile BankID.
 
@@ -94,27 +92,27 @@ Which is the ingredient you need to authenticate/sign with BankID. Therefore, wh
 
 We have identified three possible flows using BankID
 
-- BankID on file
-- Mobile BankID – different device
-- Mobile BankID – same device
+* BankID on file
+* Mobile BankID – different device
+* Mobile BankID – same device
 
 To make current phishing attacks against BankID _harder_ to perform, we can do the following:
 
-- Set _certificatePolicies_ to define which platform an authentication/signing order request should be limited to.
-- To prevent our mobile BankID app to automatically activate when there is an existing authentication/signing request order present, we can set _autoStartTokenRequired = True._ Good for BankID on file and mobile BankID on same device.
-- When using mobile BankID on different devices – set _autoStartTokenRequired = True_ and enable QR codes. The user must scan the QR code presented on the device that initiated the order request.
-- The user&#39;s personal identity number should always be present for each order request. This limits the effectiveness of simply generating a token and sending it to random people, hoping that someone will sign using the token.
+* Set _certificatePolicies_ to define which platform an authentication/signing order request should be limited to.
+* To prevent our mobile BankID app to automatically activate when there is an existing authentication/signing request order present, we can set _autoStartTokenRequired = True._ Good for BankID on file and mobile BankID on same device.
+* When using mobile BankID on different devices – set _autoStartTokenRequired = True_ and enable QR codes. The user must scan the QR code presented on the device that initiated the order request.
+* The user&#39;s personal identity number should always be present for each order request. This limits the effectiveness of simply generating a token and sending it to random people, hoping that someone will sign using the token.
 
 None of these features prevents phishing attacks against BankID. They only make todays attacks harder to perform and requires additional technical skill from the attacker than just being able to call victims. If the attacker can trick a victim into clicking a link containing the autoStartToken, it will be possible to phish BankID users.
 
 However, the point is to make the process more difficult for the attacker, which can be achieved by following the steps above.
 
-BankID API documentation can be found here: [https://www.bankid.com/bankid-i-dina-tjanster/rp-info](https://www.bankid.com/bankid-i-dina-tjanster/rp-info).
+BankID API documentation can be found here: <https://www.bankid.com/bankid-i-dina-tjanster/rp-info>.
 
 **Bonus question**
 _Can you find the open redirection in the token URL? :)_
 
-If you have any further questions about BankID, you can contact me at michael[dot]dubell[at]kits.se.
+If you have any further questions about BankID, you can contact me at michael\[dot]dubell\[at]kits.se.
 
 Michael Dubell
 IT-Security Consultant
