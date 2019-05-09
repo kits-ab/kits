@@ -117,8 +117,3 @@ BankID API documentation can be found here: <https://www.bankid.com/bankid-i-din
 
 **Bonus question**
 _Can you find the open redirection in the token URL? :)_
-
-If you have any further questions about BankID, you can contact me at michael\[dot]dubell\[at]kits.se.
-
-Michael Dubell
-IT-Security Consultant
