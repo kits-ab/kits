@@ -107,7 +107,7 @@ To make current phishing attacks against BankID _harder_ to perform, we can do t
 * Set _certificatePolicies_ to define which platform an authentication/signing order request should be limited to.
 * To prevent our mobile BankID app to automatically activate when there is an existing authentication/signing request order present, we can set _autoStartTokenRequired = True._ Good for BankID on file and mobile BankID on same device.
 * When using mobile BankID on different devices – set _autoStartTokenRequired = True_ and enable QR codes. The user must scan the QR code presented on the device that initiated the order request.
-* The user&#39;s personal identity number should always be present for each order request. This limits the effectiveness of simply generating a token and sending it to random people, hoping that someone will sign using the token.
+* The user's personal identity number should always be present for each order request. This limits the effectiveness of simply generating a token and sending it to random people, hoping that someone will sign using the token.
 
 None of these features prevents phishing attacks against BankID. They only make todays attacks harder to perform and requires additional technical skill from the attacker than just being able to call victims. If the attacker can trick a victim into clicking a link containing the autoStartToken, it will be possible to phish BankID users.
 
