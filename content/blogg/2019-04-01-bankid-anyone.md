@@ -115,5 +115,4 @@ However, the point is to make the process more difficult for the attacker, which
 
 BankID API documentation can be found here: <https://www.bankid.com/bankid-i-dina-tjanster/rp-info>.
 
-**Bonus question**
-_Can you find the open redirection in the token URL? :)_
+**Bonus question:** _Can you find the open redirection in the token URL? :)_
