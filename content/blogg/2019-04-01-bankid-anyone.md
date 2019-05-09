@@ -4,7 +4,7 @@ title: Security recommendations for implementing BankID
 authors:
   - michaeldubell
 ---
-# 0x00 - Introduction
+# Introduction
 
 BankID is the leading identification solution in Sweden that allows companies and government agencies to authenticate individuals over the Internet. BankID offers an API which makes integration easy for companies.
 
@@ -12,11 +12,11 @@ In this article I will describe BankID API features which developers should use 
 
 After reading this article, you will have learned different phishing techniques that exists and what you can do to limit their effectiveness.
 
-# 0x01 – Ordering shoes
+# Ordering shoes
 
 Depending on which platform you initiate BankID on, the flow will be different.
 
-Let&#39;s assume we want to order a pair of shoes from supershoes.se on our computer. We pick our shoes, proceed to checkout, enter our address information and select mobile BankID as our signing method. We enter our personal identity number (PIN) and open the BankID app on our phone and sign.
+Let's assume we want to order a pair of shoes from supershoes.se on our computer. We pick our shoes, proceed to checkout, enter our address information and select mobile BankID as our signing method. We enter our personal identity number (PIN) and open the BankID app on our phone and sign.
 
 What happened was that supershoes.se sent a _signing order_ with our PIN to BankID using their REST API, informing that the accompanying PIN should sign this request. In this scenario, we expect the user to _consume_ their signing order on a mobile device. I will later explain why this distinction is important. After we send this request to BankID, a special token called _autoStartToken_ is created which is tied to our session. This token is returned to the user, depending on which BankID method is used.
 
@@ -34,11 +34,13 @@ This restricts an order to only be consumed on mobile devices. The same can be d
 
 ## The autoStartToken
 
-Let&#39;s say supershoes.se implemented a member&#39;s area page protected by BankID login, with the option to use _BankID on file_ to authenticate. No personal identity number is technically required for this option, if you have multiple identities on your computer/phone, you will be prompted to select the appropriate identity.
+Let's say supershoes.se implemented a member&#39;s area page protected by BankID login, with the option to use _BankID on file_ to authenticate. No personal identity number is technically required for this option, if you have multiple identities on your computer/phone, you will be prompted to select the appropriate identity.
 
 Alright, we are sitting at our computer, we browse to the member&#39;s area at supershoes.se and login by authenticating with BankID on file. What happens at this stage is that a special URL is returned to our browser which opens the BankID application automatically. The URL looks like this:
 
+```
 bankid://?autostarttoken=463e5661-33a9-4738-ad1e-6c5ef1d732ce&amp;redirect=null
+```
 
 The local BankID application opens automatically because it has associated itself with the protocol _bankid://_. The interesting part is the _autoStartToken_ parameter which contains the token value. This token is associated with your current session.
 
