@@ -20,7 +20,7 @@ Let's assume we want to order a pair of shoes from supershoes.se on our computer
 
 What happened was that supershoes.se sent a _signing order_ with our PIN to BankID using their REST API, informing that the accompanying PIN should sign this request. In this scenario, we expect the user to _consume_ their signing order on a mobile device. I will later explain why this distinction is important. After we send this request to BankID, a special token called _autoStartToken_ is created which is tied to our session. This token is returned to the user, depending on which BankID method is used.
 
-The BankID API offers a _&quot;requirement&quot;_ parameter which allows you to configure how orders should be created and verified. To configure an order to be limited to mobile BankID, set _certificatePolicies_ in the _requirement_ field:
+The BankID API offers a _requirement_ parameter which allows you to configure how orders should be created and verified. To configure an order to be limited to mobile BankID, set _certificatePolicies_ in the _requirement_ field:
 
 ```
 "requirement": {    "certificatePolicies": ["1.2.752.78.1.5"]}
@@ -30,9 +30,9 @@ This restricts an order to only be consumed on mobile devices. The same can be d
 
 ## The autoStartToken
 
-Let's say supershoes.se implemented a member&#39;s area page protected by BankID login, with the option to use _BankID on file_ to authenticate. No personal identity number is technically required for this option, if you have multiple identities on your computer/phone, you will be prompted to select the appropriate identity.
+Let's say supershoes.se implemented a member's area page protected by BankID login, with the option to use _BankID on file_ to authenticate. No personal identity number is technically required for this option, if you have multiple identities on your computer/phone, you will be prompted to select the appropriate identity.
 
-Alright, we are sitting at our computer, we browse to the member&#39;s area at supershoes.se and login by authenticating with BankID on file. What happens at this stage is that a special URL is returned to our browser which opens the BankID application automatically. The URL looks like this:
+Alright, we are sitting at our computer, we browse to the member's area at supershoes.se and login by authenticating with BankID on file. What happens at this stage is that a special URL is returned to our browser which opens the BankID application automatically. The URL looks like this:
 
 ```
 bankid://?autostarttoken=463e5661-33a9-4738-ad1e-6c5ef1d732ce&amp;redirect=null
@@ -40,7 +40,7 @@ bankid://?autostarttoken=463e5661-33a9-4738-ad1e-6c5ef1d732ce&amp;redirect=null
 
 The local BankID application opens automatically because it has associated itself with the protocol _bankid://_. The interesting part is the _autoStartToken_ parameter which contains the token value. This token is associated with your current session.
 
-After your local BankID opens, you enter your credentials and successfully complete the identification (or signing). Now, let&#39;s assume the developers at supershoes.se did not specify which platform the token should be limited to. This is means that even though you requested to identify/sign with BankID on file, the token you received can be consumed by _mobile BankID on a different device_. An attacker could generate a token meant for BankID on file and trick someone to authenticate themselves with the token on _their mobile device_.
+After your local BankID opens, you enter your credentials and successfully complete the identification (or signing). Now, let's assume the developers at supershoes.se did not specify which platform the token should be limited to. This is means that even though you requested to identify/sign with BankID on file, the token you received can be consumed by _mobile BankID on a different device_. An attacker could generate a token meant for BankID on file and trick someone to authenticate themselves with the token on _their mobile device_.
 
 The only thing an attacker needs to do is to send the following:
 
@@ -70,7 +70,7 @@ But as you may suspect, there is a way to control if all your devices should be 
 "requirement": {"autoStartTokenRequired": true}
 ```
 
-The option _autoStartTokenRequired_ specifies that no other device will be able to sign the request. Only the device that initiated the request _(your smartphone in this case)_ will get the _autoStartToken_ and thereby be able to sign with BankID. This means we can make it harder for those who enter other people&#39;s personal identity number and tricks people into signing with their mobile BankID. By specifying _autoStartTokenRequired,_ only the attacker will get the autoStartToken. The attacker must then somehow transfer the token to the victim.
+The option _autoStartTokenRequired_ specifies that no other device will be able to sign the request. Only the device that initiated the request _(your smartphone in this case)_ will get the _autoStartToken_ and thereby be able to sign with BankID. This means we can make it harder for those who enter other people's personal identity number and tricks people into signing with their mobile BankID. By specifying _autoStartTokenRequired,_ only the attacker will get the autoStartToken. The attacker must then somehow transfer the token to the victim.
 
 The problem is that we can't use _autoStartTokenRequired_ when ordering on our computer and signing with mobile BankID, because our mobile phone somehow needs to consume the autoStartToken. This is where QR codes comes into play.
 
