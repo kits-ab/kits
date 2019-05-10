@@ -12,6 +12,8 @@ In this article I will describe BankID API features which developers should use 
 
 After reading this article, you will have learned different phishing techniques that exists and what you can do to limit their effectiveness.
 
+<!-- more -->
+
 # Ordering shoes
 
 Depending on which platform you initiate BankID on, the flow will be different.
