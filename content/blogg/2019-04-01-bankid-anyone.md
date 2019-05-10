@@ -4,8 +4,6 @@ title: Security recommendations for implementing BankID
 authors:
   - michaeldubell
 ---
-# Introduction
-
 BankID is the leading identification solution in Sweden that allows companies and government agencies to authenticate individuals over the Internet. BankID offers an API which makes integration easy for companies.
 
 In this article I will describe BankID API features which developers should use to limit the effectiveness of today's phishing attacks against BankID. I will also cover how QR codes can be used as a method for authentication/signing with mobile BankID and how it can improve security.
