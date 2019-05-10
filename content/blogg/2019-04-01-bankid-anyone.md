@@ -26,7 +26,7 @@ The BankID API offers a _requirement_ parameter which allows you to configure ho
 "requirement": {    "certificatePolicies": ["1.2.752.78.1.5"]}
 ```
 
-This restricts an order to only be consumed on mobile devices. The same can be done for other platforms. If it is not evident why it is beneficial to control how an order should be consumed, the following example will why.
+This restricts an order to only be consumed on mobile devices. The same can be done for other platforms. If it is not evident why it is beneficial to control how an order should be consumed, the following example will show why.
 
 ## The autoStartToken
 
@@ -35,7 +35,7 @@ Let's say supershoes.se implemented a member's area page protected by BankID log
 Alright, we are sitting at our computer, we browse to the member's area at supershoes.se and login by authenticating with BankID on file. What happens at this stage is that a special URL is returned to our browser which opens the BankID application automatically. The URL looks like this:
 
 ```
-bankid://?autostarttoken=463e5661-33a9-4738-ad1e-6c5ef1d732ce&amp;redirect=null
+bankid://?autostarttoken=463e5661-33a9-4738-ad1e-6c5ef1d732ce&redirect=null
 ```
 
 The local BankID application opens automatically because it has associated itself with the protocol _bankid://_. The interesting part is the _autoStartToken_ parameter which contains the token value. This token is associated with your current session.
@@ -45,7 +45,7 @@ After your local BankID opens, you enter your credentials and successfully compl
 The only thing an attacker needs to do is to send the following:
 
 ```
-bankid://?autostarttoken=463e5661-33a9-4738-ad1e-6c5ef1d732ce&amp;redirect=null
+bankid://?autostarttoken=463e5661-33a9-4738-ad1e-6c5ef1d732ce&redirect=null
 ```
 
 Which can of course be semi-disguised as an HTML link, like so:
@@ -82,7 +82,7 @@ QR code scanning does not involve implementing a new technology or support a new
 
 The only thing developers need to do is to convert the returned URL after sending an authentication/signing order request to BankID, to a QR code and instruct the user to scan it with their mobile BankID, that's it!
 
-We mentioned previously about the autoStartTokenRequired option and its purpose to only allow the device with the autoStartToken to authenticate/sign an order request. This works great if you are using BankID on file on your computer/smartphone or mobile BankID on the same device. However, it will not work if you are using mobile BankID on different devices, since you often initiate the request on your computer and open the mobile BankID app on your phone. The token can not be created with _autoStartTokenRequired = True_ in this scenario. This is where QR codes shines.
+We previously mentioned the autoStartTokenRequired option and its purpose to only allow the device with the autoStartToken to authenticate/sign an order request. This works great if you are using BankID on file on your computer/smartphone or mobile BankID on the same device. However, it will not work if you are using mobile BankID on different devices, since you often initiate the request on your computer and open the mobile BankID app on your phone. The token can not be created with _autoStartTokenRequired = True_ in this scenario. This is where QR codes shines.
 
 The QR code is just a visual representation of
 
@@ -109,7 +109,7 @@ To make current phishing attacks against BankID _harder_ to perform, we can do t
 * When using mobile BankID on different devices – set _autoStartTokenRequired = True_ and enable QR codes. The user must scan the QR code presented on the device that initiated the order request.
 * The user's personal identity number should always be present for each order request. This limits the effectiveness of simply generating a token and sending it to random people, hoping that someone will sign using the token.
 
-None of these features prevents phishing attacks against BankID. They only make todays attacks harder to perform and requires additional technical skill from the attacker than just being able to call victims. If the attacker can trick a victim into clicking a link containing the autoStartToken, it will be possible to phish BankID users.
+None of these features prevents phishing attacks against BankID. They only make today's attacks harder to perform and requires additional technical skill from the attacker than just being able to call victims. If the attacker can trick a victim into clicking a link containing the autoStartToken, it will be possible to phish BankID users.
 
 However, the point is to make the process more difficult for the attacker, which can be achieved by following the steps above.
 
