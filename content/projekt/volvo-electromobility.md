@@ -1,5 +1,5 @@
 ---
-type: project-old
+type: project
 index: 6
 title: Electromobility
 image: /assets/projekt_volvo-electromobility.jpg
