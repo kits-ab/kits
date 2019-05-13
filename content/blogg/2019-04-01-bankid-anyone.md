@@ -82,7 +82,7 @@ QR code scanning does not involve implementing a new technology or support a new
 
 The only thing developers need to do is to convert the returned URL after sending an authentication/signing order request to BankID, to a QR code and instruct the user to scan it with their mobile BankID, that's it!
 
-We previously mentioned the autoStartTokenRequired option and its purpose to only allow the device with the autoStartToken to authenticate/sign an order request. This works great if you are using BankID on file on your computer/smartphone or mobile BankID on the same device. However, it will not work if you are using mobile BankID on different devices, since you often initiate the request on your computer and open the mobile BankID app on your phone. The token can not be created with _autoStartTokenRequired = True_ in this scenario. This is where QR codes shines.
+We previously mentioned the autoStartTokenRequired option and its purpose to only allow the device with the autoStartToken to authenticate/sign an order request. This works great if you are using BankID on file on your computer/smartphone or mobile BankID on the same device. However, it will not work if you are using mobile BankID on different devices, since you often initiate the request on your computer and open the mobile BankID app on your phone. The token cannot be created with _autoStartTokenRequired = True_ in this scenario. This is where QR codes shines.
 
 The QR code is just a visual representation of
 
