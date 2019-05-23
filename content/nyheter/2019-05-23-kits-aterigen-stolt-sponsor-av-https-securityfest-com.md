@@ -1,7 +1,7 @@
 ---
 type: news
 title: 'KITS som vanligt stolt sponsor av https://securityfest.com/'
-image: /assets/formaner_junior.jpg
+image: /assets/nyheter_secfest_2019-1.jpg
 authors:
   - patriknilsson
 ---
