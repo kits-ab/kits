@@ -55,6 +55,8 @@ schema:
     title: Gurra "Galoppen" Jorlöv bjuder till bensträckare
     start: "2019-05-31 06:30"
     end: "2019-05-31 07:00"
+    details: >-
+      En dag full av lyssnande kräver sin kompensation på rörelsekontot. Häng på och kolla på omgivningen innan frukost!
   - type: food
     title: Frukost
     start: "2019-05-31 07:00"
