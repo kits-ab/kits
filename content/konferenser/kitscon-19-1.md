@@ -51,6 +51,12 @@ schema:
       title: "Maestral deck BBQ"
     start: "2019-05-30 19:45"
     end: "2019-05-30 22:00"
+  - type: running
+    title: Gurra "Gasellen" Jorlöv bjuder till bensträckare
+    start: "2019-05-31 06:30"
+    end: "2019-05-31 07:00"
+    details: >-
+      En dag full av lyssnande kräver sin kompensation på rörelsekontot. Häng på och kolla på omgivningen innan frukost!
   - type: food
     title: Frukost
     start: "2019-05-31 07:00"
