@@ -86,7 +86,7 @@ schema:
   - presenters:
       - hakanwall
     type: presentation
-    title: Ekonimiflödet på KITS
+    title: Ekonomiflödet på KITS
     start: "2019-05-31 10:10"
     end: "2019-05-31 10:30"
     details: >-
@@ -187,7 +187,16 @@ schema:
   - type: food
     title: Frukost
     start: "2019-06-01 07:00"
+    end: "2019-06-01 09:00"
+  - type: food
+    title: Lunch
+    location:
+      coordinates: [43.173557, 16.434170]
+      title: Hotel Amfora
+    start: "2019-06-01 12:00"
     end: "2019-06-01 14:00"
+    details: >-
+      Vi samlas på hotellet för en gemensam lunch innan bilutflykten.
   - details: >-
       Vi möter vår guide i receptionen för genomgång inför beetle safari.  Vi kommer åka nio bilar + en ledarbil med 
       guide och en efterföljarbil.
