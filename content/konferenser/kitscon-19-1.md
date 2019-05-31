@@ -68,29 +68,22 @@ schema:
     start: "2019-05-31 09:00"
     end: "2019-05-31 09:15"
   - presenters:
-      - patriknilsson
+      - hakanwall
     type: presentation
-    title: Serverless med Firebase
+    title: Ekonomiflödet på KITS
     start: "2019-05-31 09:15"
     end: "2019-05-31 09:30"
     details: >-
+      I denna presentationen kommer jag att påminna di gamle och undervisa di nye om varför det är så noga att man loggar sin tid i tid.
   - presenters:
       - fredrikoller
     type: presentation
     title: .Net Core - Microsoft goes Open Source and Cross-Platform
     start: "2019-05-31 09:35"
-    end: "2019-05-31 10:05"
+    end: "2019-05-31 10:30"
     details: >-
       Efter att ha kallat Linux och öppen källkod för cancer har Microsoft ändrat riktning helt och hållet.
       I presentationen kommer jag att visa hur man snabbt och enkelt kommer igång med Microsofts cross platform-ramverk.
-  - presenters:
-      - hakanwall
-    type: presentation
-    title: Ekonomiflödet på KITS
-    start: "2019-05-31 10:10"
-    end: "2019-05-31 10:30"
-    details: >-
-      I denna presentationen kommer jag att påminna di gamle och undervisa di nye om varför det är så noga att man loggar sin tid i tid.
   - type: coffee
     title: Fika
     start: "2019-05-31 10:30"
