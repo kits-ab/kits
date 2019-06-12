@@ -3,10 +3,11 @@ type: person
 id: sturesvensson
 title: Sture Svensson
 tagLine: Arkitekt & utvecklare
+image: /assets/medarbetare_antonmyrholm.jpg
 phone: 0703 – 51 90 17
 email: sture.svensson@kits.se
 social:
-  linkedin: https://www.linkedin.com/pub/sture-svensson/1b/636/7a5
+  linkedin: 'https://www.linkedin.com/pub/sture-svensson/1b/636/7a5'
 tags:
   - utveckling
   - arkitektur
@@ -14,7 +15,7 @@ tags:
   - apache solr
   - google gsa
   - java
-  - c#
+  - 'c#'
   - javascript
   - .net
 ---
