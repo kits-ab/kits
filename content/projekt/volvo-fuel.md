@@ -1,5 +1,5 @@
 ---
-type: project
+type: project-old
 index: 2
 title: Projektledning på Volvo Trucks
 image: /assets/projekt_volvo-fuel.jpg

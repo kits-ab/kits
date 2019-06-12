@@ -51,6 +51,12 @@ schema:
       title: "Maestral deck BBQ"
     start: "2019-05-30 19:45"
     end: "2019-05-30 22:00"
+  - type: running
+    title: Gurra "Gasellen" Jorlöv bjuder till bensträckare
+    start: "2019-05-31 06:30"
+    end: "2019-05-31 07:00"
+    details: >-
+      En dag full av lyssnande kräver sin kompensation på rörelsekontot. Häng på och kolla på omgivningen innan frukost!
   - type: food
     title: Frukost
     start: "2019-05-31 07:00"
@@ -62,29 +68,22 @@ schema:
     start: "2019-05-31 09:00"
     end: "2019-05-31 09:15"
   - presenters:
-      - patriknilsson
+      - hakanwall
     type: presentation
-    title: Serverless med Firebase
+    title: Ekonomiflödet på KITS
     start: "2019-05-31 09:15"
     end: "2019-05-31 09:30"
     details: >-
+      I denna presentationen kommer jag att påminna di gamle och undervisa di nye om varför det är så noga att man loggar sin tid i tid.
   - presenters:
       - fredrikoller
     type: presentation
     title: .Net Core - Microsoft goes Open Source and Cross-Platform
     start: "2019-05-31 09:35"
-    end: "2019-05-31 10:05"
+    end: "2019-05-31 10:30"
     details: >-
       Efter att ha kallat Linux och öppen källkod för cancer har Microsoft ändrat riktning helt och hållet.
       I presentationen kommer jag att visa hur man snabbt och enkelt kommer igång med Microsofts cross platform-ramverk.
-  - presenters:
-      - hakanwall
-    type: presentation
-    title: Ekonimiflödet på KITS
-    start: "2019-05-31 10:10"
-    end: "2019-05-31 10:30"
-    details: >-
-      I denna presentationen kommer jag att påminna di gamle och undervisa di nye om varför det är så noga att man loggar sin tid i tid.
   - type: coffee
     title: Fika
     start: "2019-05-31 10:30"
@@ -181,7 +180,16 @@ schema:
   - type: food
     title: Frukost
     start: "2019-06-01 07:00"
+    end: "2019-06-01 09:00"
+  - type: food
+    title: Lunch
+    location:
+      coordinates: [43.173557, 16.434170]
+      title: Hotel Amfora
+    start: "2019-06-01 12:00"
     end: "2019-06-01 14:00"
+    details: >-
+      Vi samlas på hotellet för en gemensam lunch innan bilutflykten.
   - details: >-
       Vi möter vår guide i receptionen för genomgång inför beetle safari.  Vi kommer åka nio bilar + en ledarbil med 
       guide och en efterföljarbil.
