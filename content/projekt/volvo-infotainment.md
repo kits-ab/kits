@@ -1,5 +1,5 @@
 ---
-type: project
+type: project-old
 index: 1
 title: Volvo XC90 infotainment
 image: /assets/projekt_volvo-infotainment.jpg
