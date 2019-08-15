@@ -5,9 +5,10 @@ title: Joella Johannesson
 tagLine: Utvecklare
 image: /assets/medarbetare_joellajohannesson.jpg
 avatar: /assets/medarbetare_joellajohannesson-avatar.jpg
+phone: '0708 – 27 73 26 '
 email: joella.johannesson@kits.se
 social:
-  linkedin: https://www.linkedin.com/in/joella-johannesson-68a9b7b5/
+  linkedin: 'https://www.linkedin.com/in/joella-johannesson-68a9b7b5/'
 tags:
   - utveckling
   - java
