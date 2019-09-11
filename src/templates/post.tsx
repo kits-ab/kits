@@ -1,4 +1,4 @@
-import { parse } from "date-fns"
+import { parseISO } from "date-fns"
 import { graphql } from "gatsby"
 import * as React from "react"
 import Helmet from "react-helmet"
@@ -40,7 +40,7 @@ export default ({ data, location }: PostTemplateProps) => {
         heading={post.frontmatter.title}
         href={post.fields.href}
         key={post.id}
-        publishTime={parse(post.fields.date)}
+        publishTime={parseISO(post.fields.date)}
         showAvatars={true}
       >
         {post.html}
