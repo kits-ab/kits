@@ -60,12 +60,12 @@ schema:
     start: "2019-11-08 11:00"
     end: "2019-11-08 11:30"
   - details: >- 
-     Kvantdatorer kan lösa vissa problem snabbare än klassiska datorer. Alldeles nyligen publicerade Google vad som anses          vara den första experimentella demonstrationen av en kvantdator som löser ett sådant problem, men det är fortfarande en        bit kvar innan kvantdatorer blir verkligt användbara. 
+      Kvantdatorer kan lösa vissa problem snabbare än klassiska datorer. Alldeles nyligen publicerade Google vad som anses vara den första experimentella demonstrationen av en kvantdator som löser ett sådant problem, men det är fortfarande en bit kvar innan kvantdatorer blir verkligt användbara. 
     
-    Ingrid kommer presentera vad kvantdatorer är och vad dom kan göra.
+      Ingrid kommer presentera vad kvantdatorer är och vad dom kan göra.
     type: presentation
     presenters:
-      - "Ingrid Strandberg"
+      - ingridstrandberg
     title: Quantum supremacy
     start: "2019-11-08 11:30"
     end: "2019-11-08 12:15"
