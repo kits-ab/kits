@@ -8,7 +8,7 @@ start: '2019-11-08'
 end: '2019-11-09'
 active: true
 images:
-  - image: /assets/kitscon_15-1.png
+  - image: /assets/kitscon_19-2.png
 schema:
   - details: 'Vi åker från First Hotell G, Nils Ericsson-platsen 4'
     type: bus
@@ -116,6 +116,13 @@ schema:
     title: 'Titta, jag programmerar i Go! '
     start: '2019-11-08 16:30'
     end: '2019-11-08 17:15'
+ - details: ''
+    presenters:
+      - hoimanlui
+    type: presentation
+    title: titel
+    start: '2019-11-08 17:15'
+    end: '2019-11-08 17:35'
   - type: food
     title: Middag
     start: '2019-11-08 19:00'
@@ -161,4 +168,3 @@ schema:
     start: '2019-11-09 13:00'
     end: '2019-11-09 14:30'
 ---
-Vann
