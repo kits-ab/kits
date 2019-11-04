@@ -21,9 +21,7 @@ schema:
   - type: checkin
     title: Incheckning
     location:
-      coordinates:
-        - "58.4436"
-        - "11.575"
+      coordinates: [58.4436, 11.575]
       title: VANN Spa Hotell & Konferens
     start: "2019-11-08 08:30"
     end: "2019-11-08 09:00"
