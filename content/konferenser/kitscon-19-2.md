@@ -59,8 +59,14 @@ schema:
     title: AWS CDK
     start: "2019-11-08 11:00"
     end: "2019-11-08 11:30"
-  - type: presentation
-    title: Kvantdatorer
+  - details: >- 
+    Kvantdatorer kan lösa vissa problem snabbare än klassiska datorer. Alldeles nyligen publicerade Google vad som anses vara den första experimentella demonstrationen av en kvantdator som löser ett sådant problem, men det är fortfarande en bit kvar innan kvantdatorer blir verkligt användbara. 
+    
+    Ingrid kommer presentera vad kvantdatorer är och vad dom kan göra.
+    type: presentation
+    presenters:
+      - "Ingrid Strandberg"
+    title: Quantum supremacy
     start: "2019-11-08 11:30"
     end: "2019-11-08 12:15"
   - details: ""
@@ -115,14 +121,15 @@ schema:
     presenters:
       - hoimanlui
     type: presentation
-    title: titel
+    title: Netflix H0ll0w
     start: "2019-11-08 17:15"
     end: "2019-11-08 17:35"
   - type: food
     title: Middag
     start: "2019-11-08 19:00"
     end: "2019-11-08 21:00"
-  - type: location
+  - details: "Glöm inte ta med badkläder!"
+    type: location
     title: Tillgång till Spa
     start: "2019-11-08 21:00"
     end: "2019-11-08 23:00"
@@ -133,8 +140,14 @@ schema:
   - presenters:
       - sturesvensson
     type: presentation
-    title: Elasticsearch
-    start: "2019-11-09 09:15"
+    title: Elasticsearch och data från uppkopplade prylar
+    start: "2019-11-09 09:00"
+    end: "2019-11-09 09:45"
+  - presenters:
+      - victordavidsson, pontusdoverstav
+    type: presentation
+    title: Loglady
+    start: "2019-11-09 09:45"
     end: "2019-11-09 10:00"
   - details: ""
     type: coffee
