@@ -13,9 +13,7 @@ schema:
     type: bus
     title: Buss från Göteborg  → Vann
     location:
-      coordinates:
-        - "57.709255"
-        - "11.972106"
+      coordinates: [57.709255, 11.972106]
       title: First Hotel G
     start: "2019-11-08 07:00"
     end: "2019-11-08 08:30"
