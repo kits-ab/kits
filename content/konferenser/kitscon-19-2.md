@@ -136,12 +136,12 @@ schema:
   - details: Eftersom Tobbe är pigg och Gustav inte kan måtså en soluppgång.
     type: running
     title: Morgonlöpning
-    start: "2018-10-13 06:59"
-    end: "2018-10-13 07:30"
+    start: "2019-11-09 06:59"
+    end: "2019-11-09 07:30"
   - type: food
     title: Frukost
     start: "2019-11-09 07:00"
-    end: "2019-11-09 09:15"
+    end: "2019-11-09 09:00"
   - presenters:
       - sturesvensson
     type: presentation
