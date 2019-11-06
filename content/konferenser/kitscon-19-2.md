@@ -59,9 +59,9 @@ schema:
     title: AWS CDK
     start: "2019-11-08 11:00"
     end: "2019-11-08 11:30"
-  - details: >- 
+  - details: >-
       Kvantdatorer kan lösa vissa problem snabbare än klassiska datorer. Alldeles nyligen publicerade Google vad som anses vara den första experimentella demonstrationen av en kvantdator som löser ett sådant problem, men det är fortfarande en bit kvar innan kvantdatorer blir verkligt användbara. 
-    
+
       Ingrid kommer presentera vad kvantdatorer är och vad dom kan göra.
     type: presentation
     presenters:
@@ -133,6 +133,11 @@ schema:
     title: Tillgång till Spa
     start: "2019-11-08 21:00"
     end: "2019-11-08 23:00"
+  - details: Eftersom Tobbe är pigg och Gustav inte kan måtså en soluppgång.
+    type: running
+    title: Morgonlöpning
+    start: "2018-10-13 06:59"
+    end: "2018-10-13 07:30"
   - type: food
     title: Frukost
     start: "2019-11-09 07:00"
