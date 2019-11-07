@@ -52,7 +52,10 @@ schema:
     title: React Native med AWS
     start: "2019-11-08 10:30"
     end: "2019-11-08 11:00"
-  - details: ""
+  - details: >-
+      AWS Cloud Development Kit (AWS CDK) är ett ramverk för att modellera och provisionera dina molnapplikationsresurser. 
+
+      I den här dragningen så får ni ett intro och en demo av verktyget.
     presenters:
       - olofgunnarsson
     type: presentation
