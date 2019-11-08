@@ -11,4 +11,4 @@ authors:
 
 Programmet bjuder denna gång på många AWS relaterade ämnen, men vi lärde oss även allt om kvantdatorer, branch strategier och klockapplikationer. Som traditionen bjuder en härlig blandning av kunskap, anekdoter och erfarenheter, precis som det ska vara på KitsCon.
 
-Hela programmet hittar ni under [KitsCon 2019.2](https://kits.se/kitscon_19_2).
+Hela programmet hittar ni under [KitsCon 2019.2](https://kits.se/kitscon/kitscon_19_2).
