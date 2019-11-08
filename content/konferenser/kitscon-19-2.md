@@ -148,7 +148,8 @@ schema:
   - presenters:
       - gustavjorlov
     type: presentation
-    title: Data från uppkopplade prylar och DynamoDB
+    title: AWS IoT
+    details: Koppla upp med client cert och hämta data från dina prylar
     start: "2019-11-09 09:00"
     end: "2019-11-09 09:45"
   - presenters:
