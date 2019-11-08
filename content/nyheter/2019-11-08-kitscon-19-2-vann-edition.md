@@ -1,7 +1,7 @@
 ---
 type: news
 title: 'KitsCon 19.2: Vann Edition'
-image: /assets/nyheter_kitscon_19-1.png
+image: /assets/nyheter_kitscon_19-1.jpg
 authors:
   - patriknilsson
 ---
