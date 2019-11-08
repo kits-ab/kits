@@ -1,7 +1,7 @@
 ---
 type: news
 title: 'KitsCon 19.2: Vann Edition'
-image: /assets/kitscon_19-2.png
+image: /assets/nyheter_kitscon_19_2-1.jpg
 authors:
   - patriknilsson
 ---
@@ -9,4 +9,4 @@ authors:
 
 Programmet bjuder denna gång på många AWS relaterade ämnen, men vi lärde oss även allt om kvantdatorer, branch strategier och klockapplikationer. Som traditionen bjuder en härlig blandning av kunskap och erfarenheter helt enkelt, precis som det ska vara på KitsCon.
 
-Hela programmet hittar ni under [KitsCon 2019.2](https://kits.se/kitscon).
+Hela programmet hittar ni under [KitsCon 2019.2](https://kits.se/kitscon_19_2).
