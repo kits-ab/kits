@@ -146,9 +146,10 @@ schema:
     start: "2019-11-09 07:00"
     end: "2019-11-09 09:00"
   - presenters:
-      - sturesvensson
+      - gustavjorlov
     type: presentation
-    title: Elasticsearch och data från uppkopplade prylar
+    title: AWS IoT
+    details: Koppla upp med client cert och hämta data från dina prylar
     start: "2019-11-09 09:00"
     end: "2019-11-09 09:45"
   - presenters:
