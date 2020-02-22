@@ -1,5 +1,5 @@
-import { format, parse } from "date-fns"
-import * as svLocale from "date-fns/locale/sv"
+import { format, parseISO } from "date-fns"
+import { sv } from "date-fns/locale"
 import { graphql } from "gatsby"
 import * as React from "react"
 import Helmet from "react-helmet"
@@ -136,13 +136,13 @@ export default ({ data, location }: IndexPageProps) => {
         <Horizontal breakpoint={width.mobile} distribute={true} spacing={spacing.medium}>
           {bigNews.map((edge: MarkdownRemarkEdge, index: number) => {
             const image = findImageByRelativePath(images, edge.node.frontmatter.image)
-            const date = parse(edge.node.fields.date)
+            const date = parseISO(edge.node.fields.date)
             return (
               <Image
                 href={edge.node.fields.href}
                 key={`big_news_${index}`}
                 infoText={edge.node.frontmatter.title}
-                infoAdditionalText={format(date, "D MMMM YYYY", { locale: svLocale })}
+                infoAdditionalText={format(date, "d MMMM yyyy", { locale: sv })}
                 src={image && image.src}
                 srcSet={image && image.srcSet}
               />
@@ -170,7 +170,7 @@ export default ({ data, location }: IndexPageProps) => {
         authors={authors}
         heading={blog.node.frontmatter.title}
         href={blog.node.fields.href}
-        publishTime={parse(blog.node.fields.date)}
+        publishTime={parseISO(blog.node.fields.date)}
         showAvatars={true}
         showExcerpt={true}
       >

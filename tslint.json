@@ -9,7 +9,7 @@
     "no-implicit-dependencies": false,
     "no-invalid-this": true,
     "no-unused-variable": false,
-    "no-submodule-imports": [true, "date-fns/locale/sv"],
+    "no-submodule-imports": [true, "date-fns/locale"],
     "semicolon": {
       "options": ["never"]
     },

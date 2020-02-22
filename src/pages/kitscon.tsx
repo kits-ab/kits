@@ -1,4 +1,4 @@
-import { isSameDay } from "date-fns"
+import { isSameDay, parseISO } from "date-fns"
 import { graphql } from "gatsby"
 import * as React from "react"
 import Helmet from "react-helmet"
@@ -141,7 +141,7 @@ const renderSchema = (persons: types.Person[], schema: Schema_2[]) => {
   const schemaContent: React.ReactNode[] = []
 
   schema.forEach(s => {
-    if (!isSameDay(s.start, previousTime)) {
+    if (!isSameDay(parseISO(s.start), parseISO(previousTime))) {
       if (previousSchema) {
         schemaContent.push(renderPresentation(persons, previousSchema, connect, true))
         previousSchema = undefined
@@ -183,8 +183,8 @@ const renderPresentation = (
       key={"presentation" + presentation.start}
       presenters={presenters}
       heading={presentation.title}
-      startTime={presentation.start as any}
-      endTime={presentation.end as any}
+      startTime={new Date(presentation.start)}
+      endTime={new Date(presentation.end)}
       href={presentation.href}
       location={
         presentation.location && presentation.location.coordinates

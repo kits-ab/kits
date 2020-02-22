@@ -1,4 +1,4 @@
-import { parse } from "date-fns"
+import { parseISO } from "date-fns"
 import { graphql } from "gatsby"
 import * as React from "react"
 import Helmet from "react-helmet"
@@ -40,7 +40,7 @@ export default ({ data, location }: NewsTemplateProps) => {
         heading={news.frontmatter.title}
         href={news.fields.href}
         key={news.id}
-        publishTime={parse(news.fields.date)}
+        publishTime={parseISO(news.fields.date)}
         showAvatars={false}
       >
         {news.html}

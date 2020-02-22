@@ -1,4 +1,4 @@
-import { parse } from "date-fns"
+import { parseISO } from "date-fns"
 import { graphql } from "gatsby"
 import * as React from "react"
 import Helmet from "react-helmet"
@@ -42,7 +42,7 @@ export default ({ data, location }: BloggPageProps) => {
             heading={post.node.frontmatter.title}
             href={post.node.fields.href}
             key={"article" + index}
-            publishTime={parse(post.node.fields.date)}
+            publishTime={parseISO(post.node.fields.date)}
             showAvatars={true}
             showExcerpt={true}
           >
