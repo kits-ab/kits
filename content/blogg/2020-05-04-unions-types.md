@@ -5,23 +5,22 @@ authors:
   - philipwallin
 ---
 
-I often encounter situations where I want to return data of one or more types. The most common case for me is when I want to present an as informative response as possible to why an HTTP request wasn't successful, but it could also be an internal backend API with types it supports which might be extended in the future, or a frontend application where this would help model the domain. Unions types to the rescue!
+I often encounter situations where I want to use data which have more than one type. The most common case for me is when I want to present an as informative response as possible to why an HTTP request wasn't successful, but it could also be an internal backend API with a set of types which might be extended in the future, or a frontend application where multiple types would help model the domain. Unions types to the rescue!
 
 <!-- more -->
 
 ## Background
-A couple of years ago I was working on a large codebase with a lot of dependencies between features where we often missed to implement new functionality for all use cases in the product, as it was quite impossible to know all functionality that we supported. When I first learned about the [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern) I felt like it solved all my problems, I could now extend my data types and all code that used the types would need to implement handling of the newly added cases. The visitor pattern require you to explicitly handle all potential data it can contain, which is nice, but the downside is that it produces a lot of boilerplate code and isn't really intuitive to understand, it felt like I had to look up the pattern over and over again. Enter union types.
+A couple of years ago I was working on a large codebase with a lot of dependencies between features where we often missed to implement new functionality for all use cases in the product, as it was quite impossible to know all functionality that we supported. When I first learned about the [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern) I felt like it solved all my problems, I could now extend my data types and all code that used the types would need to implement handling of the newly added cases. The visitor pattern require you to explicitly handle all potential data it can contain, which is nice, but the downside is that it produces a lot of boilerplate code and isn't really intuitive to understand, it felt like I had to read up on the pattern over and over again. Enter union types.
 
 ## Union types
 Union types or discriminating unions are basically a type which can contain one value of one of its specified types, similar to how in a [data format specification](https://www.json.org/json-en.html) you might want to say "a value is either a boolean, a string, or a number".
 
-In TypeScript this might look like this
+In TypeScript using a union type might look like this
 ```typescript
 const value: boolean | string | number = "hello";
 ```
 
 or in F# like this
-
 ```fsharp
 type ValueType =
     | Boolean of bool
@@ -32,7 +31,6 @@ let value = Text "hello";
 ```
 
 or in C# I have created [my own open source project](https://github.com/PhilipAlexanderWallin/GenericDataStructures) for union types
-
 ```csharp
 Union<bool, string, int> value = "hello";
 ```
