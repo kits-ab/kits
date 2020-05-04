@@ -92,4 +92,4 @@ Lately I've been working mostly with REST API:s, where my use case has been that
 ## Summary
 I believe union types is a good way of handling multiple data types while maintaining strongly typed code, and as a way to minimize need of dependent properties of data objects. Even if your language of choice doesn't support it natively you can hopefully implement it yourself.
 
-If you're a C# developer feel free to try out my [generic data structures](https://github.com/PhilipAlexanderWallin/GenericDataStructures), any and all feedback is appreciated.
+If you're a C# developer feel free to try out my [generic data structures project](https://github.com/PhilipAlexanderWallin/GenericDataStructures) for union types, any and all feedback is appreciated!
