@@ -15,4 +15,4 @@ tags:
   - react
 ---
 
-Skriv massor om dig själv, något säljande gärna
+Mycket mycket bra. Kanske en av de bästa.

@@ -10,4 +10,4 @@ avatar: /assets/medarbetare_johanaronsson-avatar.jpg
 social: {}
 ---
 
-javisst
+Mycket mycket bra. Kanske en av de bästa.

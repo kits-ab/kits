@@ -10,4 +10,4 @@ avatar: /assets/medarbetare_philiplu-avatar.jpg
 social: {}
 ---
 
-Konsult ja visst
+Mycket mycket bra. Kanske en av de bästa.
