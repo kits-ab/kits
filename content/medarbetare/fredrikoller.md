@@ -2,6 +2,7 @@
 type: person
 id: fredrikoller
 title: Fredrik Öller
+alumni: true
 tagLine: Utvecklare
 image: /assets/medarbetare_fredrikoller.jpg
 avatar: /assets/medarbetare_fredrikoller-avatar.jpg
