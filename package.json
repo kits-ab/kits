@@ -70,7 +70,7 @@
     "@types/react-helmet": "5.0.8",
     "@types/styled-components": "4.1.8",
     "graphql": "14.1.1",
-    "graphql-code-generator": "0.16.1",
+    "graphql-code-generator": "0.18.2",
     "graphql-codegen-typescript-client": "0.16.1",
     "graphql-codegen-typescript-common": "0.16.1",
     "graphql-codegen-typescript-server": "0.16.1",
