@@ -4,9 +4,9 @@ title: 'AWS Key Management System '
 authors:
   - soroushnejad
 ---
-AWS KMS
+Management of cryptographic keys
 
-In this post we will discuss what Key Management System is and what are the main features of it. Furthermore, we will show how you can integrate KMS with Aws Lambda and migrate your signing and verification workload to the KMS service. At last, we will discuss a limitation on creating CSRs in the KMS service and a solution for it using Bouncycastle and Java.  :rocket:
+In this post we will discuss what Key Management System is and what are the main features of it. Furthermore, we will show how you can integrate KMS with AWS lambda and migrate your signing and verification workload to the KMS service. At last, we will discuss a limitation on creating CSRs in the KMS service and a solution for it using Bouncycastle and Java.  :rocket:
 
 ##### What is KMS service
 
@@ -28,67 +28,51 @@ Certificate Signing Request (CSR) is a message from an applicant to a certificat
 2. The public key for which the certificate should be issued
 3. A digital signature on point one and two. This integrity protection ensures the CA that nothing has changed in the communication channel.
 
-
-
 ### Kms signer application
 
 Let's create an application to demonstrate how you can migrate your signing workload on KMS. I am using [Serverless framework](https://www.serverless.com/) for creating my AWS resources. If you are not familar with this framework, take a look on [this page](https://www.serverless.com/framework/docs/getting-started/)
 
 * Create a Aws Lambda
-
   ​	`sls create -t "aws-java-maven" -n kms-signer`
-
-
 
 ##### First step: Create lambda and API gateway
 
 * Add post method as a trigger to the lambda function in `serverless.yml`
-
   ```yml
   events:
     - http:
         path: sign
         method: post
   ```
-
 * Deploy
-
   Congratulation! You created a lambda function and an API gateway for it. It is time to deploy it on AWS. Don't forget to build your project before deploy!
-
-  ​	```sls deploy```
-
-
-
+  ​	`sls deploy`
 * If the deploy goes well, you will get a link to your API in the logs. You can test the API using a REST client e.g. curl like following:
 
-
-
-  ``` bash
-  curl --location --request POST 'https://<MYURL>/dev/sign' \
-  --header 'Content-Type: application/json' \
-  --data-raw '{
-  	"message": "sign-this!"
-  }'
-  ```
+```bash
+curl --location --request POST 'https://<MYURL>/dev/sign' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"message": "sign-this!"
+}'
+```
 
   Ofcourse you get a default result which has created by Serverless framwork. In the next step we will put the application into context and send back an actual result from the API. You can read the logs on CloadWatch console, or easier using this command:
 
-  ​	```sls logs -f <FUNCTION-NAME>```
+  ​	`sls logs -f <FUNCTION-NAME>`
 
-
-
-  ##### BONUS:
+##### BONUS:
 
   Useful log messages that you can put in your lambda to observe system environment variables, context data, and event data are as following.
 
-  ```java
-  // log execution details
-  LOG.debug("ENVIRONMENT VARIABLES: {}", gson.toJson(System.getenv()));
-  LOG.debug("CONTEXT: {}", gson.toJson(context));
-  // process event
-  LOG.debug("EVENT: {}", gson.toJson(event));
-  LOG.debug("EVENT TYPE: {}", event.getClass().toString());
-  ```
+```java
+// log execution details
+LOG.debug("ENVIRONMENT VARIABLES: {}", gson.toJson(System.getenv()));
+LOG.debug("CONTEXT: {}", gson.toJson(context));
+// process event
+LOG.debug("EVENT: {}", gson.toJson(event));
+LOG.debug("EVENT TYPE: {}", event.getClass().toString());
+```
 
 ##### Second step: Create a EC key pair
 
@@ -108,8 +92,6 @@ iamRoleStatements:
       - kms:Sign
     Resource: "arn:aws:kms:<REGION>:<ACCOUNT>:key/<KEY-ID>"
 ```
-
-
 
 ##### Fourth step: Sign a string using kms
 
@@ -142,11 +124,8 @@ So far, so good! You have an application that can sign content for you. You can 
 First, you apply for a certificate by sending a CA a CSR. The digital certificate you eventually get from the CA is confirming the authenticity of your public key. Traditionally, you create a CSR with OpenSSL tool with these steps:
 
 1. First generate a pair of keys:
-
-   ` openssl ecparam -out private.key -name prime256v1 -genkey`
-
+   `openssl ecparam -out private.key -name prime256v1 -genkey`
 2. Then using these pair of key to generating a CSR. Note that you need private key for having a "Applicant signature" on your CSR
-
    `openssl req -new -key private.key -out my-csr.csr -sha256`
 
 The issue in KMS is the CSR creation feature is not an available feature. Additionally, no one can have access to the private key generated on KMS. So this is a deadend way?
@@ -223,11 +202,11 @@ nF4VqCh1sFoLoxoAdvZvRpAa/F4wyvJQjU0CIEVxatmlGXzmoBY/MKHPiXG2UKVu
 
 If you want to verify the digital signature inside a Certificate Signing Request, you can use the OpenSSL "req -verify" command as shown below:
 
-`openssl req -in myCsr.csr -noout -verify   `
+`openssl req -in myCsr.csr -noout -verify`
 
 The output "verify OK" indicates that the decrypted digital signature matches the digest of the CSR data.
 
-#####  Useful links
+##### Useful links
 
 * SSL shopper https://www.sslshopper.com/
 * Cert logik https://certlogik.com/decoder/
