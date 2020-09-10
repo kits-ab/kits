@@ -1,12 +1,15 @@
 ---
 type: post
-title: 'AWS Key Management System '
+title: "AWS Key Management System "
 authors:
   - soroushnejad
 ---
+
 Management of cryptographic keys
 
-In this post we will discuss what Key Management System is and what are the main features of it. Furthermore, we will show how you can integrate KMS with AWS lambda and migrate your signing and verification workload to the KMS service. At last, we will discuss a limitation on creating CSRs in the KMS service and a solution for it using Bouncycastle and Java.  :rocket:
+In this post we will discuss what Key Management System is and what are the main features of it. Furthermore, we will show how you can integrate KMS with AWS lambda and migrate your signing and verification workload to the KMS service. At last, we will discuss a limitation on creating CSRs in the KMS service and a solution for it using Bouncycastle and Java. :rocket:
+
+<!-- more -->
 
 #### What is KMS service
 
@@ -32,12 +35,12 @@ Certificate Signing Request (CSR) is a message from an applicant to a certificat
 
 Let's create an application to demonstrate how you can migrate your signing workload on KMS. I am using [Serverless framework](https://www.serverless.com/) for creating my AWS resources. If you are not familar with this framework, take a look on [this page](https://www.serverless.com/framework/docs/getting-started/)
 
-* Create a Aws Lambda
-  ​	`sls create -t "aws-java-maven" -n kms-signer`
+- Create a Aws Lambda
+  ​ `sls create -t "aws-java-maven" -n kms-signer`
 
 #### First step: Create lambda and API gateway
 
-* Add post method as a trigger to the lambda function in `serverless.yml`
+- Add post method as a trigger to the lambda function in `serverless.yml`
 
   ```yml
   events:
@@ -45,10 +48,11 @@ Let's create an application to demonstrate how you can migrate your signing work
         path: sign
         method: post
   ```
-* Deploy
+
+- Deploy
   Congratulation! You created a lambda function and an API gateway for it. It is time to deploy it on AWS. Don't forget to build your project before deploy!
-  ​	`sls deploy`
-* If the deploy goes well, you will get a link to your API in the logs. You can test the API using a REST client e.g. curl like following:
+  ​ `sls deploy`
+- If the deploy goes well, you will get a link to your API in the logs. You can test the API using a REST client e.g. curl like following:
 
 ```bash
 curl --location --request POST 'https://<MYURL>/dev/sign' \
@@ -58,13 +62,13 @@ curl --location --request POST 'https://<MYURL>/dev/sign' \
 }'
 ```
 
-  Ofcourse you get a default result which has created by Serverless framwork. In the next step we will put the application into context and send back an actual result from the API. You can read the logs on CloadWatch console, or easier using this command:
+Ofcourse you get a default result which has created by Serverless framwork. In the next step we will put the application into context and send back an actual result from the API. You can read the logs on CloadWatch console, or easier using this command:
 
-  ​	`sls logs -f <FUNCTION-NAME>`
+​ `sls logs -f <FUNCTION-NAME>`
 
 #### BONUS:
 
-  Useful log messages that you can put in your lambda to observe system environment variables, context data, and event data are as following.
+Useful log messages that you can put in your lambda to observe system environment variables, context data, and event data are as following.
 
 ```java
 // log execution details
@@ -77,7 +81,7 @@ LOG.debug("EVENT TYPE: {}", event.getClass().toString());
 
 #### Second step: Create a EC key pair
 
-In the time of writing this post, CloudFormation does not currently support creating asymmetric CMKs. So we need to do it in the Console or  Aws Command line tool. You can find a comprehensive description on how  to create a CMK [here](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-asymmetric-cmk)
+In the time of writing this post, CloudFormation does not currently support creating asymmetric CMKs. So we need to do it in the Console or Aws Command line tool. You can find a comprehensive description on how to create a CMK [here](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-asymmetric-cmk)
 
 #### Third step: Add IAM Role
 
@@ -131,7 +135,7 @@ First, you apply for a certificate by sending a CA a CSR. The digital certificat
 
 The issue in KMS is the CSR creation feature is not an available feature. Additionally, no one can have access to the private key generated on KMS. So this is a deadend way?
 
-No, using the Bouncycastle, we are able to create a CSR.  By using `PKCS10CertificationRequestBuilder` class  from PKCS package, we create a "pre-build" CSR object which would need a `ContentSigner`. All we need to do is implement `ContentSigner` interface and glue the "sign" method we created before to this class.
+No, using the Bouncycastle, we are able to create a CSR. By using `PKCS10CertificationRequestBuilder` class from PKCS package, we create a "pre-build" CSR object which would need a `ContentSigner`. All we need to do is implement `ContentSigner` interface and glue the "sign" method we created before to this class.
 
 ```java
 public class AwsKMSContentSigner implements ContentSigner {
@@ -209,6 +213,6 @@ The output "verify OK" indicates that the decrypted digital signature matches th
 
 #### Useful links
 
-* SSL shopper https://www.sslshopper.com/
-* Cert logik https://certlogik.com/decoder/
-* https://aws.amazon.com/blogs/security/digital-signing-asymmetric-keys-aws-kms/
+- SSL shopper https://www.sslshopper.com/
+- Cert logik https://certlogik.com/decoder/
+- https://aws.amazon.com/blogs/security/digital-signing-asymmetric-keys-aws-kms/
