@@ -2,6 +2,7 @@
 type: person
 id: williambernting
 title: William Bernting
+alumni: true
 tagLine: 'Frontendutvecklare, arkitektur'
 image: /assets/medarbetare_williambernting.jpg
 avatar: /assets/medarbetare_williambernting-avatar.jpg
