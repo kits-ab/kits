@@ -37,7 +37,7 @@ schema:
   - presenters:
       - gustavjorlov
     type: presentation
-    title: NextJS
+    title: NextJS eller Rust
     details: Allt du behöver
     start: "2020-11-07 11:00"
     end: "2020-11-07 12:00"
@@ -59,33 +59,33 @@ schema:
     end: "2020-11-07 14:15"
   - presenters:
       - pierresandboge
+      - patriknilsson
     type: presentation
-    title: Jag har en idé
-    details: Men jag vill kolla med Patrik först
+    title: Standin
     start: "2020-11-07 14:15"
-    end: "2020-11-07 14:45"
+    end: "2020-11-07 14:35"
   - presenters:
       - default
     type: presentation
     title: Slot 30 min
-    start: "2020-11-07 14:45"
-    end: "2020-11-07 15:15"
+    start: "2020-11-07 14:35"
+    end: "2020-11-07 15:05"
   - type: coffee
     title: Fika
-    start: "2020-11-07 15:15"
-    end: "2020-11-07 15:30"
+    start: "2020-11-07 15:05"
+    end: "2020-11-07 15:20"
   - presenters:
       - default
     type: presentation
     title: Slot 1h
-    start: "2020-11-07 15:30"
-    end: "2020-11-07 16:30"
+    start: "2020-11-07 15:20"
+    end: "2020-11-07 16:20"
   - presenters:
       - default
     type: presentation
     title: Slot 45 min
-    start: "2020-11-07 16:30"
-    end: "2020-11-07 17:15"
+    start: "2020-11-07 16:20"
+    end: "2020-11-07 17:05"
   - type: drink
     title: Middag
     start: "2020-11-07 18:00"
