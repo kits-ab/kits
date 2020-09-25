@@ -46,15 +46,21 @@ schema:
     start: "2020-11-07 12:00"
     end: "2020-11-07 13:00"
   - presenters:
+      - tobiaslans
+    type: presentation
+    title: "Workshop: Swift och iOS"
+    start: "2020-11-07 13:00"
+    end: "2020-11-07 15:00"
+  - presenters:
       - antonmyrholm
     type: presentation
     title: Geckos och Delfiner
     start: "2020-11-07 13:00"
     end: "2020-11-07 13:30"
   - presenters:
-      - default
+      - joakimkemeny
     type: presentation
-    title: Slot 45 min
+    title: (Kanske "Clean Architecture and Code Structure")
     start: "2020-11-07 13:30"
     end: "2020-11-07 14:15"
   - presenters:
