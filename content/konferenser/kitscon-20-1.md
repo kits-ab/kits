@@ -71,9 +71,9 @@ schema:
     start: "2020-11-07 14:15"
     end: "2020-11-07 14:35"
   - presenters:
-      - default
+      - victordavidsson
     type: presentation
-    title: Slot 30 min
+    title: Azure
     start: "2020-11-07 14:35"
     end: "2020-11-07 15:05"
   - type: coffee
