@@ -73,7 +73,7 @@ schema:
   - presenters:
       - victordavidsson
     type: presentation
-    title: Azure
+    title: Azure (20-30 min)
     start: "2020-11-07 14:35"
     end: "2020-11-07 15:05"
   - type: coffee
@@ -81,10 +81,16 @@ schema:
     start: "2020-11-07 15:05"
     end: "2020-11-07 15:20"
   - presenters:
+      - pontusdoverstav
+    type: presentation
+    title: Web Monetization (15-30 min)
+    start: "2020-11-07 15:20"
+    end: "2020-11-07 15:50"
+  - presenters:
       - default
     type: presentation
-    title: Slot 1h
-    start: "2020-11-07 15:20"
+    title: Slot 30 min
+    start: "2020-11-07 15:50"
     end: "2020-11-07 16:20"
   - presenters:
       - default
