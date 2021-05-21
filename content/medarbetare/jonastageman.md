@@ -2,13 +2,14 @@
 type: person
 id: jonastageman
 title: Jonas Tageman
+alumni: true
 tagLine: Utvecklare
 image: /assets/medarbetare_jonastageman.jpg
 avatar: /assets/medarbetare_jonastageman-avatar.jpg
 phone: 0736 - 54 59 87
 email: jonas.tageman@kits.se
 social:
-  linkedin: https://se.linkedin.com/in/jonastageman
+  linkedin: 'https://se.linkedin.com/in/jonastageman'
 tags:
   - utvecklare
   - javascript
