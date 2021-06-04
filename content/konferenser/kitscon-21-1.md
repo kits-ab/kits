@@ -19,7 +19,7 @@ schema:
       - jacobtorrang
     type: presentation
     title: Bread goes stale, and so does your page! Time to useSWR?
-    details: STALE-WHILE-REVALIDATE. Your browser is doing it (and probably the cool kids), so why not you too! Showing how easy it is to apply revalidation caching strategies using Vercel's useSWR hook.
+    details: Stale While Revalidate. Your browser is doing it (and probably the cool kids), so why not you too! Showing how easy it is to apply revalidation caching strategies using Vercel's useSWR hook.
     start: "2021-06-18 09:30"
     end: "2021-06-18 10:00"
   - details: ""
