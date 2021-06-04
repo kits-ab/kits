@@ -74,7 +74,7 @@ schema:
   - presenters:
       - tobiaslans
     type: presentation
-    title: KITS 2022 - vilka är vi?
+    title: KITS 2021 - vilka är vi?
     details: Företaget vi anförtror vår tid
     start: "2021-06-18 16:30"
     end: "2021-06-18 18:00"
