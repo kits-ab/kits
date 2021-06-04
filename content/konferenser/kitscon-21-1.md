@@ -9,11 +9,19 @@ end: "2021-06-18"
 active: true
 image: /assets/kitscon_21-1.png
 schema:
+  - location:
+      coordinates:
+        - 57.74566991242499
+        - 11.944725707415383
+      title: Sankt Jörgen Park - Golfklubb
+    title: Sankt Jörgen Park - Golfklubb
+    start: "2021-06-18 09:00"
+    end: "2021-06-18 09:10"
   - presenters:
       - gustavjorlov
     type: presentation
     title: Välkomna
-    start: "2021-06-18 09:00"
+    start: "2021-06-18 09:10"
     end: "2021-06-18 09:30"
   - presenters:
       - jacobtorrang
