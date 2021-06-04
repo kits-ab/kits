@@ -15,6 +15,11 @@ schema:
         - 11.944725707415383
       title: Sankt Jörgen Park - Golfklubb
     title: Sankt Jörgen Park - Golfklubb
+    details: >-
+      Buss 17 eller bil är utmärkta alternativ för att ta sig hit.
+
+
+      Knipplekullen 15, 417 05 Göteborg
     start: "2021-06-18 09:00"
     end: "2021-06-18 09:10"
   - presenters:
