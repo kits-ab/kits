@@ -43,7 +43,7 @@ schema:
     title: Lunch
     start: "2021-06-18 12:30"
     end: "2021-06-18 13:30"
-  - type: running
+  - type: presentation
     title: Vetenskapshälsan
     details: Soffpotatis eller löparchips
     start: "2021-06-18 13:30"
