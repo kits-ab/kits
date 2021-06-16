@@ -24,8 +24,9 @@ schema:
     end: "2021-06-18 09:10"
   - presenters:
       - gustavjorlov
+      - patriknilsson
     type: presentation
-    title: Välkomna
+    title: Välkomna!
     start: "2021-06-18 09:10"
     end: "2021-06-18 09:30"
   - presenters:
@@ -41,15 +42,15 @@ schema:
     start: "2021-06-18 10:00"
     end: "2021-06-18 10:30"
   - presenters:
-      - patriknilsson
+      - hoimanlui
     type: presentation
-    title: Bash
-    details: Basha på Apple eller Android, det är frågan
+    title: REST
+    details: Hur gör en för att minimera RESTskuld
     start: "2021-06-18 10:30"
     end: "2021-06-18 11:00"
   - type: presentation
     title: Olof Röhlander
-    details: Motivation
+    details: Motivation på riktigt
     start: "2021-06-18 11:00"
     end: "2021-06-18 12:30"
   - type: food
@@ -58,7 +59,7 @@ schema:
     end: "2021-06-18 13:30"
   - type: presentation
     title: Vetenskapshälsan
-    details: Soffpotatis eller löparchips
+    details: Louise och Sara från Vetenskapshälsan inspirerar oss till bättre kost och träning med hjälp av ord och handling
     start: "2021-06-18 13:30"
     end: "2021-06-18 15:00"
   - details: ""
@@ -67,10 +68,10 @@ schema:
     start: "2021-06-18 15:00"
     end: "2021-06-18 15:30"
   - presenters:
-      - hoimanlui
+      - patriknilsson
     type: presentation
-    title: REST
-    details: Tekniken vi anförtror vår data
+    title: Bash
+    details: Basha på Apple eller Android, det är frågan
     start: "2021-06-18 15:30"
     end: "2021-06-18 16:00"
   - presenters:
@@ -83,13 +84,17 @@ schema:
     details: Flödet vi anfortror våra pengar
     start: "2021-06-18 16:00"
     end: "2021-06-18 16:30"
-
+  - type: running
+    title: "⚽️ Sverige - Slovakien"
+    start: "2021-06-18 16:30"
+    end: "2021-06-18 16:45"
   - presenters:
       - tobiaslans
     type: presentation
     title: KITS 2021 - vilka är vi?
-    details: Företaget vi anförtror vår tid
-    start: "2021-06-18 16:30"
+    details: >-
+      Workshop kring du, jag, KITS och framtiden
+    start: "2021-06-18 16:45"
     end: "2021-06-18 18:00"
   - type: food
     title: 3-rätters supé
