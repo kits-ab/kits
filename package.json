@@ -51,7 +51,7 @@
     "netlify-cms": "2.6.1",
     "normalize.css": "8.0.1",
     "polished": "2.3.3",
-    "prismjs": "1.15.0",
+    "prismjs": "1.25.0",
     "react": "16.8.1",
     "react-dom": "16.8.1",
     "react-helmet": "5.2.0",
