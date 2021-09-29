@@ -88,7 +88,7 @@ schema:
       - patriknilsson
     type: presentation
     title: Shell kata
-    details: Vit text och svart eller blå bakgrund, vilket är rätt och hur gör man egentligen. Hands on keys och eyes focused forwards!
+    details: Vit text och svart eller blå bakgrund, vilket är rätt och hur gör man egentligen. Hands on keys and eyes focused forwards!
     start: "2021-10-15 09:30"
     end: "2021-10-15 10:30"
   - type: coffee
