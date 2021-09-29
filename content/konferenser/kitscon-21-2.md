@@ -96,12 +96,12 @@ schema:
     start: "2021-10-15 10:30"
     end: "2021-10-15 11:00"
   - presenters:
-      - joellajohannesson
+      - einarhost
     type: presentation
-    title: Att gå från junior till senior
-    details: Berättelser från verkligheten
+    title: Einar Høst
+    details: Communication and collaboration in a software organisation
     start: "2021-10-15 11:00"
-    end: "2021-10-15 11:30"
+    end: "2021-10-15 11:45"
   - type: food
     title: Lunch
     start: "2021-10-15 12:00"
@@ -147,6 +147,13 @@ schema:
     title: Fika
     start: "2021-10-16 10:00"
     end: "2021-10-16 10:30"
+  - presenters:
+      - joellajohannesson
+    type: presentation
+    title: Att gå från junior till senior
+    details: Berättelser från verkligheten
+    start: "2021-10-16 10:30"
+    end: "2021-10-16 11:00"
   - type: food
     title: Lunch
     start: "2021-10-16 12:00"
