@@ -4,7 +4,6 @@ index: 4
 id: sakerhet
 title: Säkerhet
 ---
+KITS säkerhetsgurus är grymma på att hitta och åtgärda säkerhetshål. Vi tänker hotmodellering när vi ser affärskraven för en tjänst eller applikation. Omsätter sårbarheter / attackytor till konkreta lösningar som mitigerar risk och hjälper kunden att planera inför den dagen intrånget är ett faktum.
 
-KITS styrka är ledning av teknikintensiva projekt där fokus ligger på utveckling, integration och säkerhet i komplexa och internationella projekt. Vi arbetar med att få våra kunder att leverera i linje med deras kunders förväntningar.
-
-I detta arbete kombineras våra kunders metodik med våra konsulters förmåga att få fram bästa möjliga resultat och kvalitet ur ett projektteam. Våra projektledare har fokus på leveransen och vet att det fungerande teamet är nyckeln till detta.
+Vi utför sårbarhetsanalyser/penetrationstester och kodanalys för att verifiera att beslutad säkerhetsnivå är uppnådd. Vi erbjuder även kurs i applikationssäkerhet för utvecklare som vill/behöver lära sig att utveckla säkrare applikationer.
