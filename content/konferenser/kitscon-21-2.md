@@ -161,7 +161,13 @@ schema:
   - presenters:
       - johanherbo
     type: presentation
-    title: Maxa!
+    title: Maxa DIN utveckling!
+    details: >-
+      Oavsett om det gäller idrott, hobby eller jobbet som expertkonsult, så bygger det på att DU maxar DIN träning!
+
+      Med en fot fast i vetenskapen, men fri KITS-tolkning, kommer vi ta oss igenom några av de huvudteser som driver en del av Polisens nationella operativa avdelning (NOA) och dess utbildning framåt.
+
+      Behållning: DU kommer ge föredraget ett vettigt innehåll, om DU ser hur du kan nyttja tipsen i din vardag. Om inte, så är det lättsam timmes färd mot en trevlig afton i goda kollegors sällskap i Oslo.
     start: "2021-10-16 13:00"
     end: "2021-10-16 14:00"
   - presenters:
