@@ -150,8 +150,8 @@ schema:
   - presenters:
       - joellajohannesson
     type: presentation
-    title: Att gå från junior till senior
-    details: Berättelser från verkligheten
+    title: Vad innebär det egentligena att bli senior?
+    details: Det här är en liten reflektion om några av de erfarenheterna jag har haft än så länge och förhoppningsvis leder det till en diskussion om andras erfarenheter inom ämnet.
     start: "2021-10-16 10:30"
     end: "2021-10-16 11:00"
   - type: food
