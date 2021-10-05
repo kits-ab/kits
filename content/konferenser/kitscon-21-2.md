@@ -173,7 +173,8 @@ schema:
   - presenters:
       - pontusdoverstav
     type: presentation
-    title: "?"
+    title: ASCII-konst och fulla biskopar
+    details: OpenSSH visar en visualisering av nycklar för att det ska vara lättare att verifiera att en nyckeln är den man förväntar sig. Men hur skapas denna visualisering, och är den algoritmen bakom den säker?
     start: "2021-10-16 14:00"
     end: "2021-10-16 14:30"
 
