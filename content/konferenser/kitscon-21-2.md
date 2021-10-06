@@ -54,6 +54,7 @@ schema:
   - presenters:
       - gustavjorlov
     type: presentation
+    details: Jag presenterar tre paradigmer av hur man tillhandahåller en hemsida på snabbaste, flexiblaste och enklaste sätt. Försök har gjorts under åren att utnyttja den senaste inom tekniken, men alla gånger har det funnits kompromisser. NextJS försöker bita i det stora stycket genom att erbjuda utvecklaren möjlighet att välja paradigm och dessutom ska det enligt uppgift vara lätt. Jag ska försöka övertyga er om detta.
     title: NextJS
     start: "2021-10-14 15:30"
     end: "2021-10-14 16:15"
