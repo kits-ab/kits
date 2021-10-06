@@ -99,7 +99,11 @@ schema:
       - einarhost
     type: presentation
     title: Einar Høst
-    details: Communication and collaboration in a software organisation
+    details: >-
+      Socio-technical leadership
+
+
+      Software systems must be understood as socio-technical systems: software products are intertwined with the organizations that build them. Organizational forces shape the software, which in turn shapes the organization, locking both into certain structures and patterns that can be difficult to change. This reality is what we need to engage with if we want to have impact as software developers, if we want our ideas to count, if we want to influence the culture we work in and shape the software being built. It's not enough to be tech-proficient. We must be able to communicate clearly and honestly, to build trust and collaborate effectively, to gain support for your ideas, to understand and empathize with the concerns and priorities of others, to negotiate fairly, to give and take, to choose which battles to fight and which to leave alone. But that's easy to say - how do we do it in practice? How do we build the necessary skills? How do we practice?
     start: "2021-10-15 11:00"
     end: "2021-10-15 11:45"
   - type: food
@@ -127,6 +131,11 @@ schema:
       - pierresandboge
     type: presentation
     title: iOS-workshop - intro
+    details: >-
+      Introduktion till workshop där vi utvecklar en iOS-app och utforskar Apples utvecklingsmiljö. Lär dig koda med SwiftUI och förvänta dig att ha din egen app på din iPhone eller iPad. 
+
+
+      Inga förkunskaper krävs. Ta med dig din Mac om du har någon och installera Xcode innan.
     start: "2021-10-16 09:00"
     end: "2021-10-16 09:15"
   - type: run
@@ -185,6 +194,7 @@ schema:
       - pierresandboge
     type: presentation
     title: iOS - demo
+    details: Alla deltagare får chans att visa upp vad de klarat av under dagen. Svårigheter, misslyckanden och motgångar välkomnas men även braksuccéer!
     start: "2021-10-16 15:00"
     end: "2021-10-16 16:00"
   - type: food
