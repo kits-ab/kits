@@ -80,9 +80,11 @@ schema:
   - presenters:
       - joakimkemeny
     type: presentation
-    title: Is there something better than Scrum?
+    title: Can messy legacy app code be fixed?
     details: >-
-      Som bransch verkar vi ha bestämt oss för att det enda sättet man kan bygga mjukvara på är med agila metoder och med det menar man nästan alltid Scrum eller SAFe. Är det verkligen det bästa vi har att komma med eller finns det någonting bättre?
+      Att sätta upp en arkitektur när man skapar ett nytt projekt är en sak men vad gör man när man kommer in i ett projekt utan arkitektur eller ännu värre – en riktigt dålig, och hur kan man hålla sin arkitektur relevant över tid allt eftersom nya tekniker och sätt att utveckla kommer fram.
+
+      Jag befinner mig i precis den här situationen nu och i den här dragningen tänkte jag beskriva hur jag attackerar problemet, hur jag förhoppningsvis tar mig framåt och hur jag undviker att hamna i ett fem år långt NextGen-projekt.
     start: "2021-10-15 09:00"
     end: "2021-10-15 09:30"
   - presenters:
@@ -146,11 +148,9 @@ schema:
   - presenters:
       - joakimkemeny
     type: presentation
-    title: Can messy legacy app code be fixed?
+    title: Is there something better than Scrum?
     details: >-
-      Att sätta upp en arkitektur när man skapar ett nytt projekt är en sak men vad gör man när man kommer in i ett projekt utan arkitektur eller ännu värre – en riktigt dålig, och hur kan man hålla sin arkitektur relevant över tid allt eftersom nya tekniker och sätt att utveckla kommer fram.
-
-      Jag befinner mig i precis den här situationen nu och i den här dragningen tänkte jag beskriva hur jag attackerar problemet, hur jag förhoppningsvis tar mig framåt och hur jag undviker att hamna i ett fem år långt NextGen-projekt.
+      Som bransch verkar vi ha bestämt oss för att det enda sättet man kan bygga mjukvara på är med agila metoder och med det menar man nästan alltid Scrum eller SAFe. Är det verkligen det bästa vi har att komma med eller finns det någonting bättre?
     start: "2021-10-16 09:30"
     end: "2021-10-16 10:00"
   - type: coffee
