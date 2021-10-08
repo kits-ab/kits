@@ -3,7 +3,7 @@ type: person
 id: johanherbo
 title: Johan Herbo
 tagLine: Arkitekt & bollplank
-image: ''
+image: /assets/medarbetare_johanherbo.jpg
 avatar: /assets/medarbetare_johanherbo-avatar.jpg
 phone: 0730 – 74 07 18
 email: johan.herbo@kits.se
