@@ -62,6 +62,7 @@ schema:
       - pierresandboge
     type: presentation
     title: Peopleware
+    details: Hur jobbar man effektivt i team och mellan team? Vad ska man göra och vad ska man inte göra? Vi går igenom sambandet mellan organisation och arkitektur, olika typer av team, samarbetsformer med mera.
     start: "2021-10-14 16:15"
     end: "2021-10-14 16:45"
   - type: food
