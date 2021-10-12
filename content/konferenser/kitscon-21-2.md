@@ -41,10 +41,10 @@ schema:
     start: "2021-10-14 13:30"
     end: "2021-10-14 14:15"
   - presenters:
-      - default
       - dennisdubrefjord
     type: presentation
-    title: "Dennis Dubrefjord"
+    title: Fysisk säkerhet
+    details: Låsdyrkning och annat kul! Ett föredrag som öppnar många dörrar
     start: "2021-10-14 14:15"
     end: "2021-10-14 15:00"
   - type: coffee
