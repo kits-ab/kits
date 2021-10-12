@@ -13,14 +13,11 @@ social:
   linkedin: 'https://se.linkedin.com/in/herbo'
   twitter: JohanHerbo
 tags:
-  - integration
+  - enterprisearkitektur
   - arkitektur
-  - projektledning
-  - togaf
-  - java
-  - java ee
-  - soa
-  - bpel
+  - integration
+  - applikationssäkerhet
+  - informationssäkerhet
 ---
 
 Johan fokuserar på systemutveckling, systemintegration och applikationssäkerhet huvudsakligen i rollen som system- och integrationsarkitekt, men även som utvecklare, mentor och projektledare.
