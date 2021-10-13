@@ -65,9 +65,19 @@ schema:
     details: Hur jobbar man effektivt i team och mellan team? Vad ska man göra och vad ska man inte göra? Vi går igenom sambandet mellan organisation och arkitektur, olika typer av team, samarbetsformer med mera.
     start: "2021-10-14 16:15"
     end: "2021-10-14 16:45"
-  - type: food
+  - type: bus
     title: Buss till restaurangen
     start: "2021-10-14 18:00"
+    end: "2021-10-14 19:00"
+  - type: food
+    href: https://www.restaurantlouise.no
+    title: Middag - Louise Restaurant & Bar
+    location:
+      coordinates:
+        - 59.91017099464221
+        - 10.72760992325135
+      title: Restaurang Louise - Aker Brygge
+    start: "2021-10-14 19:00"
     end: "2021-10-14 22:00"
   - type: bus
     title: Buss till hotellet
