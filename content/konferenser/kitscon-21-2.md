@@ -93,9 +93,9 @@ schema:
     type: presentation
     title: Can messy legacy app code be fixed?
     details: >-
-      Att sätta upp en arkitektur när man skapar ett nytt projekt är en sak men vad gör man när man kommer in i ett projekt utan arkitektur eller ännu värre – en riktigt dålig, och hur kan man hålla sin arkitektur relevant över tid allt eftersom nya tekniker och sätt att utveckla kommer fram.
+      Att sätta upp en arkitektur när man skapar ett nytt projekt är en sak men att hålla den relevant över tid i takt med att nya tekniker och sätt att utveckla kommer fram är en annan. Och vad gör man när om man kommer in i ett befintligt projekt där man under flera års tid har ignorerat arkitektur och istället ackumulerat teknisk skuld.
 
-      Jag befinner mig i precis den här situationen nu och i den här dragningen tänkte jag beskriva hur jag attackerar problemet, hur jag förhoppningsvis tar mig framåt och hur jag undviker att hamna i ett fem år långt NextGen-projekt.
+      I den här dragningen tänkte jag beskriva hur man kan attackera problemet utan att bygga om allt från scratch eller fastna i ett fem år långt NextGen-projekt.
     start: "2021-10-15 09:00"
     end: "2021-10-15 09:30"
   - presenters:
