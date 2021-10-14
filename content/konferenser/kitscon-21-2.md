@@ -84,6 +84,11 @@ schema:
     start: "2021-10-14 22:30"
     end: "2021-10-14 23:00"
 
+  - type: running
+    title: Joggetur om morgenen
+    details: Ut på tur, aldri sint
+    start: "2021-10-15 07:00"
+    end: "2021-10-15 07:45"
   - type: food
     title: Frukost
     start: "2021-10-15 08:00"
