@@ -52,19 +52,12 @@ schema:
     start: "2021-10-14 15:00"
     end: "2021-10-14 15:30"
   - presenters:
-      - gustavjorlov
-    type: presentation
-    details: Jag presenterar tre paradigmer av hur man tillhandahåller en hemsida på snabbaste, flexiblaste och enklaste sätt. Försök har gjorts under åren att utnyttja den senaste inom tekniken, men alla gånger har det funnits kompromisser. NextJS försöker bita i det stora stycket genom att erbjuda utvecklaren möjlighet att välja paradigm och dessutom ska det enligt uppgift vara lätt. Jag ska försöka övertyga er om detta.
-    title: NextJS
-    start: "2021-10-14 15:30"
-    end: "2021-10-14 16:15"
-  - presenters:
       - pierresandboge
     type: presentation
     title: Peopleware
     details: Hur jobbar man effektivt i team och mellan team? Vad ska man göra och vad ska man inte göra? Vi går igenom sambandet mellan organisation och arkitektur, olika typer av team, samarbetsformer med mera.
-    start: "2021-10-14 16:15"
-    end: "2021-10-14 16:45"
+    start: "2021-10-14 15:30"
+    end: "2021-10-14 16:00"
   - type: bus
     title: Buss till restaurangen
     start: "2021-10-14 18:00"
@@ -87,8 +80,8 @@ schema:
   - type: running
     title: Joggetur om morgenen
     details: Ut på tur, aldri sint
-    start: "2021-10-15 07:00"
-    end: "2021-10-15 07:45"
+    start: "2021-10-15 07:30"
+    end: "2021-10-15 08:00"
   - type: food
     title: Frukost
     start: "2021-10-15 08:00"
@@ -104,12 +97,12 @@ schema:
     start: "2021-10-15 09:00"
     end: "2021-10-15 09:30"
   - presenters:
-      - patriknilsson
+      - gustavjorlov
     type: presentation
-    title: Shell kata
-    details: Vit text och svart eller blå bakgrund, vilket är rätt och hur gör man egentligen. Hands on keys and eyes focused forwards!
+    details: Jag presenterar tre paradigmer av hur man tillhandahåller en hemsida på snabbaste, flexiblaste och enklaste sätt. Försök har gjorts under åren att utnyttja den senaste inom tekniken, men alla gånger har det funnits kompromisser. NextJS försöker bita i det stora stycket genom att erbjuda utvecklaren möjlighet att välja paradigm och dessutom ska det enligt uppgift vara lätt. Jag ska försöka övertyga er om detta.
+    title: The Three Ways, what is Next?
     start: "2021-10-15 09:30"
-    end: "2021-10-15 10:30"
+    end: "2021-10-15 10:15"
   - type: coffee
     title: Fika
     start: "2021-10-15 10:30"
@@ -131,7 +124,7 @@ schema:
     end: "2021-10-15 13:00"
   - type: running
     title: Aktivitet
-    details: Eftermiddagen spenderas med fokus på pricksäkerhet och airtime.
+    details: Eftermiddagen spenderas med fokus på pricksäkerhet och airtime. Ta på kläder för att vara ute.
     start: "2021-10-15 13:00"
     end: "2021-10-15 17:00"
   - type: food
@@ -180,6 +173,13 @@ schema:
     details: Det här är en liten reflektion om några av de erfarenheterna jag har haft än så länge och förhoppningsvis leder det till en diskussion om andras erfarenheter inom ämnet.
     start: "2021-10-16 10:30"
     end: "2021-10-16 11:00"
+  - presenters:
+      - jacobtorrang
+    type: presentation
+    title: Mina kompisar pajar min Telegram-bot hela tiden
+    details: En kort berättelse om äventyr i Telegram och AWS
+    start: "2021-10-16 11:00"
+    end: "2021-10-16 11:15"
   - type: food
     title: Lunch
     start: "2021-10-16 12:00"
