@@ -5,7 +5,6 @@ title: Pär Svedberg
 tagLine: Backendutvecklare
 image: /assets/medarbetare_parsvedberg.jpg
 avatar: /assets/medarbetare_parsvedberg-avatar.jpg
-phone: 0705 - 82 01 27
 email: par.svedberg@kits.se
 social:
   keybase: svedberg
