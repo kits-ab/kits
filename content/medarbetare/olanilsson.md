@@ -2,6 +2,7 @@
 type: person
 id: olanilsson
 title: Ola Nilsson
+alumni: true
 tagLine: Utvecklare
 image: /assets/medarbetare_olanilsson.jpg
 avatar: /assets/medarbetare_olanilsson-avatar.jpg
@@ -9,11 +10,11 @@ phone: 0708 – 29 75 11
 email: ola.nilsson@kits.se
 social:
   keybase: olan
-  linkedin: https://se.linkedin.com/pub/ola-nilsson/46/2ba/490/en
+  linkedin: 'https://se.linkedin.com/pub/ola-nilsson/46/2ba/490/en'
 tags:
   - utveckling
   - projektledning
-  - c#
+  - 'c#'
   - .net
   - episerver
   - sitecore
