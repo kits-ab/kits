@@ -2,6 +2,7 @@
 type: person
 id: soroushnejad
 title: Soroush Nejad
+alumni: true
 tagLine: Backendutvecklare
 image: /assets/medarbetare_soroushnejad.jpg
 avatar: /assets/medarbetare_soroushnejad-avatar.jpg
@@ -10,7 +11,7 @@ email: soroush.nejad@kits.se
 social:
   github: nejads
   keybase: nejads
-  linkedin: https://www.linkedin.com/in/nejads
+  linkedin: 'https://www.linkedin.com/in/nejads'
 tags:
   - utveckling
   - säkerhet
