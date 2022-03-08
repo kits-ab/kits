@@ -1,7 +1,7 @@
 ---
 type: person
 id: dennisdubrefjord
-alumni: true
+alumni: false
 title: Dennis Dubrefjord
 tagLine: Utvecklare
 image: /assets/medarbetare_dennisdubrefjord.jpg
