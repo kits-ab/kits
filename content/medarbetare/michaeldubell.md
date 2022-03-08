@@ -2,13 +2,14 @@
 type: person
 id: michaeldubell
 title: Michael Dubell
+alumni: true
 tagLine: Säkerhetsexpert
 image: /assets/medarbetare_michaeldubell.jpg
 avatar: /assets/medarbetare_michaeldubell-avatar.jpg
 phone: 0733 - 03 25 53
 email: michael.dubell@kits.se
 social:
-  linkedin: https://www.linkedin.com/in/dubell/
+  linkedin: 'https://www.linkedin.com/in/dubell/'
 tags:
   - utveckling
   - säkerhet
