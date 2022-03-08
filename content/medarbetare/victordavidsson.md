@@ -6,8 +6,8 @@ alumni: false
 tagLine: Utvecklare
 email: victor.davidsson@kits.se
 social: {}
-image: /assets/medarbetare_emirzivcic.jpg
-avatar: /assets/medarbetare_emirzivcic-avatar.jpg
+image: /assets/medarbetare_default.jpg
+avatar: /assets/medarbetare_default-avatar.jpg
 ---
 
 Mycket mycket bra. Kanske en av de bästa.
