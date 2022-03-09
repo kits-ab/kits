@@ -1,7 +1,7 @@
 ---
 type: person
 id: emirzivcic
-title: Emir Živćić
+title: Emir Živčić
 alumni: false
 tagLine: the best
 email: emir.zivcics@kits.se
