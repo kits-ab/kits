@@ -3,11 +3,11 @@ type: person
 id: gustavhjelm
 title: Gustav Hjelm
 alumni: false
-tagLine: the best
+tagLine: Rekryteringsansvarig
 email: gustav.hjelm@kits.se
 social: {}
 image: /assets/medarbetare_gustavhjelm.jpg
 avatar: /assets/medarbetare_gustavhjelm-avatar.jpg
 ---
 
-hej
+Fantastiskt bra. Kanske en av de bästa!

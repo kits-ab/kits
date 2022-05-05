@@ -3,11 +3,15 @@ type: person
 id: isacolofsson
 title: Isac Olofsson
 alumni: false
-tagLine: the best
+tagLine: Utvecklare
 email: isac.olofsson@kits.se
 social: {}
 image: /assets/medarbetare_isacolofsson.jpg
 avatar: /assets/medarbetare_isacolofsson-avatar.jpg
+tags:
+  - utveckling
+  - python
+  - c++
 ---
 
-hej
+hejFantastiskt bra. Kanske en av de bästa!

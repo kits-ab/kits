@@ -2,7 +2,7 @@
 type: person
 id: larslornell
 title: Lars Lörnell
-tagLine: Utvecklare
+tagLine: Utvecklare / Integratör
 phone:
 email: lars.lornell@kits.se
 image: /assets/medarbetare_larslornell.jpg

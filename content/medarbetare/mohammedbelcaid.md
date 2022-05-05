@@ -5,9 +5,13 @@ title: Mohammed Belcaid
 alumni: false
 image: /assets/medarbetare_mohammedbelcaid.jpg
 avatar: /assets/medarbetare_mohammedbelcaid-avatar.jpg
-tagLine: Säkerhetsexpert / Utvecklare
+tagLine: Säkerhetsexpert
 email: mohammed.belcaid@kits.se
 social: {}
+tags:
+  - penntest
+  - fuzzing
+  - auth
 ---
 
 Fantastiskt bra. Kanske en av de bästa!
