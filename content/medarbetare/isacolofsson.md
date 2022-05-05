@@ -5,7 +5,7 @@ title: Isac Olofsson
 alumni: false
 tagLine: Utvecklare
 email: isac.olofsson@kits.se
-social: {}
+social: {linkedin: https://www.linkedin.com/in/isac-olofsson-3a172215a/}
 image: /assets/medarbetare_isacolofsson.jpg
 avatar: /assets/medarbetare_isacolofsson-avatar.jpg
 tags:
@@ -19,4 +19,4 @@ tags:
   - linux
 ---
 
-
+Isac är en civilingenjör inom automation och mekatronik med examen från Chalmers.  
