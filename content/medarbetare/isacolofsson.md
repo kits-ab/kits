@@ -12,6 +12,11 @@ tags:
   - utveckling
   - python
   - c++
+  - docker
+  - ros
+  - matlab
+  - git
+  - linux
 ---
 
-Bättre än Dennis
+
