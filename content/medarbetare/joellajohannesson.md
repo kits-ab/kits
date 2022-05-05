@@ -6,6 +6,7 @@ tagLine: Utvecklare
 image: /assets/medarbetare_joellajohannesson.jpg
 avatar: /assets/medarbetare_joellajohannesson-avatar.jpg
 email: joella.johannesson@kits.se
+phone: 0708-27 73 26
 social:
   linkedin: https://www.linkedin.com/in/joella-johannesson-68a9b7b5/
 tags:
