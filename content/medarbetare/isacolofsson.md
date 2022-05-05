@@ -14,4 +14,4 @@ tags:
   - c++
 ---
 
-hejFantastiskt bra. Kanske en av de bästa!
+Bättre än Dennis
