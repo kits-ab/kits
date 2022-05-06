@@ -1,5 +1,6 @@
 ---
 type: person
+alumni: true
 id: gustavjorlov
 title: Gustav Jorlöv
 tagLine: Utvecklare
