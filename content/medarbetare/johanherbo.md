@@ -10,7 +10,7 @@ email: johan.herbo@kits.se
 social:
   github: jherbo
   keybase: jherbo
-  linkedin: 'https://se.linkedin.com/in/herbo'
+  linkedin: "https://se.linkedin.com/in/herbo"
   twitter: JohanHerbo
 tags:
   - enterprisearkitektur

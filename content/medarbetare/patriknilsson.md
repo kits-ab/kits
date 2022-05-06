@@ -23,6 +23,6 @@ tags:
   - java ee
 ---
 
-Patrik är en erfaren systemarkitekt och utvecklare som alltid fokuserar på bästa resultat med givna resurser. Han bemästrar det mesta inom Java, SQL och JavaScript. Är lika hemma på affärslogik och prestandaoptimering backend, som med JavaScript-ramverk och HTML/CSS.
+Patrik är en erfaren gubbe och utvecklare som alltid fokuserar på bästa resultat med givna resurser. Han bemästrar det mesta inom Java, SQL och JavaScript. Är lika hemma på affärslogik och prestandaoptimering backend, som med JavaScript-ramverk och HTML/CSS.
 
 Patrik trivs med flux och håller sig alltid uppdaterad med de senaste trenderna inom systemarkitektur samt webb- och mobilutveckling.
