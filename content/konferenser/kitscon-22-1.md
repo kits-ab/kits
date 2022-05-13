@@ -66,11 +66,62 @@ schema:
     start: "2022-05-20 08:15"
     end: "2022-05-20 09:00"
 
-  - title: Konferens
+  - title: Välkomna till KitsCon 22.1
     type: presentation
-    details: Mer detaljer kommer...
     start: "2022-05-20 09:00"
-    end: "2022-05-20 13:00"
+    end: "2022-05-20 09:15"
+    presenters:
+      - joakimkemeny
+      - patriknilsson
+
+  - title: Självkörande fordon – Planera en väg
+    type: presentation
+    start: "2022-05-20 09:15"
+    end: "2022-05-20 09:35"
+    details: Dragningen går först igenom alla de olika definitionerna av automatisering (level 0 - 5) och nämner de mest väsentliga mjukvara komponenterna i självkörande bilar. Sen går jag igenom path planner komponent i mer detalj, och ställer 3 öppna frågor om kring den. Jag funderar på att ta med en avslutnings del där jag prata lite om vart självkörande bilar är idag, men annars tar den slut efter dom tre frågorna.
+    presenters:
+      - isacolofsson
+
+  - title: IntelliJ IDEA demo
+    type: presentation
+    start: "2022-05-20 09:45"
+    end: "2022-05-20 10:15"
+    details: Hur jag använder IntelliJ IDEA för utveckling.
+    presenters:
+      - pierresandboge
+
+  - title: Fika
+    type: coffee
+    start: "2022-05-20 10:15"
+    end: "2022-05-20 10:45"
+
+  - title: KITS – livet, universum och allt
+    type: presentation
+    start: "2022-05-20 10:45"
+    end: "2022-05-20 11:00"
+    details: >-
+      Efter 8 år med KITS är det nu dags för lite förändring för att kunna ta nästa steg.
+
+
+      _Den här presentationen kommer även köras på Teams._
+    presenters:
+      - patriknilsson
+
+  - title: OWASP Nettacker
+    type: presentation
+    start: "2022-05-20 11:00"
+    end: "2022-05-20 11:40"
+    details: The OWASP Nettacker project is created to automate information gathering, vulnerability scanning and eventually generating a report for networks, including services, bugs, vulnerabilities, misconfigurations, and other information.
+    presenters:
+      - mohammedbelcaid
+
+  - title: Reinventing the Scrum ceremonies
+    type: presentation
+    start: "2022-05-20 11:50"
+    end: "2022-05-20 12:20"
+    details: Det föreligger en risk att Daily scrum utvecklas till ett meningslöst rapporteringsmöte och att Sprint retrospective blir systemutvecklingens motsvarighet till filmen Groundhog day. I detta föredrag tittar vi på hur vi kan göra dessa ceremonier GREAT again.
+    presenters:
+      - jensabrahamsson
 
   - title: Lunch på hotellet
     type: food
@@ -124,11 +175,57 @@ schema:
     start: "2022-05-21 08:15"
     end: "2022-05-21 09:00"
 
-  - title: Konferens
+  - title: Autonomous Electric Vehicles
     type: presentation
-    details: Mer detaljer kommer...
     start: "2022-05-21 09:00"
-    end: "2022-05-21 13:00"
+    end: "2022-05-21 09:30"
+    details: >-
+      Hur löser man framtidens transportproblem? I Trollhättan tror man att det är genom självkörande elektriska fordon, smarta städer och intuitiva gränssnitt.
+
+
+      Låt oss guida er genom vår resa mot framtidens mobilitet.
+    presenters:
+      - tobiaslans
+      - dzenanbazdarevic
+      - parsvedberg
+
+  - title: E-learning – Säker programmering
+    type: presentation
+    start: "2022-05-21 09:30"
+    end: "2022-05-21 10:15"
+    details: _Mer info kommer…_
+    presenters:
+      - patriknilsson
+
+  - title: Fika
+    type: coffee
+    start: "2022-05-21 10:15"
+    end: "2022-05-21 10:45"
+
+  - title: Schyssta mönster från baksidan
+    type: presentation
+    start: "2022-05-21 10:45"
+    end: "2022-05-21 11:15"
+    details: Hoi-Man kommer att prata om några mönster på hur en kan nyttja AWS-komponenter i backend-lösningar.
+    presenters:
+      - hoimanlui
+
+  - title: Redis
+    type: presentation
+    start: "2022-05-21 11:20"
+    end: "2022-05-21 11:50"
+    details: En snabb överblick över vad du behöver när det ska gå snabbt.
+    presenters:
+      - christoffermedin
+
+  - title: Vår reactular resa
+    type: presentation
+    start: "2022-05-21 12:00"
+    end: "2022-05-21 12:30"
+    details: En genomgång av de erfarenheter vi har fått från att migrera en applikation från Angular till React.
+    presenters:
+      - johanaronsson
+      - philiplu
 
   - title: Lunch på hotellet
     type: food

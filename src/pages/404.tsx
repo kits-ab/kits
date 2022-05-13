@@ -1,7 +1,6 @@
-import * as React from "react"
-import Helmet from "react-helmet"
-
 import { Button, Lead, MainHeading, spacing, Vertical } from "@kokitotsos/react-components"
+import * as React from "react"
+import { Helmet } from "react-helmet"
 
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"

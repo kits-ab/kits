@@ -1,12 +1,11 @@
-import { parse } from "date-fns"
+import { Article, Lead, MainHeading, spacing, Vertical } from "@kokitotsos/react-components"
+import { parseISO } from "date-fns"
 import { graphql } from "gatsby"
 import * as React from "react"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 
-import { Article, Lead, MainHeading, spacing, Vertical } from "@kokitotsos/react-components"
-
+import { FileConnection, MarkdownRemark, MarkdownRemarkConnection } from "../../gatsby-types"
 import { DefaultLayout } from "../layouts/DefaultLayout"
-import { FileConnection, MarkdownRemark, MarkdownRemarkConnection } from "../types/graphql"
 import { PageProps } from "../types/PageProps"
 import { edgeToPerson, findPersonsByIds } from "../utils/personUtils"
 
@@ -23,7 +22,7 @@ export default ({ data, location }: NewsTemplateProps) => {
   const page = data.page.edges[0]
   const news = data.news
   const avatars = data.avatars.edges
-  const persons = data.persons.edges.map(edge => edgeToPerson(edge, avatars))
+  const persons = data.persons.edges.map((edge) => edgeToPerson(edge, avatars))
   const authors = findPersonsByIds(persons, news.frontmatter.authors)
 
   return (
@@ -40,7 +39,7 @@ export default ({ data, location }: NewsTemplateProps) => {
         heading={news.frontmatter.title}
         href={news.fields.href}
         key={news.id}
-        publishTime={parse(news.fields.date)}
+        publishTime={parseISO(news.fields.date)}
         showAvatars={false}
       >
         {news.html}

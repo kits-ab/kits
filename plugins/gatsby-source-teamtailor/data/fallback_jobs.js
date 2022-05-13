@@ -13,8 +13,7 @@ module.exports = {
       },
       attributes: {
         "apply-button-text": "",
-        body:
-          '<h3>Är du en vass utvecklare som gillar utmaningar?</h3><p>Java, C# eller annat språk spelar ingen roll. Du är en driven människa som tycker om nya utmaningar och älskar att lära dig nya tekniker. Om du är en teamplayer som gillar att umgås med dina kollegor och dela dina erfarenheter.</p><p>Då är du rätt typ för oss.</p><figure><img src="https://media3.giphy.com/media/wSSKSmpeThAFq/giphy.gif"></figure>',
+        body: '<h3>Är du en vass utvecklare som gillar utmaningar?</h3><p>Java, C# eller annat språk spelar ingen roll. Du är en driven människa som tycker om nya utmaningar och älskar att lära dig nya tekniker. Om du är en teamplayer som gillar att umgås med dina kollegor och dela dina erfarenheter.</p><p>Då är du rätt typ för oss.</p><figure><img src="https://media3.giphy.com/media/wSSKSmpeThAFq/giphy.gif"></figure>',
         "end-date": null,
         "human-status": "published",
         internal: false,
@@ -126,8 +125,7 @@ module.exports = {
       },
       attributes: {
         "apply-button-text": "",
-        body:
-          '<h3>KITS projektledare tycker om utmaningar och att stå på egna ben.</h3> <p>Vi söker dig som är den naturliga ledaren som lotsar ditt projektteam genom alla projektfaser. Du kommunicerar vant med andra människor alltifrån tekniker till befattningshavare.</p><p>Du kommer att verka i olika branscher med skiftande utvecklingsprocesser allt från traditionella till agila arbetssätt. Du behärskar hela projektlivscykeln från förstudie till driftsättning.</p><figure><img src="https://media3.giphy.com/media/q2UjtMgeIAMyA/giphy.gif"></figure>',
+        body: '<h3>KITS projektledare tycker om utmaningar och att stå på egna ben.</h3> <p>Vi söker dig som är den naturliga ledaren som lotsar ditt projektteam genom alla projektfaser. Du kommunicerar vant med andra människor alltifrån tekniker till befattningshavare.</p><p>Du kommer att verka i olika branscher med skiftande utvecklingsprocesser allt från traditionella till agila arbetssätt. Du behärskar hela projektlivscykeln från förstudie till driftsättning.</p><figure><img src="https://media3.giphy.com/media/q2UjtMgeIAMyA/giphy.gif"></figure>',
         "end-date": null,
         "human-status": "published",
         internal: false,
@@ -234,8 +232,7 @@ module.exports = {
       },
       attributes: {
         "apply-button-text": "",
-        body:
-          '<h3>Brinner du för användarupplevelsen? Det gör vi också.</h3> <p>På KITS har vi ett team av duktiga frontendutvecklare. Vi hjälper våra kunder med allt från arkitektur till implementation, ofta tillsammans med andra utvecklare från KITS.</p> <p>Vi söker dig som är expert på webb- eller mobilutveckling och som brinner för att ge användarna en riktigt bra upplevelse. Kanske är HTML, CSS och JavaScript kombinerat med dagens ramverk din vardag eller är du mer fokuserad på Android eller iOS? Har du dessutom en känsla för interaktionsdesign och en känsla för detaljer så är det på KITS du ska jobba.</p><figure><img src="https://media3.giphy.com/media/5pxnxdzdZfXFK/giphy.gif"></figure>',
+        body: '<h3>Brinner du för användarupplevelsen? Det gör vi också.</h3> <p>På KITS har vi ett team av duktiga frontendutvecklare. Vi hjälper våra kunder med allt från arkitektur till implementation, ofta tillsammans med andra utvecklare från KITS.</p> <p>Vi söker dig som är expert på webb- eller mobilutveckling och som brinner för att ge användarna en riktigt bra upplevelse. Kanske är HTML, CSS och JavaScript kombinerat med dagens ramverk din vardag eller är du mer fokuserad på Android eller iOS? Har du dessutom en känsla för interaktionsdesign och en känsla för detaljer så är det på KITS du ska jobba.</p><figure><img src="https://media3.giphy.com/media/5pxnxdzdZfXFK/giphy.gif"></figure>',
         "end-date": null,
         "human-status": "published",
         internal: false,
@@ -347,8 +344,7 @@ module.exports = {
       },
       attributes: {
         "apply-button-text": "",
-        body:
-          '<h3>Är du en duktig utvecklare och grym på att hitta säkerhetshål?</h3> <p>Vi söker dig som även tänker hotmodellering när du ser affärskraven för en ny tjänst eller applikation. Omsätter attackytor till konkreta lösningar som mitigerar risk och hjälper kunden att planera inför den dagen intrånget är ett faktum.</p> <p>Till din vardag hör förutom systemutveckling att genomföra sårbarhetsanalyser/penetrationstester och kodanalys för att verifiera att beslutad säkerhetsnivå är uppnådd. Målet för dina analyser är oftast system i heterogena teknikstackar.</p><figure><img src="https://media1.giphy.com/media/kr3JYhiwqyoJG/giphy.gif"></figure>',
+        body: '<h3>Är du en duktig utvecklare och grym på att hitta säkerhetshål?</h3> <p>Vi söker dig som även tänker hotmodellering när du ser affärskraven för en ny tjänst eller applikation. Omsätter attackytor till konkreta lösningar som mitigerar risk och hjälper kunden att planera inför den dagen intrånget är ett faktum.</p> <p>Till din vardag hör förutom systemutveckling att genomföra sårbarhetsanalyser/penetrationstester och kodanalys för att verifiera att beslutad säkerhetsnivå är uppnådd. Målet för dina analyser är oftast system i heterogena teknikstackar.</p><figure><img src="https://media1.giphy.com/media/kr3JYhiwqyoJG/giphy.gif"></figure>',
         "end-date": null,
         "human-status": "published",
         internal: false,
@@ -455,8 +451,7 @@ module.exports = {
       },
       attributes: {
         "apply-button-text": "",
-        body:
-          '<h3>För dig som väver samman system</h3> <p>Vi söker dig som gillar att integrera system. Det kan vara mellan webb och backend, men lika gärna mellan bil och mobiltelefon. Internet of things kommer att bli din vardag om du inte redan är där.</p><p>Vi ser gärna att du behärskar att ta en interfacespecifikation från krav till implementation.</p><figure><img src="https://media2.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif"></figure>',
+        body: '<h3>För dig som väver samman system</h3> <p>Vi söker dig som gillar att integrera system. Det kan vara mellan webb och backend, men lika gärna mellan bil och mobiltelefon. Internet of things kommer att bli din vardag om du inte redan är där.</p><p>Vi ser gärna att du behärskar att ta en interfacespecifikation från krav till implementation.</p><figure><img src="https://media2.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif"></figure>',
         "end-date": null,
         "human-status": "published",
         internal: false,

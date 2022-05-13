@@ -1,9 +1,3 @@
-import { isSameDay } from "date-fns"
-import { graphql } from "gatsby"
-import * as React from "react"
-import Helmet from "react-helmet"
-import styled from "styled-components"
-
 import {
   Breakout,
   Collage,
@@ -23,14 +17,19 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
+import { isSameDay, parseISO } from "date-fns"
+import { graphql } from "gatsby"
+import * as React from "react"
+import { Helmet } from "react-helmet"
+import styled from "styled-components"
 
-import { DefaultLayout } from "../layouts/DefaultLayout"
 import {
   FileConnection,
   MarkdownRemark,
   MarkdownRemarkConnection,
-  Schema_2
-} from "../types/graphql"
+  MarkdownRemarkFrontmatterSchema
+} from "../../gatsby-types"
+import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { formatPeriod, formatWeekday } from "../utils/dateUtils"
 import { findImagesByRelativePaths } from "../utils/imageUtils"
@@ -82,14 +81,16 @@ export default ({ data, location }: KitsConPageProps) => {
   const kitscon = data.activeKitscon || data.latestKitscon.edges[0].node
   const kitscons = data.kitscons
   const avatars = data.avatars.edges
-  const persons = data.persons.edges.map(edge => edgeToPerson(edge, avatars))
+  const persons = data.persons.edges
+    .map((edge) => edgeToPerson(edge, avatars))
+    .filter((person) => person !== undefined) as types.Person[]
 
   const collageImages = findImagesByRelativePaths(
     data.collageImages.edges,
     kitscon.frontmatter.images
   )
 
-  const timelineEvents = kitscons.edges.map(edge => ({
+  const timelineEvents = kitscons.edges.map((edge) => ({
     href: edge.node.fields.href,
     date: edge.node.frontmatter.start
   }))
@@ -133,15 +134,15 @@ export default ({ data, location }: KitsConPageProps) => {
   )
 }
 
-const renderSchema = (persons: types.Person[], schema: Schema_2[]) => {
+const renderSchema = (persons: types.Person[], schema: MarkdownRemarkFrontmatterSchema[]) => {
   let previousTime: string
-  let previousSchema: Schema_2
+  let previousSchema: MarkdownRemarkFrontmatterSchema | undefined
   let connect = false
 
   const schemaContent: React.ReactNode[] = []
 
-  schema.forEach(s => {
-    if (!isSameDay(s.start, previousTime)) {
+  schema.forEach((s) => {
+    if (!isSameDay(parseISO(s.start), parseISO(previousTime))) {
       if (previousSchema) {
         schemaContent.push(renderPresentation(persons, previousSchema, connect, true))
         previousSchema = undefined
@@ -156,7 +157,7 @@ const renderSchema = (persons: types.Person[], schema: Schema_2[]) => {
       schemaContent.push(renderPresentation(persons, previousSchema, connect, showEndTime))
     }
 
-    connect = previousSchema && previousSchema.end === s.start
+    connect = previousSchema != undefined && previousSchema.end === s.start
     previousTime = s.start
 
     previousSchema = s
@@ -171,7 +172,7 @@ const renderSchema = (persons: types.Person[], schema: Schema_2[]) => {
 
 const renderPresentation = (
   persons: types.Person[],
-  presentation: Schema_2,
+  presentation: MarkdownRemarkFrontmatterSchema,
   connect: boolean,
   showEndTime: boolean
 ) => {
@@ -183,8 +184,8 @@ const renderPresentation = (
       key={"presentation" + presentation.start}
       presenters={presenters}
       heading={presentation.title}
-      startTime={presentation.start as any}
-      endTime={presentation.end as any}
+      startTime={parseISO(presentation.start)}
+      endTime={parseISO(presentation.end)}
       href={presentation.href}
       location={
         presentation.location && presentation.location.coordinates

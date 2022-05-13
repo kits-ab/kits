@@ -45,25 +45,23 @@ For debugging purposes you should install [React Developer Tools](https://github
 
 - Install all required tools
 
-  - Node 10.15 – <https://nodejs.org>
-  - Yarn 1.13 – <https://yarnpkg.com>
+  - Node 16.14– <https://nodejs.org>
 
 - Checkout the code and fetch all dependencies
   ```
   $ git clone git@github.com:kits-ab/kits.git
-  $ yarn install
+  $ npm install
   ```
 
 ### Available scripts
 
-When you've checked out the code and all dependencies have been fetched you probably want to run `yarn start` but you can run any of the the following scripts:
+When you've checked out the code and all dependencies have been fetched you probably want to run `npm start` but you can run any of the the following scripts:
 
-- `yarn build` – Creates a production ready builds in `public/`
-- `yarn clean` – Removes all generated files
-- `yarn format` – Format the entire codebase using [Prettier](https://prettier.io)
-- `yarn generateschema` – Reads the GraphQL schema from a started server and create TypeScript-types
-- `yarn lint` – Lints all code with [TSLint](https://palantir.github.io/tslint) and [Stylelint](https://stylelint.io)
-- `yarn start` – Starts a local server with hot reloading enabled on <http://8000>
+- `npm run build` – Creates a production ready builds in `public/`
+- `npm run clean` – Removes all generated files
+- `npm run format` – Format the entire codebase using [Prettier](https://prettier.io)
+- `npm run lint` – Lints all code with [TSLint](https://palantir.github.io/tslint) and [Stylelint](https://stylelint.io)
+- `npm start` – Starts a local server with hot reloading enabled on <http://8000>
 
 ### GraphQL
 
@@ -73,7 +71,7 @@ TODO...
 
 ### License
 
-Copyright 2015-2019 KITS AB
+Copyright 2015-2022 KITS AB
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 

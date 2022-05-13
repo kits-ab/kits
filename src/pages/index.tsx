@@ -1,10 +1,3 @@
-import { format, parse } from "date-fns"
-import * as svLocale from "date-fns/locale/sv"
-import { graphql } from "gatsby"
-import * as React from "react"
-import Helmet from "react-helmet"
-import styled from "styled-components"
-
 import {
   Article,
   Breakout,
@@ -24,9 +17,15 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
+import { format, parseISO } from "date-fns"
+import { sv } from "date-fns/locale"
+import { graphql } from "gatsby"
+import * as React from "react"
+import { Helmet } from "react-helmet"
+import styled from "styled-components"
 
+import { FileConnection, MarkdownRemarkConnection, MarkdownRemarkEdge } from "../../gatsby-types"
 import { DefaultLayout } from "../layouts/DefaultLayout"
-import { FileConnection, MarkdownRemarkConnection, MarkdownRemarkEdge } from "../types/graphql"
 import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath } from "../utils/imageUtils"
 import { edgeToPerson, findPersonsByIds } from "../utils/personUtils"
@@ -76,7 +75,7 @@ export default ({ data, location }: IndexPageProps) => {
   const bigNews = data.news.edges.slice(0, 2)
   const smallNews = data.news.edges.slice(2)
   const avatars = data.avatars.edges
-  const persons = data.persons.edges.map(edge => edgeToPerson(edge, avatars))
+  const persons = data.persons.edges.map((edge) => edgeToPerson(edge, avatars))
   const blog = data.blog.edges[0]
   const images = data.images.edges
   const imagesSmall = data.imagesSmall.edges
@@ -136,15 +135,15 @@ export default ({ data, location }: IndexPageProps) => {
         <Horizontal breakpoint={width.mobile} distribute={true} spacing={spacing.medium}>
           {bigNews.map((edge: MarkdownRemarkEdge, index: number) => {
             const image = findImageByRelativePath(images, edge.node.frontmatter.image)
-            const date = parse(edge.node.fields.date)
+            const date = parseISO(edge.node.fields.date)
             return (
               <Image
                 href={edge.node.fields.href}
                 key={`big_news_${index}`}
                 infoText={edge.node.frontmatter.title}
-                infoAdditionalText={format(date, "D MMMM YYYY", { locale: svLocale })}
-                src={image && image.src}
-                srcSet={image && image.srcSet}
+                infoAdditionalText={format(date, "d MMMM yyyy", { locale: sv })}
+                src={image && image.src || ""}
+                srcSet={""}
               />
             )
           })}
@@ -156,8 +155,8 @@ export default ({ data, location }: IndexPageProps) => {
               <Image
                 href={edge.node.fields.href}
                 key={`news_small_${index}`}
-                src={image && image.src}
-                srcSet={image && image.srcSet}
+                src={image && image.src || ""}
+                srcSet={image && image.srcSet || ""}
                 tooltipText={edge.node.frontmatter.title}
               />
             )
@@ -170,7 +169,7 @@ export default ({ data, location }: IndexPageProps) => {
         authors={authors}
         heading={blog.node.frontmatter.title}
         href={blog.node.fields.href}
-        publishTime={parse(blog.node.fields.date)}
+        publishTime={parseISO(blog.node.fields.date)}
         showAvatars={true}
         showExcerpt={true}
       >

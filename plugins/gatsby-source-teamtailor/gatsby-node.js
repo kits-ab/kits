@@ -6,13 +6,10 @@ const fallbackJobs = require("./data/fallback_jobs")
 exports.sourceNodes = async ({ actions, createNodeId }, configOptions) => {
   const { createNode } = actions
 
-  const processJob = job => {
+  const processJob = (job) => {
     const nodeId = createNodeId(`teamtailor-job-${job.id}`)
     const nodeContent = JSON.stringify(job)
-    const nodeContentDigest = crypto
-      .createHash("md5")
-      .update(nodeContent)
-      .digest("hex")
+    const nodeContentDigest = crypto.createHash("md5").update(nodeContent).digest("hex")
 
     const nodeData = Object.assign({}, job, {
       id: nodeId,
@@ -38,7 +35,7 @@ exports.sourceNodes = async ({ actions, createNodeId }, configOptions) => {
       const jobsResponse = await fetch(`${configOptions.apiEndpoint}/v1/jobs`, { headers })
       const jobs = await jobsResponse.json()
       if (jobs && jobs.data) {
-        jobs.data.forEach(async job => {
+        jobs.data.forEach(async (job) => {
           createNode(processJob(job))
         })
         console.log(": created job nodes from teamtailor")
@@ -48,7 +45,7 @@ exports.sourceNodes = async ({ actions, createNodeId }, configOptions) => {
       throw error
     }
   } else {
-    fallbackJobs.data.forEach(job => {
+    fallbackJobs.data.forEach((job) => {
       createNode(processJob(job))
     })
     console.log(": created job nodes from fallback data")

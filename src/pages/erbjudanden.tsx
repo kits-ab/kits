@@ -1,8 +1,3 @@
-import { graphql } from "gatsby"
-import * as React from "react"
-import Helmet from "react-helmet"
-import styled from "styled-components"
-
 import {
   Breakout,
   Button,
@@ -24,9 +19,13 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
+import { graphql } from "gatsby"
+import * as React from "react"
+import { Helmet } from "react-helmet"
+import styled from "styled-components"
 
+import { FileConnection, MarkdownRemarkConnection } from "../../gatsby-types"
 import { DefaultLayout } from "../layouts/DefaultLayout"
-import { FileConnection, MarkdownRemarkConnection } from "../types/graphql"
 import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath } from "../utils/imageUtils"
 

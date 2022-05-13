@@ -12,7 +12,7 @@ After reading this article, you will have learned different phishing techniques 
 
 <!-- more -->
 
-# Ordering shoes
+## Ordering shoes
 
 Depending on which platform you initiate BankID on, the flow will be different.
 
@@ -28,7 +28,7 @@ The BankID API offers a _requirement_ parameter which allows you to configure ho
 
 This restricts an order to only be consumed on mobile devices. The same can be done for other platforms. If it is not evident why it is beneficial to control how an order should be consumed, the following example will show why.
 
-## The autoStartToken
+### The autoStartToken
 
 Let's say supershoes.se implemented a member's area page protected by BankID login, with the option to use _BankID on file_ to authenticate. No personal identity number is technically required for this option, if you have multiple identities on your computer/phone, you will be prompted to select the appropriate identity.
 
@@ -56,7 +56,7 @@ Which can of course be semi-disguised as an HTML link, like so:
 
 Once the unknowing user clicks the link and identify using mobile BankID on their smartphone, the attacker will be successfully logged in as the user. Why this seemingly tiny detail matters is because most users today use mobile BankID which makes this scenario _easy_ for an attacker to perform. Had the token been limited to only be consumed using BankID on file, then this scenario had not been possible. The only thing an attacker could do is to trick someone to identify with the token using specifically BankID on file, which is _harder_ for an attacker to convince someone to do, since most people use mobile BankID.
 
-## AutostarttokenRequired
+### AutostarttokenRequired
 
 In the first example we ordered shoes from supershoes.se from our computer, entered our personal identity number and chose to sign with mobile BankID. If you have multiple mobile devices with your BankID identity installed, you could open any of those devices to sign the request, which is the purpose of mobile BankID.
 
@@ -74,7 +74,7 @@ The option _autoStartTokenRequired_ specifies that no other device will be able 
 
 The problem is that we can't use _autoStartTokenRequired_ when ordering on our computer and signing with mobile BankID, because our mobile phone somehow needs to consume the autoStartToken. This is where QR codes comes into play.
 
-# Scan the QR Code
+## Scan the QR Code
 
 QR code scanning does not involve implementing a new technology or support a new protocol, it's already supported! The QR code is just a visual representation of the URL containing the autoStartToken.
 
@@ -94,7 +94,7 @@ Which now means that the user can easily consume the autoStartToken and sign the
 
 Which is the ingredient you need to authenticate/sign with BankID. Therefore, when offering to sign with mobile BankID on a different device, _autoStartTokenRequired_ can be set to _True_ if QR codes are used.
 
-# Conclusion
+## Conclusion
 
 We have identified three possible flows using BankID
 

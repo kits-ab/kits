@@ -1,7 +1,3 @@
-import { graphql } from "gatsby"
-import * as React from "react"
-import Helmet from "react-helmet"
-
 import {
   Breakout,
   Contact,
@@ -17,10 +13,13 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
+import { graphql } from "gatsby"
+import * as React from "react"
+import { Helmet } from "react-helmet"
 
+import { ContentYamlConnection, MarkdownRemarkConnection } from "../../gatsby-types"
 import { PersonList } from "../components/PersonList"
 import { DefaultLayout } from "../layouts/DefaultLayout"
-import { ContentYamlConnection, MarkdownRemarkConnection } from "../types/graphql"
 import { PageProps } from "../types/PageProps"
 import { edgeToPerson, findPersonById } from "../utils/personUtils"
 
@@ -35,7 +34,9 @@ interface AboutPageProps extends PageProps {
 export default ({ data, location }: AboutPageProps) => {
   const page = data.page.edges[0]
   const metadata = data.metadata.edges[0]
-  const persons = data.persons.edges.map(edge => edgeToPerson(edge))
+  const persons = data.persons.edges
+    .map((edge) => edgeToPerson(edge))
+    .filter((person) => person !== undefined) as types.Person[]
 
   return (
     <DefaultLayout location={location}>
@@ -58,8 +59,11 @@ export default ({ data, location }: AboutPageProps) => {
         <Text>{page.node.html}</Text>
 
         <Vertical spacing={spacing.medium}>
-          {metadata.node.contacts.map(contact => {
+          {metadata.node.contacts.map((contact) => {
             const person = findPersonById(persons, contact.personId)
+            if (person === undefined) {
+              return null
+            }
             person.role = contact.role
             return (
               <Contact key={`contact_${person.id}`} info={person} type={types.ContactType.Role} />
