@@ -26,7 +26,19 @@ When you add content it will be saved as a new branch on GitHub and a pull reque
 
 ### Images
 
-TODO...
+
+The default image size is 1800x1000 and since Gatsby uses this higher resolution image to create images of different sizes it's important that you try to stick with this size.
+
+All images should be stored in `static/assets` and it's important that they have the correct name otherwise they will not be processed. The images should have the following prefixes:
+
+- Blogg: `blogg_`
+- Bli en av oss: `formaner_`
+- Erbjudanden: `projekt_`
+- KitsCon: `kitscon_` and `kitscon_collage_`
+- Nyheter: `nyheter_`
+- Medarbetare: `medarbetare_`
+
+For blog posts and presentations we show a little avatar next to the post and for that we have a special image named `medarbetare_firstnamelastname-avatar.jpg` with the size 350x350. Make sure the face has the same size as the others. There is a Photoshop template under `resources` that can be used.
 
 ## Development
 
@@ -43,10 +55,7 @@ For debugging purposes you should install [React Developer Tools](https://github
 
 ### Preparations
 
-- Install all required tools
-
-  - Node 16.14– <https://nodejs.org>
-
+- Install Node 16 – <https://nodejs.org>
 - Checkout the code and fetch all dependencies
   ```
   $ git clone git@github.com:kits-ab/kits.git
@@ -61,13 +70,11 @@ When you've checked out the code and all dependencies have been fetched you prob
 - `npm run clean` – Removes all generated files
 - `npm run format` – Format the entire codebase using [Prettier](https://prettier.io)
 - `npm run lint` – Lints all code with [TSLint](https://palantir.github.io/tslint) and [Stylelint](https://stylelint.io)
-- `npm start` – Starts a local server with hot reloading enabled on <http://8000>
+- `npm start` – Starts a local server with hot reloading enabled on <http://localhost:8000>
 
 ### GraphQL
 
-All content that is read from Markdown, YAML or image files is exposed through GraphQL.
-
-TODO...
+All content that is read from Markdown, YAML or image files is exposed through GraphQL. You can explore the content by running `npm start` and going to <http://localhost:8000/___graphql>.
 
 ### License
 
