@@ -27,7 +27,7 @@ exports.onCreateNode = ({ actions: { createNodeField }, getNode, node }) => {
 }
 
 exports.createPages = ({ graphql, actions: { createPage } }) => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     graphql(`
       {
         allMarkdownRemark {
@@ -54,7 +54,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           }
         }
       }
-    `).then(result => {
+    `).then((result) => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         if (node.frontmatter && node.frontmatter.type === "post") {
           createPage({

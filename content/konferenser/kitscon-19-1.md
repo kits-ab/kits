@@ -234,10 +234,10 @@ schema:
     end: "2019-06-02 16:30"
   - type: bus
     title: Transport till flygplatsen
-    start: "2019-06-02 17:15 "
+    start: "2019-06-02 17:15"
     end: "2019-06-02 18.00"
   - type: airplane
     title: Resa Split → Göteborg med Flyg DY4348
     start: "2019-06-02 20:10"
-    end: "2019-06-02 22:45 "
+    end: "2019-06-02 22:45"
 ---

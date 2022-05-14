@@ -1,8 +1,3 @@
-import Link from "gatsby-link"
-import * as React from "react"
-import Helmet from "react-helmet"
-import { createGlobalStyle } from "styled-components"
-
 import {
   Breakout,
   Footer,
@@ -16,7 +11,12 @@ import {
   Wrapper
 } from "@kokitotsos/react-components"
 import { graphql, StaticQuery } from "gatsby"
-import { ContentYamlConnection } from "../types/graphql"
+import Link from "gatsby-link"
+import * as React from "react"
+import { Helmet } from "react-helmet"
+import { createGlobalStyle } from "styled-components"
+
+import { ContentYamlConnection } from "../../gatsby-types"
 
 const GlobalSiteStyles = createGlobalStyle`
   html {

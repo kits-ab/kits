@@ -1,12 +1,11 @@
-import { parse } from "date-fns"
+import { Article, Lead, MainHeading, spacing, Vertical } from "@kokitotsos/react-components"
+import { parseISO } from "date-fns"
 import { graphql } from "gatsby"
 import * as React from "react"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 
-import { Article, Lead, MainHeading, spacing, Vertical } from "@kokitotsos/react-components"
-
+import { FileConnection, MarkdownRemark, MarkdownRemarkConnection } from "../../gatsby-types"
 import { DefaultLayout } from "../layouts/DefaultLayout"
-import { FileConnection, MarkdownRemark, MarkdownRemarkConnection } from "../types/graphql"
 import { PageProps } from "../types/PageProps"
 import { edgeToPerson, findPersonsByIds } from "../utils/personUtils"
 
@@ -40,7 +39,7 @@ export default ({ data, location }: PostTemplateProps) => {
         heading={post.frontmatter.title}
         href={post.fields.href}
         key={post.id}
-        publishTime={parse(post.fields.date)}
+        publishTime={parseISO(post.fields.date)}
         showAvatars={true}
       >
         {post.html}

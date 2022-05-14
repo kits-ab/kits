@@ -1,10 +1,9 @@
+import { Horizontal, Image, spacing, width } from "@kokitotsos/react-components"
 import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
-import { Horizontal, Image, spacing, width } from "@kokitotsos/react-components"
-
-import { FileConnection, MarkdownRemarkConnection } from "../types/graphql"
+import { FileConnection, MarkdownRemarkConnection } from "../../gatsby-types"
 import { findImageByRelativePath } from "../utils/imageUtils"
 import { edgeToPerson } from "../utils/personUtils"
 
@@ -62,8 +61,11 @@ export class PersonList extends React.PureComponent {
   private renderList = ({ images, persons }: QueryResult) => (
     <StyledHorizontal wrapRows={true}>
       {persons.edges
-        .map(edge => edgeToPerson(edge))
-        .map(person => {
+        .map((edge) => edgeToPerson(edge))
+        .map((person) => {
+          if (person === undefined) {
+            return null
+          }
           const image =
             findImageByRelativePath(images.edges, person.imageSrc) ||
             findImageByRelativePath(images.edges, "/assets/medarbetare_default.jpg")

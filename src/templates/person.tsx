@@ -1,8 +1,3 @@
-import { graphql } from "gatsby"
-import * as React from "react"
-import Helmet from "react-helmet"
-import styled from "styled-components"
-
 import {
   Breakout,
   ContentHeading,
@@ -18,10 +13,14 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
+import { graphql } from "gatsby"
+import * as React from "react"
+import { Helmet } from "react-helmet"
+import styled from "styled-components"
 
+import { FileConnection, MarkdownRemark, MarkdownRemarkEdge, O365User } from "../../gatsby-types"
 import { PersonList } from "../components/PersonList"
 import { DefaultLayout } from "../layouts/DefaultLayout"
-import { FileConnection, MarkdownRemark, O365User } from "../types/graphql"
 import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath } from "../utils/imageUtils"
 import { edgeToPerson, enrichPersonWithO365 } from "../utils/personUtils"
@@ -69,7 +68,7 @@ const StyledTag = styled(Tag)`
 `
 
 export default ({ data, location }: PersonPageProps) => {
-  const person = edgeToPerson({ node: data.person })
+  const person = edgeToPerson({ node: data.person } as MarkdownRemarkEdge)!
   const images = data.images
   const firstname = person.name.split(" ")[0]
   const image =
@@ -111,7 +110,7 @@ export default ({ data, location }: PersonPageProps) => {
               </Text>
             )}
           </Horizontal>
-          <Social info={person.social} />
+          {person.social && (<Social info={person.social} />)}
         </Vertical>
       </Horizontal>
 

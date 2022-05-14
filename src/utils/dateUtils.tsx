@@ -1,27 +1,29 @@
-import { format, isSameDay, isSameMonth, isSameYear } from "date-fns"
-import * as svLocale from "date-fns/locale/sv"
+import { format, isSameDay, isSameMonth, isSameYear, parseISO } from "date-fns"
+import { sv } from "date-fns/locale"
 
-export const formatPeriod = (periodStart: Date, periodEnd: Date) => {
+export const formatPeriod = (periodStartInput: Date | string, periodEndInput: Date | string) => {
+  let periodStart =
+    typeof periodStartInput === "string" ? parseISO(periodStartInput) : periodStartInput
+  let periodEnd = typeof periodEndInput === "string" ? parseISO(periodEndInput) : periodEndInput
   if (isSameDay(periodStart, periodEnd)) {
-    return format(periodEnd, "D MMM", { locale: svLocale })
+    return format(periodEnd, "d MMM", { locale: sv })
   } else if (isSameMonth(periodStart, periodEnd)) {
-    return `${format(periodStart, "D", { locale: svLocale })}-${format(periodEnd, "D MMM", {
-      locale: svLocale
+    return `${format(periodStart, "d", { locale: sv })}-${format(periodEnd, "d MMM", {
+      locale: sv
     })}`
   } else if (isSameYear(periodStart, periodEnd)) {
-    return `${format(periodStart, "D MMM", { locale: svLocale })} - ${format(periodEnd, "D MMM", {
-      locale: svLocale
+    return `${format(periodStart, "d MMM", { locale: sv })} - ${format(periodEnd, "d MMM", {
+      locale: sv
     })}`
   } else {
-    return `${format(periodStart, "D MMM YYYY", { locale: svLocale })}-${format(
-      periodEnd,
-      "D MMM YYYY",
-      { locale: svLocale }
-    )}`
+    return `${format(periodStart, "d MMM yyyy", { locale: sv })}-${format(periodEnd, "d MMM yyyy", {
+      locale: sv
+    })}`
   }
 }
 
-export const formatWeekday = (date: Date | string) => {
-  const weekday = format(date, "dddd", { locale: svLocale })
+export const formatWeekday = (dateInput: Date | string) => {
+  let date = typeof dateInput === "string" ? parseISO(dateInput) : dateInput
+  const weekday = format(date, "EEEE", { locale: sv })
   return weekday.length > 0 ? weekday.charAt(0).toUpperCase() + weekday.slice(1) : weekday
 }

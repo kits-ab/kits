@@ -1,8 +1,3 @@
-import { graphql } from "gatsby"
-import * as React from "react"
-import Helmet from "react-helmet"
-import styled from "styled-components"
-
 import {
   Breakout,
   Button,
@@ -23,15 +18,19 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
+import { graphql } from "gatsby"
+import * as React from "react"
+import { Helmet } from "react-helmet"
+import styled from "styled-components"
 
-import { DefaultLayout } from "../layouts/DefaultLayout"
 import {
   FileConnection,
   MarkdownRemarkConnection,
   MarkdownRemarkEdge,
   TeamtailorJob,
   TeamtailorJobConnection
-} from "../types/graphql"
+} from "../../gatsby-types"
+import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath, findImagesByRelativePaths } from "../utils/imageUtils"
 
@@ -105,8 +104,8 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
             return (
               <Persona
                 key={"person" + index}
-                iconSrc={personaImages[index].node.childImageSharp.fixed.src}
-                iconSrcSet={personaImages[index].node.childImageSharp.fixed.srcSet}
+                iconSrc={personaImages[index].node.childImageSharp.gatsbyImageData.images.fallback.src}
+                iconSrcSet={personaImages[index].node.childImageSharp.gatsbyImageData.images.fallback.srcSet}
                 isActive={
                   this.state.selectedIndex !== undefined
                     ? this.state.selectedIndex === index

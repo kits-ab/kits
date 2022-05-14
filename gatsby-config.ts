@@ -1,6 +1,10 @@
+import type { GatsbyConfig } from "gatsby"
+
+import { MarkdownRemarkConnection, Site } from "./gatsby-types"
+
 require("dotenv").config()
 
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
     siteUrl: "https://kits.se",
     rssBlogTitle: "KITS - Blogg",
@@ -11,14 +15,14 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "assets",
-        path: `${__dirname}/static/assets/`
+        path: "./static/assets/"
       }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "content",
-        path: `${__dirname}/content/`
+        path: "./content/"
       }
     },
     {
@@ -38,6 +42,16 @@ module.exports = {
     },
     "gatsby-plugin-catch-links",
     {
+      resolve: "gatsby-plugin-graphql-codegen",
+      options: {
+        fileName: "./gatsby-types.ts",
+        codegenConfig: {
+          avoidOptionals: true,
+          maybeValue: "T"
+        }
+      }
+    },
+    {
       resolve: "gatsby-plugin-feed",
       options: {
         query: `
@@ -54,15 +68,23 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark, persons } }) => {
+            serialize: ({
+              query: { site, allMarkdownRemark, persons }
+            }: {
+              query: {
+                site: Site
+                allMarkdownRemark: MarkdownRemarkConnection
+                persons: MarkdownRemarkConnection
+              }
+            }) => {
               const names = persons.edges.reduce((memo, edge) => {
                 memo[edge.node.frontmatter.id] = edge.node.frontmatter.title
                 return memo
               }, {})
 
-              const getNames = ids => ids.map(id => names[id]).join(", ")
+              const getNames = (ids: string[]) => ids.map((id) => names[id]).join(", ")
 
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.html,
                   date: edge.node.fields.date,
@@ -119,20 +141,19 @@ module.exports = {
         ]
       }
     },
-    "gatsby-plugin-netlify-cache",
+    "gatsby-plugin-image",
+    "gatsby-plugin-netlify",
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sharp",
       options: {
-        defaultQuality: 100
+        defaults: {
+          formats: ["auto"],
+          quality: 100
+        }
       }
     },
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-typescript",
-    "gatsby-plugin-styled-components",
-    "gatsby-transformer-sharp",
-    "gatsby-transformer-yaml",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -162,6 +183,13 @@ module.exports = {
           "gatsby-remark-smartypants"
         ]
       }
-    }
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-styled-components",
+    "gatsby-transformer-sharp",
+    "gatsby-transformer-yaml"
   ]
 }
+
+export default config

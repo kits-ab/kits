@@ -1,12 +1,11 @@
-import { parse } from "date-fns"
+import { Article, Lead, MainHeading, spacing, Vertical } from "@kokitotsos/react-components"
+import { parseISO } from "date-fns"
 import { graphql } from "gatsby"
 import * as React from "react"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 
-import { Article, Lead, MainHeading, spacing, Vertical } from "@kokitotsos/react-components"
-
+import { FileConnection, MarkdownRemarkConnection } from "../../gatsby-types"
 import { DefaultLayout } from "../layouts/DefaultLayout"
-import { FileConnection, MarkdownRemarkConnection } from "../types/graphql"
 import { PageProps } from "../types/PageProps"
 import { edgeToPerson, findPersonsByIds } from "../utils/personUtils"
 
@@ -22,7 +21,7 @@ interface BloggPageProps extends PageProps {
 export default ({ data, location }: BloggPageProps) => {
   const page = data.page.edges[0]
   const avatars = data.avatars.edges
-  const persons = data.persons.edges.map(edge => edgeToPerson(edge, avatars))
+  const persons = data.persons.edges.map((edge) => edgeToPerson(edge, avatars))
   const posts = data.blog.edges
 
   return (
@@ -42,7 +41,7 @@ export default ({ data, location }: BloggPageProps) => {
             heading={post.node.frontmatter.title}
             href={post.node.fields.href}
             key={"article" + index}
-            publishTime={parse(post.node.fields.date)}
+            publishTime={parseISO(post.node.fields.date)}
             showAvatars={true}
             showExcerpt={true}
           >
