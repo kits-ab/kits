@@ -1,6 +1,6 @@
 ---
-title: Välkommen till kits.se
 type: post
+title: Välkommen till kits.se
 authors:
   - joakimkemeny
 ---
@@ -14,3 +14,4 @@ Som vanligt återstår mycket att göra. En del texter saknas och andra behöver
 kits.se kommer givetvis vara ett av våra ansikten utåt men dessutom tänker vi oss att det kommer vara en sida där vi experimenterar med nya tekniker för att bygga modern webb och skriver om vad vi kommer fram till. Allt detta finns redan idag tillgängligt på [GitHub](https://github.com/kits-ab/kits) så om ni vill rapportera ett fel eller bara är nyfikna så är ni välkomna. Vi kommer skriva mer här på bloggen om hur sidan är byggd inom kort.
 
 <!--more-->
+
