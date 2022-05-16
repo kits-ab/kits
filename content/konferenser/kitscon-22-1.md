@@ -74,11 +74,11 @@ schema:
       - joakimkemeny
       - patriknilsson
 
-  - title: Självkörande fordon – Planera en väg
+  - title: Självkörande fordon - Path Planners
     type: presentation
     start: "2022-05-20 09:15"
     end: "2022-05-20 09:35"
-    details: Dragningen går först igenom alla de olika definitionerna av automatisering (level 0 - 5) och nämner de mest väsentliga mjukvara komponenterna i självkörande bilar. Sen går jag igenom path planner komponent i mer detalj, och ställer 3 öppna frågor om kring den. Jag funderar på att ta med en avslutnings del där jag prata lite om vart självkörande bilar är idag, men annars tar den slut efter dom tre frågorna.
+    details: En introduktion till självkörande bilar, och en inblick in i de nuvarande lösningarna, och utmaningar som finns i path planners.
     presenters:
       - isacolofsson
 
