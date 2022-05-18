@@ -82,13 +82,13 @@ schema:
     presenters:
       - isacolofsson
 
-  - title: IntelliJ IDEA demo
+  - title: E-learning – Säker programmering
     type: presentation
     start: "2022-05-20 09:45"
     end: "2022-05-20 10:15"
-    details: Hur jag använder IntelliJ IDEA för utveckling.
+    details: _Mer info kommer…_
     presenters:
-      - pierresandboge
+      - patriknilsson
 
   - title: Fika
     type: coffee
@@ -189,13 +189,13 @@ schema:
       - dzenanbazdarevic
       - parsvedberg
 
-  - title: E-learning – Säker programmering
+  - title: IntelliJ IDEA demo
     type: presentation
-    start: "2022-05-21 09:30"
+    start: "2022-05-21 09:40"
     end: "2022-05-21 10:15"
-    details: _Mer info kommer…_
+    details: Hur jag använder IntelliJ IDEA för utveckling.
     presenters:
-      - patriknilsson
+      - pierresandboge
 
   - title: Fika
     type: coffee
