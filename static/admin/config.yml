@@ -179,7 +179,6 @@ collections:
         fields:
           - { name: github, label: GitHub, required: false }
           - { name: linkedin, label: LinkedIn (hela url:en), required: false }
-          - { name: microblog, label: "Micro.blog", required: false }
           - { name: keybase, label: Keybase, required: false }
           - { name: twitter, label: Twitter, required: false }
       - name: tags

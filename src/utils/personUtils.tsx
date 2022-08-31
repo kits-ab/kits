@@ -22,7 +22,6 @@ export const personFragment = graphql`
       social {
         github
         linkedin
-        microblog
         keybase
         twitter
       }
@@ -51,9 +50,6 @@ export const edgeToPerson = (
   const linkedin = social.linkedin
     ? new types.Username(social.linkedin, types.SocialType.LinkedIn)
     : undefined
-  const microblog = social.microblog
-    ? new types.Username(social.microblog, types.SocialType.MicroBlog)
-    : undefined
   const keybase = social.keybase
     ? new types.Username(social.keybase, types.SocialType.Keybase)
     : undefined
@@ -79,7 +75,6 @@ export const edgeToPerson = (
     social: {
       github,
       linkedin,
-      microblog,
       keybase,
       twitter
     },

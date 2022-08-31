@@ -251,6 +251,8 @@ export type DirectoryCtimeArgs = {
 export type Site = Node & {
   buildTime: Maybe<Scalars['Date']>;
   siteMetadata: Maybe<SiteSiteMetadata>;
+  port: Maybe<Scalars['Int']>;
+  host: Maybe<Scalars['String']>;
   polyfill: Maybe<Scalars['Boolean']>;
   pathPrefix: Maybe<Scalars['String']>;
   jsxRuntime: Maybe<Scalars['String']>;
@@ -503,7 +505,6 @@ export type MarkdownRemarkFrontmatterSocial = {
   github: Maybe<Scalars['String']>;
   linkedin: Maybe<Scalars['String']>;
   keybase: Maybe<Scalars['String']>;
-  microblog: Maybe<Scalars['String']>;
   twitter: Maybe<Scalars['String']>;
 };
 
@@ -1153,6 +1154,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime: InputMaybe<DateQueryOperatorInput>;
   siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
+  port: InputMaybe<IntQueryOperatorInput>;
+  host: InputMaybe<StringQueryOperatorInput>;
   polyfill: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime: InputMaybe<StringQueryOperatorInput>;
@@ -1506,7 +1509,6 @@ export type MarkdownRemarkFrontmatterSocialFilterInput = {
   github: InputMaybe<StringQueryOperatorInput>;
   linkedin: InputMaybe<StringQueryOperatorInput>;
   keybase: InputMaybe<StringQueryOperatorInput>;
-  microblog: InputMaybe<StringQueryOperatorInput>;
   twitter: InputMaybe<StringQueryOperatorInput>;
 };
 
@@ -1804,7 +1806,6 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___social___github'
   | 'childrenMarkdownRemark___frontmatter___social___linkedin'
   | 'childrenMarkdownRemark___frontmatter___social___keybase'
-  | 'childrenMarkdownRemark___frontmatter___social___microblog'
   | 'childrenMarkdownRemark___frontmatter___social___twitter'
   | 'childrenMarkdownRemark___frontmatter___tags'
   | 'childrenMarkdownRemark___frontmatter___alumni'
@@ -1904,7 +1905,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___social___github'
   | 'childMarkdownRemark___frontmatter___social___linkedin'
   | 'childMarkdownRemark___frontmatter___social___keybase'
-  | 'childMarkdownRemark___frontmatter___social___microblog'
   | 'childMarkdownRemark___frontmatter___social___twitter'
   | 'childMarkdownRemark___frontmatter___tags'
   | 'childMarkdownRemark___frontmatter___alumni'
@@ -2716,6 +2716,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___rssBlogTitle'
   | 'siteMetadata___rssBlogDescription'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'jsxRuntime'
@@ -2851,6 +2853,8 @@ export type SiteGroupConnectionGroupArgs = {
 export type SiteFilterInput = {
   buildTime: InputMaybe<DateQueryOperatorInput>;
   siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
+  port: InputMaybe<IntQueryOperatorInput>;
+  host: InputMaybe<StringQueryOperatorInput>;
   polyfill: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime: InputMaybe<StringQueryOperatorInput>;
@@ -3782,7 +3786,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___social___github'
   | 'frontmatter___social___linkedin'
   | 'frontmatter___social___keybase'
-  | 'frontmatter___social___microblog'
   | 'frontmatter___social___twitter'
   | 'frontmatter___tags'
   | 'frontmatter___alumni'
@@ -4952,7 +4955,7 @@ export type ContentYamlSortInput = {
 export type PersonsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PersonsQueryQuery = { persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, microblog: string, keybase: string, twitter: string } } } }> }, images: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+export type PersonsQueryQuery = { persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> }, images: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
 export type KitsInfoQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4962,7 +4965,7 @@ export type KitsInfoQueryQuery = { kits: { edges: Array<{ node: { name: string, 
 export type IndexQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type IndexQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string } } }> }, blog: { edges: Array<{ node: { html: string, fields: { href: string, date: any }, frontmatter: { authors: Array<string>, title: string } } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, microblog: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+export type IndexQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string } } }> }, blog: { edges: Array<{ node: { html: string, fields: { href: string, date: any }, frontmatter: { authors: Array<string>, title: string } } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
 export type OfferPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4972,7 +4975,7 @@ export type OfferPageQueryQuery = { page: { edges: Array<{ node: { frontmatter: 
 export type IndexPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type IndexPageQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string, section1: { subheading: string, heading: string, content: string }, section2: { subheading: string, heading: string, content: string }, section3: { heading: string }, section4: { heading: string } } } }> }, news: { edges: Array<{ node: { html: string, fields: { href: string, date: any }, frontmatter: { authors: Array<string>, title: string, heading: string, image: string } } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, microblog: string, keybase: string, twitter: string } } } }> }, blog: { edges: Array<{ node: { html: string, fields: { href: string, date: any }, frontmatter: { authors: Array<string>, title: string } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, images: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, imagesSmall: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+export type IndexPageQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string, section1: { subheading: string, heading: string, content: string }, section2: { subheading: string, heading: string, content: string }, section3: { heading: string }, section4: { heading: string } } } }> }, news: { edges: Array<{ node: { html: string, fields: { href: string, date: any }, frontmatter: { authors: Array<string>, title: string, heading: string, image: string } } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> }, blog: { edges: Array<{ node: { html: string, fields: { href: string, date: any }, frontmatter: { authors: Array<string>, title: string } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, images: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, imagesSmall: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
 export type JobPageQueryQueryVariables = Exact<{
   href?: InputMaybe<Scalars['String']>;
@@ -4986,19 +4989,19 @@ export type KonferensInfoQueryQueryVariables = Exact<{
 }>;
 
 
-export type KonferensInfoQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string, section1: { heading: string } } } }> }, activeKitscon: { html: string, frontmatter: { title: string, tagLine: string, location: string, start: any, end: any, image: string, images: Array<string>, schema: Array<{ start: any, end: string, href: string, title: string, details: string, presenters: Array<string>, presentation: string, type: string, youtubeId: string, location: { coordinates: Array<number>, title: string } }> } }, latestKitscon: { edges: Array<{ node: { html: string, fields: { href: string }, frontmatter: { title: string, tagLine: string, location: string, start: any, end: any, image: string, images: Array<string>, schema: Array<{ start: any, end: string, href: string, title: string, details: string, presenters: Array<string>, presentation: string, type: string, youtubeId: string, location: { coordinates: Array<number>, title: string } }> } } }> }, kitscons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { start: any } } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, microblog: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, collageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+export type KonferensInfoQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string, section1: { heading: string } } } }> }, activeKitscon: { html: string, frontmatter: { title: string, tagLine: string, location: string, start: any, end: any, image: string, images: Array<string>, schema: Array<{ start: any, end: string, href: string, title: string, details: string, presenters: Array<string>, presentation: string, type: string, youtubeId: string, location: { coordinates: Array<number>, title: string } }> } }, latestKitscon: { edges: Array<{ node: { html: string, fields: { href: string }, frontmatter: { title: string, tagLine: string, location: string, start: any, end: any, image: string, images: Array<string>, schema: Array<{ start: any, end: string, href: string, title: string, details: string, presenters: Array<string>, presentation: string, type: string, youtubeId: string, location: { coordinates: Array<number>, title: string } }> } } }> }, kitscons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { start: any } } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, collageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
 export type AboutPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AboutPageQueryQuery = { page: { edges: Array<{ node: { html: string, frontmatter: { title: string, heading: string, lead: string, section1: { heading: string } } } }> }, metadata: { edges: Array<{ node: { name: string, coordinates: Array<number>, address: { street: string }, contacts: Array<{ role: string, personId: string }> } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, microblog: string, keybase: string, twitter: string } } } }> } };
+export type AboutPageQueryQuery = { page: { edges: Array<{ node: { html: string, frontmatter: { title: string, heading: string, lead: string, section1: { heading: string } } } }> }, metadata: { edges: Array<{ node: { name: string, coordinates: Array<number>, address: { street: string }, contacts: Array<{ role: string, personId: string }> } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> } };
 
 export type NewsQueryQueryVariables = Exact<{
   href: Scalars['String'];
 }>;
 
 
-export type NewsQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string } } }> }, news: { html: string, fields: { date: any, href: string }, frontmatter: { authors: Array<string>, title: string } }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, microblog: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+export type NewsQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string } } }> }, news: { html: string, fields: { date: any, href: string }, frontmatter: { authors: Array<string>, title: string } }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
 export type PersonPageQueryQueryVariables = Exact<{
   href: InputMaybe<Scalars['String']>;
@@ -5006,14 +5009,14 @@ export type PersonPageQueryQueryVariables = Exact<{
 }>;
 
 
-export type PersonPageQueryQuery = { person: { html: string, fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, microblog: string, keybase: string, twitter: string } } }, o365person: { mobilePhone: string, officeLocation: string, businessPhones: Array<string> }, images: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+export type PersonPageQueryQuery = { person: { html: string, fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } }, o365person: { mobilePhone: string, officeLocation: string, businessPhones: Array<string> }, images: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
 export type BlogPostQueryQueryVariables = Exact<{
   href: Scalars['String'];
 }>;
 
 
-export type BlogPostQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string } } }> }, post: { html: string, fields: { date: any, href: string }, frontmatter: { authors: Array<string>, title: string } }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, microblog: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+export type BlogPostQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string } } }> }, post: { html: string, fields: { date: any, href: string }, frontmatter: { authors: Array<string>, title: string } }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
 export type BlogFragmentFragment = { node: { html: string, fields: { href: string, date: any }, frontmatter: { authors: Array<string>, title: string } } };
 
@@ -5027,7 +5030,7 @@ export type ImageFragmentAvatarFragment = { relativePath: string, childImageShar
 
 export type ImageFragmentSmallFragment = { relativePath: string, childImageSharp: { gatsbyImageData: any } };
 
-export type PersonFragmentFragment = { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, microblog: string, keybase: string, twitter: string } } };
+export type PersonFragmentFragment = { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } };
 
 export type GatsbyImageSharpFixedFragment = { base64: string, width: number, height: number, src: string, srcSet: string };
 
