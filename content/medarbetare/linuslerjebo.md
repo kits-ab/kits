@@ -9,4 +9,4 @@ avatar: /assets/medarbetare_linuslerjebo-avatar.jpg
 phone: 0761 - 114 543
 email: linus.lerjebo@kits.se
 ---
-En av de allra bästa!
+På skolan har Linus lärt sig grunderna i allt från artificiell intelligens till realtidssystem. Han är alltid intresserad av att lära sig nya tekniker och hitta optimeringar som kan hjälpa både användare och andra utvecklare. Kan grunderna i frontend men känner sig mer bekväm inom backend. 
