@@ -7,6 +7,7 @@ image: /assets/medarbetare_joakimdanielsson.jpg
 avatar: /assets/medarbetare_joakimdanielsson-avatar.jpg
 phone: 0706 - 04 35 24
 email: joakim.danielsson@kits.se
+alumni: true
 social:
   linkedin: https://www.linkedin.com/in/joakim-danielsson-435027a7/
 tags:
