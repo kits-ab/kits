@@ -8,6 +8,10 @@ start: 2022-11-11
 end: 2022-11-12
 image: assets/blogg_ballmaze-2.jpg
 active: true
+images:
+  - image: assets/falkenberg1.jpeg
+  - image: assets/falkenberg2.jpeg
+  - image: assets/falkenberg3.jpeg
 schema:
   - winner: false
     start: 2022-11-11 08:15
