@@ -9,9 +9,9 @@ end: 2022-11-12
 image: assets/blogg_ballmaze-2.jpg
 active: true
 images:
-  - image: assets/kitscon_falkenberg2.jpeg
-  - image: assets/kitscon_falkenberg3.jpeg
-  - image: assets/kitscon_falkenberg1.jpeg
+  - image: assets/kitscon_collage_22-2-01.jpeg
+  - image: assets/kitscon_collage_22-2-02.jpeg
+  - image: assets/kitscon_collage_22-2-03.jpeg
 schema:
   - winner: false
     start: 2022-11-11 08:15
