@@ -20,4 +20,4 @@ schema:
     type: bus
     details: ""
 ---
-KitsCon i Falkenberg
+Det är återigen dags för KitsCon och upplaga 22.2 kommer spenderas på Falkenberg Strandbad! Dagarna kommer innehålla spännande föreläsningar, varma pooler, sköna sängar och såklart god mat och dryck.
