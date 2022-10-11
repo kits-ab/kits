@@ -118,5 +118,64 @@ schema:
     title: Retreat club
     details: S﻿pa och dryck till sent på kvällen
     type: hotel
+  - winner: false
+    start: 2022-11-12 06:45
+    end: 2022-11-12 08:00
+    title: Morgonpadel
+    details: V﻿i ses i receptionen och går 300 meter till padelhallen för att
+      rivstarta dagen i en timme!
+    type: running
+  - winner: false
+    start: 2022-11-12 07:30
+    end: 2022-11-12 09:00
+    title: Frukost
+    details: ""
+    type: food
+  - winner: false
+    start: 2022-11-12 09:00
+    end: 2022-11-12 09:30
+    title: TBD
+    presenters: []
+    type: presentation
+    details: M﻿er info kommer..
+  - winner: false
+    start: 2022-11-12 09:30
+    end: 2022-11-12 10:00
+    title: TBD
+    details: M﻿er info kommer..
+    type: presentation
+  - winner: false
+    start: 2022-11-12 10:00
+    end: 2022-11-12 10:30
+    title: CQRS med kafka
+    details: M﻿er info kommer..
+    presenters:
+      - olofgunnarsson
+    type: presentation
+  - winner: false
+    start: 2022-11-12 10:30
+    end: 2022-11-12 11:00
+    title: TBD
+    details: M﻿er info kommer..
+    type: presentation
+    presenters:
+      - hoimanlui
+  - winner: false
+    start: 2022-11-12 11:10
+    end: 2022-11-12 11:30
+    title: Buss till Lilla Napoli
+    type: bus
+  - winner: false
+    start: 2022-11-12 11:30
+    end: 2022-11-12 12:30
+    title: Lunch på Lilla Napoli
+    details: V﻿i passar på att äta på pizzerian som enligt många serverar Sveriges
+      bästa pizza!
+    type: food
+  - winner: false
+    start: 2022-11-12 13:00
+    end: 2022-11-12 14:15
+    title: Buss till Göteborg
+    type: bus
 ---
 Det är återigen dags för KitsCon och upplaga 22.2 kommer spenderas på Falkenberg Strandbad! Dagarna kommer innehålla spännande föreläsningar, varma pooler, sköna sängar och såklart god mat och dryck.
