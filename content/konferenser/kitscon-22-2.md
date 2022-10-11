@@ -39,7 +39,7 @@ schema:
       föreläser om allt från arbetsglädje till självledarskap.
     type: presentation
   - winner: false
-    start: 2022-11-11 00:00
+    start: 2022-11-11 12:00
     end: 2022-11-11 13:00
     title: Lunch
     type: food
