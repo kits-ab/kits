@@ -128,7 +128,7 @@ schema:
   - winner: false
     start: 2022-11-12 07:30
     end: 2022-11-12 09:00
-    title: Frukost
+    title: Frukost finns tillgängligt från ->
     details: ""
     type: food
   - winner: false
@@ -167,7 +167,7 @@ schema:
     type: bus
   - winner: false
     start: 2022-11-12 11:30
-    end: 2022-11-12 12:30
+    end: 2022-11-12 13:00
     title: Lunch på Lilla Napoli
     details: V﻿i passar på att äta på pizzerian som enligt många serverar Sveriges
       bästa pizza!
