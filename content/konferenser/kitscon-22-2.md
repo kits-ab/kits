@@ -7,7 +7,7 @@ location: Falkenbergs Strandbad
 start: 2022-11-11
 end: 2022-11-12
 image: assets/blogg_ballmaze-2.jpg
-active: false
+active: true
 schema:
   - winner: false
     start: 2022-11-11 08:15
