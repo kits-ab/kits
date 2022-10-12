@@ -110,7 +110,7 @@ schema:
     start: 2022-11-11 17:30
     end: 2022-11-11 19:00
     title: Middag
-    details: T﻿rerätters middag i hotellets restaurang
+    details: T﻿re-rätters middag på hotellets restaurang
     type: food
   - winner: false
     start: 2022-11-11 19:00
@@ -126,11 +126,16 @@ schema:
       att rivstarta dagen i en timme!
     type: running
   - winner: false
-    start: 2022-11-12 07:30
-    end: 2022-11-12 09:00
-    title: Frukost finns tillgängligt från ->
+    start: 2022-11-12 08:00
+    end: 2022-11-12 08:45
+    title: Frukost
     details: ""
     type: food
+  - winner: false
+    start: 2022-11-12 08:45
+    end: 2022-11-12 09:00
+    title: Utcheckning
+    type: checkin
   - winner: false
     start: 2022-11-12 09:00
     end: 2022-11-12 09:30
