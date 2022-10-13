@@ -6,7 +6,7 @@ tagLine: Strandbaden Edition
 location: Falkenbergs Strandbad
 start: 2022-11-11
 end: 2022-11-12
-image: assets/blogg_ballmaze-2.jpg
+image: assets/kitscon_22-2_dekal.png
 active: true
 images: []
 schema:
