@@ -13,7 +13,7 @@ schema:
   - winner: false
     start: 2022-11-11 08:15
     end: 2022-11-11 09:30
-    title: Buss från Åkareplatsen
+    title: Buss från Hotel Post Drottningtorget
     type: bus
     details: ""
   - winner: false
