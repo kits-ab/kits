@@ -34,7 +34,7 @@ schema:
   - winner: false
     start: 2022-11-11 10:30
     end: 2022-11-11 12:00
-    title: Konsten att lyckas tillsammans
+    title: Christina Stielli - Konsten att lyckas tillsammans
     details: Christinas föreläsningar är en intelligent blandning av fakta och
       underhållning. Sedan hon slog igenom 2014 har hon blivit flerfaldigt
       prisbelönad och uppmärksammad för sina framföranden och då hamnade
