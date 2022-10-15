@@ -164,6 +164,7 @@ export default ({ data, location }: IndexPageProps) => {
         </StyledHorizontal>
       </Vertical>
 
+      {/* Temporarily disabled
       <SectionHeading>{page.node.frontmatter.section4.heading}</SectionHeading>
       <Article
         authors={authors}
@@ -174,7 +175,7 @@ export default ({ data, location }: IndexPageProps) => {
         showExcerpt={true}
       >
         {blog.node.html.split("<!-- more -->")[0]}
-      </Article>
+      </Article> */}
     </DefaultLayout>
   )
 }
