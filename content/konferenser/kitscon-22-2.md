@@ -60,7 +60,7 @@ schema:
     start: 2022-11-11 13:30
     end: 2022-11-11 14:00
     title: Den preussiske generalen
-    details: M﻿er info kommer..
+    details: Agilitet på 1800-talet
     presenters:
       - pierresandboge
     type: presentation
