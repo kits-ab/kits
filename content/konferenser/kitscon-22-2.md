@@ -23,6 +23,10 @@ schema:
     details: V﻿id ankomst lämnar vi våra väskor i bagageutrymmet och startar dagen
       med en enklare fika.
     type: hotel
+    location:
+      coordinates:
+        - "56.8880026320981"
+        - "12.495059967041"
   - winner: false
     start: 2022-11-11 10:15
     end: 2022-11-11 10:30
