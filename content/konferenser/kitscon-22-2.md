@@ -18,8 +18,8 @@ schema:
     details: ""
     location:
       coordinates:
-        - "57.7077790"
-        - "11.9745632"
+        - 57.7077790
+        - 11.9745632
       title: Hotel Post Drottningtorget
   - winner: false
     start: 2022-11-11 09:30
@@ -30,8 +30,8 @@ schema:
     type: hotel
     location:
       coordinates:
-        - "56.8886067"
-        - "12.4956051"
+        - 56.8886067
+        - 12.4956051
       title: Falkenberg Strandbad
   - winner: false
     start: 2022-11-11 10:15
