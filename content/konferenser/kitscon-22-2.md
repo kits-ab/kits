@@ -16,6 +16,11 @@ schema:
     title: Buss från Hotel Post Drottningtorget
     type: bus
     details: ""
+    location:
+      coordinates:
+        - "57.7077790"
+        - "11.9745632"
+      title: Hotel Post Drottningtorget
   - winner: false
     start: 2022-11-11 09:30
     end: 2022-11-11 10:15
