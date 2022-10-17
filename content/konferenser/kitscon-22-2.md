@@ -98,8 +98,10 @@ schema:
   - winner: false
     start: 2022-11-11 15:15
     end: 2022-11-11 15:45
-    title: Self-hosting
-    details: M﻿er info kommer...
+    title: Selfhosted
+    details: Är du också rädd för främmande tjänster på nätet och vill hellre hosta
+      ditt eget? Under den här dragningen går vi lätt igenom lite exempel på hur
+      man kan göra för att köra sina egna tjänster hemifrån.
     presenters:
       - antonmyrholm
     type: presentation
