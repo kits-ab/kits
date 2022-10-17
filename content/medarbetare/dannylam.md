@@ -7,7 +7,8 @@ tagLine: Utvecklare
 image: /assets/medarbetare_dannylam.jpg
 avatar: /assets/medarbetare_default-avatar.jpg
 email: danny.lam@kits.se
-social: {}
+social:
+  linkedin: https://www.linkedin.com/in/danny-lam-47180213a/
 tags:
   - utveckling
   - javascript
