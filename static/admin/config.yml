@@ -147,10 +147,13 @@ collections:
           - name: externalpresenter
             label: Extern föreläsare
             widget: "object"
+            hint: |
+              Fyll i dessa fält för att visa info om extern föreläsare.
+              Bilden bör vara i kvadratiskt bildformat och kommer visas som en cirkel likt avatarerna för interna presentationer.
             fields:
               - name: name
                 label: Name
-                required: true
+                required: false
                 widget: string
               - name: href
                 label: Länk
