@@ -15,6 +15,7 @@ schema:
     externalpresenter:
       name: "Testing #2"
       href: https://www.svt.se/
+      avatarSrc: assets/generatedlines.png
     title: Externt test
 ---
 Detta är ett test
