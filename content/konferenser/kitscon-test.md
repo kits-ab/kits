@@ -13,9 +13,9 @@ schema:
     end: 2022-10-18 10:18
     type: externalpresentation
     externalpresenter:
-      name: "Testing #2"
+      name: Testing
       href: https://www.svt.se/
-      avatarSrc: ""
+      avatarSrc: assets/medarbetare_pontusdoverstav-avatar.jpg
     title: Externt test
 ---
 Detta är ett test
