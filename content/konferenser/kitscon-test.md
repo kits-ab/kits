@@ -28,5 +28,9 @@ schema:
     type: presentation
     presenters:
       - pontusdoverstav
+    location:
+      coordinates:
+        - 50.123456
+        - 9.987654
 ---
 Detta är ett test
