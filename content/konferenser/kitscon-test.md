@@ -13,7 +13,7 @@ schema:
     end: 2022-10-18 10:18
     type: externalpresentation
     externalpresenter:
-      name: Testing
+      name: "Testing #2"
       href: https://www.svt.se/
     title: Externt test
 ---
