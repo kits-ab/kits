@@ -18,8 +18,8 @@ schema:
     details: ""
     location:
       coordinates:
-        - 57.7077790
-        - 11.9745632
+        - "57.7077790"
+        - "11.9745632"
       title: Hotel Post Drottningtorget
   - winner: false
     start: 2022-11-11 09:30
@@ -30,8 +30,8 @@ schema:
     type: hotel
     location:
       coordinates:
-        - 56.8886067
-        - 12.4956051
+        - "56.8886067"
+        - "12.4956051"
       title: Falkenberg Strandbad
   - winner: false
     start: 2022-11-11 10:15
@@ -62,7 +62,7 @@ schema:
     start: 2022-11-11 13:00
     end: 2022-11-11 13:30
     title: Secure Code Warrior
-    details: M﻿er info kommer..
+    details: H﻿ur ska vi jobba med Secure Code Warrior framöver? Mer info kommer..
     presenters:
       - patriknilsson
     type: presentation
@@ -155,17 +155,13 @@ schema:
     type: checkin
   - winner: false
     start: 2022-11-12 09:00
-    end: 2022-11-12 09:30
-    title: TBD
-    presenters: []
-    type: presentation
-    details: M﻿er info kommer..
-  - winner: false
-    start: 2022-11-12 09:30
     end: 2022-11-12 10:00
     title: TBD
-    details: M﻿er info kommer..
+    presenters:
+      - jensabrahamsson
+      - larslornell
     type: presentation
+    details: M﻿er info kommer..
   - winner: false
     start: 2022-11-12 10:00
     end: 2022-11-12 10:30
@@ -194,6 +190,11 @@ schema:
     details: V﻿i passar på att äta på pizzerian som enligt många serverar Sveriges
       bästa pizza!
     type: food
+    location:
+      coordinates:
+        - "56.9020461"
+        - "12.5012425"
+      title: Lilla Napoli
   - winner: false
     start: 2022-11-12 13:00
     end: 2022-11-12 14:15
