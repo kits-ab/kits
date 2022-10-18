@@ -114,7 +114,9 @@ collections:
               - name: coordinates
                 label: Koordinater
                 widget: list
-                hint: "Kommaseparerad, första värdet är latitud and det andra longitur, ex. 57.7001813, 11.9567863"
+                max: 2
+                field: {name: coordinate, label: Koordinat, widget: number, value_type: float}
+                hint: "Lägg manuellt till två värden i listan om du vill visa en plats i schemat. Första värdet är latitud and det andra longitud, ex. 57.7001813, 11.9567863"
               - { name: title, label: Namn, required: false }
           - { name: href, label: URL, required: false }
           - name: type
