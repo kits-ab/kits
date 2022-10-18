@@ -131,6 +131,7 @@ collections:
               - { label: "Hotell", value: "hotel" }
               - { label: "Plats", value: "location" }
               - { label: "Presentation", value: "presentation" }
+              - { label: "Extern föreläsare", value: "externalpresentation"}
               - { label: "Löpning", value: "running" }
               - { label: "Skidåkning", value: "skiing" }
               - { label: "Workshop", value: "workshop" }
@@ -143,6 +144,22 @@ collections:
             displayFields: [title]
             multiple: true
             required: false
+          - name: externalpresenter
+            label: Extern föreläsare
+            widget: "object"
+            fields:
+              - name: name
+                label: Name
+                required: true
+                widget: string
+              - name: href
+                label: Länk
+                required: false
+                widget: string
+              - name: avatarSrc
+                label: Bild
+                required: false
+                widget: image
           - { name: presentation, label: Presentation, widget: file, required: false }
           - { name: youtubeId, label: YouTube ID, widget: text, required: false }
           - { name: winner, label: Bästa presentation, widget: boolean, required: false, default: false }
