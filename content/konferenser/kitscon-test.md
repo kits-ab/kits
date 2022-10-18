@@ -24,7 +24,7 @@ schema:
   - winner: false
     start: 2022-10-18 17:41
     end: 2022-10-18 17:41
-    title: test
+    title: Koordinattest
     type: presentation
     presenters:
       - pontusdoverstav
