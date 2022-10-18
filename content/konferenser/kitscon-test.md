@@ -21,5 +21,12 @@ schema:
       coordinates:
         - 55.12345
         - 9.456
+  - winner: false
+    start: 2022-10-18 17:41
+    end: 2022-10-18 17:41
+    title: test
+    type: presentation
+    presenters:
+      - pontusdoverstav
 ---
 Detta är ett test
