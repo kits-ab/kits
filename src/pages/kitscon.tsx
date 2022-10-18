@@ -197,6 +197,7 @@ const renderPresentation = (
       youtubeId={presentation.youtubeId}
       connectToPrevious={connect}
       showEndTime={showEndTime}
+      externalPresenter={presentation.externalpresenter}
     >
       {presentation.details && toHTML(presentation.details)}
     </Timeslot>
@@ -236,6 +237,11 @@ export const query = graphql`
           title
           details
           presenters
+          externalpresenter {
+            name
+            href
+            avatarSrc
+          }
           location {
             coordinates
             title
@@ -273,6 +279,11 @@ export const query = graphql`
               title
               details
               presenters
+              externalpresenter {
+                name
+                href
+                avatarSrc
+              }
               location {
                 coordinates
                 title
