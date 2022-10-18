@@ -17,5 +17,9 @@ schema:
       href: https://www.svt.se/
       avatarSrc: assets/medarbetare_pontusdoverstav-avatar.jpg
     title: Externt test
+    location:
+      coordinates:
+        - 55.12345
+        - 9.456
 ---
 Detta är ett test
