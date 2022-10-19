@@ -114,7 +114,9 @@ collections:
               - name: coordinates
                 label: Koordinater
                 widget: list
-                hint: "Kommaseparerad, första värdet är latitud and det andra longitur, ex. 57.7001813, 11.9567863"
+                max: 2
+                field: {name: coordinate, label: Koordinat, widget: number, value_type: float}
+                hint: "Lägg manuellt till två värden i listan om du vill visa en plats i schemat. Första värdet är latitud and det andra longitud, ex. 57.7001813, 11.9567863"
               - { name: title, label: Namn, required: false }
           - { name: href, label: URL, required: false }
           - name: type
@@ -131,6 +133,7 @@ collections:
               - { label: "Hotell", value: "hotel" }
               - { label: "Plats", value: "location" }
               - { label: "Presentation", value: "presentation" }
+              - { label: "Extern föreläsare", value: "externalpresentation"}
               - { label: "Löpning", value: "running" }
               - { label: "Skidåkning", value: "skiing" }
               - { label: "Workshop", value: "workshop" }
@@ -143,6 +146,25 @@ collections:
             displayFields: [title]
             multiple: true
             required: false
+          - name: externalpresenter
+            label: Extern föreläsare
+            widget: "object"
+            hint: |
+              Fyll i dessa fält för att visa info om extern föreläsare.
+              Bilden bör vara i kvadratiskt bildformat och kommer visas som en cirkel likt avatarerna för interna presentationer.
+            fields:
+              - name: name
+                label: Name
+                required: false
+                widget: string
+              - name: href
+                label: Länk
+                required: false
+                widget: string
+              - name: avatarSrc
+                label: Bild
+                required: false
+                widget: image
           - { name: presentation, label: Presentation, widget: file, required: false }
           - { name: youtubeId, label: YouTube ID, widget: text, required: false }
           - { name: winner, label: Bästa presentation, widget: boolean, required: false, default: false }
