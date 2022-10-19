@@ -44,7 +44,7 @@ schema:
   - winner: false
     start: 2022-11-11 10:30
     end: 2022-11-11 12:00
-    title: Christina Stielli - Konsten att lyckas tillsammans
+    title: Konsten att lyckas tillsammans
     details: Christinas föreläsningar är en intelligent blandning av fakta och
       underhållning. Sedan hon slog igenom 2014 har hon blivit flerfaldigt
       prisbelönad och uppmärksammad för sina framföranden och då hamnade
@@ -52,7 +52,11 @@ schema:
       kommer vi få lyssna på hur man lyckas som grupp och vad man själv kan
       bidra med i ett team. Och hur hittar vi motivationen i ett regnigt och
       mörkt november?
-    type: presentation
+    type: externalpresentation
+    externalpresenter:
+      name: Christina Stielli
+      avatarSrc: assets/kitscon_22.2.png
+      href: https://www.christinastielli.se/motivation-och-konsten-att-lyckas-tillsammans
   - winner: false
     start: 2022-11-11 12:00
     end: 2022-11-11 13:00
