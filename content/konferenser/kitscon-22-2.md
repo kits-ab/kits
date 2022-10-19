@@ -55,7 +55,7 @@ schema:
     type: externalpresentation
     externalpresenter:
       name: Christina Stielli
-      avatarSrc: assets/kitscon_22.2.png
+      avatarSrc: assets/christina_webb.jpeg
       href: https://www.christinastielli.se/motivation-och-konsten-att-lyckas-tillsammans
   - winner: false
     start: 2022-11-11 12:00
