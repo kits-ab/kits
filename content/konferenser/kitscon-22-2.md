@@ -143,9 +143,12 @@ schema:
     start: 2022-11-12 06:45
     end: 2022-11-12 08:00
     title: Morgonpadel
-    details: V﻿i som vill ses i receptionen och går 300 meter till padelhallen för
-      att rivstarta dagen i en timme! Ta med ditt eget padelracket eller hyr på
-      plats.
+    details: >-
+      V﻿i som vill ses i receptionen och går 300 meter till padelhallen för att
+      rivstarta dagen i en timme! 
+
+
+      Ta med ditt eget padelracket eller hyr på plats.
     type: running
     location:
       coordinates:
