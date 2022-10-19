@@ -144,8 +144,14 @@ schema:
     end: 2022-11-12 08:00
     title: Morgonpadel
     details: V﻿i som vill ses i receptionen och går 300 meter till padelhallen för
-      att rivstarta dagen i en timme!
+      att rivstarta dagen i en timme! Ta med ditt eget padelracket eller hyr på
+      plats.
     type: running
+    location:
+      coordinates:
+        - 56.8884717
+        - 12.4857597
+      title: Falkenberg Padelcenter
   - winner: false
     start: 2022-11-12 08:00
     end: 2022-11-12 08:45
