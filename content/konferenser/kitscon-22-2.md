@@ -177,7 +177,7 @@ schema:
   - winner: false
     start: 2022-11-12 10:30
     end: 2022-11-12 11:00
-    title: TBD
+    title: H2 tillgänglighetsanpassa DynamoDB-data
     details: M﻿er info kommer..
     type: presentation
     presenters:
