@@ -36,7 +36,7 @@ schema:
   - winner: false
     start: 2022-11-11 10:15
     end: 2022-11-11 10:30
-    title: Välkomna
+    title: Välkomna till KitsCon 22.2!
     details: Kortare genomgång av schemat för de två dagarna
     presenters:
       - gustavhjelm
