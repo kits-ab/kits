@@ -160,8 +160,9 @@ schema:
   - winner: false
     start: 2022-11-12 09:00
     end: 2022-11-12 10:00
-    title: TBD
+    title: Den nya organisationen
     presenters:
+      - patriknilsson
       - jensabrahamsson
       - larslornell
     type: presentation
