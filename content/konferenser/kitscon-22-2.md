@@ -188,7 +188,14 @@ schema:
     start: 2022-11-12 10:30
     end: 2022-11-12 11:00
     title: H2 tillgänglighetsanpassa DynamoDB-data
-    details: M﻿er info kommer..
+    details: >-
+      DynamoDB för Dev:
+      ![:+1:](https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f44d@2x.png) -
+      för
+      Ops:![:-1:](https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f44e@2x.png)
+
+
+      I denna föreläsning visar Hoi-Man hur Ops-biten kan göras ett snäpp bättre.
     type: presentation
     presenters:
       - hoimanlui
