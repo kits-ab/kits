@@ -101,7 +101,11 @@ schema:
     start: 2022-11-11 14:45
     end: 2022-11-11 15:15
     title: Golang och CLI
-    details: M﻿er info kommer..
+    details: >-
+      Att bygga ett modernt CLI i Go behöver inte vara svårt!
+
+
+      Vi utforskar Cobra och Bubbletea, två ramverk med olika fokus men samma mål - att hjälpa dig bygga en terminalapp.
     presenters:
       - pontusdoverstav
     type: presentation
