@@ -85,7 +85,7 @@ schema:
     type: coffee
   - winner: false
     start: 2022-11-11 14:15
-    end: 2022-11-11 14:45
+    end: 2022-11-11 14:50
     title: Deep learning and its applications
     details: Deep learning kan ses som en teknik för att få datorn att efterlikna
       människan, alltså att lära genom att göra. Ett nätverk kan bland annat
@@ -98,8 +98,8 @@ schema:
       - tobiascarlsson
     type: presentation
   - winner: false
-    start: 2022-11-11 14:45
-    end: 2022-11-11 15:15
+    start: 2022-11-11 14:50
+    end: 2022-11-11 15:25
     title: Golang och CLI
     details: >-
       Att bygga ett modernt CLI i Go behöver inte vara svårt!
@@ -110,8 +110,8 @@ schema:
       - pontusdoverstav
     type: presentation
   - winner: false
-    start: 2022-11-11 15:15
-    end: 2022-11-11 15:45
+    start: 2022-11-11 15:25
+    end: 2022-11-11 16:00
     title: Selfhosted
     details: Är du också rädd för främmande tjänster på nätet och vill hellre hosta
       ditt eget? Under den här dragningen går vi lätt igenom lite exempel på hur
@@ -120,7 +120,7 @@ schema:
       - antonmyrholm
     type: presentation
   - winner: false
-    start: 2022-11-11 15:45
+    start: 2022-11-11 16:00
     end: 2022-11-11 17:00
     title: Incheckning
     details: ""
@@ -144,15 +144,16 @@ schema:
     details: S﻿pa och dryck till sent på kvällen
     type: hotel
   - winner: false
-    start: 2022-11-12 06:45
-    end: 2022-11-12 08:00
+    start: 2022-11-12 07:15
+    end: 2022-11-12 08:30
     title: Morgonpadel
     details: >-
       V﻿i som vill ses i receptionen och går 300 meter till padelhallen för att
-      rivstarta dagen i en timme! 
+      rivstarta dagen! V﻿i har banor från 07:30 och spelar så länge vi känner
+      att vi hinner. Första föreläsningen startar 09:00!
 
 
-      Ta med ditt eget padelracket eller hyr på plats.
+      Ta med ditt eget padelracket eller hyr på plats!
     type: running
     location:
       coordinates:
@@ -162,7 +163,7 @@ schema:
   - winner: false
     start: 2022-11-12 08:00
     end: 2022-11-12 08:45
-    title: Frukost
+    title: Frukost finns tillgängligt från
     details: ""
     type: food
   - winner: false
