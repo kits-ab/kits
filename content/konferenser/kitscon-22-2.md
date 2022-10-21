@@ -6,7 +6,7 @@ tagLine: Strandbaden Edition
 location: Falkenbergs Strandbad
 start: 2022-11-11
 end: 2022-11-12
-image: assets/kitscon_22.2.png
+image: /assets/kitscon_22.2.png
 active: true
 images: []
 schema:
@@ -55,7 +55,7 @@ schema:
     type: externalpresentation
     externalpresenter:
       name: Christina Stielli
-      avatarSrc: assets/christina_webb.jpeg
+      avatarSrc: /assets/christina_webb.jpeg
       href: https://www.christinastielli.se/motivation-och-konsten-att-lyckas-tillsammans
   - winner: false
     start: 2022-11-11 12:00
