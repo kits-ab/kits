@@ -81,11 +81,22 @@ schema:
   - winner: false
     start: 2022-11-11 14:00
     end: 2022-11-11 14:15
+    title: Automatisk konsultprofil
+    location:
+      title: ""
+    presenters:
+      - linuslerjebo
+      - tobiascarlsson
+    details: L﻿inus och Tobias berättar om Konpro och hur vi kan använda det framöver.
+    type: presentation
+  - winner: false
+    start: 2022-11-11 14:15
+    end: 2022-11-11 14:30
     title: Fika
     type: coffee
   - winner: false
-    start: 2022-11-11 14:15
-    end: 2022-11-11 14:50
+    start: 2022-11-11 14:30
+    end: 2022-11-11 15:00
     title: Deep learning and its applications
     details: Deep learning kan ses som en teknik för att få datorn att efterlikna
       människan, alltså att lära genom att göra. Ett nätverk kan bland annat
@@ -98,8 +109,8 @@ schema:
       - tobiascarlsson
     type: presentation
   - winner: false
-    start: 2022-11-11 14:50
-    end: 2022-11-11 15:25
+    start: 2022-11-11 15:00
+    end: 2022-11-11 15:30
     title: Golang och CLI
     details: >-
       Att bygga ett modernt CLI i Go behöver inte vara svårt!
@@ -110,7 +121,7 @@ schema:
       - pontusdoverstav
     type: presentation
   - winner: false
-    start: 2022-11-11 15:25
+    start: 2022-11-11 15:30
     end: 2022-11-11 16:00
     title: Selfhosted
     details: Är du också rädd för främmande tjänster på nätet och vill hellre hosta
