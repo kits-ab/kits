@@ -64,20 +64,14 @@ schema:
     type: food
   - winner: false
     start: 2022-11-11 13:00
-    end: 2022-11-11 13:30
-    title: Secure Code Warrior
-    details: H﻿ur ska vi jobba med Secure Code Warrior framöver? Mer info kommer..
+    end: 2022-11-11 14:00
+    title: Den nya organisationen
     presenters:
       - patriknilsson
+      - jensabrahamsson
+      - larslornell
     type: presentation
-  - winner: false
-    start: 2022-11-11 13:30
-    end: 2022-11-11 14:00
-    title: Den preussiske generalen
-    details: Agilitet på 1800-talet
-    presenters:
-      - pierresandboge
-    type: presentation
+    details: M﻿er info kommer..
   - winner: false
     start: 2022-11-11 14:00
     end: 2022-11-11 14:15
@@ -184,14 +178,20 @@ schema:
     type: checkin
   - winner: false
     start: 2022-11-12 09:00
-    end: 2022-11-12 10:00
-    title: Den nya organisationen
+    end: 2022-11-12 09:30
+    title: Secure Code Warrior
+    details: H﻿ur ska vi jobba med Secure Code Warrior framöver?
     presenters:
       - patriknilsson
-      - jensabrahamsson
-      - larslornell
     type: presentation
-    details: M﻿er info kommer..
+  - winner: false
+    start: 2022-11-12 09:30
+    end: 2022-11-12 10:00
+    title: Den preussiske generalen
+    details: Agilitet på 1800-talet
+    presenters:
+      - pierresandboge
+    type: presentation
   - winner: false
     start: 2022-11-12 10:00
     end: 2022-11-12 10:30
