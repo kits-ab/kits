@@ -64,7 +64,7 @@ schema:
     type: food
   - winner: false
     start: 2022-11-11 13:00
-    end: 2022-11-11 14:00
+    end: 2022-11-11 13:45
     title: Den nya organisationen
     presenters:
       - patriknilsson
@@ -73,15 +73,13 @@ schema:
     type: presentation
     details: M﻿er info kommer..
   - winner: false
-    start: 2022-11-11 14:00
+    start: 2022-11-11 13:45
     end: 2022-11-11 14:15
-    title: Automatisk konsultprofil
-    location:
-      title: ""
+    title: Den nya organisationen 2
     presenters:
-      - linuslerjebo
-      - tobiascarlsson
-    details: L﻿inus och Tobias berättar om Konpro och hur vi kan använda det framöver.
+      - larslornell
+      - jensabrahamsson
+      - patriknilsson
     type: presentation
   - winner: false
     start: 2022-11-11 14:15
@@ -177,28 +175,31 @@ schema:
     title: Utcheckning
     type: checkin
   - winner: false
-    start: 2022-11-12 09:00
-    end: 2022-11-12 09:30
+    start: 2022-11-12 09:15
+    end: 2022-11-12 09:45
     title: Secure Code Warrior
     details: H﻿ur ska vi jobba med Secure Code Warrior framöver?
     presenters:
       - patriknilsson
     type: presentation
   - winner: false
-    start: 2022-11-12 09:30
-    end: 2022-11-12 10:00
+    start: 2022-11-12 09:45
+    end: 2022-11-12 10:15
     title: Den preussiske generalen
     details: Agilitet på 1800-talet
     presenters:
       - pierresandboge
     type: presentation
   - winner: false
-    start: 2022-11-12 10:00
+    start: 2022-11-12 10:15
     end: 2022-11-12 10:30
-    title: CQRS med kafka
-    details: M﻿er info kommer..
+    title: Automatisk konsultprofil
+    location:
+      title: ""
     presenters:
-      - olofgunnarsson
+      - linuslerjebo
+      - tobiascarlsson
+    details: L﻿inus och Tobias berättar om Konpro och hur vi kan använda det framöver.
     type: presentation
   - winner: false
     start: 2022-11-12 10:30
