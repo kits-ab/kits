@@ -162,8 +162,8 @@ schema:
     details: ""
     type: food
   - winner: false
-    start: 2022-11-12 08:45
-    end: 2022-11-12 09:00
+    start: 2022-11-12 09:00
+    end: 2022-11-12 09:15
     title: Utcheckning
     type: checkin
   - winner: false
