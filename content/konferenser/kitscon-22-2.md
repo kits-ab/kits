@@ -64,23 +64,15 @@ schema:
     type: food
   - winner: false
     start: 2022-11-11 13:00
-    end: 2022-11-11 13:45
-    title: Den nya organisationen
-    presenters:
-      - patriknilsson
-      - jensabrahamsson
-      - larslornell
-    type: presentation
-    details: M﻿er info kommer..
-  - winner: false
-    start: 2022-11-11 13:45
     end: 2022-11-11 14:15
-    title: Den nya organisationen 2
+    title: Ny organisation, livet, universum och allting
     presenters:
-      - larslornell
-      - jensabrahamsson
       - patriknilsson
+      - jensabrahamsson
+      - larslornell
     type: presentation
+    details: Två samarbetsövningar i grupp, för att få gemensam bild av nytta och
+      möjligheter, samt att lära känna varandra i grupperna bättre.
   - winner: false
     start: 2022-11-11 14:15
     end: 2022-11-11 14:30
