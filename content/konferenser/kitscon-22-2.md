@@ -157,7 +157,7 @@ schema:
       title: Falkenberg Padelcenter
   - winner: false
     start: 2022-11-12 08:00
-    end: 2022-11-12 08:45
+    end: 2022-11-12 08:00
     title: Frukost finns tillgängligt från
     details: ""
     type: food
