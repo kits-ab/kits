@@ -145,7 +145,7 @@ schema:
     details: >-
       V﻿i som vill ses i receptionen och går 300 meter till padelhallen för att
       rivstarta dagen! V﻿i har banor från 07:30 och spelar så länge vi känner
-      att vi hinner. Första föreläsningen startar 09:00!
+      att vi hinner. Första föreläsningen startar 09:15!
 
 
       Ta med ditt eget padelracket eller hyr på plats!
