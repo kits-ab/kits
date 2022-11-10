@@ -64,25 +64,15 @@ schema:
     type: food
   - winner: false
     start: 2022-11-11 13:00
-    end: 2022-11-11 14:00
-    title: Den nya organisationen
+    end: 2022-11-11 14:15
+    title: Ny organisation, livet, universum och allting
     presenters:
       - patriknilsson
       - jensabrahamsson
       - larslornell
     type: presentation
-    details: M﻿er info kommer..
-  - winner: false
-    start: 2022-11-11 14:00
-    end: 2022-11-11 14:15
-    title: Automatisk konsultprofil
-    location:
-      title: ""
-    presenters:
-      - linuslerjebo
-      - tobiascarlsson
-    details: L﻿inus och Tobias berättar om Konpro och hur vi kan använda det framöver.
-    type: presentation
+    details: Två samarbetsövningar i grupp, för att få gemensam bild av nytta och
+      möjligheter, samt att lära känna varandra i grupperna bättre.
   - winner: false
     start: 2022-11-11 14:15
     end: 2022-11-11 14:30
@@ -155,7 +145,7 @@ schema:
     details: >-
       V﻿i som vill ses i receptionen och går 300 meter till padelhallen för att
       rivstarta dagen! V﻿i har banor från 07:30 och spelar så länge vi känner
-      att vi hinner. Första föreläsningen startar 09:00!
+      att vi hinner. Första föreläsningen startar 09:15!
 
 
       Ta med ditt eget padelracket eller hyr på plats!
@@ -167,38 +157,41 @@ schema:
       title: Falkenberg Padelcenter
   - winner: false
     start: 2022-11-12 08:00
-    end: 2022-11-12 08:45
+    end: 2022-11-12 09:00
     title: Frukost finns tillgängligt från
     details: ""
     type: food
   - winner: false
-    start: 2022-11-12 08:45
-    end: 2022-11-12 09:00
+    start: 2022-11-12 09:00
+    end: 2022-11-12 09:15
     title: Utcheckning
     type: checkin
   - winner: false
-    start: 2022-11-12 09:00
-    end: 2022-11-12 09:30
+    start: 2022-11-12 09:15
+    end: 2022-11-12 09:45
     title: Secure Code Warrior
     details: H﻿ur ska vi jobba med Secure Code Warrior framöver?
     presenters:
       - patriknilsson
     type: presentation
   - winner: false
-    start: 2022-11-12 09:30
-    end: 2022-11-12 10:00
+    start: 2022-11-12 09:45
+    end: 2022-11-12 10:15
     title: Den preussiske generalen
     details: Agilitet på 1800-talet
     presenters:
       - pierresandboge
     type: presentation
   - winner: false
-    start: 2022-11-12 10:00
+    start: 2022-11-12 10:15
     end: 2022-11-12 10:30
-    title: CQRS med kafka
-    details: M﻿er info kommer..
+    title: Automatisk konsultprofil
+    location:
+      title: ""
     presenters:
-      - olofgunnarsson
+      - linuslerjebo
+      - tobiascarlsson
+    details: L﻿inus och Tobias berättar om Konpro och hur vi kan använda det framöver.
     type: presentation
   - winner: false
     start: 2022-11-12 10:30
