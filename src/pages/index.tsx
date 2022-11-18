@@ -267,7 +267,7 @@ export const pageQuery = graphql`
 
     images: allFile(
       filter: {
-        internal: { mediaType: { eq: "image/jpeg" } }
+        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
         relativePath: { regex: "/^nyheter_/" }
       }
     ) {
@@ -280,7 +280,7 @@ export const pageQuery = graphql`
 
     imagesSmall: allFile(
       filter: {
-        internal: { mediaType: { eq: "image/jpeg" } }
+        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
         relativePath: { regex: "/^nyheter_/" }
       }
     ) {
