@@ -4,10 +4,9 @@ id: jensabrahamsson
 title: Jens Abrahamsson
 alumni: false
 tagLine: Agilist
-email: jens.abrahamsson@kits.se
-social: {}
 image: /assets/medarbetare_jensabrahamsson.jpg
 avatar: /assets/medarbetare_jensabrahamsson-avatar.jpg
+email: jens.abrahamsson@kits.se
+social: {}
 ---
-
-Fantastiskt bra. Kanske en av de bästa!
+Fantastiskt bra. Kanske en av de bästa! Åtminstone i Lerum!
