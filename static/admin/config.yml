@@ -13,7 +13,7 @@ backend:
 publish_mode: editorial_workflow
 
 media_folder: static/assets
-public_folder: assets
+public_folder: /assets
 
 display_url: https://kits.se
 
