@@ -57,6 +57,9 @@ export const imageFragmentSmall = graphql`
 `
 
 export const findImageByRelativePath = (images: FileEdge[], relativePath: string | undefined) => {
+  if (relativePath && relativePath.charAt(0) !== '/') {
+    relativePath = `/${relativePath}`
+  }
   const img = images.find((image) => `/assets/${image.node.relativePath}` === relativePath)
   if (img) {
     return {
