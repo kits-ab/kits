@@ -5,9 +5,11 @@ image: /assets/nyheter_lasvegas.jpg
 authors:
   - gustavhjelm
 ---
-![](/assets/nyheter_lasvegas2.jpg)
+![](/assets/nyheter_lasvegas2.jpg "image-left")
 
-![](/assets/nyheter_lasvegas1.jpg)
+
+
+![](/assets/nyheter_lasvegas1.jpg "image-right")
 
 Hej Sverige! Här kommer en hälsning från ett gäng glada Kitsare som spenderar veckan på AWS re:Invent 2022 i Las Vegas.\
 \
@@ -17,7 +19,3 @@ Vi har hittills haft en otroligt bra och fullspäckad vecka och kommer snart til
 
 \
 Vill du följa med på nästa kompetensutvecklande resa och lära dig lika mycket om moln, fiktion och matkultur? Kika in vår uppdaterade karriärsida på [http://jobb.kits.se](http://jobb.kits.se/).
-
-![]()
-
-![]()
