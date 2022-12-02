@@ -5,8 +5,6 @@ image: /assets/nyheter_lasvegas.jpg
 authors:
   - gustavhjelm
 ---
-
-
 ![](/assets/nyheter_lasvegas2.jpg)
 
 ![](/assets/nyheter_lasvegas1.jpg)
@@ -19,6 +17,6 @@ Vi har hittills haft en otroligt bra och fullspäckad vecka och kommer snart til
 \
 Vill du följa med på nästa kompetensutvecklande resa och lära dig lika mycket om moln, fiktion och matkultur? Kika in vår uppdaterade karriärsida på [http://jobb.kits.se](http://jobb.kits.se/).
 
-![](/assets/nyheter_lasvegas2.jpg)
+![]()
 
-![](/assets/nyheter_lasvegas1.jpg)
+![]()
