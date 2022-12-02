@@ -9,6 +9,8 @@ authors:
 
 ![](/assets/nyheter_lasvegas4.jpg "image-right")
 
+
+
 Hej Sverige! Här kommer en hälsning från ett gäng glada Kitsare som spenderar veckan på AWS re:Invent 2022 i Las Vegas.\
 \
 Som ni kanske vet vid det här laget värderar vi på KITS kompetensutveckling väldigt högt, och kan man vidareutveckla sig i miljöer som denna är det såklart ännu bättre!\
