@@ -7,6 +7,8 @@ authors:
 ---
 ![](/assets/nyheter_lasvegas2.jpg)
 
+
+
 ![](/assets/nyheter_lasvegas1.jpg)
 
 Hej Sverige! Här kommer en hälsning från ett gäng glada Kitsare som spenderar veckan på AWS re:Invent 2022 i Las Vegas.\
