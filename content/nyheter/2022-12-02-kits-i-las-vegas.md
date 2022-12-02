@@ -5,9 +5,9 @@ image: /assets/nyheter_lasvegas.jpg
 authors:
   - gustavhjelm
 ---
-![](/assets/nyheter_lasvegas2.jpg "image-left")
+![](/assets/nyheter_lasvegas3.jpg "image-left")
 
-![](/assets/nyheter_lasvegas1.jpg "image-right")
+![](/assets/nyheter_lasvegas4.jpg "image-right")
 
 Hej Sverige! Här kommer en hälsning från ett gäng glada Kitsare som spenderar veckan på AWS re:Invent 2022 i Las Vegas.\
 \
