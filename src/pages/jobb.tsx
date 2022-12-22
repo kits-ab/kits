@@ -33,6 +33,7 @@ import {
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath, findImagesByRelativePaths } from "../utils/imageUtils"
+import { truncateJobAd } from "../utils/jobUtils"
 
 const StyledBreakout = styled(Breakout)`
   background-color: ${colors.background2};
@@ -117,7 +118,7 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
                 onClick={this.handleClick.bind(this, index, edge.node.fields.href)}
               >
                 <StyledPersonaContent spacing={spacing.large}>
-                  <Text>{edge.node.attributes.body}</Text>
+                  <Text>{truncateJobAd(edge.node.attributes.body)}</Text>
                   <Button
                     href={edge.node.links.careersite_job_apply_url}
                     openInNewWindow={true}
