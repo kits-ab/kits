@@ -1,12 +1,14 @@
 export const truncateJobAd = (adText: string) => {
-  // Find all <p> that are followed by "<strong>" and "Om tjänsten"
-  // This is a very fragile and specific match, but will have to work for now
-  const regex = /(<p>)(?=(<strong>)(Om tjänsten))/mg
+  // Find all <p> that are followed by "Om tjänsten"
+  // This will match all <p> that precede "Om tjänsten",
+  // so we get the last one and truncate from there
+  const regex = /(<p>)(?=.*(Om tjänsten))/mg
 
-  const indexOfMatch = adText.search(regex)
+  const matchArray = [...adText.matchAll(regex)]
+  const lastMatchIndex = matchArray && matchArray.length !== 0 ? matchArray[matchArray.length - 1].index : undefined
 
-  if (indexOfMatch !== -1) {
-    return adText.substring(0, indexOfMatch)
+  if (lastMatchIndex) {
+    return adText.substring(0, lastMatchIndex)
   } else {
     return adText
   }
