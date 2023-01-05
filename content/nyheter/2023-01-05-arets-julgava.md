@@ -1,11 +1,11 @@
 ---
 type: news
 title: Årets julgåva
-image: /assets/se_2022_julemblem_ukraina_blue-round.png
+image: /assets/nyheter_julgava2022.png
 authors:
   - gustavhjelm
 ---
-![](/assets/se_2022_julemblem_ukraina_blue-round.png "image-left")
+![](/assets/nyheter_julgava2022.png "image-left")
 
 Julen är här och för oss på KITS innebär det att det är det dags för vår årliga jultradition – att skänka en julgåva!
 
