@@ -16,7 +16,8 @@
     "precommit": "lint-staged",
     "prepush": "npm run test",
     "start": "gatsby develop",
-    "test": "npm run lint && tsc --noEmit"
+    "test": "npm run lint && tsc --noEmit",
+    "serve": "gatsby build && gatsby serve"
   },
   "dependencies": {
     "@kokitotsos/react-components": "3.2.0",
