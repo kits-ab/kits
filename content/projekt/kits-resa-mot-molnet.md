@@ -1,6 +1,6 @@
 ---
 type: project
-index: 1
+index: 10
 title: KITS resa mot molnet
 image: /assets/projekt_resanmotmolnet.jpg
 ---
