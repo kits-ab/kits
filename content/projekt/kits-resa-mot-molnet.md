@@ -2,7 +2,7 @@
 type: project
 index: 1
 title: KITS resa mot molnet
-image: ""
+image: /assets/projekt_resanmotmolnet.jpg
 ---
 S﻿om med de flesta framgångshistorier kan det finnas efterkonstruktioner - och det är troligt att det också finns sådana i KITS resa mot molnen. 
 
