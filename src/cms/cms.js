@@ -43,3 +43,22 @@ CMS.registerEditorComponent({
     return returnString
   }
 })
+
+CMS.registerEditorComponent({
+  id: "leftAlignedImage",
+  label: "Vänsterjusterad bild",
+  hint: "Visar en bild vänsterjusterad med texten flödandes runt bilden",
+  fields: [
+    {label: "Bild", name: "image", widget: "image"}
+  ],
+  pattern: /^<img class="image-left" src="(\S*)">/ms,
+  fromBlock: function (match) {
+    return {image: match[1]}
+  },
+  toBlock: function (data) {
+    return `<img class="image-left" src="${data.image}">`
+  },
+  toPreview: function (data) {
+    return `<img src="${data.image}" style="max-width:500px">`
+  }
+})
