@@ -1,7 +1,7 @@
 ---
 type: news
 title: KITS på GÖSTA
-image: /assets/nyheter_gosta.jpeg
+image: /assets/nyheter_gosta1.png
 authors:
   - gustavhjelm
 ---
