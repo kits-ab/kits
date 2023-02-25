@@ -4,10 +4,9 @@ id: jensabrahamsson
 title: Jens Abrahamsson
 alumni: false
 tagLine: Agilist
-email: jens.abrahamsson@kits.se
-social: {}
 image: /assets/medarbetare_jensabrahamsson.jpg
 avatar: /assets/medarbetare_jensabrahamsson-avatar.jpg
+email: jens.abrahamsson@kits.se
+social: {}
 ---
-
-Fantastiskt bra. Kanske en av de bästa!
+Jens brinner för att hjälpa utvecklingsteam att bli högpresterande, och har många både praktiska och teoretiska verktyg i bakfickan för att lyckas med detta.
