@@ -6,4 +6,5 @@ alumni: false
 tagLine: Utvecklare
 email: filip.olsson@kits.se
 ---
+
 Riktigt bra. Kanske en av de bästa.
