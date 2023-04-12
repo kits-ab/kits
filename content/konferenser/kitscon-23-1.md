@@ -8,10 +8,7 @@ start: 2023-05-18
 end: 2023-05-21
 image: /assets/kitscon_23_1.png
 active: false
-images:
-  - image: /assets/amsterdam_1.jpeg
-  - image: /assets/amsterdam_2.jpeg
-  - image: /assets/amsterdam_3.png
+images: []
 schema:
   - winner: false
     start: 2023-05-18 10:00
@@ -32,4 +29,4 @@ schema:
     presenters:
       - gustavhjelm
 ---
-M﻿er info kommer...
+Välkomna till Amsterdam och KitsCon 23.1! Under denna KitsCon kommer vi ha en fullspäckad agenda där vi föreläser för varandra på förmiddagarna och utforskar stadens rika kultur och historia på eftermiddagarna. Vi kommer att besöka fantastiska museer, upptäcka de lokala bryggerierna och käka middag på kanalbåtar. Vi ser fram emot en givande och minnesvärd tid tillsammans i denna vackra stad!
