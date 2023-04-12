@@ -14,6 +14,15 @@ images:
   - image: /assets/amsterdam_3.png
 schema:
   - winner: false
+    start: 2023-05-18 10:00
+    end: 2023-05-18 10:30
+    title: Incheckning
+    location:
+      coordinates:
+        - 57.668799
+        - 12.292314
+    type: checkin
+  - winner: false
     start: 2023-05-18 11:55
     end: 2023-05-21 11:55
     title: Välkomna till KitsCon 23.1!
