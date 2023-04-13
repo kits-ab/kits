@@ -82,8 +82,8 @@ schema:
       Här får vi lära oss branchens alla konster vad gäller att sammanställa den perfekta cocktailen. Vi kommer lära oss “muddle, stir, build, layer and shake” under ledning av en av Bols proffsiga bartenders. Vi delas in i små teams och alla får sin egen bar att arbeta vid.
     location:
       coordinates:
-        - 52.3591009
-        - 4.881245305374147
+        - 51.3591009
+        - 4.881245
     type: location
   - winner: false
     start: 2023-05-18 19:00
