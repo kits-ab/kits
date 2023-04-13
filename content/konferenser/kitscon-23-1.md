@@ -42,8 +42,8 @@ schema:
     type: bus
     details: V﻿id ankomst väntar en buss som tar oss till hotellet.
   - winner: false
-    start: 2023-05-18 02:30
-    end: 2023-05-18 03:15
+    start: 2023-05-18 14:30
+    end: 2023-05-18 15:15
     title: Incheckning och fika på Room Mate Aitana Hotel
     details: V﻿id ankomst checkar vi in på våra rum och följer sedan upp med en
       rejälare fika.
@@ -54,7 +54,7 @@ schema:
         - 4.89417
   - winner: false
     start: 2023-05-18 15:15
-    end: 2023-05-21 11:55
+    end: 2023-05-18 15:45
     title: Välkomna till KitsCon 23.1!
     location:
       title: ""
