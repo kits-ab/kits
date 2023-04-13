@@ -48,8 +48,8 @@ schema:
     type: checkin
     location:
       coordinates:
-        - 52.38463385
-        - 4.894143081198685
+        - 52.384633
+        - 4.894143
   - winner: false
     start: 2023-05-18 15:15
     end: 2023-05-18 15:45
