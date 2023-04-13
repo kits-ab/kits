@@ -47,9 +47,7 @@ schema:
       rejälare fika.
     type: checkin
     location:
-      coordinates:
-        - 52.384633
-        - 4.894143
+      coordinates: []
   - winner: false
     start: 2023-05-18 15:15
     end: 2023-05-18 15:45
@@ -81,9 +79,7 @@ schema:
 
       Här får vi lära oss branchens alla konster vad gäller att sammanställa den perfekta cocktailen. Vi kommer lära oss “muddle, stir, build, layer and shake” under ledning av en av Bols proffsiga bartenders. Vi delas in i små teams och alla får sin egen bar att arbeta vid.
     location:
-      coordinates:
-        - 51.3591
-        - 5.881245
+      coordinates: []
     type: location
   - winner: false
     start: 2023-05-18 19:00
@@ -92,9 +88,7 @@ schema:
     details: Vi går till bryggan 500 meter från Bols för att hoppa på kanalbåten där
       vi äter middag.
     location:
-      coordinates:
-        - 52.360718
-        - 4.88617
+      coordinates: []
     type: boat
   - winner: false
     start: 2023-05-18 21:00
