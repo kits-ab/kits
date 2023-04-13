@@ -102,5 +102,58 @@ schema:
     title: Avslutning middagskryssning
     details: V﻿i släpps av i närheten av Room Mate Aitana Hotel.
     type: boat
+  - winner: false
+    start: 2023-05-19 07:00
+    end: 2023-05-19 21:00
+    title: Frukost
+    type: food
+  - winner: false
+    start: 2023-05-19 09:00
+    end: 2023-05-19 09:40
+    title: KITS
+    type: presentation
+    presenters:
+      - patriknilsson
+    details: M﻿er info kommer..
+  - winner: false
+    start: 2023-05-19 09:40
+    end: 2023-05-19 10:10
+    title: Sociocracy 3.0
+    details: M﻿er info kommer..
+    type: presentation
+  - winner: false
+    start: 2023-05-19 10:10
+    end: 2023-05-19 10:30
+    title: Fika
+    type: coffee
+  - winner: false
+    start: 2023-05-19 10:30
+    end: 2023-05-19 11:10
+    title: Kravhantering
+    details: M﻿er info kommer...
+    presenters:
+      - hoimanlui
+    type: presentation
+  - winner: false
+    start: 2023-05-19 11:10
+    end: 2023-05-19 11:50
+    title: TBD
+    details: M﻿er info kommer..
+    presenters:
+      - olofgunnarsson
+    type: presentation
+  - winner: false
+    start: 2023-05-19 11:50
+    end: 2023-05-19 12:30
+    title: Meditation
+    details: M﻿er info kommer..
+    presenters:
+      - joellajohannesson
+    type: presentation
+  - winner: false
+    start: 2023-05-19 12:30
+    end: 2023-05-19 14:00
+    title: Lunch
+    type: food
 ---
 Välkomna till Amsterdam och KitsCon 23.1! Under denna KitsCon kommer vi ha en fullspäckad agenda där vi föreläser för varandra på förmiddagarna och utforskar stadens rika kultur och historia på eftermiddagarna. Vi kommer att besöka fantastiska museer, upptäcka de lokala bryggerierna och käka middag på kanalbåtar.
