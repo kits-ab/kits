@@ -7,7 +7,7 @@ location: Amsterdam
 start: 2023-05-18
 end: 2023-05-21
 image: /assets/kitscon_23_1.png
-active: false
+active: true
 images: []
 schema:
   - winner: false
@@ -82,8 +82,8 @@ schema:
       Här får vi lära oss branchens alla konster vad gäller att sammanställa den perfekta cocktailen. Vi kommer lära oss “muddle, stir, build, layer and shake” under ledning av en av Bols proffsiga bartenders. Vi delas in i små teams och alla får sin egen bar att arbeta vid.
     location:
       coordinates:
-        - 51.3591009
-        - 4.881245
+        - 51.3591
+        - 5.881245
     type: location
   - winner: false
     start: 2023-05-18 19:00
