@@ -15,9 +15,7 @@ schema:
     end: 2023-05-18 10:30
     title: Incheckning
     location:
-      coordinates:
-        - 57.668799
-        - 12.292314
+      coordinates: []
     type: checkin
     details: >-
       V﻿i samlas relativt tidigt på på Landvetter och tar oss som vanligt dit i
@@ -50,8 +48,8 @@ schema:
     type: checkin
     location:
       coordinates:
-        - 52.38468
-        - 4.89417
+        - 52.38463385
+        - 4.894143081198685
   - winner: false
     start: 2023-05-18 15:15
     end: 2023-05-18 15:45
@@ -62,5 +60,47 @@ schema:
     presenters:
       - gustavhjelm
     details: M﻿er info kommer...
+  - winner: false
+    start: 2023-05-18 16:00
+    end: 2023-05-18 16:30
+    title: Transfer till House of Bols
+    details: Bussen hämtar oss på hotellet och kör oss till House of Bols. Vi kommer
+      inte tillbaka till hotellet innan middag så byt om till det ni vill ha på
+      er under eftermiddag/kväll.
+    type: bus
+  - winner: false
+    start: 2023-05-18 16:30
+    end: 2023-05-18 18:30
+    title: House of Bols Experience
+    details: >-
+      Ett äventyr för alla sinnen! I detta Jeneverhus får vi först en guidad
+      tur för att lära oss mer om Bols historia från 1575. På House of Bols
+      finns även Europas största bartenderskola; The Bols Bartening Academy,
+      där professionella bartenders även får sin utbildning.
+
+
+      Här får vi lära oss branchens alla konster vad gäller att sammanställa den perfekta cocktailen. Vi kommer lära oss “muddle, stir, build, layer and shake” under ledning av en av Bols proffsiga bartenders. Vi delas in i små teams och alla får sin egen bar att arbeta vid.
+    location:
+      coordinates:
+        - 52.3591009
+        - 4.881245305374147
+    type: location
+  - winner: false
+    start: 2023-05-18 19:00
+    end: 2023-05-18 21:00
+    title: Middagskryssning
+    details: Vi går till bryggan 500 meter från Bols för att hoppa på kanalbåten där
+      vi äter middag.
+    location:
+      coordinates:
+        - 52.360718
+        - 4.88617
+    type: boat
+  - winner: false
+    start: 2023-05-18 21:00
+    end: 2023-05-18 21:00
+    title: Avslutning middagskryssning
+    details: V﻿i släpps av i närheten av Room Mate Aitana Hotel.
+    type: boat
 ---
-Välkomna till Amsterdam och KitsCon 23.1! Under denna KitsCon kommer vi ha en fullspäckad agenda där vi föreläser för varandra på förmiddagarna och utforskar stadens rika kultur och historia på eftermiddagarna. Vi kommer att besöka fantastiska museer, upptäcka de lokala bryggerierna och käka middag på kanalbåtar. Vi ser fram emot en givande och minnesvärd tid tillsammans i denna vackra stad!
+Välkomna till Amsterdam och KitsCon 23.1! Under denna KitsCon kommer vi ha en fullspäckad agenda där vi föreläser för varandra på förmiddagarna och utforskar stadens rika kultur och historia på eftermiddagarna. Vi kommer att besöka fantastiska museer, upptäcka de lokala bryggerierna och käka middag på kanalbåtar.
