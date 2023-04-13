@@ -7,15 +7,13 @@ location: Amsterdam
 start: 2023-05-18
 end: 2023-05-21
 image: /assets/kitscon_23_1.png
-active: false
+active: true
 images: []
 schema:
   - winner: false
     start: 2023-05-18 10:00
     end: 2023-05-18 10:30
     title: Incheckning
-    location:
-      coordinates: []
     type: checkin
     details: >-
       V﻿i samlas relativt tidigt på på Landvetter och tar oss som vanligt dit i
@@ -46,8 +44,6 @@ schema:
     details: V﻿id ankomst checkar vi in på våra rum och följer sedan upp med en
       rejälare fika.
     type: checkin
-    location:
-      coordinates: []
   - winner: false
     start: 2023-05-18 15:15
     end: 2023-05-18 15:45
@@ -78,8 +74,6 @@ schema:
 
 
       Här får vi lära oss branchens alla konster vad gäller att sammanställa den perfekta cocktailen. Vi kommer lära oss “muddle, stir, build, layer and shake” under ledning av en av Bols proffsiga bartenders. Vi delas in i små teams och alla får sin egen bar att arbeta vid.
-    location:
-      coordinates: []
     type: location
   - winner: false
     start: 2023-05-18 19:00
@@ -87,8 +81,6 @@ schema:
     title: Middagskryssning
     details: Vi går till bryggan 500 meter från Bols för att hoppa på kanalbåten där
       vi äter middag.
-    location:
-      coordinates: []
     type: boat
   - winner: false
     start: 2023-05-18 21:00
