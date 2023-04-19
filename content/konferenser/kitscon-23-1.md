@@ -88,7 +88,7 @@ schema:
     type: boat
   - winner: false
     start: 2023-05-19 07:00
-    end: 2023-05-19 21:00
+    end: 2023-05-19 09:00
     title: Frukost
     type: food
   - winner: false
@@ -105,6 +105,8 @@ schema:
     title: Sociocracy 3.0
     details: M﻿er info kommer..
     type: presentation
+    presenters:
+      - jensabrahamsson
   - winner: false
     start: 2023-05-19 10:10
     end: 2023-05-19 10:30
