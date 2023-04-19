@@ -79,14 +79,12 @@ schema:
     start: 2023-05-18 19:00
     end: 2023-05-18 21:00
     title: Middagskryssning
-    details: Vi går till bryggan 500 meter från Bols för att hoppa på kanalbåten där
-      vi äter middag.
-    type: boat
-  - winner: false
-    start: 2023-05-18 21:00
-    end: 2023-05-18 21:00
-    title: Avslutning middagskryssning
-    details: V﻿i släpps av i närheten av Room Mate Aitana Hotel.
+    details: >-
+      Vi går till bryggan 500 meter från Bols för att hoppa på kanalbåten där vi
+      äter middag. 
+
+
+      E﻿fter avslutad middag släpps vi av i närheten av vårat hotell!
     type: boat
   - winner: false
     start: 2023-05-19 07:00
@@ -140,6 +138,58 @@ schema:
     start: 2023-05-19 12:30
     end: 2023-05-19 14:00
     title: Lunch
+    type: food
+  - winner: false
+    start: 2023-05-19 14:00
+    end: 2023-05-19 14:30
+    title: Transfer till Rijksmuseum
+    details: B﻿uss hämtar oss vid hotellet och kör oss till Rijksmuseet. Vi kommer
+      inte tillbaka till hotellet innan middag så byt om till det ni vill ha på
+      er under eftermiddag/kväll.
+    type: bus
+  - winner: false
+    start: 2023-05-19 14:30
+    end: 2023-05-19 16:00
+    title: Guidad tur på Rijksmuseum
+    details: >-
+      Guiderna möter oss utanför Rijksmuseumets huvudentré där vi börjar med en
+      guidad tur. 
+
+
+      Rijksmuseum är ett av Amsterdams största och mest välkända museer, designad av den berömda nederländska arkitekten P.J.H. Cuypers. Byggandet startade 1876, och avslutades 1885 då den monumentala slutligen öppnades som det största museet i Nederländerna.
+    type: location
+  - winner: false
+    start: 2023-05-19 16:00
+    end: 2023-05-19 18:30
+    title: "Guidad cykeltur "
+    details: Efter museet promenerar vi tillsammans med guiderna till
+      cykeluthyrningen, som ligger bredvid Rijksmuseeum. Detta är en trevlig
+      tur på cykel som ger mycket mer än en historielektion. Ni kommer att få
+      höra många intressanta berättelser av er guide och uppleva Amsterdam på
+      ett unikt sätt!
+    type: location
+  - winner: false
+    start: 2023-05-19 18:30
+    end: 2023-05-19 19:45
+    title: Fördrink
+    details: ""
+    type: drink
+  - winner: false
+    start: 2023-05-19 20:00
+    end: 2023-05-19 22:00
+    title: Middag på de Waaghals
+    details: >-
+      De Waaghals (meaning daredevil in Dutch) is a vegetarian restaurant with
+      an informal atmosphere, but with a sophisticated and creative cuisine. We
+      serve a 4-course surprise menu with vegetarian or vegan dishes, inspired
+      by the flavours from all around the world. Our menu changes regularly with
+      the season.
+
+
+      We avoid using so-called “meat substitutes”, but create dishes revolving around vegetables which are original and will surprise you.
+
+
+      De Waaghals exists since 1981 and is still visited by both vegetarians and vegans as well as omnivors!
     type: food
 ---
 Välkomna till Amsterdam och KitsCon 23.1! Under denna KitsCon kommer vi ha en fullspäckad agenda där vi föreläser för varandra på förmiddagarna och utforskar stadens rika kultur och historia på eftermiddagarna. Vi kommer att besöka fantastiska museer, upptäcka de lokala bryggerierna och käka middag på kanalbåtar.
