@@ -191,5 +191,74 @@ schema:
 
       De Waaghals exists since 1981 and is still visited by both vegetarians and vegans as well as omnivors!
     type: food
+  - winner: false
+    start: 2023-05-20 07:00
+    end: 2023-05-21 09:00
+    title: Frukost
+    type: food
+  - winner: false
+    start: 2023-05-20 09:00
+    end: 2023-05-20 10:15
+    title: Team Toxin
+    presenters:
+      - patriknilsson
+      - jensabrahamsson
+    type: presentation
+    details: M﻿er info kommer...
+  - winner: false
+    start: 2023-05-20 10:15
+    end: 2023-05-20 10:30
+    title: Fika
+    type: coffee
+  - winner: false
+    start: 2023-05-20 10:30
+    end: 2023-05-20 11:10
+    title: Secure Code Warrior
+    details: M﻿er info kommer...
+    type: presentation
+    presenters:
+      - dennisdubrefjord
+      - emirzivcic
+  - winner: false
+    start: 2023-05-20 11:10
+    end: 2023-05-20 11:50
+    title: TBD
+    details: M﻿er info kommer...
+    type: presentation
+  - winner: false
+    start: 2023-05-20 11:50
+    end: 2023-05-20 12:30
+    title: TBD
+    details: M﻿er info kommer...
+    type: presentation
+  - winner: false
+    start: 2023-05-20 12:30
+    end: 2023-05-20 13:30
+    title: Lunch
+    type: food
+  - winner: false
+    start: 2023-05-20 20:00
+    end: 2023-05-20 22:00
+    title: Middag på Satchmo Restaurant
+    details: Restaurang Satchmo Amsterdam ligger i hjärtat av Amsterdam och är en
+      modern och sofistikerade restaurang i NYC-stil uppdelad på två våningar
+      och som serverar utsökt mat i kombination med eleganta viner.
+    type: food
+  - winner: false
+    start: 2023-05-21 07:00
+    end: 2023-05-21 07:30
+    title: Transfer till flygplats
+    details: >-
+      Avresetransfer från hotellet till Schiphol flygplats. Transfern sker med
+      privathyrd buss från hotellet till den terminal varifrån avresan sker. 
+
+
+      Frukostpåsar kommer att finnas i hotellets reception som vi kan ta med i bussen!
+    type: bus
+  - winner: false
+    start: 2023-05-21 09:40
+    end: 2023-05-21 11:05
+    title: Resa Amsterdam → Göteborg med KLM1155
+    type: airplane
 ---
 Välkomna till Amsterdam och KitsCon 23.1! Under denna KitsCon kommer vi ha en fullspäckad agenda där vi föreläser för varandra på förmiddagarna och utforskar stadens rika kultur och historia på eftermiddagarna. Vi kommer att besöka fantastiska museer, upptäcka de lokala bryggerierna och käka middag på kanalbåtar.
