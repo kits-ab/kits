@@ -498,8 +498,8 @@ export type MarkdownRemarkFrontmatterSchema = {
   presenters: Maybe<Array<Maybe<Scalars['String']>>>;
   href: Maybe<Scalars['String']>;
   youtubeId: Maybe<Scalars['String']>;
-  externalpresenter: Maybe<MarkdownRemarkFrontmatterSchemaExternalpresenter>;
   presentation: Maybe<Scalars['String']>;
+  externalpresenter: Maybe<MarkdownRemarkFrontmatterSchemaExternalpresenter>;
 };
 
 
@@ -517,8 +517,8 @@ export type MarkdownRemarkFrontmatterSchemaLocation = {
 
 export type MarkdownRemarkFrontmatterSchemaExternalpresenter = {
   name: Maybe<Scalars['String']>;
-  href: Maybe<Scalars['String']>;
   avatarSrc: Maybe<Scalars['String']>;
+  href: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterSection2 = {
@@ -1517,8 +1517,8 @@ export type MarkdownRemarkFrontmatterSchemaFilterInput = {
   presenters: InputMaybe<StringQueryOperatorInput>;
   href: InputMaybe<StringQueryOperatorInput>;
   youtubeId: InputMaybe<StringQueryOperatorInput>;
-  externalpresenter: InputMaybe<MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput>;
   presentation: InputMaybe<StringQueryOperatorInput>;
+  externalpresenter: InputMaybe<MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterSchemaLocationFilterInput = {
@@ -1528,8 +1528,8 @@ export type MarkdownRemarkFrontmatterSchemaLocationFilterInput = {
 
 export type MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput = {
   name: InputMaybe<StringQueryOperatorInput>;
-  href: InputMaybe<StringQueryOperatorInput>;
   avatarSrc: InputMaybe<StringQueryOperatorInput>;
+  href: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterSection2FilterInput = {
@@ -3808,10 +3808,10 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___schema___presenters'
   | 'frontmatter___schema___href'
   | 'frontmatter___schema___youtubeId'
-  | 'frontmatter___schema___externalpresenter___name'
-  | 'frontmatter___schema___externalpresenter___href'
-  | 'frontmatter___schema___externalpresenter___avatarSrc'
   | 'frontmatter___schema___presentation'
+  | 'frontmatter___schema___externalpresenter___name'
+  | 'frontmatter___schema___externalpresenter___avatarSrc'
+  | 'frontmatter___schema___externalpresenter___href'
   | 'frontmatter___images'
   | 'frontmatter___section2___content'
   | 'frontmatter___section2___heading'
