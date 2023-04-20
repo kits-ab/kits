@@ -44,6 +44,10 @@ schema:
     details: V﻿id ankomst checkar vi in på våra rum och följer sedan upp med en
       rejälare fika.
     type: checkin
+    location:
+      coordinates:
+        - 52.3846339
+        - 4.8941431
   - winner: false
     start: 2023-05-18 15:15
     end: 2023-05-18 15:45
