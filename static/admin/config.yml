@@ -88,8 +88,8 @@ collections:
       - { name: title, label: Rubrik }
       - { name: tagLine, label: Tagline }
       - { name: location, label: Plats }
-      - { name: start, label: Startdatum, widget: date, format: "YYYY-MM-DD" }
-      - { name: end, label: Slutdatum, widget: date, format: "YYYY-MM-DD" }
+      - { name: start, label: Startdatum, widget: datetime, format: "YYYY-MM-DD" }
+      - { name: end, label: Slutdatum, widget: datetime, format: "YYYY-MM-DD" }
       - { name: image, label: Bild, widget: image, required: false }
       - { name: active, label: Visa i listan med Kitscons, widget: boolean, default: false }
       - name: images
