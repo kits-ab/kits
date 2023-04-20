@@ -40,7 +40,7 @@ schema:
   - winner: false
     start: 2023-05-18 14:30
     end: 2023-05-18 15:15
-    title: Incheckning och fika på Room Mate Aitana Hotel
+    title: Incheckning på Room Mate Aitana Hotel
     details: V﻿id ankomst checkar vi in på våra rum och följer sedan upp med en
       rejälare fika.
     type: checkin
@@ -48,6 +48,7 @@ schema:
       coordinates:
         - 52.3846339
         - 4.8941431
+      title: Room Mate Aitana Hotel
   - winner: false
     start: 2023-05-18 15:15
     end: 2023-05-18 15:45
@@ -79,6 +80,11 @@ schema:
 
       Här får vi lära oss branchens alla konster vad gäller att sammanställa den perfekta cocktailen. Vi kommer lära oss “muddle, stir, build, layer and shake” under ledning av en av Bols proffsiga bartenders. Vi delas in i små teams och alla får sin egen bar att arbeta vid.
     type: location
+    location:
+      coordinates:
+        - 52.3591009
+        - 4.8812453
+      title: House of Bols
   - winner: false
     start: 2023-05-18 19:00
     end: 2023-05-18 21:00
