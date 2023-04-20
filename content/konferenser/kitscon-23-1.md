@@ -32,7 +32,7 @@ schema:
     title: Resa Göteborg → Amsterdam med KLM1156
     type: airplane
   - winner: false
-    start: 2023-04-13 14:00
+    start: 2023-05-18 14:00
     end: 2023-05-18 14:30
     title: "Transfer till hotellet "
     type: bus
