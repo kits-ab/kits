@@ -94,8 +94,13 @@ schema:
       äter middag. 
 
 
-      E﻿fter avslutad middag släpps vi av i närheten av vårat hotell!
+      E﻿fter avslutad middag släpps vi av i närheten av vårat hotell.
     type: boat
+    location:
+      coordinates:
+        - 52.360909
+        - 4.885821
+      title: Pier Rijksmuseum
   - winner: false
     start: 2023-05-19 07:00
     end: 2023-05-19 09:00
