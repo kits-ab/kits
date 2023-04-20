@@ -175,6 +175,11 @@ schema:
 
       Rijksmuseum är ett av Amsterdams största och mest välkända museer, designad av den berömda nederländska arkitekten P.J.H. Cuypers. Byggandet startade 1876, och avslutades 1885 då den monumentala slutligen öppnades som det största museet i Nederländerna.
     type: location
+    location:
+      coordinates:
+        - 52.3598759
+        - 4.8850584
+      title: Rijksmuseum
   - winner: false
     start: 2023-05-19 16:00
     end: 2023-05-19 18:30
@@ -208,6 +213,11 @@ schema:
 
       De Waaghals exists since 1981 and is still visited by both vegetarians and vegans as well as omnivors!
     type: food
+    location:
+      coordinates:
+        - 52.3571106
+        - 4.8890623
+      title: De Waaghals
   - winner: false
     start: 2023-05-20 07:00
     end: 2023-05-21 09:00
@@ -255,12 +265,17 @@ schema:
     type: food
   - winner: false
     start: 2023-05-20 20:00
-    end: 2023-05-20 22:00
-    title: Middag på Satchmo Restaurant
+    end: 2023-05-20 23:00
+    title: Middag på Restaurant Satchmo
     details: Restaurang Satchmo Amsterdam ligger i hjärtat av Amsterdam och är en
       modern och sofistikerade restaurang i NYC-stil uppdelad på två våningar
       och som serverar utsökt mat i kombination med eleganta viner.
     type: food
+    location:
+      coordinates:
+        - 52.36998
+        - 4.89287
+      title: Restaurant Satchmo
   - winner: false
     start: 2023-05-21 07:00
     end: 2023-05-21 07:30
