@@ -8,7 +8,10 @@ start: 2023-05-18
 end: 2023-05-21
 image: /assets/kitscon_23_1.png
 active: true
-images: []
+images:
+  - image: /assets/amsterdam_1.jpeg
+  - image: /assets/amsterdam_2.jpeg
+  - image: /assets/amsterdam_3.png
 schema:
   - winner: false
     start: 2023-05-18 10:00
@@ -22,7 +25,7 @@ schema:
       se till att äta ordentligt på flygplatsen!
 
 
-      N﻿i får checka in ett bagage på 23kg samt ha med er ett handbagage på 12kg. 
+      N﻿i får checka in ett bagage på 23kg samt ha med er ett handbagage på 12kg med måtten 55x25x35.
 
 
       G﻿löm inte det viktigaste: Giltigt nationellt ID eller giltigt pass!
@@ -138,8 +141,10 @@ schema:
   - winner: false
     start: 2023-05-19 11:10
     end: 2023-05-19 11:50
-    title: TBD
-    details: M﻿er info kommer..
+    title: CQRS med Kafka och Kafka-streams
+    details: Utforska CQRS-arkitekturen och hur du kan använda Kafka och
+      Kafka-streams för att bygga skalbara och högpresterande system med
+      distribuerade data.
     presenters:
       - olofgunnarsson
     type: presentation
@@ -194,7 +199,7 @@ schema:
     start: 2023-05-19 18:30
     end: 2023-05-19 19:45
     title: Fördrink
-    details: ""
+    details: M﻿er info kommer...
     type: drink
   - winner: false
     start: 2023-05-19 20:00
@@ -240,12 +245,12 @@ schema:
   - winner: false
     start: 2023-05-20 10:30
     end: 2023-05-20 11:10
-    title: Secure Code Warrior
+    title: TBD
     details: M﻿er info kommer...
     type: presentation
     presenters:
-      - dennisdubrefjord
-      - emirzivcic
+      - joakimjonsson
+      - isacolofsson
   - winner: false
     start: 2023-05-20 11:10
     end: 2023-05-20 11:50
@@ -258,6 +263,8 @@ schema:
     title: TBD
     details: M﻿er info kommer...
     type: presentation
+    presenters:
+      - andersfalkstrom
   - winner: false
     start: 2023-05-20 12:30
     end: 2023-05-20 13:30
