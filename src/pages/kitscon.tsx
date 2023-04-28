@@ -339,7 +339,7 @@ export const query = graphql`
 
     collageImages: allFile(
       filter: {
-        internal: { mediaType: { eq: "image/jpeg" } }
+        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
         relativePath: { regex: "/^kitscon_collage_/" }
       }
     ) {
