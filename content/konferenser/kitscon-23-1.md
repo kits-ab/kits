@@ -14,8 +14,8 @@ images:
   - /assets/kitscon_collage_amsterdam_2.jpeg
 schema:
   - winner: false
-    start: 2023-05-18 10:00
-    end: 2023-05-18 10:30
+    start: 2023-05-18 09:30
+    end: 2023-05-18 10:00
     title: Incheckning
     type: checkin
     details: >-
@@ -25,10 +25,7 @@ schema:
       se till att äta ordentligt på flygplatsen!
 
 
-      N﻿i får checka in ett bagage på 23kg samt ha med er ett handbagage på 12kg med måtten 55x25x35.
-
-
-      G﻿löm inte det viktigaste: Giltigt nationellt ID eller giltigt pass!
+      N﻿i får checka in ett bagage på 23kg samt ha med er ett handbagage på 12kg med måtten 55x25x35. G﻿löm inte det **viktigaste**: Giltigt nationellt ID eller giltigt pass!
   - winner: false
     start: 2023-05-18 12:05
     end: 2023-05-18 13:35
