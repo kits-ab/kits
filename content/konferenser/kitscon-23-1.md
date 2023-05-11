@@ -7,6 +7,7 @@ location: Amsterdam
 start: 2023-05-18
 end: 2023-05-21
 image: /assets/kitscon_23_1.png
+images: []
 active: true
 schema:
   - winner: false
