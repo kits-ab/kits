@@ -7,8 +7,8 @@ location: Amsterdam
 start: 2023-05-18
 end: 2023-05-21
 image: /assets/kitscon_23_1.png
-images: []
 active: true
+images: []
 schema:
   - winner: false
     start: 2023-05-18 09:30
@@ -114,13 +114,16 @@ schema:
   - winner: false
     start: 2023-05-19 09:40
     end: 2023-05-19 10:10
-    title: Sociocracy 3.0
-    details: M﻿er info kommer..
+    title: Sociocracy 3.0 für Alle - Hur mönster från Sociocracy 3.0 kan underlätta
+      samarbetet i utvecklingsteamet”
+    details: Vi går snabbt igenom vad S3 är och tittar sedan på hur vi med hjälp av
+      Drivers, Proposals och Consent decision making kan få arbetet i
+      utvecklingsteamet att flyta på bättre.
     type: presentation
     presenters:
       - jensabrahamsson
   - winner: false
-    start: 2023-05-19 10:10
+    start: 2023-05-19 10:15
     end: 2023-05-19 10:30
     title: Fika
     type: coffee
@@ -128,7 +131,7 @@ schema:
     start: 2023-05-19 10:30
     end: 2023-05-19 11:10
     title: Kravhantering
-    details: M﻿er info kommer...
+    details: Krava behöver inte vara svårt om en gör det tillsammans. Låt oss mob-krava.
     presenters:
       - hoimanlui
     type: presentation
@@ -146,7 +149,10 @@ schema:
     start: 2023-05-19 11:50
     end: 2023-05-19 12:30
     title: Meditation
-    details: M﻿er info kommer..
+    details: Välkomna till en stunds stillhet där vi ska fokusera på mental balans
+      och grundning. Vi ska rikta fokuset inåt och känna efter hur vi mår i
+      kroppen och förhoppningsvis komma ut på andra sidan mer avkopplade och
+      redo för äventyr!
     presenters:
       - joellajohannesson
     type: presentation
@@ -239,8 +245,10 @@ schema:
   - winner: false
     start: 2023-05-20 10:30
     end: 2023-05-20 11:10
-    title: TBD
-    details: M﻿er info kommer...
+    title: Narrow Navigation - The first order of autonomous solution
+    details: Can a "compact" autonomous solution improve our daily life?
+      Presentation of a system solution and their benefits and some of the
+      challenge to develop one.
     type: presentation
     presenters:
       - joakimjonsson
@@ -248,14 +256,18 @@ schema:
   - winner: false
     start: 2023-05-20 11:10
     end: 2023-05-20 11:50
-    title: TBD
+    title: ChatGPT
     details: M﻿er info kommer...
     type: presentation
+    presenters:
+      - christoffermedin
   - winner: false
     start: 2023-05-20 11:50
     end: 2023-05-20 12:30
-    title: TBD
-    details: M﻿er info kommer...
+    title: Api-riktlinjer på Havs och Vattenmyndigheten
+    details: En introduktion till Havs och Vattenmyndighetens försök att få till
+      enhetlighet bland deras api:er samt hur de säkerställer att de följer
+      riktlinjerna.
     type: presentation
     presenters:
       - andersfalkstrom
