@@ -55,7 +55,7 @@ schema:
     type: presentation
     presenters:
       - gustavhjelm
-    details: M﻿er info kommer...
+    details: Kortare genomgång av schemat för de två dagarna.
   - winner: false
     start: 2023-05-18 16:00
     end: 2023-05-18 16:30
@@ -116,7 +116,7 @@ schema:
     end: 2023-05-19 10:10
     title: Sociocracy 3.0 für Alle
     details: >-
-      \- Hur mönster från Sociocracy 3.0 kan underlätta samarbetet i
+      ##### Hur mönster från Sociocracy 3.0 kan underlätta samarbetet i
       utvecklingsteamet. 
 
 
