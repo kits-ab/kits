@@ -114,11 +114,13 @@ schema:
   - winner: false
     start: 2023-05-19 09:40
     end: 2023-05-19 10:10
-    title: Sociocracy 3.0 für Alle - Hur mönster från Sociocracy 3.0 kan underlätta
-      samarbetet i utvecklingsteamet”
-    details: Vi går snabbt igenom vad S3 är och tittar sedan på hur vi med hjälp av
-      Drivers, Proposals och Consent decision making kan få arbetet i
-      utvecklingsteamet att flyta på bättre.
+    title: Sociocracy 3.0 für Alle
+    details: >-
+      \- Hur mönster från Sociocracy 3.0 kan underlätta samarbetet i
+      utvecklingsteamet. 
+
+
+      Vi går snabbt igenom vad S3 är och tittar sedan på hur vi med hjälp av Drivers, Proposals och Consent decision making kan få arbetet i utvecklingsteamet att flyta på bättre.
     type: presentation
     presenters:
       - jensabrahamsson
@@ -195,12 +197,6 @@ schema:
       höra många intressanta berättelser av er guide och uppleva Amsterdam på
       ett unikt sätt!
     type: location
-  - winner: false
-    start: 2023-05-19 18:30
-    end: 2023-05-19 19:45
-    title: Fördrink
-    details: M﻿er info kommer...
-    type: drink
   - winner: false
     start: 2023-05-19 20:00
     end: 2023-05-19 22:00
