@@ -116,7 +116,7 @@ schema:
     end: 2023-05-19 10:10
     title: Sociocracy 3.0 für Alle
     details: >-
-      ##### Hur mönster från Sociocracy 3.0 kan underlätta samarbetet i
+      ### Hur mönster från Sociocracy 3.0 kan underlätta samarbetet i
       utvecklingsteamet. 
 
 
