@@ -253,7 +253,9 @@ schema:
     start: 2023-05-20 11:10
     end: 2023-05-20 11:50
     title: ChatGPT
-    details: M﻿er info kommer...
+    details: Kan ChatGPT vara framtidens rekryterare? Vi kikar på om ChatGPT kan
+      matcha konsult till uppdrag och lite allmänt kring vad GPT kan och inte
+      kan.
     type: presentation
     presenters:
       - christoffermedin
