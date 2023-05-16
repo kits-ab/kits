@@ -7,8 +7,11 @@ location: Amsterdam
 start: 2023-05-18
 end: 2023-05-21
 image: /assets/kitscon_23_1.png
-images: []
 active: true
+images:
+  - /assets/kitscon_collage_amsterdam_1.jpeg
+  - /assets/kitscon_collage_amsterdam_4.jpeg
+  - /assets/kitscon_collage_amsterdam_2.jpeg
 schema:
   - winner: false
     start: 2023-05-18 09:30
@@ -55,7 +58,7 @@ schema:
     type: presentation
     presenters:
       - gustavhjelm
-    details: M﻿er info kommer...
+    details: Kortare genomgång av schemat för de två dagarna.
   - winner: false
     start: 2023-05-18 16:00
     end: 2023-05-18 16:30
@@ -110,17 +113,22 @@ schema:
     type: presentation
     presenters:
       - patriknilsson
-    details: M﻿er info kommer..
+    details: Livet, universum och allt!
   - winner: false
     start: 2023-05-19 09:40
     end: 2023-05-19 10:10
-    title: Sociocracy 3.0
-    details: M﻿er info kommer..
+    title: Sociocracy 3.0 für Alle
+    details: >-
+      ### Hur mönster från Sociocracy 3.0 kan underlätta samarbetet i
+      utvecklingsteamet. 
+
+
+      Vi går snabbt igenom vad S3 är och tittar sedan på hur vi med hjälp av Drivers, Proposals och Consent decision making kan få arbetet i utvecklingsteamet att flyta på bättre.
     type: presentation
     presenters:
       - jensabrahamsson
   - winner: false
-    start: 2023-05-19 10:10
+    start: 2023-05-19 10:15
     end: 2023-05-19 10:30
     title: Fika
     type: coffee
@@ -128,7 +136,7 @@ schema:
     start: 2023-05-19 10:30
     end: 2023-05-19 11:10
     title: Kravhantering
-    details: M﻿er info kommer...
+    details: Krava behöver inte vara svårt om en gör det tillsammans. Låt oss mob-krava.
     presenters:
       - hoimanlui
     type: presentation
@@ -146,7 +154,10 @@ schema:
     start: 2023-05-19 11:50
     end: 2023-05-19 12:30
     title: Meditation
-    details: M﻿er info kommer..
+    details: Välkomna till en stunds stillhet där vi ska fokusera på mental balans
+      och grundning. Vi ska rikta fokuset inåt och känna efter hur vi mår i
+      kroppen och förhoppningsvis komma ut på andra sidan mer avkopplade och
+      redo för äventyr!
     presenters:
       - joellajohannesson
     type: presentation
@@ -190,12 +201,6 @@ schema:
       ett unikt sätt!
     type: location
   - winner: false
-    start: 2023-05-19 18:30
-    end: 2023-05-19 19:45
-    title: Fördrink
-    details: M﻿er info kommer...
-    type: drink
-  - winner: false
     start: 2023-05-19 20:00
     end: 2023-05-19 22:00
     title: Middag på de Waaghals
@@ -230,7 +235,10 @@ schema:
       - patriknilsson
       - jensabrahamsson
     type: presentation
-    details: M﻿er info kommer...
+    details: Ett grupparbete som syftar till att medvetandegöra negativa / toxiska
+      beteenden mellan människor (och djur?) … Men inte bara det, vi skall även
+      försöka visa på vad man kan göra för att motverka dessa och därmed
+      förbättra kommunikation och samarbete.
   - winner: false
     start: 2023-05-20 10:15
     end: 2023-05-20 10:30
@@ -239,8 +247,10 @@ schema:
   - winner: false
     start: 2023-05-20 10:30
     end: 2023-05-20 11:10
-    title: TBD
-    details: M﻿er info kommer...
+    title: Narrow Navigation - The first order of autonomous solution
+    details: Can a "compact" autonomous solution improve our daily life?
+      Presentation of a system solution and their benefits and some of the
+      challenge to develop one.
     type: presentation
     presenters:
       - joakimjonsson
@@ -248,14 +258,20 @@ schema:
   - winner: false
     start: 2023-05-20 11:10
     end: 2023-05-20 11:50
-    title: TBD
-    details: M﻿er info kommer...
+    title: ChatGPT
+    details: Kan ChatGPT vara framtidens rekryterare? Vi kikar på om ChatGPT kan
+      matcha konsult till uppdrag och lite allmänt kring vad GPT kan och inte
+      kan.
     type: presentation
+    presenters:
+      - christoffermedin
   - winner: false
     start: 2023-05-20 11:50
     end: 2023-05-20 12:30
-    title: TBD
-    details: M﻿er info kommer...
+    title: Api-riktlinjer på Havs och Vattenmyndigheten
+    details: En introduktion till Havs och Vattenmyndighetens försök att få till
+      enhetlighet bland deras api:er samt hur de säkerställer att de följer
+      riktlinjerna.
     type: presentation
     presenters:
       - andersfalkstrom
@@ -269,7 +285,7 @@ schema:
     end: 2023-05-20 23:00
     title: Middag på Restaurant Satchmo
     details: Restaurang Satchmo Amsterdam ligger i hjärtat av Amsterdam och är en
-      modern och sofistikerade restaurang i NYC-stil uppdelad på två våningar
+      modern och sofistikerad restaurang i NYC-stil uppdelad på två våningar
       och som serverar utsökt mat i kombination med eleganta viner.
     type: food
     location:
