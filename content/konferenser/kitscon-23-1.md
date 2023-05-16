@@ -282,7 +282,7 @@ schema:
     end: 2023-05-20 23:00
     title: Middag på Restaurant Satchmo
     details: Restaurang Satchmo Amsterdam ligger i hjärtat av Amsterdam och är en
-      modern och sofistikerade restaurang i NYC-stil uppdelad på två våningar
+      modern och sofistikerad restaurang i NYC-stil uppdelad på två våningar
       och som serverar utsökt mat i kombination med eleganta viner.
     type: food
     location:
