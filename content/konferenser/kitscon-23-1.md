@@ -110,7 +110,7 @@ schema:
     type: presentation
     presenters:
       - patriknilsson
-    details: M﻿er info kommer..
+    details: Livet, universum och allt!
   - winner: false
     start: 2023-05-19 09:40
     end: 2023-05-19 10:10
@@ -232,7 +232,10 @@ schema:
       - patriknilsson
       - jensabrahamsson
     type: presentation
-    details: M﻿er info kommer...
+    details: Ett grupparbete som syftar till att medvetandegöra negativa / toxiska
+      beteenden mellan människor (och djur?) … Men inte bara det, vi skall även
+      försöka visa på vad man kan göra för att motverka dessa och därmed
+      förbättra kommunikation och samarbete.
   - winner: false
     start: 2023-05-20 10:15
     end: 2023-05-20 10:30
