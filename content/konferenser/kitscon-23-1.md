@@ -8,7 +8,10 @@ start: 2023-05-18
 end: 2023-05-21
 image: /assets/kitscon_23_1.png
 active: true
-images: []
+images:
+  - /assets/kitscon_collage_amsterdam_1.jpeg
+  - /assets/kitscon_collage_amsterdam_4.jpeg
+  - /assets/kitscon_collage_amsterdam_2.jpeg
 schema:
   - winner: false
     start: 2023-05-18 09:30
