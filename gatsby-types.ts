@@ -452,8 +452,8 @@ export type MarkdownRemarkFrontmatter = {
   end: Maybe<Scalars['Date']>;
   active: Maybe<Scalars['Boolean']>;
   schema: Maybe<Array<Maybe<MarkdownRemarkFrontmatterSchema>>>;
-  images: Maybe<Array<Maybe<Scalars['String']>>>;
   section2: Maybe<MarkdownRemarkFrontmatterSection2>;
+  images: Maybe<Array<Maybe<Scalars['String']>>>;
   section3: Maybe<MarkdownRemarkFrontmatterSection3>;
   section4: Maybe<MarkdownRemarkFrontmatterSection4>;
 };
@@ -1476,8 +1476,8 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   end: InputMaybe<DateQueryOperatorInput>;
   active: InputMaybe<BooleanQueryOperatorInput>;
   schema: InputMaybe<MarkdownRemarkFrontmatterSchemaFilterListInput>;
-  images: InputMaybe<StringQueryOperatorInput>;
   section2: InputMaybe<MarkdownRemarkFrontmatterSection2FilterInput>;
+  images: InputMaybe<StringQueryOperatorInput>;
   section3: InputMaybe<MarkdownRemarkFrontmatterSection3FilterInput>;
   section4: InputMaybe<MarkdownRemarkFrontmatterSection4FilterInput>;
 };
@@ -1829,10 +1829,10 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___schema___href'
   | 'childrenMarkdownRemark___frontmatter___schema___youtubeId'
   | 'childrenMarkdownRemark___frontmatter___schema___presentation'
-  | 'childrenMarkdownRemark___frontmatter___images'
   | 'childrenMarkdownRemark___frontmatter___section2___content'
   | 'childrenMarkdownRemark___frontmatter___section2___heading'
   | 'childrenMarkdownRemark___frontmatter___section2___subheading'
+  | 'childrenMarkdownRemark___frontmatter___images'
   | 'childrenMarkdownRemark___frontmatter___section3___heading'
   | 'childrenMarkdownRemark___frontmatter___section4___heading'
   | 'childrenMarkdownRemark___excerpt'
@@ -1928,10 +1928,10 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___schema___href'
   | 'childMarkdownRemark___frontmatter___schema___youtubeId'
   | 'childMarkdownRemark___frontmatter___schema___presentation'
-  | 'childMarkdownRemark___frontmatter___images'
   | 'childMarkdownRemark___frontmatter___section2___content'
   | 'childMarkdownRemark___frontmatter___section2___heading'
   | 'childMarkdownRemark___frontmatter___section2___subheading'
+  | 'childMarkdownRemark___frontmatter___images'
   | 'childMarkdownRemark___frontmatter___section3___heading'
   | 'childMarkdownRemark___frontmatter___section4___heading'
   | 'childMarkdownRemark___excerpt'
@@ -3812,10 +3812,10 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___schema___externalpresenter___name'
   | 'frontmatter___schema___externalpresenter___avatarSrc'
   | 'frontmatter___schema___externalpresenter___href'
-  | 'frontmatter___images'
   | 'frontmatter___section2___content'
   | 'frontmatter___section2___heading'
   | 'frontmatter___section2___subheading'
+  | 'frontmatter___images'
   | 'frontmatter___section3___heading'
   | 'frontmatter___section4___heading'
   | 'excerpt'
@@ -5012,6 +5012,11 @@ export type AboutPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type AboutPageQueryQuery = { page: { edges: Array<{ node: { html: string, frontmatter: { title: string, heading: string, lead: string, section1: { heading: string } } } }> }, metadata: { edges: Array<{ node: { name: string, coordinates: Array<number>, address: { street: string }, contacts: Array<{ role: string, personId: string }> } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> } };
+
+export type SecurityPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SecurityPageQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string, images: Array<string>, section1: { heading: string }, section2: { heading: string, content: string } } } }> }, projects: { edges: Array<{ node: { html: string, frontmatter: { index: number, title: string, image: string, href: string } } }> }, pageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, projectImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
 export type NewsQueryQueryVariables = Exact<{
   href: Scalars['String'];
