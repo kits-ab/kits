@@ -248,6 +248,26 @@ collections:
       - { name: href, label: Extern länk, required: false }
       - { name: body, label: Text, widget: markdown }
 
+  - name: security_projects
+    label: Säkerhetsprojekt
+    label_singular: Säkerhetsprojekt
+    folder: content/sak_projekt
+    create: true
+    delete: true
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { name: type, widget: hidden, default: security_project }
+      - { name: index, label: Sorteringsindex, widget: number, valueType: int, min: 1 }
+      - { name: title, label: Rubrik }
+      - name: image
+        label: Bild
+        widget: image
+        required: false
+        pattern: ["sakerhet_[a-z-]+\\.jpg", "sakerhet_[a-z]+.jpg"]
+      - { name: href, label: Extern länk, required: false }
+      - { name: body, label: Text, widget: markdown }
+
   - name: pages
     label: Sidor
     label_singular: Sida
