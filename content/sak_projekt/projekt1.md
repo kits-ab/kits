@@ -1,9 +1,9 @@
 ---
 type: security_project
 index: 3
-title: Lorem Ipsum 1
+title: Från medveten utvecklare till security champion
 image : /assets/sakerhet_projekt1.jpg
-href: https://www.google.com
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed euismod quam. Sed leo risus, tempus sed finibus sed, viverra id lorem. In hac habitasse platea dictumst. Donec mattis semper ante, eu faucibus elit pharetra quis. Nam semper tellus risus. Integer at sem eleifend velit semper hendrerit. Duis vel velit. 
+För att bygga säker mjukvara krävs säkerhetsmedvetenhet och kunskap. Kits håller därför löpande i säkerhetskurser för alla arkitekter och utvecklare på Volvofinans Bank.
+Senaste kurs genomförd är Applikationssäkerhetskursen “Keep It Secure 4.0”, en kurs som täcker OWASP Top 10 2021 och djupdyker ner i sex sårbarheter som våra pentestare ofta ser ute i det vilda, och hur man åtgärdar problemen. Målet är att skapa medvetenhet kring applikationssäkerhet, samtidigt som vi ger kunskap om hur man vidareutbildar sig på vägen mot att bli en security champion.

@@ -1,9 +1,9 @@
 ---
 type: securityPage
 title: Keep IT Secure
-heading: Lorem Ipsum
+heading: Keep IT Secure
 lead: >-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porta massa et porta sagittis
+  KITS erbjuder säkerhetskonsulter som kan hjälpa dig med utbildning, arkitektur, hotmodellering och pentester.
 section1:
   heading: Exempel på vad vi gör idag eller har gjort tidigare
 section2:

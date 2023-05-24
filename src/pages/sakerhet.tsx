@@ -47,7 +47,10 @@ export default ({ data, location }: SecurityPageProps) => {
         <MainHeading>{page.node.frontmatter.heading}</MainHeading>
         <Lead>{page.node.frontmatter.lead}</Lead>
         {/* TODO This image does not scale nicely */}
-        <StyledImage src={pageImage && pageImage.src} srcSet={pageImage && pageImage.srcSet}></StyledImage>
+        <StyledImage
+          src={pageImage && pageImage.src}
+          srcSet={pageImage && pageImage.srcSet}
+        ></StyledImage>
       </Vertical>
 
       <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
