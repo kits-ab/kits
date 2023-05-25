@@ -2,7 +2,7 @@
 type: security_project
 index: 3
 title: Från medveten utvecklare till security champion
-image : /assets/sakerhet_projekt1.jpg
+image : /assets/sakerhet_projekt1.png
 ---
 
 För att bygga säker mjukvara krävs säkerhetsmedvetenhet och kunskap. Kits håller därför löpande i säkerhetskurser för alla arkitekter och utvecklare på Volvofinans Bank.
