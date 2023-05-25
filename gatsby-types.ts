@@ -5001,6 +5001,11 @@ export type JobPageQueryQueryVariables = Exact<{
 
 export type JobPageQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string, images: Array<string>, section1: { heading: string }, section2: { content: string, heading: string } } } }> }, activeJob: { id: string }, jobs: { edges: Array<{ node: { id: string, fields: { href: string }, links: { careersite_job_apply_url: string, careersite_job_url: string }, attributes: { title: string, body: string, apply_button_text: string, human_status: string } } }> }, benefits: { edges: Array<{ node: { html: string, frontmatter: { title: string, image: string } } }> }, images: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, collageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, personaImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
+export type SecurityPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SecurityPageQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string, images: Array<string>, section1: { heading: string }, section2: { heading: string, content: string } } } }> }, projects: { edges: Array<{ node: { html: string, frontmatter: { index: number, title: string, image: string, href: string } } }> }, pageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, projectImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+
 export type KonferensInfoQueryQueryVariables = Exact<{
   href?: InputMaybe<Scalars['String']>;
 }>;
@@ -5012,11 +5017,6 @@ export type AboutPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type AboutPageQueryQuery = { page: { edges: Array<{ node: { html: string, frontmatter: { title: string, heading: string, lead: string, section1: { heading: string } } } }> }, metadata: { edges: Array<{ node: { name: string, coordinates: Array<number>, address: { street: string }, contacts: Array<{ role: string, personId: string }> } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> } };
-
-export type SecurityPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type SecurityPageQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string, images: Array<string>, section1: { heading: string }, section2: { heading: string, content: string } } } }> }, projects: { edges: Array<{ node: { html: string, frontmatter: { index: number, title: string, image: string, href: string } } }> }, pageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, projectImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
 export type NewsQueryQueryVariables = Exact<{
   href: Scalars['String'];
