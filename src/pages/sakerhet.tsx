@@ -23,6 +23,16 @@ import { findImageByRelativePath } from "../utils/imageUtils"
 const StyledImage = styled(Image)`
   max-width: 100%;
   max-height: 400px;
+
+  .image-wrapper {
+    position: static;
+  }
+
+  .image-image {
+    transform: none;
+    height: auto;
+    max-width: 100%;
+  }
 `
 
 interface SecurityPageProps extends PageProps {
@@ -121,7 +131,7 @@ export const pageQuery = graphql`
 
     pageImages: allFile(
       filter: {
-        internal: { mediaType: { eq: "image/jpeg" } }
+        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
         relativePath: { regex: "/^sakerhet_/" }
       }
     ) {
@@ -134,7 +144,7 @@ export const pageQuery = graphql`
 
     projectImages: allFile(
       filter: {
-        internal: { mediaType: { eq: "image/jpeg" } }
+        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
         relativePath: { regex: "/^sakerhet_/" }
       }
     ) {
