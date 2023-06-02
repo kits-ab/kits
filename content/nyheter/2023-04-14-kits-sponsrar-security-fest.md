@@ -1,7 +1,7 @@
 ---
 type: news
 title: KITS sponsrar Security Fest
-image: /assets/nyheter-securityfest1.jpeg
+image: /assets/nyheter_securityfest1.jpeg
 authors:
   - gustavhjelm
 ---
