@@ -5,6 +5,8 @@ image: /assets/nyheter_kompetensutveckling1.jpeg
 authors:
   - gustavhjelm
 ---
+<img class="image-left" src="/assets/nyheter_kompetensutveckling1.jpeg">
+
 För oss är kompetensutveckling jätteviktigt och alla på KITS uppmuntras och får stödet samt verktygen för att fortsätta utvecklas. Välkommen till vår miniserie där tre av våra kollegor berättar vad de gör med den möjligheten.\
 \
 Först ut - vår agila coach [Jens Abrahamsson](https://www.linkedin.com/in/ACoAAABI1BEBIMhOw3MroZyyeCLNcfWy72TLOW8)!\
@@ -19,5 +21,3 @@ Vad har du för planer framöver?\
 Min långsiktiga plan är att bli Certified Team Coach inom ScrumAlliance. Att uppnå detta är ett flerårsprojekt, där Sociocracy 3.0 och coachingkunskaper är viktiga milstolpar. I höst planerar jag att bli certifierad GDQ-coach, för att få ännu mer teoretiska och praktiska kunskaper i hur jag kan hjälpa team på resan mot att bli högpresterande.\
 \
 [\#team](https://www.linkedin.com/feed/hashtag/?keywords=team&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7042405835251023872) [\#coaching](https://www.linkedin.com/feed/hashtag/?keywords=coaching&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7042405835251023872) [\#scrum](https://www.linkedin.com/feed/hashtag/?keywords=scrum&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7042405835251023872)
-
-![](/assets/nyheter_kompetensutveckling1.jpeg "image-left")
