@@ -11,4 +11,4 @@ Under veckan har vi också hunnit med att träffas på kontoret för en kombinat
 \
 Med det sagt önskar vi er en mysig fjärde advent på söndag. En fjärde advent med VM-final i fotboll, vem hade kunnat tro det? Och vem tror ni tar hem det? Undertecknad tror att Lionel Messi tar med sig bucklan hem och cementerar sin plats som den bästa genom alla tider. 🐐
 
-<div class="image-grid"><img src="/assets/nyheter_julbord2.jpeg" alt=""><img src="/assets/nyheter_julbord3.jpeg" alt=""></div>
+<div class="image-grid"><img src="/assets/nyheter_julbord2.jpeg" alt=""><img src="/assets/nyheter_julbord3.jpeg" alt=""><img src="/assets/nyheter_julbord1.jpeg" alt=""></div>
