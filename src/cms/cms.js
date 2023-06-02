@@ -1,5 +1,5 @@
 import CMS from "netlify-cms-app"
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useEffect, useMemo, useRef } from "react"
 
 CMS.registerEditorComponent({
   id: "collage",
@@ -90,7 +90,7 @@ CMS.registerEditorComponent({
 
 const SMART_DATE_CONTROL_KEY = "smartDateControlKey"
 
-const SmartDateControl = ({ value, ...props }) => {
+const SmartDateControl = ({ value, onChange, ...props }) => {
   const lastSeenDate = useRef(null)
   const DatetimeControl = CMS.getWidget("datetime").control
 
@@ -130,21 +130,17 @@ const SmartDateControl = ({ value, ...props }) => {
     }
   }, [value])
 
-  return (
-    <div>
-      <DatetimeControl value={customDate} {...props} />
-    </div>
-  )
+  useEffect(() => onChange(customDate), [customDate, onChange])
+
+  console.log(customDate)
+
+  return <DatetimeControl value={customDate} onChange={onChange} {...props} />
 }
 
 const SmartDatePreview = (props) => {
   const DatetimePreview = CMS.getWidget("datetime").preview
 
-  return (
-    <div>
-      <DatetimePreview {...props} />
-    </div>
-  )
+  return <DatetimePreview {...props} />
 }
 
 CMS.registerWidget("smartdatetime", SmartDateControl, SmartDatePreview)
