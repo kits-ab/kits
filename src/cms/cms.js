@@ -90,7 +90,7 @@ CMS.registerEditorComponent({
 
 const SMART_DATE_CONTROL_KEY = "smartDateControlKey"
 
-const SmartDateControl = ({ value, onChange, ...props }) => {
+const SmartDateControl = ({ value, ...props }) => {
   const lastSeenDate = useRef(null)
   const DatetimeControl = CMS.getWidget("datetime").control
 
@@ -130,11 +130,11 @@ const SmartDateControl = ({ value, onChange, ...props }) => {
     }
   }, [value])
 
-  useEffect(() => onChange(customDate), [customDate, onChange])
+  useEffect(() => props.onChange(customDate), [customDate, props])
 
   console.log(customDate)
 
-  return <DatetimeControl value={customDate} onChange={onChange} {...props} />
+  return <DatetimeControl value={customDate} {...props} />
 }
 
 const SmartDatePreview = (props) => {
