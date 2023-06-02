@@ -62,3 +62,26 @@ CMS.registerEditorComponent({
     return `<img src="${data.image}" style="max-width:500px">`
   }
 })
+
+CMS.registerEditorComponent({
+  id: "video",
+  label: "Video",
+  hint: "Lägg till en video",
+  fields: [
+    {label: "Video", name: "video", widget: "file"}
+  ],
+  pattern: /^<video controls>(.*)<\/video>/ms,
+  fromBlock: function (match) {
+    const matchedString = match[0]
+    const regexp = /src="(\S*)"/g
+    const matchArray = regexp.exec(matchedString)
+
+    return { video: matchArray[1]}
+  },
+  toBlock: function (data) {
+    return `<video controls><source src="${data.video}" /></video>`
+  },
+  toPreview: function (data) {
+    return `<video controls width="500"><source src="${data.video}" /></video>`
+  }
+})
