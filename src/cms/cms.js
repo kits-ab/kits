@@ -94,17 +94,11 @@ const SmartDateControl = ({ value, ...props }) => {
   const lastSeenDate = useRef(null)
   const DatetimeControl = CMS.getWidget("datetime").control
 
-  console.log(props)
-
   const customDate = useMemo(() => {
-    console.log(value)
-    console.log(lastSeenDate.current)
-
     const selectedDateString = value
 
     const selectedDate = new Date(selectedDateString)
     const todaysDate = new Date()
-    console.log(new Date(selectedDate))
 
     //if (!hasDateBeenSet && !!selectedDateString && todaysDate.toISOString().slice(0,10) === selectedDate.toISOString().slice(0,10)) {
     if (
@@ -115,13 +109,10 @@ const SmartDateControl = ({ value, ...props }) => {
       // If we haven't seen a proper date yet, we are setting up the datetime widget
       // Load previously used date (if it exists)
       const sessionDate = sessionStorage.getItem(SMART_DATE_CONTROL_KEY)
-      console.log("do some work")
-      console.log("returning ", sessionDate ? sessionDate : value)
-      console.log("read ", sessionDate)
+
       lastSeenDate.current = sessionDate ? sessionDate : value
       return sessionDate ? sessionDate : value
     } else {
-      console.log("returning ", value)
       lastSeenDate.current = value
       if (!!value) {
         sessionStorage.setItem(SMART_DATE_CONTROL_KEY, value)
@@ -131,8 +122,6 @@ const SmartDateControl = ({ value, ...props }) => {
   }, [value])
 
   useEffect(() => props.onChange(customDate), [customDate, props])
-
-  console.log(customDate)
 
   return <DatetimeControl value={customDate} {...props} />
 }
