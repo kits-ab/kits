@@ -105,8 +105,8 @@ collections:
         fields:
           - { name: title, label: Rubrik }
           - { name: details, label: Detaljer, widget: markdown, required: false }
-          - { name: start, label: Starttid, widget: datetime, format: "YYYY-MM-DD HH:mm" }
-          - { name: end, label: Sluttid, widget: datetime, format: "YYYY-MM-DD HH:mm" }
+          - { name: start, label: Starttid, widget: smartdatetime, format: "YYYY-MM-DD HH:mm" }
+          - { name: end, label: Sluttid, widget: smartdatetime, format: "YYYY-MM-DD HH:mm" }
           - name: location
             label: Plats
             widget: "object"
