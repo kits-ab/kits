@@ -5,6 +5,8 @@ image: /assets/nyheter_kitscon231_8.jpeg
 authors:
   - gustavhjelm
 ---
+<img class="image-left" src="/assets/nyheter_kitscon231_10.jpeg">
+
 Hej igen vänner!\
 \
 Här kommer en kort sammanfattning från en av presentationerna vi hade på KitsCon.\
@@ -16,7 +18,3 @@ A big shout out to [Christian Hofstetter](https://www.linkedin.com/in/ACoAAAgBI
 Trevlig helg på er! ☀️\
 \
 [\#KitsCon](https://www.linkedin.com/feed/hashtag/?keywords=kitscon&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7083028109259616256) [\#teamwork](https://www.linkedin.com/feed/hashtag/?keywords=teamwork&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7083028109259616256) [\#teamtoxins](https://www.linkedin.com/feed/hashtag/?keywords=teamtoxins&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7083028109259616256) [\#conflictresolution](https://www.linkedin.com/feed/hashtag/?keywords=conflictresolution&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7083028109259616256) [\#personligutveckling](https://www.linkedin.com/feed/hashtag/?keywords=personligutveckling&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7083028109259616256)
-
-<div class="image-grid"><img src="/assets/nyheter_kitscon231_10.jpeg" alt=""></div>
-
-<img class="image-left" src="/assets/nyheter_kitscon231_9.jpeg">
