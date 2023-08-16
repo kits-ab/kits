@@ -447,9 +447,13 @@ export type MarkdownRemarkFrontmatter = {
   start: Maybe<Scalars['Date']>;
   end: Maybe<Scalars['Date']>;
   active: Maybe<Scalars['Boolean']>;
-  schema: Maybe<Array<Maybe<MarkdownRemarkFrontmatterSchema>>>;
-  section2: Maybe<MarkdownRemarkFrontmatterSection2>;
   images: Maybe<Array<Maybe<Scalars['String']>>>;
+  schema: Maybe<Array<Maybe<MarkdownRemarkFrontmatterSchema>>>;
+  heading: Maybe<Scalars['String']>;
+  lead: Maybe<Scalars['String']>;
+  section1: Maybe<MarkdownRemarkFrontmatterSection1>;
+  section2: Maybe<MarkdownRemarkFrontmatterSection2>;
+  Telefon: Maybe<Scalars['String']>;
   section3: Maybe<MarkdownRemarkFrontmatterSection3>;
   section4: Maybe<MarkdownRemarkFrontmatterSection4>;
 };
@@ -486,10 +490,10 @@ export type MarkdownRemarkFrontmatterSchema = {
   details: Maybe<Scalars['String']>;
   location: Maybe<MarkdownRemarkFrontmatterSchemaLocation>;
   presenters: Maybe<Array<Maybe<Scalars['String']>>>;
+  externalpresenter: Maybe<MarkdownRemarkFrontmatterSchemaExternalpresenter>;
+  presentation: Maybe<Scalars['String']>;
   href: Maybe<Scalars['String']>;
   youtubeId: Maybe<Scalars['String']>;
-  presentation: Maybe<Scalars['String']>;
-  externalpresenter: Maybe<MarkdownRemarkFrontmatterSchemaExternalpresenter>;
 };
 
 
@@ -509,6 +513,12 @@ export type MarkdownRemarkFrontmatterSchemaExternalpresenter = {
   name: Maybe<Scalars['String']>;
   avatarSrc: Maybe<Scalars['String']>;
   href: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterSection1 = {
+  heading: Maybe<Scalars['String']>;
+  content: Maybe<Scalars['String']>;
+  subheading: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterSection2 = {
@@ -1461,9 +1471,13 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   start: InputMaybe<DateQueryOperatorInput>;
   end: InputMaybe<DateQueryOperatorInput>;
   active: InputMaybe<BooleanQueryOperatorInput>;
-  schema: InputMaybe<MarkdownRemarkFrontmatterSchemaFilterListInput>;
-  section2: InputMaybe<MarkdownRemarkFrontmatterSection2FilterInput>;
   images: InputMaybe<StringQueryOperatorInput>;
+  schema: InputMaybe<MarkdownRemarkFrontmatterSchemaFilterListInput>;
+  heading: InputMaybe<StringQueryOperatorInput>;
+  lead: InputMaybe<StringQueryOperatorInput>;
+  section1: InputMaybe<MarkdownRemarkFrontmatterSection1FilterInput>;
+  section2: InputMaybe<MarkdownRemarkFrontmatterSection2FilterInput>;
+  Telefon: InputMaybe<StringQueryOperatorInput>;
   section3: InputMaybe<MarkdownRemarkFrontmatterSection3FilterInput>;
   section4: InputMaybe<MarkdownRemarkFrontmatterSection4FilterInput>;
 };
@@ -1495,10 +1509,10 @@ export type MarkdownRemarkFrontmatterSchemaFilterInput = {
   details: InputMaybe<StringQueryOperatorInput>;
   location: InputMaybe<MarkdownRemarkFrontmatterSchemaLocationFilterInput>;
   presenters: InputMaybe<StringQueryOperatorInput>;
+  externalpresenter: InputMaybe<MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput>;
+  presentation: InputMaybe<StringQueryOperatorInput>;
   href: InputMaybe<StringQueryOperatorInput>;
   youtubeId: InputMaybe<StringQueryOperatorInput>;
-  presentation: InputMaybe<StringQueryOperatorInput>;
-  externalpresenter: InputMaybe<MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterSchemaLocationFilterInput = {
@@ -1510,6 +1524,12 @@ export type MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput = {
   name: InputMaybe<StringQueryOperatorInput>;
   avatarSrc: InputMaybe<StringQueryOperatorInput>;
   href: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterSection1FilterInput = {
+  heading: InputMaybe<StringQueryOperatorInput>;
+  content: InputMaybe<StringQueryOperatorInput>;
+  subheading: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterSection2FilterInput = {
@@ -1809,27 +1829,10 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___section1___heading'
   | 'childrenMarkdownRemark___frontmatter___section1___content'
   | 'childrenMarkdownRemark___frontmatter___section1___subheading'
-  | 'childrenMarkdownRemark___frontmatter___index'
-  | 'childrenMarkdownRemark___frontmatter___href'
-  | 'childrenMarkdownRemark___frontmatter___location'
-  | 'childrenMarkdownRemark___frontmatter___start'
-  | 'childrenMarkdownRemark___frontmatter___end'
-  | 'childrenMarkdownRemark___frontmatter___active'
-  | 'childrenMarkdownRemark___frontmatter___schema'
-  | 'childrenMarkdownRemark___frontmatter___schema___details'
-  | 'childrenMarkdownRemark___frontmatter___schema___type'
-  | 'childrenMarkdownRemark___frontmatter___schema___title'
-  | 'childrenMarkdownRemark___frontmatter___schema___start'
-  | 'childrenMarkdownRemark___frontmatter___schema___end'
-  | 'childrenMarkdownRemark___frontmatter___schema___winner'
-  | 'childrenMarkdownRemark___frontmatter___schema___presenters'
-  | 'childrenMarkdownRemark___frontmatter___schema___href'
-  | 'childrenMarkdownRemark___frontmatter___schema___youtubeId'
-  | 'childrenMarkdownRemark___frontmatter___schema___presentation'
   | 'childrenMarkdownRemark___frontmatter___section2___content'
   | 'childrenMarkdownRemark___frontmatter___section2___heading'
   | 'childrenMarkdownRemark___frontmatter___section2___subheading'
-  | 'childrenMarkdownRemark___frontmatter___images'
+  | 'childrenMarkdownRemark___frontmatter___Telefon'
   | 'childrenMarkdownRemark___frontmatter___section3___heading'
   | 'childrenMarkdownRemark___frontmatter___section4___heading'
   | 'childrenMarkdownRemark___excerpt'
@@ -1925,27 +1928,10 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___section1___heading'
   | 'childMarkdownRemark___frontmatter___section1___content'
   | 'childMarkdownRemark___frontmatter___section1___subheading'
-  | 'childMarkdownRemark___frontmatter___index'
-  | 'childMarkdownRemark___frontmatter___href'
-  | 'childMarkdownRemark___frontmatter___location'
-  | 'childMarkdownRemark___frontmatter___start'
-  | 'childMarkdownRemark___frontmatter___end'
-  | 'childMarkdownRemark___frontmatter___active'
-  | 'childMarkdownRemark___frontmatter___schema'
-  | 'childMarkdownRemark___frontmatter___schema___details'
-  | 'childMarkdownRemark___frontmatter___schema___type'
-  | 'childMarkdownRemark___frontmatter___schema___title'
-  | 'childMarkdownRemark___frontmatter___schema___start'
-  | 'childMarkdownRemark___frontmatter___schema___end'
-  | 'childMarkdownRemark___frontmatter___schema___winner'
-  | 'childMarkdownRemark___frontmatter___schema___presenters'
-  | 'childMarkdownRemark___frontmatter___schema___href'
-  | 'childMarkdownRemark___frontmatter___schema___youtubeId'
-  | 'childMarkdownRemark___frontmatter___schema___presentation'
   | 'childMarkdownRemark___frontmatter___section2___content'
   | 'childMarkdownRemark___frontmatter___section2___heading'
   | 'childMarkdownRemark___frontmatter___section2___subheading'
-  | 'childMarkdownRemark___frontmatter___images'
+  | 'childMarkdownRemark___frontmatter___Telefon'
   | 'childMarkdownRemark___frontmatter___section3___heading'
   | 'childMarkdownRemark___frontmatter___section4___heading'
   | 'childMarkdownRemark___excerpt'
@@ -3826,32 +3812,10 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___section1___heading'
   | 'frontmatter___section1___content'
   | 'frontmatter___section1___subheading'
-  | 'frontmatter___index'
-  | 'frontmatter___href'
-  | 'frontmatter___location'
-  | 'frontmatter___start'
-  | 'frontmatter___end'
-  | 'frontmatter___active'
-  | 'frontmatter___schema'
-  | 'frontmatter___schema___details'
-  | 'frontmatter___schema___type'
-  | 'frontmatter___schema___title'
-  | 'frontmatter___schema___location___coordinates'
-  | 'frontmatter___schema___location___title'
-  | 'frontmatter___schema___start'
-  | 'frontmatter___schema___end'
-  | 'frontmatter___schema___winner'
-  | 'frontmatter___schema___presenters'
-  | 'frontmatter___schema___href'
-  | 'frontmatter___schema___youtubeId'
-  | 'frontmatter___schema___presentation'
-  | 'frontmatter___schema___externalpresenter___name'
-  | 'frontmatter___schema___externalpresenter___avatarSrc'
-  | 'frontmatter___schema___externalpresenter___href'
   | 'frontmatter___section2___content'
   | 'frontmatter___section2___heading'
   | 'frontmatter___section2___subheading'
-  | 'frontmatter___images'
+  | 'frontmatter___Telefon'
   | 'frontmatter___section3___heading'
   | 'frontmatter___section4___heading'
   | 'excerpt'
