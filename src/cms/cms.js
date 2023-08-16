@@ -1,4 +1,5 @@
 import CMS from "netlify-cms-app"
+import { useEffect, useMemo, useRef } from "react"
 
 CMS.registerEditorComponent({
   id: "collage",
@@ -19,7 +20,7 @@ CMS.registerEditorComponent({
     const matchedString = match[0]
     const regexp = /src="(\S*)"/g
     const imageMatches = [...matchedString.matchAll(regexp)]
-    const imagePaths = imageMatches.map(imageMatchArray => imageMatchArray[1])
+    const imagePaths = imageMatches.map((imageMatchArray) => imageMatchArray[1])
 
     return { imageList: imagePaths }
   },
@@ -28,16 +29,21 @@ CMS.registerEditorComponent({
       return
     }
     let returnString = `<div class="image-grid">`
-    data.imageList.forEach(image => returnString = returnString.concat(`<img src="${image}" alt="">`))
+    data.imageList.forEach(
+      (image) => (returnString = returnString.concat(`<img src="${image}" alt="">`))
+    )
     returnString = returnString.concat("</div>")
     return returnString
   },
   toPreview: function (data) {
-    if(!data.imageList) {
+    if (!data.imageList) {
       return
     }
     let returnString = "<div>"
-    data.imageList.forEach(image => returnString = returnString.concat(`<img src="${image}" style="max-width:500px">`))
+    data.imageList.forEach(
+      (image) =>
+        (returnString = returnString.concat(`<img src="${image}" style="max-width:500px">`))
+    )
     returnString = returnString.concat("</div>")
 
     return returnString
@@ -48,12 +54,10 @@ CMS.registerEditorComponent({
   id: "leftAlignedImage",
   label: "Vänsterjusterad bild",
   hint: "Visar en bild vänsterjusterad med texten flödandes runt bilden",
-  fields: [
-    {label: "Bild", name: "image", widget: "image"}
-  ],
+  fields: [{ label: "Bild", name: "image", widget: "image" }],
   pattern: /^<img class="image-left" src="(\S*)">/ms,
   fromBlock: function (match) {
-    return {image: match[1]}
+    return { image: match[1] }
   },
   toBlock: function (data) {
     return `<img class="image-left" src="${data.image}">`
@@ -62,3 +66,70 @@ CMS.registerEditorComponent({
     return `<img src="${data.image}" style="max-width:500px">`
   }
 })
+
+CMS.registerEditorComponent({
+  id: "video",
+  label: "Video",
+  hint: "Lägg till en video",
+  fields: [{ label: "Video", name: "video", widget: "file" }],
+  pattern: /^<video controls>(.*)<\/video>/ms,
+  fromBlock: function (match) {
+    const matchedString = match[0]
+    const regexp = /src="(\S*)"/g
+    const matchArray = regexp.exec(matchedString)
+
+    return { video: matchArray[1] }
+  },
+  toBlock: function (data) {
+    return `<video controls><source src="${data.video}" /></video>`
+  },
+  toPreview: function (data) {
+    return `<video controls width="500"><source src="${data.video}" /></video>`
+  }
+})
+
+const SMART_DATE_CONTROL_KEY = "smartDateControlKey"
+
+const SmartDateControl = ({ value, ...props }) => {
+  const lastSeenDate = useRef(null)
+  const DatetimeControl = CMS.getWidget("datetime").control
+
+  const customDate = useMemo(() => {
+    const selectedDateString = value
+
+    const selectedDate = new Date(selectedDateString)
+    const todaysDate = new Date()
+
+    //if (!hasDateBeenSet && !!selectedDateString && todaysDate.toISOString().slice(0,10) === selectedDate.toISOString().slice(0,10)) {
+    if (
+      (!lastSeenDate.current || lastSeenDate.current === value) &&
+      !!selectedDateString &&
+      todaysDate.toISOString().slice(0, 10) === selectedDate.toISOString().slice(0, 10)
+    ) {
+      // If we haven't seen a proper date yet, we are setting up the datetime widget
+      // Load previously used date (if it exists)
+      const sessionDate = sessionStorage.getItem(SMART_DATE_CONTROL_KEY)
+
+      lastSeenDate.current = sessionDate ? sessionDate : value
+      return sessionDate ? sessionDate : value
+    } else {
+      lastSeenDate.current = value
+      if (!!value) {
+        sessionStorage.setItem(SMART_DATE_CONTROL_KEY, value)
+      }
+      return value
+    }
+  }, [value])
+
+  useEffect(() => props.onChange(customDate), [customDate, props])
+
+  return <DatetimeControl value={customDate} {...props} />
+}
+
+const SmartDatePreview = (props) => {
+  const DatetimePreview = CMS.getWidget("datetime").preview
+
+  return <DatetimePreview {...props} />
+}
+
+CMS.registerWidget("smartdatetime", SmartDateControl, SmartDatePreview)
