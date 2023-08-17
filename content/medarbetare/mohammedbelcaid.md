@@ -2,7 +2,7 @@
 type: person
 id: mohammedbelcaid
 title: Mohammed Belcaid
-alumni: false
+alumni: true
 image: /assets/medarbetare_mohammedbelcaid.jpg
 avatar: /assets/medarbetare_mohammedbelcaid-avatar.jpg
 tagLine: Säkerhetsexpert

@@ -2,6 +2,7 @@
 type: person
 id: sofiaedstrom
 title: Sofia Edström
+alumni: true
 tagLine: Utvecklare
 image: /assets/medarbetare_sofiaedstrom.jpg
 avatar: /assets/medarbetare_sofiaedstrom-avatar.jpg
