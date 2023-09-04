@@ -84,30 +84,24 @@ export class PersonList extends React.PureComponent {
   )
 }
 
-const query = graphql`
-  query PersonsQuery {
-    persons: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "person" }, alumni: { ne: true } } }
-      sort: { order: ASC, fields: [frontmatter___title] }
-    ) {
-      edges {
-        node {
-          ...PersonFragment
-        }
-      }
-    }
-
-    images: allFile(
-      filter: {
-        internal: { mediaType: { eq: "image/jpeg" } }
-        relativePath: { regex: "/^medarbetare_[^-]*\\.jpg/" }
-      }
-    ) {
-      edges {
-        node {
-          ...ImageFragment
-        }
+const query = graphql`query PersonsQuery {
+  persons: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "person"}, alumni: {ne: true}}}
+    sort: {frontmatter: {title: ASC}}
+  ) {
+    edges {
+      node {
+        ...PersonFragment
       }
     }
   }
-`
+  images: allFile(
+    filter: {internal: {mediaType: {eq: "image/jpeg"}}, relativePath: {regex: "/^medarbetare_[^-]*\\.jpg/"}}
+  ) {
+    edges {
+      node {
+        ...ImageFragment
+      }
+    }
+  }
+}`

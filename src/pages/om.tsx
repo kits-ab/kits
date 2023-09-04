@@ -82,49 +82,45 @@ export default ({ data, location }: AboutPageProps) => {
   )
 }
 
-export const pageQuery = graphql`
-  query AboutPageQuery {
-    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "aboutPage" } } }) {
-      edges {
-        node {
-          frontmatter {
-            title
+export const pageQuery = graphql`query AboutPageQuery {
+  page: allMarkdownRemark(filter: {frontmatter: {type: {eq: "aboutPage"}}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          heading
+          lead
+          section1 {
             heading
-            lead
-            section1 {
-              heading
-            }
-          }
-          html
-        }
-      }
-    }
-
-    metadata: allContentYaml {
-      edges {
-        node {
-          name
-          coordinates
-          address {
-            street
-          }
-          contacts {
-            role
-            personId
           }
         }
+        html
       }
     }
-
-    persons: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "person" }, alumni: { ne: true } } }
-      sort: { order: ASC, fields: [frontmatter___title] }
-    ) {
-      edges {
-        node {
-          ...PersonFragment
+  }
+  metadata: allContentYaml {
+    edges {
+      node {
+        name
+        coordinates
+        address {
+          street
+        }
+        contacts {
+          role
+          personId
         }
       }
     }
   }
-`
+  persons: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "person"}, alumni: {ne: true}}}
+    sort: {frontmatter: {title: ASC}}
+  ) {
+    edges {
+      node {
+        ...PersonFragment
+      }
+    }
+  }
+}`
