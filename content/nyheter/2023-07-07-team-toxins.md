@@ -16,5 +16,4 @@ Inspirerade av [The Liberators](https://www.linkedin.com/company/theliberators/
 A big shout out to [Christian Hofstetter](https://www.linkedin.com/in/ACoAAAgBIOEBFOv_uNQZZznRm5NM09EgmzqpG-8), whose material and guidance provided the foundation for an engaging workshop!\
 \
 Trevlig helg på er! ☀️\
-\
 [\#KitsCon](https://www.linkedin.com/feed/hashtag/?keywords=kitscon&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7083028109259616256) [\#teamwork](https://www.linkedin.com/feed/hashtag/?keywords=teamwork&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7083028109259616256) [\#teamtoxins](https://www.linkedin.com/feed/hashtag/?keywords=teamtoxins&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7083028109259616256) [\#conflictresolution](https://www.linkedin.com/feed/hashtag/?keywords=conflictresolution&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7083028109259616256) [\#personligutveckling](https://www.linkedin.com/feed/hashtag/?keywords=personligutveckling&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7083028109259616256)
