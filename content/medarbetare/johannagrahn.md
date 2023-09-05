@@ -6,7 +6,6 @@ alumni: false
 tagLine: Frontendutvecklare
 image: /assets/medarbetare_johannagrahn.jpg
 avatar: /assets/medarbetare_johannagrahn-avatar.jpg
-phone: 761850109
 email: johanna.grahn@kits.se
 social:
   linkedin: https://www.linkedin.com/in/johanna-grahn/
