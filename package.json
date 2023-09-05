@@ -7,7 +7,7 @@
     "url": "ssh://git@github.com:kits-ab/kits.git"
   },
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build --verbose",
     "clean": "gatsby clean",
     "format": "prettier 'src/**/*.{js,json,jsx,md,ts,tsx}' --write",
     "lint": "npm run lint:css && npm run lint:js",
