@@ -3,19 +3,19 @@ type: person
 id: johannagrahn
 title: Johanna Grahn
 alumni: false
-tagLine: Frontendtvecklare
-email: johanna.grahn@kits.se
+tagLine: Frontendutvecklare
 image: /assets/medarbetare_johannagrahn.jpg
 avatar: /assets/medarbetare_johannagrahn-avatar.jpg
-phone: 0761850109
+phone: 761850109
+email: johanna.grahn@kits.se
+social:
+  linkedin: https://www.linkedin.com/in/johanna-grahn/
 tags:
   - interaktionsdesign
   - css
   - python
   - java
   - c
-social:
-    linkedin: https://www.linkedin.com/in/johanna-grahn/
 ---
 
 Johanna har läst till civilingenjör i datateknik på Chalmers. Hon är bekant med språk i både frontend och backend men har nu störst intresse för frontend-utveckling.
