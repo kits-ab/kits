@@ -7,7 +7,7 @@ tagLine: Utvecklare
 email: lukas.andersson@kits.se
 image: /assets/medarbetare_lukasandersson.jpg
 avatar: /assets/medarbetare_lukasandersson-avatar.jpg
-phone: 0739 - 91 95 69
+phone: 0739 - 91 95 89
 tags:
   - TypeScript
   - Python
