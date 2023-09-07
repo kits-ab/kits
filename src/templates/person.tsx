@@ -34,7 +34,8 @@ interface PersonPageProps extends PageProps {
 }
 
 const StyledImage = styled(Image)`
-  height: 400px;
+  
+  height: 400px   !important;
   flex: 0 0 300px;
   max-width: 300px;
   min-width: 300px;

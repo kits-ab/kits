@@ -48,7 +48,7 @@ const StyledHorizontal = styled(Horizontal)`
 
   > * {
     flex: 0 1 calc(${100 / 6}% - ${spacing.medium}px);
-    height: 80px;
+    height: 80px   !important;
     margin-left: ${spacing.medium / 2}px;
     margin-right: ${spacing.medium / 2}px;
     margin-top: ${spacing.medium}px;

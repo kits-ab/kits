@@ -10,6 +10,7 @@ const config: GatsbyConfig = {
     rssBlogTitle: "KITS - Blogg",
     rssBlogDescription: "Senaste inläggen i KITS blogg"
   },
+  flags: { DEV_SSR: false },
   plugins: [
     {
       resolve: "gatsby-source-filesystem",
