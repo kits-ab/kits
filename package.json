@@ -20,7 +20,7 @@
     "serve": "gatsby build && gatsby serve"
   },
   "dependencies": {
-    "@kokitotsos/react-components": "file:kokitotsos-react-components-3.4.0.tgz",
+    "@kokitotsos/react-components": "3.3.0",
     "babel-plugin-styled-components": "^2.1.4",
     "date-fns": "^2.30.0",
     "dotenv": "^16.3.1",
