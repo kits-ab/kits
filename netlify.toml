@@ -1,5 +1,5 @@
 [build]
-  command = "npm i && npm run build"
+  command = "npm -v && node -v && ls -alF /opt/build/repo && npm i && npm run build"
   publish = "public"
 
 [[headers]]
