@@ -1,5 +1,5 @@
 [build]
-  command = "npm -v && node -v && rm -rf /opt/build/repo/node_modules /opt/build/repo/package-lock.json && npm i && npm run build"
+  command = "npm -v && node -v && find /opt/build/repo && rm -rf /opt/build/repo/node_modules /opt/build/repo/package-lock.json .cache && npm i && npm run build"
   publish = "public"
 
 [[headers]]
