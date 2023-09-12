@@ -10,7 +10,7 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 import * as React from "react"
 import { Helmet } from "react-helmet"
@@ -103,7 +103,7 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
               {this.props.children}
             </Vertical>
             <Breakout style={{ flex: 0 }}>
-              <StaticQuery query={query} render={renderFooter} />
+              <KitsFooter/>
             </Breakout>
           </Wrapper>
         </LinkContext.Provider>
@@ -112,26 +112,30 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
   }
 }
 
-const renderFooter = ({ kits }: QueryResult) => {
-  const kitsInfo = kits.edges[0].node
-  return (
-    <Footer
-      info={{
-        name: kitsInfo.name,
-        street: kitsInfo.address.street,
-        postalCode: new types.PostalCode(kitsInfo.address.postalCode),
-        city: kitsInfo.address.city,
-        phone: new types.PhoneNumber(kitsInfo.phone),
-        email: new types.Email(kitsInfo.email),
-        social: {
-          facebook: new types.Username(kitsInfo.social.facebook, types.SocialType.Facebook),
-          github: new types.Username(kitsInfo.social.github, types.SocialType.GitHub),
-          linkedin: new types.Username(kitsInfo.social.linkedin, types.SocialType.LinkedIn),
-          twitter: new types.Username(kitsInfo.social.twitter, types.SocialType.Twitter)
-        }
-      }}
-    />
-  )
+function KitsFooter() {
+  const renderFooter = ({ kits }: QueryResult) => {
+    const kitsInfo = kits.edges[0].node
+    return (
+      <Footer
+        info={{
+          name: kitsInfo.name,
+          street: kitsInfo.address.street,
+          postalCode: new types.PostalCode(kitsInfo.address.postalCode),
+          city: kitsInfo.address.city,
+          phone: new types.PhoneNumber(kitsInfo.phone),
+          email: new types.Email(kitsInfo.email),
+          social: {
+            facebook: new types.Username(kitsInfo.social.facebook, types.SocialType.Facebook),
+            github: new types.Username(kitsInfo.social.github, types.SocialType.GitHub),
+            linkedin: new types.Username(kitsInfo.social.linkedin, types.SocialType.LinkedIn),
+            twitter: new types.Username(kitsInfo.social.twitter, types.SocialType.Twitter)
+          }
+        }}
+      />
+    )
+  }
+  const data = useStaticQuery(query);
+  return renderFooter(data);
 }
 
 const query = graphql`

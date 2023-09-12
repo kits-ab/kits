@@ -1,5 +1,5 @@
 import { Horizontal, Image, spacing, width } from "@kokitotsos/react-components"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
@@ -53,12 +53,10 @@ interface QueryResult {
   images: FileConnection
 }
 
-export class PersonList extends React.PureComponent {
-  public render() {
-    return <StaticQuery query={query} render={this.renderList} />
-  }
+export function PersonList() {
 
-  private renderList = ({ images, persons }: QueryResult) => (
+  const renderLista = ({ images, persons }: QueryResult) => {
+    return (
     <StyledHorizontal wrapRows={true}>
       {persons.edges
         .map((edge) => edgeToPerson(edge))
@@ -81,7 +79,11 @@ export class PersonList extends React.PureComponent {
           )
         })}
     </StyledHorizontal>
-  )
+    )
+  }
+
+  const data = useStaticQuery(query)
+  return  renderLista(data)  
 }
 
 const query = graphql`query PersonsQuery {
