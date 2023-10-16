@@ -97,5 +97,24 @@ schema:
     type: presentation
     presenters:
       - tobiaslans
+  - winner: false
+    end: 2023-11-10 17:00
+    start: 2023-11-10 16:30
+    title: Incheckning
+    details: M﻿er info kommer..
+    type: checkin
+  - winner: false
+    end: 2023-11-10 19:00
+    start: 2023-11-10 17:00
+    title: Bad och bastu
+    details: Vi värmer upp inför middagen med varm granitbastu med havsutsikt och
+      vedeldade badtunnor.
+    type: drink
+  - winner: false
+    end: 2023-11-10 00:00
+    start: 2023-11-10 19:30
+    title: Middag
+    details: M﻿er info kommer..
+    type: food
 ---
 Mer info kommer..
