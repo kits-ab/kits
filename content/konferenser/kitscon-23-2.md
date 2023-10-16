@@ -116,5 +116,63 @@ schema:
     title: Middag
     details: M﻿er info kommer..
     type: food
+  - winner: false
+    end: 2023-11-11 09:00
+    start: 2023-11-11 07:00
+    title: Frukost
+    details: ""
+    type: food
+  - winner: false
+    end: 2023-11-11 09:40
+    start: 2023-11-11 09:00
+    title: TBD
+    details: M﻿er info kommer..
+    presenters:
+      - stephansvensson
+    type: presentation
+  - winner: false
+    end: 2023-11-11 10:20
+    start: 2023-11-11 09:40
+    title: TBD
+    details: M﻿er info kommer..
+    presenters:
+      - olofgunnarsson
+    type: presentation
+  - winner: false
+    end: 2023-11-11 10:40
+    start: 2023-11-11 10:20
+    title: Fika
+    type: coffee
+  - winner: false
+    end: 2023-11-11 11:20
+    start: 2023-11-11 10:40
+    title: TBD
+    details: M﻿er info kommer..
+    type: presentation
+    presenters:
+      - jensabrahamsson
+  - winner: false
+    end: 2023-11-11 12:00
+    start: 2023-11-11 11:20
+    title: TBD
+    details: M﻿er info kommer..
+    type: presentation
+  - winner: false
+    end: 2023-11-11 13:00
+    start: 2023-11-11 12:00
+    title: Lunch
+    details: M﻿er info kommer..
+    type: food
+  - winner: false
+    end: 2023-11-11 14:30
+    start: 2023-11-11 13:30
+    title: Båt till Hamburgsund
+    details: ""
+    type: boat
+  - winner: false
+    end: 2023-11-11 16:30
+    start: 2023-11-11 14:30
+    title: Buss till Göteborg
+    type: bus
 ---
 Mer info kommer..
