@@ -10,7 +10,7 @@ active: false
 schema:
   - winner: false
     end: 2023-10-24 13:25
-    start: 2023-10-16 13:18
+    start: 2023-10-24 13:18
     title: Testing
     type: coffee
   - winner: false
