@@ -150,13 +150,15 @@ schema:
     details: M﻿er info kommer..
     type: presentation
     presenters:
-      - jensabrahamsson
+      - johanherbo
   - winner: false
     end: 2023-11-11 12:00
     start: 2023-11-11 11:20
     title: TBD
     details: M﻿er info kommer..
     type: presentation
+    presenters:
+      - jensabrahamsson
   - winner: false
     end: 2023-11-11 13:00
     start: 2023-11-11 12:00
