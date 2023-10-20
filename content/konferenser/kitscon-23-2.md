@@ -48,8 +48,11 @@ schema:
   - winner: false
     end: 2023-11-10 12:30
     start: 2023-11-10 11:50
-    title: TBD
-    details: M﻿er info kommer..
+    title: Framework for Detecting Fake Reviews
+    details: Vi kollar på ett modulärt ramverk som utnyttjar olika metoder för att
+      analysera snapshots av plattformar med recensioner, som Chrome Web Store,
+      med syfte att upptäcka systematisk manipulation av produkters rykte med
+      hjälp av produktrecensioner.
     presenters:
       - lukasandersson
     type: presentation
@@ -125,8 +128,8 @@ schema:
   - winner: false
     end: 2023-11-11 09:40
     start: 2023-11-11 09:00
-    title: TBD
-    details: M﻿er info kommer..
+    title: Var nöjd med allt som livet ger!
+    details: I’d rather have a bottle in front of me, than a frontal lobotomy!
     presenters:
       - stephansvensson
     type: presentation
