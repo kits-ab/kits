@@ -154,6 +154,7 @@ schema:
     type: presentation
     presenters:
       - johanherbo
+      - pierresandboge
   - winner: false
     end: 2023-11-11 12:00
     start: 2023-11-11 11:20
