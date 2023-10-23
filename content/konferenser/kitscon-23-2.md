@@ -121,13 +121,13 @@ schema:
     type: food
   - winner: false
     end: 2023-11-11 09:00
-    start: 2023-11-11 07:00
+    start: 2023-11-11 08:30
     title: Frukost
     details: ""
     type: food
   - winner: false
-    end: 2023-11-11 09:40
-    start: 2023-11-11 09:00
+    end: 2023-11-11 09:55
+    start: 2023-11-11 09:15
     title: Var nöjd med allt som livet ger!
     details: Vill du få ut så mkt som möjligt av (arbets)livet? Livskvalitet? Vill
       du må bra, ha kul, trivas och vara ännu trevligare att jobba med? Tar du
@@ -136,21 +136,21 @@ schema:
       - stephansvensson
     type: presentation
   - winner: false
-    end: 2023-11-11 10:20
-    start: 2023-11-11 09:40
+    end: 2023-11-11 10:35
+    start: 2023-11-11 09:55
     title: TBD
     details: M﻿er info kommer..
     presenters:
       - olofgunnarsson
     type: presentation
   - winner: false
-    end: 2023-11-11 10:40
-    start: 2023-11-11 10:20
+    end: 2023-11-11 10:45
+    start: 2023-11-11 10:35
     title: Fika
     type: coffee
   - winner: false
-    end: 2023-11-11 11:20
-    start: 2023-11-11 10:40
+    end: 2023-11-11 11:25
+    start: 2023-11-11 10:45
     title: TBD
     details: M﻿er info kommer..
     type: presentation
@@ -159,7 +159,7 @@ schema:
       - pierresandboge
   - winner: false
     end: 2023-11-11 12:00
-    start: 2023-11-11 11:20
+    start: 2023-11-11 11:25
     title: TBD
     details: M﻿er info kommer..
     type: presentation
