@@ -120,7 +120,7 @@ schema:
     details: ""
     type: food
   - winner: false
-    end: 2023-11-11 09:00
+    end: 2023-11-11 09:15
     start: 2023-11-11 08:30
     title: Frukost
     details: ""
@@ -166,7 +166,7 @@ schema:
     presenters:
       - jensabrahamsson
   - winner: false
-    end: 2023-11-11 13:00
+    end: 2023-11-11 13:30
     start: 2023-11-11 12:00
     title: Lunch
     details: ""
