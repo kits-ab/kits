@@ -104,7 +104,7 @@ schema:
     end: 2023-11-10 17:00
     start: 2023-11-10 16:30
     title: Incheckning
-    details: M﻿er info kommer..
+    details: ""
     type: checkin
   - winner: false
     end: 2023-11-10 19:00
@@ -117,7 +117,7 @@ schema:
     end: 2023-11-10 00:00
     start: 2023-11-10 19:30
     title: Middag
-    details: M﻿er info kommer..
+    details: ""
     type: food
   - winner: false
     end: 2023-11-11 09:00
