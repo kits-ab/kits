@@ -10,7 +10,7 @@ active: true
 schema:
   - winner: false
     end: 2023-11-10 09:00
-    start: 2023-11-10 07:00
+    start: 2023-11-10 06:45
     type: bus
     title: Buss från Hotel Post Drottningtorget
     location:
@@ -129,7 +129,9 @@ schema:
     end: 2023-11-11 09:40
     start: 2023-11-11 09:00
     title: Var nöjd med allt som livet ger!
-    details: I’d rather have a bottle in front of me, than a frontal lobotomy!
+    details: Vill du få ut så mkt som möjligt av (arbets)livet? Livskvalitet? Vill
+      du må bra, ha kul, trivas och vara ännu trevligare att jobba med? Tar du
+      ansvar och försöker göra det bästa av situationen?
     presenters:
       - stephansvensson
     type: presentation
@@ -167,7 +169,7 @@ schema:
     end: 2023-11-11 13:00
     start: 2023-11-11 12:00
     title: Lunch
-    details: M﻿er info kommer..
+    details: ""
     type: food
   - winner: false
     end: 2023-11-11 14:30
@@ -181,4 +183,4 @@ schema:
     title: Buss till Göteborg
     type: bus
 ---
-Mer info kommer..
+Det är dags för KitsCon 23.2, där vi denna gång sätter kursen norrut mot Väderöarna! I vanlig ordning kommer vi att dela med oss av våra kunskaper och knyta starkare band, och när dagen lider mot sitt slut, väntar bad- och bastu, följt av en trerätters middag. Förbered dig på två dagar fyllda med skratt, värme och nya insikter!
