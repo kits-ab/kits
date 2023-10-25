@@ -85,8 +85,10 @@ schema:
   - winner: false
     end: 2023-11-10 15:50
     start: 2023-11-10 15:10
-    title: TBD
-    details: M﻿er info kommer..
+    title: UX-Design & Tillgänglighet
+    details: En sammanfattad redovisning av mitt examensarbete som rör UX-Design och
+      tillgänglighet. + Lite tjat om samverkan mellan design och kod från ett
+      perspektiv med tillgänglighet i fokus!
     type: presentation
     presenters:
       - johannagrahn
