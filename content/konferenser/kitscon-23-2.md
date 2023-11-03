@@ -75,8 +75,9 @@ schema:
   - winner: false
     end: 2023-11-10 14:50
     start: 2023-11-10 14:10
-    title: TBD
-    details: M﻿er info kommer..
+    title: KonsultGPT
+    details: Genomgång i vad/hur KonsultGPT är och fungerar. Delar även med mig av
+      tips för att skriva bra promptar för att få ut det mesta av ChatGPT.
     type: presentation
     presenters:
       - christoffermedin
