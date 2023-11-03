@@ -6,6 +6,7 @@ tagLine: Väderöarna Edition
 location: Väderöarna
 start: 2023-11-10
 end: 2023-11-11
+image: /assets/kitscon_23-2.png
 active: true
 schema:
   - winner: false
