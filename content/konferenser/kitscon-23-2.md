@@ -40,8 +40,10 @@ schema:
   - winner: false
     end: 2023-11-10 11:50
     start: 2023-11-10 11:10
-    title: TBD
-    details: M﻿er info kommer..
+    title: Konfliktfritt samarbete
+    details: Vi tittar på CRDTs (Conflict-free Replicated Data Types) och hur de kan
+      hjälpa en att bygga applikationer med distribuerad data och flera
+      användare.
     presenters:
       - pontusdoverstav
     type: presentation
