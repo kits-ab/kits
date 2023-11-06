@@ -28,13 +28,13 @@ schema:
     end: 2023-11-10 10:30
     start: 2023-11-10 10:00
     title: Ankomst till hotellet
-    details: V﻿id ankomst lämnar vi våra väskor i bagageutrymmet och startar dagen
+    details: Vid ankomst lämnar vi våra väskor i bagageutrymmet och startar dagen
       med en enklare fika.
   - winner: false
     end: 2023-11-10 11:10
     start: 2023-11-10 10:30
-    title: TBD
-    details: M﻿er info kommer..
+    title: Välkomna till KitsCon 23.2
+    details: Genomgång av schemat, KITS lägesrapport och andra mycket viktiga saker!
     type: presentation
     presenters:
       - patriknilsson
@@ -68,7 +68,7 @@ schema:
     end: 2023-11-10 14:10
     start: 2023-11-10 13:30
     title: TBD
-    details: M﻿er info kommer..
+    details: Mer info kommer..
     type: presentation
     presenters:
       - dennisdubrefjord
@@ -100,12 +100,12 @@ schema:
     end: 2023-11-10 16:30
     start: 2023-11-10 15:50
     title: TBD
-    details: M﻿er info kommer..
+    details: Mer info kommer..
     location:
       title: ""
     type: presentation
     presenters:
-      - tobiaslans
+      - anononon
   - winner: false
     end: 2023-11-10 17:00
     start: 2023-11-10 16:30
@@ -145,9 +145,9 @@ schema:
     end: 2023-11-11 10:35
     start: 2023-11-11 09:55
     title: TBD
-    details: M﻿er info kommer..
+    details: Mer info kommer..
     presenters:
-      - olofgunnarsson
+      - anononon
     type: presentation
   - winner: false
     end: 2023-11-11 10:45
@@ -157,8 +157,8 @@ schema:
   - winner: false
     end: 2023-11-11 11:25
     start: 2023-11-11 10:45
-    title: TBD
-    details: M﻿er info kommer..
+    title: Makten och Kapitalet
+    details: Vem är det som bestämmer på Kits egentligen?
     type: presentation
     presenters:
       - johanherbo
@@ -167,7 +167,7 @@ schema:
     end: 2023-11-11 12:00
     start: 2023-11-11 11:25
     title: TBD
-    details: M﻿er info kommer..
+    details: Mer info kommer..
     type: presentation
     presenters:
       - jensabrahamsson
@@ -189,4 +189,5 @@ schema:
     title: Buss till Göteborg
     type: bus
 ---
-Det är dags för KitsCon 23.2, där vi denna gång sätter kursen norrut mot Väderöarna! I vanlig ordning kommer vi att dela med oss av våra kunskaper och knyta starkare band, och när dagen lider mot sitt slut, väntar bad- och bastu, följt av en trerätters middag. Förbered dig på två dagar fyllda med skratt, värme och nya insikter!
+
+Det är dags för KitsCon 23.2, där vi denna gång sätter kursen norrut mot Väderöarna! I vanlig ordning kommer vi att dela med oss av våra kunskaper och knyta starkare band, och när dagen lider mot sitt slut, väntar bad- och bastu, följt av middag. Förbered dig på två dagar fyllda med skratt, värme och nya insikter!
