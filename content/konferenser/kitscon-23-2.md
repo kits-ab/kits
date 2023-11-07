@@ -67,8 +67,8 @@ schema:
   - winner: false
     end: 2023-11-10 14:10
     start: 2023-11-10 13:30
-    title: TBD
-    details: Mer info kommer..
+    title: Felhantering i minnesprocesser
+    details: Erfarenheter av fel i minnesprocesser i wetware och hur de kan hanteras
     type: presentation
     presenters:
       - dennisdubrefjord
