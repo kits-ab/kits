@@ -100,15 +100,18 @@ schema:
     end: 2023-11-10 16:30
     start: 2023-11-10 15:50
     title: Frågesport - ölquizz
-    details:
-      En frågesport är en form av spel eller tankesport där deltagare försöker svara korrekt på frågor om ett eller flera specifika ämnen. Frågesporter kan användas som en kort utvärdering inom utbildning och liknande områden för att mäta tillväxt i kunskap, förmågor och färdigheter, eller bara som en hobby.
+    details: >-
+      En frågesport är en form av spel eller tankesport där deltagare försöker
+      svara korrekt på frågor om ett eller flera specifika ämnen. Frågesporter
+      kan användas som en kort utvärdering inom utbildning och liknande områden
+      för att mäta tillväxt i kunskap, förmågor och färdigheter, eller bara som
+      en hobby.
 
 
       Etymologi
 
 
-      De tidigaste kända exemplen på ordet daterar tillbaka till 1780; dess etymologi är okänd, men det kan ha sitt ursprung i studentjargong. Det betydde ursprungligen en "udda, excentrisk person" eller ett "skämt, spratt". Senare (kanske i samband med ord som "inquisitive"), kom det att betyda "att iaktta, studera intensivt", och därifrån (från omkring mitten av 1800-talet) "test, prov."
-      Det finns en välkänd myt om ordet quiz som säger att 1791 gjorde en teaterägare i Dublin vid namn Richard Daly ett vad att han kunde införa ett ord i språket inom 24 timmar. Han gick sedan ut och anställde en grupp gatubarn för att skriva ordet "quiz", som var ett nonsensord, på väggarna runt om i Dublin. Inom en dag var ordet allmänt känt och hade fått en betydelse (eftersom ingen visste vad det betydde, trodde alla att det var någon form av test), och Daly hade lite extra pengar i fickan. Det finns dock inga bevis som stödjer berättelsen, och termen användes redan före det påstådda vadet 1791.
+      De tidigaste kända exemplen på ordet daterar tillbaka till 1780; dess etymologi är okänd, men det kan ha sitt ursprung i studentjargong. Det betydde ursprungligen en "udda, excentrisk person" eller ett "skämt, spratt". Senare (kanske i samband med ord som "inquisitive"), kom det att betyda "att iaktta, studera intensivt", och därifrån (från omkring mitten av 1800-talet) "test, prov." Det finns en välkänd myt om ordet quiz som säger att 1791 gjorde en teaterägare i Dublin vid namn Richard Daly ett vad att han kunde införa ett ord i språket inom 24 timmar. Han gick sedan ut och anställde en grupp gatubarn för att skriva ordet "quiz", som var ett nonsensord, på väggarna runt om i Dublin. Inom en dag var ordet allmänt känt och hade fått en betydelse (eftersom ingen visste vad det betydde, trodde alla att det var någon form av test), och Daly hade lite extra pengar i fickan. Det finns dock inga bevis som stödjer berättelsen, och termen användes redan före det påstådda vadet 1791.
     type: presentation
     presenters:
       - hoimanlui
@@ -172,11 +175,11 @@ schema:
   - winner: false
     end: 2023-11-11 12:00
     start: 2023-11-11 11:25
-    title: Kompetenslead verkligen?!
-    details: KITS mission - Utveckla talanger till experter, låt experter förbli experter.​
-
-
-      Men det händer inte av sig själv! :-)
+    title: Nystart för kompetenslead-rollen!
+    details: Vi pratar om hur vi kommer stärka kompetens-delen vid Onboarding av nya
+      medarbetare, dela kompetens genom ”mikrokurser” och hur vi tänker oss
+      kompetenstrappor som stödjer vår mission ”Utveckla talanger till experter,
+      utveckla experter vidare!”
     type: presentation
     presenters:
       - stephansvensson
