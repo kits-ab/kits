@@ -10,7 +10,9 @@ const config: GatsbyConfig = {
     rssBlogTitle: "KITS - Blogg",
     rssBlogDescription: "Senaste inläggen i KITS blogg"
   },
+  flags: { DEV_SSR: false },
   plugins: [
+    { resolve: "gatsby-plugin-netlify-cms" },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -94,47 +96,45 @@ const config: GatsbyConfig = {
                 })
               })
             },
-            query: `
-              {
-                site {
-                  siteMetadata {
-                    siteUrl
-                  }
-                }
-                allMarkdownRemark(
-                  filter: { frontmatter: { type: { eq: "post" } } }
-                  sort: { order: DESC, fields: [fields___date] }
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields {
-                        href
-                        date
-                      }
-                      frontmatter {
-                        title
-                        authors
-                      }
-                    }
-                  }
-                }
-                persons: allMarkdownRemark(
-                  filter: { frontmatter: { type: { eq: "person" } } }
-                  sort: { order: ASC, fields: [frontmatter___title] }
-                ) {
-                  edges {
-                    node {
-                      frontmatter {
-                        id
-                        title
-                      }
-                    }
-                  }
-                }
-              }
-            `,
+            query: `{
+  site {
+    siteMetadata {
+      siteUrl
+    }
+  }
+  allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "post"}}}
+    sort: {fields: {date: DESC}}
+  ) {
+    edges {
+      node {
+        excerpt
+        html
+        fields {
+          href
+          date
+        }
+        frontmatter {
+          title
+          authors
+        }
+      }
+    }
+  }
+  persons: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "person"}}}
+    sort: {frontmatter: {title: ASC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          id
+          title
+        }
+      }
+    }
+  }
+}`,
             output: "/blogg.xml",
             title: "KITS - Blogg"
           },
@@ -165,47 +165,45 @@ const config: GatsbyConfig = {
                 })
               })
             },
-            query: `
-              {
-                site {
-                  siteMetadata {
-                    siteUrl
-                  }
-                }
-                allMarkdownRemark(
-                  filter: { frontmatter: { type: { eq: "news" } } }
-                  sort: { order: DESC, fields: [fields___date] }
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields {
-                        href
-                        date
-                      }
-                      frontmatter {
-                        title
-                        authors
-                      }
-                    }
-                  }
-                }
-                persons: allMarkdownRemark(
-                  filter: { frontmatter: { type: { eq: "person" } } }
-                  sort: { order: ASC, fields: [frontmatter___title] }
-                ) {
-                  edges {
-                    node {
-                      frontmatter {
-                        id
-                        title
-                      }
-                    }
-                  }
-                }
-              }
-            `,
+            query: `{
+  site {
+    siteMetadata {
+      siteUrl
+    }
+  }
+  allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "news"}}}
+    sort: {fields: {date: DESC}}
+  ) {
+    edges {
+      node {
+        excerpt
+        html
+        fields {
+          href
+          date
+        }
+        frontmatter {
+          title
+          authors
+        }
+      }
+    }
+  }
+  persons: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "person"}}}
+    sort: {frontmatter: {title: ASC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          id
+          title
+        }
+      }
+    }
+  }
+}`,
             output: "/news.xml",
             title: "KITS - Nyheter"
           }
@@ -213,11 +211,6 @@ const config: GatsbyConfig = {
       }
     },
     "gatsby-plugin-image",
-    "gatsby-plugin-netlify",
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: { modulePath: `${__dirname}/src/cms/cms.js` }
-    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sharp",

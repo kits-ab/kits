@@ -90,69 +90,58 @@ export default ({ data, location }: SecurityPageProps) => {
   )
 }
 
-export const pageQuery = graphql`
-  query SecurityPageQuery {
-    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "securityPage" } } }) {
-      edges {
-        node {
-          frontmatter {
-            title
+export const pageQuery = graphql`query SecurityPageQuery {
+  page: allMarkdownRemark(filter: {frontmatter: {type: {eq: "securityPage"}}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          heading
+          lead
+          section1 {
             heading
-            lead
-            section1 {
-              heading
-            }
-            section2 {
-              heading
-              content
-            }
-            images
           }
-        }
-      }
-    }
-
-    projects: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "security_project" } } }
-      sort: { order: DESC, fields: [frontmatter___index] }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            index
-            title
-            image
-            href
+          section2 {
+            heading
+            content
           }
-          html
-        }
-      }
-    }
-
-    pageImages: allFile(
-      filter: {
-        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
-        relativePath: { regex: "/^sakerhet_/" }
-      }
-    ) {
-      edges {
-        node {
-          ...ImageFragment
-        }
-      }
-    }
-
-    projectImages: allFile(
-      filter: {
-        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
-        relativePath: { regex: "/^sakerhet_/" }
-      }
-    ) {
-      edges {
-        node {
-          ...ImageFragment
+          images
         }
       }
     }
   }
-`
+  projects: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "security_project"}}}
+    sort: {frontmatter: {index: DESC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          index
+          title
+          image
+          href
+        }
+        html
+      }
+    }
+  }
+  pageImages: allFile(
+    filter: {internal: {mediaType: {in: ["image/jpeg", "image/png"]}}, relativePath: {regex: "/^sakerhet_/"}}
+  ) {
+    edges {
+      node {
+        ...ImageFragment
+      }
+    }
+  }
+  projectImages: allFile(
+    filter: {internal: {mediaType: {in: ["image/jpeg", "image/png"]}}, relativePath: {regex: "/^sakerhet_/"}}
+  ) {
+    edges {
+      node {
+        ...ImageFragment
+      }
+    }
+  }
+}`

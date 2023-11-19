@@ -187,106 +187,89 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
   }
 }
 
-export const pageQuery = graphql`
-  query JobPageQuery($href: String = "") {
-    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "jobPage" } } }) {
-      edges {
-        node {
-          frontmatter {
-            title
+export const pageQuery = graphql`query JobPageQuery($href: String = "") {
+  page: allMarkdownRemark(filter: {frontmatter: {type: {eq: "jobPage"}}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          heading
+          lead
+          section1 {
             heading
-            lead
-            section1 {
-              heading
-            }
-            section2 {
-              content
-              heading
-            }
-            images
           }
-        }
-      }
-    }
-
-    activeJob: teamtailorJob(fields: { href: { eq: $href } }) {
-      id
-    }
-
-    jobs: allTeamtailorJob {
-      edges {
-        node {
-          fields {
-            href
+          section2 {
+            content
+            heading
           }
-          id
-          links {
-            careersite_job_apply_url
-            careersite_job_url
-          }
-          attributes {
-            title
-            body
-            apply_button_text
-            human_status
-          }
-        }
-      }
-    }
-
-    benefits: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "benefit" } } }
-      sort: { order: ASC, fields: [frontmatter___index] }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            image
-          }
-          html
-        }
-      }
-    }
-
-    images: allFile(
-      filter: {
-        internal: { mediaType: { eq: "image/jpeg" } }
-        relativePath: { regex: "/^formaner_/" }
-      }
-    ) {
-      edges {
-        node {
-          ...ImageFragment
-        }
-      }
-    }
-
-    collageImages: allFile(
-      filter: {
-        internal: { mediaType: { eq: "image/jpeg" } }
-        relativePath: { regex: "/^formaner_/" }
-      }
-    ) {
-      edges {
-        node {
-          ...ImageFragmentCollage
-        }
-      }
-    }
-
-    personaImages: allFile(
-      filter: {
-        internal: { mediaType: { eq: "image/png" } }
-        relativePath: { regex: "/^persona_/" }
-      }
-      sort: { order: ASC, fields: [relativePath] }
-    ) {
-      edges {
-        node {
-          ...ImageFragmentPersona
+          images
         }
       }
     }
   }
-`
+  activeJob: teamtailorJob(fields: {href: {eq: $href}}) {
+    id
+  }
+  jobs: allTeamtailorJob {
+    edges {
+      node {
+        fields {
+          href
+        }
+        id
+        links {
+          careersite_job_apply_url
+          careersite_job_url
+        }
+        attributes {
+          title
+          body
+          apply_button_text
+          human_status
+        }
+      }
+    }
+  }
+  benefits: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "benefit"}}}
+    sort: {frontmatter: {index: ASC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title
+          image
+        }
+        html
+      }
+    }
+  }
+  images: allFile(
+    filter: {internal: {mediaType: {eq: "image/jpeg"}}, relativePath: {regex: "/^formaner_/"}}
+  ) {
+    edges {
+      node {
+        ...ImageFragment
+      }
+    }
+  }
+  collageImages: allFile(
+    filter: {internal: {mediaType: {eq: "image/jpeg"}}, relativePath: {regex: "/^formaner_/"}}
+  ) {
+    edges {
+      node {
+        ...ImageFragmentCollage
+      }
+    }
+  }
+  personaImages: allFile(
+    filter: {internal: {mediaType: {eq: "image/png"}}, relativePath: {regex: "/^persona_/"}}
+    sort: {relativePath: ASC}
+  ) {
+    edges {
+      node {
+        ...ImageFragmentPersona
+      }
+    }
+  }
+}`

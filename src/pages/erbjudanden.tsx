@@ -146,70 +146,62 @@ export default ({ data, location }: ErbjudandenPageProps) => {
   )
 }
 
-export const pageQuery = graphql`
-  query OfferPageQuery {
-    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "offerPage" } } }) {
-      edges {
-        node {
-          frontmatter {
-            title
+export const pageQuery = graphql`query OfferPageQuery {
+  page: allMarkdownRemark(filter: {frontmatter: {type: {eq: "offerPage"}}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          heading
+          lead
+          section1 {
             heading
-            lead
-            section1 {
-              heading
-            }
-            section2 {
-              heading
-              content
-            }
           }
-        }
-      }
-    }
-
-    offers: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "offer" } } }
-      sort: { order: ASC, fields: [frontmatter___index] }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            id
-            title
+          section2 {
+            heading
+            content
           }
-          html
-        }
-      }
-    }
-
-    projects: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "project" } } }
-      sort: { order: DESC, fields: [frontmatter___index] }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            index
-            title
-            image
-            href
-          }
-          html
-        }
-      }
-    }
-
-    images: allFile(
-      filter: {
-        internal: { mediaType: { eq: "image/jpeg" } }
-        relativePath: { regex: "/^projekt_/" }
-      }
-    ) {
-      edges {
-        node {
-          ...ImageFragment
         }
       }
     }
   }
-`
+  offers: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "offer"}}}
+    sort: {frontmatter: {index: ASC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          id
+          title
+        }
+        html
+      }
+    }
+  }
+  projects: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "project"}}}
+    sort: {frontmatter: {index: DESC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          index
+          title
+          image
+          href
+        }
+        html
+      }
+    }
+  }
+  images: allFile(
+    filter: {internal: {mediaType: {eq: "image/jpeg"}}, relativePath: {regex: "/^projekt_/"}}
+  ) {
+    edges {
+      node {
+        ...ImageFragment
+      }
+    }
+  }
+}`

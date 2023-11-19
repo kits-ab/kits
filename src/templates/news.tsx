@@ -48,51 +48,46 @@ export default ({ data, location }: NewsTemplateProps) => {
   )
 }
 
-export const query = graphql`
-  query NewsQuery($href: String!) {
-    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "newsPage" } } }) {
-      edges {
-        node {
-          frontmatter {
-            title
-            heading
-            lead
-          }
-        }
-      }
-    }
-    news: markdownRemark(fields: { href: { eq: $href } }) {
-      fields {
-        date
-        href
-      }
-      frontmatter {
-        authors
-        title
-      }
-      html
-    }
-    persons: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "person" } } }
-      sort: { order: ASC, fields: [frontmatter___title] }
-    ) {
-      edges {
-        node {
-          ...PersonFragment
-        }
-      }
-    }
-    avatars: allFile(
-      filter: {
-        internal: { mediaType: { eq: "image/jpeg" } }
-        relativePath: { regex: "/^medarbetare_.*-avatar/" }
-      }
-    ) {
-      edges {
-        node {
-          ...ImageFragmentAvatar
+export const query = graphql`query NewsQuery($href: String!) {
+  page: allMarkdownRemark(filter: {frontmatter: {type: {eq: "newsPage"}}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          heading
+          lead
         }
       }
     }
   }
-`
+  news: markdownRemark(fields: {href: {eq: $href}}) {
+    fields {
+      date
+      href
+    }
+    frontmatter {
+      authors
+      title
+    }
+    html
+  }
+  persons: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "person"}}}
+    sort: {frontmatter: {title: ASC}}
+  ) {
+    edges {
+      node {
+        ...PersonFragment
+      }
+    }
+  }
+  avatars: allFile(
+    filter: {internal: {mediaType: {eq: "image/jpeg"}}, relativePath: {regex: "/^medarbetare_.*-avatar/"}}
+  ) {
+    edges {
+      node {
+        ...ImageFragmentAvatar
+      }
+    }
+  }
+}`
