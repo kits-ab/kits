@@ -17,4 +17,4 @@ Keep it.. snapshot? 📸 Äh, vi får nog jobba lite på den..\
 \
 Trevlig helg på er! ☀️
 
-<div class="image-grid"><img src="/assets/nyheter_kitscon2322.jpg" alt=""><img src="/assets/nyheter_kitscon2323.jpg" alt=""><img src="/assets/nyheter_kitscon2324.jpg" alt=""></div>
+<div class="image-grid"><img src="/assets/nyheter_kitscon2322.jpg" alt=""><img src="/assets/nyheter_kitscon2323.jpg" alt=""><img src="/assets/nyheter_kitscon2324.jpg" alt=""><img src="/assets/nyheter_kitscon2325.jpg" alt=""></div>
