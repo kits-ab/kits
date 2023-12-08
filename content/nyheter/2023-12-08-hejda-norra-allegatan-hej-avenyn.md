@@ -12,3 +12,5 @@ Nu har vi äntligen flyttat in i vår nya fina lokal på Kungsportsavenyen 33! M
 Vi ser fram emot att dela fler bilder av vårt nya kontor och så småningom skicka ut inbjudningar till inflyttningsfesten, som kommer så snart ni har återhämtat er från nyårsfirandet och tagit itu med pizzan dagen efter.\
 \
 Med det önskar vi er en fantasisk helg! 🥂
+
+<img class="image-left" src="/assets/nyheter_flytt.jpg">
