@@ -213,11 +213,12 @@ collections:
     folder: content/nyheter
     create: true
     delete: false
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{publishDate}}-{{slug}}"
     fields:
       - { name: type, widget: hidden, default: news }
       - { name: title, label: Rubrik }
       - { name: image, label: Bild, widget: image }
+      - { name: publishDate, label: Publiceringsdatum, widget: datetime, format: "YYYY-MM-DD", default: "", required: true}
       - name: authors
         label: Författare
         widget: relation
