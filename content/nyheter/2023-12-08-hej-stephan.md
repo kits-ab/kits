@@ -2,6 +2,7 @@
 type: news
 title: Hej Stephan!
 image: /assets/nyheter_stephan.jpg
+publishDate: 2023-09-29
 authors:
   - gustavhjelm
 ---
