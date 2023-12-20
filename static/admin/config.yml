@@ -37,9 +37,9 @@ collections:
         label: Författare
         widget: relation
         collection: persons
-        searchFields: [title]
-        valueField: id
-        displayFields: [title]
+        search_fields: [title]
+        value_field: id
+        display_fields: [title]
         multiple: true
       - { name: body, label: Text, widget: markdown }
 
@@ -68,9 +68,21 @@ collections:
     preview_path: "jobb"
     fields:
       - { name: type, widget: hidden, default: benefit }
-      - { name: index, label: Sorteringsindex, widget: number, valueType: int, min: 1 }
+      - {
+          name: index,
+          label: Sorteringsindex,
+          widget: number,
+          valueType: int,
+          min: 1,
+        }
       - { name: title, label: Rubrik }
-      - { name: image, label: Bild, widget: image, required: false, pattern: ["formaner_[a-z-]+\\.jpg", "formaner_[a-z-]+\\.jpg"] }
+      - {
+          name: image,
+          label: Bild,
+          widget: image,
+          required: false,
+          pattern: ["formaner_[a-z-]+\\.jpg", "formaner_[a-z-]+\\.jpg"],
+        }
       - { name: body, label: Text, widget: markdown }
 
   - name: conferences
@@ -88,10 +100,20 @@ collections:
       - { name: title, label: Rubrik }
       - { name: tagLine, label: Tagline }
       - { name: location, label: Plats }
-      - { name: start, label: Startdatum, widget: datetime, format: "YYYY-MM-DD" }
+      - {
+          name: start,
+          label: Startdatum,
+          widget: datetime,
+          format: "YYYY-MM-DD",
+        }
       - { name: end, label: Slutdatum, widget: datetime, format: "YYYY-MM-DD" }
       - { name: image, label: Bild, widget: image, required: false }
-      - { name: active, label: Visa i listan med Kitscons, widget: boolean, default: false }
+      - {
+          name: active,
+          label: Visa i listan med Kitscons,
+          widget: boolean,
+          default: false,
+        }
       - name: images
         label: Bilder
         widget: list
@@ -104,9 +126,24 @@ collections:
         required: false
         fields:
           - { name: title, label: Rubrik }
-          - { name: details, label: Detaljer, widget: markdown, required: false }
-          - { name: start, label: Starttid, widget: smartdatetime, format: "YYYY-MM-DD HH:mm" }
-          - { name: end, label: Sluttid, widget: smartdatetime, format: "YYYY-MM-DD HH:mm" }
+          - {
+              name: details,
+              label: Detaljer,
+              widget: markdown,
+              required: false,
+            }
+          - {
+              name: start,
+              label: Starttid,
+              widget: smartdatetime,
+              format: "YYYY-MM-DD HH:mm",
+            }
+          - {
+              name: end,
+              label: Sluttid,
+              widget: smartdatetime,
+              format: "YYYY-MM-DD HH:mm",
+            }
           - name: location
             label: Plats
             widget: "object"
@@ -115,7 +152,13 @@ collections:
                 label: Koordinater
                 widget: list
                 max: 2
-                field: {name: coordinate, label: Koordinat, widget: number, value_type: float}
+                field:
+                  {
+                    name: coordinate,
+                    label: Koordinat,
+                    widget: number,
+                    value_type: float,
+                  }
                 hint: "Lägg manuellt till två värden i listan om du vill visa en plats i schemat. Första värdet är latitud and det andra longitud, ex. 57.7001813, 11.9567863"
               - { name: title, label: Namn, required: false }
           - { name: href, label: URL, required: false }
@@ -133,7 +176,7 @@ collections:
               - { label: "Hotell", value: "hotel" }
               - { label: "Plats", value: "location" }
               - { label: "Presentation", value: "presentation" }
-              - { label: "Extern föreläsare", value: "externalpresentation"}
+              - { label: "Extern föreläsare", value: "externalpresentation" }
               - { label: "Löpning", value: "running" }
               - { label: "Skidåkning", value: "skiing" }
               - { label: "Workshop", value: "workshop" }
@@ -141,9 +184,9 @@ collections:
             label: Presentatörer
             widget: relation
             collection: persons
-            searchFields: [title]
-            valueField: id
-            displayFields: [title]
+            search_fields: [title]
+            value_field: id
+            display_fields: [title]
             multiple: true
             required: false
           - name: externalpresenter
@@ -165,9 +208,25 @@ collections:
                 label: Bild
                 required: false
                 widget: image
-          - { name: presentation, label: Presentation, widget: file, required: false }
-          - { name: youtubeId, label: YouTube ID, widget: text, required: false }
-          - { name: winner, label: Bästa presentation, widget: boolean, required: false, default: false }
+          - {
+              name: presentation,
+              label: Presentation,
+              widget: file,
+              required: false,
+            }
+          - {
+              name: youtubeId,
+              label: YouTube ID,
+              widget: text,
+              required: false,
+            }
+          - {
+              name: winner,
+              label: Bästa presentation,
+              widget: boolean,
+              required: false,
+              default: false,
+            }
       - { name: body, label: Text, widget: markdown }
 
   - name: persons
@@ -180,7 +239,13 @@ collections:
       - { name: type, widget: hidden, default: person }
       - { name: id, label: ID }
       - { name: title, label: Namn }
-      - { name: alumni, label: Alumni?, widget: boolean, default: false, required: false }
+      - {
+          name: alumni,
+          label: Alumni?,
+          widget: boolean,
+          default: false,
+          required: false,
+        }
       - { name: tagLine, label: Tagline }
       - name: image
         label: Bild
@@ -191,7 +256,11 @@ collections:
         label: Avatar
         widget: image
         required: false
-        pattern: ["medarbetare_[a-z-]+-avatar\\.jpg", "medarbetare_[a-z-]+-avatar\\.jpg"]
+        pattern:
+          [
+            "medarbetare_[a-z-]+-avatar\\.jpg",
+            "medarbetare_[a-z-]+-avatar\\.jpg",
+          ]
       - { name: phone, label: Telefon, required: false }
       - { name: email, label: E-mail }
       - name: social
@@ -213,18 +282,26 @@ collections:
     folder: content/nyheter
     create: true
     delete: false
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{publishDate}}-{{slug}}"
     fields:
       - { name: type, widget: hidden, default: news }
       - { name: title, label: Rubrik }
       - { name: image, label: Bild, widget: image }
+      - {
+          name: publishDate,
+          label: Publiceringsdatum,
+          widget: datetime,
+          format: "YYYY-MM-DD",
+          default: "",
+          required: true,
+        }
       - name: authors
         label: Författare
         widget: relation
         collection: persons
-        searchFields: [title]
-        valueField: id
-        displayFields: [title]
+        search_fields: [title]
+        value_field: id
+        display_fields: [title]
         multiple: true
       - { name: body, label: Body, widget: markdown }
 
@@ -238,7 +315,13 @@ collections:
     slug: "{{slug}}"
     fields:
       - { name: type, widget: hidden, default: project }
-      - { name: index, label: Sorteringsindex, widget: number, valueType: int, min: 1 }
+      - {
+          name: index,
+          label: Sorteringsindex,
+          widget: number,
+          valueType: int,
+          min: 1,
+        }
       - { name: title, label: Rubrik }
       - name: image
         label: Bild
@@ -258,7 +341,13 @@ collections:
     slug: "{{slug}}"
     fields:
       - { name: type, widget: hidden, default: security_project }
-      - { name: index, label: Sorteringsindex, widget: number, valueType: int, min: 1 }
+      - {
+          name: index,
+          label: Sorteringsindex,
+          widget: number,
+          valueType: int,
+          min: 1,
+        }
       - { name: title, label: Rubrik }
       - name: image
         label: Bild

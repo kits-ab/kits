@@ -439,21 +439,21 @@ export type MarkdownRemarkFrontmatter = {
   email: Maybe<Scalars['String']>;
   social: Maybe<MarkdownRemarkFrontmatterSocial>;
   tags: Maybe<Array<Maybe<Scalars['String']>>>;
+  Telefon: Maybe<Scalars['String']>;
   authors: Maybe<Array<Maybe<Scalars['String']>>>;
-  index: Maybe<Scalars['Int']>;
-  href: Maybe<Scalars['String']>;
   alumni: Maybe<Scalars['Boolean']>;
+  heading: Maybe<Scalars['String']>;
+  lead: Maybe<Scalars['String']>;
+  section1: Maybe<MarkdownRemarkFrontmatterSection1>;
+  index: Maybe<Scalars['Int']>;
   location: Maybe<Scalars['String']>;
   start: Maybe<Scalars['Date']>;
   end: Maybe<Scalars['Date']>;
   active: Maybe<Scalars['Boolean']>;
-  images: Maybe<Array<Maybe<Scalars['String']>>>;
   schema: Maybe<Array<Maybe<MarkdownRemarkFrontmatterSchema>>>;
-  heading: Maybe<Scalars['String']>;
-  lead: Maybe<Scalars['String']>;
-  section1: Maybe<MarkdownRemarkFrontmatterSection1>;
+  href: Maybe<Scalars['String']>;
   section2: Maybe<MarkdownRemarkFrontmatterSection2>;
-  Telefon: Maybe<Scalars['String']>;
+  images: Maybe<Array<Maybe<Scalars['String']>>>;
   section3: Maybe<MarkdownRemarkFrontmatterSection3>;
   section4: Maybe<MarkdownRemarkFrontmatterSection4>;
 };
@@ -475,25 +475,31 @@ export type MarkdownRemarkFrontmatterEndArgs = {
 };
 
 export type MarkdownRemarkFrontmatterSocial = {
-  github: Maybe<Scalars['String']>;
   linkedin: Maybe<Scalars['String']>;
+  github: Maybe<Scalars['String']>;
   keybase: Maybe<Scalars['String']>;
   twitter: Maybe<Scalars['String']>;
 };
 
+export type MarkdownRemarkFrontmatterSection1 = {
+  heading: Maybe<Scalars['String']>;
+  content: Maybe<Scalars['String']>;
+  subheading: Maybe<Scalars['String']>;
+};
+
 export type MarkdownRemarkFrontmatterSchema = {
   winner: Maybe<Scalars['Boolean']>;
-  start: Maybe<Scalars['Date']>;
   end: Maybe<Scalars['String']>;
-  title: Maybe<Scalars['String']>;
+  start: Maybe<Scalars['Date']>;
   type: Maybe<Scalars['String']>;
-  details: Maybe<Scalars['String']>;
+  title: Maybe<Scalars['String']>;
   location: Maybe<MarkdownRemarkFrontmatterSchemaLocation>;
+  details: Maybe<Scalars['String']>;
   presenters: Maybe<Array<Maybe<Scalars['String']>>>;
   externalpresenter: Maybe<MarkdownRemarkFrontmatterSchemaExternalpresenter>;
-  presentation: Maybe<Scalars['String']>;
   href: Maybe<Scalars['String']>;
   youtubeId: Maybe<Scalars['String']>;
+  presentation: Maybe<Scalars['String']>;
 };
 
 
@@ -513,12 +519,6 @@ export type MarkdownRemarkFrontmatterSchemaExternalpresenter = {
   name: Maybe<Scalars['String']>;
   avatarSrc: Maybe<Scalars['String']>;
   href: Maybe<Scalars['String']>;
-};
-
-export type MarkdownRemarkFrontmatterSection1 = {
-  heading: Maybe<Scalars['String']>;
-  content: Maybe<Scalars['String']>;
-  subheading: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterSection2 = {
@@ -1463,28 +1463,28 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   email: InputMaybe<StringQueryOperatorInput>;
   social: InputMaybe<MarkdownRemarkFrontmatterSocialFilterInput>;
   tags: InputMaybe<StringQueryOperatorInput>;
+  Telefon: InputMaybe<StringQueryOperatorInput>;
   authors: InputMaybe<StringQueryOperatorInput>;
-  index: InputMaybe<IntQueryOperatorInput>;
-  href: InputMaybe<StringQueryOperatorInput>;
   alumni: InputMaybe<BooleanQueryOperatorInput>;
+  heading: InputMaybe<StringQueryOperatorInput>;
+  lead: InputMaybe<StringQueryOperatorInput>;
+  section1: InputMaybe<MarkdownRemarkFrontmatterSection1FilterInput>;
+  index: InputMaybe<IntQueryOperatorInput>;
   location: InputMaybe<StringQueryOperatorInput>;
   start: InputMaybe<DateQueryOperatorInput>;
   end: InputMaybe<DateQueryOperatorInput>;
   active: InputMaybe<BooleanQueryOperatorInput>;
-  images: InputMaybe<StringQueryOperatorInput>;
   schema: InputMaybe<MarkdownRemarkFrontmatterSchemaFilterListInput>;
-  heading: InputMaybe<StringQueryOperatorInput>;
-  lead: InputMaybe<StringQueryOperatorInput>;
-  section1: InputMaybe<MarkdownRemarkFrontmatterSection1FilterInput>;
+  href: InputMaybe<StringQueryOperatorInput>;
   section2: InputMaybe<MarkdownRemarkFrontmatterSection2FilterInput>;
-  Telefon: InputMaybe<StringQueryOperatorInput>;
+  images: InputMaybe<StringQueryOperatorInput>;
   section3: InputMaybe<MarkdownRemarkFrontmatterSection3FilterInput>;
   section4: InputMaybe<MarkdownRemarkFrontmatterSection4FilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterSocialFilterInput = {
-  github: InputMaybe<StringQueryOperatorInput>;
   linkedin: InputMaybe<StringQueryOperatorInput>;
+  github: InputMaybe<StringQueryOperatorInput>;
   keybase: InputMaybe<StringQueryOperatorInput>;
   twitter: InputMaybe<StringQueryOperatorInput>;
 };
@@ -1496,23 +1496,29 @@ export type BooleanQueryOperatorInput = {
   nin: InputMaybe<Array<InputMaybe<Scalars['Boolean']>>>;
 };
 
+export type MarkdownRemarkFrontmatterSection1FilterInput = {
+  heading: InputMaybe<StringQueryOperatorInput>;
+  content: InputMaybe<StringQueryOperatorInput>;
+  subheading: InputMaybe<StringQueryOperatorInput>;
+};
+
 export type MarkdownRemarkFrontmatterSchemaFilterListInput = {
   elemMatch: InputMaybe<MarkdownRemarkFrontmatterSchemaFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterSchemaFilterInput = {
   winner: InputMaybe<BooleanQueryOperatorInput>;
-  start: InputMaybe<DateQueryOperatorInput>;
   end: InputMaybe<StringQueryOperatorInput>;
-  title: InputMaybe<StringQueryOperatorInput>;
+  start: InputMaybe<DateQueryOperatorInput>;
   type: InputMaybe<StringQueryOperatorInput>;
-  details: InputMaybe<StringQueryOperatorInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
   location: InputMaybe<MarkdownRemarkFrontmatterSchemaLocationFilterInput>;
+  details: InputMaybe<StringQueryOperatorInput>;
   presenters: InputMaybe<StringQueryOperatorInput>;
   externalpresenter: InputMaybe<MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput>;
-  presentation: InputMaybe<StringQueryOperatorInput>;
   href: InputMaybe<StringQueryOperatorInput>;
   youtubeId: InputMaybe<StringQueryOperatorInput>;
+  presentation: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterSchemaLocationFilterInput = {
@@ -1524,12 +1530,6 @@ export type MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput = {
   name: InputMaybe<StringQueryOperatorInput>;
   avatarSrc: InputMaybe<StringQueryOperatorInput>;
   href: InputMaybe<StringQueryOperatorInput>;
-};
-
-export type MarkdownRemarkFrontmatterSection1FilterInput = {
-  heading: InputMaybe<StringQueryOperatorInput>;
-  content: InputMaybe<StringQueryOperatorInput>;
-  subheading: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterSection2FilterInput = {
@@ -1799,40 +1799,40 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___avatar'
   | 'childrenMarkdownRemark___frontmatter___phone'
   | 'childrenMarkdownRemark___frontmatter___email'
-  | 'childrenMarkdownRemark___frontmatter___social___github'
   | 'childrenMarkdownRemark___frontmatter___social___linkedin'
+  | 'childrenMarkdownRemark___frontmatter___social___github'
   | 'childrenMarkdownRemark___frontmatter___social___keybase'
   | 'childrenMarkdownRemark___frontmatter___social___twitter'
   | 'childrenMarkdownRemark___frontmatter___tags'
+  | 'childrenMarkdownRemark___frontmatter___Telefon'
   | 'childrenMarkdownRemark___frontmatter___authors'
-  | 'childrenMarkdownRemark___frontmatter___index'
-  | 'childrenMarkdownRemark___frontmatter___href'
   | 'childrenMarkdownRemark___frontmatter___alumni'
-  | 'childrenMarkdownRemark___frontmatter___location'
-  | 'childrenMarkdownRemark___frontmatter___start'
-  | 'childrenMarkdownRemark___frontmatter___end'
-  | 'childrenMarkdownRemark___frontmatter___active'
-  | 'childrenMarkdownRemark___frontmatter___images'
-  | 'childrenMarkdownRemark___frontmatter___schema'
-  | 'childrenMarkdownRemark___frontmatter___schema___winner'
-  | 'childrenMarkdownRemark___frontmatter___schema___start'
-  | 'childrenMarkdownRemark___frontmatter___schema___end'
-  | 'childrenMarkdownRemark___frontmatter___schema___title'
-  | 'childrenMarkdownRemark___frontmatter___schema___type'
-  | 'childrenMarkdownRemark___frontmatter___schema___details'
-  | 'childrenMarkdownRemark___frontmatter___schema___presenters'
-  | 'childrenMarkdownRemark___frontmatter___schema___presentation'
-  | 'childrenMarkdownRemark___frontmatter___schema___href'
-  | 'childrenMarkdownRemark___frontmatter___schema___youtubeId'
   | 'childrenMarkdownRemark___frontmatter___heading'
   | 'childrenMarkdownRemark___frontmatter___lead'
   | 'childrenMarkdownRemark___frontmatter___section1___heading'
   | 'childrenMarkdownRemark___frontmatter___section1___content'
   | 'childrenMarkdownRemark___frontmatter___section1___subheading'
+  | 'childrenMarkdownRemark___frontmatter___index'
+  | 'childrenMarkdownRemark___frontmatter___location'
+  | 'childrenMarkdownRemark___frontmatter___start'
+  | 'childrenMarkdownRemark___frontmatter___end'
+  | 'childrenMarkdownRemark___frontmatter___active'
+  | 'childrenMarkdownRemark___frontmatter___schema'
+  | 'childrenMarkdownRemark___frontmatter___schema___winner'
+  | 'childrenMarkdownRemark___frontmatter___schema___end'
+  | 'childrenMarkdownRemark___frontmatter___schema___start'
+  | 'childrenMarkdownRemark___frontmatter___schema___type'
+  | 'childrenMarkdownRemark___frontmatter___schema___title'
+  | 'childrenMarkdownRemark___frontmatter___schema___details'
+  | 'childrenMarkdownRemark___frontmatter___schema___presenters'
+  | 'childrenMarkdownRemark___frontmatter___schema___href'
+  | 'childrenMarkdownRemark___frontmatter___schema___youtubeId'
+  | 'childrenMarkdownRemark___frontmatter___schema___presentation'
+  | 'childrenMarkdownRemark___frontmatter___href'
   | 'childrenMarkdownRemark___frontmatter___section2___content'
   | 'childrenMarkdownRemark___frontmatter___section2___heading'
   | 'childrenMarkdownRemark___frontmatter___section2___subheading'
-  | 'childrenMarkdownRemark___frontmatter___Telefon'
+  | 'childrenMarkdownRemark___frontmatter___images'
   | 'childrenMarkdownRemark___frontmatter___section3___heading'
   | 'childrenMarkdownRemark___frontmatter___section4___heading'
   | 'childrenMarkdownRemark___excerpt'
@@ -1898,40 +1898,40 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___avatar'
   | 'childMarkdownRemark___frontmatter___phone'
   | 'childMarkdownRemark___frontmatter___email'
-  | 'childMarkdownRemark___frontmatter___social___github'
   | 'childMarkdownRemark___frontmatter___social___linkedin'
+  | 'childMarkdownRemark___frontmatter___social___github'
   | 'childMarkdownRemark___frontmatter___social___keybase'
   | 'childMarkdownRemark___frontmatter___social___twitter'
   | 'childMarkdownRemark___frontmatter___tags'
+  | 'childMarkdownRemark___frontmatter___Telefon'
   | 'childMarkdownRemark___frontmatter___authors'
-  | 'childMarkdownRemark___frontmatter___index'
-  | 'childMarkdownRemark___frontmatter___href'
   | 'childMarkdownRemark___frontmatter___alumni'
-  | 'childMarkdownRemark___frontmatter___location'
-  | 'childMarkdownRemark___frontmatter___start'
-  | 'childMarkdownRemark___frontmatter___end'
-  | 'childMarkdownRemark___frontmatter___active'
-  | 'childMarkdownRemark___frontmatter___images'
-  | 'childMarkdownRemark___frontmatter___schema'
-  | 'childMarkdownRemark___frontmatter___schema___winner'
-  | 'childMarkdownRemark___frontmatter___schema___start'
-  | 'childMarkdownRemark___frontmatter___schema___end'
-  | 'childMarkdownRemark___frontmatter___schema___title'
-  | 'childMarkdownRemark___frontmatter___schema___type'
-  | 'childMarkdownRemark___frontmatter___schema___details'
-  | 'childMarkdownRemark___frontmatter___schema___presenters'
-  | 'childMarkdownRemark___frontmatter___schema___presentation'
-  | 'childMarkdownRemark___frontmatter___schema___href'
-  | 'childMarkdownRemark___frontmatter___schema___youtubeId'
   | 'childMarkdownRemark___frontmatter___heading'
   | 'childMarkdownRemark___frontmatter___lead'
   | 'childMarkdownRemark___frontmatter___section1___heading'
   | 'childMarkdownRemark___frontmatter___section1___content'
   | 'childMarkdownRemark___frontmatter___section1___subheading'
+  | 'childMarkdownRemark___frontmatter___index'
+  | 'childMarkdownRemark___frontmatter___location'
+  | 'childMarkdownRemark___frontmatter___start'
+  | 'childMarkdownRemark___frontmatter___end'
+  | 'childMarkdownRemark___frontmatter___active'
+  | 'childMarkdownRemark___frontmatter___schema'
+  | 'childMarkdownRemark___frontmatter___schema___winner'
+  | 'childMarkdownRemark___frontmatter___schema___end'
+  | 'childMarkdownRemark___frontmatter___schema___start'
+  | 'childMarkdownRemark___frontmatter___schema___type'
+  | 'childMarkdownRemark___frontmatter___schema___title'
+  | 'childMarkdownRemark___frontmatter___schema___details'
+  | 'childMarkdownRemark___frontmatter___schema___presenters'
+  | 'childMarkdownRemark___frontmatter___schema___href'
+  | 'childMarkdownRemark___frontmatter___schema___youtubeId'
+  | 'childMarkdownRemark___frontmatter___schema___presentation'
+  | 'childMarkdownRemark___frontmatter___href'
   | 'childMarkdownRemark___frontmatter___section2___content'
   | 'childMarkdownRemark___frontmatter___section2___heading'
   | 'childMarkdownRemark___frontmatter___section2___subheading'
-  | 'childMarkdownRemark___frontmatter___Telefon'
+  | 'childMarkdownRemark___frontmatter___images'
   | 'childMarkdownRemark___frontmatter___section3___heading'
   | 'childMarkdownRemark___frontmatter___section4___heading'
   | 'childMarkdownRemark___excerpt'
@@ -3777,45 +3777,45 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___avatar'
   | 'frontmatter___phone'
   | 'frontmatter___email'
-  | 'frontmatter___social___github'
   | 'frontmatter___social___linkedin'
+  | 'frontmatter___social___github'
   | 'frontmatter___social___keybase'
   | 'frontmatter___social___twitter'
   | 'frontmatter___tags'
+  | 'frontmatter___Telefon'
   | 'frontmatter___authors'
-  | 'frontmatter___index'
-  | 'frontmatter___href'
   | 'frontmatter___alumni'
-  | 'frontmatter___location'
-  | 'frontmatter___start'
-  | 'frontmatter___end'
-  | 'frontmatter___active'
-  | 'frontmatter___images'
-  | 'frontmatter___schema'
-  | 'frontmatter___schema___winner'
-  | 'frontmatter___schema___start'
-  | 'frontmatter___schema___end'
-  | 'frontmatter___schema___title'
-  | 'frontmatter___schema___type'
-  | 'frontmatter___schema___details'
-  | 'frontmatter___schema___location___coordinates'
-  | 'frontmatter___schema___location___title'
-  | 'frontmatter___schema___presenters'
-  | 'frontmatter___schema___externalpresenter___name'
-  | 'frontmatter___schema___externalpresenter___avatarSrc'
-  | 'frontmatter___schema___externalpresenter___href'
-  | 'frontmatter___schema___presentation'
-  | 'frontmatter___schema___href'
-  | 'frontmatter___schema___youtubeId'
   | 'frontmatter___heading'
   | 'frontmatter___lead'
   | 'frontmatter___section1___heading'
   | 'frontmatter___section1___content'
   | 'frontmatter___section1___subheading'
+  | 'frontmatter___index'
+  | 'frontmatter___location'
+  | 'frontmatter___start'
+  | 'frontmatter___end'
+  | 'frontmatter___active'
+  | 'frontmatter___schema'
+  | 'frontmatter___schema___winner'
+  | 'frontmatter___schema___end'
+  | 'frontmatter___schema___start'
+  | 'frontmatter___schema___type'
+  | 'frontmatter___schema___title'
+  | 'frontmatter___schema___location___coordinates'
+  | 'frontmatter___schema___location___title'
+  | 'frontmatter___schema___details'
+  | 'frontmatter___schema___presenters'
+  | 'frontmatter___schema___externalpresenter___name'
+  | 'frontmatter___schema___externalpresenter___avatarSrc'
+  | 'frontmatter___schema___externalpresenter___href'
+  | 'frontmatter___schema___href'
+  | 'frontmatter___schema___youtubeId'
+  | 'frontmatter___schema___presentation'
+  | 'frontmatter___href'
   | 'frontmatter___section2___content'
   | 'frontmatter___section2___heading'
   | 'frontmatter___section2___subheading'
-  | 'frontmatter___Telefon'
+  | 'frontmatter___images'
   | 'frontmatter___section3___heading'
   | 'frontmatter___section4___heading'
   | 'excerpt'

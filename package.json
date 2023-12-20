@@ -154,5 +154,8 @@
       "value-list-max-empty-lines": null
     },
     "syntax": "scss"
+  },
+  "volta": {
+    "node": "16.20.2"
   }
 }
