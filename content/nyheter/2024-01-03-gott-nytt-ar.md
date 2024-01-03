@@ -2,7 +2,7 @@
 type: news
 title: Gott nytt år!
 image: /assets/nyheter_nyar.jpg
-publishDate: 2024-01-03
+publishDate: 2023-12-31
 authors:
   - gustavhjelm
 ---
