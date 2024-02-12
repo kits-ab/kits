@@ -8,10 +8,10 @@ start: "2015-10-15"
 end: "2015-10-16"
 image: /assets/kitscon_15-2.png
 active: true
-images:
-  - /assets/kitscon_collage_15-2-01.jpg
-  - /assets/kitscon_collage_15-2-02.jpg
-  - /assets/kitscon_collage_15-2-03.jpg
+collageImages:
+  - collageImage: /assets/kitscon_collage_15-2-01.jpg
+  - collageImage: /assets/kitscon_collage_15-2-02.jpg
+  - collageImage: /assets/kitscon_collage_15-2-03.jpg
 schema:
   - details: ""
     type: boat

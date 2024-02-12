@@ -8,10 +8,10 @@ start: 2023-05-18
 end: 2023-05-21
 image: /assets/kitscon_23_1.png
 active: true
-images:
-  - /assets/kitscon_collage_amsterdam_1.jpeg
-  - /assets/kitscon_collage_amsterdam_4.jpeg
-  - /assets/kitscon_collage_amsterdam_2.jpeg
+collageImages:
+  - collageImage: /assets/kitscon_collage_amsterdam_1.jpeg
+  - collageImage: /assets/kitscon_collage_amsterdam_4.jpeg
+  - collageImage: /assets/kitscon_collage_amsterdam_2.jpeg
 schema:
   - winner: false
     start: 2023-05-18 09:30
@@ -310,4 +310,5 @@ schema:
     title: Resa Amsterdam → Göteborg med KLM1155
     type: airplane
 ---
+
 Välkomna till Amsterdam och KitsCon 23.1! Under denna KitsCon kommer vi ha en fullspäckad agenda där vi föreläser för varandra på förmiddagarna och utforskar stadens rika kultur och historia på eftermiddagarna. Vi kommer att besöka fantastiska museer, upptäcka de lokala bryggerierna och käka middag på kanalbåtar.
