@@ -114,12 +114,12 @@ collections:
           widget: boolean,
           default: false,
         }
-      - name: images
+      - name: collageImages
         label: Bilder
         widget: list
         required: false
         fields:
-          - { name: image, label: Bild, widget: image }
+          - { name: collageImage, label: Bild, widget: image }
       - name: schema
         label: Schema
         widget: list
