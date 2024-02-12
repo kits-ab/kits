@@ -8,10 +8,10 @@ start: "2015-05-21"
 end: "2015-05-24"
 image: /assets/kitscon_15-1.png
 active: true
-images:
-  - /assets/kitscon_collage_15-1-01.jpg
-  - /assets/kitscon_collage_15-1-02.jpg
-  - /assets/kitscon_collage_15-1-03.jpg
+collageImages:
+  - collageImage: /assets/kitscon_collage_15-1-01.jpg
+  - collageImage: /assets/kitscon_collage_15-1-02.jpg
+  - collageImage: /assets/kitscon_collage_15-1-03.jpg
 schema:
   - type: airplane
     title: Resa Göteborg → Esposende
