@@ -8,12 +8,11 @@ start: "2022-05-19"
 end: "2022-05-22"
 active: true
 image: /assets/kitscon_22-1.png
-images:
-  - /assets/kitscon_collage_22-1-02.jpg
-  - /assets/kitscon_collage_22-1-01.jpg
-  - /assets/kitscon_collage_22-1-03.jpg
+collageImages:
+  - collageImage: /assets/kitscon_collage_22-1-02.jpg
+  - collageImage: /assets/kitscon_collage_22-1-01.jpg
+  - collageImage: /assets/kitscon_collage_22-1-03.jpg
 schema:
-
   - title: Incheckning
     details: >-
       Vi samlas på Landvetter och dit tar vi oss i vanlig ordning i egen regi. Samåk så mycket ni kan eller ta flygbussen ut. Se till att ha giltigt pass eller nationellt ID-kort (ej körkort) med er.
@@ -22,24 +21,24 @@ schema:
       Vi samlas ganska tidigt. Vi måste checka in 2 timmar innan och sen är det lämpligt att käka lite lunch på flygplatsen innan vi åker (ta kvitto).
 
 
-      Ni får ta med ett bagage (max 23 kg) och ett handbagage (max 8 kg)  
+      Ni får ta med ett bagage (max 23 kg) och ett handbagage (max 8 kg)
     type: checkin
     start: "2022-05-19 12:30"
     end: "2022-05-19 12:45"
-    
+
   - title: Resa Göteborg → Frankfurt med LH0817
     details: Att flyga fungerar precis som tidigare förutom att man behöver **munskydd**. Osäkert om det kommer finnas munskydd där så se till att ta med er era egna.
     type: airplane
     start: "2022-05-19 14:45"
     end: "2022-05-19 16:25"
-    
+
   - title: Resa Frankfurt → Barcelona med LH1136
     details: >-
       När vi kommer fram till Barcelona kommer ni vara tvungna att visa **Covidpass** (om ni inte behövt göra det tidigare under resan). Så se till att ni har det nerladdat till era telefoner.
     type: airplane
     start: "2022-05-19 17:30"
     end: "2022-05-19 19:30"
- 
+
   - title: Transfer till hotellet
     type: bus
     start: "2022-05-19 19:30"
@@ -50,7 +49,7 @@ schema:
     details: Vi bor i dubbelrum precis som vanligt om ni inte kommit överens om något annat.
     location:
       coordinates:
-        - 41.399171 
+        - 41.399171
         - 2.200752
       title: Hotel Acta Voraport
     start: "2022-05-19 20:30"
@@ -133,7 +132,7 @@ schema:
     details: Vi behöver vara på plats **senast 16:00** och det är **3 km** att gå så se till att ni går i tid och se till att ha **bekväma skor** för det kommer bli många steg den här dagen.
     location:
       coordinates:
-        - 41.403594 
+        - 41.403594
         - 2.174362
       title: Sagrada Familia
     start: "2022-05-20 16:00"
@@ -152,12 +151,12 @@ schema:
     details: På första stoppet serveras det tapas och dryck...
     location:
       coordinates:
-        - 41.381913 
+        - 41.381913
         - 2.176385
       title: Orio
     start: "2022-05-20 19:00"
     end: "2022-05-20 21:00"
- 
+
   - title: Stopp 2, Txirimiri
     type: food
     href: https://www.tripadvisor.com/Restaurant_Review-g187497-d997288-Reviews-Txirimiri-Barcelona_Catalonia.html
@@ -260,13 +259,13 @@ schema:
       Vår guide möter upp oss på hotellet. Därefter delar vi upp oss i två grupper och får en 4 timmars guidad tur i Barcelona. Vi sammanstrålar för en typisk spansk lunch någonstans på vägen.
     start: "2022-05-22 10:00"
     end: "2022-05-22 14:00"
-    
+
   - title: Transfer till flygplatsen
     type: bus
     details: Även här kommer vi vara där ganska tidigt så när vi checkat in så är det väl lämpligt att man äter något om man ska orka med att flyga hem.
     start: "2022-05-22 15:45"
     end: "2022-05-22 16:15"
-    
+
   - title: Resa Barcelona → Frankfurt med LH1133
     type: airplane
     start: "2022-05-22 18:55"
