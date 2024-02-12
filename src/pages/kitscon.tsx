@@ -87,7 +87,9 @@ export default ({ data, location }: KitsConPageProps) => {
 
   const collageImages = findImagesByRelativePaths(
     data.collageImages.edges,
-    kitscon.frontmatter.images
+    kitscon.frontmatter.collageImages
+      ? kitscon.frontmatter.collageImages.map((collageImage) => collageImage.collageImage)
+      : []
   )
 
   const timelineEvents = kitscons.edges.map((edge) => ({
@@ -229,7 +231,9 @@ export const query = graphql`
         start
         end
         image
-        images
+        collageImages {
+          collageImage
+        }
         schema {
           start
           end
@@ -271,7 +275,9 @@ export const query = graphql`
             start
             end
             image
-            images
+            collageImages {
+              collageImage
+            }
             schema {
               start
               end
