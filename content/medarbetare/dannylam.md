@@ -5,7 +5,7 @@ title: Danny Lam
 alumni: false
 tagLine: Utvecklare
 image: /assets/medarbetare_dannylam.jpg
-avatar: /assets/medarbetare_default-avatar.jpg
+avatar: /assets/medarbetare_dannylam-avatar.jpg
 email: danny.lam@kits.se
 social:
   linkedin: https://www.linkedin.com/in/danny-lam-47180213a/
