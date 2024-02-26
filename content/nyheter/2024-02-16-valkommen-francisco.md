@@ -6,6 +6,8 @@ publishDate: 2024-02-16
 authors:
   - gustavhjelm
 ---
+<img class="image-left" src="/assets/nyheter_francisco.jpeg">
+
 Låt oss presentera KITS senaste nyförvärv - vår nya vän och kollega [Klondike Klondikeño](https://www.linkedin.com/in/ACoAAAvaHdgBBtE0AG9JNZAY-Hd3N4cHFY3Kg9U)! 👋🏻\
 \
 Som en vital del i vår fortsatta säkerhetssatsning kan vi nu äntligen välkomna Francisco till KITS!\
