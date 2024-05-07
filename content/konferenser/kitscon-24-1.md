@@ -117,6 +117,15 @@ schema:
     title: Kok i Tot Sos 2.0
     type: presentation
   - winner: false
+    start: 2024-05-09 15:50
+    end: 2024-05-09 16:30
+    details: Upplev förändringen du önskar se! Vår workshop är designad för att hjälpa
+      dig att skapa en inkluderande och positiv kultur. Lär dig beprövade strategier
+      för att främja samarbete, respekt och välbefinnande. Bli en ledare för förändring
+      och låt KITS blomstra med en ny atmosfär av gemenskap och trivsel!
+    title: Kultur på KITS
+    type: workshop
+  - winner: false
     presenters:
       - dennisdubrefjord
       - patriknilsson
@@ -133,14 +142,10 @@ schema:
     title: Fler affärsområden
     type: workshop
   - winner: false
-    start: 2024-05-09 15:50
-    end: 2024-05-09 16:30
-    details: Upplev förändringen du önskar se! Vår workshop är designad för att hjälpa
-      dig att skapa en inkluderande och positiv kultur. Lär dig beprövade strategier
-      för att främja samarbete, respekt och välbefinnande. Bli en ledare för förändring
-      och låt KITS blomstra med en ny atmosfär av gemenskap och trivsel!
-    title: Kultur på KITS
-    type: workshop
+    start: 2024-05-09 17:30
+    end: 2024-05-09 18:00
+    title: Transfer till restaurang från hotell
+    type: bus
   - winner: false
     start: 2024-05-09 18:00
     end: 2024-05-09 20:00
@@ -154,6 +159,11 @@ schema:
         - 11.589913
       title: Bier
     title: Middag
+    type: food
+  - winner: false
+    start: 2024-05-10 07:00
+    end: 2024-05-10 08:30
+    title: Frukost
     type: food
   - winner: false
     presenters:
@@ -237,6 +247,11 @@ schema:
     title: Cykla i München
     type: running
   - winner: false
+    start: 2024-05-10 19:30
+    end: 2024-05-10 20:00
+    title: Transfer till restaurang från hotell
+    type: bus
+  - winner: false
     start: 2024-05-10 20:00
     end: 2024-05-10 22:00
     details: "Middag på Königlicher Hirschgarten: https://hirschgarten.de/"
@@ -246,6 +261,11 @@ schema:
         - 11.511319
       title: Middag
     title: Middag
+    type: food
+  - winner: false
+    start: 2024-05-11 07:00
+    end: 2024-05-11 08:00
+    title: Frukost
     type: food
   - winner: false
     start: 2024-05-11 08:00
@@ -259,6 +279,11 @@ schema:
     title: Bussresa
     type: bus
   - winner: false
+    start: 2024-05-11 19:30
+    end: 2024-05-11 20:00
+    title: Transfer till restaurang
+    type: bus
+  - winner: false
     start: 2024-05-11 20:00
     end: 2024-05-11 22:00
     details: "Middag på Seehaus im Englischen Garten: https://www.kuffler.de/de/seehaus/"
@@ -269,6 +294,11 @@ schema:
       title: Seehaus
     title: Middag
     type: food
+  - winner: false
+    start: 2024-05-12 06:15
+    end: 2024-05-12 07:15
+    title: Transfer till flygplatsen
+    type: bus
   - winner: false
     start: 2024-05-12 07:15
     end: 2024-05-12 09:15
@@ -291,36 +321,6 @@ schema:
       title: Hemresa
     title: Flyg till Göteborg
     type: airplane
-  - winner: false
-    start: 2024-05-12 06:15
-    end: 2024-05-12 07:15
-    title: Transfer till flygplatsen
-    type: bus
-  - winner: false
-    start: 2024-05-11 19:30
-    end: 2024-05-11 20:00
-    title: Transfer till restaurang
-    type: bus
-  - winner: false
-    start: 2024-05-10 19:30
-    end: 2024-05-10 20:00
-    title: Transfer till restaurang från hotell
-    type: bus
-  - winner: false
-    start: 2024-05-09 17:30
-    end: 2024-05-09 18:00
-    title: Transfer till restaurang från hotell
-    type: bus
-  - winner: false
-    start: 2024-05-10 07:00
-    end: 2024-05-10 08:30
-    title: Frukost
-    type: food
-  - winner: false
-    start: 2024-05-11 07:00
-    end: 2024-05-11 08:00
-    title: Frukost
-    type: food
 ---
 
-Välkomna till München för KITSCon 24.1! Tre dagar av banbrytande kunskap, tätt sammansvetsande teambuilding och en oslagbar ölkultur. Efter inspirerande sessioner och workshops kan du utforska stadens berömda bryggerier och knyta kontakter över en kall öl. Upplev en konferens som kombinerar lärande, nätverkande och avslappning på ett unikt sätt. Missa inte chansen att vara med på denna otroligt minnesvärda upplevelse!
+Välkomna till München för KitsCon 24.1! Tre dagar av banbrytande kunskap, tätt sammansvetsande teambuilding och en oslagbar ölkultur. Efter inspirerande sessioner och workshops kan du utforska stadens berömda bryggerier och knyta kontakter över en kall öl. Upplev en konferens som kombinerar lärande, nätverkande och avslappning på ett unikt sätt. Missa inte chansen att vara med på denna otroligt minnesvärda upplevelse!
