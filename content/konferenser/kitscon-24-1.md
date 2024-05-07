@@ -6,7 +6,7 @@ tagLine: Noch-ein-Maß edition
 location: München
 start: "2024-05-09"
 end: "2024-05-12"
-image: img/picture
+image: /assets/kitscon_24_1.png
 active: true
 schema:
   - winner: false
@@ -37,8 +37,8 @@ schema:
     details: Buss till Hotell Courtyard by Marriott Munich City Center
     location:
       coordinates:
-        - 48.356074
-        - 11.790041
+        - 48.137326209289476
+        - 11.559798760914802
       title: Buss
     title: Buss till hotellet
     type: bus
@@ -46,8 +46,7 @@ schema:
     start: 2024-05-09 12:00
     end: 2024-05-09 13:00
     details: |+
-      Lunch på Hotell Courtyard by Marriott Munich City Center
-
+      Lunch på Hotellet, Oleo Pazzo Restaurant
     location:
       coordinates:
         - 48.137226
@@ -94,7 +93,7 @@ schema:
       att gå igenom vad professorna, doktorerna och PhD-studenter prestenterade under
       tre dagar i Tokyo. Därefter kommer jag försöka förklara swarm control och incremental
       neural network, med fokus på deras nytta och användningsområden.
-    title: Japansk AI (ICIAI2024)
+    title: ICIAI2024 - swarm control och incremental neural networks
     type: presentation
   - winner: false
     start: 2024-05-09 15:10
@@ -113,7 +112,7 @@ schema:
     start: 2024-05-09 15:40
     end: 2024-05-09 15:50
     details: Det har blivit dags att uppdatera KITS vision och mission. En kort genomgång
-      av resultat av vad vi kommit fram till.
+      av vad vi kommit fram till.
     title: Kok i Tot Sos 2.0
     type: presentation
   - winner: false
@@ -198,6 +197,11 @@ schema:
     title: Web LLM Attacker & Försvar
     type: presentation
   - winner: false
+    start: 2024-05-10 10:20
+    end: 2024-05-10 10:30
+    title: Kaffe och paus
+    type: coffee
+  - winner: false
     presenters:
       - lukasandersson
     start: 2024-05-10 10:30
@@ -211,23 +215,18 @@ schema:
     title: Productive Developer Dashboard
     type: presentation
   - winner: false
-    start: 2024-05-10 10:20
-    end: 2024-05-10 10:30
-    title: Kaffe och paus
-    type: coffee
-  - winner: false
     start: 2024-05-10 11:05
     end: 2024-05-10 12:00
-    details: Förståelsen av Petya-malwarens interna krypteringsmetoder är avgörande
-      för att hantera och förebygga dess hot. Genom att analysera dess krypteringsalgoritmer
-      och användning av krypteringsnycklar kan vi få insikter om hur man effektivt skyddar
-      sig mot liknande hot i framtiden.
-    title: Petya Crypto
+    details: När Petya kom var det det första ransomware:t som genom att köra i bootsektorn kunde kryptera hela disken vid omstart. Petya krypterade MFTn för att kunna utföra sitt uppdrag. I denna presentation kommer jag att prata om den första versionen av Petya, vad som hände efter att den upptäcktes och hur man kunde få tillbaka krypterings nyckeln bara med hjälp av penna och papper.
+    title: Petya malware
     type: externalpresentation
+    externalpresenter:
+      name: Francisco Blas Izquierdo Riera
+      avatarSrc: /assets/klondike.png
   - winner: false
     start: 2024-05-10 12:30
     end: 2024-05-10 14:00
-    details: "Lunch på Hofbräuhaus: https://www.hofbraeuhaus.de/en/"
+    details: "Lunch på Hofbräuhaus: https://www.hofbraeuhaus.de/en/  Promenad på 1,7 km från Hotellet."
     location:
       coordinates:
         - 48.137629
@@ -238,11 +237,16 @@ schema:
   - winner: false
     start: 2024-05-10 14:15
     end: 2024-05-10 17:15
-    details: En liten guidad tur runt München, ta rygg!
+    details: "Promenad ca 350m till Marienplatz. En liten guidad cykeltur runt München. Under cykelturen får vi se de vackraste platserna i München och lära känna staden på ett
+roligt och aktivt sätt. Från Marienplatz Münchens stora torg går turen till det kungliga palatset
+Rezidenz och sedan till det tidigare bohemiska kvarteret Schwabing och den engelska
+trädgården, en av världens största offentliga parker som anlades på 1700-talet.
+Här kan ni pausa och ta något att dricka på någon av de uteserveringarna som finns.
+Tillbaka till Münchens centrum cyklar vi längs floden Isar."
     location:
       coordinates:
-        - 48.13922425
-        - 11.565729999999999
+        - 48.13742827497843
+        - 11.575421311123076
       title: Cykel
     title: Cykla i München
     type: running
@@ -268,31 +272,58 @@ schema:
     title: Frukost
     type: food
   - winner: false
-    start: 2024-05-11 08:00
-    end: 2024-05-11 16:00
-    details: Busstur och vandring i de bayerska bergen.
+    start: 2024-05-11 10:00
+    end: 2024-05-11 11:30
+    details: "Busstur till det bayerska berget Wendelstein. Kläder efter väder ... https://www.wendelsteinbahn.de/wetter"
     location:
       coordinates:
-        - 47.702428
-        - 12.012145499999999
-      title: Alpresa
+        - 47.70269833718064
+        - 12.01357083708207
+      title: Wendelstein Zahnradbahn Bergbahnhof
+    title: Bussresa
+    type: bus
+  - winner: false
+    start: 2024-05-11 13:00
+    end: 2024-05-11 14:00
+    details: "Lunch på utsiktsrestaurangen Wendelsteinhaus https://wendelsteinhaus.de/"
+    location:
+      coordinates:
+        - 47.702305937026075
+        - 12.013158762191895957735
+      title: Wendelsteinhaus
+    title: Lunch
+    type: food
+  - winner: false
+    start: 2024-05-11 15:30
+    end: 2024-05-11 17:00
+    details: Busstur tillbaka till München och Hotellet.
+    location:
+      coordinates:
+        - 48.137326209289476
+        - 11.559798760914802
+      title: Hotell
     title: Bussresa
     type: bus
   - winner: false
     start: 2024-05-11 19:30
     end: 2024-05-11 20:00
-    title: Transfer till restaurang
+    title: Transfer till restaurang, från Hotellet
     type: bus
   - winner: false
     start: 2024-05-11 20:00
     end: 2024-05-11 22:00
-    details: "Middag på Seehaus im Englischen Garten: https://www.kuffler.de/de/seehaus/"
+    details: "Middag på Seehaus i Engelska Parken: https://www.kuffler.de/de/seehaus/"
     location:
       coordinates:
         - 48.159715500000004
         - 11.5957735
       title: Seehaus
     title: Middag
+    type: food
+  - winner: false
+    start: 2024-05-12 06:00
+    end: 2024-05-12 06:15
+    title: Utcheckning, hämta frukostpaket i receptionen.
     type: food
   - winner: false
     start: 2024-05-12 06:15
@@ -302,13 +333,13 @@ schema:
   - winner: false
     start: 2024-05-12 07:15
     end: 2024-05-12 09:15
-    details: Lämna baggage och hitta något att äta på flygplatsen
+    details: Lämna baggage och hitta avgångsgate
     location:
       coordinates:
         - 48.3543275
         - 11.7886795
-      title: Frukost
-    title: Incheckning och frukost
+      title: Pigg som en mört
+    title: Incheckning flygplats
     type: checkin
   - winner: false
     start: 2024-05-12 09:15
