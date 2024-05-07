@@ -34,7 +34,10 @@ schema:
   - winner: false
     start: 2024-05-09 10:30
     end: 2024-05-09 11:30
-    details: Buss till Hotell Courtyard by Marriott Munich City Center
+    details: |-
+      Buss till Hotell Courtyard by Marriott Munich City Center
+
+      Rankad #119 of 421 hotel i München enligt Tripadvisor
     location:
       coordinates:
         - 48.137326209289476
@@ -46,7 +49,9 @@ schema:
     start: 2024-05-09 12:00
     end: 2024-05-09 13:00
     details: |+
-      Lunch på Hotellet, Oleo Pazzo Restaurant
+      Lunch bestående av öl och korv på Hotellet, Oleo Pazzo Restaurant
+
+      Rankad #272 av 2,611 restauranger i München enligt Tripadvisor
     location:
       coordinates:
         - 48.137226
@@ -122,7 +127,7 @@ schema:
       dig att skapa en inkluderande och positiv kultur. Lär dig beprövade strategier
       för att främja samarbete, respekt och välbefinnande. Bli en ledare för förändring
       och låt KITS blomstra med en ny atmosfär av gemenskap och trivsel!
-    title: Kultur på KITS
+    title: Kultur på KITS - Workshop
     type: workshop
   - winner: false
     presenters:
@@ -137,8 +142,10 @@ schema:
   - winner: false
     start: 2024-05-09 16:45
     end: 2024-05-09 17:15
-    details: Vilket är nästa affärsområde?
-    title: Fler affärsområden
+    details: 
+      Vilket är nästa affärsområde? Efter att ha hört om Affärsområde - Säkerhet, hur fortsätter vi med att jobba med andra affärsområden 
+      på KITS?
+    title: Fler affärsområden - Workshop
     type: workshop
   - winner: false
     start: 2024-05-09 17:30
@@ -149,9 +156,11 @@ schema:
     start: 2024-05-09 18:00
     end: 2024-05-09 20:00
     details: |-
-      Middag bestående av öl och korv
-
+      Middag bestående av öl och korv på Tattenbach Wirtshaus & Stüberl 
+      
       https://www.tattenbach.de/
+      
+      Rankad #112 av 2,611 restauranger i München enligt Tripadvisor
     location:
       coordinates:
         - 48.139932
@@ -226,7 +235,12 @@ schema:
   - winner: false
     start: 2024-05-10 12:30
     end: 2024-05-10 14:00
-    details: "Lunch på Hofbräuhaus: https://www.hofbraeuhaus.de/en/  Promenad på 1,7 km från Hotellet."
+    details: |- 
+      Lunch bestående av öl och korv på Hofbräuhaus: https://www.hofbraeuhaus.de/en/  
+    
+      Promenad på 1,7 km från Hotellet.
+    
+      #433 av 2,611 restauranger i München enligt Tripadvisor#
     location:
       coordinates:
         - 48.137629
@@ -245,8 +259,8 @@ Här kan ni pausa och ta något att dricka på någon av de uteserveringarna som
 Tillbaka till Münchens centrum cyklar vi längs floden Isar."
     location:
       coordinates:
-        - 48.13754351113581
-        - 11.577245204329483
+        - 48.137251747165045
+        - 11.576207860301865
       title: Cykel
     title: Cykla i München
     type: running
@@ -258,7 +272,14 @@ Tillbaka till Münchens centrum cyklar vi längs floden Isar."
   - winner: false
     start: 2024-05-10 20:00
     end: 2024-05-10 22:00
-    details: "Middag på Königlicher Hirschgarten: https://hirschgarten.de/"
+    details: |-
+      Middag bestående av öl och korv på Königlicher Hirschgarten
+      
+      https://hirschgarten.de/
+
+      Med plats för 8000 personer har det funnits en biergarten här sedan 1791
+
+      #326 av 2,611 restauranger i München enligt Tripadvisor
     location:
       coordinates:
         - 48.149744
@@ -285,7 +306,12 @@ Tillbaka till Münchens centrum cyklar vi längs floden Isar."
   - winner: false
     start: 2024-05-11 13:00
     end: 2024-05-11 14:00
-    details: "Lunch på utsiktsrestaurangen Wendelsteinhaus (https://wendelsteinhaus.de/)"
+    details: |-
+      Lunch bestående av öl och korv på utsiktsrestaurangen Wendelsteinhaus
+      
+      https://wendelsteinhaus.de/
+
+      #20 av 20 restauranger i bayrischzell enligt Tripadvisor
     location:
       coordinates:
         - 47.702305937026075
@@ -312,7 +338,12 @@ Tillbaka till Münchens centrum cyklar vi längs floden Isar."
   - winner: false
     start: 2024-05-11 20:00
     end: 2024-05-11 22:00
-    details: "Middag på Seehaus i Engelska Parken: https://www.kuffler.de/de/seehaus/"
+    details: |-
+      Middag bestående av öl och korv på Seehaus i Engelska Parken
+      
+      https://www.kuffler.de/de/seehaus/
+
+      #327 av 2,611 restauranger i München enligt Tripadvisor
     location:
       coordinates:
         - 48.159715500000004
