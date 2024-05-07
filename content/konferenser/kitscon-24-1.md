@@ -179,7 +179,7 @@ schema:
     type: presentation
   - winner: false
     presenters:
-      - emirživčić
+      - emirzivcic
     start: 2024-05-10 09:35
     end: 2024-05-10 10:20
     details: Large Language Models (LLM) är kraftfulla AI-system som kan generera text
