@@ -4,7 +4,7 @@ id: emirzivcic
 title: Emir Živčić
 alumni: false
 tagLine: Utvecklare
-email: emir.zivcics@kits.se
+email: emir.zivcic@kits.se
 social:
   github: razrbakk
 image: /assets/medarbetare_emirzivcic.jpg
