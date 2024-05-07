@@ -245,8 +245,8 @@ Här kan ni pausa och ta något att dricka på någon av de uteserveringarna som
 Tillbaka till Münchens centrum cyklar vi längs floden Isar."
     location:
       coordinates:
-        - 48.13742827497843
-        - 11.575421311123076
+        - 48.13754351113581
+        - 11.577245204329483
       title: Cykel
     title: Cykla i München
     type: running
@@ -285,7 +285,7 @@ Tillbaka till Münchens centrum cyklar vi längs floden Isar."
   - winner: false
     start: 2024-05-11 13:00
     end: 2024-05-11 14:00
-    details: "Lunch på utsiktsrestaurangen Wendelsteinhaus https://wendelsteinhaus.de/"
+    details: "Lunch på utsiktsrestaurangen Wendelsteinhaus (https://wendelsteinhaus.de/)"
     location:
       coordinates:
         - 47.702305937026075
