@@ -48,7 +48,7 @@ schema:
   - winner: false
     start: 2024-05-09 12:00
     end: 2024-05-09 13:00
-    details: |+
+    details: |-
       Lunch bestående av öl och korv på Hotellet, Oleo Pazzo Restaurant
 
       Rankad #272 av 2,611 restauranger i München enligt Tripadvisor
@@ -187,34 +187,24 @@ schema:
     type: presentation
   - winner: false
     presenters:
-      - philiplu
-    start: 2024-05-10 09:15
-    end: 2024-05-10 09:35
-    details: "Upplev framtidens programmering med ett spännande föredrag om AI-verktyget
-      Github CoPilot! Utforska hur denna banbrytande teknologi revolutionerar kodning
-      genom att generera smarta förslag och automatisera rutinuppgifter. "
-    title: Github CoPilot
-    type: presentation
-  - winner: false
-    presenters:
       - emirzivcic
-    start: 2024-05-10 09:35
-    end: 2024-05-10 10:20
+    start: 2024-05-10 09:15
+    end: 2024-05-10 10:00
     details: Large Language Models (LLM) är kraftfulla AI-system som kan generera text
       utifrån olika frågor som ställs till den. Vi ska kolla på hur dessa LLM:er kan
       vara sårbara och hur de kan bli säkrare.
     title: Web LLM Attacker & Försvar
     type: presentation
   - winner: false
-    start: 2024-05-10 10:20
-    end: 2024-05-10 10:30
+    start: 2024-05-10 10:00
+    end: 2024-05-10 10:10
     title: Kaffe och paus
     type: coffee
   - winner: false
     presenters:
       - lukasandersson
-    start: 2024-05-10 10:30
-    end: 2024-05-10 11:05
+    start: 2024-05-10 10:10
+    end: 2024-05-10 10:45
     details: Genomgång av DevDash, en modulär dashboard skapad för att öka produktivitet
       och säkerhet bland utvecklare. Genom att använda DevDash kan man samla alla verktyg
       man använder som utvecklare på ett och samma ställe samt se till att dom exekveras
@@ -224,8 +214,8 @@ schema:
     title: Productive Developer Dashboard
     type: presentation
   - winner: false
-    start: 2024-05-10 11:05
-    end: 2024-05-10 12:00
+    start: 2024-05-10 10:45
+    end: 2024-05-10 11:45
     details: När Petya kom var det det första ransomware:t som genom att köra i bootsektorn kunde kryptera hela disken vid omstart. Petya krypterade MFTn för att kunna utföra sitt uppdrag. I denna presentation kommer jag att prata om den första versionen av Petya, vad som hände efter att den upptäcktes och hur man kunde få tillbaka krypterings nyckeln bara med hjälp av penna och papper.
     title: Petya malware
     type: externalpresentation
@@ -236,11 +226,11 @@ schema:
     start: 2024-05-10 12:30
     end: 2024-05-10 14:00
     details: |- 
-      Lunch bestående av öl och korv på Hofbräuhaus: https://www.hofbraeuhaus.de/en/  
+      Lunch bestående av öl och korv på Hofbräuhaus. Promenad på 1,7 km från Hotellet.
+      
+      https://www.hofbraeuhaus.de/en/  
     
-      Promenad på 1,7 km från Hotellet.
-    
-      #433 av 2,611 restauranger i München enligt Tripadvisor#
+      Rankad #433 av 2,611 restauranger i München enligt Tripadvisor
     location:
       coordinates:
         - 48.137629
@@ -273,13 +263,11 @@ Tillbaka till Münchens centrum cyklar vi längs floden Isar."
     start: 2024-05-10 20:00
     end: 2024-05-10 22:00
     details: |-
-      Middag bestående av öl och korv på Königlicher Hirschgarten
+      Middag bestående av öl och korv på Königlicher Hirschgarten. Med plats för 8000 personer har det funnits en biergarten här sedan 1791
       
       https://hirschgarten.de/
 
-      Med plats för 8000 personer har det funnits en biergarten här sedan 1791
-
-      #326 av 2,611 restauranger i München enligt Tripadvisor
+      Rankad #326 av 2,611 restauranger i München enligt Tripadvisor
     location:
       coordinates:
         - 48.149744
@@ -311,7 +299,7 @@ Tillbaka till Münchens centrum cyklar vi längs floden Isar."
       
       https://wendelsteinhaus.de/
 
-      #20 av 20 restauranger i bayrischzell enligt Tripadvisor
+      Rankad #20 av 20 restauranger i bayrischzell enligt Tripadvisor
     location:
       coordinates:
         - 47.702305937026075
@@ -343,7 +331,7 @@ Tillbaka till Münchens centrum cyklar vi längs floden Isar."
       
       https://www.kuffler.de/de/seehaus/
 
-      #327 av 2,611 restauranger i München enligt Tripadvisor
+      Rankad #327 av 2,611 restauranger i München enligt Tripadvisor
     location:
       coordinates:
         - 48.159715500000004
