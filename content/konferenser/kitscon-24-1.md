@@ -277,7 +277,7 @@ Tillbaka till Münchens centrum cyklar vi längs floden Isar."
     type: food
   - winner: false
     start: 2024-05-11 07:00
-    end: 2024-05-11 08:00
+    end: 2024-05-11 10:00
     title: Frukost
     type: food
   - winner: false
