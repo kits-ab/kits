@@ -7,6 +7,10 @@ location: München
 start: "2024-05-09"
 end: "2024-05-12"
 image: /assets/kitscon_24_1.png
+collageImages:
+  - collageImage: /assets/kitscon_collage_24-1-01.jpg
+  - collageImage: /assets/kitscon_collage_24-1-02.jpg
+  - collageImage: /assets/kitscon_collage_24-1-11.jpg
 active: true
 schema:
   - winner: false
