@@ -2,7 +2,7 @@
 type: person
 id: gustavhjelm
 title: Gustav Hjelm
-alumni: false
+alumni: true
 tagLine: Rekryteringsansvarig
 image: /assets/medarbetare_gustavhjelm.jpg
 avatar: /assets/medarbetare_gustavhjelm-avatar.jpg
