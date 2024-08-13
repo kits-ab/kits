@@ -19,7 +19,6 @@ export type Scalars = {
   Date: any;
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: any;
-  GatsbyImageData: any;
 };
 
 export type File = Node & {
@@ -151,7 +150,6 @@ export type Internal = {
   mediaType: Maybe<Scalars['String']>;
   owner: Scalars['String'];
   type: Scalars['String'];
-  contentFilePath: Maybe<Scalars['String']>;
 };
 
 export type Directory = Node & {
@@ -259,7 +257,6 @@ export type Site = Node & {
   pathPrefix: Maybe<Scalars['String']>;
   jsxRuntime: Maybe<Scalars['String']>;
   trailingSlash: Maybe<Scalars['String']>;
-  graphqlTypegen: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
   parent: Maybe<Node>;
   children: Array<Node>;
@@ -442,25 +439,33 @@ export type MarkdownRemarkFrontmatter = {
   email: Maybe<Scalars['String']>;
   social: Maybe<MarkdownRemarkFrontmatterSocial>;
   tags: Maybe<Array<Maybe<Scalars['String']>>>;
-  Telefon: Maybe<Scalars['String']>;
   authors: Maybe<Array<Maybe<Scalars['String']>>>;
-  alumni: Maybe<Scalars['Boolean']>;
-  heading: Maybe<Scalars['String']>;
-  lead: Maybe<Scalars['String']>;
-  section1: Maybe<MarkdownRemarkFrontmatterSection1>;
   index: Maybe<Scalars['Int']>;
+  href: Maybe<Scalars['String']>;
+  alumni: Maybe<Scalars['Boolean']>;
+  publishDate: Maybe<Scalars['Date']>;
   location: Maybe<Scalars['String']>;
   start: Maybe<Scalars['Date']>;
   end: Maybe<Scalars['Date']>;
   active: Maybe<Scalars['Boolean']>;
-  schema: Maybe<Array<Maybe<MarkdownRemarkFrontmatterSchema>>>;
-  publishDate: Maybe<Scalars['Date']>;
-  href: Maybe<Scalars['String']>;
-  section2: Maybe<MarkdownRemarkFrontmatterSection2>;
   images: Maybe<Array<Maybe<Scalars['String']>>>;
+  schema: Maybe<Array<Maybe<MarkdownRemarkFrontmatterSchema>>>;
+  heading: Maybe<Scalars['String']>;
+  lead: Maybe<Scalars['String']>;
   collageImages: Maybe<Array<Maybe<MarkdownRemarkFrontmatterCollageImages>>>;
+  section1: Maybe<MarkdownRemarkFrontmatterSection1>;
+  section2: Maybe<MarkdownRemarkFrontmatterSection2>;
+  Telefon: Maybe<Scalars['String']>;
   section3: Maybe<MarkdownRemarkFrontmatterSection3>;
   section4: Maybe<MarkdownRemarkFrontmatterSection4>;
+};
+
+
+export type MarkdownRemarkFrontmatterPublishDateArgs = {
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  difference: InputMaybe<Scalars['String']>;
+  locale: InputMaybe<Scalars['String']>;
 };
 
 
@@ -479,40 +484,26 @@ export type MarkdownRemarkFrontmatterEndArgs = {
   locale: InputMaybe<Scalars['String']>;
 };
 
-
-export type MarkdownRemarkFrontmatterPublishDateArgs = {
-  formatString: InputMaybe<Scalars['String']>;
-  fromNow: InputMaybe<Scalars['Boolean']>;
-  difference: InputMaybe<Scalars['String']>;
-  locale: InputMaybe<Scalars['String']>;
-};
-
 export type MarkdownRemarkFrontmatterSocial = {
-  linkedin: Maybe<Scalars['String']>;
   github: Maybe<Scalars['String']>;
+  linkedin: Maybe<Scalars['String']>;
   keybase: Maybe<Scalars['String']>;
   twitter: Maybe<Scalars['String']>;
 };
 
-export type MarkdownRemarkFrontmatterSection1 = {
-  heading: Maybe<Scalars['String']>;
-  content: Maybe<Scalars['String']>;
-  subheading: Maybe<Scalars['String']>;
-};
-
 export type MarkdownRemarkFrontmatterSchema = {
   winner: Maybe<Scalars['Boolean']>;
-  end: Maybe<Scalars['String']>;
   start: Maybe<Scalars['Date']>;
-  type: Maybe<Scalars['String']>;
+  end: Maybe<Scalars['String']>;
   title: Maybe<Scalars['String']>;
-  location: Maybe<MarkdownRemarkFrontmatterSchemaLocation>;
+  type: Maybe<Scalars['String']>;
   details: Maybe<Scalars['String']>;
+  location: Maybe<MarkdownRemarkFrontmatterSchemaLocation>;
   presenters: Maybe<Array<Maybe<Scalars['String']>>>;
   externalpresenter: Maybe<MarkdownRemarkFrontmatterSchemaExternalpresenter>;
+  presentation: Maybe<Scalars['String']>;
   href: Maybe<Scalars['String']>;
   youtubeId: Maybe<Scalars['String']>;
-  presentation: Maybe<Scalars['String']>;
 };
 
 
@@ -534,14 +525,20 @@ export type MarkdownRemarkFrontmatterSchemaExternalpresenter = {
   href: Maybe<Scalars['String']>;
 };
 
+export type MarkdownRemarkFrontmatterCollageImages = {
+  collageImage: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterSection1 = {
+  heading: Maybe<Scalars['String']>;
+  content: Maybe<Scalars['String']>;
+  subheading: Maybe<Scalars['String']>;
+};
+
 export type MarkdownRemarkFrontmatterSection2 = {
   content: Maybe<Scalars['String']>;
   heading: Maybe<Scalars['String']>;
   subheading: Maybe<Scalars['String']>;
-};
-
-export type MarkdownRemarkFrontmatterCollageImages = {
-  collageImage: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterSection3 = {
@@ -627,7 +624,7 @@ export type Potrace = {
 export type ImageSharp = Node & {
   fixed: Maybe<ImageSharpFixed>;
   fluid: Maybe<ImageSharpFluid>;
-  gatsbyImageData: Scalars['GatsbyImageData'];
+  gatsbyImageData: Scalars['JSON'];
   original: Maybe<ImageSharpOriginal>;
   resize: Maybe<ImageSharpResize>;
   id: Scalars['ID'];
@@ -1184,7 +1181,6 @@ export type QuerySiteArgs = {
   pathPrefix: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   trailingSlash: InputMaybe<StringQueryOperatorInput>;
-  graphqlTypegen: InputMaybe<BooleanQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -1319,7 +1315,7 @@ export type QueryAllMarkdownRemarkArgs = {
 export type QueryImageSharpArgs = {
   fixed: InputMaybe<ImageSharpFixedFilterInput>;
   fluid: InputMaybe<ImageSharpFluidFilterInput>;
-  gatsbyImageData: InputMaybe<GatsbyImageDataQueryOperatorInput>;
+  gatsbyImageData: InputMaybe<JsonQueryOperatorInput>;
   original: InputMaybe<ImageSharpOriginalFilterInput>;
   resize: InputMaybe<ImageSharpResizeFilterInput>;
   id: InputMaybe<StringQueryOperatorInput>;
@@ -1481,30 +1477,30 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   email: InputMaybe<StringQueryOperatorInput>;
   social: InputMaybe<MarkdownRemarkFrontmatterSocialFilterInput>;
   tags: InputMaybe<StringQueryOperatorInput>;
-  Telefon: InputMaybe<StringQueryOperatorInput>;
   authors: InputMaybe<StringQueryOperatorInput>;
-  alumni: InputMaybe<BooleanQueryOperatorInput>;
-  heading: InputMaybe<StringQueryOperatorInput>;
-  lead: InputMaybe<StringQueryOperatorInput>;
-  section1: InputMaybe<MarkdownRemarkFrontmatterSection1FilterInput>;
   index: InputMaybe<IntQueryOperatorInput>;
+  href: InputMaybe<StringQueryOperatorInput>;
+  alumni: InputMaybe<BooleanQueryOperatorInput>;
+  publishDate: InputMaybe<DateQueryOperatorInput>;
   location: InputMaybe<StringQueryOperatorInput>;
   start: InputMaybe<DateQueryOperatorInput>;
   end: InputMaybe<DateQueryOperatorInput>;
   active: InputMaybe<BooleanQueryOperatorInput>;
-  schema: InputMaybe<MarkdownRemarkFrontmatterSchemaFilterListInput>;
-  publishDate: InputMaybe<DateQueryOperatorInput>;
-  href: InputMaybe<StringQueryOperatorInput>;
-  section2: InputMaybe<MarkdownRemarkFrontmatterSection2FilterInput>;
   images: InputMaybe<StringQueryOperatorInput>;
+  schema: InputMaybe<MarkdownRemarkFrontmatterSchemaFilterListInput>;
+  heading: InputMaybe<StringQueryOperatorInput>;
+  lead: InputMaybe<StringQueryOperatorInput>;
   collageImages: InputMaybe<MarkdownRemarkFrontmatterCollageImagesFilterListInput>;
+  section1: InputMaybe<MarkdownRemarkFrontmatterSection1FilterInput>;
+  section2: InputMaybe<MarkdownRemarkFrontmatterSection2FilterInput>;
+  Telefon: InputMaybe<StringQueryOperatorInput>;
   section3: InputMaybe<MarkdownRemarkFrontmatterSection3FilterInput>;
   section4: InputMaybe<MarkdownRemarkFrontmatterSection4FilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterSocialFilterInput = {
-  linkedin: InputMaybe<StringQueryOperatorInput>;
   github: InputMaybe<StringQueryOperatorInput>;
+  linkedin: InputMaybe<StringQueryOperatorInput>;
   keybase: InputMaybe<StringQueryOperatorInput>;
   twitter: InputMaybe<StringQueryOperatorInput>;
 };
@@ -1516,29 +1512,23 @@ export type BooleanQueryOperatorInput = {
   nin: InputMaybe<Array<InputMaybe<Scalars['Boolean']>>>;
 };
 
-export type MarkdownRemarkFrontmatterSection1FilterInput = {
-  heading: InputMaybe<StringQueryOperatorInput>;
-  content: InputMaybe<StringQueryOperatorInput>;
-  subheading: InputMaybe<StringQueryOperatorInput>;
-};
-
 export type MarkdownRemarkFrontmatterSchemaFilterListInput = {
   elemMatch: InputMaybe<MarkdownRemarkFrontmatterSchemaFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterSchemaFilterInput = {
   winner: InputMaybe<BooleanQueryOperatorInput>;
-  end: InputMaybe<StringQueryOperatorInput>;
   start: InputMaybe<DateQueryOperatorInput>;
-  type: InputMaybe<StringQueryOperatorInput>;
+  end: InputMaybe<StringQueryOperatorInput>;
   title: InputMaybe<StringQueryOperatorInput>;
-  location: InputMaybe<MarkdownRemarkFrontmatterSchemaLocationFilterInput>;
+  type: InputMaybe<StringQueryOperatorInput>;
   details: InputMaybe<StringQueryOperatorInput>;
+  location: InputMaybe<MarkdownRemarkFrontmatterSchemaLocationFilterInput>;
   presenters: InputMaybe<StringQueryOperatorInput>;
   externalpresenter: InputMaybe<MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput>;
+  presentation: InputMaybe<StringQueryOperatorInput>;
   href: InputMaybe<StringQueryOperatorInput>;
   youtubeId: InputMaybe<StringQueryOperatorInput>;
-  presentation: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterSchemaLocationFilterInput = {
@@ -1552,18 +1542,24 @@ export type MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput = {
   href: InputMaybe<StringQueryOperatorInput>;
 };
 
-export type MarkdownRemarkFrontmatterSection2FilterInput = {
-  content: InputMaybe<StringQueryOperatorInput>;
-  heading: InputMaybe<StringQueryOperatorInput>;
-  subheading: InputMaybe<StringQueryOperatorInput>;
-};
-
 export type MarkdownRemarkFrontmatterCollageImagesFilterListInput = {
   elemMatch: InputMaybe<MarkdownRemarkFrontmatterCollageImagesFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterCollageImagesFilterInput = {
   collageImage: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterSection1FilterInput = {
+  heading: InputMaybe<StringQueryOperatorInput>;
+  content: InputMaybe<StringQueryOperatorInput>;
+  subheading: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterSection2FilterInput = {
+  content: InputMaybe<StringQueryOperatorInput>;
+  heading: InputMaybe<StringQueryOperatorInput>;
+  subheading: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterSection3FilterInput = {
@@ -1624,7 +1620,6 @@ export type InternalFilterInput = {
   mediaType: InputMaybe<StringQueryOperatorInput>;
   owner: InputMaybe<StringQueryOperatorInput>;
   type: InputMaybe<StringQueryOperatorInput>;
-  contentFilePath: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type ImageSharpFilterListInput = {
@@ -1634,7 +1629,7 @@ export type ImageSharpFilterListInput = {
 export type ImageSharpFilterInput = {
   fixed: InputMaybe<ImageSharpFixedFilterInput>;
   fluid: InputMaybe<ImageSharpFluidFilterInput>;
-  gatsbyImageData: InputMaybe<GatsbyImageDataQueryOperatorInput>;
+  gatsbyImageData: InputMaybe<JsonQueryOperatorInput>;
   original: InputMaybe<ImageSharpOriginalFilterInput>;
   resize: InputMaybe<ImageSharpResizeFilterInput>;
   id: InputMaybe<StringQueryOperatorInput>;
@@ -1669,13 +1664,6 @@ export type ImageSharpFluidFilterInput = {
   originalName: InputMaybe<StringQueryOperatorInput>;
   presentationWidth: InputMaybe<IntQueryOperatorInput>;
   presentationHeight: InputMaybe<IntQueryOperatorInput>;
-};
-
-export type GatsbyImageDataQueryOperatorInput = {
-  eq: InputMaybe<Scalars['GatsbyImageData']>;
-  ne: InputMaybe<Scalars['GatsbyImageData']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['GatsbyImageData']>>>;
-  nin: InputMaybe<Array<InputMaybe<Scalars['GatsbyImageData']>>>;
 };
 
 export type ImageSharpOriginalFilterInput = {
@@ -1835,43 +1823,43 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___avatar'
   | 'childrenMarkdownRemark___frontmatter___phone'
   | 'childrenMarkdownRemark___frontmatter___email'
-  | 'childrenMarkdownRemark___frontmatter___social___linkedin'
   | 'childrenMarkdownRemark___frontmatter___social___github'
+  | 'childrenMarkdownRemark___frontmatter___social___linkedin'
   | 'childrenMarkdownRemark___frontmatter___social___keybase'
   | 'childrenMarkdownRemark___frontmatter___social___twitter'
   | 'childrenMarkdownRemark___frontmatter___tags'
-  | 'childrenMarkdownRemark___frontmatter___Telefon'
   | 'childrenMarkdownRemark___frontmatter___authors'
-  | 'childrenMarkdownRemark___frontmatter___alumni'
-  | 'childrenMarkdownRemark___frontmatter___heading'
-  | 'childrenMarkdownRemark___frontmatter___lead'
-  | 'childrenMarkdownRemark___frontmatter___section1___heading'
-  | 'childrenMarkdownRemark___frontmatter___section1___content'
-  | 'childrenMarkdownRemark___frontmatter___section1___subheading'
   | 'childrenMarkdownRemark___frontmatter___index'
+  | 'childrenMarkdownRemark___frontmatter___href'
+  | 'childrenMarkdownRemark___frontmatter___alumni'
+  | 'childrenMarkdownRemark___frontmatter___publishDate'
   | 'childrenMarkdownRemark___frontmatter___location'
   | 'childrenMarkdownRemark___frontmatter___start'
   | 'childrenMarkdownRemark___frontmatter___end'
   | 'childrenMarkdownRemark___frontmatter___active'
+  | 'childrenMarkdownRemark___frontmatter___images'
   | 'childrenMarkdownRemark___frontmatter___schema'
   | 'childrenMarkdownRemark___frontmatter___schema___winner'
-  | 'childrenMarkdownRemark___frontmatter___schema___end'
   | 'childrenMarkdownRemark___frontmatter___schema___start'
-  | 'childrenMarkdownRemark___frontmatter___schema___type'
+  | 'childrenMarkdownRemark___frontmatter___schema___end'
   | 'childrenMarkdownRemark___frontmatter___schema___title'
+  | 'childrenMarkdownRemark___frontmatter___schema___type'
   | 'childrenMarkdownRemark___frontmatter___schema___details'
   | 'childrenMarkdownRemark___frontmatter___schema___presenters'
+  | 'childrenMarkdownRemark___frontmatter___schema___presentation'
   | 'childrenMarkdownRemark___frontmatter___schema___href'
   | 'childrenMarkdownRemark___frontmatter___schema___youtubeId'
-  | 'childrenMarkdownRemark___frontmatter___schema___presentation'
-  | 'childrenMarkdownRemark___frontmatter___publishDate'
-  | 'childrenMarkdownRemark___frontmatter___href'
+  | 'childrenMarkdownRemark___frontmatter___heading'
+  | 'childrenMarkdownRemark___frontmatter___lead'
+  | 'childrenMarkdownRemark___frontmatter___collageImages'
+  | 'childrenMarkdownRemark___frontmatter___collageImages___collageImage'
+  | 'childrenMarkdownRemark___frontmatter___section1___heading'
+  | 'childrenMarkdownRemark___frontmatter___section1___content'
+  | 'childrenMarkdownRemark___frontmatter___section1___subheading'
   | 'childrenMarkdownRemark___frontmatter___section2___content'
   | 'childrenMarkdownRemark___frontmatter___section2___heading'
   | 'childrenMarkdownRemark___frontmatter___section2___subheading'
-  | 'childrenMarkdownRemark___frontmatter___images'
-  | 'childrenMarkdownRemark___frontmatter___collageImages'
-  | 'childrenMarkdownRemark___frontmatter___collageImages___collageImage'
+  | 'childrenMarkdownRemark___frontmatter___Telefon'
   | 'childrenMarkdownRemark___frontmatter___section3___heading'
   | 'childrenMarkdownRemark___frontmatter___section4___heading'
   | 'childrenMarkdownRemark___excerpt'
@@ -1905,7 +1893,6 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___parent___internal___mediaType'
   | 'childrenMarkdownRemark___parent___internal___owner'
   | 'childrenMarkdownRemark___parent___internal___type'
-  | 'childrenMarkdownRemark___parent___internal___contentFilePath'
   | 'childrenMarkdownRemark___children'
   | 'childrenMarkdownRemark___children___id'
   | 'childrenMarkdownRemark___children___parent___id'
@@ -1921,7 +1908,6 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___children___internal___mediaType'
   | 'childrenMarkdownRemark___children___internal___owner'
   | 'childrenMarkdownRemark___children___internal___type'
-  | 'childrenMarkdownRemark___children___internal___contentFilePath'
   | 'childrenMarkdownRemark___internal___content'
   | 'childrenMarkdownRemark___internal___contentDigest'
   | 'childrenMarkdownRemark___internal___description'
@@ -1930,7 +1916,6 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___internal___mediaType'
   | 'childrenMarkdownRemark___internal___owner'
   | 'childrenMarkdownRemark___internal___type'
-  | 'childrenMarkdownRemark___internal___contentFilePath'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___type'
@@ -1940,43 +1925,43 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___avatar'
   | 'childMarkdownRemark___frontmatter___phone'
   | 'childMarkdownRemark___frontmatter___email'
-  | 'childMarkdownRemark___frontmatter___social___linkedin'
   | 'childMarkdownRemark___frontmatter___social___github'
+  | 'childMarkdownRemark___frontmatter___social___linkedin'
   | 'childMarkdownRemark___frontmatter___social___keybase'
   | 'childMarkdownRemark___frontmatter___social___twitter'
   | 'childMarkdownRemark___frontmatter___tags'
-  | 'childMarkdownRemark___frontmatter___Telefon'
   | 'childMarkdownRemark___frontmatter___authors'
-  | 'childMarkdownRemark___frontmatter___alumni'
-  | 'childMarkdownRemark___frontmatter___heading'
-  | 'childMarkdownRemark___frontmatter___lead'
-  | 'childMarkdownRemark___frontmatter___section1___heading'
-  | 'childMarkdownRemark___frontmatter___section1___content'
-  | 'childMarkdownRemark___frontmatter___section1___subheading'
   | 'childMarkdownRemark___frontmatter___index'
+  | 'childMarkdownRemark___frontmatter___href'
+  | 'childMarkdownRemark___frontmatter___alumni'
+  | 'childMarkdownRemark___frontmatter___publishDate'
   | 'childMarkdownRemark___frontmatter___location'
   | 'childMarkdownRemark___frontmatter___start'
   | 'childMarkdownRemark___frontmatter___end'
   | 'childMarkdownRemark___frontmatter___active'
+  | 'childMarkdownRemark___frontmatter___images'
   | 'childMarkdownRemark___frontmatter___schema'
   | 'childMarkdownRemark___frontmatter___schema___winner'
-  | 'childMarkdownRemark___frontmatter___schema___end'
   | 'childMarkdownRemark___frontmatter___schema___start'
-  | 'childMarkdownRemark___frontmatter___schema___type'
+  | 'childMarkdownRemark___frontmatter___schema___end'
   | 'childMarkdownRemark___frontmatter___schema___title'
+  | 'childMarkdownRemark___frontmatter___schema___type'
   | 'childMarkdownRemark___frontmatter___schema___details'
   | 'childMarkdownRemark___frontmatter___schema___presenters'
+  | 'childMarkdownRemark___frontmatter___schema___presentation'
   | 'childMarkdownRemark___frontmatter___schema___href'
   | 'childMarkdownRemark___frontmatter___schema___youtubeId'
-  | 'childMarkdownRemark___frontmatter___schema___presentation'
-  | 'childMarkdownRemark___frontmatter___publishDate'
-  | 'childMarkdownRemark___frontmatter___href'
+  | 'childMarkdownRemark___frontmatter___heading'
+  | 'childMarkdownRemark___frontmatter___lead'
+  | 'childMarkdownRemark___frontmatter___collageImages'
+  | 'childMarkdownRemark___frontmatter___collageImages___collageImage'
+  | 'childMarkdownRemark___frontmatter___section1___heading'
+  | 'childMarkdownRemark___frontmatter___section1___content'
+  | 'childMarkdownRemark___frontmatter___section1___subheading'
   | 'childMarkdownRemark___frontmatter___section2___content'
   | 'childMarkdownRemark___frontmatter___section2___heading'
   | 'childMarkdownRemark___frontmatter___section2___subheading'
-  | 'childMarkdownRemark___frontmatter___images'
-  | 'childMarkdownRemark___frontmatter___collageImages'
-  | 'childMarkdownRemark___frontmatter___collageImages___collageImage'
+  | 'childMarkdownRemark___frontmatter___Telefon'
   | 'childMarkdownRemark___frontmatter___section3___heading'
   | 'childMarkdownRemark___frontmatter___section4___heading'
   | 'childMarkdownRemark___excerpt'
@@ -2010,7 +1995,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___parent___internal___mediaType'
   | 'childMarkdownRemark___parent___internal___owner'
   | 'childMarkdownRemark___parent___internal___type'
-  | 'childMarkdownRemark___parent___internal___contentFilePath'
   | 'childMarkdownRemark___children'
   | 'childMarkdownRemark___children___id'
   | 'childMarkdownRemark___children___parent___id'
@@ -2026,7 +2010,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___children___internal___mediaType'
   | 'childMarkdownRemark___children___internal___owner'
   | 'childMarkdownRemark___children___internal___type'
-  | 'childMarkdownRemark___children___internal___contentFilePath'
   | 'childMarkdownRemark___internal___content'
   | 'childMarkdownRemark___internal___contentDigest'
   | 'childMarkdownRemark___internal___description'
@@ -2035,7 +2018,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___internal___mediaType'
   | 'childMarkdownRemark___internal___owner'
   | 'childMarkdownRemark___internal___type'
-  | 'childMarkdownRemark___internal___contentFilePath'
   | 'childrenImageSharp'
   | 'childrenImageSharp___fixed___base64'
   | 'childrenImageSharp___fixed___tracedSVG'
@@ -2084,7 +2066,6 @@ export type FileFieldsEnum =
   | 'childrenImageSharp___parent___internal___mediaType'
   | 'childrenImageSharp___parent___internal___owner'
   | 'childrenImageSharp___parent___internal___type'
-  | 'childrenImageSharp___parent___internal___contentFilePath'
   | 'childrenImageSharp___children'
   | 'childrenImageSharp___children___id'
   | 'childrenImageSharp___children___parent___id'
@@ -2100,7 +2081,6 @@ export type FileFieldsEnum =
   | 'childrenImageSharp___children___internal___mediaType'
   | 'childrenImageSharp___children___internal___owner'
   | 'childrenImageSharp___children___internal___type'
-  | 'childrenImageSharp___children___internal___contentFilePath'
   | 'childrenImageSharp___internal___content'
   | 'childrenImageSharp___internal___contentDigest'
   | 'childrenImageSharp___internal___description'
@@ -2109,7 +2089,6 @@ export type FileFieldsEnum =
   | 'childrenImageSharp___internal___mediaType'
   | 'childrenImageSharp___internal___owner'
   | 'childrenImageSharp___internal___type'
-  | 'childrenImageSharp___internal___contentFilePath'
   | 'childImageSharp___fixed___base64'
   | 'childImageSharp___fixed___tracedSVG'
   | 'childImageSharp___fixed___aspectRatio'
@@ -2157,7 +2136,6 @@ export type FileFieldsEnum =
   | 'childImageSharp___parent___internal___mediaType'
   | 'childImageSharp___parent___internal___owner'
   | 'childImageSharp___parent___internal___type'
-  | 'childImageSharp___parent___internal___contentFilePath'
   | 'childImageSharp___children'
   | 'childImageSharp___children___id'
   | 'childImageSharp___children___parent___id'
@@ -2173,7 +2151,6 @@ export type FileFieldsEnum =
   | 'childImageSharp___children___internal___mediaType'
   | 'childImageSharp___children___internal___owner'
   | 'childImageSharp___children___internal___type'
-  | 'childImageSharp___children___internal___contentFilePath'
   | 'childImageSharp___internal___content'
   | 'childImageSharp___internal___contentDigest'
   | 'childImageSharp___internal___description'
@@ -2182,7 +2159,6 @@ export type FileFieldsEnum =
   | 'childImageSharp___internal___mediaType'
   | 'childImageSharp___internal___owner'
   | 'childImageSharp___internal___type'
-  | 'childImageSharp___internal___contentFilePath'
   | 'childrenContentYaml'
   | 'childrenContentYaml___id'
   | 'childrenContentYaml___parent___id'
@@ -2199,7 +2175,6 @@ export type FileFieldsEnum =
   | 'childrenContentYaml___parent___internal___mediaType'
   | 'childrenContentYaml___parent___internal___owner'
   | 'childrenContentYaml___parent___internal___type'
-  | 'childrenContentYaml___parent___internal___contentFilePath'
   | 'childrenContentYaml___children'
   | 'childrenContentYaml___children___id'
   | 'childrenContentYaml___children___parent___id'
@@ -2215,7 +2190,6 @@ export type FileFieldsEnum =
   | 'childrenContentYaml___children___internal___mediaType'
   | 'childrenContentYaml___children___internal___owner'
   | 'childrenContentYaml___children___internal___type'
-  | 'childrenContentYaml___children___internal___contentFilePath'
   | 'childrenContentYaml___internal___content'
   | 'childrenContentYaml___internal___contentDigest'
   | 'childrenContentYaml___internal___description'
@@ -2224,7 +2198,6 @@ export type FileFieldsEnum =
   | 'childrenContentYaml___internal___mediaType'
   | 'childrenContentYaml___internal___owner'
   | 'childrenContentYaml___internal___type'
-  | 'childrenContentYaml___internal___contentFilePath'
   | 'childrenContentYaml___name'
   | 'childrenContentYaml___address___street'
   | 'childrenContentYaml___address___postalCode'
@@ -2256,7 +2229,6 @@ export type FileFieldsEnum =
   | 'childContentYaml___parent___internal___mediaType'
   | 'childContentYaml___parent___internal___owner'
   | 'childContentYaml___parent___internal___type'
-  | 'childContentYaml___parent___internal___contentFilePath'
   | 'childContentYaml___children'
   | 'childContentYaml___children___id'
   | 'childContentYaml___children___parent___id'
@@ -2272,7 +2244,6 @@ export type FileFieldsEnum =
   | 'childContentYaml___children___internal___mediaType'
   | 'childContentYaml___children___internal___owner'
   | 'childContentYaml___children___internal___type'
-  | 'childContentYaml___children___internal___contentFilePath'
   | 'childContentYaml___internal___content'
   | 'childContentYaml___internal___contentDigest'
   | 'childContentYaml___internal___description'
@@ -2281,7 +2252,6 @@ export type FileFieldsEnum =
   | 'childContentYaml___internal___mediaType'
   | 'childContentYaml___internal___owner'
   | 'childContentYaml___internal___type'
-  | 'childContentYaml___internal___contentFilePath'
   | 'childContentYaml___name'
   | 'childContentYaml___address___street'
   | 'childContentYaml___address___postalCode'
@@ -2314,7 +2284,6 @@ export type FileFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -2330,7 +2299,6 @@ export type FileFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -2339,7 +2307,6 @@ export type FileFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -2356,7 +2323,6 @@ export type FileFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -2372,7 +2338,6 @@ export type FileFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -2381,7 +2346,6 @@ export type FileFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -2389,8 +2353,7 @@ export type FileFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'internal___contentFilePath';
+  | 'internal___type';
 
 export type FileGroupConnection = {
   totalCount: Scalars['Int'];
@@ -2582,7 +2545,6 @@ export type DirectoryFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -2598,7 +2560,6 @@ export type DirectoryFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -2607,7 +2568,6 @@ export type DirectoryFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -2624,7 +2584,6 @@ export type DirectoryFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -2640,7 +2599,6 @@ export type DirectoryFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -2649,7 +2607,6 @@ export type DirectoryFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -2657,8 +2614,7 @@ export type DirectoryFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'internal___contentFilePath';
+  | 'internal___type';
 
 export type DirectoryGroupConnection = {
   totalCount: Scalars['Int'];
@@ -2810,7 +2766,6 @@ export type SiteFieldsEnum =
   | 'pathPrefix'
   | 'jsxRuntime'
   | 'trailingSlash'
-  | 'graphqlTypegen'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2827,7 +2782,6 @@ export type SiteFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -2843,7 +2797,6 @@ export type SiteFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -2852,7 +2805,6 @@ export type SiteFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -2869,7 +2821,6 @@ export type SiteFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -2885,7 +2836,6 @@ export type SiteFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -2894,7 +2844,6 @@ export type SiteFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -2902,8 +2851,7 @@ export type SiteFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'internal___contentFilePath';
+  | 'internal___type';
 
 export type SiteGroupConnection = {
   totalCount: Scalars['Int'];
@@ -2955,7 +2903,6 @@ export type SiteFilterInput = {
   pathPrefix: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   trailingSlash: InputMaybe<StringQueryOperatorInput>;
-  graphqlTypegen: InputMaybe<BooleanQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -3036,7 +2983,6 @@ export type SiteFunctionFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -3052,7 +2998,6 @@ export type SiteFunctionFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -3061,7 +3006,6 @@ export type SiteFunctionFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -3078,7 +3022,6 @@ export type SiteFunctionFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -3094,7 +3037,6 @@ export type SiteFunctionFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -3103,7 +3045,6 @@ export type SiteFunctionFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -3111,8 +3052,7 @@ export type SiteFunctionFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'internal___contentFilePath';
+  | 'internal___type';
 
 export type SiteFunctionGroupConnection = {
   totalCount: Scalars['Int'];
@@ -3266,7 +3206,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___parent___internal___mediaType'
   | 'pluginCreator___parent___internal___owner'
   | 'pluginCreator___parent___internal___type'
-  | 'pluginCreator___parent___internal___contentFilePath'
   | 'pluginCreator___children'
   | 'pluginCreator___children___id'
   | 'pluginCreator___children___parent___id'
@@ -3282,7 +3221,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___children___internal___mediaType'
   | 'pluginCreator___children___internal___owner'
   | 'pluginCreator___children___internal___type'
-  | 'pluginCreator___children___internal___contentFilePath'
   | 'pluginCreator___internal___content'
   | 'pluginCreator___internal___contentDigest'
   | 'pluginCreator___internal___description'
@@ -3291,7 +3229,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___internal___mediaType'
   | 'pluginCreator___internal___owner'
   | 'pluginCreator___internal___type'
-  | 'pluginCreator___internal___contentFilePath'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -3308,7 +3245,6 @@ export type SitePageFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -3324,7 +3260,6 @@ export type SitePageFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -3333,7 +3268,6 @@ export type SitePageFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -3350,7 +3284,6 @@ export type SitePageFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -3366,7 +3299,6 @@ export type SitePageFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -3375,7 +3307,6 @@ export type SitePageFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -3383,8 +3314,7 @@ export type SitePageFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'internal___contentFilePath';
+  | 'internal___type';
 
 export type SitePageGroupConnection = {
   totalCount: Scalars['Int'];
@@ -3517,7 +3447,6 @@ export type SitePluginFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -3533,7 +3462,6 @@ export type SitePluginFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -3542,7 +3470,6 @@ export type SitePluginFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -3559,7 +3486,6 @@ export type SitePluginFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -3575,7 +3501,6 @@ export type SitePluginFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -3584,7 +3509,6 @@ export type SitePluginFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -3592,8 +3516,7 @@ export type SitePluginFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'internal___contentFilePath';
+  | 'internal___type';
 
 export type SitePluginGroupConnection = {
   totalCount: Scalars['Int'];
@@ -3704,7 +3627,6 @@ export type SiteBuildMetadataFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -3720,7 +3642,6 @@ export type SiteBuildMetadataFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -3729,7 +3650,6 @@ export type SiteBuildMetadataFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -3746,7 +3666,6 @@ export type SiteBuildMetadataFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -3762,7 +3681,6 @@ export type SiteBuildMetadataFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -3771,7 +3689,6 @@ export type SiteBuildMetadataFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -3779,8 +3696,7 @@ export type SiteBuildMetadataFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'internal___contentFilePath';
+  | 'internal___type';
 
 export type SiteBuildMetadataGroupConnection = {
   totalCount: Scalars['Int'];
@@ -3891,48 +3807,48 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___avatar'
   | 'frontmatter___phone'
   | 'frontmatter___email'
-  | 'frontmatter___social___linkedin'
   | 'frontmatter___social___github'
+  | 'frontmatter___social___linkedin'
   | 'frontmatter___social___keybase'
   | 'frontmatter___social___twitter'
   | 'frontmatter___tags'
-  | 'frontmatter___Telefon'
   | 'frontmatter___authors'
-  | 'frontmatter___alumni'
-  | 'frontmatter___heading'
-  | 'frontmatter___lead'
-  | 'frontmatter___section1___heading'
-  | 'frontmatter___section1___content'
-  | 'frontmatter___section1___subheading'
   | 'frontmatter___index'
+  | 'frontmatter___href'
+  | 'frontmatter___alumni'
+  | 'frontmatter___publishDate'
   | 'frontmatter___location'
   | 'frontmatter___start'
   | 'frontmatter___end'
   | 'frontmatter___active'
+  | 'frontmatter___images'
   | 'frontmatter___schema'
   | 'frontmatter___schema___winner'
-  | 'frontmatter___schema___end'
   | 'frontmatter___schema___start'
-  | 'frontmatter___schema___type'
+  | 'frontmatter___schema___end'
   | 'frontmatter___schema___title'
+  | 'frontmatter___schema___type'
+  | 'frontmatter___schema___details'
   | 'frontmatter___schema___location___coordinates'
   | 'frontmatter___schema___location___title'
-  | 'frontmatter___schema___details'
   | 'frontmatter___schema___presenters'
   | 'frontmatter___schema___externalpresenter___name'
   | 'frontmatter___schema___externalpresenter___avatarSrc'
   | 'frontmatter___schema___externalpresenter___href'
+  | 'frontmatter___schema___presentation'
   | 'frontmatter___schema___href'
   | 'frontmatter___schema___youtubeId'
-  | 'frontmatter___schema___presentation'
-  | 'frontmatter___publishDate'
-  | 'frontmatter___href'
+  | 'frontmatter___heading'
+  | 'frontmatter___lead'
+  | 'frontmatter___collageImages'
+  | 'frontmatter___collageImages___collageImage'
+  | 'frontmatter___section1___heading'
+  | 'frontmatter___section1___content'
+  | 'frontmatter___section1___subheading'
   | 'frontmatter___section2___content'
   | 'frontmatter___section2___heading'
   | 'frontmatter___section2___subheading'
-  | 'frontmatter___images'
-  | 'frontmatter___collageImages'
-  | 'frontmatter___collageImages___collageImage'
+  | 'frontmatter___Telefon'
   | 'frontmatter___section3___heading'
   | 'frontmatter___section4___heading'
   | 'excerpt'
@@ -3967,7 +3883,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -3983,7 +3898,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -3992,7 +3906,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -4009,7 +3922,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -4025,7 +3937,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -4034,7 +3945,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -4042,8 +3952,7 @@ export type MarkdownRemarkFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'internal___contentFilePath';
+  | 'internal___type';
 
 export type MarkdownRemarkGroupConnection = {
   totalCount: Scalars['Int'];
@@ -4185,7 +4094,6 @@ export type ImageSharpFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -4201,7 +4109,6 @@ export type ImageSharpFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -4210,7 +4117,6 @@ export type ImageSharpFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -4227,7 +4133,6 @@ export type ImageSharpFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -4243,7 +4148,6 @@ export type ImageSharpFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -4252,7 +4156,6 @@ export type ImageSharpFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -4260,8 +4163,7 @@ export type ImageSharpFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'internal___contentFilePath';
+  | 'internal___type';
 
 export type ImageSharpGroupConnection = {
   totalCount: Scalars['Int'];
@@ -4531,7 +4433,6 @@ export type TeamtailorJobFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -4547,7 +4448,6 @@ export type TeamtailorJobFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -4556,7 +4456,6 @@ export type TeamtailorJobFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -4573,7 +4472,6 @@ export type TeamtailorJobFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -4589,7 +4487,6 @@ export type TeamtailorJobFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -4598,7 +4495,6 @@ export type TeamtailorJobFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -4607,7 +4503,6 @@ export type TeamtailorJobFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
-  | 'internal___contentFilePath'
   | 'type'
   | 'links___careersite_job_url'
   | 'links___careersite_job_apply_url'
@@ -4770,7 +4665,6 @@ export type O365UserFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -4786,7 +4680,6 @@ export type O365UserFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -4795,7 +4688,6 @@ export type O365UserFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -4812,7 +4704,6 @@ export type O365UserFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -4828,7 +4719,6 @@ export type O365UserFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -4837,7 +4727,6 @@ export type O365UserFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -4846,7 +4735,6 @@ export type O365UserFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
-  | 'internal___contentFilePath'
   | 'businessPhones'
   | 'displayName'
   | 'givenName'
@@ -4981,7 +4869,6 @@ export type ContentYamlFieldsEnum =
   | 'parent___parent___internal___mediaType'
   | 'parent___parent___internal___owner'
   | 'parent___parent___internal___type'
-  | 'parent___parent___internal___contentFilePath'
   | 'parent___children'
   | 'parent___children___id'
   | 'parent___children___parent___id'
@@ -4997,7 +4884,6 @@ export type ContentYamlFieldsEnum =
   | 'parent___children___internal___mediaType'
   | 'parent___children___internal___owner'
   | 'parent___children___internal___type'
-  | 'parent___children___internal___contentFilePath'
   | 'parent___internal___content'
   | 'parent___internal___contentDigest'
   | 'parent___internal___description'
@@ -5006,7 +4892,6 @@ export type ContentYamlFieldsEnum =
   | 'parent___internal___mediaType'
   | 'parent___internal___owner'
   | 'parent___internal___type'
-  | 'parent___internal___contentFilePath'
   | 'children'
   | 'children___id'
   | 'children___parent___id'
@@ -5023,7 +4908,6 @@ export type ContentYamlFieldsEnum =
   | 'children___parent___internal___mediaType'
   | 'children___parent___internal___owner'
   | 'children___parent___internal___type'
-  | 'children___parent___internal___contentFilePath'
   | 'children___children'
   | 'children___children___id'
   | 'children___children___parent___id'
@@ -5039,7 +4923,6 @@ export type ContentYamlFieldsEnum =
   | 'children___children___internal___mediaType'
   | 'children___children___internal___owner'
   | 'children___children___internal___type'
-  | 'children___children___internal___contentFilePath'
   | 'children___internal___content'
   | 'children___internal___contentDigest'
   | 'children___internal___description'
@@ -5048,7 +4931,6 @@ export type ContentYamlFieldsEnum =
   | 'children___internal___mediaType'
   | 'children___internal___owner'
   | 'children___internal___type'
-  | 'children___internal___contentFilePath'
   | 'internal___content'
   | 'internal___contentDigest'
   | 'internal___description'
@@ -5057,7 +4939,6 @@ export type ContentYamlFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
-  | 'internal___contentFilePath'
   | 'name'
   | 'address___street'
   | 'address___postalCode'
