@@ -18,7 +18,7 @@ tags:
   - java
   - C#
   - GO
-  - pyton
+  - python
 ---
 
 Attila är en glad prick som älskar teknik, människa och samspelet där emellan. Honom kan ni ställa frågor rörande Pyton, C#, Java, GO och molnet. 
