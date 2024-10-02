@@ -21,6 +21,6 @@ tags:
   - python
 ---
 
-Attila är en glad prick som älskar teknik, människa och samspelet där emellan. Honom kan ni ställa frågor rörande Pyton, C#, Java, GO och molnet. 
+Attila är en glad prick som älskar teknik, människa och samspelet där emellan. Honom kan ni ställa frågor rörande python, C#, Java, GO och molnet. 
 
 Han är en av KITS nya satsning inom cybersäkerhet och är på god väg att ta en handfull certifikationer för att bli nästan lika vass som Dennis Dubrefjord.  
