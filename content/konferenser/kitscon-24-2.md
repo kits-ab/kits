@@ -50,6 +50,19 @@ schema:
 
   - winner: false
     start: 2024-10-11 09:00
+    end: 2024-10-11 12:30
+    title: AI hela dagen!
+    details: Vi lär oss mycket mer om AI!
+    type: workshop
+
+  - winner: false
+    start: 2024-10-11 12:30
+    end: 2024-10-11 13:30
+    title: Lunch
+    type: food
+
+  - winner: false
+    start: 2024-10-11 13:30
     end: 2024-10-11 15:30
     title: AI hela dagen!
     details: Vi lär oss mycket mer om AI!
@@ -88,21 +101,26 @@ schema:
 
   - winner: false
     start: 2024-10-12 09:00
-    end: 2024-10-12 12:00
+    end: 2024-10-12 11:30
     details: Vi knyter ihop våra AI-projekt
     title: AI nästa dag!
     type: workshop
-
   - winner: false
-    start: 2024-10-12 12:00
-    end: 2024-10-12 13:00
+    start: 2024-10-12 11:30
+    end: 2024-10-12 12:30
     details: Dags att presentera vad vi kommit fram till under konferensen!
     title: Presentation och avslutning
     type: workshop
 
   - winner: false
-    start: 2024-10-12 13:00
-    end: 2024-10-12 14:00
+    start: 2024-10-12 12:30
+    end: 2024-10-12 13:30
+    title: Lunch
+    type: food
+
+  - winner: false
+    start: 2024-10-12 13:30
+    end: 2024-10-12 14:30
     title: Hemresa
     type: airplane
 ---
