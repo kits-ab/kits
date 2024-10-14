@@ -10,5 +10,5 @@ section2:
   content: Ta kontakt med oss och berätta vad du vill ha hjälp med.
   heading: Låter det intressant?
 images:
-  - /assets/cyberakademi.jpg
+  - /assets/cyberacademy_bild1.png
 ---

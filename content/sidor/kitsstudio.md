@@ -10,5 +10,5 @@ section2:
   content: Ta kontakt med oss och berätta vad du vill ha hjälp med.
   heading: Låter det intressant?
 images:
-  - /assets/kitsstudio.jpg
+  - /assets/kitsstudio_bild1.png
 ---
