@@ -72,12 +72,6 @@ export default ({ data, location }: AboutPageProps) => {
         </Vertical>
       </Horizontal>
 
-      <Breakout>
-        <Wrapper maxWidth={width.max} spacing={spacing.large}>
-          <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
-          <PersonList />
-        </Wrapper>
-      </Breakout>
     </DefaultLayout>
   )
 }
