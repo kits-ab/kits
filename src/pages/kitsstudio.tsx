@@ -35,7 +35,7 @@ const StyledImage = styled(Image)`
   }
 `
 
-interface KitsstudioPageProps extends PageProps {
+interface KitsStudioPageProps extends PageProps {
   data: {
     page: MarkdownRemarkConnection
     projects: MarkdownRemarkConnection
@@ -44,7 +44,7 @@ interface KitsstudioPageProps extends PageProps {
   }
 }
 
-export default ({ data, location }: KitsstudioPageProps) => {
+export default ({ data, location }: KitsStudioPageProps) => {
   const page = data.page.edges[0]
   const projects = data.projects.edges
   const images = data.projectImages.edges

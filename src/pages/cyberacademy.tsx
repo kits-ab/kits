@@ -35,7 +35,7 @@ const StyledImage = styled(Image)`
   }
 `
 
-interface CyberacademyPageProps extends PageProps {
+interface CyberAcademyPageProps extends PageProps {
   data: {
     page: MarkdownRemarkConnection
     projects: MarkdownRemarkConnection
@@ -44,7 +44,7 @@ interface CyberacademyPageProps extends PageProps {
   }
 }
 
-export default ({ data, location }: CyberacademyPageProps) => {
+export default ({ data, location }: CyberAcademyPageProps) => {
   const page = data.page.edges[0]
   const projects = data.projects.edges
   const images = data.projectImages.edges
