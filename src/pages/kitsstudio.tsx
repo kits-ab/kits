@@ -113,7 +113,7 @@ export const pageQuery = graphql`
     }
 
     projects: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "security_project" } } }
+      filter: { frontmatter: { type: { eq: "kitsstudio_project" } } }
       sort: { order: DESC, fields: [frontmatter___index] }
     ) {
       edges {
