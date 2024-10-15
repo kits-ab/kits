@@ -1,5 +1,7 @@
 import {
   Button,
+  ContentHeading,
+  Horizontal,
   Image,
   Lead,
   MainHeading,
@@ -8,7 +10,8 @@ import {
   Text,
   Vertical,
   spacing,
-  types
+  types,
+  width
 } from "@kokitotsos/react-components"
 import { Alignment } from "@kokitotsos/react-components/dist/types"
 import { PageProps, graphql } from "gatsby"
@@ -35,6 +38,22 @@ const StyledImage = styled(Image)`
   }
 `
 
+const StyledMedia = styled(Media)`
+  .image-wrapper {
+    position: static;
+  }
+
+  .image-image {
+    transform: none;
+    height: auto;
+    max-width: 50%;
+    max-height: 50%;
+  }
+  img {
+    //height: 250px !important; 
+  }
+`
+
 interface CyberAcademyPageProps extends PageProps {
   data: {
     page: MarkdownRemarkConnection
@@ -49,6 +68,7 @@ export default ({ data, location }: CyberAcademyPageProps) => {
   const projects = data.projects.edges
   const images = data.projectImages.edges
   const pageImage = findImageByRelativePath(data.pageImages.edges, page.node.frontmatter.images[0])
+  const pageImage2 = findImageByRelativePath(data.pageImages.edges, page.node.frontmatter.images[1])
 
   return (
     <DefaultLayout location={location}>
@@ -56,11 +76,13 @@ export default ({ data, location }: CyberAcademyPageProps) => {
       <Vertical spacing={spacing.large} alignHorizontal={Alignment.Center}>
         <MainHeading>{page.node.frontmatter.heading}</MainHeading>
         <Lead>{page.node.frontmatter.lead}</Lead>
-        {/* TODO This image does not scale nicely */}
-        <StyledImage
-          src={pageImage && pageImage.src}
-          srcSet={pageImage && pageImage.srcSet}
-        ></StyledImage>
+         <StyledMedia
+            heading={page.node.frontmatter.content}
+            src={pageImage2 && pageImage2.src}
+            srcSet={pageImage2 && pageImage2.srcSet}
+          >
+            {page.node.html}
+          </StyledMedia>
       </Vertical>
 
       <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
@@ -99,6 +121,7 @@ export const pageQuery = graphql`
             title
             heading
             lead
+            content
             section1 {
               heading
             }
@@ -108,6 +131,7 @@ export const pageQuery = graphql`
             }
             images
           }
+          html
         }
       }
     }

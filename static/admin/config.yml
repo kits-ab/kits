@@ -421,6 +421,7 @@ collections:
       - { name: title, label: Titel }
       - { name: heading, label: Rubrik }
       - { name: lead, label: Intro, widget: text }
+      - { name: content, label: Text, widget: text }
       - name: "section1"
         label: "Sektion 1"
         required: false

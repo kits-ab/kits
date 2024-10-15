@@ -1,8 +1,7 @@
 ---
 type: cyberacademy_project
 index: 2
-title: Studieplan
+title: Från talang till expert
 image : /assets/cyberacademy_projekt2.png
 ---
-
-En studieplan är avgörande för att nå framgång i sitt lärande, oavsett ämnesområde. Den hjälper till att skapa struktur och ger en tydlig riktning genom att bryta ner stora mål till hanterbara delar. Genom att ha en välutformad studieplan blir det lättare att följa sin progression, identifiera svagheter och hålla motivationen uppe. En plan hjälper också till att hantera tid effektivt, så att man kan balansera olika uppgifter och undvika stress. Den skapar dessutom disciplin och främjar regelbundenhet, vilket är viktigt för långsiktig inlärning och fördjupning av kunskaper.
+Att gå från talang till expert inom pentest är en resa som kräver både teknisk skicklighet och ett analytiskt tänkesätt. Genom praktisk erfarenhet, kontinuerlig utbildning och förståelse för hur angripare tänker, kan en talang utvecklas till en fullfjädrad expert. Att behärska olika verktyg och tekniker, samt att ständigt hålla sig uppdaterad om de senaste säkerhetshoten, är avgörande. Genom att delta i utmaningar som CTF och arbeta med verkliga scenarier fördjupas både kunskap och förmågan att identifiera och åtgärda sårbarheter.

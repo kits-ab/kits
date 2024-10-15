@@ -61,6 +61,7 @@ export default ({ data, location }: KitsStudioPageProps) => {
           src={pageImage && pageImage.src}
           srcSet={pageImage && pageImage.srcSet}
         ></StyledImage>
+        <Text>{page.node.html}</Text>
       </Vertical>
 
       <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
@@ -108,6 +109,7 @@ export const pageQuery = graphql`
             }
             images
           }
+          html
         }
       }
     }

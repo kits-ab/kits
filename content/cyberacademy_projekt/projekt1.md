@@ -1,8 +1,9 @@
 ---
 type: cyberacademy_project
 index: 3
-title: Från talang till expert inom pentest
+title: Översikt
 image : /assets/cyberacademy_projekt1.png
 ---
+Deltagarna får tillgång till kurser, certifieringar och möjlighet att delta i riktiga pentester för att utveckla den spetskompetens som krävs för att möta dagens och framtidens säkerhetshot. Utöver den tekniska träningen som ingår i programmet får deltagarna även fördjupa sig inom ett specifikt säkerhetsområde de själva brinner för, vilket gör att vi bygger upp ett team av konsulter med djupgående och diversifierad expertis.
 
-Att gå från talang till expert inom pentest är en resa som kräver både teknisk skicklighet och ett analytiskt tänkesätt. Genom praktisk erfarenhet, kontinuerlig utbildning och förståelse för hur angripare tänker, kan en talang utvecklas till en fullfjädrad expert. Att behärska olika verktyg och tekniker, samt att ständigt hålla sig uppdaterad om de senaste säkerhetshoten, är avgörande. Genom att delta i utmaningar som CTF och arbeta med verkliga scenarier fördjupas både kunskap och förmågan att identifiera och åtgärda sårbarheter.
+Akademiansvarige Klondike Klondikeño, en framstående expert inom IT-säkerhet och kryptografi, står som mentor för deltagarna. Med sin långa erfarenhet inom både akademi och näringsliv erbjuder Klondike vägledning och inspiration som ger deltagarna ett tydligt stöd och en ovärderlig inblick i verkliga säkerhetsutmaningar.
