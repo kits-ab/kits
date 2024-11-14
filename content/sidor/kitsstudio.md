@@ -12,16 +12,22 @@ section2:
 images:
   - /assets/kitsstudio_bild1.jpg
 ---
-**KITS Studio – Mjukvarufabriken som utvecklar både system och talanger**
+## KITS Studio – Mjukvarufabriken som utvecklar både system och talanger
+KITS Studio är en del av KITS där vi fram högkvalitativ mjukvara, samtidigt som vi satsar helhjärtat på att utveckla våra konsulter till att bli bättre systemutvecklare. KITS Studio har, i en eller annan form, funnits sedan 2016.
 
-På KITS har vi förutom marknadens bästa talanger och experter, en mjukvarufabrik. Inom vår interna organisation, KITS Studio, tar vi fram högkvalitativ mjukvara samtidigt som vi satsar helhjärtat på att utveckla våra konsulter till att bli ännu bättre systemutvecklare.
+Mjukvarufabriken arbetar agilt, med fokus på iterativ systemutveckling med korta sprintar och andra moderna processer. Detta leder till effektiv utveckling med snabba leveranser och hög precision. Våra konsulter använder sig av den senaste tekniken, och de bästa arbetsmetoderna, såsom Scrum, Kanban, DevOps, CI/CD. Det gör att vi kan leverera robust, skalbar och användarvänlig mjukvara samtidigt som vi bygger effektiva team.
+### Organisation
+KITS Studio leds av personer med lång erfarenhet av produktutveckling. De har stor vana att använda sig av mjukvaruarkitektur och grundläggande principer för att bygga system som är flexibla, underhållbara och skalbara. Det är ett viktigt stöd och hjälper utvecklingsteamet att skapa högkvalitativa och långsiktigt hållbara lösningar. 
 
-I KITS Studio arbetar vi agilt, med fokus på iterativ systemutveckling med korta sprintar och moderna processer för att säkerställa effektiv utveckling och snabba leveranser med hög precision. Våra konsulter får inte bara lära sig den senaste tekniken, utan också de bästa arbetsmetoderna, såsom Scrum, Kanban, CI/CD och hur man arbetar framgångsrikt i team. Det gör att vi kan leverera robust, skalbar och användarvänlig mjukvara som överträffar förväntningarna.
-
-De som leder KITS Studio har lång erfarenhet av att använda sig av mjukvaruarkitektur och grundläggande principer som är mycket viktiga för att bygga system som är flexibla, underhållbara och skalbara. Det är ett mycket viktigt stöd och hjälper utvecklingsteamet att skapa högkvalitativa och långsiktigt hållbara lösningar. Vi väljer den mest lämpliga arkitekturen för varje specifik lösning. Mikrotjänster, monoliter, tjänsteorienterade, eventbaserade, domändrivna. Vi bygger flexibla, skalbara system som är optimerade för att möta våra kunders behov.
-
+Vi väljer lämplig arkitektur för varje specifik lösning.  Det kan vara mikrotjänster, monoliter, tjänsteorienterade, eventbaserade, domändrivna. Hela tiden med målet att möta kundens behov. KITS säkerhetsexperter är med i alla projekt och stödjer i alla faser. Det kan handla om hotmodellering, kryptografi, testning och rådgivning.
+### Produkt
+Projekt som startas har som mål att resultera i en användbar produkt, först för Kits internt, och om den håller måttet, för extern användning.
+### Lärande
+KITS Studio bygger självgående team som tar ansvar för teknik och processutveckling. Erfarenheten säger oss att i framgångsrika projekt är det viktigt att kontinuerligt utveckla kompetens och arbetssätt.  På KITS utmanar och förväntar vi oss, att alla medarbetare
+kontinuerligt lär sig nya saker både inom och utom projektens ramar.
+### Fördelar
 För dig som rekryt innebär det en unik möjlighet att växa i en miljö som kombinerar praktisk erfarenhet med ständig utbildning. Våra konsulter får verktygen att både förbättra sina tekniska färdigheter och förstå processer som gör mjukvaruutveckling snabbare och mer effektiv.
 
 För dig som kund betyder det att du får tillgång till skickliga konsulter som är tränade att leverera högkvalitativ mjukvara, anpassad för era behov. Med vår unika kombination av teknisk spets och effektiva arbetsmetoder säkerställer vi att ni får produkter som inte bara fungerar idag, utan som är redo för framtiden.
 
-KITS Studio – där vi bygger både framtidens mjukvara och de som skapar den.
+`KITS Studio – där vi bygger både framtidens mjukvara och de som skapar den.`
