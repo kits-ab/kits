@@ -1,9 +1,15 @@
 ---
 type: cyberacademy_project
 index: 3
-title: Översikt
+title: Vi satsar långsiktigt
 image : /assets/cyberacademy_projekt1.png
 ---
-Deltagarna får tillgång till kurser, certifieringar och möjlighet att delta i riktiga pentester för att utveckla den spetskompetens som krävs för att möta dagens och framtidens säkerhetshot. Utöver den tekniska träningen som ingår i programmet får deltagarna även fördjupa sig inom ett specifikt säkerhetsområde de själva brinner för, vilket gör att vi bygger upp ett team av konsulter med djupgående och diversifierad expertis.
-
-Akademiansvarige Klondike Klondikeño, en framstående expert inom IT-säkerhet och kryptografi, står som mentor för deltagarna. Med sin långa erfarenhet inom både akademi och näringsliv erbjuder Klondike vägledning och inspiration som ger deltagarna ett tydligt stöd och en ovärderlig inblick i verkliga säkerhetsutmaningar.
+Vår satsning på KITS Cyberakademi säkerställer att våra pentestare är både välutbildade och uppdaterade på de senaste säkerhetsutmaningarna och sårbarheter. Det innebär flera fördelar för våra kunder:
+#### Högkvalitativa pentester
+Våra experter genomgår en rigorös utbildning med både praktisk och teoretisk träning, vilket garanterar noggranna och effektiva penetrationstester.
+#### Tydliga rapporter 
+En viktig del av akademin att skriva rapporter, en kritisk del av pentest. En bra rapport tydliggör sårbarheter och rekommenderar åtgärder, vilket gör den avgörande för att kommunicera resultatet till både tekniker och beslutsfattare.
+#### Bred expertis
+Deltagarna i akademin får möjlighet att specialisera sig inom ett säkerhetsområde de brinner för, vilket gör att vi kan erbjuda en palett av expertis som kan svara upp till våra kunders ibland unika utmaningar.
+#### Skräddarsytt
+Genom att utbilda våra egna cybersäkerhetsexperter kan vi säkerställa att vi alltid ligger i framkant när det gäller teknik och de senaste hotbilderna, vilket ger våra kunder bättre skydd mot dagens avancerade attacker.

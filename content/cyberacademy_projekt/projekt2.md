@@ -1,7 +1,11 @@
 ---
 type: cyberacademy_project
 index: 2
-title: Från talang till expert
+title: KITS Cyberakademi 
 image : /assets/cyberacademy_projekt2.png
 ---
-Att gå från talang till expert inom pentest är en resa som kräver både teknisk skicklighet och ett analytiskt tänkesätt. Genom praktisk erfarenhet, kontinuerlig utbildning och förståelse för hur angripare tänker, kan en talang utvecklas till en fullfjädrad expert. Att behärska olika verktyg och tekniker, samt att ständigt hålla sig uppdaterad om de senaste säkerhetshoten, är avgörande. Genom att delta i utmaningar som CTF och arbeta med verkliga scenarier fördjupas både kunskap och förmågan att identifiera och åtgärda sårbarheter.
+Genom att investera i utbildning och utveckling av våra pentestare, kan vi erbjuda tjänster som inte bara är effektiva, utan också leder till långsiktigt bättre säkerhetslösningar för din organisation.
+
+KITS Cyberakademi är en satsning för att möta det växande behovet av högutbildade cybersäkerhetsexperter.  Talang till expert är något vi på KITS brinner för. Detta gynnar inte bara våra medarbetare – utan även dig som kund.
+
+Vill du veta mer om KITS Cyberakademi eller ansöka till kommande omgångar? Kontakta oss idag!
