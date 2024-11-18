@@ -4,4 +4,4 @@ index: 20
 title: Expense manager
 image : /assets/kitsstudio_projekt3.png
 ---
-Vårt interna verktyg för kvitto och utläggshantering. Enkel webapp, med integration till lön- och faktureringsystem.
+En webapp för kvitto och utläggshantering. Med integration till lön- och faktureringsystem.
