@@ -68,7 +68,6 @@ export default ({ data, location }: CyberAcademyPageProps) => {
   const projects = data.projects.edges
   const images = data.projectImages.edges
   const pageImage = findImageByRelativePath(data.pageImages.edges, page.node.frontmatter.images[0])
-  const pageImage2 = findImageByRelativePath(data.pageImages.edges, page.node.frontmatter.images[1])
 
   return (
     <DefaultLayout location={location}>
