@@ -78,8 +78,8 @@ export default ({ data, location }: CyberAcademyPageProps) => {
         <Lead>{page.node.frontmatter.lead}</Lead>
          <StyledMedia
             heading={page.node.frontmatter.content}
-            src={pageImage2 && pageImage2.src}
-            srcSet={pageImage2 && pageImage2.srcSet}
+            src={pageImage && pageImage.src}
+            srcSet={pageImage && pageImage.srcSet}
           >
             {page.node.html}
           </StyledMedia>
