@@ -2,7 +2,7 @@
 type: ot_security_project
 index: 1
 title: Få en snabb överblick med möjlighet till långsiktigt arbete
-image : /assets/ot_sakerhet_projekt2.png
+image : /assets/ot_sakerhet_projekt3.jpg
 ---
 
 Organisationer med OT miljöer får i bästa fall en bild av sin OT-miljö och dess interaktioner/integrationer med andra system och parter genom en sammanställning av rapporter från enskilda avdelningar vilket dessutom bidrar till missar på grund av "hemmablindhet". Erfarenhet har också visat att det är inte tillräckligt för att ge en korrekt bild av verkligheten på siterna utan döljer oftast mycket allvarliga risker och brister som kan påverka säkerheten men inte tillhör det man har ansvaret för vilket då missas för att man inte ser "helheten". 

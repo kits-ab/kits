@@ -2,7 +2,7 @@
 type: ot_security_project
 index: 3
 title: Ge flera möjligheten till bättre OT Säkerhet 
-image : /assets/ot_sakerhet_projekt1.png
+image : /assets/ot_sakerhet_projekt1.jpg
 ---
 Många organisationer saknar möjligheterna att hantera OT Säkerhetsfrågor pga den allmänna bristen på säkerhetskompetens på marknaden eller att de av ekonomiska skäl inte har möjlighet att skaffa intern kompetens. Dessutom saknas insikt i omfattningen och konsekvenserna av bristande OT Säkerhet. 
 
