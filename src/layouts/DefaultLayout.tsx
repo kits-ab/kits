@@ -63,6 +63,15 @@ nav {
   font-size: 12px;
   font-weight: 400;
 }
+
+.Menu-expanded {
+> a {
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Break words if necessary */
+    width: 70px; /* Set specific width */
+
+  }
+}
 `
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
