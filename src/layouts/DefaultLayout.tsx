@@ -68,7 +68,6 @@ nav {
 > a {
     white-space: break-spaces; /* Allow text to wrap */
     word-wrap: break-word; /* Break words if necessary */
-    width: 90px; /* Set specific width */
   }
 }
 `
