@@ -357,6 +357,32 @@ collections:
       - { name: href, label: Extern länk, required: false }
       - { name: body, label: Text, widget: markdown }
 
+  - name: ot_security_projects
+    label: OT Säkerhetsprojekt
+    label_singular: OT Säkerhetsprojekt
+    folder: content/ot_sak_projekt
+    create: true
+    delete: true
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { name: type, widget: hidden, default: ot_security_project }
+      - {
+          name: index,
+          label: Sorteringsindex,
+          widget: number,
+          valueType: int,
+          min: 1,
+        }
+      - { name: title, label: Rubrik }
+      - name: image
+        label: Bild
+        widget: image
+        required: false
+        pattern: ["ot_sakerhet_[a-z-]+\\.jpg", "ot_sakerhet_[a-z]+.jpg"]
+      - { name: href, label: Extern länk, required: false }
+      - { name: body, label: Text, widget: markdown }
+
   - name: kitsstudio_projects
     label: Studioprojekt
     label_singular: Studioprojekt
