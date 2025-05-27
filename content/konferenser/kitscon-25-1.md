@@ -162,7 +162,7 @@ schema:
     type: externalpresentation
     externalpresenter:
       name: Imad Alihodzic
-      avatarSrc: /assets/bosse_webb.png
+      avatarSrc: /assets/imad.jpg
     details: Corporate blunders are nothing new. Many of these blunders are widely known, such as the time Blockbuster declined to purchase Netflix, or the time Daimler-Benz lost 20 billion dollars on Chrysler. But how many remember when Ericsson created a programming language so disruptive, and so efficient, that they banned it? This is the fascinating and little known story behind Erlang.
     title: The Rise & Fall of Erlang at Ericsson
     
