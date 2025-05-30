@@ -5,6 +5,6 @@ title: Optimering och beslutsstöd
 image : /assets/ai_projekt1.png
 ---
 
-Linjär, icke-linjär och diskret optimering
-Prediktiv modellering och beslutsautomatisering
-Exempel på lösningar: ruttplanering, schemaläggning, kapacitetsplanering
+För att stötta beslutsfattande används optimeringsmetoder som t.ex. genetiska algoritmer och klassisk matematisk optimering.
+Vid prediktiva behov används övervakad inlärning för att förutse utfall. 
+För komplexa val med många begränsningar används diskret optimering för att hitta bästa lösningen inom givna ramar.
