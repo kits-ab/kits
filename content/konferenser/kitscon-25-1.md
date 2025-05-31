@@ -99,8 +99,8 @@ schema:
     externalpresenter:
       name: Jacob Rippe
       avatarSrc: /assets/bosse_webb.png
-    details: Ett djupdyk i hur man själv kan specialanpassa saker för sökbarhet.
-    title: Musiknoter sökbara via midi och lilypond-notation
+    details: Vad är sök, och vad gör man när man jobbar med sök? Här kommer en snabbgenomgång av funktionalitet och möjligheter som sökmotorer för med sig, följt av presentation och demo av ett hobbyprojekt som möjliggör sökning i musiknoter.
+    title: Crash course i sökmotorer + Playin' - Sök i musik
 
   - winner: false
     start: 2025-05-29 17:15
@@ -132,13 +132,23 @@ schema:
 
   - winner: false
     start: 2025-05-30 09:00
-    end: 2025-05-30 09:45
+    end: 2025-05-30 09:30
     type: externalpresentation
     externalpresenter:
       name: Francisco Blas Izquierdo Riera
       avatarSrc: /assets/klondike.png
     details: Towards postquantum public key cryptography in embedded devices
     title: Postquantum PKI
+
+  - winner: false
+    start: 2025-05-30 09:30
+    end: 2025-05-30 09:45
+    type: externalpresentation
+    externalpresenter:
+      name: Anton Lundh
+      avatarSrc: /assets/bosse_webb.png
+    details: Master Thesis - hidden backlinks 
+    title: Master Thesis - hidden backlinks
 
   - winner: false
     start: 2025-05-30 09:45
@@ -245,8 +255,8 @@ schema:
     type: running
 
   - winner: false
-    start: 2025-05-31 19:00
-    end: 2025-05-31 21:00
+    start: 2025-05-31 20:00
+    end: 2025-05-31 22:00
     details: |-
       Middag på Olde Hansa, 800 meters promenad
     location:
