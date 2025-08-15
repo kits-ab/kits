@@ -85,7 +85,7 @@ export default ({ data, location }: KitsStudioPageProps) => {
         <Text>
           <p>{page.node.frontmatter.section2.content}</p>
         </Text>
-        <Button href="mailto:sales@kits.se">Kontakta oss</Button>
+        <Button href="mailto:salj@kits.se">Kontakta oss</Button>
       </Vertical>
     </DefaultLayout>
   )
