@@ -21,7 +21,7 @@ schema:
         - 11.80787
       title: Stenungsbaden
     title: Check-in - AW
-    details: In med packning på rummet och så ses vi i baren innan middag
+    details: Det är garanterad incheckning från 15.00. Det ligger förberett med nycklar i receptionen så att det går snabbt att checka in. In med packning på rummet och så ses vi i baren innan middag. 
     type: checkin
 
   - winner: false
@@ -136,4 +136,4 @@ schema:
     type: food
 
 ---
-🚀 Vi åker på KitsCon 25.2 till Stenungsbaden! Utforska generativ AI med ledande experter (Ni), upptäck innovativa verktyg och integrera AI i vår verktygslåda. Tillsammans driver vi framtidens teknologi och skapar magi i vårt arbete! 💡✨
+🌊 Den 6e november ses vi på Stenungsbaden för höstens KitsCon. Tillsammans dyker vi ner i den generativa AI-världen, får insikter från experterna (Vi!) och utforskar hur nya AI-verktyg kan bli en naturlig?! del av vår vardag. Vi formar framtiden – med nyfikenhet, teknik och kreativitet! 🤖🛠️🌟
