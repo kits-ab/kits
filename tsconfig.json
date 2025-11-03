@@ -8,7 +8,6 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "strict": true,
-    "suppressImplicitAnyIndexErrors": true,
     "target": "esnext"
   },
   "include": ["definitions/**/*", "./src/**/*"]

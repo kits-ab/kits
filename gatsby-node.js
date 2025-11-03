@@ -73,6 +73,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           node.frontmatter.type === "person" &&
           node.frontmatter.alumni !== true
         ) {
+          /* Disabled person pages
           createPage({
             path: node.fields.href,
             component: path.resolve("./src/templates/person.tsx"),
@@ -81,6 +82,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
               email: node.frontmatter.email ? node.frontmatter.email : ""
             }
           })
+          */
         } else if (node.frontmatter && node.frontmatter.type === "conference") {
           createPage({
             path: node.fields.href,
