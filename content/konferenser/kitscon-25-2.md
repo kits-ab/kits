@@ -136,4 +136,4 @@ schema:
     type: food
 
 ---
-🌊 Den 6e november ses vi på Stenungsbaden för höstens KitsCon. Tillsammans dyker vi ner i den generativa AI-världen, får insikter från experterna (Vi!) och utforskar hur nya AI-verktyg kan bli en naturlig?! del av vår vardag. Vi formar framtiden – med nyfikenhet, teknik och kreativitet! 🤖🛠️🌟
+🌊 Den 6e november ses vi på Stenungsbaden för höstens KitsCon. Tillsammans dyker vi ner i den generativa AI-världen, får insikter från experterna (Vi!) och utforskar hur nya AI-verktyg kan bli en naturlig?! del av vår vardag. Vi formar framtiden med nyfikenhet, teknik och kreativitet. 🤖🛠️🌟
