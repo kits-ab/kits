@@ -54,7 +54,7 @@ schema:
     start: 2025-11-07 10:45
     end: 2025-11-07 12:15
     title: AI hela dagen!
-    details: Gruppindelning och val av projekt
+    details: Vi bygger med AI och samarbetar!
     type: workshop
 
   - winner: false
@@ -67,7 +67,7 @@ schema:
     start: 2025-11-07 13:15
     end: 2025-11-07 15:15
     title: AI hela dagen!
-    details: Vi bygger med AI och samarbetar!
+    details: Hur går det med samarbetet?
     type: workshop
 
   - winner: false
