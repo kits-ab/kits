@@ -116,22 +116,22 @@ schema:
     type: workshop
 
   - winner: false
-    start: 2025-11-08 10:00
-    end: 2025-11-08 10:15
+    start: 2025-11-08 10:30
+    end: 2025-11-08 10:45
     details: Kaffe kaka
     title: Fika
     type: coffe
 
   - winner: false
-    start: 2025-11-08 10:15
-    end: 2025-11-08 12:00
+    start: 2025-11-08 10:45
+    end: 2025-11-08 12:30
     details: Dags att presentera vad vi har skapat!
     title: Presentation och avslutning
     type: workshop
 
   - winner: false
-    start: 2025-11-08 12:00
-    end: 2025-11-08 13:00
+    start: 2025-11-08 12:30
+    end: 2025-11-08 13:30
     title: Lunch
     type: food
 
