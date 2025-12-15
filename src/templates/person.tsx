@@ -128,6 +128,7 @@ export default ({ data, location }: PersonPageProps) => {
   )
 }
 
+/*
 export const query = graphql`
   query PersonPageQuery($href: String, $email: String) {
     person: markdownRemark(fields: { href: { eq: $href } }) {
@@ -155,3 +156,4 @@ export const query = graphql`
     }
   }
 `
+*/
