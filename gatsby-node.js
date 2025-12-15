@@ -102,3 +102,32 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
     })
   })
 }
+
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type TeamtailorJob implements Node {
+      fields: TeamtailorJobFields
+      attributes: TeamtailorJobAttributes
+      links: TeamtailorJobLinks
+    }
+
+    type TeamtailorJobFields {
+      href: String
+    }
+
+    type TeamtailorJobAttributes {
+      title: String
+      body: String
+      apply_button_text: String
+      human_status: String
+    }
+
+    type TeamtailorJobLinks {
+      careersite_job_apply_url: String
+      careersite_job_url: String
+    }
+  `
+  createTypes(typeDefs)
+}
