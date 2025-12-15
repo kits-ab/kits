@@ -23,15 +23,15 @@
     "@kokitotsos/react-components": "4.0.0",
     "babel-plugin-styled-components": "^2.1.4",
     "date-fns": "^2.30.0",
-    "decap-cms-app": "^3.0.7",
+    "decap-cms-app": "3.6.4",
     "dotenv": "^16.3.1",
     "gatsby": "^5.12.3",
     "gatsby-plugin-catch-links": "^5.12.0",
+    "gatsby-plugin-decap-cms": "^4.0.4",
     "gatsby-plugin-feed": "^5.12.0",
     "gatsby-plugin-image": "^3.12.0",
     "gatsby-plugin-manifest": "^5.12.0",
     "gatsby-plugin-netlify": "^5.1.0",
-    "gatsby-plugin-netlify-cms": "7.12.0",
     "gatsby-plugin-react-helmet": "^6.12.0",
     "gatsby-plugin-sharp": "^5.12.0",
     "gatsby-plugin-sitemap": "^6.12.0",
@@ -88,7 +88,8 @@
   "overrides": {
     "graphql": "16.8.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "decap-cms-app": "3.6.4"
   },
   "eslintConfig": {
     "extends": [

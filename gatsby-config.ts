@@ -12,7 +12,12 @@ const config: GatsbyConfig = {
   },
   flags: { DEV_SSR: false },
   plugins: [
-    { resolve: "gatsby-plugin-netlify-cms" },
+    {
+      resolve: "gatsby-plugin-decap-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

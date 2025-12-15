@@ -821,52 +821,15 @@ export type ImageSharpResize = {
 };
 
 export type TeamtailorJob = Node & {
+  fields: Maybe<TeamtailorJobFields>;
+  attributes: Maybe<TeamtailorJobAttributes>;
+  links: Maybe<TeamtailorJobLinks>;
+  type: Maybe<Scalars['String']>;
+  relationships: Maybe<TeamtailorJobRelationships>;
   id: Scalars['ID'];
   parent: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  type: Maybe<Scalars['String']>;
-  links: Maybe<TeamtailorJobLinks>;
-  attributes: Maybe<TeamtailorJobAttributes>;
-  relationships: Maybe<TeamtailorJobRelationships>;
-  fields: Maybe<TeamtailorJobFields>;
-};
-
-export type TeamtailorJobLinks = {
-  careersite_job_url: Maybe<Scalars['String']>;
-  careersite_job_apply_url: Maybe<Scalars['String']>;
-  careersite_job_apply_iframe_url: Maybe<Scalars['String']>;
-  self: Maybe<Scalars['String']>;
-};
-
-export type TeamtailorJobAttributes = {
-  apply_button_text: Maybe<Scalars['String']>;
-  body: Maybe<Scalars['String']>;
-  human_status: Maybe<Scalars['String']>;
-  internal: Maybe<Scalars['Boolean']>;
-  picture: Maybe<TeamtailorJobAttributesPicture>;
-  pinned: Maybe<Scalars['Boolean']>;
-  status: Maybe<Scalars['String']>;
-  title: Maybe<Scalars['String']>;
-  external_application_url: Maybe<Scalars['String']>;
-  name_requirement: Maybe<Scalars['String']>;
-  resume_requirement: Maybe<Scalars['String']>;
-  cover_letter_requirement: Maybe<Scalars['String']>;
-  phone_requirement: Maybe<Scalars['String']>;
-  created_at: Maybe<Scalars['Date']>;
-};
-
-
-export type TeamtailorJobAttributesCreated_AtArgs = {
-  formatString: InputMaybe<Scalars['String']>;
-  fromNow: InputMaybe<Scalars['Boolean']>;
-  difference: InputMaybe<Scalars['String']>;
-  locale: InputMaybe<Scalars['String']>;
-};
-
-export type TeamtailorJobAttributesPicture = {
-  standard: Maybe<Scalars['String']>;
-  thumb: Maybe<Scalars['String']>;
 };
 
 export type TeamtailorJobRelationships = {
@@ -998,6 +961,43 @@ export type TeamtailorJobRelationshipsPicked_QuestionsLinks = {
 
 export type TeamtailorJobFields = {
   href: Maybe<Scalars['String']>;
+};
+
+export type TeamtailorJobAttributes = {
+  title: Maybe<Scalars['String']>;
+  body: Maybe<Scalars['String']>;
+  apply_button_text: Maybe<Scalars['String']>;
+  human_status: Maybe<Scalars['String']>;
+  internal: Maybe<Scalars['Boolean']>;
+  picture: Maybe<TeamtailorJobAttributesPicture>;
+  pinned: Maybe<Scalars['Boolean']>;
+  status: Maybe<Scalars['String']>;
+  external_application_url: Maybe<Scalars['String']>;
+  name_requirement: Maybe<Scalars['String']>;
+  resume_requirement: Maybe<Scalars['String']>;
+  cover_letter_requirement: Maybe<Scalars['String']>;
+  phone_requirement: Maybe<Scalars['String']>;
+  created_at: Maybe<Scalars['Date']>;
+};
+
+
+export type TeamtailorJobAttributesCreated_AtArgs = {
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  difference: InputMaybe<Scalars['String']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+export type TeamtailorJobAttributesPicture = {
+  standard: Maybe<Scalars['String']>;
+  thumb: Maybe<Scalars['String']>;
+};
+
+export type TeamtailorJobLinks = {
+  careersite_job_apply_url: Maybe<Scalars['String']>;
+  careersite_job_url: Maybe<Scalars['String']>;
+  careersite_job_apply_iframe_url: Maybe<Scalars['String']>;
+  self: Maybe<Scalars['String']>;
 };
 
 export type O365User = Node & {
@@ -1345,15 +1345,15 @@ export type QueryAllImageSharpArgs = {
 
 
 export type QueryTeamtailorJobArgs = {
+  fields: InputMaybe<TeamtailorJobFieldsFilterInput>;
+  attributes: InputMaybe<TeamtailorJobAttributesFilterInput>;
+  links: InputMaybe<TeamtailorJobLinksFilterInput>;
+  type: InputMaybe<StringQueryOperatorInput>;
+  relationships: InputMaybe<TeamtailorJobRelationshipsFilterInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
   internal: InputMaybe<InternalFilterInput>;
-  type: InputMaybe<StringQueryOperatorInput>;
-  links: InputMaybe<TeamtailorJobLinksFilterInput>;
-  attributes: InputMaybe<TeamtailorJobAttributesFilterInput>;
-  relationships: InputMaybe<TeamtailorJobRelationshipsFilterInput>;
-  fields: InputMaybe<TeamtailorJobFieldsFilterInput>;
 };
 
 
@@ -3500,22 +3500,19 @@ export type ImageSharpGroupConnectionGroupArgs = {
   field: ImageSharpFieldSelector;
 };
 
-export type TeamtailorJobLinksFilterInput = {
-  careersite_job_url: InputMaybe<StringQueryOperatorInput>;
-  careersite_job_apply_url: InputMaybe<StringQueryOperatorInput>;
-  careersite_job_apply_iframe_url: InputMaybe<StringQueryOperatorInput>;
-  self: InputMaybe<StringQueryOperatorInput>;
+export type TeamtailorJobFieldsFilterInput = {
+  href: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type TeamtailorJobAttributesFilterInput = {
-  apply_button_text: InputMaybe<StringQueryOperatorInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
   body: InputMaybe<StringQueryOperatorInput>;
+  apply_button_text: InputMaybe<StringQueryOperatorInput>;
   human_status: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<BooleanQueryOperatorInput>;
   picture: InputMaybe<TeamtailorJobAttributesPictureFilterInput>;
   pinned: InputMaybe<BooleanQueryOperatorInput>;
   status: InputMaybe<StringQueryOperatorInput>;
-  title: InputMaybe<StringQueryOperatorInput>;
   external_application_url: InputMaybe<StringQueryOperatorInput>;
   name_requirement: InputMaybe<StringQueryOperatorInput>;
   resume_requirement: InputMaybe<StringQueryOperatorInput>;
@@ -3527,6 +3524,13 @@ export type TeamtailorJobAttributesFilterInput = {
 export type TeamtailorJobAttributesPictureFilterInput = {
   standard: InputMaybe<StringQueryOperatorInput>;
   thumb: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type TeamtailorJobLinksFilterInput = {
+  careersite_job_apply_url: InputMaybe<StringQueryOperatorInput>;
+  careersite_job_url: InputMaybe<StringQueryOperatorInput>;
+  careersite_job_apply_iframe_url: InputMaybe<StringQueryOperatorInput>;
+  self: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type TeamtailorJobRelationshipsFilterInput = {
@@ -3656,10 +3660,6 @@ export type TeamtailorJobRelationshipsPicked_QuestionsLinksFilterInput = {
   related: InputMaybe<StringQueryOperatorInput>;
 };
 
-export type TeamtailorJobFieldsFilterInput = {
-  href: InputMaybe<StringQueryOperatorInput>;
-};
-
 export type TeamtailorJobConnection = {
   totalCount: Scalars['Int'];
   edges: Array<TeamtailorJobEdge>;
@@ -3706,33 +3706,30 @@ export type TeamtailorJobEdge = {
 };
 
 export type TeamtailorJobFieldSelector = {
+  fields: InputMaybe<TeamtailorJobFieldsFieldSelector>;
+  attributes: InputMaybe<TeamtailorJobAttributesFieldSelector>;
+  links: InputMaybe<TeamtailorJobLinksFieldSelector>;
+  type: InputMaybe<FieldSelectorEnum>;
+  relationships: InputMaybe<TeamtailorJobRelationshipsFieldSelector>;
   id: InputMaybe<FieldSelectorEnum>;
   parent: InputMaybe<NodeFieldSelector>;
   children: InputMaybe<NodeFieldSelector>;
   internal: InputMaybe<InternalFieldSelector>;
-  type: InputMaybe<FieldSelectorEnum>;
-  links: InputMaybe<TeamtailorJobLinksFieldSelector>;
-  attributes: InputMaybe<TeamtailorJobAttributesFieldSelector>;
-  relationships: InputMaybe<TeamtailorJobRelationshipsFieldSelector>;
-  fields: InputMaybe<TeamtailorJobFieldsFieldSelector>;
 };
 
-export type TeamtailorJobLinksFieldSelector = {
-  careersite_job_url: InputMaybe<FieldSelectorEnum>;
-  careersite_job_apply_url: InputMaybe<FieldSelectorEnum>;
-  careersite_job_apply_iframe_url: InputMaybe<FieldSelectorEnum>;
-  self: InputMaybe<FieldSelectorEnum>;
+export type TeamtailorJobFieldsFieldSelector = {
+  href: InputMaybe<FieldSelectorEnum>;
 };
 
 export type TeamtailorJobAttributesFieldSelector = {
-  apply_button_text: InputMaybe<FieldSelectorEnum>;
+  title: InputMaybe<FieldSelectorEnum>;
   body: InputMaybe<FieldSelectorEnum>;
+  apply_button_text: InputMaybe<FieldSelectorEnum>;
   human_status: InputMaybe<FieldSelectorEnum>;
   internal: InputMaybe<FieldSelectorEnum>;
   picture: InputMaybe<TeamtailorJobAttributesPictureFieldSelector>;
   pinned: InputMaybe<FieldSelectorEnum>;
   status: InputMaybe<FieldSelectorEnum>;
-  title: InputMaybe<FieldSelectorEnum>;
   external_application_url: InputMaybe<FieldSelectorEnum>;
   name_requirement: InputMaybe<FieldSelectorEnum>;
   resume_requirement: InputMaybe<FieldSelectorEnum>;
@@ -3744,6 +3741,13 @@ export type TeamtailorJobAttributesFieldSelector = {
 export type TeamtailorJobAttributesPictureFieldSelector = {
   standard: InputMaybe<FieldSelectorEnum>;
   thumb: InputMaybe<FieldSelectorEnum>;
+};
+
+export type TeamtailorJobLinksFieldSelector = {
+  careersite_job_apply_url: InputMaybe<FieldSelectorEnum>;
+  careersite_job_url: InputMaybe<FieldSelectorEnum>;
+  careersite_job_apply_iframe_url: InputMaybe<FieldSelectorEnum>;
+  self: InputMaybe<FieldSelectorEnum>;
 };
 
 export type TeamtailorJobRelationshipsFieldSelector = {
@@ -3873,10 +3877,6 @@ export type TeamtailorJobRelationshipsPicked_QuestionsLinksFieldSelector = {
   related: InputMaybe<FieldSelectorEnum>;
 };
 
-export type TeamtailorJobFieldsFieldSelector = {
-  href: InputMaybe<FieldSelectorEnum>;
-};
-
 export type TeamtailorJobGroupConnection = {
   totalCount: Scalars['Int'];
   edges: Array<TeamtailorJobEdge>;
@@ -3919,45 +3919,42 @@ export type TeamtailorJobGroupConnectionGroupArgs = {
 };
 
 export type TeamtailorJobFilterInput = {
+  fields: InputMaybe<TeamtailorJobFieldsFilterInput>;
+  attributes: InputMaybe<TeamtailorJobAttributesFilterInput>;
+  links: InputMaybe<TeamtailorJobLinksFilterInput>;
+  type: InputMaybe<StringQueryOperatorInput>;
+  relationships: InputMaybe<TeamtailorJobRelationshipsFilterInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
   internal: InputMaybe<InternalFilterInput>;
-  type: InputMaybe<StringQueryOperatorInput>;
-  links: InputMaybe<TeamtailorJobLinksFilterInput>;
-  attributes: InputMaybe<TeamtailorJobAttributesFilterInput>;
-  relationships: InputMaybe<TeamtailorJobRelationshipsFilterInput>;
-  fields: InputMaybe<TeamtailorJobFieldsFilterInput>;
 };
 
 export type TeamtailorJobSortInput = {
+  fields: InputMaybe<TeamtailorJobFieldsSortInput>;
+  attributes: InputMaybe<TeamtailorJobAttributesSortInput>;
+  links: InputMaybe<TeamtailorJobLinksSortInput>;
+  type: InputMaybe<SortOrderEnum>;
+  relationships: InputMaybe<TeamtailorJobRelationshipsSortInput>;
   id: InputMaybe<SortOrderEnum>;
   parent: InputMaybe<NodeSortInput>;
   children: InputMaybe<NodeSortInput>;
   internal: InputMaybe<InternalSortInput>;
-  type: InputMaybe<SortOrderEnum>;
-  links: InputMaybe<TeamtailorJobLinksSortInput>;
-  attributes: InputMaybe<TeamtailorJobAttributesSortInput>;
-  relationships: InputMaybe<TeamtailorJobRelationshipsSortInput>;
-  fields: InputMaybe<TeamtailorJobFieldsSortInput>;
 };
 
-export type TeamtailorJobLinksSortInput = {
-  careersite_job_url: InputMaybe<SortOrderEnum>;
-  careersite_job_apply_url: InputMaybe<SortOrderEnum>;
-  careersite_job_apply_iframe_url: InputMaybe<SortOrderEnum>;
-  self: InputMaybe<SortOrderEnum>;
+export type TeamtailorJobFieldsSortInput = {
+  href: InputMaybe<SortOrderEnum>;
 };
 
 export type TeamtailorJobAttributesSortInput = {
-  apply_button_text: InputMaybe<SortOrderEnum>;
+  title: InputMaybe<SortOrderEnum>;
   body: InputMaybe<SortOrderEnum>;
+  apply_button_text: InputMaybe<SortOrderEnum>;
   human_status: InputMaybe<SortOrderEnum>;
   internal: InputMaybe<SortOrderEnum>;
   picture: InputMaybe<TeamtailorJobAttributesPictureSortInput>;
   pinned: InputMaybe<SortOrderEnum>;
   status: InputMaybe<SortOrderEnum>;
-  title: InputMaybe<SortOrderEnum>;
   external_application_url: InputMaybe<SortOrderEnum>;
   name_requirement: InputMaybe<SortOrderEnum>;
   resume_requirement: InputMaybe<SortOrderEnum>;
@@ -3969,6 +3966,13 @@ export type TeamtailorJobAttributesSortInput = {
 export type TeamtailorJobAttributesPictureSortInput = {
   standard: InputMaybe<SortOrderEnum>;
   thumb: InputMaybe<SortOrderEnum>;
+};
+
+export type TeamtailorJobLinksSortInput = {
+  careersite_job_apply_url: InputMaybe<SortOrderEnum>;
+  careersite_job_url: InputMaybe<SortOrderEnum>;
+  careersite_job_apply_iframe_url: InputMaybe<SortOrderEnum>;
+  self: InputMaybe<SortOrderEnum>;
 };
 
 export type TeamtailorJobRelationshipsSortInput = {
@@ -4096,10 +4100,6 @@ export type TeamtailorJobRelationshipsPicked_QuestionsSortInput = {
 export type TeamtailorJobRelationshipsPicked_QuestionsLinksSortInput = {
   self: InputMaybe<SortOrderEnum>;
   related: InputMaybe<SortOrderEnum>;
-};
-
-export type TeamtailorJobFieldsSortInput = {
-  href: InputMaybe<SortOrderEnum>;
 };
 
 export type O365UserConnection = {
@@ -4392,14 +4392,6 @@ export type NewsQueryQueryVariables = Exact<{
 
 
 export type NewsQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string } } }> }, news: { html: string, fields: { date: any, href: string }, frontmatter: { authors: Array<string>, title: string } }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
-
-export type PersonPageQueryQueryVariables = Exact<{
-  href: InputMaybe<Scalars['String']>;
-  email: InputMaybe<Scalars['String']>;
-}>;
-
-
-export type PersonPageQueryQuery = { person: { html: string, fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } }, o365person: { mobilePhone: string, officeLocation: string, businessPhones: Array<string> }, images: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
 export type BlogPostQueryQueryVariables = Exact<{
   href: Scalars['String'];
