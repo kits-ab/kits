@@ -440,30 +440,41 @@ export type MarkdownRemarkFrontmatter = {
   title: Maybe<Scalars['String']>;
   type: Maybe<Scalars['String']>;
   id: Maybe<Scalars['String']>;
-  alumni: Maybe<Scalars['Boolean']>;
+  tagLine: Maybe<Scalars['String']>;
   image: Maybe<Scalars['String']>;
   avatar: Maybe<Scalars['String']>;
-  tagLine: Maybe<Scalars['String']>;
-  location: Maybe<Scalars['String']>;
-  start: Maybe<Scalars['Date']>;
-  end: Maybe<Scalars['Date']>;
-  active: Maybe<Scalars['Boolean']>;
-  schema: Maybe<Array<Maybe<MarkdownRemarkFrontmatterSchema>>>;
-  authors: Maybe<Array<Maybe<Scalars['String']>>>;
   phone: Maybe<Scalars['String']>;
   email: Maybe<Scalars['String']>;
   social: Maybe<MarkdownRemarkFrontmatterSocial>;
   tags: Maybe<Array<Maybe<Scalars['String']>>>;
+  authors: Maybe<Array<Maybe<Scalars['String']>>>;
   index: Maybe<Scalars['Int']>;
   href: Maybe<Scalars['String']>;
+  alumni: Maybe<Scalars['Boolean']>;
+  publishDate: Maybe<Scalars['Date']>;
+  location: Maybe<Scalars['String']>;
+  start: Maybe<Scalars['Date']>;
+  end: Maybe<Scalars['Date']>;
+  active: Maybe<Scalars['Boolean']>;
+  images: Maybe<Array<Maybe<Scalars['String']>>>;
+  schema: Maybe<Array<Maybe<MarkdownRemarkFrontmatterSchema>>>;
   heading: Maybe<Scalars['String']>;
   lead: Maybe<Scalars['String']>;
+  collageImages: Maybe<Array<Maybe<MarkdownRemarkFrontmatterCollageImages>>>;
   section1: Maybe<MarkdownRemarkFrontmatterSection1>;
   section2: Maybe<MarkdownRemarkFrontmatterSection2>;
-  images: Maybe<Array<Maybe<Scalars['String']>>>;
+  Telefon: Maybe<Scalars['String']>;
+  content: Maybe<Scalars['String']>;
   section3: Maybe<MarkdownRemarkFrontmatterSection3>;
   section4: Maybe<MarkdownRemarkFrontmatterSection4>;
-  Telefon: Maybe<Scalars['String']>;
+};
+
+
+export type MarkdownRemarkFrontmatterPublishDateArgs = {
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  difference: InputMaybe<Scalars['String']>;
+  locale: InputMaybe<Scalars['String']>;
 };
 
 
@@ -482,19 +493,26 @@ export type MarkdownRemarkFrontmatterEndArgs = {
   locale: InputMaybe<Scalars['String']>;
 };
 
+export type MarkdownRemarkFrontmatterSocial = {
+  github: Maybe<Scalars['String']>;
+  linkedin: Maybe<Scalars['String']>;
+  keybase: Maybe<Scalars['String']>;
+  twitter: Maybe<Scalars['String']>;
+};
+
 export type MarkdownRemarkFrontmatterSchema = {
-  location: Maybe<MarkdownRemarkFrontmatterSchemaLocation>;
-  title: Maybe<Scalars['String']>;
+  winner: Maybe<Scalars['Boolean']>;
   start: Maybe<Scalars['Date']>;
   end: Maybe<Scalars['String']>;
+  title: Maybe<Scalars['String']>;
   type: Maybe<Scalars['String']>;
-  presenters: Maybe<Array<Maybe<Scalars['String']>>>;
   details: Maybe<Scalars['String']>;
-  href: Maybe<Scalars['String']>;
-  winner: Maybe<Scalars['Boolean']>;
-  youtubeId: Maybe<Scalars['String']>;
-  presentation: Maybe<Scalars['String']>;
+  location: Maybe<MarkdownRemarkFrontmatterSchemaLocation>;
+  presenters: Maybe<Array<Maybe<Scalars['String']>>>;
   externalpresenter: Maybe<MarkdownRemarkFrontmatterSchemaExternalpresenter>;
+  presentation: Maybe<Scalars['String']>;
+  href: Maybe<Scalars['String']>;
+  youtubeId: Maybe<Scalars['String']>;
 };
 
 
@@ -516,11 +534,8 @@ export type MarkdownRemarkFrontmatterSchemaExternalpresenter = {
   href: Maybe<Scalars['String']>;
 };
 
-export type MarkdownRemarkFrontmatterSocial = {
-  linkedin: Maybe<Scalars['String']>;
-  github: Maybe<Scalars['String']>;
-  twitter: Maybe<Scalars['String']>;
-  keybase: Maybe<Scalars['String']>;
+export type MarkdownRemarkFrontmatterCollageImages = {
+  collageImage: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterSection1 = {
@@ -1466,30 +1481,40 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   title: InputMaybe<StringQueryOperatorInput>;
   type: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
-  alumni: InputMaybe<BooleanQueryOperatorInput>;
+  tagLine: InputMaybe<StringQueryOperatorInput>;
   image: InputMaybe<StringQueryOperatorInput>;
   avatar: InputMaybe<StringQueryOperatorInput>;
-  tagLine: InputMaybe<StringQueryOperatorInput>;
-  location: InputMaybe<StringQueryOperatorInput>;
-  start: InputMaybe<DateQueryOperatorInput>;
-  end: InputMaybe<DateQueryOperatorInput>;
-  active: InputMaybe<BooleanQueryOperatorInput>;
-  schema: InputMaybe<MarkdownRemarkFrontmatterSchemaFilterListInput>;
-  authors: InputMaybe<StringQueryOperatorInput>;
   phone: InputMaybe<StringQueryOperatorInput>;
   email: InputMaybe<StringQueryOperatorInput>;
   social: InputMaybe<MarkdownRemarkFrontmatterSocialFilterInput>;
   tags: InputMaybe<StringQueryOperatorInput>;
+  authors: InputMaybe<StringQueryOperatorInput>;
   index: InputMaybe<IntQueryOperatorInput>;
   href: InputMaybe<StringQueryOperatorInput>;
+  alumni: InputMaybe<BooleanQueryOperatorInput>;
+  publishDate: InputMaybe<DateQueryOperatorInput>;
+  location: InputMaybe<StringQueryOperatorInput>;
+  start: InputMaybe<DateQueryOperatorInput>;
+  end: InputMaybe<DateQueryOperatorInput>;
+  active: InputMaybe<BooleanQueryOperatorInput>;
+  images: InputMaybe<StringQueryOperatorInput>;
+  schema: InputMaybe<MarkdownRemarkFrontmatterSchemaFilterListInput>;
   heading: InputMaybe<StringQueryOperatorInput>;
   lead: InputMaybe<StringQueryOperatorInput>;
+  collageImages: InputMaybe<MarkdownRemarkFrontmatterCollageImagesFilterListInput>;
   section1: InputMaybe<MarkdownRemarkFrontmatterSection1FilterInput>;
   section2: InputMaybe<MarkdownRemarkFrontmatterSection2FilterInput>;
-  images: InputMaybe<StringQueryOperatorInput>;
+  Telefon: InputMaybe<StringQueryOperatorInput>;
+  content: InputMaybe<StringQueryOperatorInput>;
   section3: InputMaybe<MarkdownRemarkFrontmatterSection3FilterInput>;
   section4: InputMaybe<MarkdownRemarkFrontmatterSection4FilterInput>;
-  Telefon: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterSocialFilterInput = {
+  github: InputMaybe<StringQueryOperatorInput>;
+  linkedin: InputMaybe<StringQueryOperatorInput>;
+  keybase: InputMaybe<StringQueryOperatorInput>;
+  twitter: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type BooleanQueryOperatorInput = {
@@ -1504,18 +1529,18 @@ export type MarkdownRemarkFrontmatterSchemaFilterListInput = {
 };
 
 export type MarkdownRemarkFrontmatterSchemaFilterInput = {
-  location: InputMaybe<MarkdownRemarkFrontmatterSchemaLocationFilterInput>;
-  title: InputMaybe<StringQueryOperatorInput>;
+  winner: InputMaybe<BooleanQueryOperatorInput>;
   start: InputMaybe<DateQueryOperatorInput>;
   end: InputMaybe<StringQueryOperatorInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
   type: InputMaybe<StringQueryOperatorInput>;
-  presenters: InputMaybe<StringQueryOperatorInput>;
   details: InputMaybe<StringQueryOperatorInput>;
-  href: InputMaybe<StringQueryOperatorInput>;
-  winner: InputMaybe<BooleanQueryOperatorInput>;
-  youtubeId: InputMaybe<StringQueryOperatorInput>;
-  presentation: InputMaybe<StringQueryOperatorInput>;
+  location: InputMaybe<MarkdownRemarkFrontmatterSchemaLocationFilterInput>;
+  presenters: InputMaybe<StringQueryOperatorInput>;
   externalpresenter: InputMaybe<MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput>;
+  presentation: InputMaybe<StringQueryOperatorInput>;
+  href: InputMaybe<StringQueryOperatorInput>;
+  youtubeId: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterSchemaLocationFilterInput = {
@@ -1529,11 +1554,12 @@ export type MarkdownRemarkFrontmatterSchemaExternalpresenterFilterInput = {
   href: InputMaybe<StringQueryOperatorInput>;
 };
 
-export type MarkdownRemarkFrontmatterSocialFilterInput = {
-  linkedin: InputMaybe<StringQueryOperatorInput>;
-  github: InputMaybe<StringQueryOperatorInput>;
-  twitter: InputMaybe<StringQueryOperatorInput>;
-  keybase: InputMaybe<StringQueryOperatorInput>;
+export type MarkdownRemarkFrontmatterCollageImagesFilterListInput = {
+  elemMatch: InputMaybe<MarkdownRemarkFrontmatterCollageImagesFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterCollageImagesFilterInput = {
+  collageImage: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterSection1FilterInput = {
@@ -1845,45 +1871,55 @@ export type MarkdownRemarkFrontmatterFieldSelector = {
   title: InputMaybe<FieldSelectorEnum>;
   type: InputMaybe<FieldSelectorEnum>;
   id: InputMaybe<FieldSelectorEnum>;
-  alumni: InputMaybe<FieldSelectorEnum>;
+  tagLine: InputMaybe<FieldSelectorEnum>;
   image: InputMaybe<FieldSelectorEnum>;
   avatar: InputMaybe<FieldSelectorEnum>;
-  tagLine: InputMaybe<FieldSelectorEnum>;
-  location: InputMaybe<FieldSelectorEnum>;
-  start: InputMaybe<FieldSelectorEnum>;
-  end: InputMaybe<FieldSelectorEnum>;
-  active: InputMaybe<FieldSelectorEnum>;
-  schema: InputMaybe<MarkdownRemarkFrontmatterSchemaFieldSelector>;
-  authors: InputMaybe<FieldSelectorEnum>;
   phone: InputMaybe<FieldSelectorEnum>;
   email: InputMaybe<FieldSelectorEnum>;
   social: InputMaybe<MarkdownRemarkFrontmatterSocialFieldSelector>;
   tags: InputMaybe<FieldSelectorEnum>;
+  authors: InputMaybe<FieldSelectorEnum>;
   index: InputMaybe<FieldSelectorEnum>;
   href: InputMaybe<FieldSelectorEnum>;
+  alumni: InputMaybe<FieldSelectorEnum>;
+  publishDate: InputMaybe<FieldSelectorEnum>;
+  location: InputMaybe<FieldSelectorEnum>;
+  start: InputMaybe<FieldSelectorEnum>;
+  end: InputMaybe<FieldSelectorEnum>;
+  active: InputMaybe<FieldSelectorEnum>;
+  images: InputMaybe<FieldSelectorEnum>;
+  schema: InputMaybe<MarkdownRemarkFrontmatterSchemaFieldSelector>;
   heading: InputMaybe<FieldSelectorEnum>;
   lead: InputMaybe<FieldSelectorEnum>;
+  collageImages: InputMaybe<MarkdownRemarkFrontmatterCollageImagesFieldSelector>;
   section1: InputMaybe<MarkdownRemarkFrontmatterSection1FieldSelector>;
   section2: InputMaybe<MarkdownRemarkFrontmatterSection2FieldSelector>;
-  images: InputMaybe<FieldSelectorEnum>;
+  Telefon: InputMaybe<FieldSelectorEnum>;
+  content: InputMaybe<FieldSelectorEnum>;
   section3: InputMaybe<MarkdownRemarkFrontmatterSection3FieldSelector>;
   section4: InputMaybe<MarkdownRemarkFrontmatterSection4FieldSelector>;
-  Telefon: InputMaybe<FieldSelectorEnum>;
+};
+
+export type MarkdownRemarkFrontmatterSocialFieldSelector = {
+  github: InputMaybe<FieldSelectorEnum>;
+  linkedin: InputMaybe<FieldSelectorEnum>;
+  keybase: InputMaybe<FieldSelectorEnum>;
+  twitter: InputMaybe<FieldSelectorEnum>;
 };
 
 export type MarkdownRemarkFrontmatterSchemaFieldSelector = {
-  location: InputMaybe<MarkdownRemarkFrontmatterSchemaLocationFieldSelector>;
-  title: InputMaybe<FieldSelectorEnum>;
+  winner: InputMaybe<FieldSelectorEnum>;
   start: InputMaybe<FieldSelectorEnum>;
   end: InputMaybe<FieldSelectorEnum>;
+  title: InputMaybe<FieldSelectorEnum>;
   type: InputMaybe<FieldSelectorEnum>;
-  presenters: InputMaybe<FieldSelectorEnum>;
   details: InputMaybe<FieldSelectorEnum>;
-  href: InputMaybe<FieldSelectorEnum>;
-  winner: InputMaybe<FieldSelectorEnum>;
-  youtubeId: InputMaybe<FieldSelectorEnum>;
-  presentation: InputMaybe<FieldSelectorEnum>;
+  location: InputMaybe<MarkdownRemarkFrontmatterSchemaLocationFieldSelector>;
+  presenters: InputMaybe<FieldSelectorEnum>;
   externalpresenter: InputMaybe<MarkdownRemarkFrontmatterSchemaExternalpresenterFieldSelector>;
+  presentation: InputMaybe<FieldSelectorEnum>;
+  href: InputMaybe<FieldSelectorEnum>;
+  youtubeId: InputMaybe<FieldSelectorEnum>;
 };
 
 export type MarkdownRemarkFrontmatterSchemaLocationFieldSelector = {
@@ -1897,11 +1933,8 @@ export type MarkdownRemarkFrontmatterSchemaExternalpresenterFieldSelector = {
   href: InputMaybe<FieldSelectorEnum>;
 };
 
-export type MarkdownRemarkFrontmatterSocialFieldSelector = {
-  linkedin: InputMaybe<FieldSelectorEnum>;
-  github: InputMaybe<FieldSelectorEnum>;
-  twitter: InputMaybe<FieldSelectorEnum>;
-  keybase: InputMaybe<FieldSelectorEnum>;
+export type MarkdownRemarkFrontmatterCollageImagesFieldSelector = {
+  collageImage: InputMaybe<FieldSelectorEnum>;
 };
 
 export type MarkdownRemarkFrontmatterSection1FieldSelector = {
@@ -2211,45 +2244,55 @@ export type MarkdownRemarkFrontmatterSortInput = {
   title: InputMaybe<SortOrderEnum>;
   type: InputMaybe<SortOrderEnum>;
   id: InputMaybe<SortOrderEnum>;
-  alumni: InputMaybe<SortOrderEnum>;
+  tagLine: InputMaybe<SortOrderEnum>;
   image: InputMaybe<SortOrderEnum>;
   avatar: InputMaybe<SortOrderEnum>;
-  tagLine: InputMaybe<SortOrderEnum>;
-  location: InputMaybe<SortOrderEnum>;
-  start: InputMaybe<SortOrderEnum>;
-  end: InputMaybe<SortOrderEnum>;
-  active: InputMaybe<SortOrderEnum>;
-  schema: InputMaybe<MarkdownRemarkFrontmatterSchemaSortInput>;
-  authors: InputMaybe<SortOrderEnum>;
   phone: InputMaybe<SortOrderEnum>;
   email: InputMaybe<SortOrderEnum>;
   social: InputMaybe<MarkdownRemarkFrontmatterSocialSortInput>;
   tags: InputMaybe<SortOrderEnum>;
+  authors: InputMaybe<SortOrderEnum>;
   index: InputMaybe<SortOrderEnum>;
   href: InputMaybe<SortOrderEnum>;
+  alumni: InputMaybe<SortOrderEnum>;
+  publishDate: InputMaybe<SortOrderEnum>;
+  location: InputMaybe<SortOrderEnum>;
+  start: InputMaybe<SortOrderEnum>;
+  end: InputMaybe<SortOrderEnum>;
+  active: InputMaybe<SortOrderEnum>;
+  images: InputMaybe<SortOrderEnum>;
+  schema: InputMaybe<MarkdownRemarkFrontmatterSchemaSortInput>;
   heading: InputMaybe<SortOrderEnum>;
   lead: InputMaybe<SortOrderEnum>;
+  collageImages: InputMaybe<MarkdownRemarkFrontmatterCollageImagesSortInput>;
   section1: InputMaybe<MarkdownRemarkFrontmatterSection1SortInput>;
   section2: InputMaybe<MarkdownRemarkFrontmatterSection2SortInput>;
-  images: InputMaybe<SortOrderEnum>;
+  Telefon: InputMaybe<SortOrderEnum>;
+  content: InputMaybe<SortOrderEnum>;
   section3: InputMaybe<MarkdownRemarkFrontmatterSection3SortInput>;
   section4: InputMaybe<MarkdownRemarkFrontmatterSection4SortInput>;
-  Telefon: InputMaybe<SortOrderEnum>;
+};
+
+export type MarkdownRemarkFrontmatterSocialSortInput = {
+  github: InputMaybe<SortOrderEnum>;
+  linkedin: InputMaybe<SortOrderEnum>;
+  keybase: InputMaybe<SortOrderEnum>;
+  twitter: InputMaybe<SortOrderEnum>;
 };
 
 export type MarkdownRemarkFrontmatterSchemaSortInput = {
-  location: InputMaybe<MarkdownRemarkFrontmatterSchemaLocationSortInput>;
-  title: InputMaybe<SortOrderEnum>;
+  winner: InputMaybe<SortOrderEnum>;
   start: InputMaybe<SortOrderEnum>;
   end: InputMaybe<SortOrderEnum>;
+  title: InputMaybe<SortOrderEnum>;
   type: InputMaybe<SortOrderEnum>;
-  presenters: InputMaybe<SortOrderEnum>;
   details: InputMaybe<SortOrderEnum>;
-  href: InputMaybe<SortOrderEnum>;
-  winner: InputMaybe<SortOrderEnum>;
-  youtubeId: InputMaybe<SortOrderEnum>;
-  presentation: InputMaybe<SortOrderEnum>;
+  location: InputMaybe<MarkdownRemarkFrontmatterSchemaLocationSortInput>;
+  presenters: InputMaybe<SortOrderEnum>;
   externalpresenter: InputMaybe<MarkdownRemarkFrontmatterSchemaExternalpresenterSortInput>;
+  presentation: InputMaybe<SortOrderEnum>;
+  href: InputMaybe<SortOrderEnum>;
+  youtubeId: InputMaybe<SortOrderEnum>;
 };
 
 export type MarkdownRemarkFrontmatterSchemaLocationSortInput = {
@@ -2263,11 +2306,8 @@ export type MarkdownRemarkFrontmatterSchemaExternalpresenterSortInput = {
   href: InputMaybe<SortOrderEnum>;
 };
 
-export type MarkdownRemarkFrontmatterSocialSortInput = {
-  linkedin: InputMaybe<SortOrderEnum>;
-  github: InputMaybe<SortOrderEnum>;
-  twitter: InputMaybe<SortOrderEnum>;
-  keybase: InputMaybe<SortOrderEnum>;
+export type MarkdownRemarkFrontmatterCollageImagesSortInput = {
+  collageImage: InputMaybe<SortOrderEnum>;
 };
 
 export type MarkdownRemarkFrontmatterSection1SortInput = {
@@ -4297,6 +4337,11 @@ export type IndexQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type IndexQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string } } }> }, blog: { edges: Array<{ node: { html: string, fields: { href: string, date: any }, frontmatter: { authors: Array<string>, title: string } } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
+export type CyberAcademyPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CyberAcademyPageQueryQuery = { page: { edges: Array<{ node: { html: string, frontmatter: { title: string, heading: string, lead: string, content: string, images: Array<string>, section1: { heading: string }, section2: { heading: string, content: string } } } }> }, projects: { edges: Array<{ node: { html: string, frontmatter: { index: number, title: string, image: string, href: string } } }> }, pageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, projectImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+
 export type OfferPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4319,12 +4364,22 @@ export type SecurityPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type SecurityPageQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string, images: Array<string>, section1: { heading: string }, section2: { heading: string, content: string } } } }> }, projects: { edges: Array<{ node: { html: string, frontmatter: { index: number, title: string, image: string, href: string } } }> }, pageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, projectImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
+export type OtSecurityPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type OtSecurityPageQueryQuery = { page: { edges: Array<{ node: { html: string, frontmatter: { title: string, heading: string, lead: string, images: Array<string>, section1: { heading: string }, section2: { heading: string, content: string } } } }> }, projects: { edges: Array<{ node: { html: string, frontmatter: { index: number, title: string, image: string, href: string } } }> }, pageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, projectImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+
 export type KonferensInfoQueryQueryVariables = Exact<{
   href?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type KonferensInfoQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string, section1: { heading: string } } } }> }, activeKitscon: { html: string, frontmatter: { title: string, tagLine: string, location: string, start: any, end: any, image: string, images: Array<string>, schema: Array<{ start: any, end: string, href: string, title: string, details: string, presenters: Array<string>, presentation: string, type: string, youtubeId: string, externalpresenter: { name: string, href: string, avatarSrc: string }, location: { coordinates: Array<number>, title: string } }> } }, latestKitscon: { edges: Array<{ node: { html: string, fields: { href: string }, frontmatter: { title: string, tagLine: string, location: string, start: any, end: any, image: string, images: Array<string>, schema: Array<{ start: any, end: string, href: string, title: string, details: string, presenters: Array<string>, presentation: string, type: string, youtubeId: string, externalpresenter: { name: string, href: string, avatarSrc: string }, location: { coordinates: Array<number>, title: string } }> } } }> }, kitscons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { start: any } } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, collageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+export type KonferensInfoQueryQuery = { page: { edges: Array<{ node: { frontmatter: { title: string, heading: string, lead: string, section1: { heading: string } } } }> }, activeKitscon: { html: string, frontmatter: { title: string, tagLine: string, location: string, start: any, end: any, image: string, collageImages: Array<{ collageImage: string }>, schema: Array<{ start: any, end: string, href: string, title: string, details: string, presenters: Array<string>, presentation: string, type: string, youtubeId: string, externalpresenter: { name: string, href: string, avatarSrc: string }, location: { coordinates: Array<number>, title: string } }> } }, latestKitscon: { edges: Array<{ node: { html: string, fields: { href: string }, frontmatter: { title: string, tagLine: string, location: string, start: any, end: any, image: string, collageImages: Array<{ collageImage: string }>, schema: Array<{ start: any, end: string, href: string, title: string, details: string, presenters: Array<string>, presentation: string, type: string, youtubeId: string, externalpresenter: { name: string, href: string, avatarSrc: string }, location: { coordinates: Array<number>, title: string } }> } } }> }, kitscons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { start: any } } }> }, persons: { edges: Array<{ node: { fields: { href: string }, frontmatter: { id: string, title: string, tagLine: string, alumni: boolean, image: string, avatar: string, phone: string, email: string, tags: Array<string>, social: { github: string, linkedin: string, keybase: string, twitter: string } } } }> }, avatars: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, collageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
+
+export type KitsStudioPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type KitsStudioPageQueryQuery = { page: { edges: Array<{ node: { html: string, frontmatter: { title: string, heading: string, lead: string, images: Array<string>, section1: { heading: string }, section2: { heading: string, content: string } } } }> }, projects: { edges: Array<{ node: { html: string, frontmatter: { index: number, title: string, image: string, href: string } } }> }, pageImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> }, projectImages: { edges: Array<{ node: { relativePath: string, childImageSharp: { gatsbyImageData: any } } }> } };
 
 export type AboutPageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 

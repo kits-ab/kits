@@ -8,10 +8,10 @@ start: "2018-10-12"
 end: "2018-10-13"
 image: /assets/kitscon_18-2.png
 active: true
-images:
-  - /assets/kitscon_collage_18-2-02.jpg
-  - /assets/kitscon_collage_18-2-01.jpg
-  - /assets/kitscon_collage_18-2-03.jpg
+collageImages:
+  - collageImage: /assets/kitscon_collage_18-2-02.jpg
+  - collageImage: /assets/kitscon_collage_18-2-01.jpg
+  - collageImage: /assets/kitscon_collage_18-2-03.jpg
 schema:
   - details: "Vi åker från First Hotell G, Nils Ericsson-platsen 4"
     type: bus

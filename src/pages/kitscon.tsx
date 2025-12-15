@@ -87,7 +87,9 @@ export default ({ data, location }: KitsConPageProps) => {
 
   const collageImages = findImagesByRelativePaths(
     data.collageImages.edges,
-    kitscon.frontmatter.images
+    kitscon.frontmatter.collageImages
+      ? kitscon.frontmatter.collageImages.map((collageImage) => collageImage.collageImage)
+      : []
   )
 
   const timelineEvents = kitscons.edges.map((edge) => ({
@@ -204,136 +206,154 @@ const renderPresentation = (
   )
 }
 
-export const query = graphql`query KonferensInfoQuery($href: String = "") {
-  page: allMarkdownRemark(filter: {frontmatter: {type: {eq: "kitsconPage"}}}) {
-    edges {
-      node {
-        frontmatter {
-          title
-          heading
-          lead
-          section1 {
+export const query = graphql`
+  query KonferensInfoQuery($href: String = "") {
+    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "kitsconPage" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
             heading
+            lead
+            section1 {
+              heading
+            }
           }
         }
       }
     }
-  }
-  activeKitscon: markdownRemark(fields: {href: {eq: $href}}) {
-    frontmatter {
-      title
-      tagLine
-      location
-      start
-      end
-      image
-      images
-      schema {
+
+    activeKitscon: markdownRemark(fields: { href: { eq: $href } }) {
+      frontmatter {
+        title
+        tagLine
+        location
         start
         end
-        href
-        title
-        details
-        presenters
-        externalpresenter {
-          name
-          href
-          avatarSrc
+        image
+        collageImages {
+          collageImage
         }
-        location {
-          coordinates
-          title
-        }
-        presentation
-        type
-        youtubeId
-      }
-    }
-    html
-  }
-  latestKitscon: allMarkdownRemark(
-    filter: {frontmatter: {type: {eq: "conference"}, active: {eq: true}}}
-    limit: 1
-    sort: {frontmatter: {start: DESC}}
-  ) {
-    edges {
-      node {
-        fields {
-          href
-        }
-        frontmatter {
-          title
-          tagLine
-          location
+        schema {
           start
           end
-          image
-          images
-          schema {
+          href
+          title
+          details
+          presenters
+          externalpresenter {
+            name
+            href
+            avatarSrc
+          }
+          location {
+            coordinates
+            title
+          }
+          presentation
+          type
+          youtubeId
+        }
+      }
+      html
+    }
+
+    latestKitscon: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "conference" }, active: { eq: true } } }
+      limit: 1
+      sort: { frontmatter: { start: DESC } }
+    ) {
+      edges {
+        node {
+          fields {
+            href
+          }
+          frontmatter {
+            title
+            tagLine
+            location
             start
             end
-            href
-            title
-            details
-            presenters
-            externalpresenter {
-              name
+            image
+            collageImages {
+              collageImage
+            }
+            schema {
+              start
+              end
               href
-              avatarSrc
-            }
-            location {
-              coordinates
               title
+              details
+              presenters
+              externalpresenter {
+                name
+                href
+                avatarSrc
+              }
+              location {
+                coordinates
+                title
+              }
+              presentation
+              type
+              youtubeId
             }
-            presentation
-            type
-            youtubeId
+          }
+          html
+        }
+      }
+    }
+
+    kitscons: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "conference" }, active: { eq: true } } }
+    ) {
+      edges {
+        node {
+          fields {
+            href
+          }
+          frontmatter {
+            start
           }
         }
-        html
       }
     }
-  }
-  kitscons: allMarkdownRemark(
-    filter: {frontmatter: {type: {eq: "conference"}, active: {eq: true}}}
-  ) {
-    edges {
-      node {
-        fields {
-          href
-        }
-        frontmatter {
-          start
+
+    persons: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "person" } } }
+      sort: { frontmatter: { title: ASC } }
+    ) {
+      edges {
+        node {
+          ...PersonFragment
         }
       }
     }
-  }
-  persons: allMarkdownRemark(
-    filter: {frontmatter: {type: {eq: "person"}}}
-    sort: {frontmatter: {title: ASC}}
-  ) {
-    edges {
-      node {
-        ...PersonFragment
+
+    avatars: allFile(
+      filter: {
+        internal: { mediaType: { eq: "image/jpeg" } }
+        relativePath: { regex: "/^medarbetare_.*-avatar/" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageFragmentAvatar
+        }
+      }
+    }
+
+    collageImages: allFile(
+      filter: {
+        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
+        relativePath: { regex: "/^kitscon_collage_/" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageFragmentCollage
+        }
       }
     }
   }
-  avatars: allFile(
-    filter: {internal: {mediaType: {eq: "image/jpeg"}}, relativePath: {regex: "/^medarbetare_.*-avatar/"}}
-  ) {
-    edges {
-      node {
-        ...ImageFragmentAvatar
-      }
-    }
-  }
-  collageImages: allFile(
-    filter: {internal: {mediaType: {in: ["image/jpeg", "image/png"]}}, relativePath: {regex: "/^kitscon_collage_/"}}
-  ) {
-    edges {
-      node {
-        ...ImageFragmentCollage
-      }
-    }
-  }
-}`
+`

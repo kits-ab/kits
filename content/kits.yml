@@ -1,11 +1,11 @@
 name: KITS AB
 address:
-  street: Norra Allégatan 8
-  postalCode: 413 01
+  street: Kungsportsavenyen 33
+  postalCode: 411 36
   city: Göteborg
 coordinates:
-  - 57.7001813
-  - 11.9567863
+  - 57.699028
+  - 11.976389
 email: info@kits.se
 phone: 0708 – 27 74 99
 social:
