@@ -5,20 +5,17 @@ import {
   Lead,
   Location,
   MainHeading,
-  SectionHeading,
   spacing,
   Text,
   types,
   Vertical,
-  width,
-  Wrapper
+  width
 } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
 import { Helmet } from "react-helmet"
 
 import { ContentYamlConnection, MarkdownRemarkConnection } from "../../gatsby-types"
-import { PersonList } from "../components/PersonList"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { edgeToPerson, findPersonById } from "../utils/personUtils"
@@ -71,50 +68,51 @@ export default ({ data, location }: AboutPageProps) => {
           })}
         </Vertical>
       </Horizontal>
-
     </DefaultLayout>
   )
 }
 
-export const pageQuery = graphql`query AboutPageQuery {
-  page: allMarkdownRemark(filter: {frontmatter: {type: {eq: "aboutPage"}}}) {
-    edges {
-      node {
-        frontmatter {
-          title
-          heading
-          lead
-          section1 {
+export const pageQuery = graphql`
+  query AboutPageQuery {
+    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "aboutPage" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
             heading
+            lead
+            section1 {
+              heading
+            }
+          }
+          html
+        }
+      }
+    }
+    metadata: allContentYaml {
+      edges {
+        node {
+          name
+          coordinates
+          address {
+            street
+          }
+          contacts {
+            role
+            personId
           }
         }
-        html
       }
     }
-  }
-  metadata: allContentYaml {
-    edges {
-      node {
-        name
-        coordinates
-        address {
-          street
-        }
-        contacts {
-          role
-          personId
+    persons: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "person" }, alumni: { ne: true } } }
+      sort: { frontmatter: { title: ASC } }
+    ) {
+      edges {
+        node {
+          ...PersonFragment
         }
       }
     }
   }
-  persons: allMarkdownRemark(
-    filter: {frontmatter: {type: {eq: "person"}, alumni: {ne: true}}}
-    sort: {frontmatter: {title: ASC}}
-  ) {
-    edges {
-      node {
-        ...PersonFragment
-      }
-    }
-  }
-}`
+`

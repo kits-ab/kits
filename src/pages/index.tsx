@@ -1,5 +1,4 @@
 import {
-  Article,
   Breakout,
   Button,
   colors,
@@ -28,7 +27,6 @@ import { FileConnection, MarkdownRemarkConnection, MarkdownRemarkEdge } from "..
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath } from "../utils/imageUtils"
-import { edgeToPerson, findPersonsByIds } from "../utils/personUtils"
 
 interface IndexPageProps extends PageProps {
   data: {
@@ -48,7 +46,7 @@ const StyledHorizontal = styled(Horizontal)`
 
   > * {
     flex: 0 1 calc(${100 / 6}% - ${spacing.medium}px);
-    height: 80px   !important;
+    height: 80px !important;
     margin-left: ${spacing.medium / 2}px;
     margin-right: ${spacing.medium / 2}px;
     margin-top: ${spacing.medium}px;
@@ -74,12 +72,11 @@ export default ({ data, location }: IndexPageProps) => {
   const page = data.page.edges[0]
   const bigNews = data.news.edges.slice(0, 2)
   const smallNews = data.news.edges.slice(2)
-  const avatars = data.avatars.edges
-  const persons = data.persons.edges.map((edge) => edgeToPerson(edge, avatars))
-  const blog = data.blog.edges[0]
+  // const avatars = data.avatars.edges
+  // const persons = data.persons.edges.map((edge) => edgeToPerson(edge, avatars))
+  // const blog = data.blog.edges[0]
   const images = data.images.edges
   const imagesSmall = data.imagesSmall.edges
-  const authors = findPersonsByIds(persons, blog.node.frontmatter.authors)
 
   return (
     <DefaultLayout location={location}>
@@ -142,7 +139,7 @@ export default ({ data, location }: IndexPageProps) => {
                 key={`big_news_${index}`}
                 infoText={edge.node.frontmatter.title}
                 infoAdditionalText={format(date, "d MMMM yyyy", { locale: sv })}
-                src={image && image.src || ""}
+                src={(image && image.src) || ""}
                 srcSet={""}
               />
             )
@@ -155,8 +152,8 @@ export default ({ data, location }: IndexPageProps) => {
               <Image
                 href={edge.node.fields.href}
                 key={`news_small_${index}`}
-                src={image && image.src || ""}
-                srcSet={image && image.srcSet || ""}
+                src={(image && image.src) || ""}
+                srcSet={(image && image.srcSet) || ""}
                 tooltipText={edge.node.frontmatter.title}
               />
             )
@@ -180,98 +177,109 @@ export default ({ data, location }: IndexPageProps) => {
   )
 }
 
-export const pageQuery = graphql`query IndexPageQuery {
-  page: allMarkdownRemark(filter: {frontmatter: {type: {eq: "indexPage"}}}) {
-    edges {
-      node {
-        frontmatter {
-          title
-          heading
-          lead
-          section1 {
-            subheading
+export const pageQuery = graphql`
+  query IndexPageQuery {
+    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "indexPage" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
             heading
-            content
-          }
-          section2 {
-            subheading
-            heading
-            content
-          }
-          section3 {
-            heading
-          }
-          section4 {
-            heading
+            lead
+            section1 {
+              subheading
+              heading
+              content
+            }
+            section2 {
+              subheading
+              heading
+              content
+            }
+            section3 {
+              heading
+            }
+            section4 {
+              heading
+            }
           }
         }
       }
     }
-  }
-  news: allMarkdownRemark(
-    filter: {frontmatter: {type: {eq: "news"}}}
-    sort: {fields: {date: DESC}}
-  ) {
-    edges {
-      node {
-        fields {
-          href
-          date
+    news: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "news" } } }
+      sort: { fields: { date: DESC } }
+    ) {
+      edges {
+        node {
+          fields {
+            href
+            date
+          }
+          frontmatter {
+            authors
+            title
+            heading
+            image
+          }
+          html
         }
-        frontmatter {
-          authors
-          title
-          heading
-          image
+      }
+    }
+    persons: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "person" } } }
+      sort: { frontmatter: { title: ASC } }
+    ) {
+      edges {
+        node {
+          ...PersonFragment
         }
-        html
+      }
+    }
+    blog: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "post" } } }
+      sort: { fields: { date: DESC } }
+      limit: 1
+    ) {
+      edges {
+        ...BlogFragment
+      }
+    }
+    avatars: allFile(
+      filter: {
+        internal: { mediaType: { eq: "image/jpeg" } }
+        relativePath: { regex: "/^medarbetare_.*-avatar/" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageFragmentAvatar
+        }
+      }
+    }
+    images: allFile(
+      filter: {
+        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
+        relativePath: { regex: "/^nyheter_/" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageFragment
+        }
+      }
+    }
+    imagesSmall: allFile(
+      filter: {
+        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
+        relativePath: { regex: "/^nyheter_/" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageFragmentSmall
+        }
       }
     }
   }
-  persons: allMarkdownRemark(
-    filter: {frontmatter: {type: {eq: "person"}}}
-    sort: {frontmatter: {title: ASC}}
-  ) {
-    edges {
-      node {
-        ...PersonFragment
-      }
-    }
-  }
-  blog: allMarkdownRemark(
-    filter: {frontmatter: {type: {eq: "post"}}}
-    sort: {fields: {date: DESC}}
-    limit: 1
-  ) {
-    edges {
-      ...BlogFragment
-    }
-  }
-  avatars: allFile(
-    filter: {internal: {mediaType: {eq: "image/jpeg"}}, relativePath: {regex: "/^medarbetare_.*-avatar/"}}
-  ) {
-    edges {
-      node {
-        ...ImageFragmentAvatar
-      }
-    }
-  }
-  images: allFile(
-    filter: {internal: {mediaType: {in: ["image/jpeg", "image/png"]}}, relativePath: {regex: "/^nyheter_/"}}
-  ) {
-    edges {
-      node {
-        ...ImageFragment
-      }
-    }
-  }
-  imagesSmall: allFile(
-    filter: {internal: {mediaType: {in: ["image/jpeg", "image/png"]}}, relativePath: {regex: "/^nyheter_/"}}
-  ) {
-    edges {
-      node {
-        ...ImageFragmentSmall
-      }
-    }
-  }
-}`
+`

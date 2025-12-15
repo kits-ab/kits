@@ -59,24 +59,24 @@ const GlobalSiteStyles = createGlobalStyle`
 `
 
 const StyledHeader = styled(Header)`
-nav {
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.Menu-expanded {
-> a {
-    white-space: break-spaces; /* Allow text to wrap */
-    word-wrap: break-word; /* Break words if necessary */
+  nav {
+    font-size: 12px;
+    font-weight: 400;
   }
-}
+
+  .Menu-expanded {
+    > a {
+      white-space: break-spaces; /* Allow text to wrap */
+      word-wrap: break-word; /* Break words if necessary */
+    }
+  }
 `
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
     pathname: string
   }
-  children: any
+  children: React.ReactNode
 }
 
 interface QueryResult {
@@ -107,12 +107,12 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
                 links={[
                   { text: "Om KITS", href: "/om" },
                   { text: "Erbjudanden", href: "/erbjudanden" },
-                  { text: "Keep IT Secure", href: "/keepitsecure"},
-                  { text: "Keep OT Secure", href: "/keepotsecure"},
-                  { text: "Cyberakademi", href: "/cyberakademi"},
-                  { text: "KITS Studio", href: "/kitsstudio"},
+                  { text: "Keep IT Secure", href: "/keepitsecure" },
+                  { text: "Keep OT Secure", href: "/keepotsecure" },
+                  { text: "Cyberakademi", href: "/cyberakademi" },
+                  { text: "KITS Studio", href: "/kitsstudio" },
                   { text: "Bli en av oss", href: "/jobb" },
-                  { text: "KitsCon", href: "/kitscon" },
+                  { text: "KitsCon", href: "/kitscon" }
                   // { text: "Blogg", href: "/blogg" } Temporarily disabled
                 ]}
               />
@@ -121,7 +121,7 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
               {this.props.children}
             </Vertical>
             <Breakout style={{ flex: 0 }}>
-              <KitsFooter/>
+              <KitsFooter />
             </Breakout>
           </Wrapper>
         </LinkContext.Provider>
@@ -152,8 +152,8 @@ function KitsFooter() {
       />
     )
   }
-  const data = useStaticQuery(query);
-  return renderFooter(data);
+  const data = useStaticQuery(query)
+  return renderFooter(data)
 }
 
 const query = graphql`

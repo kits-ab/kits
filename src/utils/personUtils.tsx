@@ -1,9 +1,8 @@
+import { types } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 
-import { types } from "@kokitotsos/react-components"
-
-import { FileEdge, MarkdownRemarkEdge, O365User } from "../../gatsby-types"
 import { findImageByRelativePath } from "./imageUtils"
+import { FileEdge, MarkdownRemarkEdge, O365User } from "../../gatsby-types"
 
 export const personFragment = graphql`
   fragment PersonFragment on MarkdownRemark {

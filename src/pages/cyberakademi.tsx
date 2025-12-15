@@ -1,8 +1,5 @@
 import {
   Button,
-  ContentHeading,
-  Horizontal,
-  Image,
   Lead,
   MainHeading,
   Media,
@@ -10,8 +7,7 @@ import {
   Text,
   Vertical,
   spacing,
-  types,
-  width
+  types
 } from "@kokitotsos/react-components"
 import { Alignment } from "@kokitotsos/react-components/dist/types"
 import { PageProps, graphql } from "gatsby"
@@ -22,21 +18,6 @@ import styled from "styled-components"
 import { FileConnection, MarkdownRemarkConnection } from "../../gatsby-types"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { findImageByRelativePath } from "../utils/imageUtils"
-
-const StyledImage = styled(Image)`
-  max-width: 100%;
-  max-height: 400px;
-
-  .image-wrapper {
-    position: static;
-  }
-
-  .image-image {
-    transform: none;
-    height: auto;
-    max-width: 100%;
-  }
-`
 
 const StyledMedia = styled(Media)`
   .image-wrapper {
@@ -50,7 +31,7 @@ const StyledMedia = styled(Media)`
     max-height: 50%;
   }
   img {
-    //height: 250px !important; 
+    //height: 250px !important;
   }
 `
 
@@ -75,13 +56,13 @@ export default ({ data, location }: CyberAcademyPageProps) => {
       <Vertical spacing={spacing.large} alignHorizontal={Alignment.Center}>
         <MainHeading>{page.node.frontmatter.heading}</MainHeading>
         <Lead>{page.node.frontmatter.lead}</Lead>
-         <StyledMedia
-            heading={page.node.frontmatter.content}
-            src={pageImage && pageImage.src}
-            srcSet={pageImage && pageImage.srcSet}
-          >
-            {page.node.html}
-          </StyledMedia>
+        <StyledMedia
+          heading={page.node.frontmatter.content}
+          src={pageImage && pageImage.src}
+          srcSet={pageImage && pageImage.srcSet}
+        >
+          {page.node.html}
+        </StyledMedia>
       </Vertical>
 
       <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
