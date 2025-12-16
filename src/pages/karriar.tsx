@@ -84,8 +84,8 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
     const images = data.images.edges
     const personaImages = data.personaImages.edges
 
-    const benefitsWithImage = benefits.filter(edge => edge.node.frontmatter.image)
-    const benefitsWithoutImage = benefits.filter(edge => !edge.node.frontmatter.image)
+    const benefitsWithImage = benefits.filter((edge) => edge.node.frontmatter.image)
+    const benefitsWithoutImage = benefits.filter((edge) => !edge.node.frontmatter.image)
 
     const collageImages = findImagesByRelativePaths(
       data.collageImages.edges,
@@ -105,14 +105,18 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
             return (
               <Persona
                 key={"person" + index}
-                iconSrc={personaImages[index].node.childImageSharp.gatsbyImageData.images.fallback.src}
-                iconSrcSet={personaImages[index].node.childImageSharp.gatsbyImageData.images.fallback.srcSet}
+                iconSrc={
+                  personaImages[index].node.childImageSharp.gatsbyImageData.images.fallback.src
+                }
+                iconSrcSet={
+                  personaImages[index].node.childImageSharp.gatsbyImageData.images.fallback.srcSet
+                }
                 isActive={
                   this.state.selectedIndex !== undefined
                     ? this.state.selectedIndex === index
                     : activeJob
-                    ? activeJob.id === edge.node.id
-                    : index === 0
+                      ? activeJob.id === edge.node.id
+                      : index === 0
                 }
                 name={edge.node.attributes.title}
                 onClick={this.handleClick.bind(this, index, edge.node.fields.href)}
@@ -187,89 +191,100 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
   }
 }
 
-export const pageQuery = graphql`query JobPageQuery($href: String = "") {
-  page: allMarkdownRemark(filter: {frontmatter: {type: {eq: "jobPage"}}}) {
-    edges {
-      node {
-        frontmatter {
-          title
-          heading
-          lead
-          section1 {
+export const pageQuery = graphql`
+  query JobPageQuery($href: String = "") {
+    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "jobPage" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
             heading
+            lead
+            section1 {
+              heading
+            }
+            section2 {
+              content
+              heading
+            }
+            images
           }
-          section2 {
-            content
-            heading
+        }
+      }
+    }
+    activeJob: teamtailorJob(fields: { href: { eq: $href } }) {
+      id
+    }
+    jobs: allTeamtailorJob {
+      edges {
+        node {
+          fields {
+            href
           }
-          images
+          id
+          links {
+            careersite_job_apply_url
+            careersite_job_url
+          }
+          attributes {
+            title
+            body
+            apply_button_text
+            human_status
+          }
+        }
+      }
+    }
+    benefits: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "benefit" } } }
+      sort: { frontmatter: { index: ASC } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            image
+          }
+          html
+        }
+      }
+    }
+    images: allFile(
+      filter: {
+        internal: { mediaType: { eq: "image/jpeg" } }
+        relativePath: { regex: "/^formaner_/" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageFragment
+        }
+      }
+    }
+    collageImages: allFile(
+      filter: {
+        internal: { mediaType: { eq: "image/jpeg" } }
+        relativePath: { regex: "/^formaner_/" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageFragmentCollage
+        }
+      }
+    }
+    personaImages: allFile(
+      filter: {
+        internal: { mediaType: { eq: "image/png" } }
+        relativePath: { regex: "/^persona_/" }
+      }
+      sort: { relativePath: ASC }
+    ) {
+      edges {
+        node {
+          ...ImageFragmentPersona
         }
       }
     }
   }
-  activeJob: teamtailorJob(fields: {href: {eq: $href}}) {
-    id
-  }
-  jobs: allTeamtailorJob {
-    edges {
-      node {
-        fields {
-          href
-        }
-        id
-        links {
-          careersite_job_apply_url
-          careersite_job_url
-        }
-        attributes {
-          title
-          body
-          apply_button_text
-          human_status
-        }
-      }
-    }
-  }
-  benefits: allMarkdownRemark(
-    filter: {frontmatter: {type: {eq: "benefit"}}}
-    sort: {frontmatter: {index: ASC}}
-  ) {
-    edges {
-      node {
-        frontmatter {
-          title
-          image
-        }
-        html
-      }
-    }
-  }
-  images: allFile(
-    filter: {internal: {mediaType: {eq: "image/jpeg"}}, relativePath: {regex: "/^formaner_/"}}
-  ) {
-    edges {
-      node {
-        ...ImageFragment
-      }
-    }
-  }
-  collageImages: allFile(
-    filter: {internal: {mediaType: {eq: "image/jpeg"}}, relativePath: {regex: "/^formaner_/"}}
-  ) {
-    edges {
-      node {
-        ...ImageFragmentCollage
-      }
-    }
-  }
-  personaImages: allFile(
-    filter: {internal: {mediaType: {eq: "image/png"}}, relativePath: {regex: "/^persona_/"}}
-    sort: {relativePath: ASC}
-  ) {
-    edges {
-      node {
-        ...ImageFragmentPersona
-      }
-    }
-  }
-}`
+`

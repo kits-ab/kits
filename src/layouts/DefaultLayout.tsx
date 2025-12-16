@@ -10,6 +10,7 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
+// import { SiteHeader } from "../components/SiteHeader"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 import * as React from "react"
@@ -58,20 +59,6 @@ const GlobalSiteStyles = createGlobalStyle`
   }
 `
 
-const StyledHeader = styled(Header)`
-  nav {
-    font-size: 12px;
-    font-weight: 400;
-  }
-
-  .Menu-expanded {
-    > a {
-      white-space: break-spaces; /* Allow text to wrap */
-      word-wrap: break-word; /* Break words if necessary */
-    }
-  }
-`
-
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
     pathname: string
@@ -102,18 +89,15 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
           <Wrapper spacing={spacing.huge} style={{ minHeight: "100%" }}>
             <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
             <Breakout>
-              <StyledHeader
+              <Header
                 breakpoint={width.mobileMenu}
                 links={[
-                  { text: "Om KITS", href: "/om" },
-                  { text: "Erbjudanden", href: "/erbjudanden" },
-                  { text: "Keep IT Secure", href: "/keepitsecure" },
-                  { text: "Keep OT Secure", href: "/keepotsecure" },
-                  { text: "Cyberakademi", href: "/cyberakademi" },
-                  { text: "KITS Studio", href: "/kitsstudio" },
-                  { text: "Bli en av oss", href: "/jobb" },
-                  { text: "KitsCon", href: "/kitscon" }
-                  // { text: "Blogg", href: "/blogg" } Temporarily disabled
+                  { text: "Tjänster", href: "/tjanster" },
+                  { text: "Keep IT Simple", href: "/teknik-och-utveckling" },
+                  { text: "Keep IT Secure", href: "/cybersecurity" },
+                  { text: "Karriär", href: "/karriar" },
+                  { text: "KitsCon", href: "/kitscon" },
+                  { text: "Om oss", href: "/om-oss" }
                 ]}
               />
             </Breakout>
