@@ -127,6 +127,7 @@ export default ({ data, location }: PersonPageProps) => {
   )
 }
 
+/* Disabled person page query (page creation is disabled in gatsby-node.js)
 export const query = graphql`
   query PersonPageQuery($href: String, $email: String) {
     person: markdownRemark(fields: { href: { eq: $href } }) {
@@ -154,3 +155,4 @@ export const query = graphql`
     }
   }
 `
+*/
