@@ -1,6 +1,6 @@
 ---
 type: jobPage
-title: Bli en av oss
+title: Karriär
 heading: Bli en av oss
 lead: >-
   På KITS jobbar vi oavbrutet för att vara marknadens bästa arbetsgivare och

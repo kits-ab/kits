@@ -1,6 +1,7 @@
 import {
   Breakout,
   Button,
+  Collage,
   colors,
   ContentHeading,
   Horizontal,
@@ -23,10 +24,12 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
+import { Seo } from "../components/Seo"
+
 import { FileConnection, MarkdownRemarkConnection, MarkdownRemarkEdge } from "../../gatsby-types"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
-import { findImageByRelativePath } from "../utils/imageUtils"
+import { findImageByRelativePath, findImagesByRelativePaths } from "../utils/imageUtils"
 
 interface IndexPageProps extends PageProps {
   data: {
@@ -37,6 +40,7 @@ interface IndexPageProps extends PageProps {
     avatars: FileConnection
     images: FileConnection
     imagesSmall: FileConnection
+    collageImages: FileConnection
   }
 }
 
@@ -78,9 +82,18 @@ export default ({ data, location }: IndexPageProps) => {
   const images = data.images.edges
   const imagesSmall = data.imagesSmall.edges
 
+  const collageImages = findImagesByRelativePaths(
+    data.collageImages.edges,
+    page.node.frontmatter.images
+  )
+
   return (
     <DefaultLayout location={location}>
-      <Helmet title={page.node.frontmatter.title} />
+      <Seo
+        title={page.node.frontmatter.title}
+        description="KITS är specialister inom systemutveckling, integration och cybersäkerhet. Vi levererar seniora konsulter som bygger och säkrar framtidens digitala lösningar."
+        pathname={location.pathname}
+      />
 
       <Vertical spacing={spacing.large}>
         <MainHeading>{page.node.frontmatter.heading}</MainHeading>
@@ -94,12 +107,14 @@ export default ({ data, location }: IndexPageProps) => {
             distribute={true}
             separator={true}
             spacing={spacing.large}
+            style={{ alignItems: "stretch" }}
           >
             <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.large}>
               <Vertical
                 alignHorizontal={types.Alignment.Center}
                 spacing={spacing.small}
                 className="max-100"
+                style={{ flexGrow: 1 }}
               >
                 <SubHeading>{page.node.frontmatter.section1.subheading}</SubHeading>
                 <ContentHeading>{page.node.frontmatter.section1.heading}</ContentHeading>
@@ -107,13 +122,14 @@ export default ({ data, location }: IndexPageProps) => {
                   <p>{page.node.frontmatter.section1.content}</p>
                 </Text>
               </Vertical>
-              <Button href="/erbjudanden">Läs mer om vad vi kan erbjuda</Button>
+              <Button href="/tjanster">Läs mer om våra tjänster</Button>
             </Vertical>
             <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.large}>
               <Vertical
                 alignHorizontal={types.Alignment.Center}
                 spacing={spacing.small}
                 className="max-100"
+                style={{ flexGrow: 1 }}
               >
                 <SubHeading>{page.node.frontmatter.section2.subheading}</SubHeading>
                 <ContentHeading>{page.node.frontmatter.section2.heading}</ContentHeading>
@@ -121,12 +137,15 @@ export default ({ data, location }: IndexPageProps) => {
                   <p>{page.node.frontmatter.section2.content}</p>
                 </Text>
               </Vertical>
-              <Button href="/jobb">Läs mer om att jobba på KITS</Button>
+              <Button href="/karriar">Läs mer om att jobba på KITS</Button>
             </Vertical>
           </Horizontal>
         </Wrapper>
       </StyledBreakout>
 
+      <Collage className="collage" images={collageImages.map((img) => ({ ...img, alt: "KITS" }))} />
+
+      {/*
       <SectionHeading>{page.node.frontmatter.section3.heading}</SectionHeading>
       <Vertical>
         <Horizontal breakpoint={width.mobile} distribute={true} spacing={spacing.medium}>
@@ -160,7 +179,7 @@ export default ({ data, location }: IndexPageProps) => {
           })}
         </StyledHorizontal>
       </Vertical>
-
+      */}
       {/* Temporarily disabled
       <SectionHeading>{page.node.frontmatter.section4.heading}</SectionHeading>
       <Article
@@ -202,6 +221,7 @@ export const pageQuery = graphql`
             section4 {
               heading
             }
+            images
           }
         }
       }
@@ -278,6 +298,18 @@ export const pageQuery = graphql`
       edges {
         node {
           ...ImageFragmentSmall
+        }
+      }
+    }
+    collageImages: allFile(
+      filter: {
+        internal: { mediaType: { eq: "image/jpeg" } }
+        relativePath: { regex: "/^framsida_/" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageFragmentCollage
         }
       }
     }

@@ -20,7 +20,7 @@ import {
 import { isSameDay, parseISO } from "date-fns"
 import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
+import { Seo } from "../components/Seo"
 import styled from "styled-components"
 
 import {
@@ -99,7 +99,11 @@ export default ({ data, location }: KitsConPageProps) => {
 
   return (
     <DefaultLayout location={location}>
-      <Helmet title={page.node.frontmatter.title} />
+      <Seo
+        title={page.node.frontmatter.title}
+        description="KitsCon, vår årliga utvecklarkonferens. Inspirerande föreläsningar om det senaste inom teknik, utveckling och säkerhet. Se program och talare."
+        pathname={location.pathname}
+      />
 
       <Vertical spacing={spacing.large}>
         <MainHeading>{page.node.frontmatter.heading}</MainHeading>

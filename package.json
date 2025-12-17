@@ -34,6 +34,7 @@
     "gatsby-plugin-manifest": "5.15.0",
     "gatsby-plugin-netlify": "5.1.1",
     "gatsby-plugin-react-helmet": "6.15.0",
+    "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "5.15.0",
     "gatsby-plugin-sitemap": "6.15.0",
     "gatsby-plugin-styled-components": "6.15.0",

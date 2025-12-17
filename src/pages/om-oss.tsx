@@ -13,7 +13,7 @@ import {
 } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
+import { Seo } from "../components/Seo"
 
 import { ContentYamlConnection, MarkdownRemarkConnection } from "../../gatsby-types"
 import { DefaultLayout } from "../layouts/DefaultLayout"
@@ -37,7 +37,11 @@ export default ({ data, location }: AboutPageProps) => {
 
   return (
     <DefaultLayout location={location}>
-      <Helmet title={page.node.frontmatter.title} />
+      <Seo
+        title={page.node.frontmatter.title}
+        description="Lär känna KITS, ett konsultbolag med fokus på systemutveckling, arkitektur och säkerhet. Vi levererar hållbara digitala lösningar med stort engagemang."
+        pathname={location.pathname}
+      />
 
       <Vertical spacing={spacing.large}>
         <MainHeading>{page.node.frontmatter.heading}</MainHeading>

@@ -1,3 +1,5 @@
+import { Breadcrumbs } from "../components/Breadcrumbs"
+
 import {
   Breakout,
   Footer,
@@ -94,7 +96,7 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
                 links={[
                   { text: "Tjänster", href: "/tjanster" },
                   { text: "Keep IT Simple", href: "/teknik-och-utveckling" },
-                  { text: "Keep IT Secure", href: "/cybersecurity" },
+                  { text: "Keep IT Secure", href: "/cybersakerhet" },
                   { text: "Karriär", href: "/karriar" },
                   { text: "KitsCon", href: "/kitscon" },
                   { text: "Om oss", href: "/om-oss" }
@@ -102,6 +104,7 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
               />
             </Breakout>
             <Vertical spacing={spacing.huge} style={{ flex: "1 1 auto", marginTop: 120 }}>
+              <Breadcrumbs location={this.props.location} />
               {this.props.children}
             </Vertical>
             <Breakout style={{ flex: 0 }}>
@@ -124,13 +127,9 @@ function KitsFooter() {
           street: kitsInfo.address.street,
           postalCode: new types.PostalCode(kitsInfo.address.postalCode),
           city: kitsInfo.address.city,
-          phone: new types.PhoneNumber(kitsInfo.phone),
-          email: new types.Email(kitsInfo.email),
           social: {
-            facebook: new types.Username(kitsInfo.social.facebook, types.SocialType.Facebook),
             github: new types.Username(kitsInfo.social.github, types.SocialType.GitHub),
-            linkedin: new types.Username(kitsInfo.social.linkedin, types.SocialType.LinkedIn),
-            twitter: new types.Username(kitsInfo.social.twitter, types.SocialType.Twitter)
+            linkedin: new types.Username(kitsInfo.social.linkedin, types.SocialType.LinkedIn)
           }
         }}
       />

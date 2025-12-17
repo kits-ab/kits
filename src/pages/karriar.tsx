@@ -23,6 +23,8 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
+import { Seo } from "../components/Seo"
+
 import {
   FileConnection,
   MarkdownRemarkConnection,
@@ -62,6 +64,7 @@ interface JobPageProps extends PageProps {
     images: FileConnection
     collageImages: FileConnection
     personaImages: FileConnection
+    cyberAcademyImages: FileConnection
   }
 }
 
@@ -83,6 +86,10 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
     const benefits = data.benefits.edges
     const images = data.images.edges
     const personaImages = data.personaImages.edges
+    const cyberAcademyImage = findImageByRelativePath(
+      data.cyberAcademyImages.edges,
+      "assets/cyberacademy_bild1.png"
+    )
 
     const benefitsWithImage = benefits.filter((edge) => edge.node.frontmatter.image)
     const benefitsWithoutImage = benefits.filter((edge) => !edge.node.frontmatter.image)
@@ -94,12 +101,31 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
 
     return (
       <DefaultLayout location={location}>
-        <Helmet title={page.node.frontmatter.title} />
+        <Seo
+          title={page.node.frontmatter.title}
+          description="Sök jobb hos KITS! Vi söker drivna konsulter inom systemutveckling och cybersäkerhet. Utforska våra lediga tjänster och KITS Cyberakademi."
+          pathname={location.pathname}
+        />
 
         <Vertical spacing={spacing.large}>
           <MainHeading>{page.node.frontmatter.heading}</MainHeading>
           <Lead>{page.node.frontmatter.lead}</Lead>
         </Vertical>
+
+        <Button
+          href="https://jobb.kits.se/"
+          openInNewWindow={true}
+          style={{
+            maxWidth: 280,
+            alignItems: "center",
+            justifyContent: "center",
+            alignSelf: "center"
+          }}
+        >
+          Ansök direkt på jobb.kits.se
+        </Button>
+
+        {/*
         <Personas>
           {jobs.map((edge, index) => {
             return (
@@ -135,6 +161,47 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
             )
           })}
         </Personas>
+        */}
+
+        <Vertical spacing={spacing.large} style={{ marginTop: spacing.huge }}>
+          <Vertical spacing={spacing.medium}>
+            <SectionHeading>KITS Cyberakademi</SectionHeading>
+          </Vertical>
+          <Lead>Nästa generations cybersäkerhetsexperter</Lead>
+
+          <Media
+            src={cyberAcademyImage && cyberAcademyImage.src}
+            srcSet={cyberAcademyImage && cyberAcademyImage.srcSet}
+          >
+            <Text>
+              <p>
+                På KITS är vi mycket stolta över vår Cyberakademi, ett ettårigt program som syftar
+                till att utbilda nyexaminerade universitetsstudenter till cybersäkerhetsexperter.
+                Programmet är utformat för att ta deltagarna från talang till expert inom
+                penetrationstestning och IT-säkerhet genom en kombination av praktisk erfarenhet och
+                teoretisk kunskap.
+              </p>
+              <p>
+                Deltagarna får tillgång till kurser, certifieringar och möjlighet att delta i
+                pentester för att utveckla den spetskompetens som krävs för att möta dagens och
+                framtidens säkerhetshot. Utöver den tekniska träningen som ingår i programmet får
+                deltagarna även fördjupa sig inom ett specifikt säkerhetsområde de själva brinner
+                för, vilket gör att vi bygger upp ett team av konsulter med djupgående och
+                diversifierad expertis.
+              </p>
+              <p>
+                Akademiansvarig är Francisco, en av våra experter inom IT-säkerhet och kryptografi.
+                Med sin långa erfarenhet från både akademi och näringsliv erbjuder Francisco
+                vägledning och inspiration, vilket ger deltagarna ett tydligt stöd och en ovärderlig
+                inblick i verkliga säkerhetsutmaningar.
+              </p>
+              <p>
+                Vid slutet av utbildningen förväntas deltagarna ha tillräcklig kunskap för att
+                genomföra webbpentester och ha fördjupat sig i sitt valda säkerhetsområde.
+              </p>
+            </Text>
+          </Media>
+        </Vertical>
 
         <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
         {benefitsWithImage.map((edge: MarkdownRemarkEdge, index: number) => {
@@ -283,6 +350,18 @@ export const pageQuery = graphql`
       edges {
         node {
           ...ImageFragmentPersona
+        }
+      }
+    }
+    cyberAcademyImages: allFile(
+      filter: {
+        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
+        relativePath: { regex: "/^cyberacademy_/" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageFragment
         }
       }
     }

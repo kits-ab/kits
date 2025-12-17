@@ -1,4 +1,12 @@
-import { Breakout, Lead, MainHeading, spacing, Text, Vertical } from "@kokitotsos/react-components"
+import {
+  Breakout,
+  ContentHeading,
+  Lead,
+  MainHeading,
+  spacing,
+  Text,
+  Vertical
+} from "@kokitotsos/react-components"
 import * as React from "react"
 import { Helmet } from "react-helmet"
 
@@ -8,7 +16,12 @@ import { PageProps } from "../../types/PageProps"
 const AppSecTrainingPage = ({ location }: PageProps) => {
   return (
     <DefaultLayout location={location}>
-      <Helmet title="Utbildning i applikationssäkerhet" />
+      <Helmet title="Utbildning i applikationssäkerhet">
+        <meta
+          name="description"
+          content="Lär er bygga säkra applikationer med vår utbildning baserad på OWASP Top 10 och ASVS. Praktisk träning för utvecklare och DevOps-team."
+        />
+      </Helmet>
       <Vertical spacing={spacing.large}>
         <MainHeading>Utbildning i applikationssäkerhet</MainHeading>
         <Lead>
@@ -18,19 +31,23 @@ const AppSecTrainingPage = ({ location }: PageProps) => {
 
         <Vertical spacing={spacing.medium}>
           <Text>
-            Vi erbjuder en praktiskt inriktad kurs i applikationssäkerhet där deltagarna lär sig att
-            identifiera, förstå och förebygga vanliga sårbarheter i moderna applikationer.
-            Utbildningen baseras på OWASP ASVS och OWASP Top 10 och täcker secure coding, threat
-            modeling och hur säkerhet integreras i hela utvecklingsprocessen.
+            <p>
+              Vi erbjuder en praktiskt inriktad kurs i applikationssäkerhet där deltagarna lär sig
+              att identifiera, förstå och förebygga vanliga sårbarheter i moderna applikationer.
+              Utbildningen baseras på OWASP ASVS och OWASP Top 10 och täcker secure coding, threat
+              modeling och hur säkerhet integreras i hela utvecklingsprocessen.
+            </p>
           </Text>
           <Text>
-            Kursen riktar sig till utvecklare, tekniska ledare och DevOps-team som vill stärka sitt
-            säkerhetsarbete och skapa robusta och säkra applikationer från start.
+            <p>
+              Kursen riktar sig till utvecklare, tekniska ledare och DevOps-team som vill stärka
+              sitt säkerhetsarbete och skapa robusta och säkra applikationer från start.
+            </p>
           </Text>
         </Vertical>
 
         <Vertical spacing={spacing.medium}>
-          <MainHeading>Vad utbildningen innehåller</MainHeading>
+          <ContentHeading>Vad utbildningen innehåller</ContentHeading>
           <Text>
             <ul>
               <li>Genomgång av OWASP ASVS och OWASP Top 10</li>

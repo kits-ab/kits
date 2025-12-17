@@ -7,6 +7,9 @@ require("dotenv").config()
 const config: GatsbyConfig = {
   siteMetadata: {
     siteUrl: "https://kits.se",
+    title: "KITS",
+    description: "KITS är specialister inom systemutveckling, integration och cybersäkerhet.",
+    author: "@kits_ab",
     rssBlogTitle: "KITS - Blogg",
     rssBlogDescription: "Senaste inläggen i KITS blogg"
   },
@@ -257,6 +260,26 @@ const config: GatsbyConfig = {
       }
     },
     "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://kits.se",
+        sitemap: "https://kits.se/sitemap/sitemap-index.xml",
+        policy: [{ userAgent: "*", allow: "/", disallow: "/admin/" }]
+      }
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "KITS AB",
+        short_name: "KITS",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#333333",
+        display: "minimal-ui",
+        icon: "static/assets/nyheter_kitsallafarger.png" // This path is relative to the root of the site.
+      }
+    },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
