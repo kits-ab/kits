@@ -1,7 +1,7 @@
+import { colors, fonts, spacing } from "@kokitotsos/react-components"
 import { Link } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
-import { colors, fonts, spacing } from "@kokitotsos/react-components"
 
 const BreadcrumbContainer = styled.nav`
   margin-bottom: ${spacing.small}px;

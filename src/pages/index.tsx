@@ -5,10 +5,8 @@ import {
   colors,
   ContentHeading,
   Horizontal,
-  Image,
   Lead,
   MainHeading,
-  SectionHeading,
   spacing,
   SubHeading,
   Text,
@@ -17,19 +15,15 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
-import { format, parseISO } from "date-fns"
-import { sv } from "date-fns/locale"
 import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
+import { FileConnection, MarkdownRemarkConnection } from "../../gatsby-types"
 import { Seo } from "../components/Seo"
-
-import { FileConnection, MarkdownRemarkConnection, MarkdownRemarkEdge } from "../../gatsby-types"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
-import { findImageByRelativePath, findImagesByRelativePaths } from "../utils/imageUtils"
+import { findImagesByRelativePaths } from "../utils/imageUtils"
 
 interface IndexPageProps extends PageProps {
   data: {
@@ -44,27 +38,6 @@ interface IndexPageProps extends PageProps {
   }
 }
 
-const StyledHorizontal = styled(Horizontal)`
-  margin-left: ${-spacing.medium / 2}px;
-  margin-right: ${-spacing.medium / 2}px;
-
-  > * {
-    flex: 0 1 calc(${100 / 6}% - ${spacing.medium}px);
-    height: 80px !important;
-    margin-left: ${spacing.medium / 2}px;
-    margin-right: ${spacing.medium / 2}px;
-    margin-top: ${spacing.medium}px;
-
-    @media (max-width: ${width.tablet}px) {
-      flex: 0 1 calc(${100 / 4}% - ${spacing.medium}px);
-    }
-
-    @media (max-width: ${width.mobileMenu}px) {
-      flex: 0 1 calc(${100 / 3}% - ${spacing.medium}px);
-    }
-  }
-`
-
 const StyledBreakout = styled(Breakout)`
   background-color: ${colors.background2};
   background-color: var(--background2);
@@ -74,13 +47,13 @@ const StyledBreakout = styled(Breakout)`
 
 export default ({ data, location }: IndexPageProps) => {
   const page = data.page.edges[0]
-  const bigNews = data.news.edges.slice(0, 2)
-  const smallNews = data.news.edges.slice(2)
+  // const bigNews = data.news.edges.slice(0, 2)
+  // const smallNews = data.news.edges.slice(2)
   // const avatars = data.avatars.edges
   // const persons = data.persons.edges.map((edge) => edgeToPerson(edge, avatars))
   // const blog = data.blog.edges[0]
-  const images = data.images.edges
-  const imagesSmall = data.imagesSmall.edges
+  // const images = data.images.edges
+  // const imagesSmall = data.imagesSmall.edges
 
   const collageImages = findImagesByRelativePaths(
     data.collageImages.edges,

@@ -1,9 +1,7 @@
 import {
   colors,
   fonts,
-  Header as LibHeader,
   Horizontal,
-  Link as LibLink,
   Logotype,
   MenuIcon,
   spacing,
@@ -49,7 +47,7 @@ const StyledHeader = styled.header<{ breakpoint: number }>`
     position: absolute;
   }
 
-  @media (max-height: 400px) {
+  @media (height <= 400px) {
     position: absolute;
   }
 `
@@ -126,18 +124,15 @@ const StyledNav = styled.nav<{ breakpoint: number; isFloating: boolean; isOpen: 
   ${(props) =>
     props.isOpen &&
     css`
-      @media (max-width: ${(props) => props.breakpoint}px) {
+      @media (max-width: ${props.breakpoint}px) {
         background-color: ${colors.background4};
         background-color: var(--background4);
-        bottom: 0;
+        inset: 0;
         display: flex;
         flex-direction: column;
         font-size: 24px;
-        left: 0;
         padding: ${spacing.large}px;
         position: fixed;
-        right: 0;
-        top: 0;
         z-index: 13;
 
         .Menu-expanded {
@@ -179,7 +174,7 @@ const DropdownMenu = styled.div`
   left: 0;
   background-color: ${colors.background4};
   background-color: var(--background4);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
   flex-direction: column;
   min-width: 200px;
   padding: ${spacing.small}px 0;
@@ -190,7 +185,7 @@ const DropdownMenu = styled.div`
     white-space: nowrap;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: rgb(0 0 0 / 5%);
     }
   }
 
@@ -239,7 +234,7 @@ const SiteMenu = ({ links, breakpoint = 500 }: { links: SiteLink[]; breakpoint?:
   const menuRef = useRef<HTMLElement>(null)
 
   const getProps = ({ isPartiallyCurrent }: { isPartiallyCurrent: boolean }) => {
-    return isPartiallyCurrent ? { className: "is-active" } : null
+    return isPartiallyCurrent ? { className: "is-active" } : {}
   }
 
   const handleClick = () => {
@@ -247,8 +242,8 @@ const SiteMenu = ({ links, breakpoint = 500 }: { links: SiteLink[]; breakpoint?:
   }
 
   const handleDocumentClick = useCallback(
-    (e: any) => {
-      if (isOpen && !(menuRef.current as unknown as Element).contains(e.target)) {
+    (e: MouseEvent | TouchEvent) => {
+      if (isOpen && !(menuRef.current as unknown as Element).contains(e.target as Node)) {
         setIsOpen(false)
       }
     },

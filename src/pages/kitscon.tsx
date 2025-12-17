@@ -20,7 +20,6 @@ import {
 import { isSameDay, parseISO } from "date-fns"
 import { graphql } from "gatsby"
 import * as React from "react"
-import { Seo } from "../components/Seo"
 import styled from "styled-components"
 
 import {
@@ -29,6 +28,7 @@ import {
   MarkdownRemarkConnection,
   MarkdownRemarkFrontmatterSchema
 } from "../../gatsby-types"
+import { Seo } from "../components/Seo"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { formatPeriod, formatWeekday } from "../utils/dateUtils"
@@ -195,7 +195,7 @@ const renderPresentation = (
       href={presentation.href}
       location={
         presentation.location && presentation.location.coordinates
-          ? (presentation.location as any)
+          ? (presentation.location as any) // eslint-disable-line @typescript-eslint/no-explicit-any
           : undefined
       }
       type={presentation.type as types.TimeslotType}

@@ -13,9 +13,9 @@ import {
 } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
-import { Seo } from "../components/Seo"
 
 import { ContentYamlConnection, MarkdownRemarkConnection } from "../../gatsby-types"
+import { Seo } from "../components/Seo"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { edgeToPerson, findPersonById } from "../utils/personUtils"

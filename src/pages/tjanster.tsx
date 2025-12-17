@@ -16,11 +16,9 @@ import {
 } from "@kokitotsos/react-components"
 import { Link } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 import { Seo } from "../components/Seo"
-
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 

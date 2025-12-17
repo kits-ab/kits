@@ -1,5 +1,3 @@
-import { Breadcrumbs } from "../components/Breadcrumbs"
-
 import {
   Breakout,
   Footer,
@@ -18,9 +16,9 @@ import { Link } from "gatsby"
 import * as React from "react"
 import { Helmet } from "react-helmet"
 import { createGlobalStyle } from "styled-components"
-import styled from "styled-components"
 
 import { ContentYamlConnection } from "../../gatsby-types"
+import { Breadcrumbs } from "../components/Breadcrumbs"
 
 const GlobalSiteStyles = createGlobalStyle`
   html {
@@ -78,7 +76,10 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
       <>
         <GlobalComponentStyles />
         <GlobalSiteStyles />
-        <LinkContext.Provider value={{ linkComponent: Link as any, navLinkComponent: Link as any }}>
+        <LinkContext.Provider
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          value={{ linkComponent: Link as any, navLinkComponent: Link as any }}
+        >
           <Helmet>
             <html lang="sv" />
             <meta

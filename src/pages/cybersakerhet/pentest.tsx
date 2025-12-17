@@ -1,5 +1,4 @@
 import {
-  Breakout,
   ContentHeading,
   Lead,
   MainHeading,

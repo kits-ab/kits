@@ -7,8 +7,6 @@ import {
   Lead,
   MainHeading,
   Media,
-  Persona,
-  Personas,
   SectionHeading,
   spacing,
   SubHeading,
@@ -20,10 +18,7 @@ import {
 } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
 import styled from "styled-components"
-
-import { Seo } from "../components/Seo"
 
 import {
   FileConnection,
@@ -32,10 +27,10 @@ import {
   TeamtailorJob,
   TeamtailorJobConnection
 } from "../../gatsby-types"
+import { Seo } from "../components/Seo"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath, findImagesByRelativePaths } from "../utils/imageUtils"
-import { truncateJobAd } from "../utils/jobUtils"
 
 const StyledBreakout = styled(Breakout)`
   background-color: ${colors.background2};
@@ -46,12 +41,6 @@ const StyledBreakout = styled(Breakout)`
   .collage {
     margin-top: -150px;
     margin-bottom: ${spacing.large}px;
-  }
-`
-
-const StyledPersonaContent = styled(Vertical)`
-  @media (max-width: ${width.mobileMenu}px) {
-    align-items: center;
   }
 `
 
@@ -81,11 +70,11 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
     const { data, location } = this.props
 
     const page = data.page.edges[0]
-    const activeJob = data.activeJob
-    const jobs = data.jobs.edges
+    // const activeJob = data.activeJob
+    // const jobs = data.jobs.edges
     const benefits = data.benefits.edges
     const images = data.images.edges
-    const personaImages = data.personaImages.edges
+    // const personaImages = data.personaImages.edges
     const cyberAcademyImage = findImageByRelativePath(
       data.cyberAcademyImages.edges,
       "assets/cyberacademy_bild1.png"
