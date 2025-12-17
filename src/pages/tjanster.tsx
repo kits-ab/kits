@@ -30,8 +30,8 @@ const StyledBreakout = styled(Breakout)`
 
 const StyledSectionHeading = styled(SectionHeading)`
   > span {
-    background-color: ${colors.background2};
-    background-color: var(--background2);
+    background-color: ${colors.background2} !important;
+    background-color: var(--background2) !important;
   }
 `
 
