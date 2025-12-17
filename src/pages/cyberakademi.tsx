@@ -12,10 +12,10 @@ import {
 import { Alignment } from "@kokitotsos/react-components/dist/types"
 import { PageProps, graphql } from "gatsby"
 import React from "react"
-import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 import { FileConnection, MarkdownRemarkConnection } from "../../gatsby-types"
+import { Seo } from "../components/Seo"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { findImageByRelativePath } from "../utils/imageUtils"
 
@@ -52,7 +52,11 @@ export default ({ data, location }: CyberAcademyPageProps) => {
 
   return (
     <DefaultLayout location={location}>
-      <Helmet title={page.node.frontmatter.title} />
+      <Seo
+        title={page.node.frontmatter.title}
+        description={page.node.frontmatter.seoDescription}
+        pathname={location.pathname}
+      />
       <Vertical spacing={spacing.large} alignHorizontal={Alignment.Center}>
         <MainHeading>{page.node.frontmatter.heading}</MainHeading>
         <Lead>{page.node.frontmatter.lead}</Lead>
@@ -99,6 +103,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            seoDescription
             heading
             lead
             content

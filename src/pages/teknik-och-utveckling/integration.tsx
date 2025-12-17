@@ -6,72 +6,107 @@ import {
   Text,
   Vertical
 } from "@kokitotsos/react-components"
+import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
 
+import { Seo } from "../../components/Seo"
 import { DefaultLayout } from "../../layouts/DefaultLayout"
 import { PageProps } from "../../types/PageProps"
 
-const IntegrationPage = ({ location }: PageProps) => {
+interface IntegrationPageProps extends PageProps {
+  data: {
+    page: {
+      frontmatter: {
+        title: string
+        seoDescription: string
+        heading: string
+        lead: string
+        section1: {
+          heading: string
+          text1: string
+          text2: string
+        }
+        section2: {
+          heading: string
+          items: string[]
+        }
+        section3: {
+          heading: string
+          text: string
+        }
+      }
+    }
+  }
+}
+
+const IntegrationPage = ({ data, location }: IntegrationPageProps) => {
+  const { frontmatter } = data.page
+
   return (
     <DefaultLayout location={location}>
-      <Helmet title="Integration">
-        <meta
-          name="description"
-          content="Vi skapar stabila och säkra integrationslösningar som får era system att samverka. Expertis inom API-utveckling, integrationsarkitektur och molnintegrationer."
-        />
-      </Helmet>
+      <Seo
+        title={frontmatter.title}
+        description={frontmatter.seoDescription}
+        pathname={location.pathname}
+      />
       <Vertical spacing={spacing.large}>
-        <MainHeading>Integration</MainHeading>
-        <Lead>
-          Vi skapar stabila, säkra och effektiva integrationslösningar som får era system att
-          kommunicera. Våra integrationsspecialister hjälper organisationer att bygga datadrivna
-          flöden, robusta API:er och moderna integrationsarkitekturer.
-        </Lead>
+        <MainHeading>{frontmatter.heading}</MainHeading>
+        <Lead>{frontmatter.lead}</Lead>
 
         <Vertical spacing={spacing.medium}>
-          <ContentHeading>Det här erbjuder vi</ContentHeading>
+          <ContentHeading>{frontmatter.section1.heading}</ContentHeading>
           <Text>
-            <p>
-              Vi utvecklar integrationer mellan affärssystem, plattformar och applikationer med
-              hjälp av moderna tekniker, molntjänster och beprövade mönster. Oavsett om ni behöver
-              API-utveckling, middleware, ETL-flöden eller molnintegrationer arbetar vi strukturerat
-              och transparent genom hela processen.
-            </p>
-            <p>
-              Med Keep IT Simple fokuserar vi på begriplig arkitektur och långsiktig förvaltbarhet.
-              Med Keep IT Secure säkerställer vi att dataflöden och API:er följer branschens
-              säkerhetskrav.
-            </p>
+            <p>{frontmatter.section1.text1}</p>
+            <p>{frontmatter.section1.text2}</p>
           </Text>
         </Vertical>
 
         <Vertical spacing={spacing.medium}>
-          <ContentHeading>Vår integrationskompetens omfattar</ContentHeading>
+          <ContentHeading>{frontmatter.section2.heading}</ContentHeading>
           <Text>
             <ul>
-              <li>API-design och API-utveckling</li>
-              <li>Systemintegration och middleware</li>
-              <li>ERP- och CRM-integrationer</li>
-              <li>Dataflöden och ETL-processer</li>
-              <li>Integrationer i AWS och Azure</li>
-              <li>Eventbaserad arkitektur (Kafka, SNS/SQS m.fl.)</li>
+              {frontmatter.section2.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </Text>
         </Vertical>
 
         <Vertical spacing={spacing.medium}>
-          <ContentHeading>Värdet för er organisation</ContentHeading>
+          <ContentHeading>{frontmatter.section3.heading}</ContentHeading>
           <Text>
-            <p>
-              Ni får integrationslösningar som är stabila, dokumenterade, skalbara och säkra, som
-              stödjer både dagens och framtidens behov.
-            </p>
+            <p>{frontmatter.section3.text}</p>
           </Text>
         </Vertical>
       </Vertical>
     </DefaultLayout>
   )
 }
+
+export const query = graphql`
+  query IntegrationPageQuery {
+    page: markdownRemark(frontmatter: { type: { eq: "integrationPage" } }) {
+      frontmatter {
+        title
+        seoDescription
+        heading
+        lead
+        section1 {
+          heading
+          text1
+          text2
+        }
+        section2 {
+          heading
+          items
+        }
+        section3 {
+          heading
+          text
+        }
+      }
+    }
+  }
+`
 
 export default IntegrationPage

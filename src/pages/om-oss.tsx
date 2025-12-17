@@ -39,7 +39,7 @@ export default ({ data, location }: AboutPageProps) => {
     <DefaultLayout location={location}>
       <Seo
         title={page.node.frontmatter.title}
-        description="Lär känna KITS, ett konsultbolag med fokus på systemutveckling, arkitektur och säkerhet. Vi levererar hållbara digitala lösningar med stort engagemang."
+        description={page.node.frontmatter.seoDescription}
         pathname={location.pathname}
       />
 
@@ -83,6 +83,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            seoDescription
             heading
             lead
             section1 {

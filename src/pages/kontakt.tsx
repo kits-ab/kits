@@ -23,26 +23,66 @@ import { PageProps } from "../types/PageProps"
 interface ContactPageProps extends PageProps {
   data: {
     metadata: ContentYamlConnection
+    page: {
+      frontmatter: {
+        title: string
+        seoDescription: string
+        heading: string
+        lead: string
+        generalContact: {
+          heading: string
+          email: string
+        }
+        address: {
+          heading: string
+          city: string
+        }
+        directContact: {
+          heading: string
+          sales: {
+            label: string
+            name: string
+            phone: string
+            email: string
+          }
+          management: {
+            label: string
+            name: string
+            phone: string
+            email: string
+          }
+        }
+        cta: {
+          career: {
+            heading: string
+            buttonText: string
+            url: string
+          }
+          services: {
+            heading: string
+            buttonText: string
+            url: string
+          }
+        }
+      }
+    }
   }
 }
 
 const ContactPage = ({ data, location }: ContactPageProps) => {
   const metadata = data.metadata.edges[0]
+  const { frontmatter } = data.page
 
   return (
     <DefaultLayout location={location}>
       <Seo
-        title="Kontakta oss"
-        description="Kontakta KITS för hjälp med systemutveckling, integration och cybersäkerhet. Här hittar du kontaktuppgifter till våra kontor och nyckelpersoner."
+        title={frontmatter.title}
+        description={frontmatter.seoDescription}
         pathname={location.pathname}
       />
       <Vertical spacing={spacing.large}>
-        <MainHeading>Kontakta oss</MainHeading>
-        <Lead>
-          Vill du veta mer om våra tjänster eller hur vi kan hjälpa er organisation?
-          <br />
-          Hör av dig till oss, vi svarar snabbt.
-        </Lead>
+        <MainHeading>{frontmatter.heading}</MainHeading>
+        <Lead>{frontmatter.lead}</Lead>
 
         <Horizontal
           breakpoint={width.tablet}
@@ -51,47 +91,56 @@ const ContactPage = ({ data, location }: ContactPageProps) => {
           alignVertical={types.Alignment.Start}
         >
           <Vertical spacing={spacing.medium}>
-            <ContentHeading>Allmän kontakt</ContentHeading>
+            <ContentHeading>{frontmatter.generalContact.heading}</ContentHeading>
             <Text>
               <p>
-                <strong>E-post:</strong> <a href="mailto:info@kits.se">info@kits.se</a>
+                <strong>E-post:</strong>{" "}
+                <a href={`mailto:${frontmatter.generalContact.email}`}>
+                  {frontmatter.generalContact.email}
+                </a>
               </p>
             </Text>
 
-            <ContentHeading>Adress</ContentHeading>
+            <ContentHeading>{frontmatter.address.heading}</ContentHeading>
             <Text>
               <p>
                 {metadata.node.name}
                 <br />
                 {metadata.node.address.street}
                 <br />
-                411 36 Göteborg
+                {frontmatter.address.city}
               </p>
             </Text>
           </Vertical>
 
           <Vertical spacing={spacing.medium}>
-            <ContentHeading>Kontakta oss direkt</ContentHeading>
+            <ContentHeading>{frontmatter.directContact.heading}</ContentHeading>
             <Text>
               <p>
-                <strong>För affärsförfrågningar och samarbeten:</strong>
+                <strong>{frontmatter.directContact.sales.label}</strong>
               </p>
               <p>
-                Johan Herbo, Säljchef
+                {frontmatter.directContact.sales.name}
                 <br />
-                Telefon: 0730 – 74 07 18
+                Telefon: {frontmatter.directContact.sales.phone}
                 <br />
-                E-post: <a href="mailto:johan.herbo@kits.se">johan.herbo@kits.se</a>
+                E-post:{" "}
+                <a href={`mailto:${frontmatter.directContact.sales.email}`}>
+                  {frontmatter.directContact.sales.email}
+                </a>
               </p>
               <p>
-                <strong>För företagsledning och övergripande frågor:</strong>
+                <strong>{frontmatter.directContact.management.label}</strong>
               </p>
               <p>
-                Patrik Nilsson, VD
+                {frontmatter.directContact.management.name}
                 <br />
-                Telefon: 0708 – 27 74 99
+                Telefon: {frontmatter.directContact.management.phone}
                 <br />
-                E-post: <a href="mailto:patrik.nilsson@kits.se">patrik.nilsson@kits.se</a>
+                E-post:{" "}
+                <a href={`mailto:${frontmatter.directContact.management.email}`}>
+                  {frontmatter.directContact.management.email}
+                </a>
               </p>
             </Text>
           </Vertical>
@@ -106,13 +155,13 @@ const ContactPage = ({ data, location }: ContactPageProps) => {
         </Breakout>
 
         <Vertical spacing={spacing.medium} alignHorizontal={types.Alignment.Center}>
-          <ContentHeading>Vill du jobba hos oss?</ContentHeading>
-          <Button href="/karriar">Besök vår karriärsida</Button>
+          <ContentHeading>{frontmatter.cta.career.heading}</ContentHeading>
+          <Button href={frontmatter.cta.career.url}>{frontmatter.cta.career.buttonText}</Button>
         </Vertical>
 
         <Vertical spacing={spacing.medium} alignHorizontal={types.Alignment.Center}>
-          <ContentHeading>Våra tjänster</ContentHeading>
-          <Button href="/tjanster">Läs mer om vad vi kan göra</Button>
+          <ContentHeading>{frontmatter.cta.services.heading}</ContentHeading>
+          <Button href={frontmatter.cta.services.url}>{frontmatter.cta.services.buttonText}</Button>
         </Vertical>
       </Vertical>
     </DefaultLayout>
@@ -128,6 +177,49 @@ export const query = graphql`
           coordinates
           address {
             street
+          }
+        }
+      }
+    }
+    page: markdownRemark(frontmatter: { type: { eq: "contactPage" } }) {
+      frontmatter {
+        title
+        seoDescription
+        heading
+        lead
+        generalContact {
+          heading
+          email
+        }
+        address {
+          heading
+          city
+        }
+        directContact {
+          heading
+          sales {
+            label
+            name
+            phone
+            email
+          }
+          management {
+            label
+            name
+            phone
+            email
+          }
+        }
+        cta {
+          career {
+            heading
+            buttonText
+            url
+          }
+          services {
+            heading
+            buttonText
+            url
           }
         }
       }

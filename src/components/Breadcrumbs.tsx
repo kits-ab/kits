@@ -1,6 +1,7 @@
 import { colors, fonts, spacing } from "@kokitotsos/react-components"
 import { Link } from "gatsby"
 import * as React from "react"
+import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 const BreadcrumbContainer = styled.nav`
@@ -76,8 +77,35 @@ export const Breadcrumbs = ({ location }: BreadcrumbsProps) => {
 
   if (pathnames.length === 0) return null // Don't show on home page if handled there, or if empty
 
+  const breadcrumbListSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Hem",
+        item: typeof window !== "undefined" ? window.location.origin : ""
+      },
+      ...pathnames.map((value, index) => {
+        const to = `/${pathnames.slice(0, index + 1).join("/")}`
+        const name =
+          nameMap[value] || value.charAt(0).toUpperCase() + value.slice(1).replace(/-/g, " ")
+        return {
+          "@type": "ListItem",
+          position: index + 2,
+          name: name,
+          item: typeof window !== "undefined" ? `${window.location.origin}${to}` : to
+        }
+      })
+    ]
+  }
+
   return (
     <BreadcrumbContainer aria-label="breadcrumb">
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbListSchema)}</script>
+      </Helmet>
       <BreadcrumbList>
         <BreadcrumbItem>
           <StyledLink to="/">Hem</StyledLink>

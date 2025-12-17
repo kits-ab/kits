@@ -1,6 +1,7 @@
 ---
 type: aboutPage
 title: Om oss
+seoDescription: "Lär känna KITS, ett konsultbolag med fokus på systemutveckling, arkitektur och säkerhet. Vi levererar hållbara digitala lösningar med stort engagemang."
 heading: Om KITS
 lead: >-
   KITS bygger moderna, hållbara digitala lösningar genom att alltid kombinera två grundprinciper: Keep IT Simple för att skapa tydlighet och effektivitet, och Keep IT Secure för att säkerställa att systemen är robusta, säkra och framtidssäkra.

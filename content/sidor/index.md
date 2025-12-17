@@ -1,6 +1,7 @@
 ---
 type: indexPage
 title: Systemutveckling & Cybersäkerhet
+seoDescription: "KITS är specialister inom systemutveckling, integration och cybersäkerhet. Vi levererar seniora konsulter som bygger och säkrar framtidens digitala lösningar."
 heading: Välkommen till KITS
 lead: >-
   KITS hjälper företag att accelerera sin digitala utveckling. Med vår filosofi

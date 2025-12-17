@@ -92,7 +92,7 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
       <DefaultLayout location={location}>
         <Seo
           title={page.node.frontmatter.title}
-          description="Sök jobb hos KITS! Vi söker drivna konsulter inom systemutveckling och cybersäkerhet. Utforska våra lediga tjänster och KITS Cyberakademi."
+          description={page.node.frontmatter.seoDescription}
           pathname={location.pathname}
         />
 
@@ -154,40 +154,18 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
 
         <Vertical spacing={spacing.large} style={{ marginTop: spacing.huge }}>
           <Vertical spacing={spacing.medium}>
-            <SectionHeading>KITS Cyberakademi</SectionHeading>
+            <SectionHeading>{page.node.frontmatter.cyberAcademy.heading}</SectionHeading>
           </Vertical>
-          <Lead>Nästa generations cybersäkerhetsexperter</Lead>
+          <Lead>{page.node.frontmatter.cyberAcademy.lead}</Lead>
 
           <Media
             src={cyberAcademyImage && cyberAcademyImage.src}
             srcSet={cyberAcademyImage && cyberAcademyImage.srcSet}
           >
             <Text>
-              <p>
-                På KITS är vi mycket stolta över vår Cyberakademi, ett ettårigt program som syftar
-                till att utbilda nyexaminerade universitetsstudenter till cybersäkerhetsexperter.
-                Programmet är utformat för att ta deltagarna från talang till expert inom
-                penetrationstestning och IT-säkerhet genom en kombination av praktisk erfarenhet och
-                teoretisk kunskap.
-              </p>
-              <p>
-                Deltagarna får tillgång till kurser, certifieringar och möjlighet att delta i
-                pentester för att utveckla den spetskompetens som krävs för att möta dagens och
-                framtidens säkerhetshot. Utöver den tekniska träningen som ingår i programmet får
-                deltagarna även fördjupa sig inom ett specifikt säkerhetsområde de själva brinner
-                för, vilket gör att vi bygger upp ett team av konsulter med djupgående och
-                diversifierad expertis.
-              </p>
-              <p>
-                Akademiansvarig är Francisco, en av våra experter inom IT-säkerhet och kryptografi.
-                Med sin långa erfarenhet från både akademi och näringsliv erbjuder Francisco
-                vägledning och inspiration, vilket ger deltagarna ett tydligt stöd och en ovärderlig
-                inblick i verkliga säkerhetsutmaningar.
-              </p>
-              <p>
-                Vid slutet av utbildningen förväntas deltagarna ha tillräcklig kunskap för att
-                genomföra webbpentester och ha fördjupat sig i sitt valda säkerhetsområde.
-              </p>
+              {page.node.frontmatter.cyberAcademy.content.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </Text>
           </Media>
         </Vertical>
@@ -254,8 +232,14 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            seoDescription
             heading
             lead
+            cyberAcademy {
+              heading
+              lead
+              content
+            }
             section1 {
               heading
             }

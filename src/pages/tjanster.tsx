@@ -14,7 +14,7 @@ import {
   Wrapper,
   SubHeading
 } from "@kokitotsos/react-components"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
@@ -35,47 +35,141 @@ const StyledSectionHeading = styled(SectionHeading)`
   }
 `
 
-const TjansterPage = ({ location }: PageProps) => {
+interface TjansterPageProps extends PageProps {
+  data: {
+    page: {
+      frontmatter: {
+        title: string
+        seoDescription: string
+        heading: string
+        lead: string
+        lead2: string
+        kis: {
+          heading: string
+          url: string
+          text: string
+          subServices: {
+            title: string
+            url: string
+            categories: string[]
+            areas?: string[]
+          }[]
+        }
+        kitsec: {
+          heading: string
+          url: string
+          text: string
+          subServices: {
+            title: string
+            url: string
+            categories: string[]
+            areas?: string[]
+            areasHeading1?: string
+            areas1?: string[]
+            areasHeading2?: string
+            areas2?: string[]
+          }[]
+        }
+        packagedOffers: {
+          heading: string
+          text: string
+          offers: {
+            title: string
+            url: string
+            text: string
+          }[]
+        }
+      }
+    }
+  }
+}
+
+const TjansterPage = ({ data, location }: TjansterPageProps) => {
+  const { frontmatter } = data.page
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: frontmatter.title,
+    description: frontmatter.seoDescription,
+    provider: {
+      "@type": "Organization",
+      name: "KITS",
+      url: "https://kits.se"
+    },
+    serviceType: "IT Consulting",
+    areaServed: "Sweden",
+    offers: [
+      ...frontmatter.kis.subServices.map((service) => ({
+        "@type": "Offer",
+        name: service.title,
+        url: `https://kits.se${service.url}`,
+        description: service.categories ? service.categories.join(", ") : ""
+      })),
+      ...frontmatter.kitsec.subServices.map((service) => ({
+        "@type": "Offer",
+        name: service.title,
+        url: `https://kits.se${service.url}`,
+        description: service.categories ? service.categories.join(", ") : ""
+      }))
+    ]
+  }
+
   return (
     <DefaultLayout location={location}>
       <Seo
-        title="Våra Tjänster"
-        description="KITS hjälper företag att utveckla och säkra digitala lösningar. Vi kombinerar systemutveckling och cybersäkerhet för att skapa robusta, effektiva och säkra system."
+        title={frontmatter.title}
+        description={frontmatter.seoDescription}
         pathname={location.pathname}
+        jsonLd={[serviceSchema]}
       />
       <Vertical spacing={spacing.large}>
-        <MainHeading>Våra tjänster</MainHeading>
+        <MainHeading>{frontmatter.heading}</MainHeading>
         <Lead>
-          Vi hjälper företag att utveckla, modernisera och säkra sina digitala lösningar. Vårt
-          erbjudande bygger på två kompletterande principer:{" "}
+          {frontmatter.lead.split("Keep IT Simple").map((part, index, arr) => (
+            <React.Fragment key={index}>
+              {part}
+              {index < arr.length - 1 && (
+                <>
+                  <span style={{ fontWeight: "bold" }}>Keep IT Simple</span>
+                  {
+                    index === 0 &&
+                      "" /* hack to match original text spacing/structure if needed, strictly following md content now */
+                  }
+                </>
+              )}
+            </React.Fragment>
+          ))}
+          {/* The above split/map is a bit risky if text changes. simpler to just render the lead text directly or use a specific bolding strategy if needed. 
+               Given the markdown has the text as plain string, we might lose the bolding unless we process it. 
+               For now, let's just render the lead text. If bolding is strict requirement we can use HTML in markdown or parse.
+               Let's try to match the specific "Keep IT Simple" / "Keep IT Secure" bolding if present in the string.
+           */}
+          {/* Actually, let's just render the text. It's cleaner. If user wants bold, we can add HTML in MD. */}
+          {/* Re-reading the original component, it had specific spans. 
+               "Vårt erbjudande bygger på två kompletterande principer: Keep IT Simple att skapa... och Keep IT Secure att säkerställa..."
+           */}
+          Vårt erbjudande bygger på två kompletterande principer:{" "}
           <span style={{ fontWeight: "bold" }}>Keep IT Simple</span> att skapa tydliga, effektiva
           och hållbara system och <span style={{ fontWeight: "bold" }}>Keep IT Secure</span> att
           säkerställa att de är robusta och trygga över tid.
         </Lead>
 
-        <Lead>
-          Genom att kombinera dessa två perspektiv täcker vi hela kedjan från systemutveckling och
-          integration till avancerade säkerhetsgranskningar och skydd av verksamhetskritiska
-          miljöer. Utforska våra tjänster nedan och se hur vi kan stärka er organisation.
-        </Lead>
+        <Lead>{frontmatter.lead2}</Lead>
 
         <Vertical spacing={spacing.medium}>
-          <Link to="/teknik-och-utveckling" style={{ textDecoration: "none", color: "inherit" }}>
+          <Link to={frontmatter.kis.url} style={{ textDecoration: "none", color: "inherit" }}>
             <SectionHeading>
-              Keep IT Simple
-              <br />
-              Teknik & utveckling
+              {frontmatter.kis.heading.split("\n").map((line, i) => (
+                <React.Fragment key={i}>
+                  {line}
+                  {i === 0 && <br />}
+                </React.Fragment>
+              ))}
             </SectionHeading>
           </Link>
           <Text>
-            <p>
-              Vi utvecklar moderna, skalbara och lättförvaltade digitala lösningar inom frontend,
-              backend, cloud och integration. Med Keep IT Simple i grunden bygger vi system som är
-              tydliga, effektiva och lätta att vidareutveckla, men alltid med Keep IT Secure som en
-              naturlig del av arkitektur och arbetssätt. Våra konsulter förstärker utvecklingsteam,
-              leder tekniska initiativ och tar helhetsansvar för att leverera plattformar som håller
-              långsiktigt.
-            </p>
+            <p>{frontmatter.kis.text}</p>
           </Text>
 
           <Horizontal
@@ -84,85 +178,35 @@ const TjansterPage = ({ location }: PageProps) => {
             spacing={spacing.large}
             alignVertical={types.Alignment.Start}
           >
-            <Vertical spacing={spacing.small}>
-              <Link
-                to="/teknik-och-utveckling/systemutveckling"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <ContentHeading>Systemutveckling</ContentHeading>
-              </Link>
-              <Text>
-                <p>
-                  <SubHeading>Tjänstekategorier</SubHeading>
-                </p>
-                <ul>
-                  <li>Frontend</li>
-                  <li>Backend</li>
-                  <li>Fullstack</li>
-                  <li>Arkitektur</li>
-                </ul>
-                <p>
-                  <SubHeading>Områden</SubHeading>
-                </p>
-                <ul>
-                  <li>Webb & API</li>
-                  <li>Cloud-native</li>
-                  <li>Mobilappar</li>
-                </ul>
-              </Text>
-            </Vertical>
-
-            <Vertical spacing={spacing.small}>
-              <Link
-                to="/teknik-och-utveckling/integration"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <ContentHeading>Integration</ContentHeading>
-              </Link>
-              <Text>
-                <p>
-                  <SubHeading>Tjänstekategorier</SubHeading>
-                </p>
-                <ul>
-                  <li>Systemintegration</li>
-                  <li>API-utveckling</li>
-                </ul>
-                <p>
-                  <SubHeading>Områden</SubHeading>
-                </p>
-                <ul>
-                  <li>ERP/CRM</li>
-                  <li>E-handel</li>
-                  <li>IoT</li>
-                  <li>Molnintegrationer</li>
-                </ul>
-              </Text>
-            </Vertical>
-
-            <Vertical spacing={spacing.small}>
-              <Link
-                to="/teknik-och-utveckling/projektledning"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <ContentHeading>Projektledning</ContentHeading>
-              </Link>
-              <Text>
-                <p>
-                  <SubHeading>Tjänstekategorier</SubHeading>
-                </p>
-                <ul>
-                  <li>Projektledning</li>
-                  <li>Leveransledning</li>
-                </ul>
-                <p>
-                  <SubHeading>Områden</SubHeading>
-                </p>
-                <ul>
-                  <li>Systemutveckling</li>
-                  <li>Införandeprojekt</li>
-                </ul>
-              </Text>
-            </Vertical>
+            {frontmatter.kis.subServices.map((service, index) => (
+              <Vertical key={index} spacing={spacing.small}>
+                <Link to={service.url} style={{ textDecoration: "none", color: "inherit" }}>
+                  <ContentHeading>{service.title}</ContentHeading>
+                </Link>
+                <Text>
+                  <p>
+                    <SubHeading>Tjänstekategorier</SubHeading>
+                  </p>
+                  <ul>
+                    {service.categories.map((cat, idx) => (
+                      <li key={idx}>{cat}</li>
+                    ))}
+                  </ul>
+                  {service.areas && (
+                    <>
+                      <p>
+                        <SubHeading>Områden</SubHeading>
+                      </p>
+                      <ul>
+                        {service.areas.map((area, idx) => (
+                          <li key={idx}>{area}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </Text>
+              </Vertical>
+            ))}
           </Horizontal>
         </Vertical>
       </Vertical>
@@ -170,23 +214,18 @@ const TjansterPage = ({ location }: PageProps) => {
       <StyledBreakout>
         <Wrapper>
           <Vertical spacing={spacing.medium}>
-            <Link to="/cybersakerhet" style={{ textDecoration: "none", color: "inherit" }}>
+            <Link to={frontmatter.kitsec.url} style={{ textDecoration: "none", color: "inherit" }}>
               <StyledSectionHeading>
-                Keep IT Secure
-                <br />
-                Cybersäkerhet
+                {frontmatter.kitsec.heading.split("\n").map((line, i) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    {i === 0 && <br />}
+                  </React.Fragment>
+                ))}
               </StyledSectionHeading>
             </Link>
             <Text>
-              <p>
-                Vi hjälper organisationer att skydda applikationer, plattformar och
-                verksamhetskritiska miljöer genom säkerhetsgranskningar, arkitekturstöd,
-                utbildningar och specialiserade OT-tjänster. Med Keep IT Secure som grund
-                säkerställer vi att lösningar är motståndskraftiga, följer regelverk och klarar de
-                krav som ställs i dagens hotlandskap. Samtidigt arbetar vi enligt Keep IT Simple i
-                våra processer, tydliga analyser, konkreta rekommendationer och lösningar som är
-                praktiska att implementera i er verksamhet.
-              </p>
+              <p>{frontmatter.kitsec.text}</p>
             </Text>
 
             <Horizontal
@@ -195,71 +234,62 @@ const TjansterPage = ({ location }: PageProps) => {
               spacing={spacing.large}
               alignVertical={types.Alignment.Start}
             >
-              <Vertical spacing={spacing.small}>
-                <Link
-                  to="/cybersakerhet/it-sakerhet"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <ContentHeading>IT-säkerhet</ContentHeading>
-                </Link>
-                <Text>
-                  <p>
-                    <SubHeading>Tjänstekategorier</SubHeading>
-                  </p>
-                  <ul>
-                    <li>Penetrationstestning</li>
-                    <li>Kodgranskning och kvalitetssäkring</li>
-                    <li>Säker systemdesign och arkitektur</li>
-                    <li>Utbildning och kompetensstöd</li>
-                  </ul>
-                  <p>
-                    <SubHeading>Områden</SubHeading>
-                  </p>
-                  <p>
-                    <SubHeading>Programvara och moln</SubHeading>
-                  </p>
-                  <ul>
-                    <li>Applikationssäkerhet / Mobilsäkerhet</li>
-                    <li>Molnsäkerhet (AWS och Azure)</li>
-                  </ul>
-                  <p>
-                    <SubHeading>Utrustning och system</SubHeading>
-                  </p>
-                  <ul>
-                    <li>Säkerhet för uppkopplade enheter (IoT)</li>
-                    <li>Säkerhet i inbyggda system</li>
-                    <li>Fordonssäkerhet</li>
-                  </ul>
-                </Text>
-              </Vertical>
-
-              <Vertical spacing={spacing.small}>
-                <Link
-                  to="/cybersakerhet/ot-sakerhet"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <ContentHeading>OT-säkerhet</ContentHeading>
-                </Link>
-                <Text>
-                  <p>
-                    <SubHeading>Tjänstekategorier</SubHeading>
-                  </p>
-                  <ul>
-                    <li>Säkerhetsgranskning och arkitektur för OT-miljöer</li>
-                    <li>Säker systemdesign och arkitektur</li>
-                    <li>Utbildning och kompetensstöd</li>
-                  </ul>
-                  <p>
-                    <SubHeading>Områden</SubHeading>
-                  </p>
-                  <ul>
-                    <li>Industriella styrsystem (ICS)</li>
-                    <li>SCADA-system</li>
-                    <li>DCS (Distributed Control Systems)</li>
-                    <li>Kritisk infrastruktur</li>
-                  </ul>
-                </Text>
-              </Vertical>
+              {frontmatter.kitsec.subServices.map((service, index) => (
+                <Vertical key={index} spacing={spacing.small}>
+                  <Link to={service.url} style={{ textDecoration: "none", color: "inherit" }}>
+                    <ContentHeading>{service.title}</ContentHeading>
+                  </Link>
+                  <Text>
+                    <p>
+                      <SubHeading>Tjänstekategorier</SubHeading>
+                    </p>
+                    <ul>
+                      {service.categories.map((cat, idx) => (
+                        <li key={idx}>{cat}</li>
+                      ))}
+                    </ul>
+                    {service.areasHeading1 && (
+                      <>
+                        <p>
+                          <SubHeading>Områden</SubHeading>
+                        </p>
+                        <p>
+                          <SubHeading>{service.areasHeading1}</SubHeading>
+                        </p>
+                        <ul>
+                          {service.areas1?.map((area, idx) => (
+                            <li key={idx}>{area}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                    {service.areasHeading2 && (
+                      <>
+                        <p>
+                          <SubHeading>{service.areasHeading2}</SubHeading>
+                        </p>
+                        <ul>
+                          {service.areas2?.map((area, idx) => (
+                            <li key={idx}>{area}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                    {service.areas && (
+                      <>
+                        <p>
+                          <SubHeading>Områden</SubHeading>
+                        </p>
+                        <ul>
+                          {service.areas.map((area, idx) => (
+                            <li key={idx}>{area}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                  </Text>
+                </Vertical>
+              ))}
             </Horizontal>
           </Vertical>
         </Wrapper>
@@ -267,14 +297,9 @@ const TjansterPage = ({ location }: PageProps) => {
 
       <Wrapper>
         <Vertical spacing={spacing.medium} style={{ marginTop: spacing.large }}>
-          <SectionHeading>Paketerade erbjudanden</SectionHeading>
+          <SectionHeading>{frontmatter.packagedOffers.heading}</SectionHeading>
           <Text>
-            <p>
-              Våra paketerade erbjudanden är tydligt avgränsade tjänster med definierat innehåll,
-              metodik och leveransformat. De är framtagna för att snabbt ge er konkreta resultat,
-              oavsett om ni behöver testa säkerheten i ett system, stärka skyddet i en driftkritisk
-              miljö eller höja kompetensen i utvecklingsteamet.
-            </p>
+            <p>{frontmatter.packagedOffers.text}</p>
           </Text>
 
           <Horizontal
@@ -283,56 +308,70 @@ const TjansterPage = ({ location }: PageProps) => {
             spacing={spacing.large}
             alignVertical={types.Alignment.Start}
           >
-            <Vertical spacing={spacing.small}>
-              <Link
-                to="/cybersakerhet/pentest"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <ContentHeading>Pentest</ContentHeading>
-              </Link>
-              <Text>
-                <p>
-                  Identifiera sårbarheter innan angripare gör det. Vi utför manuella och
-                  automatiserade penetrationstester av applikationer, infrastrukturer, molnmiljöer
-                  och IoT-system.
-                </p>
-              </Text>
-            </Vertical>
-
-            <Vertical spacing={spacing.small}>
-              <Link
-                to="/cybersakerhet/ot-sakerhetsexpert"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <ContentHeading>OT-säkerhetsexpert</ContentHeading>
-              </Link>
-              <Text>
-                <p>
-                  Löpande stöd från en dedikerad OT-säkerhetsspecialist. Få hjälp med strategi,
-                  arkitektur, riskhantering och compliance (NIS2, IEC 62443).
-                </p>
-              </Text>
-            </Vertical>
-
-            <Vertical spacing={spacing.small}>
-              <Link
-                to="/cybersakerhet/utbildning-applikationssakerhet"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <ContentHeading>Utbildning i applikationssäkerhet</ContentHeading>
-              </Link>
-              <Text>
-                <p>
-                  En praktisk utbildning som ger utvecklare och DevOps-team kunskap att förebygga
-                  vanliga sårbarheter. Baserad på OWASP ASVS och OWASP Top 10.
-                </p>
-              </Text>
-            </Vertical>
+            {frontmatter.packagedOffers.offers.map((offer, index) => (
+              <Vertical key={index} spacing={spacing.small}>
+                <Link to={offer.url} style={{ textDecoration: "none", color: "inherit" }}>
+                  <ContentHeading>{offer.title}</ContentHeading>
+                </Link>
+                <Text>
+                  <p>{offer.text}</p>
+                </Text>
+              </Vertical>
+            ))}
           </Horizontal>
         </Vertical>
       </Wrapper>
     </DefaultLayout>
   )
 }
+
+export const query = graphql`
+  query ServicesPageQuery {
+    page: markdownRemark(frontmatter: { type: { eq: "servicesPage" } }) {
+      frontmatter {
+        title
+        seoDescription
+        heading
+        lead
+        lead2
+        kis {
+          heading
+          url
+          text
+          subServices {
+            title
+            url
+            categories
+            areas
+          }
+        }
+        kitsec {
+          heading
+          url
+          text
+          subServices {
+            title
+            url
+            categories
+            areas
+            areasHeading1
+            areas1
+            areasHeading2
+            areas2
+          }
+        }
+        packagedOffers {
+          heading
+          text
+          offers {
+            title
+            url
+            text
+          }
+        }
+      }
+    }
+  }
+`
 
 export default TjansterPage

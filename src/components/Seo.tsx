@@ -11,6 +11,7 @@ interface SeoProps {
   image?: string
   pathname?: string
   article?: boolean
+  jsonLd?: Record<string, unknown>[]
 }
 
 export const Seo = ({
@@ -20,7 +21,8 @@ export const Seo = ({
   title,
   image,
   pathname,
-  article
+  article,
+  jsonLd
 }: SeoProps) => {
   const { site } = useStaticQuery(graphql`
     query SeoMetaData {
@@ -29,6 +31,7 @@ export const Seo = ({
           title
           description
           siteUrl
+          author
         }
       }
     }
@@ -40,6 +43,31 @@ export const Seo = ({
 
   const socialImage = image ? (image.startsWith("http") ? image : `${siteUrl}${image}`) : undefined
   const canonical = pathname ? `${siteUrl}${pathname}` : undefined
+
+  // Default Organization Schema
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "KITS",
+    url: siteUrl,
+    logo: `${siteUrl}/assets/logo.png`, // Assuming this exists, can be adjusted
+    sameAs: ["https://www.linkedin.com/company/kits-ab/", "https://www.facebook.com/kitsab/"]
+  }
+
+  // WebSite Schema
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: defaultTitle,
+    url: siteUrl,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  }
+
+  const schemas = [organizationSchema, websiteSchema, ...(jsonLd || [])]
 
   return (
     <Helmet
@@ -107,6 +135,12 @@ export const Seo = ({
             : []
         )
         .concat(meta)}
-    />
+    >
+      {schemas.map((schema, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
+    </Helmet>
   )
 }

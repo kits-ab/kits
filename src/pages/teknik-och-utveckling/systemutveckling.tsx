@@ -6,72 +6,107 @@ import {
   Text,
   Vertical
 } from "@kokitotsos/react-components"
+import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
 
+import { Seo } from "../../components/Seo"
 import { DefaultLayout } from "../../layouts/DefaultLayout"
 import { PageProps } from "../../types/PageProps"
 
-const SystemutvecklingPage = ({ location }: PageProps) => {
+interface SystemutvecklingPageProps extends PageProps {
+  data: {
+    page: {
+      frontmatter: {
+        title: string
+        seoDescription: string
+        heading: string
+        lead: string
+        section1: {
+          heading: string
+          text1: string
+          text2: string
+        }
+        section2: {
+          heading: string
+          items: string[]
+        }
+        section3: {
+          heading: string
+          text: string
+        }
+      }
+    }
+  }
+}
+
+const SystemutvecklingPage = ({ data, location }: SystemutvecklingPageProps) => {
+  const { frontmatter } = data.page
+
   return (
     <DefaultLayout location={location}>
-      <Helmet title="Systemutveckling">
-        <meta
-          name="description"
-          content="Vi utvecklar moderna, skalbara och säkra digitala lösningar. Våra experter inom systemutveckling hjälper er med arkitektur, frontend, backend och molntjänster."
-        />
-      </Helmet>
+      <Seo
+        title={frontmatter.title}
+        description={frontmatter.seoDescription}
+        pathname={location.pathname}
+      />
       <Vertical spacing={spacing.large}>
-        <MainHeading>Systemutveckling</MainHeading>
-        <Lead>
-          Vi utvecklar moderna, skalbara och hållbara digitala lösningar. Våra utvecklare arbetar
-          med moderna ramverk, robusta arkitekturer och pragmatiska arbetssätt för att skapa system
-          som är enkla att använda, vidareutveckla och integrera i komplexa miljöer.
-        </Lead>
+        <MainHeading>{frontmatter.heading}</MainHeading>
+        <Lead>{frontmatter.lead}</Lead>
 
         <Vertical spacing={spacing.medium}>
-          <ContentHeading>Det här kan vi hjälpa er med</ContentHeading>
+          <ContentHeading>{frontmatter.section1.heading}</ContentHeading>
           <Text>
-            <p>
-              Vi bygger allt från webbtjänster och API:er till cloud-native plattformar och mobila
-              applikationer. Våra team består av frontend-, backend- och fullstackutvecklare som
-              behärskar moderna teknikstackar och tar ansvar för hela utvecklingskedjan.
-            </p>
-            <p>
-              Vi arbetar enligt principen Keep IT Simple, lösningar ska vara tydliga,
-              välstrukturerade och baserade på beprövade mönster. Samtidigt integrerar vi Keep IT
-              Secure i varje del av utvecklingen, från design till leverans.
-            </p>
+            <p>{frontmatter.section1.text1}</p>
+            <p>{frontmatter.section1.text2}</p>
           </Text>
         </Vertical>
 
         <Vertical spacing={spacing.medium}>
-          <ContentHeading>Vår kompetens innefattar:</ContentHeading>
+          <ContentHeading>{frontmatter.section2.heading}</ContentHeading>
           <Text>
             <ul>
-              <li>Frontend, backend och fullstack</li>
-              <li>API- och mikrotjänstutveckling</li>
-              <li>Cloud-native system i AWS och Azure</li>
-              <li>Webbtjänster och digitala plattformar</li>
-              <li>Mobilapplikationer</li>
-              <li>Modernisering av befintliga system</li>
+              {frontmatter.section2.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </Text>
         </Vertical>
 
         <Vertical spacing={spacing.medium}>
-          <ContentHeading>Vad ni kan förvänta er</ContentHeading>
+          <ContentHeading>{frontmatter.section3.heading}</ContentHeading>
           <Text>
-            <p>
-              Vi arbetar tätt tillsammans med kundens team, tar stort ansvar för kvalitet och lägger
-              stor vikt vid enkelhet, stabilitet och långsiktig hållbarhet i arkitektur och
-              implementation.
-            </p>
+            <p>{frontmatter.section3.text}</p>
           </Text>
         </Vertical>
       </Vertical>
     </DefaultLayout>
   )
 }
+
+export const query = graphql`
+  query SystemutvecklingPageQuery {
+    page: markdownRemark(frontmatter: { type: { eq: "systemDevPage" } }) {
+      frontmatter {
+        title
+        seoDescription
+        heading
+        lead
+        section1 {
+          heading
+          text1
+          text2
+        }
+        section2 {
+          heading
+          items
+        }
+        section3 {
+          heading
+          text
+        }
+      }
+    }
+  }
+`
 
 export default SystemutvecklingPage
