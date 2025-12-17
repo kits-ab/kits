@@ -109,6 +109,7 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
                   { text: "Erbjudanden", href: "/erbjudanden" },
                   { text: "Keep IT Secure", href: "/keepitsecure"},
                   { text: "Keep OT Secure", href: "/keepotsecure"},
+                  { text: "Keep IT Smart", href: "/keepitsmart"},
                   { text: "Cyberakademi", href: "/cyberakademi"},
                   { text: "KITS Studio", href: "/kitsstudio"},
                   { text: "Bli en av oss", href: "/jobb" },
