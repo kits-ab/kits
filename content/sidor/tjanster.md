@@ -4,14 +4,14 @@ title: Våra Tjänster
 seoDescription: "KITS hjälper företag att utveckla och säkra digitala lösningar. Vi kombinerar systemutveckling och cybersäkerhet för att skapa robusta, effektiva och säkra system."
 heading: Våra tjänster
 lead: >-
-  Vi hjälper företag att utveckla, modernisera och säkra sina digitala lösningar. Vårt erbjudande bygger på två kompletterande principer: Keep IT Simple att skapa tydliga, effektiva och hållbara system och Keep IT Secure att säkerställa att de är robusta och trygga över tid.
+  Vi hjälper företag att utveckla, modernisera och säkra sina digitala lösningar. Vårt erbjudande består av två huvudområden: Teknik & utveckling och Cybersäkerhet. Tillsammans täcker de hela kedjan – från systemutveckling och integration till säkerhetsarbete i både IT- och OT-miljöer.
 lead2: >-
-  Genom att kombinera dessa två perspektiv täcker vi hela kedjan från systemutveckling och integration till avancerade säkerhetsgranskningar och skydd av verksamhetskritiska miljöer. Utforska våra tjänster nedan och se hur vi kan stärka er organisation.
+  Utforska våra tjänster nedan och se hur vi kan stärka er organisation.
 kis:
   heading: "Keep IT Simple\nTeknik & utveckling"
   url: /teknik-och-utveckling
   text: >-
-    Vi utvecklar moderna, skalbara och lättförvaltade digitala lösningar inom frontend, backend, cloud och integration. Med Keep IT Simple i grunden bygger vi system som är tydliga, effektiva och lätta att vidareutveckla, men alltid med Keep IT Secure som en naturlig del av arkitektur och arbetssätt. Våra konsulter förstärker utvecklingsteam, leder tekniska initiativ och tar helhetsansvar för att leverera plattformar som håller långsiktigt.
+    Vi bygger digitala lösningar som är tydliga, förvaltningsbara och hållbara över tid. Våra konsulter arbetar med systemutveckling, integration och teknisk projektledning och kan både förstärka befintliga team och ta ansvar för hela leveranser.
   subServices:
     - title: Systemutveckling
       url: /teknik-och-utveckling/systemutveckling
@@ -46,7 +46,7 @@ kitsec:
   heading: "Keep IT Secure\nCybersäkerhet"
   url: /cybersakerhet
   text: >-
-    Vi hjälper organisationer att skydda applikationer, plattformar och verksamhetskritiska miljöer genom säkerhetsgranskningar, arkitekturstöd, utbildningar och specialiserade OT-tjänster. Med Keep IT Secure som grund säkerställer vi att lösningar är motståndskraftiga, följer regelverk och klarar de krav som ställs i dagens hotlandskap. Samtidigt arbetar vi enligt Keep IT Simple i våra processer, tydliga analyser, konkreta rekommendationer och lösningar som är praktiska att implementera i er verksamhet.
+    Vi hjälper organisationer att skydda applikationer, plattformar och verksamhetskritiska miljöer. Arbetet omfattar säkerhetsgranskningar, arkitekturstöd, utbildningar och specialiserade OT-tjänster, anpassade efter verkliga risker och faktiska behov.
   subServices:
     - title: IT-säkerhet
       url: /cybersakerhet/it-sakerhet
