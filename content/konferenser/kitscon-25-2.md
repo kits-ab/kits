@@ -21,7 +21,7 @@ schema:
         - 11.80787
       title: Stenungsbaden
     title: Check-in - AW
-    details: Det är garanterad incheckning från 15.00. Det ligger förberett med nycklar i receptionen så att det går snabbt att checka in. In med packning på rummet och så ses vi i baren innan middag. 
+    details: Det är garanterad incheckning från 15.00. Det ligger förberett med nycklar i receptionen så att det går snabbt att checka in. In med packning på rummet och så ses vi i baren innan middag.
     type: checkin
 
   - winner: false
@@ -134,6 +134,6 @@ schema:
     end: 2025-11-08 13:30
     title: Lunch
     type: food
-
 ---
+
 🌊 Den 6e november ses vi på Stenungsbaden för höstens KitsCon. Tillsammans dyker vi ner i den generativa AI-världen, får insikter från experterna (Vi!) och utforskar hur nya AI-verktyg kan bli en naturlig?! del av vår vardag. Vi formar framtiden med nyfikenhet, teknik och kreativitet. 🤖🛠️🌟

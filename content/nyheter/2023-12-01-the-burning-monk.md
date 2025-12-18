@@ -5,6 +5,7 @@ image: /assets/nyheter_monk1.jpg
 authors:
   - gustavhjelm
 ---
+
 Hej på er,\
 \
 I förra veckan hade vi ett riktigt finbesök när vi välkomnade The Burning Monk till Göteborg för att fördjupa våra kunskaper ytterligare inom AWS. ☁️\

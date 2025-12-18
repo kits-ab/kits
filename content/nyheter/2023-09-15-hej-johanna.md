@@ -5,6 +5,7 @@ image: /assets/nyheter_hejjohanna.png
 authors:
   - gustavhjelm
 ---
+
 <img class="image-left" src="/assets/nyheter_hejjohanna.png">
 
 Det är fredag och som utlovat kommer här ytterligare introduktioner på våra nya kollegor och vänner på KITS. Först ut - Johanna:\

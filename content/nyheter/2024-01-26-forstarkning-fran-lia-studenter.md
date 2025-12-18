@@ -6,6 +6,7 @@ publishDate: 2024-01-26
 authors:
   - gustavhjelm
 ---
+
 <img class="image-left" src="/assets/nyheter_lia2.jpg">
 
 Glad fredag!\

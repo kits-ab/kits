@@ -147,7 +147,7 @@ schema:
     externalpresenter:
       name: Anton Lundh
       avatarSrc: /assets/bosse_webb.png
-    details: Master Thesis - hidden backlinks 
+    details: Master Thesis - hidden backlinks
     title: Master Thesis - hidden backlinks
 
   - winner: false
@@ -175,7 +175,6 @@ schema:
       avatarSrc: /assets/imad.jpg
     details: Corporate blunders are nothing new. Many of these blunders are widely known, such as the time Blockbuster declined to purchase Netflix, or the time Daimler-Benz lost 20 billion dollars on Chrysler. But how many remember when Ericsson created a programming language so disruptive, and so efficient, that they banned it? This is the fascinating and little known story behind Erlang.
     title: The Rise & Fall of Erlang at Ericsson
-    
 
   - winner: false
     start: 2025-05-30 11:10
@@ -285,7 +284,6 @@ schema:
     title: Buss till flyget
     type: bus
 
-
   - winner: false
     start: 2025-06-01 10:00
     end: 2025-06-01 10:30
@@ -309,10 +307,8 @@ schema:
       title: Kort paus
     title: Flyg från Helsingfors till Landvetter
     type: airplane
-
-
-
 ---
+
 🚀 KitsCon 25.1 – Tallinn, here we come! 🇪🇪
 Denna gång styr vi kosan till Estlands pulserande tech-huvudstad – Tallinn – för en ny episk upplaga av KitsCon! En stad där medeltida charm möter digital innovation väntar nya perspektiv, oväntade insikter och spännande upplevelser.
 Tillsammans fortsätter vi att utforska framtidens teknik, utbyta kunskap, och skapa band som stärker både oss och våra idéer.

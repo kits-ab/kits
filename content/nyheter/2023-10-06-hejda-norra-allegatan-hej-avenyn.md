@@ -6,7 +6,6 @@ authors:
   - gustavhjelm
 ---
 
-
 <img class="image-left" src="/assets/nyheter_flytt.jpg">
 
 Hejdå Norra Allégatan, Hej Kungsportsavenyen! 🥳\

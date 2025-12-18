@@ -5,6 +5,7 @@ image: /assets/nyheter_securityfest2.jpeg
 authors:
   - gustavhjelm
 ---
+
 <img class="image-left" src="/assets/nyheter_securityfest2.jpeg">
 
 Äntligen dags för [Security Fest](https://www.linkedin.com/company/security-fest/)! Idag och imorgon står vi i Eriksbergshallen och pratar säkerhet hela dagen. 🔓\

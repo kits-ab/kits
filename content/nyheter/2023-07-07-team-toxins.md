@@ -5,6 +5,7 @@ image: /assets/nyheter_kitscon231_8.jpeg
 authors:
   - gustavhjelm
 ---
+
 <img class="image-left" src="/assets/nyheter_kitscon231_10.jpeg">
 
 Hej igen vänner!\

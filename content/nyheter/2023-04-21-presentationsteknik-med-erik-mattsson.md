@@ -5,6 +5,7 @@ image: /assets/nyheter_erikmattsson.jpeg
 authors:
   - gustavhjelm
 ---
+
 <img class="image-left" src="/assets/nyheter_erikmattsson.jpeg">
 
 Som ni vet tycker vi att det är viktigt med kompetensutveckling och igår fick vi besök av [Erik Mattsson](https://www.linkedin.com/in/ACoAAAJnnZMBw5-GEKBiwE_3aeaA19zkskxUMns) för att lära oss allt om presentationsteknik och retorik.\
