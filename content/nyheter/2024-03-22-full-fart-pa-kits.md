@@ -6,6 +6,7 @@ publishDate: 2024-03-22
 authors:
   - gustavhjelm
 ---
+
 Full fart på KITS! Under de senaste veckorna har vi inte bara hunnit med en, inte två, utan tre roliga aktiviteter:\
 \
 🎉 Inflyttningsfest - Vi invigde vårt nya kontor med en riktig pangfest!\

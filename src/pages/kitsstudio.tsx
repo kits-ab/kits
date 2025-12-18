@@ -116,7 +116,7 @@ export const pageQuery = graphql`
 
     projects: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "kitsstudio_project" } } }
-      sort: { order: DESC, fields: [frontmatter___index] }
+      sort: { frontmatter: { index: DESC } }
     ) {
       edges {
         node {

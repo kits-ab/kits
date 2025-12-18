@@ -12,4 +12,5 @@ section2:
 images:
   - /assets/ot_sakerhet_bild1.png
 ---
-Dessutom har KITS som helhet möjlighet att hjälpa till med allt ifrån utveckling av integrationslösningar för att säkert få ut information ur OT miljöer till att pentesta OT miljöer och hårdvara på ett säkert sätt. 
+
+Dessutom har KITS som helhet möjlighet att hjälpa till med allt ifrån utveckling av integrationslösningar för att säkert få ut information ur OT miljöer till att pentesta OT miljöer och hårdvara på ett säkert sätt.

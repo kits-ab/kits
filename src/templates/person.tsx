@@ -13,7 +13,6 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
-import { graphql } from "gatsby"
 import * as React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
@@ -34,7 +33,7 @@ interface PersonPageProps extends PageProps {
 }
 
 const StyledImage = styled(Image)`
-  height: 400px;
+  height: 400px !important;
   flex: 0 0 300px;
   max-width: 300px;
   min-width: 300px;
@@ -110,7 +109,7 @@ export default ({ data, location }: PersonPageProps) => {
               </Text>
             )}
           </Horizontal>
-          {person.social && (<Social info={person.social} />)}
+          {person.social && <Social info={person.social} />}
         </Vertical>
       </Horizontal>
 
@@ -127,7 +126,7 @@ export default ({ data, location }: PersonPageProps) => {
   )
 }
 
-/* Disabled person page query (page creation is disabled in gatsby-node.js)
+/*
 export const query = graphql`
   query PersonPageQuery($href: String, $email: String) {
     person: markdownRemark(fields: { href: { eq: $href } }) {

@@ -5,6 +5,7 @@ image: /assets/nyheter_kompetensutveckling1.jpeg
 authors:
   - gustavhjelm
 ---
+
 <img class="image-left" src="/assets/nyheter_kompetensutveckling1.jpeg">
 
 För oss är kompetensutveckling jätteviktigt och alla på KITS uppmuntras och får stödet samt verktygen för att fortsätta utvecklas. Välkommen till vår miniserie där tre av våra kollegor berättar vad de gör med den möjligheten.\

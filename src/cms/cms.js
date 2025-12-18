@@ -1,5 +1,5 @@
-import CMS from "netlify-cms-app"
-import { useEffect, useMemo, useRef } from "react"
+import CMS from "decap-cms-app"
+import React, { useEffect, useMemo, useRef } from "react"
 
 CMS.registerEditorComponent({
   id: "collage",

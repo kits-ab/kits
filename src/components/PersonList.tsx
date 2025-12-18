@@ -1,5 +1,5 @@
 import { Horizontal, Image, spacing, width } from "@kokitotsos/react-components"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
@@ -25,7 +25,7 @@ const StyledHorizontal = styled(Horizontal)`
 
   > * {
     flex: 0 1 calc(${100 / 4}% - ${spacing.medium}px);
-    height: 250px;
+    height: 250px  !important;
     margin-left: ${spacing.medium / 2}px;
     margin-right: ${spacing.medium / 2}px;
     margin-top: ${spacing.medium}px;
@@ -53,12 +53,10 @@ interface QueryResult {
   images: FileConnection
 }
 
-export class PersonList extends React.PureComponent {
-  public render() {
-    return <StaticQuery query={query} render={this.renderList} />
-  }
+export function PersonList() {
 
-  private renderList = ({ images, persons }: QueryResult) => (
+  const renderLista = ({ images, persons }: QueryResult) => {
+    return (
     <StyledHorizontal wrapRows={true}>
       {persons.edges
         .map((edge) => edgeToPerson(edge))
@@ -81,33 +79,31 @@ export class PersonList extends React.PureComponent {
           )
         })}
     </StyledHorizontal>
-  )
+    )
+  }
+
+  const data = useStaticQuery(query)
+  return  renderLista(data)  
 }
 
-const query = graphql`
-  query PersonsQuery {
-    persons: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "person" }, alumni: { ne: true } } }
-      sort: { order: ASC, fields: [frontmatter___title] }
-    ) {
-      edges {
-        node {
-          ...PersonFragment
-        }
-      }
-    }
-
-    images: allFile(
-      filter: {
-        internal: { mediaType: { eq: "image/jpeg" } }
-        relativePath: { regex: "/^medarbetare_[^-]*\\.jpg/" }
-      }
-    ) {
-      edges {
-        node {
-          ...ImageFragment
-        }
+const query = graphql`query PersonsQuery {
+  persons: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "person"}, alumni: {ne: true}}}
+    sort: {frontmatter: {title: ASC}}
+  ) {
+    edges {
+      node {
+        ...PersonFragment
       }
     }
   }
-`
+  images: allFile(
+    filter: {internal: {mediaType: {eq: "image/jpeg"}}, relativePath: {regex: "/^medarbetare_[^-]*\\.jpg/"}}
+  ) {
+    edges {
+      node {
+        ...ImageFragment
+      }
+    }
+  }
+}`

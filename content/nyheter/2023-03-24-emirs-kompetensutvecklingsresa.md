@@ -5,6 +5,7 @@ image: /assets/nyheter_kompetensutveckling2.jpeg
 authors:
   - gustavhjelm
 ---
+
 <img class="image-left" src="/assets/nyheter_kompetensutveckling2.jpeg">
 
 Välkomna tillbaka till vår miniserie där vi berättar hur vi jobbar med kompetensutveckling! Senast fick ni läsa om [Jens](https://www.linkedin.com/in/ACoAAABI1BEBIMhOw3MroZyyeCLNcfWy72TLOW8) och Sociocracy 3.0 – och nu är det dags för [Emir](https://www.linkedin.com/in/ACoAADnNwhEB5Q1OAfc2WJjpzdkra4eDPPSq8v4) och hans resa mot cybersäkerhet!\

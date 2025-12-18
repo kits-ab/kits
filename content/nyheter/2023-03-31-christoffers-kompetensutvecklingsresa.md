@@ -5,6 +5,7 @@ image: /assets/nyheter_kompetensutveckling3.jpeg
 authors:
   - gustavhjelm
 ---
+
 <img class="image-left" src="/assets/nyheter_kompetensutveckling3.jpeg">
 
 Det är fredag och det är dags att prata kompetensutveckling! Sist men inte minst att berätta om sin kompetensutveckling är [Christoffer](https://www.linkedin.com/in/ACoAACALVc0BJxTYXdPRh2LvKXG2GnQlZjbLS8k), som just nu certifierar sig inom AWS.\

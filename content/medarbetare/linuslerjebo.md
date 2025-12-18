@@ -18,6 +18,6 @@ tags:
   - C#
   - Javascript
   - MYSQL
-
 ---
-På skolan har Linus lärt sig grunderna i allt från artificiell intelligens till realtidssystem. Han är alltid intresserad av att lära sig nya tekniker och hitta optimeringar som kan hjälpa både användare och andra utvecklare. Kan grunderna i frontend men känner sig mer bekväm inom backend. 
+
+På skolan har Linus lärt sig grunderna i allt från artificiell intelligens till realtidssystem. Han är alltid intresserad av att lära sig nya tekniker och hitta optimeringar som kan hjälpa både användare och andra utvecklare. Kan grunderna i frontend men känner sig mer bekväm inom backend.

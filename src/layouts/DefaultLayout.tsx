@@ -10,14 +10,15 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
-import { graphql, StaticQuery } from "gatsby"
-import Link from "gatsby-link"
+// import { SiteHeader } from "../components/SiteHeader"
+import { graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import * as React from "react"
 import { Helmet } from "react-helmet"
 import { createGlobalStyle } from "styled-components"
-import styled from "styled-components"
 
 import { ContentYamlConnection } from "../../gatsby-types"
+import { Breadcrumbs } from "../components/Breadcrumbs"
 
 const GlobalSiteStyles = createGlobalStyle`
   html {
@@ -58,25 +59,11 @@ const GlobalSiteStyles = createGlobalStyle`
   }
 `
 
-const StyledHeader = styled(Header)`
-nav {
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.Menu-expanded {
-> a {
-    white-space: break-spaces; /* Allow text to wrap */
-    word-wrap: break-word; /* Break words if necessary */
-  }
-}
-`
-
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
     pathname: string
   }
-  children: any
+  children: React.ReactNode
 }
 
 interface QueryResult {
@@ -89,7 +76,10 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
       <>
         <GlobalComponentStyles />
         <GlobalSiteStyles />
-        <LinkContext.Provider value={{ linkComponent: Link as any, navLinkComponent: Link as any }}>
+        <LinkContext.Provider
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          value={{ linkComponent: Link as any, navLinkComponent: Link as any }}
+        >
           <Helmet>
             <html lang="sv" />
             <meta
@@ -102,26 +92,24 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
           <Wrapper spacing={spacing.huge} style={{ minHeight: "100%" }}>
             <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
             <Breakout>
-              <StyledHeader
+              <Header
                 breakpoint={width.mobileMenu}
                 links={[
-                  { text: "Om KITS", href: "/om" },
-                  { text: "Erbjudanden", href: "/erbjudanden" },
-                  { text: "Keep IT Secure", href: "/keepitsecure"},
-                  { text: "Keep OT Secure", href: "/keepotsecure"},
-                  { text: "Cyberakademi", href: "/cyberakademi"},
-                  { text: "KITS Studio", href: "/kitsstudio"},
-                  { text: "Bli en av oss", href: "/jobb" },
+                  { text: "Tjänster", href: "/tjanster" },
+                  { text: "Keep IT Simple", href: "/teknik-och-utveckling" },
+                  { text: "Keep IT Secure", href: "/cybersakerhet" },
+                  { text: "Karriär", href: "/karriar" },
                   { text: "KitsCon", href: "/kitscon" },
-                  // { text: "Blogg", href: "/blogg" } Temporarily disabled
+                  { text: "Om oss", href: "/om-oss" }
                 ]}
               />
             </Breakout>
             <Vertical spacing={spacing.huge} style={{ flex: "1 1 auto", marginTop: 120 }}>
+              <Breadcrumbs location={this.props.location} />
               {this.props.children}
             </Vertical>
             <Breakout style={{ flex: 0 }}>
-              <StaticQuery query={query} render={renderFooter} />
+              <KitsFooter />
             </Breakout>
           </Wrapper>
         </LinkContext.Provider>
@@ -130,26 +118,26 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
   }
 }
 
-const renderFooter = ({ kits }: QueryResult) => {
-  const kitsInfo = kits.edges[0].node
-  return (
-    <Footer
-      info={{
-        name: kitsInfo.name,
-        street: kitsInfo.address.street,
-        postalCode: new types.PostalCode(kitsInfo.address.postalCode),
-        city: kitsInfo.address.city,
-        phone: new types.PhoneNumber(kitsInfo.phone),
-        email: new types.Email(kitsInfo.email),
-        social: {
-          facebook: new types.Username(kitsInfo.social.facebook, types.SocialType.Facebook),
-          github: new types.Username(kitsInfo.social.github, types.SocialType.GitHub),
-          linkedin: new types.Username(kitsInfo.social.linkedin, types.SocialType.LinkedIn),
-          twitter: new types.Username(kitsInfo.social.twitter, types.SocialType.Twitter)
-        }
-      }}
-    />
-  )
+function KitsFooter() {
+  const renderFooter = ({ kits }: QueryResult) => {
+    const kitsInfo = kits.edges[0].node
+    return (
+      <Footer
+        info={{
+          name: kitsInfo.name,
+          street: kitsInfo.address.street,
+          postalCode: new types.PostalCode(kitsInfo.address.postalCode),
+          city: kitsInfo.address.city,
+          social: {
+            github: new types.Username(kitsInfo.social.github, types.SocialType.GitHub),
+            linkedin: new types.Username(kitsInfo.social.linkedin, types.SocialType.LinkedIn)
+          }
+        }}
+      />
+    )
+  }
+  const data = useStaticQuery(query)
+  return renderFooter(data)
 }
 
 const query = graphql`

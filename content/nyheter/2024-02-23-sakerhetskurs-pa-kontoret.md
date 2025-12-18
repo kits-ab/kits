@@ -6,6 +6,7 @@ publishDate: 2024-02-23
 authors:
   - gustavhjelm
 ---
+
 Hej på er!\
 \
 Som vi ganska ofta tjatar om (bear with us), är både säkerhet och utbildning viktigt för oss på KITS. Så hur jobbar vi med det? Jo, bland annat anordnar vi säkerhetsutbildningar för kunder och kollegor, för att dela med oss av vår expertis.\

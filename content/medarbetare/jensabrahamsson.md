@@ -9,4 +9,5 @@ avatar: /assets/medarbetare_jensabrahamsson-avatar.jpg
 email: jens.abrahamsson@kits.se
 social: {}
 ---
+
 Jens brinner för att hjälpa utvecklingsteam att bli högpresterande, och har många både praktiska och teoretiska verktyg i bakfickan för att lyckas med detta.

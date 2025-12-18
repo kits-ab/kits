@@ -6,7 +6,6 @@ authors:
   - gustavhjelm
 ---
 
-
 <img class="image-left" src="/assets/nyheter_spokvandring.jpg">
 
 Hej vänner,\

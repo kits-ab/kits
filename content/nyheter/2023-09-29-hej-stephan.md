@@ -6,6 +6,7 @@ publishDate: 2023-09-29
 authors:
   - gustavhjelm
 ---
+
 Fredagen är här och sist men inte minst i våra lära-känna-presentationer har vi vår nya kollega och vän [Stephan](https://www.linkedin.com/in/ACoAAAAWQuoBpQj_f5Blp_NMHhYm26FGxOlcIJQ)!\
 \
 **Varför valde du KITS?**\

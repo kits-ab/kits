@@ -5,20 +5,17 @@ import {
   Lead,
   Location,
   MainHeading,
-  SectionHeading,
   spacing,
   Text,
   types,
   Vertical,
-  width,
-  Wrapper
+  width
 } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
 
 import { ContentYamlConnection, MarkdownRemarkConnection } from "../../gatsby-types"
-import { PersonList } from "../components/PersonList"
+import { Seo } from "../components/Seo"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { edgeToPerson, findPersonById } from "../utils/personUtils"
@@ -40,7 +37,11 @@ export default ({ data, location }: AboutPageProps) => {
 
   return (
     <DefaultLayout location={location}>
-      <Helmet title={page.node.frontmatter.title} />
+      <Seo
+        title={page.node.frontmatter.title}
+        description={page.node.frontmatter.seoDescription}
+        pathname={location.pathname}
+      />
 
       <Vertical spacing={spacing.large}>
         <MainHeading>{page.node.frontmatter.heading}</MainHeading>
@@ -71,7 +72,6 @@ export default ({ data, location }: AboutPageProps) => {
           })}
         </Vertical>
       </Horizontal>
-
     </DefaultLayout>
   )
 }
@@ -83,6 +83,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            seoDescription
             heading
             lead
             section1 {
@@ -93,7 +94,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     metadata: allContentYaml {
       edges {
         node {
@@ -109,10 +109,9 @@ export const pageQuery = graphql`
         }
       }
     }
-
     persons: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "person" }, alumni: { ne: true } } }
-      sort: { order: ASC, fields: [frontmatter___title] }
+      sort: { frontmatter: { title: ASC } }
     ) {
       edges {
         node {

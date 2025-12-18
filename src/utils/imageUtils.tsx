@@ -29,10 +29,7 @@ export const imageFragment = graphql`
         width: 450
         height: 250
         quality: 100
-        transformOptions: {
-            fit: COVER
-            cropFocus: ENTROPY
-        }
+        transformOptions: { fit: COVER, cropFocus: ENTROPY }
       )
     }
   }
@@ -57,7 +54,7 @@ export const imageFragmentSmall = graphql`
 `
 
 export const findImageByRelativePath = (images: FileEdge[], relativePath: string | undefined) => {
-  if (relativePath && relativePath.charAt(0) !== '/') {
+  if (relativePath && relativePath.charAt(0) !== "/") {
     relativePath = `/${relativePath}`
   }
   const img = images.find((image) => `/assets/${image.node.relativePath}` === relativePath)
@@ -75,6 +72,6 @@ export const findImagesByRelativePaths = (images: FileEdge[], relativePaths: str
   return relativePaths
     ? (relativePaths
         .map((relativePath) => findImageByRelativePath(images, relativePath))
-        .filter((image) => image !== undefined) as { src: any; srcSet: any }[])
+        .filter((image) => image !== undefined) as { src: string; srcSet: string }[])
     : []
 }

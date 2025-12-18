@@ -5,6 +5,7 @@ image: /assets/nyheter_kitscon2321.jpg
 authors:
   - gustavhjelm
 ---
+
 Hej vänner,\
 \
 Vi har varit på KitsCon igen och för upplaga 23.2 styrde vi skutan norrut mot Väderöarna! ⛴️\

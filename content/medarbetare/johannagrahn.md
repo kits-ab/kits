@@ -19,7 +19,6 @@ tags:
 
 Johanna har läst till civilingenjör i datateknik på Chalmers. Hon är bekant med språk i både frontend och backend men har nu störst intresse för frontend-utveckling.
 
-Med masterutbildning inom interaktionsdesign har hon även kunskaper inom UX-design, tillgänglighet och användarupplevelser. 
+Med masterutbildning inom interaktionsdesign har hon även kunskaper inom UX-design, tillgänglighet och användarupplevelser.
 
 Johanna är en positiv och kreativ problemlösare som ständigt vill utvecklas.
-

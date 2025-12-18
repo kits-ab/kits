@@ -7,8 +7,6 @@ import {
   Lead,
   MainHeading,
   Media,
-  Persona,
-  Personas,
   SectionHeading,
   spacing,
   SubHeading,
@@ -20,7 +18,6 @@ import {
 } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 import {
@@ -30,10 +27,10 @@ import {
   TeamtailorJob,
   TeamtailorJobConnection
 } from "../../gatsby-types"
+import { Seo } from "../components/Seo"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath, findImagesByRelativePaths } from "../utils/imageUtils"
-import { truncateJobAd } from "../utils/jobUtils"
 
 const StyledBreakout = styled(Breakout)`
   background-color: ${colors.background2};
@@ -47,12 +44,6 @@ const StyledBreakout = styled(Breakout)`
   }
 `
 
-const StyledPersonaContent = styled(Vertical)`
-  @media (max-width: ${width.mobileMenu}px) {
-    align-items: center;
-  }
-`
-
 interface JobPageProps extends PageProps {
   data: {
     page: MarkdownRemarkConnection
@@ -62,6 +53,7 @@ interface JobPageProps extends PageProps {
     images: FileConnection
     collageImages: FileConnection
     personaImages: FileConnection
+    cyberAcademyImages: FileConnection
   }
 }
 
@@ -78,14 +70,18 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
     const { data, location } = this.props
 
     const page = data.page.edges[0]
-    const activeJob = data.activeJob
-    const jobs = data.jobs.edges
+    // const activeJob = data.activeJob
+    // const jobs = data.jobs.edges
     const benefits = data.benefits.edges
     const images = data.images.edges
-    const personaImages = data.personaImages.edges
+    // const personaImages = data.personaImages.edges
+    const cyberAcademyImage = findImageByRelativePath(
+      data.cyberAcademyImages.edges,
+      "assets/cyberacademy_bild1.png"
+    )
 
-    const benefitsWithImage = benefits.filter(edge => edge.node.frontmatter.image)
-    const benefitsWithoutImage = benefits.filter(edge => !edge.node.frontmatter.image)
+    const benefitsWithImage = benefits.filter((edge) => edge.node.frontmatter.image)
+    const benefitsWithoutImage = benefits.filter((edge) => !edge.node.frontmatter.image)
 
     const collageImages = findImagesByRelativePaths(
       data.collageImages.edges,
@@ -94,25 +90,48 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
 
     return (
       <DefaultLayout location={location}>
-        <Helmet title={page.node.frontmatter.title} />
+        <Seo
+          title={page.node.frontmatter.title}
+          description={page.node.frontmatter.seoDescription}
+          pathname={location.pathname}
+        />
 
         <Vertical spacing={spacing.large}>
           <MainHeading>{page.node.frontmatter.heading}</MainHeading>
           <Lead>{page.node.frontmatter.lead}</Lead>
         </Vertical>
+
+        <Button
+          href="https://jobb.kits.se/"
+          openInNewWindow={true}
+          style={{
+            maxWidth: 280,
+            alignItems: "center",
+            justifyContent: "center",
+            alignSelf: "center"
+          }}
+        >
+          Ansök direkt på jobb.kits.se
+        </Button>
+
+        {/*
         <Personas>
           {jobs.map((edge, index) => {
             return (
               <Persona
                 key={"person" + index}
-                iconSrc={personaImages[index].node.childImageSharp.gatsbyImageData.images.fallback.src}
-                iconSrcSet={personaImages[index].node.childImageSharp.gatsbyImageData.images.fallback.srcSet}
+                iconSrc={
+                  personaImages[index].node.childImageSharp.gatsbyImageData.images.fallback.src
+                }
+                iconSrcSet={
+                  personaImages[index].node.childImageSharp.gatsbyImageData.images.fallback.srcSet
+                }
                 isActive={
                   this.state.selectedIndex !== undefined
                     ? this.state.selectedIndex === index
                     : activeJob
-                    ? activeJob.id === edge.node.id
-                    : index === 0
+                      ? activeJob.id === edge.node.id
+                      : index === 0
                 }
                 name={edge.node.attributes.title}
                 onClick={this.handleClick.bind(this, index, edge.node.fields.href)}
@@ -131,6 +150,25 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
             )
           })}
         </Personas>
+        */}
+
+        <Vertical spacing={spacing.large} style={{ marginTop: spacing.huge }}>
+          <Vertical spacing={spacing.medium}>
+            <SectionHeading>{page.node.frontmatter.cyberAcademy.heading}</SectionHeading>
+          </Vertical>
+          <Lead>{page.node.frontmatter.cyberAcademy.lead}</Lead>
+
+          <Media
+            src={cyberAcademyImage && cyberAcademyImage.src}
+            srcSet={cyberAcademyImage && cyberAcademyImage.srcSet}
+          >
+            <Text>
+              {page.node.frontmatter.cyberAcademy.content.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </Text>
+          </Media>
+        </Vertical>
 
         <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
         {benefitsWithImage.map((edge: MarkdownRemarkEdge, index: number) => {
@@ -194,8 +232,14 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            seoDescription
             heading
             lead
+            cyberAcademy {
+              heading
+              lead
+              content
+            }
             section1 {
               heading
             }
@@ -208,11 +252,9 @@ export const pageQuery = graphql`
         }
       }
     }
-
     activeJob: teamtailorJob(fields: { href: { eq: $href } }) {
       id
     }
-
     jobs: allTeamtailorJob {
       edges {
         node {
@@ -233,10 +275,9 @@ export const pageQuery = graphql`
         }
       }
     }
-
     benefits: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "benefit" } } }
-      sort: { order: ASC, fields: [frontmatter___index] }
+      sort: { frontmatter: { index: ASC } }
     ) {
       edges {
         node {
@@ -248,7 +289,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     images: allFile(
       filter: {
         internal: { mediaType: { eq: "image/jpeg" } }
@@ -261,7 +301,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     collageImages: allFile(
       filter: {
         internal: { mediaType: { eq: "image/jpeg" } }
@@ -274,17 +313,28 @@ export const pageQuery = graphql`
         }
       }
     }
-
     personaImages: allFile(
       filter: {
         internal: { mediaType: { eq: "image/png" } }
         relativePath: { regex: "/^persona_/" }
       }
-      sort: { order: ASC, fields: [relativePath] }
+      sort: { relativePath: ASC }
     ) {
       edges {
         node {
           ...ImageFragmentPersona
+        }
+      }
+    }
+    cyberAcademyImages: allFile(
+      filter: {
+        internal: { mediaType: { in: ["image/jpeg", "image/png"] } }
+        relativePath: { regex: "/^cyberacademy_/" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageFragment
         }
       }
     }

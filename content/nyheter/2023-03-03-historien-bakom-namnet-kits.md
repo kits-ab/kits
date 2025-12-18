@@ -5,6 +5,7 @@ image: /assets/nyheter_kokitotsos.png
 authors:
   - gustavhjelm
 ---
+
 Fredagen är här och då passar väl inget bättre än historien bakom namnet KITS?\
 \
 KITS - Keep it Simple. Det må låta enkelt och självklart men sanningen är att det ligger en snårig historia bakom.\

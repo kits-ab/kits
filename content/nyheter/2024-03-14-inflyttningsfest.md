@@ -6,6 +6,7 @@ publishDate: 2024-03-14
 authors:
   - gustavhjelm
 ---
+
 <img class="image-left" src="/assets/nyheter_inflyttningsfest.jpeg">
 
 Wow, vilken inflyttningsfest vi hade! 🎉\

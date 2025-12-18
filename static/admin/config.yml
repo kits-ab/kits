@@ -10,6 +10,8 @@ backend:
     uploadMedia: Upload "{{path}}"
     deleteMedia: Delete "{{path}}"
 
+local_backend: false
+
 publish_mode: editorial_workflow
 
 media_folder: static/assets
@@ -275,6 +277,7 @@ collections:
       - name: tags
         label: Taggar
         widget: list
+        field: { name: tag, label: Tagg, widget: string }
       - { name: body, label: Body, widget: markdown }
 
   - name: news
@@ -480,3 +483,223 @@ collections:
           - { name: subheading, label: Underrubrik, required: false }
           - { name: heading, label: Rubrik, required: false }
           - { name: content, label: Text, widget: text, required: false }
+
+  - name: cybersakerhet
+    label: Cybersäkerhet
+    files:
+      - name: it_sakerhet
+        label: IT-säkerhet
+        file: content/sidor/cybersakerhet/it-sakerhet.md
+        fields:
+          - { name: type, widget: hidden, default: itSecurityPage }
+          - { name: title, label: Titel }
+          - { name: seoDescription, label: SEO Beskrivning, widget: text }
+          - { name: heading, label: Huvudrubrik }
+          - { name: lead, label: Ingress, widget: text }
+          - name: whatWeDo
+            label: Vad vi gör
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: items, label: Punkter, widget: list, field: { name: item, label: Punkt, widget: string } }
+          - name: areas
+            label: Områden
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - name: groups
+                label: Grupper
+                widget: list
+                fields:
+                  - { name: title, label: Titel }
+                  - { name: items, label: Punkter, widget: list, field: { name: item, label: Punkt, widget: string } }
+          - name: packagedOffers
+            label: Paketerade Erbjudanden
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: text, label: Text, widget: text }
+              - name: offers
+                label: Erbjudanden
+                widget: list
+                fields:
+                  - { name: title, label: Titel }
+                  - { name: url, label: Länk }
+                  - { name: text, label: Text, widget: text }
+
+      - name: ot_sakerhet
+        label: OT-säkerhet
+        file: content/sidor/cybersakerhet/ot-sakerhet.md
+        fields:
+          - { name: type, widget: hidden, default: otSecurityPage }
+          - { name: title, label: Titel }
+          - { name: seoDescription, label: SEO Beskrivning, widget: text }
+          - { name: heading, label: Huvudrubrik }
+          - { name: lead, label: Ingress, widget: text }
+          - name: whatWeDo
+            label: Vad vi gör
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: items, label: Punkter, widget: list, field: { name: item, label: Punkt, widget: string } }
+          - name: areas
+            label: Områden
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: items, label: Punkter, widget: list, field: { name: item, label: Punkt, widget: string } }
+          - name: packagedOffers
+            label: Paketerade Erbjudanden
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: text, label: Text, widget: text }
+              - name: offers
+                label: Erbjudanden
+                widget: list
+                fields:
+                  - { name: title, label: Titel }
+                  - { name: url, label: Länk }
+                  - { name: text, label: Text, widget: text }
+
+      - name: pentest
+        label: Pentest
+        file: content/sidor/cybersakerhet/pentest.md
+        fields:
+          - { name: type, widget: hidden, default: pentestPage }
+          - { name: title, label: Titel }
+          - { name: seoDescription, label: SEO Beskrivning, widget: text }
+          - { name: heading, label: Huvudrubrik }
+          - { name: lead, label: Ingress, widget: text }
+          - { name: text1, label: Text 1, widget: text }
+          - { name: text2, label: Text 2, widget: text }
+          - name: whatWeTest
+            label: Vad vi testar
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: items, label: Punkter, widget: list, field: { name: item, label: Punkt, widget: string } }
+
+      - name: ot_sakerhetsexpert
+        label: OT-säkerhetsexpert
+        file: content/sidor/cybersakerhet/ot-sakerhetsexpert.md
+        fields:
+          - { name: type, widget: hidden, default: otSecExpertPage }
+          - { name: title, label: Titel }
+          - { name: seoDescription, label: SEO Beskrivning, widget: text }
+          - { name: heading, label: Huvudrubrik }
+          - { name: lead, label: Ingress, widget: text }
+          - { name: text, label: Text, widget: text }
+          - name: whatYouGet
+            label: Vad ni får
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: items, label: Punkter, widget: list, field: { name: item, label: Punkt, widget: string } }
+
+      - name: appsec_training
+        label: Utbildning Applikationssäkerhet
+        file: content/sidor/cybersakerhet/utbildning-applikationssakerhet.md
+        fields:
+          - { name: type, widget: hidden, default: appSecTrainingPage }
+          - { name: title, label: Titel }
+          - { name: seoDescription, label: SEO Beskrivning, widget: text }
+          - { name: heading, label: Huvudrubrik }
+          - { name: lead, label: Ingress, widget: text }
+          - { name: text, label: Text, widget: text }
+          - name: trainingContent
+            label: Kursinnehåll
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: items, label: Punkter, widget: list, field: { name: item, label: Punkt, widget: string } }
+
+  - name: teknik_utveckling
+    label: Teknik & Utveckling
+    files:
+      - name: systemutveckling
+        label: Systemutveckling
+        file: content/sidor/teknik-och-utveckling/systemutveckling.md
+        fields:
+          - { name: type, widget: hidden, default: systemDevPage }
+          - { name: title, label: Titel }
+          - { name: seoDescription, label: SEO Beskrivning, widget: text }
+          - { name: heading, label: Huvudrubrik }
+          - { name: lead, label: Ingress, widget: text }
+          - name: section1
+            label: Sektion 1
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: text1, label: Text 1, widget: text }
+              - { name: text2, label: Text 2, widget: text }
+          - name: section2
+            label: Sektion 2
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: items, label: Punkter, widget: list, field: { name: item, label: Punkt, widget: string } }
+          - name: section3
+            label: Sektion 3
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: text, label: Text, widget: text }
+
+      - name: integration
+        label: Integration
+        file: content/sidor/teknik-och-utveckling/integration.md
+        fields:
+          - { name: type, widget: hidden, default: integrationPage }
+          - { name: title, label: Titel }
+          - { name: seoDescription, label: SEO Beskrivning, widget: text }
+          - { name: heading, label: Huvudrubrik }
+          - { name: lead, label: Ingress, widget: text }
+          - name: section1
+            label: Sektion 1
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: text1, label: Text 1, widget: text }
+              - { name: text2, label: Text 2, widget: text }
+          - name: section2
+            label: Sektion 2
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: items, label: Punkter, widget: list, field: { name: item, label: Punkt, widget: string } }
+          - name: section3
+            label: Sektion 3
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: text, label: Text, widget: text }
+
+      - name: projektledning
+        label: Projektledning
+        file: content/sidor/teknik-och-utveckling/projektledning.md
+        fields:
+          - { name: type, widget: hidden, default: projectManagementPage }
+          - { name: title, label: Titel }
+          - { name: seoDescription, label: SEO Beskrivning, widget: text }
+          - { name: heading, label: Huvudrubrik }
+          - { name: lead, label: Ingress, widget: text }
+          - name: section1
+            label: Sektion 1
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: text1, label: Text 1, widget: text }
+              - { name: text2, label: Text 2, widget: text }
+          - name: section2
+            label: Sektion 2
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: items, label: Punkter, widget: list, field: { name: item, label: Punkt, widget: string } }
+          - name: section3
+            label: Sektion 3
+            widget: object
+            fields:
+              - { name: heading, label: Rubrik }
+              - { name: text, label: Text, widget: text }

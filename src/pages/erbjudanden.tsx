@@ -21,10 +21,10 @@ import {
 } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 import { FileConnection, MarkdownRemarkConnection } from "../../gatsby-types"
+import { Seo } from "../components/Seo"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath } from "../utils/imageUtils"
@@ -90,7 +90,11 @@ export default ({ data, location }: ErbjudandenPageProps) => {
 
   return (
     <DefaultLayout location={location}>
-      <Helmet title={page.node.frontmatter.title} />
+      <Seo
+        title={page.node.frontmatter.title}
+        description={page.node.frontmatter.seoDescription}
+        pathname={location.pathname}
+      />
 
       <Vertical spacing={spacing.large}>
         <MainHeading>{page.node.frontmatter.heading}</MainHeading>
@@ -100,7 +104,7 @@ export default ({ data, location }: ErbjudandenPageProps) => {
       <Breakout style={{ overflowX: "hidden" }}>
         <Wrapper>
           <StyledHorizontal wrapRows={true}>
-            {offers.map(edge => {
+            {offers.map((edge) => {
               const id = edge.node.frontmatter.id
               const offerParam = offerParams[id]
               return (
@@ -120,7 +124,7 @@ export default ({ data, location }: ErbjudandenPageProps) => {
       </Breakout>
 
       <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
-      {projects.map(edge => {
+      {projects.map((edge) => {
         const image = findImageByRelativePath(images, edge.node.frontmatter.image)
         return (
           <Media
@@ -153,6 +157,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            seoDescription
             heading
             lead
             section1 {
@@ -166,10 +171,9 @@ export const pageQuery = graphql`
         }
       }
     }
-
     offers: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "offer" } } }
-      sort: { order: ASC, fields: [frontmatter___index] }
+      sort: { frontmatter: { index: ASC } }
     ) {
       edges {
         node {
@@ -181,10 +185,9 @@ export const pageQuery = graphql`
         }
       }
     }
-
     projects: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "project" } } }
-      sort: { order: DESC, fields: [frontmatter___index] }
+      sort: { frontmatter: { index: DESC } }
     ) {
       edges {
         node {
@@ -198,7 +201,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     images: allFile(
       filter: {
         internal: { mediaType: { eq: "image/jpeg" } }

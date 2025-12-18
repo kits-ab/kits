@@ -20,7 +20,6 @@ import {
 import { isSameDay, parseISO } from "date-fns"
 import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 import {
@@ -29,6 +28,7 @@ import {
   MarkdownRemarkConnection,
   MarkdownRemarkFrontmatterSchema
 } from "../../gatsby-types"
+import { Seo } from "../components/Seo"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { formatPeriod, formatWeekday } from "../utils/dateUtils"
@@ -99,7 +99,11 @@ export default ({ data, location }: KitsConPageProps) => {
 
   return (
     <DefaultLayout location={location}>
-      <Helmet title={page.node.frontmatter.title} />
+      <Seo
+        title={page.node.frontmatter.title}
+        description="KitsCon, vår årliga utvecklarkonferens. Inspirerande föreläsningar om det senaste inom teknik, utveckling och säkerhet. Se program och talare."
+        pathname={location.pathname}
+      />
 
       <Vertical spacing={spacing.large}>
         <MainHeading>{page.node.frontmatter.heading}</MainHeading>
@@ -191,7 +195,7 @@ const renderPresentation = (
       href={presentation.href}
       location={
         presentation.location && presentation.location.coordinates
-          ? (presentation.location as any)
+          ? (presentation.location as any) // eslint-disable-line @typescript-eslint/no-explicit-any
           : undefined
       }
       type={presentation.type as types.TimeslotType}
@@ -261,7 +265,7 @@ export const query = graphql`
     latestKitscon: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "conference" }, active: { eq: true } } }
       limit: 1
-      sort: { order: DESC, fields: [frontmatter___start] }
+      sort: { frontmatter: { start: DESC } }
     ) {
       edges {
         node {
@@ -321,7 +325,7 @@ export const query = graphql`
 
     persons: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "person" } } }
-      sort: { order: ASC, fields: [frontmatter___title] }
+      sort: { frontmatter: { title: ASC } }
     ) {
       edges {
         node {

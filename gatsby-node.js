@@ -26,7 +26,7 @@ exports.onCreateNode = ({ actions: { createNodeField }, getNode, node }) => {
   }
 }
 
-exports.createPages = ({ graphql, actions: { createPage } }) => {
+exports.createPages = ({ graphql, actions: { createPage, createRedirect } }) => {
   return new Promise((resolve) => {
     graphql(`
       {
@@ -94,10 +94,24 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
       result.data.allTeamtailorJob.edges.forEach(({ node }) => {
         createPage({
           path: node.fields.href,
-          component: path.resolve("./src/pages/jobb.tsx"),
+          component: path.resolve("./src/pages/karriar.tsx"),
           context: { href: node.fields.href }
         })
       })
+
+      createRedirect({
+        fromPath: "/om",
+        toPath: "/om-oss",
+        isPermanent: true,
+        redirectInBrowser: true
+      })
+      createRedirect({
+        fromPath: "/jobb",
+        toPath: "/karriar",
+        isPermanent: true,
+        redirectInBrowser: true
+      })
+
       resolve()
     })
   })

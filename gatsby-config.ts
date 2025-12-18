@@ -7,10 +7,20 @@ require("dotenv").config()
 const config: GatsbyConfig = {
   siteMetadata: {
     siteUrl: "https://kits.se",
+    title: "KITS",
+    description: "KITS är specialister inom systemutveckling, integration och cybersäkerhet.",
+    author: "@kits_ab",
     rssBlogTitle: "KITS - Blogg",
     rssBlogDescription: "Senaste inläggen i KITS blogg"
   },
+  flags: { DEV_SSR: false },
   plugins: [
+    {
+      resolve: "gatsby-plugin-decap-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -94,47 +104,45 @@ const config: GatsbyConfig = {
                 })
               })
             },
-            query: `
-              {
-                site {
-                  siteMetadata {
-                    siteUrl
-                  }
-                }
-                allMarkdownRemark(
-                  filter: { frontmatter: { type: { eq: "post" } } }
-                  sort: { order: DESC, fields: [fields___date] }
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields {
-                        href
-                        date
-                      }
-                      frontmatter {
-                        title
-                        authors
-                      }
-                    }
-                  }
-                }
-                persons: allMarkdownRemark(
-                  filter: { frontmatter: { type: { eq: "person" } } }
-                  sort: { order: ASC, fields: [frontmatter___title] }
-                ) {
-                  edges {
-                    node {
-                      frontmatter {
-                        id
-                        title
-                      }
-                    }
-                  }
-                }
-              }
-            `,
+            query: `{
+  site {
+    siteMetadata {
+      siteUrl
+    }
+  }
+  allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "post"}}}
+    sort: {fields: {date: DESC}}
+  ) {
+    edges {
+      node {
+        excerpt
+        html
+        fields {
+          href
+          date
+        }
+        frontmatter {
+          title
+          authors
+        }
+      }
+    }
+  }
+  persons: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "person"}}}
+    sort: {frontmatter: {title: ASC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          id
+          title
+        }
+      }
+    }
+  }
+}`,
             output: "/blogg.xml",
             title: "KITS - Blogg"
           },
@@ -165,47 +173,45 @@ const config: GatsbyConfig = {
                 })
               })
             },
-            query: `
-              {
-                site {
-                  siteMetadata {
-                    siteUrl
-                  }
-                }
-                allMarkdownRemark(
-                  filter: { frontmatter: { type: { eq: "news" } } }
-                  sort: { order: DESC, fields: [fields___date] }
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields {
-                        href
-                        date
-                      }
-                      frontmatter {
-                        title
-                        authors
-                      }
-                    }
-                  }
-                }
-                persons: allMarkdownRemark(
-                  filter: { frontmatter: { type: { eq: "person" } } }
-                  sort: { order: ASC, fields: [frontmatter___title] }
-                ) {
-                  edges {
-                    node {
-                      frontmatter {
-                        id
-                        title
-                      }
-                    }
-                  }
-                }
-              }
-            `,
+            query: `{
+  site {
+    siteMetadata {
+      siteUrl
+    }
+  }
+  allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "news"}}}
+    sort: {fields: {date: DESC}}
+  ) {
+    edges {
+      node {
+        excerpt
+        html
+        fields {
+          href
+          date
+        }
+        frontmatter {
+          title
+          authors
+        }
+      }
+    }
+  }
+  persons: allMarkdownRemark(
+    filter: {frontmatter: {type: {eq: "person"}}}
+    sort: {frontmatter: {title: ASC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          id
+          title
+        }
+      }
+    }
+  }
+}`,
             output: "/news.xml",
             title: "KITS - Nyheter"
           }
@@ -213,11 +219,6 @@ const config: GatsbyConfig = {
       }
     },
     "gatsby-plugin-image",
-    "gatsby-plugin-netlify",
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: { modulePath: `${__dirname}/src/cms/cms.js` }
-    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sharp",
@@ -259,6 +260,26 @@ const config: GatsbyConfig = {
       }
     },
     "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://kits.se",
+        sitemap: "https://kits.se/sitemap/sitemap-index.xml",
+        policy: [{ userAgent: "*", allow: "/", disallow: "/admin/" }]
+      }
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "KITS AB",
+        short_name: "KITS",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#333333",
+        display: "minimal-ui",
+        icon: "static/assets/nyheter_kitsallafarger.png" // This path is relative to the root of the site.
+      }
+    },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
