@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: kits-ab/kits
-  branch: ny_web_2026
+  branch: main
   squash_merges: true
   commit_messages:
     create: Create {{collection}} "{{slug}}"
