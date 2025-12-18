@@ -125,35 +125,7 @@ const TjansterPage = ({ data, location }: TjansterPageProps) => {
       />
       <Vertical spacing={spacing.large}>
         <MainHeading>{frontmatter.heading}</MainHeading>
-        <Lead>
-          {frontmatter.lead.split("Keep IT Simple").map((part, index, arr) => (
-            <React.Fragment key={index}>
-              {part}
-              {index < arr.length - 1 && (
-                <>
-                  <span style={{ fontWeight: "bold" }}>Keep IT Simple</span>
-                  {
-                    index === 0 &&
-                      "" /* hack to match original text spacing/structure if needed, strictly following md content now */
-                  }
-                </>
-              )}
-            </React.Fragment>
-          ))}
-          {/* The above split/map is a bit risky if text changes. simpler to just render the lead text directly or use a specific bolding strategy if needed. 
-               Given the markdown has the text as plain string, we might lose the bolding unless we process it. 
-               For now, let's just render the lead text. If bolding is strict requirement we can use HTML in markdown or parse.
-               Let's try to match the specific "Keep IT Simple" / "Keep IT Secure" bolding if present in the string.
-           */}
-          {/* Actually, let's just render the text. It's cleaner. If user wants bold, we can add HTML in MD. */}
-          {/* Re-reading the original component, it had specific spans. 
-               "Vårt erbjudande bygger på två kompletterande principer: Keep IT Simple att skapa... och Keep IT Secure att säkerställa..."
-           */}
-          Vårt erbjudande bygger på två kompletterande principer:{" "}
-          <span style={{ fontWeight: "bold" }}>Keep IT Simple</span> att skapa tydliga, effektiva
-          och hållbara system och <span style={{ fontWeight: "bold" }}>Keep IT Secure</span> att
-          säkerställa att de är robusta och trygga över tid.
-        </Lead>
+        <Lead>{frontmatter.lead}</Lead>
 
         <Lead>{frontmatter.lead2}</Lead>
 

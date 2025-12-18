@@ -4,8 +4,10 @@ title: Våra Tjänster
 seoDescription: "KITS hjälper företag att utveckla och säkra digitala lösningar. Vi kombinerar systemutveckling och cybersäkerhet för att skapa robusta, effektiva och säkra system."
 heading: Våra tjänster
 lead: >-
-  Vi hjälper företag att utveckla, modernisera och säkra sina digitala lösningar. Vårt erbjudande består av två huvudområden: Teknik & utveckling och Cybersäkerhet. Tillsammans täcker de hela kedjan – från systemutveckling och integration till säkerhetsarbete i både IT- och OT-miljöer.
+  Vi hjälper företag att utveckla, modernisera och säkra sina digitala lösningar. Vårt erbjudande består av två huvudområden:
+  Teknik & utveckling och Cybersäkerhet.
 lead2: >-
+  Tillsammans täcker de hela kedjan från systemutveckling och integration till säkerhetsarbete i både IT- och OT-miljöer.
   Utforska våra tjänster nedan och se hur vi kan stärka er organisation.
 kis:
   heading: "Keep IT Simple\nTeknik & utveckling"
