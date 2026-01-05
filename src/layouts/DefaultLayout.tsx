@@ -57,6 +57,10 @@ const GlobalSiteStyles = createGlobalStyle`
   .max-100 {
     max-width: 100%;
   }
+
+  strong, b {
+    font-weight: 700;
+  }
 `
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {

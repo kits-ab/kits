@@ -14,6 +14,7 @@ import {
 import { graphql } from "gatsby"
 import * as React from "react"
 
+import { CallToAction } from "../../components/CallToAction"
 import { Seo } from "../../components/Seo"
 import { DefaultLayout } from "../../layouts/DefaultLayout"
 import { PageProps } from "../../types/PageProps"
@@ -42,6 +43,12 @@ interface OTSecurityPageProps extends PageProps {
             url: string
             text: string
           }[]
+        }
+        cta: {
+          heading: string
+          content: string
+          buttonText: string
+          buttonUrl: string
         }
       }
     }
@@ -115,6 +122,13 @@ const OTSecurityPage = ({ data, location }: OTSecurityPageProps) => {
             </Vertical>
           ))}
         </Horizontal>
+
+        <CallToAction
+          heading={frontmatter.cta.heading}
+          content={frontmatter.cta.content}
+          buttonText={frontmatter.cta.buttonText}
+          buttonHref={frontmatter.cta.buttonUrl}
+        />
       </Vertical>
     </DefaultLayout>
   )
@@ -144,6 +158,12 @@ export const query = graphql`
             url
             text
           }
+        }
+        cta {
+          heading
+          content
+          buttonText
+          buttonUrl
         }
       }
     }

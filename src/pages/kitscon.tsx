@@ -148,7 +148,7 @@ const renderSchema = (persons: types.Person[], schema: MarkdownRemarkFrontmatter
   const schemaContent: React.ReactNode[] = []
 
   schema.forEach((s) => {
-    if (!isSameDay(parseISO(s.start), parseISO(previousTime))) {
+    if (!previousTime || !isSameDay(parseISO(s.start), parseISO(previousTime))) {
       if (previousSchema) {
         schemaContent.push(renderPresentation(persons, previousSchema, connect, true))
         previousSchema = undefined

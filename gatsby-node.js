@@ -111,6 +111,36 @@ exports.createPages = ({ graphql, actions: { createPage, createRedirect } }) => 
         isPermanent: true,
         redirectInBrowser: true
       })
+      createRedirect({
+        fromPath: "/erbjudanden",
+        toPath: "/tjanster",
+        isPermanent: true,
+        redirectInBrowser: true
+      })
+      createRedirect({
+        fromPath: "/blogg",
+        toPath: "/",
+        isPermanent: true,
+        redirectInBrowser: true
+      })
+      createRedirect({
+        fromPath: "/cyberakademi",
+        toPath: "/karriar",
+        isPermanent: true,
+        redirectInBrowser: true
+      })
+      createRedirect({
+        fromPath: "/keepitsecure",
+        toPath: "/cybersakerhet/it-sakerhet",
+        isPermanent: true,
+        redirectInBrowser: true
+      })
+      createRedirect({
+        fromPath: "/keepotsecure",
+        toPath: "/cybersakerhet/ot-sakerhet",
+        isPermanent: true,
+        redirectInBrowser: true
+      })
 
       resolve()
     })

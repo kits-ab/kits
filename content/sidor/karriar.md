@@ -1,5 +1,5 @@
 ---
-type: jobPage
+type: careerPage
 title: Karriär
 heading: Bli en av oss
 lead: >-

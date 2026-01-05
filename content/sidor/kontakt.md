@@ -3,7 +3,7 @@ type: "contactPage"
 title: "Kontakta oss"
 seoDescription: "Kontakta KITS för hjälp med systemutveckling, integration och cybersäkerhet. Här hittar du kontaktuppgifter till våra kontor och nyckelpersoner."
 heading: "Kontakta oss"
-lead: "Vill du veta mer om våra tjänster eller hur vi kan hjälpa er organisation?<br />Hör av dig till oss, vi svarar snabbt."
+lead: "Vill du veta mer om våra tjänster eller hur vi kan hjälpa er organisation? Hör av dig till oss, vi svarar snabbt."
 generalContact:
   heading: "Allmän kontakt"
   email: "info@kits.se"

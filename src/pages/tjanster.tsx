@@ -18,6 +18,8 @@ import { graphql, Link } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
+import { CallToAction } from "../components/CallToAction"
+import { MarkdownField } from "../components/MarkdownField"
 import { Seo } from "../components/Seo"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
@@ -43,6 +45,8 @@ interface TjansterPageProps extends PageProps {
         seoDescription: string
         heading: string
         lead: string
+        offer1: string
+        offer2: string
         lead2: string
         kis: {
           heading: string
@@ -78,6 +82,12 @@ interface TjansterPageProps extends PageProps {
             url: string
             text: string
           }[]
+        }
+        cta: {
+          heading: string
+          content: string
+          buttonText: string
+          buttonUrl: string
         }
       }
     }
@@ -125,19 +135,40 @@ const TjansterPage = ({ data, location }: TjansterPageProps) => {
       />
       <Vertical spacing={spacing.large}>
         <MainHeading>{frontmatter.heading}</MainHeading>
-        <Lead>{frontmatter.lead}</Lead>
+        <Lead>
+          <MarkdownField text={frontmatter.lead} inline={true} />
+        </Lead>
 
-        <Lead>{frontmatter.lead2}</Lead>
+        <Horizontal
+          breakpoint={width.tablet}
+          distribute={true}
+          spacing={spacing.large}
+          alignVertical={types.Alignment.Start}
+        >
+          <Vertical spacing={spacing.small}>
+            <Lead className="is-centered">
+              <p>
+                <MarkdownField text={frontmatter.offer1} inline={true} />
+              </p>
+            </Lead>
+          </Vertical>
+          <Vertical spacing={spacing.small}>
+            <Lead className="is-centered">
+              <p>
+                <MarkdownField text={frontmatter.offer2} inline={true} />
+              </p>
+            </Lead>
+          </Vertical>
+        </Horizontal>
+
+        <Lead>
+          <MarkdownField text={frontmatter.lead2} inline={true} />
+        </Lead>
 
         <Vertical spacing={spacing.medium}>
           <Link to={frontmatter.kis.url} style={{ textDecoration: "none", color: "inherit" }}>
             <SectionHeading>
-              {frontmatter.kis.heading.split("\n").map((line, i) => (
-                <React.Fragment key={i}>
-                  {line}
-                  {i === 0 && <br />}
-                </React.Fragment>
-              ))}
+              <MarkdownField text={frontmatter.kis.heading} inline={true} />
             </SectionHeading>
           </Link>
           <Text>
@@ -188,12 +219,7 @@ const TjansterPage = ({ data, location }: TjansterPageProps) => {
           <Vertical spacing={spacing.medium}>
             <Link to={frontmatter.kitsec.url} style={{ textDecoration: "none", color: "inherit" }}>
               <StyledSectionHeading>
-                {frontmatter.kitsec.heading.split("\n").map((line, i) => (
-                  <React.Fragment key={i}>
-                    {line}
-                    {i === 0 && <br />}
-                  </React.Fragment>
-                ))}
+                <MarkdownField text={frontmatter.kitsec.heading} inline={true} />
               </StyledSectionHeading>
             </Link>
             <Text>
@@ -293,6 +319,13 @@ const TjansterPage = ({ data, location }: TjansterPageProps) => {
           </Horizontal>
         </Vertical>
       </Wrapper>
+
+      <CallToAction
+        heading={frontmatter.cta.heading}
+        content={frontmatter.cta.content}
+        buttonText={frontmatter.cta.buttonText}
+        buttonHref={frontmatter.cta.buttonUrl}
+      />
     </DefaultLayout>
   )
 }
@@ -305,6 +338,8 @@ export const query = graphql`
         seoDescription
         heading
         lead
+        offer1
+        offer2
         lead2
         kis {
           heading
@@ -340,6 +375,12 @@ export const query = graphql`
             url
             text
           }
+        }
+        cta {
+          heading
+          content
+          buttonText
+          buttonUrl
         }
       }
     }

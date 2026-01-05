@@ -33,4 +33,9 @@ packagedOffers:
     - title: "Utbildning i applikationssäkerhet"
       url: "/cybersakerhet/utbildning-applikationssakerhet"
       text: "En praktiskt inriktad utbildning som lär utvecklare, arkitekter och DevOps-team att förebygga sårbarheter och arbeta säkerhetsmedvetet i hela utvecklingskedjan."
+cta:
+  heading: Låter det intressant?
+  content: Ta kontakt med oss så berättar vi mer.
+  buttonText: Kontakta oss
+  buttonUrl: mailto:salj@kits.se
 ---
