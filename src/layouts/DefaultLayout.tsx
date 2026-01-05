@@ -137,6 +137,11 @@ function KitsFooter() {
             linkedin: new types.Username(kitsInfo.social.linkedin, types.SocialType.LinkedIn)
           }
         }}
+        contactLink={{
+          target: "_self",
+          url: "/kontakt",
+          text: "Kontakta oss"
+        }}
       />
     )
   }

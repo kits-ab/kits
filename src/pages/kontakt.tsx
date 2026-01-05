@@ -100,7 +100,6 @@ const ContactPage = ({ data, location }: ContactPageProps) => {
               </p>
             </Text>
 
-            <ContentHeading>{frontmatter.address.heading}</ContentHeading>
             <Text>
               <p>
                 {metadata.node.name}
