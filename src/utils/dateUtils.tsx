@@ -1,7 +1,12 @@
 import { format, isSameDay, isSameMonth, isSameYear, parseISO } from "date-fns"
 import { sv } from "date-fns/locale"
 
-export const formatPeriod = (periodStartInput: Date | string, periodEndInput: Date | string) => {
+export const formatPeriod = (
+  periodStartInput: Date | string | undefined, // Updated type
+  periodEndInput: Date | string | undefined // Updated type
+) => {
+  if (!periodStartInput || !periodEndInput) return "" // Guard clause
+
   let periodStart =
     typeof periodStartInput === "string" ? parseISO(periodStartInput) : periodStartInput
   let periodEnd = typeof periodEndInput === "string" ? parseISO(periodEndInput) : periodEndInput
@@ -22,7 +27,9 @@ export const formatPeriod = (periodStartInput: Date | string, periodEndInput: Da
   }
 }
 
-export const formatWeekday = (dateInput: Date | string) => {
+export const formatWeekday = (dateInput: Date | string | undefined) => {
+  // Updated type
+  if (!dateInput) return "" // Guard clause
   let date = typeof dateInput === "string" ? parseISO(dateInput) : dateInput
   const weekday = format(date, "EEEE", { locale: sv })
   return weekday.length > 0 ? weekday.charAt(0).toUpperCase() + weekday.slice(1) : weekday

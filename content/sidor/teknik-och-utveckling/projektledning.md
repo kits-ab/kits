@@ -20,4 +20,9 @@ section2:
 section3:
   heading: "Varför välja KITS som projektpartner?"
   text: "För att vi kombinerar teknisk förståelse med strukturerad leveransförmåga. Vi leder projekt från start till mål och skapar de förutsättningar som krävs för att teamet ska kunna leverera."
+cta:
+  heading: Låter det intressant?
+  content: Ta kontakt med oss så berättar vi mer.
+  buttonText: Kontakta oss
+  buttonUrl: mailto:salj@kits.se
 ---

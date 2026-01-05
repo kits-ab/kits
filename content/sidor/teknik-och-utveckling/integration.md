@@ -20,4 +20,9 @@ section2:
 section3:
   heading: "Värdet för er organisation"
   text: "Ni får integrationslösningar som är stabila, dokumenterade, skalbara och säkra, som stödjer både dagens och framtidens behov."
+cta:
+  heading: Låter det intressant?
+  content: Ta kontakt med oss så berättar vi mer.
+  buttonText: Kontakta oss
+  buttonUrl: mailto:salj@kits.se
 ---

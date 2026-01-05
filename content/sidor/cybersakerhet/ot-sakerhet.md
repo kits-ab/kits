@@ -31,4 +31,9 @@ packagedOffers:
     - title: "OT Security Expert"
       url: "/cybersakerhet/ot-sakerhetsexpert"
       text: "Få tillgång till en dedikerad OT-säkerhetsspecialist som stöttar er i strategiska beslut, taktisk planering och det dagliga säkerhetsarbetet. Perfekt för organisationer som behöver löpande rådgivning, stöd till OT-ansvariga och vägledning kring NIS2, IEC 62443 och skydd av driftkritiska miljöer."
+cta:
+  heading: Låter det intressant?
+  content: Ta kontakt med oss så berättar vi mer.
+  buttonText: Kontakta oss
+  buttonUrl: mailto:otsakerhet@kits.se
 ---

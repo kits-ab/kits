@@ -53,43 +53,48 @@ export default ({ data, location }: BloggPageProps) => {
   )
 }
 
-export const pageQuery = graphql`query IndexQuery {
-  page: allMarkdownRemark(filter: {frontmatter: {type: {eq: "blogPage"}}}) {
-    edges {
-      node {
-        frontmatter {
-          title
-          heading
-          lead
+export const pageQuery = graphql`
+  query IndexQuery {
+    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "blogPage" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            heading
+            lead
+          }
+        }
+      }
+    }
+    blog: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "post" } } }
+      sort: { fields: { date: DESC } }
+    ) {
+      edges {
+        ...BlogFragment
+      }
+    }
+    persons: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "person" } } }
+      sort: { frontmatter: { title: ASC } }
+    ) {
+      edges {
+        node {
+          ...PersonFragment
+        }
+      }
+    }
+    avatars: allFile(
+      filter: {
+        internal: { mediaType: { eq: "image/jpeg" } }
+        relativePath: { regex: "/^medarbetare_.*-avatar/" }
+      }
+    ) {
+      edges {
+        node {
+          ...ImageFragmentAvatar
         }
       }
     }
   }
-  blog: allMarkdownRemark(
-    filter: {frontmatter: {type: {eq: "post"}}}
-    sort: {fields: {date: DESC}}
-  ) {
-    edges {
-      ...BlogFragment
-    }
-  }
-  persons: allMarkdownRemark(
-    filter: {frontmatter: {type: {eq: "person"}}}
-    sort: {frontmatter: {title: ASC}}
-  ) {
-    edges {
-      node {
-        ...PersonFragment
-      }
-    }
-  }
-  avatars: allFile(
-    filter: {internal: {mediaType: {eq: "image/jpeg"}}, relativePath: {regex: "/^medarbetare_.*-avatar/"}}
-  ) {
-    edges {
-      node {
-        ...ImageFragmentAvatar
-      }
-    }
-  }
-}`
+`

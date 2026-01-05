@@ -56,8 +56,9 @@ export const edgeToPerson = (
     ? new types.Username(social.twitter, types.SocialType.Twitter)
     : undefined
 
-  const href =
-    edge.node.frontmatter.alumni !== true && edge.node.fields ? edge.node.fields.href : undefined
+  // const href =
+  //   edge.node.frontmatter.alumni !== true && edge.node.fields ? edge.node.fields.href : undefined
+  const href = undefined
 
   const avatar = avatars ? findImageByRelativePath(avatars, person.avatar) : undefined
 

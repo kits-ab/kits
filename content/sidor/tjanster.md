@@ -3,14 +3,12 @@ type: servicesPage
 title: Våra Tjänster
 seoDescription: "KITS hjälper företag att utveckla och säkra digitala lösningar. Vi kombinerar systemutveckling och cybersäkerhet för att skapa robusta, effektiva och säkra system."
 heading: Våra tjänster
-lead: >-
-  Vi hjälper företag att utveckla, modernisera och säkra sina digitala lösningar. Vårt erbjudande består av två huvudområden:
-  Teknik & utveckling och Cybersäkerhet.
-lead2: >-
-  Tillsammans täcker de hela kedjan från systemutveckling och integration till säkerhetsarbete i både IT- och OT-miljöer.
-  Utforska våra tjänster nedan och se hur vi kan stärka er organisation.
+lead: "Vi hjälper företag att utveckla, modernisera och säkra sina digitala lösningar. Vårt erbjudande består av två huvudområden som tillsammans täcker hela kedjan från systemutveckling och integration till säkerhetsarbete i både IT- och OT-miljöer."
+offer1: "Teknik & utveckling"
+offer2: "Cybersäkerhet"
+lead2: ""
 kis:
-  heading: "Keep IT Simple\nTeknik & utveckling"
+  heading: "Keep IT Simple  \nTeknik & utveckling"
   url: /teknik-och-utveckling
   text: >-
     Vi bygger digitala lösningar som är tydliga, förvaltningsbara och hållbara över tid. Våra konsulter arbetar med systemutveckling, integration och teknisk projektledning och kan både förstärka befintliga team och ta ansvar för hela leveranser.
@@ -45,7 +43,7 @@ kis:
         - Systemutveckling
         - Införandeprojekt
 kitsec:
-  heading: "Keep IT Secure\nCybersäkerhet"
+  heading: "Keep IT Secure  \nCybersäkerhet"
   url: /cybersakerhet
   text: >-
     Vi hjälper organisationer att skydda applikationer, plattformar och verksamhetskritiska miljöer. Arbetet omfattar säkerhetsgranskningar, arkitekturstöd, utbildningar och specialiserade OT-tjänster, anpassade efter verkliga risker och faktiska behov.
@@ -91,4 +89,9 @@ packagedOffers:
     - title: Utbildning i applikationssäkerhet
       url: /cybersakerhet/utbildning-applikationssakerhet
       text: En praktisk utbildning som ger utvecklare och DevOps-team kunskap att förebygga vanliga sårbarheter. Baserad på OWASP ASVS och OWASP Top 10.
+cta:
+  heading: Låter det intressant?
+  content: Ta kontakt med oss så berättar vi mer.
+  buttonText: Kontakta oss
+  buttonUrl: mailto:salj@kits.se
 ---

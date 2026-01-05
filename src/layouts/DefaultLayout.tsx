@@ -57,6 +57,10 @@ const GlobalSiteStyles = createGlobalStyle`
   .max-100 {
     max-width: 100%;
   }
+
+  strong, b {
+    font-weight: 700;
+  }
 `
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
@@ -132,6 +136,11 @@ function KitsFooter() {
             github: new types.Username(kitsInfo.social.github, types.SocialType.GitHub),
             linkedin: new types.Username(kitsInfo.social.linkedin, types.SocialType.LinkedIn)
           }
+        }}
+        contactLink={{
+          target: "_self",
+          url: "/kontakt",
+          text: "Kontakta oss"
         }}
       />
     )

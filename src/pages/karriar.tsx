@@ -11,7 +11,6 @@ import {
   spacing,
   SubHeading,
   Text,
-  types,
   Vertical,
   width,
   Wrapper
@@ -27,6 +26,7 @@ import {
   TeamtailorJob,
   TeamtailorJobConnection
 } from "../../gatsby-types"
+import { CallToAction } from "../components/CallToAction"
 import { Seo } from "../components/Seo"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
@@ -77,7 +77,7 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
     // const personaImages = data.personaImages.edges
     const cyberAcademyImage = findImageByRelativePath(
       data.cyberAcademyImages.edges,
-      "assets/cyberacademy_bild1.png"
+      page.node.frontmatter.cyberAcademy.image
     )
 
     const benefitsWithImage = benefits.filter((edge) => edge.node.frontmatter.image)
@@ -206,13 +206,12 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
           )
         })}
 
-        <SectionHeading>{page.node.frontmatter.section2.heading}</SectionHeading>
-        <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.large}>
-          <Text>
-            <p>{page.node.frontmatter.section2.content}</p>
-          </Text>
-          <Button href="mailto:info@kits.se">Kontakta oss</Button>
-        </Vertical>
+        <CallToAction
+          heading={page.node.frontmatter.section2.heading}
+          content={page.node.frontmatter.section2.content}
+          buttonText="Kontakta oss"
+          buttonHref="mailto:patrik@kits.se"
+        />
       </DefaultLayout>
     )
   }
@@ -227,7 +226,7 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
 
 export const pageQuery = graphql`
   query JobPageQuery($href: String = "") {
-    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "jobPage" } } }) {
+    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "careerPage" } } }) {
       edges {
         node {
           frontmatter {
@@ -238,7 +237,9 @@ export const pageQuery = graphql`
             cyberAcademy {
               heading
               lead
+              lead
               content
+              image
             }
             section1 {
               heading

@@ -428,6 +428,9 @@ export type MarkdownRemarkFrontmatter = {
   section1: Maybe<MarkdownRemarkFrontmatterSection1>
   section2: Maybe<MarkdownRemarkFrontmatterSection2>
   section3: Maybe<MarkdownRemarkFrontmatterSection3>
+  section4: Maybe<MarkdownRemarkFrontmatterSection4>
+  offer1: Maybe<Scalars["String"]>
+  offer2: Maybe<Scalars["String"]>
   lead2: Maybe<Scalars["String"]>
   kis: Maybe<MarkdownRemarkFrontmatterKis>
   kitsec: Maybe<MarkdownRemarkFrontmatterKitsec>
@@ -439,7 +442,6 @@ export type MarkdownRemarkFrontmatter = {
   whatWeTest: Maybe<MarkdownRemarkFrontmatterWhatWeTest>
   Telefon: Maybe<Scalars["String"]>
   content: Maybe<Scalars["String"]>
-  section4: Maybe<MarkdownRemarkFrontmatterSection4>
   cyberAcademy: Maybe<MarkdownRemarkFrontmatterCyberAcademy>
   trainingContent: Maybe<MarkdownRemarkFrontmatterTrainingContent>
   whatWeDo: Maybe<MarkdownRemarkFrontmatterWhatWeDo>
@@ -507,6 +509,10 @@ export type MarkdownRemarkFrontmatterDirectContactManagement = {
 export type MarkdownRemarkFrontmatterCta = {
   career: Maybe<MarkdownRemarkFrontmatterCtaCareer>
   services: Maybe<MarkdownRemarkFrontmatterCtaServices>
+  heading: Maybe<Scalars["String"]>
+  content: Maybe<Scalars["String"]>
+  buttonText: Maybe<Scalars["String"]>
+  buttonUrl: Maybe<Scalars["String"]>
 }
 
 export type MarkdownRemarkFrontmatterCtaCareer = {
@@ -560,22 +566,28 @@ export type MarkdownRemarkFrontmatterCollageImages = {
 
 export type MarkdownRemarkFrontmatterSection1 = {
   heading: Maybe<Scalars["String"]>
+  content: Maybe<Scalars["String"]>
   text1: Maybe<Scalars["String"]>
   text2: Maybe<Scalars["String"]>
   subheading: Maybe<Scalars["String"]>
-  content: Maybe<Scalars["String"]>
 }
 
 export type MarkdownRemarkFrontmatterSection2 = {
   heading: Maybe<Scalars["String"]>
-  items: Maybe<Array<Maybe<Scalars["String"]>>>
   content: Maybe<Scalars["String"]>
+  items: Maybe<Array<Maybe<Scalars["String"]>>>
   subheading: Maybe<Scalars["String"]>
 }
 
 export type MarkdownRemarkFrontmatterSection3 = {
   heading: Maybe<Scalars["String"]>
+  content: Maybe<Scalars["String"]>
   text: Maybe<Scalars["String"]>
+}
+
+export type MarkdownRemarkFrontmatterSection4 = {
+  heading: Maybe<Scalars["String"]>
+  content: Maybe<Scalars["String"]>
 }
 
 export type MarkdownRemarkFrontmatterKis = {
@@ -632,13 +644,10 @@ export type MarkdownRemarkFrontmatterWhatWeTest = {
   items: Maybe<Array<Maybe<Scalars["String"]>>>
 }
 
-export type MarkdownRemarkFrontmatterSection4 = {
-  heading: Maybe<Scalars["String"]>
-}
-
 export type MarkdownRemarkFrontmatterCyberAcademy = {
   heading: Maybe<Scalars["String"]>
   lead: Maybe<Scalars["String"]>
+  image: Maybe<Scalars["String"]>
   content: Maybe<Array<Maybe<Scalars["String"]>>>
 }
 
@@ -1567,6 +1576,9 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   section1: InputMaybe<MarkdownRemarkFrontmatterSection1FilterInput>
   section2: InputMaybe<MarkdownRemarkFrontmatterSection2FilterInput>
   section3: InputMaybe<MarkdownRemarkFrontmatterSection3FilterInput>
+  section4: InputMaybe<MarkdownRemarkFrontmatterSection4FilterInput>
+  offer1: InputMaybe<StringQueryOperatorInput>
+  offer2: InputMaybe<StringQueryOperatorInput>
   lead2: InputMaybe<StringQueryOperatorInput>
   kis: InputMaybe<MarkdownRemarkFrontmatterKisFilterInput>
   kitsec: InputMaybe<MarkdownRemarkFrontmatterKitsecFilterInput>
@@ -1578,7 +1590,6 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   whatWeTest: InputMaybe<MarkdownRemarkFrontmatterWhatWeTestFilterInput>
   Telefon: InputMaybe<StringQueryOperatorInput>
   content: InputMaybe<StringQueryOperatorInput>
-  section4: InputMaybe<MarkdownRemarkFrontmatterSection4FilterInput>
   cyberAcademy: InputMaybe<MarkdownRemarkFrontmatterCyberAcademyFilterInput>
   trainingContent: InputMaybe<MarkdownRemarkFrontmatterTrainingContentFilterInput>
   whatWeDo: InputMaybe<MarkdownRemarkFrontmatterWhatWeDoFilterInput>
@@ -1632,6 +1643,10 @@ export type MarkdownRemarkFrontmatterDirectContactManagementFilterInput = {
 export type MarkdownRemarkFrontmatterCtaFilterInput = {
   career: InputMaybe<MarkdownRemarkFrontmatterCtaCareerFilterInput>
   services: InputMaybe<MarkdownRemarkFrontmatterCtaServicesFilterInput>
+  heading: InputMaybe<StringQueryOperatorInput>
+  content: InputMaybe<StringQueryOperatorInput>
+  buttonText: InputMaybe<StringQueryOperatorInput>
+  buttonUrl: InputMaybe<StringQueryOperatorInput>
 }
 
 export type MarkdownRemarkFrontmatterCtaCareerFilterInput = {
@@ -1686,22 +1701,28 @@ export type MarkdownRemarkFrontmatterCollageImagesFilterInput = {
 
 export type MarkdownRemarkFrontmatterSection1FilterInput = {
   heading: InputMaybe<StringQueryOperatorInput>
+  content: InputMaybe<StringQueryOperatorInput>
   text1: InputMaybe<StringQueryOperatorInput>
   text2: InputMaybe<StringQueryOperatorInput>
   subheading: InputMaybe<StringQueryOperatorInput>
-  content: InputMaybe<StringQueryOperatorInput>
 }
 
 export type MarkdownRemarkFrontmatterSection2FilterInput = {
   heading: InputMaybe<StringQueryOperatorInput>
-  items: InputMaybe<StringQueryOperatorInput>
   content: InputMaybe<StringQueryOperatorInput>
+  items: InputMaybe<StringQueryOperatorInput>
   subheading: InputMaybe<StringQueryOperatorInput>
 }
 
 export type MarkdownRemarkFrontmatterSection3FilterInput = {
   heading: InputMaybe<StringQueryOperatorInput>
+  content: InputMaybe<StringQueryOperatorInput>
   text: InputMaybe<StringQueryOperatorInput>
+}
+
+export type MarkdownRemarkFrontmatterSection4FilterInput = {
+  heading: InputMaybe<StringQueryOperatorInput>
+  content: InputMaybe<StringQueryOperatorInput>
 }
 
 export type MarkdownRemarkFrontmatterKisFilterInput = {
@@ -1770,13 +1791,10 @@ export type MarkdownRemarkFrontmatterWhatWeTestFilterInput = {
   items: InputMaybe<StringQueryOperatorInput>
 }
 
-export type MarkdownRemarkFrontmatterSection4FilterInput = {
-  heading: InputMaybe<StringQueryOperatorInput>
-}
-
 export type MarkdownRemarkFrontmatterCyberAcademyFilterInput = {
   heading: InputMaybe<StringQueryOperatorInput>
   lead: InputMaybe<StringQueryOperatorInput>
+  image: InputMaybe<StringQueryOperatorInput>
   content: InputMaybe<StringQueryOperatorInput>
 }
 
@@ -2117,6 +2135,9 @@ export type MarkdownRemarkFrontmatterFieldSelector = {
   section1: InputMaybe<MarkdownRemarkFrontmatterSection1FieldSelector>
   section2: InputMaybe<MarkdownRemarkFrontmatterSection2FieldSelector>
   section3: InputMaybe<MarkdownRemarkFrontmatterSection3FieldSelector>
+  section4: InputMaybe<MarkdownRemarkFrontmatterSection4FieldSelector>
+  offer1: InputMaybe<FieldSelectorEnum>
+  offer2: InputMaybe<FieldSelectorEnum>
   lead2: InputMaybe<FieldSelectorEnum>
   kis: InputMaybe<MarkdownRemarkFrontmatterKisFieldSelector>
   kitsec: InputMaybe<MarkdownRemarkFrontmatterKitsecFieldSelector>
@@ -2128,7 +2149,6 @@ export type MarkdownRemarkFrontmatterFieldSelector = {
   whatWeTest: InputMaybe<MarkdownRemarkFrontmatterWhatWeTestFieldSelector>
   Telefon: InputMaybe<FieldSelectorEnum>
   content: InputMaybe<FieldSelectorEnum>
-  section4: InputMaybe<MarkdownRemarkFrontmatterSection4FieldSelector>
   cyberAcademy: InputMaybe<MarkdownRemarkFrontmatterCyberAcademyFieldSelector>
   trainingContent: InputMaybe<MarkdownRemarkFrontmatterTrainingContentFieldSelector>
   whatWeDo: InputMaybe<MarkdownRemarkFrontmatterWhatWeDoFieldSelector>
@@ -2175,6 +2195,10 @@ export type MarkdownRemarkFrontmatterDirectContactManagementFieldSelector = {
 export type MarkdownRemarkFrontmatterCtaFieldSelector = {
   career: InputMaybe<MarkdownRemarkFrontmatterCtaCareerFieldSelector>
   services: InputMaybe<MarkdownRemarkFrontmatterCtaServicesFieldSelector>
+  heading: InputMaybe<FieldSelectorEnum>
+  content: InputMaybe<FieldSelectorEnum>
+  buttonText: InputMaybe<FieldSelectorEnum>
+  buttonUrl: InputMaybe<FieldSelectorEnum>
 }
 
 export type MarkdownRemarkFrontmatterCtaCareerFieldSelector = {
@@ -2221,22 +2245,28 @@ export type MarkdownRemarkFrontmatterCollageImagesFieldSelector = {
 
 export type MarkdownRemarkFrontmatterSection1FieldSelector = {
   heading: InputMaybe<FieldSelectorEnum>
+  content: InputMaybe<FieldSelectorEnum>
   text1: InputMaybe<FieldSelectorEnum>
   text2: InputMaybe<FieldSelectorEnum>
   subheading: InputMaybe<FieldSelectorEnum>
-  content: InputMaybe<FieldSelectorEnum>
 }
 
 export type MarkdownRemarkFrontmatterSection2FieldSelector = {
   heading: InputMaybe<FieldSelectorEnum>
-  items: InputMaybe<FieldSelectorEnum>
   content: InputMaybe<FieldSelectorEnum>
+  items: InputMaybe<FieldSelectorEnum>
   subheading: InputMaybe<FieldSelectorEnum>
 }
 
 export type MarkdownRemarkFrontmatterSection3FieldSelector = {
   heading: InputMaybe<FieldSelectorEnum>
+  content: InputMaybe<FieldSelectorEnum>
   text: InputMaybe<FieldSelectorEnum>
+}
+
+export type MarkdownRemarkFrontmatterSection4FieldSelector = {
+  heading: InputMaybe<FieldSelectorEnum>
+  content: InputMaybe<FieldSelectorEnum>
 }
 
 export type MarkdownRemarkFrontmatterKisFieldSelector = {
@@ -2293,13 +2323,10 @@ export type MarkdownRemarkFrontmatterWhatWeTestFieldSelector = {
   items: InputMaybe<FieldSelectorEnum>
 }
 
-export type MarkdownRemarkFrontmatterSection4FieldSelector = {
-  heading: InputMaybe<FieldSelectorEnum>
-}
-
 export type MarkdownRemarkFrontmatterCyberAcademyFieldSelector = {
   heading: InputMaybe<FieldSelectorEnum>
   lead: InputMaybe<FieldSelectorEnum>
+  image: InputMaybe<FieldSelectorEnum>
   content: InputMaybe<FieldSelectorEnum>
 }
 
@@ -2633,6 +2660,9 @@ export type MarkdownRemarkFrontmatterSortInput = {
   section1: InputMaybe<MarkdownRemarkFrontmatterSection1SortInput>
   section2: InputMaybe<MarkdownRemarkFrontmatterSection2SortInput>
   section3: InputMaybe<MarkdownRemarkFrontmatterSection3SortInput>
+  section4: InputMaybe<MarkdownRemarkFrontmatterSection4SortInput>
+  offer1: InputMaybe<SortOrderEnum>
+  offer2: InputMaybe<SortOrderEnum>
   lead2: InputMaybe<SortOrderEnum>
   kis: InputMaybe<MarkdownRemarkFrontmatterKisSortInput>
   kitsec: InputMaybe<MarkdownRemarkFrontmatterKitsecSortInput>
@@ -2644,7 +2674,6 @@ export type MarkdownRemarkFrontmatterSortInput = {
   whatWeTest: InputMaybe<MarkdownRemarkFrontmatterWhatWeTestSortInput>
   Telefon: InputMaybe<SortOrderEnum>
   content: InputMaybe<SortOrderEnum>
-  section4: InputMaybe<MarkdownRemarkFrontmatterSection4SortInput>
   cyberAcademy: InputMaybe<MarkdownRemarkFrontmatterCyberAcademySortInput>
   trainingContent: InputMaybe<MarkdownRemarkFrontmatterTrainingContentSortInput>
   whatWeDo: InputMaybe<MarkdownRemarkFrontmatterWhatWeDoSortInput>
@@ -2691,6 +2720,10 @@ export type MarkdownRemarkFrontmatterDirectContactManagementSortInput = {
 export type MarkdownRemarkFrontmatterCtaSortInput = {
   career: InputMaybe<MarkdownRemarkFrontmatterCtaCareerSortInput>
   services: InputMaybe<MarkdownRemarkFrontmatterCtaServicesSortInput>
+  heading: InputMaybe<SortOrderEnum>
+  content: InputMaybe<SortOrderEnum>
+  buttonText: InputMaybe<SortOrderEnum>
+  buttonUrl: InputMaybe<SortOrderEnum>
 }
 
 export type MarkdownRemarkFrontmatterCtaCareerSortInput = {
@@ -2737,22 +2770,28 @@ export type MarkdownRemarkFrontmatterCollageImagesSortInput = {
 
 export type MarkdownRemarkFrontmatterSection1SortInput = {
   heading: InputMaybe<SortOrderEnum>
+  content: InputMaybe<SortOrderEnum>
   text1: InputMaybe<SortOrderEnum>
   text2: InputMaybe<SortOrderEnum>
   subheading: InputMaybe<SortOrderEnum>
-  content: InputMaybe<SortOrderEnum>
 }
 
 export type MarkdownRemarkFrontmatterSection2SortInput = {
   heading: InputMaybe<SortOrderEnum>
-  items: InputMaybe<SortOrderEnum>
   content: InputMaybe<SortOrderEnum>
+  items: InputMaybe<SortOrderEnum>
   subheading: InputMaybe<SortOrderEnum>
 }
 
 export type MarkdownRemarkFrontmatterSection3SortInput = {
   heading: InputMaybe<SortOrderEnum>
+  content: InputMaybe<SortOrderEnum>
   text: InputMaybe<SortOrderEnum>
+}
+
+export type MarkdownRemarkFrontmatterSection4SortInput = {
+  heading: InputMaybe<SortOrderEnum>
+  content: InputMaybe<SortOrderEnum>
 }
 
 export type MarkdownRemarkFrontmatterKisSortInput = {
@@ -2809,13 +2848,10 @@ export type MarkdownRemarkFrontmatterWhatWeTestSortInput = {
   items: InputMaybe<SortOrderEnum>
 }
 
-export type MarkdownRemarkFrontmatterSection4SortInput = {
-  heading: InputMaybe<SortOrderEnum>
-}
-
 export type MarkdownRemarkFrontmatterCyberAcademySortInput = {
   heading: InputMaybe<SortOrderEnum>
   lead: InputMaybe<SortOrderEnum>
+  image: InputMaybe<SortOrderEnum>
   content: InputMaybe<SortOrderEnum>
 }
 
@@ -4849,93 +4885,6 @@ export type CyberAcademyPageQueryQuery = {
   }
 }
 
-export type ItSecurityPageQueryQueryVariables = Exact<{ [key: string]: never }>
-
-export type ItSecurityPageQueryQuery = {
-  page: {
-    frontmatter: {
-      title: string
-      seoDescription: string
-      heading: string
-      lead: string
-      whatWeDo: { heading: string; items: Array<string> }
-      areas: { heading: string; groups: Array<{ title: string; items: Array<string> }> }
-      packagedOffers: {
-        heading: string
-        text: string
-        offers: Array<{ title: string; url: string; text: string }>
-      }
-    }
-  }
-}
-
-export type OtSecurityPageQueryQueryVariables = Exact<{ [key: string]: never }>
-
-export type OtSecurityPageQueryQuery = {
-  page: {
-    frontmatter: {
-      title: string
-      seoDescription: string
-      heading: string
-      lead: string
-      whatWeDo: { heading: string; items: Array<string> }
-      areas: { heading: string; items: Array<string> }
-      packagedOffers: {
-        heading: string
-        text: string
-        offers: Array<{ title: string; url: string; text: string }>
-      }
-    }
-  }
-}
-
-export type OtSecExpertPageQueryQueryVariables = Exact<{ [key: string]: never }>
-
-export type OtSecExpertPageQueryQuery = {
-  page: {
-    frontmatter: {
-      title: string
-      seoDescription: string
-      heading: string
-      lead: string
-      text: string
-      whatYouGet: { heading: string; items: Array<string> }
-    }
-  }
-}
-
-export type PentestPageQueryQueryVariables = Exact<{ [key: string]: never }>
-
-export type PentestPageQueryQuery = {
-  page: {
-    frontmatter: {
-      title: string
-      seoDescription: string
-      heading: string
-      lead: string
-      text1: string
-      text2: string
-      whatWeTest: { heading: string; items: Array<string> }
-    }
-  }
-}
-
-export type AppSecTrainingPageQueryQueryVariables = Exact<{ [key: string]: never }>
-
-export type AppSecTrainingPageQueryQuery = {
-  page: {
-    frontmatter: {
-      title: string
-      seoDescription: string
-      heading: string
-      lead: string
-      text1: string
-      text2: string
-      trainingContent: { heading: string; items: Array<string> }
-    }
-  }
-}
-
 export type OfferPageQueryQueryVariables = Exact<{ [key: string]: never }>
 
 export type OfferPageQueryQuery = {
@@ -4963,126 +4912,6 @@ export type OfferPageQueryQuery = {
     }>
   }
   images: {
-    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
-  }
-}
-
-export type IndexPageQueryQueryVariables = Exact<{ [key: string]: never }>
-
-export type IndexPageQueryQuery = {
-  page: {
-    edges: Array<{
-      node: {
-        frontmatter: {
-          title: string
-          seoDescription: string
-          heading: string
-          lead: string
-          images: Array<string>
-          section1: { subheading: string; heading: string; content: string }
-          section2: { subheading: string; heading: string; content: string }
-          section3: { heading: string }
-          section4: { heading: string }
-        }
-      }
-    }>
-  }
-  news: {
-    edges: Array<{
-      node: {
-        html: string
-        fields: { href: string; date: any }
-        frontmatter: { authors: Array<string>; title: string; heading: string; image: string }
-      }
-    }>
-  }
-  persons: {
-    edges: Array<{
-      node: {
-        fields: { href: string }
-        frontmatter: {
-          id: string
-          title: string
-          tagLine: string
-          alumni: boolean
-          image: string
-          avatar: string
-          phone: string
-          email: string
-          tags: Array<string>
-          social: { github: string; linkedin: string; keybase: string; twitter: string }
-        }
-      }
-    }>
-  }
-  blog: {
-    edges: Array<{
-      node: {
-        html: string
-        fields: { href: string; date: any }
-        frontmatter: { authors: Array<string>; title: string }
-      }
-    }>
-  }
-  avatars: {
-    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
-  }
-  images: {
-    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
-  }
-  imagesSmall: {
-    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
-  }
-  collageImages: {
-    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
-  }
-}
-
-export type JobPageQueryQueryVariables = Exact<{
-  href?: InputMaybe<Scalars["String"]>
-}>
-
-export type JobPageQueryQuery = {
-  page: {
-    edges: Array<{
-      node: {
-        frontmatter: {
-          title: string
-          seoDescription: string
-          heading: string
-          lead: string
-          images: Array<string>
-          cyberAcademy: { heading: string; lead: string; content: Array<string> }
-          section1: { heading: string }
-          section2: { content: string; heading: string }
-        }
-      }
-    }>
-  }
-  activeJob: { id: string }
-  jobs: {
-    edges: Array<{
-      node: {
-        id: string
-        fields: { href: string }
-        links: { careersite_job_apply_url: string; careersite_job_url: string }
-        attributes: { title: string; body: string; apply_button_text: string; human_status: string }
-      }
-    }>
-  }
-  benefits: {
-    edges: Array<{ node: { html: string; frontmatter: { title: string; image: string } } }>
-  }
-  images: {
-    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
-  }
-  collageImages: {
-    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
-  }
-  personaImages: {
-    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
-  }
-  cyberAcademyImages: {
     edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
   }
 }
@@ -5150,6 +4979,182 @@ export type KeepOtSecurePageQueryQuery = {
     edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
   }
   projectImages: {
+    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
+  }
+}
+
+export type CybersecurityPageQueryQueryVariables = Exact<{ [key: string]: never }>
+
+export type CybersecurityPageQueryQuery = {
+  page: {
+    edges: Array<{
+      node: {
+        frontmatter: {
+          title: string
+          seoDescription: string
+          heading: string
+          lead: string
+          section1: { heading: string; content: string }
+          section2: { heading: string; content: string }
+        }
+      }
+    }>
+  }
+}
+
+export type ItSecurityPageQueryQueryVariables = Exact<{ [key: string]: never }>
+
+export type ItSecurityPageQueryQuery = {
+  page: {
+    frontmatter: {
+      title: string
+      seoDescription: string
+      heading: string
+      lead: string
+      whatWeDo: { heading: string; items: Array<string> }
+      areas: { heading: string; groups: Array<{ title: string; items: Array<string> }> }
+      packagedOffers: {
+        heading: string
+        text: string
+        offers: Array<{ title: string; url: string; text: string }>
+      }
+      cta: { heading: string; content: string; buttonText: string; buttonUrl: string }
+    }
+  }
+}
+
+export type OtSecurityPageQueryQueryVariables = Exact<{ [key: string]: never }>
+
+export type OtSecurityPageQueryQuery = {
+  page: {
+    frontmatter: {
+      title: string
+      seoDescription: string
+      heading: string
+      lead: string
+      whatWeDo: { heading: string; items: Array<string> }
+      areas: { heading: string; items: Array<string> }
+      packagedOffers: {
+        heading: string
+        text: string
+        offers: Array<{ title: string; url: string; text: string }>
+      }
+      cta: { heading: string; content: string; buttonText: string; buttonUrl: string }
+    }
+  }
+}
+
+export type OtSecExpertPageQueryQueryVariables = Exact<{ [key: string]: never }>
+
+export type OtSecExpertPageQueryQuery = {
+  page: {
+    frontmatter: {
+      title: string
+      seoDescription: string
+      heading: string
+      lead: string
+      text: string
+      whatYouGet: { heading: string; items: Array<string> }
+    }
+  }
+}
+
+export type PentestPageQueryQueryVariables = Exact<{ [key: string]: never }>
+
+export type PentestPageQueryQuery = {
+  page: {
+    frontmatter: {
+      title: string
+      seoDescription: string
+      heading: string
+      lead: string
+      text1: string
+      text2: string
+      whatWeTest: { heading: string; items: Array<string> }
+    }
+  }
+}
+
+export type AppSecTrainingPageQueryQueryVariables = Exact<{ [key: string]: never }>
+
+export type AppSecTrainingPageQueryQuery = {
+  page: {
+    frontmatter: {
+      title: string
+      seoDescription: string
+      heading: string
+      lead: string
+      text1: string
+      text2: string
+      trainingContent: { heading: string; items: Array<string> }
+    }
+  }
+}
+
+export type IndexPageQueryQueryVariables = Exact<{ [key: string]: never }>
+
+export type IndexPageQueryQuery = {
+  page: {
+    edges: Array<{
+      node: {
+        frontmatter: {
+          title: string
+          seoDescription: string
+          heading: string
+          lead: string
+          section1: { subheading: string; heading: string; content: string }
+          section2: { subheading: string; heading: string; content: string }
+        }
+      }
+    }>
+  }
+}
+
+export type JobPageQueryQueryVariables = Exact<{
+  href?: InputMaybe<Scalars["String"]>
+}>
+
+export type JobPageQueryQuery = {
+  page: {
+    edges: Array<{
+      node: {
+        frontmatter: {
+          title: string
+          seoDescription: string
+          heading: string
+          lead: string
+          images: Array<string>
+          cyberAcademy: { heading: string; lead: string; content: Array<string>; image: string }
+          section1: { heading: string }
+          section2: { content: string; heading: string }
+        }
+      }
+    }>
+  }
+  activeJob: { id: string }
+  jobs: {
+    edges: Array<{
+      node: {
+        id: string
+        fields: { href: string }
+        links: { careersite_job_apply_url: string; careersite_job_url: string }
+        attributes: { title: string; body: string; apply_button_text: string; human_status: string }
+      }
+    }>
+  }
+  benefits: {
+    edges: Array<{ node: { html: string; frontmatter: { title: string; image: string } } }>
+  }
+  images: {
+    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
+  }
+  collageImages: {
+    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
+  }
+  personaImages: {
+    edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
+  }
+  cyberAcademyImages: {
     edges: Array<{ node: { relativePath: string; childImageSharp: { gatsbyImageData: any } } }>
   }
 }
@@ -5360,6 +5365,27 @@ export type AboutPageQueryQuery = {
   }
 }
 
+export type TeknikPageQueryQueryVariables = Exact<{ [key: string]: never }>
+
+export type TeknikPageQueryQuery = {
+  page: {
+    edges: Array<{
+      node: {
+        frontmatter: {
+          title: string
+          seoDescription: string
+          heading: string
+          lead: string
+          section1: { heading: string; content: string }
+          section2: { heading: string; content: string }
+          section3: { heading: string; content: string }
+          section4: { heading: string; content: string }
+        }
+      }
+    }>
+  }
+}
+
 export type IntegrationPageQueryQueryVariables = Exact<{ [key: string]: never }>
 
 export type IntegrationPageQueryQuery = {
@@ -5372,6 +5398,7 @@ export type IntegrationPageQueryQuery = {
       section1: { heading: string; text1: string; text2: string }
       section2: { heading: string; items: Array<string> }
       section3: { heading: string; text: string }
+      cta: { heading: string; content: string; buttonText: string; buttonUrl: string }
     }
   }
 }
@@ -5388,6 +5415,7 @@ export type ProjectManagementPageQueryQuery = {
       section1: { heading: string; text1: string; text2: string }
       section2: { heading: string; items: Array<string> }
       section3: { heading: string; text: string }
+      cta: { heading: string; content: string; buttonText: string; buttonUrl: string }
     }
   }
 }
@@ -5404,6 +5432,7 @@ export type SystemutvecklingPageQueryQuery = {
       section1: { heading: string; text1: string; text2: string }
       section2: { heading: string; items: Array<string> }
       section3: { heading: string; text: string }
+      cta: { heading: string; content: string; buttonText: string; buttonUrl: string }
     }
   }
 }
@@ -5417,6 +5446,8 @@ export type ServicesPageQueryQuery = {
       seoDescription: string
       heading: string
       lead: string
+      offer1: string
+      offer2: string
       lead2: string
       kis: {
         heading: string
@@ -5449,6 +5480,7 @@ export type ServicesPageQueryQuery = {
         text: string
         offers: Array<{ title: string; url: string; text: string }>
       }
+      cta: { heading: string; content: string; buttonText: string; buttonUrl: string }
     }
   }
 }

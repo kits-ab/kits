@@ -13,11 +13,12 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import * as React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
+import { MarkdownRemarkConnection } from "../../gatsby-types"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 
@@ -40,18 +41,21 @@ const StyledOffer = styled(Offer)`
   }
 `
 
-const CybersecurityPage = ({ location }: PageProps) => {
+interface CybersecurityPageProps extends PageProps {
+  data: {
+    page: MarkdownRemarkConnection
+  }
+}
+
+const CybersecurityPage = ({ data, location }: CybersecurityPageProps) => {
+  const page = data.page.edges[0].node.frontmatter
+
   return (
     <DefaultLayout location={location}>
-      <Helmet title="Cybersäkerhet" />
+      <Helmet title={page.title} meta={[{ name: "description", content: page.seoDescription }]} />
       <Vertical spacing={spacing.large}>
-        <MainHeading>Cybersäkerhet</MainHeading>
-        <Lead>
-          Vi hjälper organisationer att skydda applikationer, plattformar och verksamhetskritiska
-          miljöer. Vårt säkerhetserbjudande omfattar säkerhetsgranskningar, arkitekturstöd,
-          utbildningar och specialiserade tjänster för både IT- och OT-miljöer. Nedan finner du en
-          översikt av våra tjänstekategorier och områden.
-        </Lead>
+        <MainHeading>{page.heading}</MainHeading>
+        <Lead>{page.lead}</Lead>
 
         <Breakout style={{ overflowX: "hidden" }}>
           <Wrapper>
@@ -61,17 +65,12 @@ const CybersecurityPage = ({ location }: PageProps) => {
                 style={{ textDecoration: "none", color: "inherit", display: "contents" }}
               >
                 <StyledOffer
-                  heading="IT-säkerhet"
+                  heading={page.section1.heading}
                   icon={<DevelopmentIcon />}
                   type={OfferType.Type1}
                   zIndex={3}
                 >
-                  <p>
-                    Vi hjälper organisationer att stärka säkerheten i sina IT-miljöer genom
-                    penetrationstestning, säker design, kodgranskningar och utbildningar. Vårt fokus
-                    ligger på att identifiera och åtgärda sårbarheter i både mjukvara och system,
-                    från webb och moln till inbyggda enheter.
-                  </p>
+                  <p>{page.section1.content}</p>
                 </StyledOffer>
               </Link>
 
@@ -80,17 +79,12 @@ const CybersecurityPage = ({ location }: PageProps) => {
                 style={{ textDecoration: "none", color: "inherit", display: "contents" }}
               >
                 <StyledOffer
-                  heading="OT-säkerhet"
+                  heading={page.section2.heading}
                   icon={<SecurityIcon />}
                   type={OfferType.Type2}
                   zIndex={2}
                 >
-                  <p>
-                    Vi säkrar industriella styrsystem och driftskritisk infrastruktur utan att
-                    påverka tillgängligheten. Våra experter granskar arkitektur, nätverk och
-                    komponenter i OT-, ICS- och SCADA-miljöer för att säkerställa motståndskraft mot
-                    cyberhot.
-                  </p>
+                  <p>{page.section2.content}</p>
                 </StyledOffer>
               </Link>
             </StyledHorizontal>
@@ -102,3 +96,28 @@ const CybersecurityPage = ({ location }: PageProps) => {
 }
 
 export default CybersecurityPage
+
+export const pageQuery = graphql`
+  query CybersecurityPageQuery {
+    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "cybersecurityPage" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            seoDescription
+            heading
+            lead
+            section1 {
+              heading
+              content
+            }
+            section2 {
+              heading
+              content
+            }
+          }
+        }
+      }
+    }
+  }
+`

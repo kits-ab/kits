@@ -14,11 +14,12 @@ import {
   width,
   Wrapper
 } from "@kokitotsos/react-components"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import * as React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
+import { MarkdownRemarkConnection } from "../../gatsby-types"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 
@@ -41,18 +42,21 @@ const StyledOffer = styled(Offer)`
   }
 `
 
-const TeknikPage = ({ location }: PageProps) => {
+interface TeknikPageProps extends PageProps {
+  data: {
+    page: MarkdownRemarkConnection
+  }
+}
+
+const TeknikPage = ({ data, location }: TeknikPageProps) => {
+  const page = data.page.edges[0].node.frontmatter
+
   return (
     <DefaultLayout location={location}>
-      <Helmet title="Teknik & Utveckling" />
+      <Helmet title={page.title} meta={[{ name: "description", content: page.seoDescription }]} />
       <Vertical spacing={spacing.large}>
-        <MainHeading>Teknik & utveckling</MainHeading>
-        <Lead>
-          Vi hjälper organisationer att bygga moderna, skalbara och hållbara digitala lösningar.
-          Våra team arbetar med systemutveckling, integrationer och teknisk projektledning och kan
-          förstärka era befintliga team eller driva hela leveranser. Nedan hittar du en översikt av
-          våra fokusområden och länkar vidare till respektive tjänst.
-        </Lead>
+        <MainHeading>{page.heading}</MainHeading>
+        <Lead>{page.lead}</Lead>
 
         <Breakout style={{ overflowX: "hidden" }}>
           <Wrapper>
@@ -62,17 +66,12 @@ const TeknikPage = ({ location }: PageProps) => {
                 style={{ textDecoration: "none", color: "inherit", display: "contents" }}
               >
                 <StyledOffer
-                  heading="Systemutveckling"
+                  heading={page.section1.heading}
                   icon={<DevelopmentIcon />}
                   type={OfferType.Type1}
                   zIndex={3}
                 >
-                  <p>
-                    Vi utvecklar allt från webbtjänster och API:er till cloud-native lösningar och
-                    mobila applikationer. Våra frontend-, backend- och fullstackutvecklare arbetar
-                    med moderna ramverk, arkitekturer och arbetssätt för att skapa robusta och
-                    framtidssäkra system.
-                  </p>
+                  <p>{page.section1.content}</p>
                 </StyledOffer>
               </Link>
 
@@ -81,17 +80,12 @@ const TeknikPage = ({ location }: PageProps) => {
                 style={{ textDecoration: "none", color: "inherit", display: "contents" }}
               >
                 <StyledOffer
-                  heading="Projektledning"
+                  heading={page.section2.heading}
                   icon={<ProjectIcon />}
                   type={OfferType.Type2}
                   zIndex={1}
                 >
-                  <p>
-                    Vi driver tekniska projekt och införanden med fokus på struktur, leverans och
-                    kvalitet. Våra projektledare och leveransledare säkerställer att
-                    utvecklingsteam, produktägare och verksamhet arbetar mot samma mål och att
-                    lösningar implementeras framgångsrikt.
-                  </p>
+                  <p>{page.section2.content}</p>
                 </StyledOffer>
               </Link>
 
@@ -100,17 +94,12 @@ const TeknikPage = ({ location }: PageProps) => {
                 style={{ textDecoration: "none", color: "inherit", display: "contents" }}
               >
                 <StyledOffer
-                  heading="Integration"
+                  heading={page.section3.heading}
                   icon={<IntegrationIcon />}
                   type={OfferType.Type3}
                   zIndex={2}
                 >
-                  <p>
-                    Vi bygger och kopplar samman system genom API-utveckling, middleware, dataflöden
-                    och molnintegrationer. Våra integrationsspecialister hjälper er skapa stabila,
-                    säkra och effektiva informationsflöden mellan affärssystem, plattformar och
-                    applikationer.
-                  </p>
+                  <p>{page.section3.content}</p>
                 </StyledOffer>
               </Link>
 
@@ -119,16 +108,12 @@ const TeknikPage = ({ location }: PageProps) => {
                 style={{ textDecoration: "none", color: "inherit", display: "contents" }}
               >
                 <StyledOffer
-                  heading="KITS Studio"
+                  heading={page.section4.heading}
                   icon={<DevelopmentIcon />}
                   type={OfferType.Type4}
                   zIndex={4}
                 >
-                  <p>
-                    KITS Studio är en del av KITS där vi tar fram högkvalitativ mjukvara, samtidigt
-                    som vi satsar helhjärtat på att utveckla våra konsulter till att bli bättre
-                    systemutvecklare.
-                  </p>
+                  <p>{page.section4.content}</p>
                 </StyledOffer>
               </Link>
             </StyledHorizontal>
@@ -140,3 +125,36 @@ const TeknikPage = ({ location }: PageProps) => {
 }
 
 export default TeknikPage
+
+export const pageQuery = graphql`
+  query TeknikPageQuery {
+    page: allMarkdownRemark(filter: { frontmatter: { type: { eq: "techDevPage" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            seoDescription
+            heading
+            lead
+            section1 {
+              heading
+              content
+            }
+            section2 {
+              heading
+              content
+            }
+            section3 {
+              heading
+              content
+            }
+            section4 {
+              heading
+              content
+            }
+          }
+        }
+      }
+    }
+  }
+`

@@ -94,14 +94,12 @@ const ContactPage = ({ data, location }: ContactPageProps) => {
             <ContentHeading>{frontmatter.generalContact.heading}</ContentHeading>
             <Text>
               <p>
-                <strong>E-post:</strong>{" "}
                 <a href={`mailto:${frontmatter.generalContact.email}`}>
                   {frontmatter.generalContact.email}
                 </a>
               </p>
             </Text>
 
-            <ContentHeading>{frontmatter.address.heading}</ContentHeading>
             <Text>
               <p>
                 {metadata.node.name}
@@ -117,9 +115,6 @@ const ContactPage = ({ data, location }: ContactPageProps) => {
             <ContentHeading>{frontmatter.directContact.heading}</ContentHeading>
             <Text>
               <p>
-                <strong>{frontmatter.directContact.sales.label}</strong>
-              </p>
-              <p>
                 {frontmatter.directContact.sales.name}
                 <br />
                 Telefon: {frontmatter.directContact.sales.phone}
@@ -128,9 +123,6 @@ const ContactPage = ({ data, location }: ContactPageProps) => {
                 <a href={`mailto:${frontmatter.directContact.sales.email}`}>
                   {frontmatter.directContact.sales.email}
                 </a>
-              </p>
-              <p>
-                <strong>{frontmatter.directContact.management.label}</strong>
               </p>
               <p>
                 {frontmatter.directContact.management.name}

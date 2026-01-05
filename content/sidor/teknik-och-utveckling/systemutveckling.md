@@ -20,4 +20,9 @@ section2:
 section3:
   heading: "Vad ni kan förvänta er"
   text: "Vi arbetar tätt tillsammans med kundens team, tar stort ansvar för kvalitet och lägger stor vikt vid enkelhet, stabilitet och långsiktig hållbarhet i arkitektur och implementation."
+cta:
+  heading: Låter det intressant?
+  content: Ta kontakt med oss så berättar vi mer.
+  buttonText: Kontakta oss
+  buttonUrl: mailto:salj@kits.se
 ---

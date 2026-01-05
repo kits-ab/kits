@@ -3,7 +3,6 @@ import {
   Image,
   Lead,
   MainHeading,
-  Media,
   SectionHeading,
   Text,
   Vertical,
@@ -46,8 +45,6 @@ interface KitsStudioPageProps extends PageProps {
 
 export default ({ data, location }: KitsStudioPageProps) => {
   const page = data.page.edges[0]
-  const projects = data.projects.edges
-  const images = data.projectImages.edges
   const pageImage = findImageByRelativePath(data.pageImages.edges, page.node.frontmatter.images[0])
 
   return (
@@ -64,6 +61,7 @@ export default ({ data, location }: KitsStudioPageProps) => {
         <Text>{page.node.html}</Text>
       </Vertical>
 
+      {/*
       <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
       {projects.map((project) => {
         const image = findImageByRelativePath(images, project.node.frontmatter.image)
@@ -79,6 +77,7 @@ export default ({ data, location }: KitsStudioPageProps) => {
           </Media>
         )
       })}
+      */}
 
       <SectionHeading>{page.node.frontmatter.section2.heading}</SectionHeading>
       <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.large}>
