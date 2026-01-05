@@ -66,6 +66,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.28.5",
+    "@parcel/watcher-linux-x64-glibc": "^2.5.1",
     "@types/mapbox-gl": "^3.4.1",
     "@types/node": "^22.0.0",
     "@types/react": "18.3.27",
