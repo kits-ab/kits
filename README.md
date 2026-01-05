@@ -4,7 +4,7 @@ This project contains the source code and content for <https://kits.se>.
 
 ## Overview
 
-This project uses the static site generator [Gatsby](https://www.gatsbyjs.org) to create a web site. Previously [Jekyll](https://jekyllrb.com) was used but since most of the developers at KITS prefer JavaScript we've moved on to a React based solution instead.
+This project uses the static site generator [Gatsby](https://www.gatsbyjs.org) to create a web site.
 
 The system context diagram below gives you an overview of how the different systems work together to create kits.se:
 
@@ -25,7 +25,6 @@ The easiste way to add content to the site is to use <https://kits.se/admin>. Yo
 When you add content it will be saved as a new branch on GitHub and a pull request will be created. This means you can play with the content without publishing changes.
 
 ### Images
-
 
 The default image size is 1800x1000 and since Gatsby uses this higher resolution image to create images of different sizes it's important that you try to stick with this size.
 
@@ -55,10 +54,23 @@ For debugging purposes you should install [React Developer Tools](https://github
 
 ### Preparations
 
-- Install Node 16 – <https://nodejs.org>
 - Checkout the code and fetch all dependencies
   ```
   $ git clone git@github.com:kits-ab/kits.git
+  ```
+- Install Node according to .nvmrc or .tool-versions file (22.21.1 at the time of writing this)
+
+  ```
+  $ nvm install
+  $ nvm use
+  ```
+
+  ```
+  $ asdf install
+  ```
+
+- Install dependencies
+  ```
   $ npm install
   ```
 
@@ -78,7 +90,7 @@ All content that is read from Markdown, YAML or image files is exposed through G
 
 ### License
 
-Copyright 2015-2022 KITS AB
+Copyright 2015-2026 KITS AB
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 
