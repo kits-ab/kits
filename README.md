@@ -65,6 +65,8 @@ For debugging purposes you should install [React Developer Tools](https://github
   $ nvm use
   ```
 
+  or
+
   ```
   $ asdf install
   ```
