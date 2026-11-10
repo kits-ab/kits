@@ -11,19 +11,23 @@ export const formatPeriod = (
     typeof periodStartInput === "string" ? parseISO(periodStartInput) : periodStartInput
   let periodEnd = typeof periodEndInput === "string" ? parseISO(periodEndInput) : periodEndInput
   if (isSameDay(periodStart, periodEnd)) {
-    return format(periodEnd, "d MMM", { locale: sv })
+    return format(periodEnd, "d MMMM", { locale: sv })
   } else if (isSameMonth(periodStart, periodEnd)) {
-    return `${format(periodStart, "d", { locale: sv })}-${format(periodEnd, "d MMM", {
+    return `${format(periodStart, "d", { locale: sv })}-${format(periodEnd, "d MMMM", {
       locale: sv
     })}`
   } else if (isSameYear(periodStart, periodEnd)) {
-    return `${format(periodStart, "d MMM", { locale: sv })} - ${format(periodEnd, "d MMM", {
+    return `${format(periodStart, "d MMMM", { locale: sv })} - ${format(periodEnd, "d MMMM", {
       locale: sv
     })}`
   } else {
-    return `${format(periodStart, "d MMM yyyy", { locale: sv })}-${format(periodEnd, "d MMM yyyy", {
-      locale: sv
-    })}`
+    return `${format(periodStart, "d MMMM yyyy", { locale: sv })}-${format(
+      periodEnd,
+      "d MMMM yyyy",
+      {
+        locale: sv
+      }
+    )}`
   }
 }
 
