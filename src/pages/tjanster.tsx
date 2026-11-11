@@ -5,11 +5,13 @@ import styled from "styled-components"
 
 import { MarkdownField } from "../components/MarkdownField"
 import { Seo } from "../components/Seo"
+import { BulletList } from "../components/web/BulletList"
 import { ContactBand } from "../components/web/ContactBand"
 import { ContentCard } from "../components/web/ContentCard"
 import { Grid } from "../components/web/Grid"
 import { Hero } from "../components/web/Hero"
 import { MasterDetail } from "../components/web/MasterDetail"
+import { PackagedOffers } from "../components/web/PackagedOffers"
 import { Section } from "../components/web/Section"
 import { HeadingLink, SectionIntro, splitHeading } from "../components/web/SectionIntro"
 import { Stack } from "../components/web/Stack"
@@ -20,12 +22,6 @@ const Tags = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-8);
-`
-
-const List = styled.ul`
-  margin: 0;
-  padding-left: var(--spacing-24);
-  color: var(--text-secondary);
 `
 
 interface AreaGroup {
@@ -189,11 +185,7 @@ const TjansterPage = ({ data, location }: TjansterPageProps) => {
                                 {group.heading}
                               </Typography>
                             )}
-                            <List>
-                              {group.areas.map((area) => (
-                                <li key={area}>{area}</li>
-                              ))}
-                            </List>
+                            <BulletList items={group.areas} />
                           </Stack>
                         ))}
                       </Stack>
@@ -207,21 +199,11 @@ const TjansterPage = ({ data, location }: TjansterPageProps) => {
       </Section>
 
       <Section>
-        <Stack $gap={64}>
-          <SectionIntro
-            heading={frontmatter.packagedOffers.heading}
-            text={frontmatter.packagedOffers.text}
-          />
-          <Grid $columns={3}>
-            {frontmatter.packagedOffers.offers.map((offer) => (
-              <ContentCard key={offer.url} title={offer.title} href={offer.url} tone="brand">
-                <Typography variant="body" color="secondary">
-                  {offer.text}
-                </Typography>
-              </ContentCard>
-            ))}
-          </Grid>
-        </Stack>
+        <PackagedOffers
+          heading={frontmatter.packagedOffers.heading}
+          text={frontmatter.packagedOffers.text}
+          offers={frontmatter.packagedOffers.offers}
+        />
       </Section>
 
       <Section>

@@ -1,45 +1,15 @@
-import {
-  Breakout,
-  DevelopmentIcon,
-  Horizontal,
-  Lead,
-  MainHeading,
-  Offer,
-  OfferType,
-  SecurityIcon,
-  spacing,
-  types,
-  Vertical,
-  width,
-  Wrapper
-} from "@kokitotsos/react-components"
-import { graphql, Link } from "gatsby"
+import { Typography } from "@kits-ab/kits-ui"
+import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
-import styled from "styled-components"
 
 import { MarkdownRemarkConnection } from "../../gatsby-types"
+import { Seo } from "../components/Seo"
+import { ContentCard } from "../components/web/ContentCard"
+import { Grid } from "../components/web/Grid"
+import { Hero } from "../components/web/Hero"
+import { Section } from "../components/web/Section"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
-
-const StyledHorizontal = styled(Horizontal)`
-  margin-left: ${-spacing.large}px;
-  margin-right: ${-spacing.large}px;
-  padding: 25px 0;
-`
-
-const StyledOffer = styled(Offer)`
-  width: 50%;
-
-  @media (max-width: ${width.tablet}px) {
-    width: 100%;
-
-    > * {
-      padding-left: 55px;
-      padding-right: 55px;
-    }
-  }
-`
 
 interface CybersecurityPageProps extends PageProps {
   data: {
@@ -51,46 +21,29 @@ const CybersecurityPage = ({ data, location }: CybersecurityPageProps) => {
   const page = data.page.edges[0].node.frontmatter
 
   return (
-    <DefaultLayout location={location}>
-      <Helmet title={page.title} meta={[{ name: "description", content: page.seoDescription }]} />
-      <Vertical spacing={spacing.large}>
-        <MainHeading>{page.heading}</MainHeading>
-        <Lead>{page.lead}</Lead>
+    <DefaultLayout location={location} layout="profil2026">
+      <Seo title={page.title} description={page.seoDescription} pathname={location.pathname} />
+      <Hero variant="text" heading={page.heading} lead={page.lead} />
 
-        <Breakout style={{ overflowX: "hidden" }}>
-          <Wrapper>
-            <StyledHorizontal wrapRows={true} alignVertical={types.Alignment.Start}>
-              <Link
-                to="/cybersakerhet/it-sakerhet"
-                style={{ textDecoration: "none", color: "inherit", display: "contents" }}
-              >
-                <StyledOffer
-                  heading={page.section1.heading}
-                  icon={<DevelopmentIcon />}
-                  type={OfferType.Type1}
-                  zIndex={3}
-                >
-                  <p>{page.section1.content}</p>
-                </StyledOffer>
-              </Link>
-
-              <Link
-                to="/cybersakerhet/ot-sakerhet"
-                style={{ textDecoration: "none", color: "inherit", display: "contents" }}
-              >
-                <StyledOffer
-                  heading={page.section2.heading}
-                  icon={<SecurityIcon />}
-                  type={OfferType.Type2}
-                  zIndex={2}
-                >
-                  <p>{page.section2.content}</p>
-                </StyledOffer>
-              </Link>
-            </StyledHorizontal>
-          </Wrapper>
-        </Breakout>
-      </Vertical>
+      <Section spaceTop={96}>
+        <Grid $columns={2}>
+          {[
+            { ...page.section1, href: "/cybersakerhet/it-sakerhet" },
+            { ...page.section2, href: "/cybersakerhet/ot-sakerhet" }
+          ].map((section) => (
+            <ContentCard
+              key={section.href}
+              title={section.heading}
+              href={section.href}
+              tone="brand"
+            >
+              <Typography variant="body" color="secondary">
+                {section.content}
+              </Typography>
+            </ContentCard>
+          ))}
+        </Grid>
+      </Section>
     </DefaultLayout>
   )
 }
