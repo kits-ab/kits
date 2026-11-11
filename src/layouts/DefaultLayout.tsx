@@ -3,6 +3,11 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
+// Global CSS i samma ordning på alla sidor: grundåterställning, kartans stilar (Location i det
+// gamla biblioteket importerar dem bara på sidor med karta, vilket annars ger olika CSS-ordning
+// mellan sidorna) och sist kits-ui.
+import "normalize.css"
+import "mapbox-gl/dist/mapbox-gl.css"
 import "@kits-ab/kits-ui/styles.css"
 
 import { ContentYamlConnection } from "../../gatsby-types"
