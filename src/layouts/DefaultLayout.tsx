@@ -9,12 +9,13 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 import * as React from "react"
 import { Helmet } from "react-helmet"
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
 import "@kits-ab/kits-ui/styles.css"
 
 import { ContentYamlConnection } from "../../gatsby-types"
 import { Breadcrumbs } from "../components/Breadcrumbs"
+import { Container } from "../components/web/Container"
 import { KitsRouter } from "../components/web/KitsRouter"
 import { SiteFooter } from "../components/web/SiteFooter"
 import { SiteHeader } from "../components/web/SiteHeader"
@@ -69,7 +70,18 @@ interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
     pathname: string
   }
   children: React.ReactNode
+  // "profil2026" för ombyggda sidor: ingen gammal Wrapper, sektionerna sköter sin egen bredd.
+  // Tas bort när sista sidan är ombyggd.
+  layout?: "legacy" | "profil2026"
 }
+
+const Main = styled.main`
+  flex: 1 1 auto;
+`
+
+const BreadcrumbBar = styled(Container)`
+  padding-top: var(--spacing-24);
+`
 
 interface QueryResult {
   kits: ContentYamlConnection
@@ -96,17 +108,26 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
               <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
               <link rel="icon" href="/favicon.ico" type="image/x-icon" />
             </Helmet>
+            <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
             <SiteHeader currentPath={this.props.location.pathname} />
-            <Wrapper spacing={spacing.huge} style={{ minHeight: "100%" }}>
-              <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
-              <Vertical
-                spacing={spacing.huge}
-                style={{ flex: "1 1 auto", marginTop: spacing.large }}
-              >
-                <Breadcrumbs location={this.props.location} />
+            {this.props.layout === "profil2026" ? (
+              <Main>
+                <BreadcrumbBar>
+                  <Breadcrumbs location={this.props.location} />
+                </BreadcrumbBar>
                 {this.props.children}
-              </Vertical>
-            </Wrapper>
+              </Main>
+            ) : (
+              <Wrapper spacing={spacing.huge} style={{ minHeight: "100%" }}>
+                <Vertical
+                  spacing={spacing.huge}
+                  style={{ flex: "1 1 auto", marginTop: spacing.large }}
+                >
+                  <Breadcrumbs location={this.props.location} />
+                  {this.props.children}
+                </Vertical>
+              </Wrapper>
+            )}
             <KitsFooter />
           </KitsRouter>
         </LinkContext.Provider>

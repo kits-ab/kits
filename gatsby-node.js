@@ -147,6 +147,13 @@ exports.createPages = ({ graphql, actions: { createPage, createRedirect } }) => 
   })
 }
 
+// Demosidan för profil 2026 finns bara i dev-servern, aldrig i produktionsbygget.
+exports.onCreatePage = ({ page, actions: { deletePage } }) => {
+  if (process.env.NODE_ENV === "production" && page.path.startsWith("/profil-demo")) {
+    deletePage(page)
+  }
+}
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
