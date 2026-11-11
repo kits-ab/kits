@@ -6,7 +6,9 @@ import * as React from "react"
 import styled from "styled-components"
 
 import { Prose } from "./Prose"
+import { HeadingLink } from "./SectionIntro"
 import { Stack } from "./Stack"
+import { TextLink } from "./TextLink"
 
 export interface ArticleViewProps {
   title: string
@@ -16,6 +18,8 @@ export interface ArticleViewProps {
   // Blogginlägg visar första författarens porträtt, nyheter gör det inte.
   showAvatar?: boolean
   html: string
+  // I en lista: rubriken länkar till inlägget och en "Läs mer"-länk följer utdraget.
+  href?: string
 }
 
 const Header = styled.header`
@@ -45,13 +49,14 @@ const Avatar = styled.img`
   object-fit: cover;
 `
 
-// Ett blogginlägg eller en nyhet: rubrik, datum och författare, och texten.
+// Ett blogginlägg eller en nyhet: rubrik, datum och författare, och texten (eller ett utdrag).
 export const ArticleView = ({
   title,
   date,
   authors,
   showAvatar = false,
-  html
+  html,
+  href
 }: ArticleViewProps) => {
   const avatar = showAvatar ? authors.find((author) => author.avatarSrc) : undefined
   return (
@@ -61,7 +66,7 @@ export const ArticleView = ({
           {avatar && <Avatar src={avatar.avatarSrc} srcSet={avatar.avatarSrcSet} alt="" />}
           <Stack $gap={8}>
             <Typography variant="h2" as="h2">
-              {title}
+              {href ? <HeadingLink to={href}>{title}</HeadingLink> : title}
             </Typography>
             <Typography variant="mono" color="brand">
               <time dateTime={date}>{format(parseISO(date), "d MMMM yyyy", { locale: sv })}</time>
@@ -70,6 +75,11 @@ export const ArticleView = ({
           </Stack>
         </Header>
         <Body html={html} />
+        {href && (
+          <Typography variant="body">
+            <TextLink href={href}>Läs mer →</TextLink>
+          </Typography>
+        )}
       </Stack>
     </article>
   )

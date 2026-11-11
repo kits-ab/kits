@@ -23,7 +23,7 @@ const Card = styled.div`
 
 // Innehållet skriver telefonnummer som "0708 – 27 74 99". Visa dem med bindestreck i stället
 // för tankstreck: "0708-27 74 99".
-const formatPhone = (phone: string) => phone.replace(/\s*[–—]\s*/, "-")
+export const formatPhone = (phone: string) => phone.replace(/\s*[–—]\s*/, "-")
 
 // Kontaktkort för en person: roll (valfri), namn, telefon och e-post.
 export const ContactCard = ({ role, name, phone, email }: ContactCardProps) => (

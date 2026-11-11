@@ -1,38 +1,23 @@
-import {
-  Button,
-  Image,
-  Lead,
-  MainHeading,
-  Media,
-  SectionHeading,
-  Text,
-  Vertical,
-  spacing,
-  types
-} from "@kokitotsos/react-components"
-import { Alignment } from "@kokitotsos/react-components/dist/types"
+import { Link } from "@kits-ab/kits-ui"
 import { PageProps, graphql } from "gatsby"
-import React from "react"
-import { Helmet } from "react-helmet"
+import * as React from "react"
 import styled from "styled-components"
 
 import { FileConnection, MarkdownRemarkConnection } from "../../gatsby-types"
+import { Seo } from "../components/Seo"
+import { ContactBand } from "../components/web/ContactBand"
+import { Hero } from "../components/web/Hero"
+import { ProjectList } from "../components/web/ProjectList"
+import { Section } from "../components/web/Section"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { findImageByRelativePath } from "../utils/imageUtils"
 
-const StyledImage = styled(Image)`
-  max-width: 100%;
-  max-height: 400px;
-
-  .image-wrapper {
-    position: static;
-  }
-
-  .image-image {
-    transform: none;
-    height: auto;
-    max-width: 100%;
-  }
+// Sidans bild, i full innehållsbredd men inte högre än 480 px.
+const PageImage = styled.img`
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
 `
 
 interface SecurityPageProps extends PageProps {
@@ -46,46 +31,44 @@ interface SecurityPageProps extends PageProps {
 
 export default ({ data, location }: SecurityPageProps) => {
   const page = data.page.edges[0]
+  const { frontmatter } = page.node
   const projects = data.projects.edges
   const images = data.projectImages.edges
-  const pageImage = findImageByRelativePath(data.pageImages.edges, page.node.frontmatter.images[0])
+  const pageImage = findImageByRelativePath(data.pageImages.edges, frontmatter.images[0])
 
   return (
     <DefaultLayout location={location}>
-      <Helmet title={page.node.frontmatter.title} />
-      <Vertical spacing={spacing.large} alignHorizontal={Alignment.Center}>
-        <MainHeading>{page.node.frontmatter.heading}</MainHeading>
-        <Lead>{page.node.frontmatter.lead}</Lead>
-        {/* TODO This image does not scale nicely */}
-        <StyledImage
-          src={pageImage && pageImage.src}
-          srcSet={pageImage && pageImage.srcSet}
-        ></StyledImage>
-      </Vertical>
+      <Seo title={frontmatter.title} pathname={location.pathname} />
+      <Hero variant="text" heading={frontmatter.heading} lead={frontmatter.lead} />
 
-      <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
-      {projects.map((project) => {
-        const image = findImageByRelativePath(images, project.node.frontmatter.image)
-        return (
-          <Media
-            heading={project.node.frontmatter.title}
-            href={project.node.frontmatter.href}
-            key={`project_${project.node.frontmatter.index}`}
-            src={image && image.src}
-            srcSet={image && image.srcSet}
-          >
-            {project.node.html}
-          </Media>
-        )
-      })}
+      {pageImage && (
+        <Section spaceTop={96}>
+          <PageImage src={pageImage.src} srcSet={pageImage.srcSet} alt="" />
+        </Section>
+      )}
 
-      <SectionHeading>{page.node.frontmatter.section2.heading}</SectionHeading>
-      <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.large}>
-        <Text>
-          <p>{page.node.frontmatter.section2.content}</p>
-        </Text>
-        <Button href="mailto:salj@kits.se">Kontakta oss</Button>
-      </Vertical>
+      <Section tone="raised">
+        <ProjectList
+          heading={frontmatter.section1.heading}
+          items={projects.map((project) => ({
+            key: project.node.frontmatter.title,
+            title: project.node.frontmatter.title,
+            href: project.node.frontmatter.href ?? undefined,
+            image: findImageByRelativePath(images, project.node.frontmatter.image),
+            html: project.node.html
+          }))}
+        />
+      </Section>
+
+      <ContactBand
+        heading={frontmatter.section2.heading}
+        text={frontmatter.section2.content}
+        action={
+          <Link href="mailto:salj@kits.se" variant="button" buttonVariant="primary" size="large">
+            Kontakta oss
+          </Link>
+        }
+      />
     </DefaultLayout>
   )
 }
@@ -135,7 +118,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          ...ImageFragment
+          ...ImageFragmentWide
         }
       }
     }
@@ -147,7 +130,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          ...ImageFragment
+          ...ImageFragmentWide
         }
       }
     }

@@ -1,10 +1,13 @@
-import { Article, Lead, MainHeading, spacing, Vertical } from "@kokitotsos/react-components"
-import { parseISO } from "date-fns"
+import { types } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
 
 import { FileConnection, MarkdownRemarkConnection } from "../../gatsby-types"
+import { Seo } from "../components/Seo"
+import { ArticleView } from "../components/web/ArticleView"
+import { Hero } from "../components/web/Hero"
+import { Section } from "../components/web/Section"
+import { Stack } from "../components/web/Stack"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { edgeToPerson, findPersonsByIds } from "../utils/personUtils"
@@ -21,34 +24,35 @@ interface BloggPageProps extends PageProps {
 export default ({ data, location }: BloggPageProps) => {
   const page = data.page.edges[0]
   const avatars = data.avatars.edges
-  const persons = data.persons.edges.map((edge) => edgeToPerson(edge, avatars))
+  const persons = data.persons.edges
+    .map((edge) => edgeToPerson(edge, avatars))
+    .filter((person) => person !== undefined) as types.Person[]
   const posts = data.blog.edges
 
   return (
     <DefaultLayout location={location}>
-      <Helmet title={page.node.frontmatter.title} />
+      <Seo title={page.node.frontmatter.title} pathname={location.pathname} />
+      <Hero
+        variant="text"
+        heading={page.node.frontmatter.heading}
+        lead={page.node.frontmatter.lead}
+      />
 
-      <Vertical spacing={spacing.large}>
-        <MainHeading>{page.node.frontmatter.heading}</MainHeading>
-        <Lead>{page.node.frontmatter.lead}</Lead>
-      </Vertical>
-
-      {posts.map((post, index) => {
-        const authors = findPersonsByIds(persons, post.node.frontmatter.authors)
-        return (
-          <Article
-            authors={authors}
-            heading={post.node.frontmatter.title}
-            href={post.node.fields.href}
-            key={"article" + index}
-            publishTime={parseISO(post.node.fields.date)}
-            showAvatars={true}
-            showExcerpt={true}
-          >
-            {post.node.html.split("<!-- more -->")[0]}
-          </Article>
-        )
-      })}
+      <Section spaceTop={96}>
+        <Stack $gap={120}>
+          {posts.map((post) => (
+            <ArticleView
+              key={post.node.fields.href}
+              title={post.node.frontmatter.title}
+              date={post.node.fields.date}
+              authors={findPersonsByIds(persons, post.node.frontmatter.authors ?? [])}
+              showAvatar={true}
+              html={post.node.html.split("<!-- more -->")[0]}
+              href={post.node.fields.href}
+            />
+          ))}
+        </Stack>
+      </Section>
     </DefaultLayout>
   )
 }

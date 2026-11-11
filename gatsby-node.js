@@ -83,6 +83,16 @@ exports.createPages = ({ graphql, actions: { createPage, createRedirect } }) => 
             }
           })
           */
+          if (process.env.NODE_ENV !== "production") {
+            createPage({
+              path: `/vilande${node.fields.href}`,
+              component: path.resolve("./src/templates/person.tsx"),
+              context: {
+                href: node.fields.href,
+                email: node.frontmatter.email ? node.frontmatter.email : ""
+              }
+            })
+          }
         } else if (node.frontmatter && node.frontmatter.type === "conference") {
           createPage({
             path: node.fields.href,
@@ -141,6 +151,19 @@ exports.createPages = ({ graphql, actions: { createPage, createRedirect } }) => 
         isPermanent: true,
         redirectInBrowser: true
       })
+
+      // Vilande sidor (_-prefix i src/pages och personsidorna ovan) går att granska under
+      // /vilande/ i dev-servern. De skapas aldrig i produktionsbygget.
+      if (process.env.NODE_ENV !== "production") {
+        ;["blogg", "cyberakademi", "erbjudanden", "keepitsecure", "keepotsecure"].forEach(
+          (name) => {
+            createPage({
+              path: `/vilande/${name}`,
+              component: path.resolve(`./src/pages/_${name}.tsx`)
+            })
+          }
+        )
+      }
 
       resolve()
     })

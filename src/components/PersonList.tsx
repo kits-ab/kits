@@ -1,50 +1,42 @@
-import { Horizontal, Image, spacing, width } from "@kokitotsos/react-components"
-import { graphql, useStaticQuery } from "gatsby"
+import { Typography } from "@kits-ab/kits-ui"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
 import { FileConnection, MarkdownRemarkConnection } from "../../gatsby-types"
 import { findImageByRelativePath } from "../utils/imageUtils"
 import { edgeToPerson } from "../utils/personUtils"
+import { onMobile } from "./web/layout"
+import { Stack } from "./web/Stack"
 
-const StyledHorizontal = styled(Horizontal)`
-  margin-left: ${-spacing.medium / 2}px;
-  margin-right: ${-spacing.medium / 2}px;
+const Grid = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-40) var(--spacing-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-  @media (max-width: ${width.mobileMenu}px) {
-    border-left: 0;
-    border-right: 0;
-    left: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    max-width: none;
-    position: relative;
-    right: 50%;
-    width: 100vw;
+  ${onMobile} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-24) var(--spacing-16);
   }
+`
 
-  > * {
-    flex: 0 1 calc(${100 / 4}% - ${spacing.medium}px);
-    height: 250px  !important;
-    margin-left: ${spacing.medium / 2}px;
-    margin-right: ${spacing.medium / 2}px;
-    margin-top: ${spacing.medium}px;
+const Portrait = styled.img`
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+`
 
-    @media (max-width: ${width.desktop}px) {
-      flex: 0 1 calc(${100 / 3}% - ${spacing.medium}px);
-    }
+const CardLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
 
-    @media (max-width: ${width.tablet}px) {
-      flex: 0 1 calc(${100 / 2}% - ${spacing.medium}px);
-    }
-
-    @media (max-width: ${width.mobile}px) {
-      border-left: 0;
-      border-right: 0;
-      margin-left: 0;
-      margin-right: 0;
-      flex: 0 1 100%;
-    }
+  &:focus-visible {
+    outline: 3px solid var(--primary-border);
+    outline-offset: 3px;
   }
 `
 
@@ -53,11 +45,11 @@ interface QueryResult {
   images: FileConnection
 }
 
+// Alla medarbetare (utom alumner) med porträtt, namn och titel.
 export function PersonList() {
-
-  const renderLista = ({ images, persons }: QueryResult) => {
-    return (
-    <StyledHorizontal wrapRows={true}>
+  const { images, persons }: QueryResult = useStaticQuery(query)
+  return (
+    <Grid>
       {persons.edges
         .map((edge) => edgeToPerson(edge))
         .map((person) => {
@@ -67,23 +59,35 @@ export function PersonList() {
           const image =
             findImageByRelativePath(images.edges, person.imageSrc) ||
             findImageByRelativePath(images.edges, "/assets/medarbetare_default.jpg")
+          const card = (
+            <Stack $gap={12}>
+              {image && (
+                <Portrait
+                  src={image.src}
+                  srcSet={image.srcSet}
+                  sizes="(max-width: 600px) 50vw, 240px"
+                  alt=""
+                  loading="lazy"
+                />
+              )}
+              <Stack $gap={4}>
+                <Typography variant="subtitle" as="p">
+                  {person.name}
+                </Typography>
+                <Typography variant="body" color="secondary">
+                  {person.tagLine}
+                </Typography>
+              </Stack>
+            </Stack>
+          )
           return (
-            <Image
-              href={person.href}
-              infoAdditionalText={person.tagLine}
-              infoText={person.name}
-              key={`person_${person.id}`}
-              src={image && image.src}
-              srcSet={image && image.srcSet}
-            />
+            <li key={person.id}>
+              {person.href ? <CardLink to={person.href}>{card}</CardLink> : card}
+            </li>
           )
         })}
-    </StyledHorizontal>
-    )
-  }
-
-  const data = useStaticQuery(query)
-  return  renderLista(data)  
+    </Grid>
+  )
 }
 
 const query = graphql`query PersonsQuery {
@@ -102,7 +106,7 @@ const query = graphql`query PersonsQuery {
   ) {
     edges {
       node {
-        ...ImageFragment
+        ...ImageFragmentWide
       }
     }
   }
