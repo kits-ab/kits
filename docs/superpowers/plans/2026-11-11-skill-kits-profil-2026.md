@@ -12,7 +12,7 @@
 
 ## Global Constraints
 
-- Arbetskatalog: worktreet `/Users/patrik/utv/kits/web/kits/.claude/worktrees/kits2026`, branch `kits2026`.
+- Arbetskatalog: worktreet `/Users/patrik/utv/kits/web/kits2026`, branch `kits2026`.
 - Skillen skrivs på svenska, utan långa tankstreck (– —), kort och instruerande. `SKILL.md` högst ~150 rader.
 - Frontmatter: bara `name` och `description` (fungerar i alla tre agenterna).
 - Skillen beskriver bara det som inte syns i koden. Inga generella råd.
