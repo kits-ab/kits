@@ -20,7 +20,7 @@ There are quite a few systems involved for such a simple site but if we look at 
 
 ## Adding content
 
-The easiste way to add content to the site is to use <https://kits.se/admin>. You can login using your GitHub account if you're a member of the KITS organization. The CMS is powered by [Netlify CMS](https://www.netlifycms.org) and all different content can be edited in a custom form for each type.
+The easiste way to add content to the site is to use <https://kits.se/admin>. You can login using your GitHub account if you're a member of the KITS organization. The CMS is powered by [Decap CMS](https://decapcms.org) and all different content can be edited in a custom form for each type.
 
 When you add content it will be saved as a new branch on GitHub and a pull request will be created. This means you can play with the content without publishing changes.
 
@@ -28,16 +28,18 @@ When you add content it will be saved as a new branch on GitHub and a pull reque
 
 The default image size is 1800x1000 and since Gatsby uses this higher resolution image to create images of different sizes it's important that you try to stick with this size.
 
-All images should be stored in `static/assets` and it's important that they have the correct name otherwise they will not be processed. The images should have the following prefixes:
+All images should be stored in `static/assets`. Some pages fetch their images through GraphQL and only pick up files with the right prefix and file type. If the name or type is wrong, the image is silently left out:
 
-- Blogg: `blogg_`
-- Bli en av oss: `formaner_`
-- Erbjudanden: `projekt_`
-- KitsCon: `kitscon_` and `kitscon_collage_`
-- Nyheter: `nyheter_`
-- Medarbetare: `medarbetare_`
+- Karriär, benefits: `formaner_` (JPEG)
+- Karriär, personas: `persona_` (PNG)
+- Karriär, Cyber Academy: `cyberacademy_` (JPEG or PNG)
+- KITS Studio: `kitsstudio_` (JPEG or PNG)
+- KitsCon collage: `kitscon_collage_` (JPEG or PNG)
+- Avatars: `medarbetare_firstnamelastname-avatar.jpg` (JPEG)
 
-For blog posts and presentations we show a little avatar next to the post and for that we have a special image named `medarbetare_firstnamelastname-avatar.jpg` with the size 350x350. Make sure the face has the same size as the others. There is a Photoshop template under `resources` that can be used.
+Other images are referenced directly by path, but use the same naming convention: `nyheter_` for news, `blogg_` for blog posts, `kitscon_` for KitsCon logos and `medarbetare_firstnamelastname.jpg` for employee portraits.
+
+For news, blog posts and KitsCon presentations we show a little avatar next to the author or presenter. The avatar should be 350x350 and the face should have the same size as in the others. There is a Photoshop template under `resources` that can be used.
 
 ## Development
 
@@ -83,8 +85,9 @@ When you've checked out the code and all dependencies have been fetched you prob
 - `npm run build` – Creates a production ready builds in `public/`
 - `npm run clean` – Removes all generated files
 - `npm run format` – Format the entire codebase using [Prettier](https://prettier.io)
-- `npm run lint` – Lints all code with [TSLint](https://palantir.github.io/tslint) and [Stylelint](https://stylelint.io)
+- `npm run lint` – Lints all code with [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io)
 - `npm start` – Starts a local server with hot reloading enabled on <http://localhost:8000>
+- `npm test` – Runs the linters and type checks the code with `tsc` (also run before every push)
 
 ### GraphQL
 
