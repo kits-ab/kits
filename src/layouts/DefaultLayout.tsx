@@ -1,10 +1,7 @@
 import {
-  Breakout,
-  Footer,
   GlobalStyles as GlobalComponentStyles,
   LinkContext,
   spacing,
-  types,
   Vertical,
   Wrapper
 } from "@kokitotsos/react-components"
@@ -19,6 +16,7 @@ import "@kits-ab/kits-ui/styles.css"
 import { ContentYamlConnection } from "../../gatsby-types"
 import { Breadcrumbs } from "../components/Breadcrumbs"
 import { KitsRouter } from "../components/web/KitsRouter"
+import { SiteFooter } from "../components/web/SiteFooter"
 import { SiteHeader } from "../components/web/SiteHeader"
 import "../styles/fonts.css"
 import { SiteGlobalStyles } from "../styles/SiteGlobalStyles"
@@ -108,10 +106,8 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
                 <Breadcrumbs location={this.props.location} />
                 {this.props.children}
               </Vertical>
-              <Breakout style={{ flex: 0 }}>
-                <KitsFooter />
-              </Breakout>
             </Wrapper>
+            <KitsFooter />
           </KitsRouter>
         </LinkContext.Provider>
       </>
@@ -123,22 +119,12 @@ function KitsFooter() {
   const renderFooter = ({ kits }: QueryResult) => {
     const kitsInfo = kits.edges[0].node
     return (
-      <Footer
-        info={{
-          name: kitsInfo.name,
-          street: kitsInfo.address.street,
-          postalCode: new types.PostalCode(kitsInfo.address.postalCode),
-          city: kitsInfo.address.city,
-          social: {
-            github: new types.Username(kitsInfo.social.github, types.SocialType.GitHub),
-            linkedin: new types.Username(kitsInfo.social.linkedin, types.SocialType.LinkedIn)
-          }
-        }}
-        contactLink={{
-          target: "_self",
-          url: "/kontakt",
-          text: "Kontakta oss"
-        }}
+      <SiteFooter
+        name={kitsInfo.name}
+        street={kitsInfo.address.street}
+        postalCode={kitsInfo.address.postalCode}
+        city={kitsInfo.address.city}
+        email={kitsInfo.email}
       />
     )
   }

@@ -3,7 +3,7 @@ import { Link as GatsbyLink } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
-import { contentMaxWidth, headerMinHeight, onMobile, pageGutter } from "./layout"
+import { headerMinHeight, onMobile } from "./layout"
 
 export interface SiteHeaderLink {
   text: string
@@ -49,10 +49,8 @@ const Bar = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-32);
-  max-width: ${contentMaxWidth + 2 * pageGutter}px;
   min-height: ${headerMinHeight}px;
-  margin: 0 auto;
-  padding: var(--spacing-16) ${pageGutter}px;
+  padding: var(--spacing-16) var(--spacing-32);
 
   ${onMobile} {
     padding: var(--spacing-12) var(--spacing-16);

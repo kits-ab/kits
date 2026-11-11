@@ -1,4 +1,5 @@
-// Mått från profil 2026 som kits-ui saknar tokens för. Används av SiteHeader, Container m.fl.
+// Mått från profil 2026 som kits-ui saknar tokens för. contentMaxWidth och pageGutter gäller
+// sidornas innehåll (Container); sidhuvud och sidfot går nästan kant i kant med --spacing-32.
 // Brytpunkten är densamma som kits-ui:s mobilskala för typografin
 // (src/tokens/index.ts, mobileTypographyCssVars).
 export const mobileMaxWidth = 600
