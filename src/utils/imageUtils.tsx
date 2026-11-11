@@ -69,9 +69,12 @@ export const findImageByRelativePath = (images: FileEdge[], relativePath: string
   }
   const img = images.find((image) => `/assets/${image.node.relativePath}` === relativePath)
   if (img) {
+    const data = img.node.childImageSharp.gatsbyImageData
     return {
-      src: img.node.childImageSharp.gatsbyImageData.images.fallback.src,
-      srcSet: img.node.childImageSharp.gatsbyImageData.images.fallback.srcSet
+      src: data.images.fallback.src,
+      srcSet: data.images.fallback.srcSet,
+      width: data.width as number,
+      height: data.height as number
     }
   } else {
     return undefined
@@ -82,6 +85,11 @@ export const findImagesByRelativePaths = (images: FileEdge[], relativePaths: str
   return relativePaths
     ? (relativePaths
         .map((relativePath) => findImageByRelativePath(images, relativePath))
-        .filter((image) => image !== undefined) as { src: string; srcSet: string }[])
+        .filter((image) => image !== undefined) as {
+        src: string
+        srcSet: string
+        width: number
+        height: number
+      }[])
     : []
 }

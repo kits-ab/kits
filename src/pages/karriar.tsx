@@ -12,7 +12,7 @@ import {
 } from "../../gatsby-types"
 import { MarkdownField } from "../components/MarkdownField"
 import { Seo } from "../components/Seo"
-import { Gallery } from "../components/web/Gallery"
+import { Collage } from "../components/web/Collage"
 import { Grid } from "../components/web/Grid"
 import { Hero } from "../components/web/Hero"
 import { Prose } from "../components/web/Prose"
@@ -152,7 +152,7 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
 
         <Section>
           <Stack $gap={80}>
-            <Gallery images={galleryImages} />
+            <Collage images={galleryImages} />
             <Grid $columns={2}>
               {benefitsWithoutImage.map((edge) => (
                 <Stack key={edge.node.frontmatter.title} $gap={16}>

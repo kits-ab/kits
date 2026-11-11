@@ -1,67 +1,41 @@
-import {
-  Breakout,
-  Collage,
-  colors,
-  ContentHeading,
-  Horizontal,
-  Lead,
-  MainHeading,
-  SectionHeading,
-  spacing,
-  SubHeading,
-  Text,
-  Timeline,
-  Timeslot,
-  types,
-  Vertical,
-  width,
-  Wrapper
-} from "@kokitotsos/react-components"
-import { isSameDay, parseISO } from "date-fns"
+import { Typography } from "@kits-ab/kits-ui"
+import { types } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
-import {
-  FileConnection,
-  MarkdownRemark,
-  MarkdownRemarkConnection,
-  MarkdownRemarkFrontmatterSchema
-} from "../../gatsby-types"
+import { FileConnection, MarkdownRemark, MarkdownRemarkConnection } from "../../gatsby-types"
 import { Seo } from "../components/Seo"
+import { Collage } from "../components/web/Collage"
+import { Hero } from "../components/web/Hero"
+import { KitsConSchedule } from "../components/web/KitsConSchedule"
+import { KitsConTimeline } from "../components/web/KitsConTimeline"
+import { onMobile } from "../components/web/layout"
+import { Prose } from "../components/web/Prose"
+import { Section } from "../components/web/Section"
+import { Stack } from "../components/web/Stack"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
-import { formatPeriod, formatWeekday } from "../utils/dateUtils"
+import { formatPeriod } from "../utils/dateUtils"
 import { findImagesByRelativePaths } from "../utils/imageUtils"
-import { toHTML } from "../utils/markdownUtils"
-import { edgeToPerson, findPersonsByIds } from "../utils/personUtils"
+import { edgeToPerson } from "../utils/personUtils"
 
-const StyledBreakout = styled(Breakout)`
-  background-color: ${colors.background2};
-  background-color: var(--background2);
-  margin-bottom: 150px !important;
-  padding: ${spacing.huge}px 0;
+const Intro = styled.div`
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--spacing-56);
+  align-items: start;
 
-  .collage {
-    margin-bottom: -150px;
-    margin-top: ${spacing.large}px;
+  ${onMobile} {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-24);
   }
 `
 
-const StyledSectionHeading = styled(SectionHeading)`
-  &:not(:first-child) {
-    margin-top: ${spacing.huge}px;
-  }
-`
-
-const StyledHorizontal = styled(Horizontal)`
-  @media (max-width: ${width.mobileMenu}px) {
-    text-align: center;
-
-    img {
-      margin: 0 auto !important;
-    }
-  }
+const Logo = styled.img`
+  display: block;
+  width: 200px;
+  height: 200px;
 `
 
 interface KitsConPageProps extends PageProps {
@@ -79,7 +53,7 @@ interface KitsConPageProps extends PageProps {
 export default ({ data, location }: KitsConPageProps) => {
   const page = data.page.edges[0]
   const kitscon = data.activeKitscon || data.latestKitscon.edges[0].node
-  const kitscons = data.kitscons
+  const { frontmatter } = kitscon
   const avatars = data.avatars.edges
   const persons = data.persons.edges
     .map((edge) => edgeToPerson(edge, avatars))
@@ -87,126 +61,63 @@ export default ({ data, location }: KitsConPageProps) => {
 
   const collageImages = findImagesByRelativePaths(
     data.collageImages.edges,
-    kitscon.frontmatter.collageImages
-      ? kitscon.frontmatter.collageImages.map((collageImage) => collageImage.collageImage)
+    frontmatter.collageImages
+      ? frontmatter.collageImages.map((collageImage) => collageImage.collageImage)
       : []
   )
 
-  const timelineEvents = kitscons.edges.map((edge) => ({
+  const timelineEvents = data.kitscons.edges.map((edge) => ({
     href: edge.node.fields.href,
-    date: edge.node.frontmatter.start
+    date: edge.node.frontmatter.start,
+    title: edge.node.frontmatter.title
   }))
 
   return (
-    <DefaultLayout location={location}>
+    <DefaultLayout location={location} layout="profil2026">
       <Seo
         title={page.node.frontmatter.title}
         description="KitsCon, vår årliga utvecklarkonferens. Inspirerande föreläsningar om det senaste inom teknik, utveckling och säkerhet. Se program och talare."
         pathname={location.pathname}
       />
+      <Hero
+        variant="text"
+        heading={page.node.frontmatter.heading}
+        lead={page.node.frontmatter.lead}
+      />
 
-      <Vertical spacing={spacing.large}>
-        <MainHeading>{page.node.frontmatter.heading}</MainHeading>
-        <Lead>{page.node.frontmatter.lead}</Lead>
-      </Vertical>
+      <Section spaceTop={64}>
+        <KitsConTimeline events={timelineEvents} activeHref={kitscon.fields?.href} />
+      </Section>
 
-      <StyledBreakout>
-        <Wrapper>
-          <Timeline events={timelineEvents} />
-        </Wrapper>
-        <Collage className="collage" images={collageImages} />
-      </StyledBreakout>
+      <Section tone="raised">
+        <Stack $gap={80}>
+          <Intro>
+            {frontmatter.image && <Logo src={frontmatter.image} alt="" />}
+            <Stack $gap={24}>
+              <Stack $gap={8}>
+                <Typography variant="h2" as="h2">
+                  {frontmatter.title}
+                </Typography>
+                {frontmatter.tagLine && (
+                  <Typography variant="subtitle">{frontmatter.tagLine}</Typography>
+                )}
+                <Typography variant="body" color="secondary">
+                  {formatPeriod(frontmatter.start, frontmatter.end)}, {frontmatter.location}
+                </Typography>
+              </Stack>
+              <Prose html={kitscon.html} />
+            </Stack>
+          </Intro>
+          {collageImages.length > 0 && <Collage images={collageImages} />}
+        </Stack>
+      </Section>
 
-      <Vertical spacing={spacing.large}>
-        <StyledHorizontal spacing={spacing.large} breakpoint={width.mobileMenu}>
-          <div style={{ flex: "0 0 200px" }}>
-            <img src={kitscon.frontmatter.image} style={{ width: 200, height: 200 }} />
-          </div>
-          <Vertical style={{ flex: "1 1 0%" }}>
-            <ContentHeading>{kitscon.frontmatter.title}</ContentHeading>
-            <SubHeading>{kitscon.frontmatter.tagLine}</SubHeading>
-            <SubHeading>
-              {formatPeriod(kitscon.frontmatter.start, kitscon.frontmatter.end)},{" "}
-              {kitscon.frontmatter.location}
-            </SubHeading>
-            <Text style={{ marginTop: 20 }}>{kitscon.html}</Text>
-          </Vertical>
-        </StyledHorizontal>
-        <Vertical>
-          {kitscon.frontmatter.schema && renderSchema(persons, kitscon.frontmatter.schema)}
-        </Vertical>
-      </Vertical>
+      {frontmatter.schema && (
+        <Section>
+          <KitsConSchedule schema={frontmatter.schema} persons={persons} />
+        </Section>
+      )}
     </DefaultLayout>
-  )
-}
-
-const renderSchema = (persons: types.Person[], schema: MarkdownRemarkFrontmatterSchema[]) => {
-  let previousTime: string
-  let previousSchema: MarkdownRemarkFrontmatterSchema | undefined
-  let connect = false
-
-  const schemaContent: React.ReactNode[] = []
-
-  schema.forEach((s) => {
-    if (!previousTime || !isSameDay(parseISO(s.start), parseISO(previousTime))) {
-      if (previousSchema) {
-        schemaContent.push(renderPresentation(persons, previousSchema, connect, true))
-        previousSchema = undefined
-      }
-      schemaContent.push(
-        <StyledSectionHeading key={"day" + s.start}>{formatWeekday(s.start)}</StyledSectionHeading>
-      )
-    }
-
-    if (previousSchema) {
-      const showEndTime = previousSchema.end !== s.start
-      schemaContent.push(renderPresentation(persons, previousSchema, connect, showEndTime))
-    }
-
-    connect = previousSchema != undefined && previousSchema.end === s.start
-    previousTime = s.start
-
-    previousSchema = s
-  })
-
-  if (previousSchema) {
-    schemaContent.push(renderPresentation(persons, previousSchema, connect, true))
-  }
-
-  return schemaContent
-}
-
-const renderPresentation = (
-  persons: types.Person[],
-  presentation: MarkdownRemarkFrontmatterSchema,
-  connect: boolean,
-  showEndTime: boolean
-) => {
-  const presenters = presentation.presenters
-    ? findPersonsByIds(persons, presentation.presenters)
-    : undefined
-  return (
-    <Timeslot
-      key={"presentation" + presentation.start}
-      presenters={presenters}
-      heading={presentation.title}
-      startTime={parseISO(presentation.start)}
-      endTime={parseISO(presentation.end)}
-      href={presentation.href}
-      location={
-        presentation.location && presentation.location.coordinates
-          ? (presentation.location as any) // eslint-disable-line @typescript-eslint/no-explicit-any
-          : undefined
-      }
-      type={presentation.type as types.TimeslotType}
-      presentation={presentation.presentation}
-      youtubeId={presentation.youtubeId}
-      connectToPrevious={connect}
-      showEndTime={showEndTime}
-      externalPresenter={presentation.externalpresenter}
-    >
-      {presentation.details && toHTML(presentation.details)}
-    </Timeslot>
   )
 }
 
@@ -228,6 +139,9 @@ export const query = graphql`
     }
 
     activeKitscon: markdownRemark(fields: { href: { eq: $href } }) {
+      fields {
+        href
+      }
       frontmatter {
         title
         tagLine
@@ -317,6 +231,7 @@ export const query = graphql`
             href
           }
           frontmatter {
+            title
             start
           }
         }
@@ -355,7 +270,7 @@ export const query = graphql`
     ) {
       edges {
         node {
-          ...ImageFragmentCollage
+          ...ImageFragmentWide
         }
       }
     }
