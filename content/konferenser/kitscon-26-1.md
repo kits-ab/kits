@@ -223,7 +223,7 @@ schema:
 
   - winner: false
     start: 2026-11-14 11:15
-    end: 2026-11-14 12:00
+    end: 2026-11-14 11:35
     title: Encrypted Traffic Deanonymization
     details: Krypterad trafik är väl hemlig? Om hur trafikmönster ändå kan avslöja vad någon strömmar.
     type: externalpresentation
@@ -232,7 +232,7 @@ schema:
       avatarSrc: /assets/atmanemansour_webb.jpg
 
   - winner: false
-    start: 2026-11-14 12:00
+    start: 2026-11-14 11:35
     end: 2026-11-14 13:00
     title: Lunch
     type: food
