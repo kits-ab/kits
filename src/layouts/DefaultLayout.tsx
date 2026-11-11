@@ -113,9 +113,11 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
             <SiteHeader currentPath={this.props.location.pathname} />
             {this.props.layout === "profil2026" ? (
               <Main>
-                <BreadcrumbBar>
-                  <Breadcrumbs location={this.props.location} />
-                </BreadcrumbBar>
+                {this.props.location.pathname !== "/" && (
+                  <BreadcrumbBar>
+                    <Breadcrumbs location={this.props.location} />
+                  </BreadcrumbBar>
+                )}
                 {this.props.children}
               </Main>
             ) : (

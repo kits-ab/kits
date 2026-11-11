@@ -7,6 +7,7 @@ import { onMobile, readableMaxWidth } from "./layout"
 import { Stack } from "./Stack"
 
 export interface ContactBandProps {
+  label?: string
   heading: string
   text?: React.ReactNode
   action?: React.ReactNode
@@ -24,11 +25,16 @@ const Inner = styled.div`
 `
 
 // Avslutande band med glöd i bakgrunden: rubrik, kort text och en knapp, centrerat.
-export const ContactBand = ({ heading, text, action }: ContactBandProps) => (
+export const ContactBand = ({ label, heading, text, action }: ContactBandProps) => (
   <GradientBackground as="section" baseColor="var(--bg-page)">
     <Container>
       <Inner>
         <Stack $gap={24}>
+          {label && (
+            <Typography variant="mono" color="brand">
+              {label}
+            </Typography>
+          )}
           <Typography variant="h2" as="h2">
             {heading}
           </Typography>

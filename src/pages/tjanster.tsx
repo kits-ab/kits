@@ -1,5 +1,5 @@
 import { Link, Tag, Typography } from "@kits-ab/kits-ui"
-import { graphql, Link as GatsbyLink } from "gatsby"
+import { graphql } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
@@ -9,37 +9,12 @@ import { ContactBand } from "../components/web/ContactBand"
 import { ContentCard } from "../components/web/ContentCard"
 import { Grid } from "../components/web/Grid"
 import { Hero } from "../components/web/Hero"
-import { readableMaxWidth } from "../components/web/layout"
 import { MasterDetail } from "../components/web/MasterDetail"
 import { Section } from "../components/web/Section"
+import { HeadingLink, SectionIntro, splitHeading } from "../components/web/SectionIntro"
 import { Stack } from "../components/web/Stack"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
-
-// Rubrikerna i innehållet är "Keep IT Secure  \nCybersäkerhet": första raden blir etikett.
-const splitHeading = (heading: string) => {
-  const [label, ...rest] = heading.split("\n").map((part) => part.trim())
-  return rest.length > 0 ? { label, title: rest.join(" ") } : { label: undefined, title: label }
-}
-
-const Intro = styled.div`
-  max-width: ${readableMaxWidth}px;
-`
-
-const HeadingLink = styled(GatsbyLink)`
-  color: inherit;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.12em;
-  }
-
-  &:focus-visible {
-    outline: 3px solid var(--primary-border);
-    outline-offset: 3px;
-  }
-`
 
 const Tags = styled.div`
   display: flex;
@@ -56,29 +31,6 @@ const List = styled.ul`
 interface AreaGroup {
   heading?: string
   areas: string[]
-}
-
-const SectionIntro = ({ heading, url, text }: { heading: string; url?: string; text?: string }) => {
-  const { label, title } = splitHeading(heading)
-  return (
-    <Intro>
-      <Stack $gap={16}>
-        {label && (
-          <Typography variant="mono" color="brand">
-            {label}
-          </Typography>
-        )}
-        <Typography variant="h2" as="h2">
-          {url ? <HeadingLink to={url}>{title}</HeadingLink> : title}
-        </Typography>
-        {text && (
-          <Typography variant="body" color="secondary">
-            {text}
-          </Typography>
-        )}
-      </Stack>
-    </Intro>
-  )
 }
 
 interface TjansterPageProps extends PageProps {
