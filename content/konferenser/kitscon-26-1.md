@@ -23,6 +23,8 @@ schema:
       Kör du bil? Skriv i #kitscon på Slack varifrån du åker, så kan de som bor i närheten eller längs vägen åka med.
 
       Med kollektivtrafik tar du X6 mot Landvetter, till exempel från Heden 07:40 eller Liseberg Station 07:47, till Landvetter resecentrum. Där byter du till buss 611 kl. 08:18 mot Rävlanda/Bollebygd, som är vid hållplatsen Hindåsgården 08:39. Därifrån är det ett par minuters promenad till hotellet.
+
+      Tiderna kan ändras, så lita inte blint på dem. Dubbelkolla din resa i Västtrafiks app eller på [vasttrafik.se](https://www.vasttrafik.se).
     location:
       coordinates:
         - 57.7069453
@@ -158,7 +160,7 @@ schema:
     start: 2026-11-14 07:15
     end: 2026-11-14 07:45
     title: Löprunda och bad i sjön
-    details: Frivilligt! Vi springer en runda och avslutar med ett dopp i sjön innan frukost.
+    details: Ofrivilligt?! Spring en runda och avsluta med ett dopp i sjön innan frukost.
     type: running
 
   - winner: false
@@ -178,7 +180,16 @@ schema:
 
   - winner: false
     start: 2026-11-14 09:20
-    end: 2026-11-14 09:45
+    end: 2026-11-14 09:40
+    title: Social Engineering
+    details: Psykologin, metoderna och knepen bakom social engineering, och hur en förståelse för attackerna hjälper oss att förebygga dem.
+    type: presentation
+    presenters:
+      - jonathanlindqvist
+
+  - winner: false
+    start: 2026-11-14 09:40
+    end: 2026-11-14 10:00
     title: AI i hemautomationen
     details: Hur AI kan göra hemmet smartare, från att förstå vad som händer i huset till att styra belysning, värme och apparater utan att allt behöver programmeras i förväg.
     type: presentation
@@ -203,6 +214,15 @@ schema:
 
   - winner: false
     start: 2026-11-14 11:00
+    end: 2026-11-14 11:15
+    title: Den uppkopplade morgonen
+    details: Upptäck hur hemautomation kan ta hand om hela din morgon, från smart belysning och automatiska rullgardiner till personanpassade nyheter, väder och trafikinformation, så att du kan starta dagen på autopilot. Och nej, det här föredraget innehåller inte ett enda ord om AI.
+    type: presentation
+    presenters:
+      - antonlundh
+
+  - winner: false
+    start: 2026-11-14 11:15
     end: 2026-11-14 12:00
     title: Encrypted Traffic Deanonymization
     details: Krypterad trafik är väl hemlig? Om hur trafikmönster ändå kan avslöja vad någon strömmar.
@@ -226,12 +246,14 @@ schema:
       Kör du bil? Ta om möjligt med samma passagerare som på vägen dit.
 
       Med kollektivtrafik tar du buss 611 från hållplatsen Hindåsgården kl. 13:07 mot Mölnlycke till Landvetter resecentrum, där den är 13:30. Där byter du till X6 mot Göteborg kl. 13:35 eller 13:50. X6 kl. 13:50 är vid Liseberg Station 14:04 och Heden 14:09. Missar du bussen går nästa 611 kl. 13:37.
+
+      Tiderna kan ändras, så lita inte blint på dem. Dubbelkolla din resa i Västtrafiks app eller på [vasttrafik.se](https://www.vasttrafik.se).
     title: Hemresa
     type: bus
 ---
 
-🦌 Hjortligt välkomna till KitsCon 26.1, The Oh Deer Edition! Den 13-14 november intar vi Hjortviken Country Club i Hindås, där skogen möter sjön och hjortarna (förhoppningsvis) håller sig på behörigt avstånd från buffén.
+🦌 Hjortligt välkomna till KitsCon 26.1, The Oh Deer Edition! Den 13-14 november intar vi Hjortviken Country Club i Hindås, där vi byter kontorsstolen mot skog, sjö och spa i två dagar.
 
-I år har AI flyttat in överallt: i koden, i projektledningen, i klassrummet och till och med i morgonrutinen hemma. Vi tittar på agenter som skriver koden och specarna som styr dem, modeller som fattar beslut i stället för att prata och lokala modeller som trollar fram media. Men vi vänder också på steken: vad avslöjar egentligen din krypterade trafik, och hur bevisar man sin ålder utan att lämna ut sig själv? 🔐
+I år har AI flyttat in överallt: i koden, i projektledningen, i klassrummet och till och med hemma. Vi tittar på agenter som skriver koden och specarna som styr dem, modeller som fattar beslut i stället för att prata och lokala modeller som trollar fram media. Men vi vänder också på steken: vad avslöjar egentligen din krypterade trafik, och hur bevisar man sin ålder utan att lämna ut sig själv? 🔐
 
 Mellan föredragen väntar Hjortviken Backyard Challenge, AW, spa och middag. För KitsCon handlar inte bara om teknik. Det är här vi lär känna nya kollegor, vågar ställa oss framför publik och öva på att presentera, bygger relationer över team och uppdrag och framför allt har riktigt kul tillsammans. Oh deer, vad vi längtar!
