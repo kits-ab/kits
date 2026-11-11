@@ -20,6 +20,7 @@ import { KitsRouter } from "../components/web/KitsRouter"
 import { SiteFooter } from "../components/web/SiteFooter"
 import { SiteHeader } from "../components/web/SiteHeader"
 import "../styles/fonts.css"
+import "../styles/legacy-map.css"
 import { SiteGlobalStyles } from "../styles/SiteGlobalStyles"
 
 const GlobalSiteStyles = createGlobalStyle`

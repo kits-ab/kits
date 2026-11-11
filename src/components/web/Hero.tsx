@@ -14,11 +14,12 @@ export interface HeroProps {
   action?: React.ReactNode
 }
 
+// Ingen luft under: nästa Section bestämmer avståndet (spaceTop).
 const TextHero = styled.section`
-  padding: var(--spacing-120) 0 var(--spacing-80);
+  padding: var(--spacing-120) 0 0;
 
   ${onMobile} {
-    padding: var(--spacing-64) 0 var(--spacing-48);
+    padding: var(--spacing-64) 0 0;
   }
 `
 
