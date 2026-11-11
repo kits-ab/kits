@@ -274,8 +274,10 @@ const config: GatsbyConfig = {
         name: "KITS AB",
         short_name: "KITS",
         start_url: "/",
-        background_color: "#ffffff",
-        theme_color: "#333333",
+        // Manifestet kan inte läsa CSS-variabler: värdet är kits-ui:s --bg-page i mörkt tema
+        // (src/tokens/tokens.css). Uppdatera om token ändras.
+        background_color: "#141514",
+        theme_color: "#141514",
         display: "minimal-ui",
         icon: "static/assets/nyheter_kitsallafarger.png" // This path is relative to the root of the site.
       }

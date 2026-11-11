@@ -17,8 +17,13 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { createGlobalStyle } from "styled-components"
 
+import "@kits-ab/kits-ui/styles.css"
+
 import { ContentYamlConnection } from "../../gatsby-types"
 import { Breadcrumbs } from "../components/Breadcrumbs"
+import { KitsRouter } from "../components/web/KitsRouter"
+import "../styles/fonts.css"
+import { SiteGlobalStyles } from "../styles/SiteGlobalStyles"
 
 const GlobalSiteStyles = createGlobalStyle`
   html {
@@ -80,42 +85,45 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
       <>
         <GlobalComponentStyles />
         <GlobalSiteStyles />
+        <SiteGlobalStyles />
         <LinkContext.Provider
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           value={{ linkComponent: Link as any, navLinkComponent: Link as any }}
         >
-          <Helmet>
-            <html lang="sv" />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-            />
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-          </Helmet>
-          <Wrapper spacing={spacing.huge} style={{ minHeight: "100%" }}>
-            <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
-            <Breakout>
-              <Header
-                breakpoint={width.mobileMenu}
-                links={[
-                  { text: "Tjänster", href: "/tjanster" },
-                  { text: "Keep IT Simple", href: "/teknik-och-utveckling" },
-                  { text: "Keep IT Secure", href: "/cybersakerhet" },
-                  { text: "Karriär", href: "/karriar" },
-                  { text: "KitsCon", href: "/kitscon" },
-                  { text: "Om oss", href: "/om-oss" }
-                ]}
+          <KitsRouter>
+            <Helmet>
+              <html lang="sv" />
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
               />
-            </Breakout>
-            <Vertical spacing={spacing.huge} style={{ flex: "1 1 auto", marginTop: 120 }}>
-              <Breadcrumbs location={this.props.location} />
-              {this.props.children}
-            </Vertical>
-            <Breakout style={{ flex: 0 }}>
-              <KitsFooter />
-            </Breakout>
-          </Wrapper>
+              <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+              <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+            </Helmet>
+            <Wrapper spacing={spacing.huge} style={{ minHeight: "100%" }}>
+              <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
+              <Breakout>
+                <Header
+                  breakpoint={width.mobileMenu}
+                  links={[
+                    { text: "Tjänster", href: "/tjanster" },
+                    { text: "Keep IT Simple", href: "/teknik-och-utveckling" },
+                    { text: "Keep IT Secure", href: "/cybersakerhet" },
+                    { text: "Karriär", href: "/karriar" },
+                    { text: "KitsCon", href: "/kitscon" },
+                    { text: "Om oss", href: "/om-oss" }
+                  ]}
+                />
+              </Breakout>
+              <Vertical spacing={spacing.huge} style={{ flex: "1 1 auto", marginTop: 120 }}>
+                <Breadcrumbs location={this.props.location} />
+                {this.props.children}
+              </Vertical>
+              <Breakout style={{ flex: 0 }}>
+                <KitsFooter />
+              </Breakout>
+            </Wrapper>
+          </KitsRouter>
         </LinkContext.Provider>
       </>
     )
