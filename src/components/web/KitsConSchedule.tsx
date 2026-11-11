@@ -1,23 +1,24 @@
 import { Typography } from "@kits-ab/kits-ui"
-import { Location, types } from "@kokitotsos/react-components"
 import { format, isSameDay, parseISO } from "date-fns"
 import { sv } from "date-fns/locale"
 import * as React from "react"
 import styled from "styled-components"
 
 import { onMobile } from "./layout"
+import { LocationMap } from "./LocationMap"
 import { Prose } from "./Prose"
 import { Stack } from "./Stack"
 import { TextLink } from "./TextLink"
 import { TimeslotIcon } from "./TimeslotIcon"
 import { MarkdownRemarkFrontmatterSchema } from "../../../gatsby-types"
+import type { Person } from "../../types/Person"
 import { formatWeekday } from "../../utils/dateUtils"
 import { toHTML } from "../../utils/markdownUtils"
 import { findPersonsByIds } from "../../utils/personUtils"
 
 export interface KitsConScheduleProps {
   schema: MarkdownRemarkFrontmatterSchema[]
-  persons: types.Person[]
+  persons: Person[]
 }
 
 interface Presenter {
@@ -153,10 +154,7 @@ const Download = styled.div`
   color: var(--text-brand);
 `
 
-const presentersOf = (
-  slot: MarkdownRemarkFrontmatterSchema,
-  persons: types.Person[]
-): Presenter[] => {
+const presentersOf = (slot: MarkdownRemarkFrontmatterSchema, persons: Person[]): Presenter[] => {
   const internal = slot.presenters ? findPersonsByIds(persons, slot.presenters) : []
   if (internal.length > 0) {
     return internal
@@ -171,7 +169,7 @@ const SlotView = ({
   showEndTime
 }: {
   slot: MarkdownRemarkFrontmatterSchema
-  persons: types.Person[]
+  persons: Person[]
   connected: boolean
   showEndTime: boolean
 }) => {
@@ -253,7 +251,7 @@ const SlotView = ({
         </Body>
       )}
       {slot.location && slot.location.coordinates && (
-        <Location
+        <LocationMap
           coordinates={slot.location.coordinates as number[]}
           title={slot.location.title ?? undefined}
         />

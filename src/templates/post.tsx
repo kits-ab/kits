@@ -1,4 +1,3 @@
-import { types } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
 
@@ -9,6 +8,7 @@ import { Hero } from "../components/web/Hero"
 import { Section } from "../components/web/Section"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
+import type { Person } from "../types/Person"
 import { edgeToPerson, findPersonsByIds } from "../utils/personUtils"
 
 interface PostTemplateProps extends PageProps {
@@ -26,7 +26,7 @@ export default ({ data, location }: PostTemplateProps) => {
   const avatars = data.avatars.edges
   const persons = data.persons.edges
     .map((edge) => edgeToPerson(edge, avatars))
-    .filter((person) => person !== undefined) as types.Person[]
+    .filter((person) => person !== undefined) as Person[]
   const authors = findPersonsByIds(persons, post.frontmatter.authors ?? [])
 
   return (

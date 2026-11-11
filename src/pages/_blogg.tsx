@@ -1,4 +1,3 @@
-import { types } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
 
@@ -10,6 +9,7 @@ import { Section } from "../components/web/Section"
 import { Stack } from "../components/web/Stack"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
+import type { Person } from "../types/Person"
 import { edgeToPerson, findPersonsByIds } from "../utils/personUtils"
 
 interface BloggPageProps extends PageProps {
@@ -26,7 +26,7 @@ export default ({ data, location }: BloggPageProps) => {
   const avatars = data.avatars.edges
   const persons = data.persons.edges
     .map((edge) => edgeToPerson(edge, avatars))
-    .filter((person) => person !== undefined) as types.Person[]
+    .filter((person) => person !== undefined) as Person[]
   const posts = data.blog.edges
 
   return (

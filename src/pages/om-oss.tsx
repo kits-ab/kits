@@ -1,4 +1,3 @@
-import { Location } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
@@ -14,6 +13,7 @@ import { ContactCard } from "../components/web/ContactCard"
 import { Grid } from "../components/web/Grid"
 import { Hero } from "../components/web/Hero"
 import { onMobile } from "../components/web/layout"
+import { LocationMap } from "../components/web/LocationMap"
 import { Prose } from "../components/web/Prose"
 import { Section } from "../components/web/Section"
 import { Stack } from "../components/web/Stack"
@@ -88,7 +88,7 @@ export default ({ data, location }: AboutPageProps) => {
         </Stack>
       </Section>
 
-      <Location
+      <LocationMap
         coordinates={metadata.node.coordinates}
         title={metadata.node.name}
         subtitle={metadata.node.address.street}

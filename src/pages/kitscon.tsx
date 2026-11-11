@@ -1,5 +1,4 @@
 import { Typography } from "@kits-ab/kits-ui"
-import { types } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
@@ -16,6 +15,7 @@ import { Section } from "../components/web/Section"
 import { Stack } from "../components/web/Stack"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
+import type { Person } from "../types/Person"
 import { formatPeriod } from "../utils/dateUtils"
 import { findImagesByRelativePaths } from "../utils/imageUtils"
 import { edgeToPerson } from "../utils/personUtils"
@@ -57,7 +57,7 @@ export default ({ data, location }: KitsConPageProps) => {
   const avatars = data.avatars.edges
   const persons = data.persons.edges
     .map((edge) => edgeToPerson(edge, avatars))
-    .filter((person) => person !== undefined) as types.Person[]
+    .filter((person) => person !== undefined) as Person[]
 
   const collageImages = findImagesByRelativePaths(
     data.collageImages.edges,

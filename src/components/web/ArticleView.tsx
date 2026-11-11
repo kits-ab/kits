@@ -1,5 +1,4 @@
 import { Typography } from "@kits-ab/kits-ui"
-import { types } from "@kokitotsos/react-components"
 import { format, parseISO } from "date-fns"
 import { sv } from "date-fns/locale"
 import * as React from "react"
@@ -9,12 +8,13 @@ import { Prose } from "./Prose"
 import { HeadingLink } from "./SectionIntro"
 import { Stack } from "./Stack"
 import { TextLink } from "./TextLink"
+import type { Person } from "../../types/Person"
 
 export interface ArticleViewProps {
   title: string
   // Datum i ISO-format, som fields.date i innehållet.
   date: string
-  authors: types.Person[]
+  authors: Person[]
   // Blogginlägg visar första författarens porträtt, nyheter gör det inte.
   showAvatar?: boolean
   html: string

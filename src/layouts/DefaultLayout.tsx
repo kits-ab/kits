@@ -3,9 +3,8 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
-// Global CSS i samma ordning på alla sidor: grundåterställning, kartans stilar (Location i det
-// gamla biblioteket importerar dem bara på sidor med karta, vilket annars ger olika CSS-ordning
-// mellan sidorna) och sist kits-ui.
+// Global CSS i samma ordning på alla sidor: grundåterställning, kartans stilar (LocationMap) och
+// sist kits-ui. Importeras kartans CSS bara där kartan används blir ordningen olika mellan sidorna.
 import "normalize.css"
 import "mapbox-gl/dist/mapbox-gl.css"
 import "@kits-ab/kits-ui/styles.css"
@@ -17,7 +16,6 @@ import { KitsRouter } from "../components/web/KitsRouter"
 import { SiteFooter } from "../components/web/SiteFooter"
 import { SiteHeader } from "../components/web/SiteHeader"
 import "../styles/fonts.css"
-import "../styles/legacy-map.css"
 import { SiteGlobalStyles } from "../styles/SiteGlobalStyles"
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {

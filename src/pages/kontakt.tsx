@@ -1,5 +1,4 @@
 import { Link, Typography } from "@kits-ab/kits-ui"
-import { Location } from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
 
@@ -8,6 +7,7 @@ import { Seo } from "../components/Seo"
 import { ContactCard } from "../components/web/ContactCard"
 import { Grid } from "../components/web/Grid"
 import { Hero } from "../components/web/Hero"
+import { LocationMap } from "../components/web/LocationMap"
 import { Section } from "../components/web/Section"
 import { Stack } from "../components/web/Stack"
 import { TextLink } from "../components/web/TextLink"
@@ -116,7 +116,7 @@ const ContactPage = ({ data, location }: ContactPageProps) => {
         </Stack>
       </Section>
 
-      <Location
+      <LocationMap
         coordinates={metadata.node.coordinates}
         title={metadata.node.name}
         subtitle={metadata.node.address.street}

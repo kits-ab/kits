@@ -1,7 +1,0 @@
-/* Location (@kokitotsos/react-components) väljer kartstil från --map, som annars följer
-   systemets ljust/mörkt-läge. Sajten är alltid mörk, så kartan ska också vara det. Regeln
-   ligger i en CSS-fil i stället för i SiteGlobalStyles, eftersom Location läser --map vid
-   första renderingen, innan styled-components har lagt in sina globala stilar. */
-html[data-theme="dark"] {
-  --map: dark-v9;
-}
