@@ -8,7 +8,7 @@ import { PageProps } from "../types/PageProps"
 
 export default ({ location }: PageProps) => {
   return (
-    <DefaultLayout location={location} layout="profil2026">
+    <DefaultLayout location={location}>
       <Helmet title="404: Sidan hittades inte" />
       <Hero
         variant="text"

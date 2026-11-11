@@ -30,7 +30,7 @@ export default ({ data, location }: IndexPageProps) => {
   const section2Image = frontmatter.images?.[0]
 
   return (
-    <DefaultLayout location={location} layout="profil2026">
+    <DefaultLayout location={location}>
       <Seo
         title={frontmatter.title}
         description={frontmatter.seoDescription}

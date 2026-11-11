@@ -84,7 +84,7 @@ export default class JobPage extends React.PureComponent<JobPageProps, State> {
     // för den gamla renderingen; queryn och handleClick finns kvar.
 
     return (
-      <DefaultLayout location={location} layout="profil2026">
+      <DefaultLayout location={location}>
         <Seo
           title={frontmatter.title}
           description={frontmatter.seoDescription}

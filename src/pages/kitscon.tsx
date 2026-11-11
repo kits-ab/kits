@@ -73,7 +73,7 @@ export default ({ data, location }: KitsConPageProps) => {
   }))
 
   return (
-    <DefaultLayout location={location} layout="profil2026">
+    <DefaultLayout location={location}>
       <Seo
         title={page.node.frontmatter.title}
         description="KitsCon, vår årliga utvecklarkonferens. Inspirerande föreläsningar om det senaste inom teknik, utveckling och säkerhet. Se program och talare."

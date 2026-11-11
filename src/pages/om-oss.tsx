@@ -42,7 +42,7 @@ export default ({ data, location }: AboutPageProps) => {
     .filter((person) => person !== undefined) as types.Person[]
 
   return (
-    <DefaultLayout location={location} layout="profil2026">
+    <DefaultLayout location={location}>
       <Seo
         title={page.node.frontmatter.title}
         description={page.node.frontmatter.seoDescription}

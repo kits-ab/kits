@@ -30,7 +30,7 @@ export default ({ data, location }: NewsTemplateProps) => {
   const authors = findPersonsByIds(persons, news.frontmatter.authors ?? [])
 
   return (
-    <DefaultLayout location={location} layout="profil2026">
+    <DefaultLayout location={location}>
       <Seo title={news.frontmatter.title} pathname={location.pathname} article={true} />
       <Hero
         variant="text"

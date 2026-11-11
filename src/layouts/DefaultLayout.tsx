@@ -1,15 +1,7 @@
-import {
-  GlobalStyles as GlobalComponentStyles,
-  LinkContext,
-  spacing,
-  Vertical,
-  Wrapper
-} from "@kokitotsos/react-components"
 import { graphql, useStaticQuery } from "gatsby"
-import { Link } from "gatsby"
 import * as React from "react"
 import { Helmet } from "react-helmet"
-import styled, { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 
 import "@kits-ab/kits-ui/styles.css"
 
@@ -23,62 +15,12 @@ import "../styles/fonts.css"
 import "../styles/legacy-map.css"
 import { SiteGlobalStyles } from "../styles/SiteGlobalStyles"
 
-const GlobalSiteStyles = createGlobalStyle`
-  html {
-    background-color: var(--background1);
-    box-sizing: border-box;
-    height: 100%;
-  }
-
-  body {
-    height: 100%;
-    overflow-x: hidden;
-  }
-
-  #___gatsby {
-    height: 100%;
-
-    & > * {
-      height: 100%;
-    }
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-
-  .is-centered {
-    text-align: center;
-  }
-
-  .is-flexed {
-    flex: 1 1 auto;
-  }
-
-  .max-100 {
-    max-width: 100%;
-  }
-
-  strong, b {
-    font-weight: 700;
-  }
-`
-
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
     pathname: string
   }
   children: React.ReactNode
-  // "profil2026" för ombyggda sidor: ingen gammal Wrapper, sektionerna sköter sin egen bredd.
-  // Tas bort när sista sidan är ombyggd.
-  layout?: "legacy" | "profil2026"
 }
-
-const Main = styled.main`
-  flex: 1 1 auto;
-`
 
 const BreadcrumbBar = styled(Container)`
   padding-top: var(--spacing-24);
@@ -92,48 +34,29 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
   public render() {
     return (
       <>
-        <GlobalComponentStyles />
-        <GlobalSiteStyles />
         <SiteGlobalStyles />
-        <LinkContext.Provider
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          value={{ linkComponent: Link as any, navLinkComponent: Link as any }}
-        >
-          <KitsRouter>
-            <Helmet>
-              <html lang="sv" />
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-              />
-              <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-              <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-            </Helmet>
-            <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
-            <SiteHeader currentPath={this.props.location.pathname} />
-            {this.props.layout === "profil2026" ? (
-              <Main>
-                {this.props.location.pathname !== "/" && (
-                  <BreadcrumbBar>
-                    <Breadcrumbs location={this.props.location} />
-                  </BreadcrumbBar>
-                )}
-                {this.props.children}
-              </Main>
-            ) : (
-              <Wrapper spacing={spacing.huge} style={{ minHeight: "100%" }}>
-                <Vertical
-                  spacing={spacing.huge}
-                  style={{ flex: "1 1 auto", marginTop: spacing.large }}
-                >
-                  <Breadcrumbs location={this.props.location} />
-                  {this.props.children}
-                </Vertical>
-              </Wrapper>
+        <KitsRouter>
+          <Helmet>
+            <html lang="sv" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+            />
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+          </Helmet>
+          <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
+          <SiteHeader currentPath={this.props.location.pathname} />
+          <main>
+            {this.props.location.pathname !== "/" && (
+              <BreadcrumbBar>
+                <Breadcrumbs location={this.props.location} />
+              </BreadcrumbBar>
             )}
-            <KitsFooter />
-          </KitsRouter>
-        </LinkContext.Provider>
+            {this.props.children}
+          </main>
+          <KitsFooter />
+        </KitsRouter>
       </>
     )
   }

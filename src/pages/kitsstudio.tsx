@@ -30,7 +30,7 @@ export default ({ data, location }: KitsStudioPageProps) => {
   // för den gamla renderingen.
 
   return (
-    <DefaultLayout location={location} layout="profil2026">
+    <DefaultLayout location={location}>
       <Seo title={frontmatter.title} pathname={location.pathname} />
       <Hero variant="text" heading={frontmatter.heading} lead={frontmatter.lead} />
 

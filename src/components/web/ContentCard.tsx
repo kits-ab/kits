@@ -8,6 +8,8 @@ import { Stack } from "./Stack"
 export interface ContentCardProps {
   label?: string
   title: string
+  // h2 när korten ligger direkt under sidans h1, annars h3.
+  headingLevel?: "h2" | "h3"
   // Hela kortet blir klickbart när href finns (länken ligger på rubriken).
   href?: string
   tone?: "surface" | "brand"
@@ -59,6 +61,7 @@ export const ContentCard = ({
   title,
   href,
   tone = "surface",
+  headingLevel = "h3",
   children
 }: ContentCardProps) => (
   <Card $tone={tone}>
@@ -69,7 +72,7 @@ export const ContentCard = ({
             {label}
           </Typography>
         )}
-        <Typography variant="h3" as="h3">
+        <Typography variant="h3" as={headingLevel}>
           {href ? <TitleLink to={href}>{title}</TitleLink> : title}
         </Typography>
       </Stack>

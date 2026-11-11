@@ -14,7 +14,7 @@ import { PageProps } from "../types/PageProps"
 const prose = `<h2>Rubrik i Prose</h2><p>Brödtext från Markdown med en <a href="/kontakt">länk</a> och <strong>fetstil</strong>.</p><ul><li>Punkt ett</li><li>Punkt två</li></ul><h3>Underrubrik</h3><p>Kod: <code>npm start</code></p>`
 
 export default ({ location }: PageProps) => (
-  <DefaultLayout location={location} layout="profil2026">
+  <DefaultLayout location={location}>
     <Hero
       variant="image"
       image="/assets/framsida_02.jpg"

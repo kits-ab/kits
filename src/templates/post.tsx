@@ -30,7 +30,7 @@ export default ({ data, location }: PostTemplateProps) => {
   const authors = findPersonsByIds(persons, post.frontmatter.authors ?? [])
 
   return (
-    <DefaultLayout location={location} layout="profil2026">
+    <DefaultLayout location={location}>
       <Seo title={post.frontmatter.title} pathname={location.pathname} article={true} />
       <Hero
         variant="text"

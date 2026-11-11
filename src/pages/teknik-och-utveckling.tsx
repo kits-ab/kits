@@ -21,7 +21,7 @@ const TeknikPage = ({ data, location }: TeknikPageProps) => {
   const page = data.page.edges[0].node.frontmatter
 
   return (
-    <DefaultLayout location={location} layout="profil2026">
+    <DefaultLayout location={location}>
       <Seo title={page.title} description={page.seoDescription} pathname={location.pathname} />
       <Hero variant="text" heading={page.heading} lead={page.lead} />
 
@@ -33,7 +33,12 @@ const TeknikPage = ({ data, location }: TeknikPageProps) => {
             { ...page.section3, href: "/teknik-och-utveckling/integration" },
             { ...page.section4, href: "/kitsstudio" }
           ].map((section) => (
-            <ContentCard key={section.href} title={section.heading} href={section.href}>
+            <ContentCard
+              key={section.href}
+              title={section.heading}
+              href={section.href}
+              headingLevel="h2"
+            >
               <Typography variant="body" color="secondary">
                 {section.content}
               </Typography>

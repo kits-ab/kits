@@ -53,7 +53,7 @@ const SystemutvecklingPage = ({ data, location }: SystemutvecklingPageProps) => 
   const { frontmatter } = data.page
 
   return (
-    <DefaultLayout location={location} layout="profil2026">
+    <DefaultLayout location={location}>
       <Seo
         title={frontmatter.title}
         description={frontmatter.seoDescription}

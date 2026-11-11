@@ -21,7 +21,7 @@ const CybersecurityPage = ({ data, location }: CybersecurityPageProps) => {
   const page = data.page.edges[0].node.frontmatter
 
   return (
-    <DefaultLayout location={location} layout="profil2026">
+    <DefaultLayout location={location}>
       <Seo title={page.title} description={page.seoDescription} pathname={location.pathname} />
       <Hero variant="text" heading={page.heading} lead={page.lead} />
 
@@ -36,6 +36,7 @@ const CybersecurityPage = ({ data, location }: CybersecurityPageProps) => {
               title={section.heading}
               href={section.href}
               tone="brand"
+              headingLevel="h2"
             >
               <Typography variant="body" color="secondary">
                 {section.content}
