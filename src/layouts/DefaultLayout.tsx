@@ -2,15 +2,12 @@ import {
   Breakout,
   Footer,
   GlobalStyles as GlobalComponentStyles,
-  Header,
   LinkContext,
   spacing,
   types,
   Vertical,
-  width,
   Wrapper
 } from "@kokitotsos/react-components"
-// import { SiteHeader } from "../components/SiteHeader"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 import * as React from "react"
@@ -22,6 +19,7 @@ import "@kits-ab/kits-ui/styles.css"
 import { ContentYamlConnection } from "../../gatsby-types"
 import { Breadcrumbs } from "../components/Breadcrumbs"
 import { KitsRouter } from "../components/web/KitsRouter"
+import { SiteHeader } from "../components/web/SiteHeader"
 import "../styles/fonts.css"
 import { SiteGlobalStyles } from "../styles/SiteGlobalStyles"
 
@@ -100,22 +98,13 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
               <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
               <link rel="icon" href="/favicon.ico" type="image/x-icon" />
             </Helmet>
+            <SiteHeader currentPath={this.props.location.pathname} />
             <Wrapper spacing={spacing.huge} style={{ minHeight: "100%" }}>
               <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
-              <Breakout>
-                <Header
-                  breakpoint={width.mobileMenu}
-                  links={[
-                    { text: "Tjänster", href: "/tjanster" },
-                    { text: "Keep IT Simple", href: "/teknik-och-utveckling" },
-                    { text: "Keep IT Secure", href: "/cybersakerhet" },
-                    { text: "Karriär", href: "/karriar" },
-                    { text: "KitsCon", href: "/kitscon" },
-                    { text: "Om oss", href: "/om-oss" }
-                  ]}
-                />
-              </Breakout>
-              <Vertical spacing={spacing.huge} style={{ flex: "1 1 auto", marginTop: 120 }}>
+              <Vertical
+                spacing={spacing.huge}
+                style={{ flex: "1 1 auto", marginTop: spacing.large }}
+              >
                 <Breadcrumbs location={this.props.location} />
                 {this.props.children}
               </Vertical>
