@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { onMobile } from "./layout"
+import { headerMinHeight, onMobile } from "./layout"
 
 export interface SplitImage {
   src: string
@@ -11,14 +11,21 @@ export interface SplitImage {
 export interface SplitSectionProps {
   image?: SplitImage
   imageSide?: "left" | "right"
+  // För lång text: bilden ligger överst och följer med när texten skrollar.
+  stickyImage?: boolean
   children: React.ReactNode
 }
 
-const Split = styled.div<{ $imageSide: "left" | "right" }>`
+const Split = styled.div<{ $imageSide: "left" | "right"; $sticky: boolean }>`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-96);
-  align-items: center;
+  align-items: ${({ $sticky }) => ($sticky ? "start" : "center")};
+
+  & > img {
+    position: ${({ $sticky }) => ($sticky ? "sticky" : "static")};
+    top: calc(${headerMinHeight}px + var(--spacing-32));
+  }
 
   & > :first-child {
     order: ${({ $imageSide }) => ($imageSide === "left" ? 0 : 1)};
@@ -30,6 +37,10 @@ const Split = styled.div<{ $imageSide: "left" | "right" }>`
 
     & > :first-child {
       order: 0;
+    }
+
+    & > img {
+      position: static;
     }
   }
 `
@@ -43,9 +54,14 @@ const Image = styled.img`
 
 // Bild och text sida vid sida (staplas på mobil, bilden först). Utan bild blir det bara text.
 // Ligger i en Section; sköter inte egen bakgrund eller luft.
-export const SplitSection = ({ image, imageSide = "left", children }: SplitSectionProps) =>
+export const SplitSection = ({
+  image,
+  imageSide = "left",
+  stickyImage = false,
+  children
+}: SplitSectionProps) =>
   image ? (
-    <Split $imageSide={imageSide}>
+    <Split $imageSide={imageSide} $sticky={stickyImage}>
       <Image
         src={image.src}
         srcSet={image.srcSet}

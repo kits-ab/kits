@@ -1,38 +1,16 @@
-import {
-  Button,
-  Image,
-  Lead,
-  MainHeading,
-  SectionHeading,
-  Text,
-  Vertical,
-  spacing,
-  types
-} from "@kokitotsos/react-components"
-import { Alignment } from "@kokitotsos/react-components/dist/types"
+import { Link, Typography } from "@kits-ab/kits-ui"
 import { PageProps, graphql } from "gatsby"
 import React from "react"
-import { Helmet } from "react-helmet"
-import styled from "styled-components"
 
 import { FileConnection, MarkdownRemarkConnection } from "../../gatsby-types"
+import { Seo } from "../components/Seo"
+import { ContactBand } from "../components/web/ContactBand"
+import { Hero } from "../components/web/Hero"
+import { Prose } from "../components/web/Prose"
+import { Section } from "../components/web/Section"
+import { SplitSection } from "../components/web/SplitSection"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { findImageByRelativePath } from "../utils/imageUtils"
-
-const StyledImage = styled(Image)`
-  max-width: 100%;
-  max-height: 400px;
-
-  .image-wrapper {
-    position: static;
-  }
-
-  .image-image {
-    transform: none;
-    height: auto;
-    max-width: 100%;
-  }
-`
 
 interface KitsStudioPageProps extends PageProps {
   data: {
@@ -45,47 +23,36 @@ interface KitsStudioPageProps extends PageProps {
 
 export default ({ data, location }: KitsStudioPageProps) => {
   const page = data.page.edges[0]
-  const pageImage = findImageByRelativePath(data.pageImages.edges, page.node.frontmatter.images[0])
+  const { frontmatter } = page.node
+  const pageImage = findImageByRelativePath(data.pageImages.edges, frontmatter.images[0])
+
+  // Vilande: projektlistan (section1 och projects i queryn) visas inte just nu. Se git-historiken
+  // för den gamla renderingen.
 
   return (
-    <DefaultLayout location={location}>
-      <Helmet title={page.node.frontmatter.title} />
-      <Vertical spacing={spacing.large} alignHorizontal={Alignment.Center}>
-        <MainHeading>{page.node.frontmatter.heading}</MainHeading>
-        <Lead>{page.node.frontmatter.lead}</Lead>
-        {/* TODO This image does not scale nicely */}
-        <StyledImage
-          src={pageImage && pageImage.src}
-          srcSet={pageImage && pageImage.srcSet}
-        ></StyledImage>
-        <Text>{page.node.html}</Text>
-      </Vertical>
+    <DefaultLayout location={location} layout="profil2026">
+      <Seo title={frontmatter.title} pathname={location.pathname} />
+      <Hero variant="text" heading={frontmatter.heading} lead={frontmatter.lead} />
 
-      {/*
-      <SectionHeading>{page.node.frontmatter.section1.heading}</SectionHeading>
-      {projects.map((project) => {
-        const image = findImageByRelativePath(images, project.node.frontmatter.image)
-        return (
-          <Media
-            heading={project.node.frontmatter.title}
-            href={project.node.frontmatter.href}
-            key={`project_${project.node.frontmatter.index}`}
-            src={image && image.src}
-            srcSet={image && image.srcSet}
-          >
-            {project.node.html}
-          </Media>
-        )
-      })}
-      */}
+      <Section spaceTop={96}>
+        <SplitSection image={pageImage} stickyImage>
+          <Prose html={page.node.html} />
+        </SplitSection>
+      </Section>
 
-      <SectionHeading>{page.node.frontmatter.section2.heading}</SectionHeading>
-      <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.large}>
-        <Text>
-          <p>{page.node.frontmatter.section2.content}</p>
-        </Text>
-        <Button href="mailto:salj@kits.se">Kontakta oss</Button>
-      </Vertical>
+      <ContactBand
+        heading={frontmatter.section2.heading}
+        text={
+          <Typography variant="body" color="secondary">
+            {frontmatter.section2.content}
+          </Typography>
+        }
+        action={
+          <Link href="mailto:salj@kits.se" variant="button" buttonVariant="primary" size="large">
+            Kontakta oss
+          </Link>
+        }
+      />
     </DefaultLayout>
   )
 }
@@ -138,7 +105,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          ...ImageFragment
+          ...ImageFragmentWide
         }
       }
     }
