@@ -97,7 +97,7 @@ const query = graphql`query PersonsQuery {
   ) {
     edges {
       node {
-        ...PersonFragment
+        ...PersonPublicFragment
       }
     }
   }

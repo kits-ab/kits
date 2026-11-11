@@ -84,7 +84,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          ...PersonFragment
+          ...PersonPublicFragment
         }
       }
     }

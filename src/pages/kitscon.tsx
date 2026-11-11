@@ -244,7 +244,7 @@ export const query = graphql`
     ) {
       edges {
         node {
-          ...PersonFragment
+          ...PersonPublicFragment
         }
       }
     }

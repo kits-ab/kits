@@ -201,6 +201,14 @@ exports.createSchemaCustomization = ({ actions }) => {
       careersite_job_apply_url: String
       careersite_job_url: String
     }
+
+    # Kontaktpersonerna i content/kits.yml kopplas till sina personfiler, så att Om oss bara
+    # hämtar deras uppgifter och inte alla medarbetares.
+    type ContentYamlContacts {
+      role: String
+      personId: String
+      person: MarkdownRemark @link(by: "frontmatter.id", from: "personId")
+    }
   `
   createTypes(typeDefs)
 }

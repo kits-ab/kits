@@ -90,14 +90,7 @@ const query = graphql`
             postalCode
             city
           }
-          phone
           email
-          social {
-            facebook
-            github
-            linkedin
-            twitter
-          }
         }
       }
     }

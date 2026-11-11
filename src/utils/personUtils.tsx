@@ -4,6 +4,25 @@ import { graphql } from "gatsby"
 import { findImageByRelativePath } from "./imageUtils"
 import { FileEdge, MarkdownRemarkEdge, O365User } from "../../gatsby-types"
 
+// Bara det som syns i listor (namn, titel, porträtt). Telefon, e-post, sociala konton och taggar
+// hämtas inte, eftersom allt en query hämtar hamnar i sidans publika page-data.json.
+export const personPublicFragment = graphql`
+  fragment PersonPublicFragment on MarkdownRemark {
+    fields {
+      href
+    }
+    frontmatter {
+      id
+      title
+      tagLine
+      alumni
+      image
+      avatar
+    }
+  }
+`
+
+// Alla uppgifter om en person. Använd bara där personens egna kontaktuppgifter ska visas.
 export const personFragment = graphql`
   fragment PersonFragment on MarkdownRemark {
     fields {
