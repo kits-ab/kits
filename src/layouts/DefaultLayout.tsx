@@ -47,8 +47,8 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
               name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
             />
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="icon" href="/favicon.ico" sizes="any" />
+            <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
           </Helmet>
           <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
           <SiteHeader currentPath={this.props.location.pathname} />

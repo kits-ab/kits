@@ -279,7 +279,10 @@ const config: GatsbyConfig = {
         background_color: "#141514",
         theme_color: "#141514",
         display: "minimal-ui",
-        icon: "static/assets/nyheter_kitsallafarger.png" // This path is relative to the root of the site.
+        // Kvadratisk ikon från kits-ui (dist/favicon.svg), kopierad till static/. Faviconen sätts i
+        // DefaultLayout, så pluginet ska inte lägga till en egen.
+        icon: "static/favicon.svg",
+        include_favicon: false
       }
     },
     "gatsby-plugin-sitemap",
