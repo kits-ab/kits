@@ -1,41 +1,85 @@
-import {
-  Breakout,
-  colors,
-  ContentHeading,
-  Horizontal,
-  SectionHeading,
-  Lead,
-  MainHeading,
-  spacing,
-  Text,
-  types,
-  Vertical,
-  width,
-  Wrapper,
-  SubHeading
-} from "@kokitotsos/react-components"
-import { graphql, Link } from "gatsby"
+import { Link, Tag, Typography } from "@kits-ab/kits-ui"
+import { graphql, Link as GatsbyLink } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
-import { CallToAction } from "../components/CallToAction"
 import { MarkdownField } from "../components/MarkdownField"
 import { Seo } from "../components/Seo"
+import { ContactBand } from "../components/web/ContactBand"
+import { ContentCard } from "../components/web/ContentCard"
+import { Grid } from "../components/web/Grid"
+import { Hero } from "../components/web/Hero"
+import { readableMaxWidth } from "../components/web/layout"
+import { MasterDetail } from "../components/web/MasterDetail"
+import { Section } from "../components/web/Section"
+import { Stack } from "../components/web/Stack"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 
-const StyledBreakout = styled(Breakout)`
-  background-color: ${colors.background2};
-  background-color: var(--background2);
-  padding: ${spacing.large}px 0;
+// Rubrikerna i innehållet är "Keep IT Secure  \nCybersäkerhet": första raden blir etikett.
+const splitHeading = (heading: string) => {
+  const [label, ...rest] = heading.split("\n").map((part) => part.trim())
+  return rest.length > 0 ? { label, title: rest.join(" ") } : { label: undefined, title: label }
+}
+
+const Intro = styled.div`
+  max-width: ${readableMaxWidth}px;
 `
 
-const StyledSectionHeading = styled(SectionHeading)`
-  > span {
-    background-color: ${colors.background2} !important;
-    background-color: var(--background2) !important;
+const HeadingLink = styled(GatsbyLink)`
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--primary-border);
+    outline-offset: 3px;
   }
 `
+
+const Tags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-8);
+`
+
+const List = styled.ul`
+  margin: 0;
+  padding-left: var(--spacing-24);
+  color: var(--text-secondary);
+`
+
+interface AreaGroup {
+  heading?: string
+  areas: string[]
+}
+
+const SectionIntro = ({ heading, url, text }: { heading: string; url?: string; text?: string }) => {
+  const { label, title } = splitHeading(heading)
+  return (
+    <Intro>
+      <Stack $gap={16}>
+        {label && (
+          <Typography variant="mono" color="brand">
+            {label}
+          </Typography>
+        )}
+        <Typography variant="h2" as="h2">
+          {url ? <HeadingLink to={url}>{title}</HeadingLink> : title}
+        </Typography>
+        {text && (
+          <Typography variant="body" color="secondary">
+            {text}
+          </Typography>
+        )}
+      </Stack>
+    </Intro>
+  )
+}
 
 interface TjansterPageProps extends PageProps {
   data: {
@@ -125,206 +169,148 @@ const TjansterPage = ({ data, location }: TjansterPageProps) => {
     ]
   }
 
+  const kitsec = splitHeading(frontmatter.kitsec.heading)
+
   return (
-    <DefaultLayout location={location}>
+    <DefaultLayout location={location} layout="profil2026">
       <Seo
         title={frontmatter.title}
         description={frontmatter.seoDescription}
         pathname={location.pathname}
         jsonLd={[serviceSchema]}
       />
-      <Vertical spacing={spacing.large}>
-        <MainHeading>{frontmatter.heading}</MainHeading>
-        <Lead>
-          <MarkdownField text={frontmatter.lead} inline={true} />
-        </Lead>
+      <Hero
+        variant="text"
+        heading={frontmatter.heading}
+        lead={<MarkdownField text={frontmatter.lead} inline={true} />}
+      />
 
-        <Horizontal
-          breakpoint={width.tablet}
-          distribute={true}
-          spacing={spacing.large}
-          alignVertical={types.Alignment.Start}
-        >
-          <Vertical spacing={spacing.small}>
-            <Lead className="is-centered">
-              <p>
-                <MarkdownField text={frontmatter.offer1} inline={true} />
-              </p>
-            </Lead>
-          </Vertical>
-          <Vertical spacing={spacing.small}>
-            <Lead className="is-centered">
-              <p>
-                <MarkdownField text={frontmatter.offer2} inline={true} />
-              </p>
-            </Lead>
-          </Vertical>
-        </Horizontal>
-
-        <Lead>
-          <MarkdownField text={frontmatter.lead2} inline={true} />
-        </Lead>
-
-        <Vertical spacing={spacing.medium}>
-          <Link to={frontmatter.kis.url} style={{ textDecoration: "none", color: "inherit" }}>
-            <SectionHeading>
-              <MarkdownField text={frontmatter.kis.heading} inline={true} />
-            </SectionHeading>
-          </Link>
-          <Text>
-            <p>{frontmatter.kis.text}</p>
-          </Text>
-
-          <Horizontal
-            breakpoint={width.tablet}
-            distribute={true}
-            spacing={spacing.large}
-            alignVertical={types.Alignment.Start}
-          >
-            {frontmatter.kis.subServices.map((service, index) => (
-              <Vertical key={index} spacing={spacing.small}>
-                <Link to={service.url} style={{ textDecoration: "none", color: "inherit" }}>
-                  <ContentHeading>{service.title}</ContentHeading>
-                </Link>
-                <Text>
-                  <p>
-                    <SubHeading>Tjänstekategorier</SubHeading>
-                  </p>
-                  <ul>
-                    {service.categories.map((cat, idx) => (
-                      <li key={idx}>{cat}</li>
-                    ))}
-                  </ul>
-                  {service.areas && (
-                    <>
-                      <p>
-                        <SubHeading>Områden</SubHeading>
-                      </p>
-                      <ul>
-                        {service.areas.map((area, idx) => (
-                          <li key={idx}>{area}</li>
+      <Section spaceTop={96}>
+        <Stack $gap={64}>
+          <SectionIntro
+            heading={frontmatter.kitsec.heading}
+            url={frontmatter.kitsec.url}
+            text={frontmatter.kitsec.text}
+          />
+          <MasterDetail
+            label={kitsec.title}
+            items={frontmatter.kitsec.subServices.map((service) => {
+              const areaGroups: AreaGroup[] = [
+                { heading: service.areasHeading1, areas: service.areas1 ?? [] },
+                { heading: service.areasHeading2, areas: service.areas2 ?? [] },
+                { areas: service.areas ?? [] }
+              ].filter((group) => group.areas.length > 0)
+              return {
+                id: service.url,
+                title: service.title,
+                content: (
+                  <Stack $gap={24}>
+                    <Stack $gap={8}>
+                      {kitsec.label && (
+                        <Typography variant="mono" color="brand">
+                          {kitsec.label}
+                        </Typography>
+                      )}
+                      <Typography variant="h2" as="h3">
+                        <HeadingLink to={service.url}>{service.title}</HeadingLink>
+                      </Typography>
+                    </Stack>
+                    <Stack $gap={12}>
+                      <Typography variant="subtitle" as="h4">
+                        Tjänstekategorier
+                      </Typography>
+                      <Tags>
+                        {service.categories.map((category) => (
+                          <Tag key={category} variant="neutral" label={category} slim />
                         ))}
-                      </ul>
-                    </>
-                  )}
-                </Text>
-              </Vertical>
+                      </Tags>
+                    </Stack>
+                    {areaGroups.length > 0 && (
+                      <Stack $gap={12}>
+                        <Typography variant="subtitle" as="h4">
+                          Områden
+                        </Typography>
+                        {areaGroups.map((group, index) => (
+                          <Stack key={index} $gap={8}>
+                            {group.heading && (
+                              <Typography variant="body" as="h5">
+                                {group.heading}
+                              </Typography>
+                            )}
+                            <List>
+                              {group.areas.map((area) => (
+                                <li key={area}>{area}</li>
+                              ))}
+                            </List>
+                          </Stack>
+                        ))}
+                      </Stack>
+                    )}
+                  </Stack>
+                )
+              }
+            })}
+          />
+        </Stack>
+      </Section>
+
+      <Section>
+        <Stack $gap={64}>
+          <SectionIntro
+            heading={frontmatter.packagedOffers.heading}
+            text={frontmatter.packagedOffers.text}
+          />
+          <Grid $columns={3}>
+            {frontmatter.packagedOffers.offers.map((offer) => (
+              <ContentCard key={offer.url} title={offer.title} href={offer.url} tone="brand">
+                <Typography variant="body" color="secondary">
+                  {offer.text}
+                </Typography>
+              </ContentCard>
             ))}
-          </Horizontal>
-        </Vertical>
-      </Vertical>
+          </Grid>
+        </Stack>
+      </Section>
 
-      <StyledBreakout>
-        <Wrapper>
-          <Vertical spacing={spacing.medium}>
-            <Link to={frontmatter.kitsec.url} style={{ textDecoration: "none", color: "inherit" }}>
-              <StyledSectionHeading>
-                <MarkdownField text={frontmatter.kitsec.heading} inline={true} />
-              </StyledSectionHeading>
-            </Link>
-            <Text>
-              <p>{frontmatter.kitsec.text}</p>
-            </Text>
-
-            <Horizontal
-              breakpoint={width.tablet}
-              distribute={true}
-              spacing={spacing.large}
-              alignVertical={types.Alignment.Start}
-            >
-              {frontmatter.kitsec.subServices.map((service, index) => (
-                <Vertical key={index} spacing={spacing.small}>
-                  <Link to={service.url} style={{ textDecoration: "none", color: "inherit" }}>
-                    <ContentHeading>{service.title}</ContentHeading>
-                  </Link>
-                  <Text>
-                    <p>
-                      <SubHeading>Tjänstekategorier</SubHeading>
-                    </p>
-                    <ul>
-                      {service.categories.map((cat, idx) => (
-                        <li key={idx}>{cat}</li>
-                      ))}
-                    </ul>
-                    {service.areasHeading1 && (
-                      <>
-                        <p>
-                          <SubHeading>Områden</SubHeading>
-                        </p>
-                        <p>
-                          <SubHeading>{service.areasHeading1}</SubHeading>
-                        </p>
-                        <ul>
-                          {service.areas1?.map((area, idx) => (
-                            <li key={idx}>{area}</li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                    {service.areasHeading2 && (
-                      <>
-                        <p>
-                          <SubHeading>{service.areasHeading2}</SubHeading>
-                        </p>
-                        <ul>
-                          {service.areas2?.map((area, idx) => (
-                            <li key={idx}>{area}</li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                    {service.areas && (
-                      <>
-                        <p>
-                          <SubHeading>Områden</SubHeading>
-                        </p>
-                        <ul>
-                          {service.areas.map((area, idx) => (
-                            <li key={idx}>{area}</li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                  </Text>
-                </Vertical>
-              ))}
-            </Horizontal>
-          </Vertical>
-        </Wrapper>
-      </StyledBreakout>
-
-      <Wrapper>
-        <Vertical spacing={spacing.medium} style={{ marginTop: spacing.large }}>
-          <SectionHeading>{frontmatter.packagedOffers.heading}</SectionHeading>
-          <Text>
-            <p>{frontmatter.packagedOffers.text}</p>
-          </Text>
-
-          <Horizontal
-            breakpoint={width.tablet}
-            distribute={true}
-            spacing={spacing.large}
-            alignVertical={types.Alignment.Start}
-          >
-            {frontmatter.packagedOffers.offers.map((offer, index) => (
-              <Vertical key={index} spacing={spacing.small}>
-                <Link to={offer.url} style={{ textDecoration: "none", color: "inherit" }}>
-                  <ContentHeading>{offer.title}</ContentHeading>
-                </Link>
-                <Text>
-                  <p>{offer.text}</p>
-                </Text>
-              </Vertical>
+      <Section>
+        <Stack $gap={64}>
+          <SectionIntro
+            heading={frontmatter.kis.heading}
+            url={frontmatter.kis.url}
+            text={frontmatter.kis.text}
+          />
+          <Grid $columns={3}>
+            {frontmatter.kis.subServices.map((service) => (
+              <ContentCard
+                key={service.url}
+                label={service.categories.join(" · ")}
+                title={service.title}
+                href={service.url}
+              >
+                {service.areas && (
+                  <Typography variant="body" color="secondary">
+                    Områden: {service.areas.join(", ")}
+                  </Typography>
+                )}
+              </ContentCard>
             ))}
-          </Horizontal>
-        </Vertical>
-      </Wrapper>
+          </Grid>
+        </Stack>
+      </Section>
 
-      <CallToAction
+      <ContactBand
         heading={frontmatter.cta.heading}
-        content={frontmatter.cta.content}
-        buttonText={frontmatter.cta.buttonText}
-        buttonHref={frontmatter.cta.buttonUrl}
+        text={<MarkdownField text={frontmatter.cta.content} inline={true} />}
+        action={
+          <Link
+            href={frontmatter.cta.buttonUrl}
+            variant="button"
+            buttonVariant="primary"
+            size="large"
+          >
+            {frontmatter.cta.buttonText}
+          </Link>
+        }
       />
     </DefaultLayout>
   )
