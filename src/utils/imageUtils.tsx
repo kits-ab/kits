@@ -44,6 +44,16 @@ export const imageFragmentAvatar = graphql`
   }
 `
 
+// Profil 2026: bilder som fyller en kolumn, srcSet med breddangivelser upp till 960 px.
+export const imageFragmentWide = graphql`
+  fragment ImageFragmentWide on File {
+    relativePath
+    childImageSharp {
+      gatsbyImageData(layout: CONSTRAINED, width: 960, quality: 85)
+    }
+  }
+`
+
 export const imageFragmentSmall = graphql`
   fragment ImageFragmentSmall on File {
     relativePath
