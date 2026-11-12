@@ -1,99 +1,120 @@
 # KITS.se
 
-This project contains the source code and content for <https://kits.se>.
+Det här projektet innehåller källkoden och innehållet för <https://kits.se>.
 
-## Overview
+## Översikt
 
-This project uses the static site generator [Gatsby](https://www.gatsbyjs.org) to create a web site.
+Sajten byggs med den statiska sajtgeneratorn [Gatsby](https://www.gatsbyjs.org).
 
-The system context diagram below gives you an overview of how the different systems work together to create kits.se:
+Systemkontextdiagrammet nedan ger en översikt över hur de olika systemen samverkar för att skapa
+kits.se:
 
-#### System Context Diagram
+#### Systemkontextdiagram
 
 ![](docs/SystemContextDiagram.png)
 
-There are quite a few systems involved for such a simple site but if we look at a container diagram for KITS.se it may be easier to see how each of the systems are used to generate the final site.
+Det är en hel del system inblandade för en så enkel sajt, men i containerdiagrammet för kits.se är
+det lättare att se hur varje system används för att generera den färdiga sajten.
 
-#### Container Diagram
+#### Containerdiagram
 
 ![](docs/ContainerDiagram.png)
 
-## Adding content
+#### Arkitekturbeslut
 
-The easiste way to add content to the site is to use <https://kits.se/admin>. You can login using your GitHub account if you're a member of the KITS organization. The CMS is powered by [Decap CMS](https://decapcms.org) and all different content can be edited in a custom form for each type.
+Beslut om kod och arkitektur loggas som ADR:er i [docs/adr](docs/adr/README.md). Ett nytt beslut
+ersätter ett gammalt i stället för att det gamla skrivs om.
 
-When you add content it will be saved as a new branch on GitHub and a pull request will be created. This means you can play with the content without publishing changes.
+## Lägga till innehåll
 
-### Images
+Det enklaste sättet att lägga till innehåll är att använda <https://kits.se/admin>. Du loggar in med
+ditt GitHub-konto om du är medlem i KITS organisation. CMS:et är [Decap CMS](https://decapcms.org),
+och varje typ av innehåll redigeras i ett eget formulär.
 
-The default image size is 1800x1000 and since Gatsby uses this higher resolution image to create images of different sizes it's important that you try to stick with this size.
+När du lägger till innehåll sparas det i en ny branch på GitHub och en pull request skapas. Du kan
+alltså prova dig fram utan att publicera ändringarna.
 
-All images should be stored in `static/assets`. Some pages fetch their images through GraphQL and only pick up files with the right prefix and file type. If the name or type is wrong, the image is silently left out:
+### Bilder
 
-- Karriär, benefits: `formaner_` (JPEG)
+Standardstorleken för bilder är 1800×1000. Gatsby skapar bilder i olika storlekar utifrån den högre
+upplösningen, så det är viktigt att du håller dig till den storleken.
+
+Alla bilder ska ligga i `static/assets`. Några sidor hämtar sina bilder via GraphQL och tar bara med
+filer med rätt prefix och filtyp. Är namnet eller filtypen fel utelämnas bilden utan felmeddelande:
+
+- Karriär, förmåner: `formaner_` (JPEG)
 - Karriär, personas: `persona_` (PNG)
-- Karriär, Cyber Academy: `cyberacademy_` (JPEG or PNG)
-- KITS Studio: `kitsstudio_` (JPEG or PNG)
-- KitsCon collage: `kitscon_collage_` (JPEG or PNG)
-- Avatars: `medarbetare_firstnamelastname-avatar.jpg` (JPEG)
+- Karriär, Cyber Academy: `cyberacademy_` (JPEG eller PNG)
+- KITS Studio: `kitsstudio_` (JPEG eller PNG)
+- KitsCon-kollage: `kitscon_collage_` (JPEG eller PNG)
+- Avatarer: `medarbetare_fornamnefternamn-avatar.jpg` (JPEG)
 
-Other images are referenced directly by path, but use the same naming convention: `nyheter_` for news, `blogg_` for blog posts, `kitscon_` for KitsCon logos and `medarbetare_firstnamelastname.jpg` for employee portraits.
+Övriga bilder refereras direkt med sökväg men följer samma namngivning: `nyheter_` för nyheter,
+`blogg_` för blogginlägg, `kitscon_` för KitsCon-logotyper och `medarbetare_fornamnefternamn.jpg`
+för porträtt av medarbetare.
 
-For news, blog posts and KitsCon presentations we show a little avatar next to the author or presenter. The avatar should be 350x350 and the face should have the same size as in the others. There is a Photoshop template under `resources` that can be used.
+För nyheter, blogginlägg och KitsCon-föredrag visas en liten avatar bredvid skribenten eller
+talaren. Avataren ska vara 350×350 och ansiktet lika stort som i de andra. Det finns en
+Photoshop-mall under `resources` som kan användas.
 
-## Development
+## Utveckling
 
-You can use any editor for development (Visual Studio Code, Atom, WebStorm, IntelliJ, Vim, ...) but you should make sure that it supports the following technologies:
+Du kan använda vilken editor du vill (Visual Studio Code, WebStorm, IntelliJ, Vim, ...), men se till
+att den har stöd för följande:
 
-- [TypeScript](https://www.typescriptlang.org) – Since the project is written in TypeScript
-- [EditorConfig](https://editorconfig.org) – To help the editor use the correct encoding, indentation, ...
-- [Styled Components](https://www.styled-components.com) – To support styled component that we use for styling our components
-- [Prettier](https://prettier.io) – To format the code according to our coding conventions
+- [TypeScript](https://www.typescriptlang.org): projektet är skrivet i TypeScript.
+- [EditorConfig](https://editorconfig.org): hjälper editorn att använda rätt teckenkodning,
+  indentering och så vidare.
+- [Styled Components](https://www.styled-components.com): används för att styla komponenterna.
+- [Prettier](https://prettier.io): formaterar koden enligt projektets kodkonventioner.
 
-**The code is automatically formatted when you commit code. It is also linted before you push the commits to the server.**
+**Koden formateras automatiskt när du committar. Den lintas också innan du pushar.**
 
-For debugging purposes you should install [React Developer Tools](https://github.com/facebook/react-devtools).
+För felsökning bör du installera [React Developer Tools](https://github.com/facebook/react-devtools).
 
-### Preparations
+### Förberedelser
 
-- Checkout the code and fetch all dependencies
+- Hämta koden
   ```
   $ git clone git@github.com:kits-ab/kits.git
   ```
-- Install Node according to .nvmrc or .tool-versions file (22.21.1 at the time of writing this)
+- Installera Node enligt `.nvmrc` eller `.tool-versions` (22.21.1 när detta skrivs)
 
   ```
   $ nvm install
   $ nvm use
   ```
 
-  or
+  eller
 
   ```
   $ asdf install
   ```
 
-- Install dependencies
+- Installera beroenden
   ```
   $ npm install
   ```
 
-### Available scripts
+### Skript
 
-When you've checked out the code and all dependencies have been fetched you probably want to run `npm start` but you can run any of the the following scripts:
+När koden och alla beroenden är hämtade vill du förmodligen köra `npm start`, men du kan köra
+vilket som helst av följande skript:
 
-- `npm run build` – Creates a production ready builds in `public/`
-- `npm run clean` – Removes all generated files
-- `npm run format` – Format the entire codebase using [Prettier](https://prettier.io)
-- `npm run lint` – Lints all code with [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io)
-- `npm start` – Starts a local server with hot reloading enabled on <http://localhost:8000>
-- `npm test` – Runs the linters and type checks the code with `tsc` (also run before every push)
+- `npm run build`: skapar ett produktionsbygge i `public/`.
+- `npm run clean`: tar bort alla genererade filer.
+- `npm run format`: formaterar hela kodbasen med [Prettier](https://prettier.io).
+- `npm run lint`: lintar all kod med [ESLint](https://eslint.org) och
+  [Stylelint](https://stylelint.io).
+- `npm start`: startar en lokal server med hot reloading på <http://localhost:8000>.
+- `npm test`: kör linters och typkontrollerar koden med `tsc` (körs också före varje push).
 
 ### GraphQL
 
-All content that is read from Markdown, YAML or image files is exposed through GraphQL. You can explore the content by running `npm start` and going to <http://localhost:8000/___graphql>.
+Allt innehåll som läses från Markdown-, YAML- och bildfiler exponeras via GraphQL. Du kan utforska
+innehållet genom att köra `npm start` och gå till <http://localhost:8000/___graphql>.
 
-### License
+### Licens
 
 Copyright 2015-2026 KITS AB
 
