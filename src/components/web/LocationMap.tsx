@@ -2,6 +2,8 @@ import * as React from "react"
 import { Map as MapboxMap, Popup } from "react-map-gl/mapbox"
 import styled from "styled-components"
 
+import { usePageTheme } from "../../theme"
+
 export interface LocationMapProps {
   // [latitud, longitud], som i innehållet (kits.yml, KitsCon-schemat).
   coordinates: number[]
@@ -14,8 +16,11 @@ export interface LocationMapProps {
 const mapboxAccessToken =
   process.env.MAPBOX_KEY
 
-// Sajten är alltid mörk, så kartan är det också.
-const mapStyle = "mapbox://styles/mapbox/dark-v9"
+// Kartan följer sidans tema.
+const mapStyles = {
+  dark: "mapbox://styles/mapbox/dark-v9",
+  light: "mapbox://styles/mapbox/light-v9"
+}
 
 const Frame = styled.div`
   height: 240px;
@@ -58,13 +63,14 @@ const Label = styled(Popup)`
 // visar bara var platsen ligger.
 export const LocationMap = ({ coordinates, title, subtitle }: LocationMapProps) => {
   const [latitude, longitude] = coordinates
+  const theme = usePageTheme()
   return (
     <Frame>
       <MapboxMap
         mapboxAccessToken={mapboxAccessToken}
         initialViewState={{ longitude, latitude, zoom: 14 }}
         style={{ height: "100%", width: "100%" }}
-        mapStyle={mapStyle}
+        mapStyle={mapStyles[theme]}
         attributionControl={false}
         doubleClickZoom={false}
         dragPan={false}
