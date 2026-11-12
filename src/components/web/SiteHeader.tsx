@@ -1,4 +1,4 @@
-import { IconButton, KitsLogo, Link } from "@kits-ab/kits-ui"
+import { IconButton, KitsLogo, Link } from "@kokitotsos/kits-ui"
 import { Link as GatsbyLink } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"

@@ -1,6 +1,6 @@
 // Granskningssida för byggstenarna i profil 2026. Finns bara i dev-servern (gatsby-node.js
 // tar bort den i produktionsbygget).
-import { Typography } from "@kits-ab/kits-ui"
+import { Typography } from "@kokitotsos/kits-ui"
 import * as React from "react"
 
 import { Grid } from "../components/web/Grid"

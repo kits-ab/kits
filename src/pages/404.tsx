@@ -1,4 +1,4 @@
-import { Link } from "@kits-ab/kits-ui"
+import { Link } from "@kokitotsos/kits-ui"
 import * as React from "react"
 import { Helmet } from "react-helmet"
 

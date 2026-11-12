@@ -7,7 +7,7 @@ import styled from "styled-components"
 // sist kits-ui. Importeras kartans CSS bara där kartan används blir ordningen olika mellan sidorna.
 import "normalize.css"
 import "mapbox-gl/dist/mapbox-gl.css"
-import "@kits-ab/kits-ui/styles.css"
+import "@kokitotsos/kits-ui/styles.css"
 
 import { ContentYamlConnection } from "../../gatsby-types"
 import { Breadcrumbs } from "../components/Breadcrumbs"

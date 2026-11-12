@@ -1,4 +1,4 @@
-import { RouterProvider } from "@kits-ab/kits-ui"
+import { RouterProvider } from "@kokitotsos/kits-ui"
 import { navigate } from "gatsby"
 import * as React from "react"
 

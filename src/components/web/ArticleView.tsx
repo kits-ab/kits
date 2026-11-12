@@ -1,4 +1,4 @@
-import { Typography } from "@kits-ab/kits-ui"
+import { Typography } from "@kokitotsos/kits-ui"
 import { format, parseISO } from "date-fns"
 import { sv } from "date-fns/locale"
 import * as React from "react"

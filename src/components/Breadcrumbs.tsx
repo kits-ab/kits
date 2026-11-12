@@ -1,4 +1,4 @@
-import { Breadcrumbs as KitsBreadcrumbs } from "@kits-ab/kits-ui"
+import { Breadcrumbs as KitsBreadcrumbs } from "@kokitotsos/kits-ui"
 import * as React from "react"
 import { Helmet } from "react-helmet"
 

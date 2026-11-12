@@ -1,4 +1,4 @@
-import { KitsLogo, Typography } from "@kits-ab/kits-ui"
+import { KitsLogo, Typography } from "@kokitotsos/kits-ui"
 import * as React from "react"
 import styled from "styled-components"
 

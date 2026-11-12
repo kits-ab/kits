@@ -1,4 +1,4 @@
-import { Link, Typography } from "@kits-ab/kits-ui"
+import { Link, Typography } from "@kokitotsos/kits-ui"
 import { graphql } from "gatsby"
 import * as React from "react"
 

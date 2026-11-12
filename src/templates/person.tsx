@@ -1,4 +1,4 @@
-import { Tag, Typography } from "@kits-ab/kits-ui"
+import { Tag, Typography } from "@kokitotsos/kits-ui"
 import { graphql } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
