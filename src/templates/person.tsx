@@ -6,7 +6,6 @@ import styled from "styled-components"
 import { FileConnection, MarkdownRemark, MarkdownRemarkEdge, O365User } from "../../gatsby-types"
 import { PersonList } from "../components/PersonList"
 import { Seo } from "../components/Seo"
-import { formatPhone } from "../components/web/ContactCard"
 import { onMobile } from "../components/web/layout"
 import { Prose } from "../components/web/Prose"
 import { Section } from "../components/web/Section"
@@ -94,9 +93,7 @@ export default ({ data, location }: PersonPageProps) => {
             <Typography variant="mono" as="div">
               <Row>
                 {person.phone && (
-                  <TextLink href={person.phone.toLink()}>
-                    {formatPhone(person.phone.toString())}
-                  </TextLink>
+                  <TextLink href={person.phone.toLink()}>{person.phone.toString()}</TextLink>
                 )}
                 {person.email && (
                   <TextLink href={person.email.toLink()}>{person.email.toString()}</TextLink>

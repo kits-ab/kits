@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import { Stack } from "./Stack"
 import { TextLink } from "./TextLink"
+import { PhoneNumber } from "../../types/Person"
 
 export interface ContactCardProps {
   role?: string
@@ -21,32 +22,32 @@ const Card = styled.div`
   background-color: color-mix(in srgb, var(--bg-brand) 12%, transparent);
 `
 
-// Innehållet skriver telefonnummer som "0708 – 27 74 99". Visa dem med bindestreck i stället
-// för tankstreck: "0708-27 74 99".
-export const formatPhone = (phone: string) => phone.replace(/\s*[–—]\s*/, "-")
-
-// Kontaktkort för en person: roll (valfri), namn, telefon och e-post.
-export const ContactCard = ({ role, name, phone, email }: ContactCardProps) => (
-  <Card>
-    <Stack $gap={8}>
-      {role && (
-        <Typography variant="mono" color="brand">
-          {role}
+// Kontaktkort för en person: roll (valfri), namn, telefon och e-post. Telefonnumret tas emot i
+// valfritt format och visas som "0708-27 74 99", som en tel:-länk.
+export const ContactCard = ({ role, name, phone, email }: ContactCardProps) => {
+  const phoneNumber = phone ? new PhoneNumber(phone) : undefined
+  return (
+    <Card>
+      <Stack $gap={8}>
+        {role && (
+          <Typography variant="mono" color="brand">
+            {role}
+          </Typography>
+        )}
+        <Typography variant="subtitle" as="p">
+          {name}
         </Typography>
-      )}
-      <Typography variant="subtitle" as="p">
-        {name}
-      </Typography>
-      {phone && (
-        <Typography variant="mono" color="secondary">
-          {formatPhone(phone)}
-        </Typography>
-      )}
-      {email && (
-        <Typography variant="mono">
-          <TextLink href={`mailto:${email}`}>{email}</TextLink>
-        </Typography>
-      )}
-    </Stack>
-  </Card>
-)
+        {phoneNumber && (
+          <Typography variant="mono">
+            <TextLink href={phoneNumber.toLink()}>{phoneNumber.toString()}</TextLink>
+          </Typography>
+        )}
+        {email && (
+          <Typography variant="mono">
+            <TextLink href={`mailto:${email}`}>{email}</TextLink>
+          </Typography>
+        )}
+      </Stack>
+    </Card>
+  )
+}
