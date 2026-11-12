@@ -1,21 +1,15 @@
-import {
-  ContentHeading,
-  Horizontal,
-  Lead,
-  MainHeading,
-  SectionHeading,
-  spacing,
-  Text,
-  types,
-  Vertical,
-  Link,
-  width
-} from "@kokitotsos/react-components"
+import { Link, Typography } from "@kokitotsos/kits-ui"
 import { graphql } from "gatsby"
 import * as React from "react"
 
-import { CallToAction } from "../../components/CallToAction"
 import { Seo } from "../../components/Seo"
+import { BulletList } from "../../components/web/BulletList"
+import { ContactBand } from "../../components/web/ContactBand"
+import { Grid } from "../../components/web/Grid"
+import { Hero } from "../../components/web/Hero"
+import { PackagedOffers } from "../../components/web/PackagedOffers"
+import { Section } from "../../components/web/Section"
+import { Stack } from "../../components/web/Stack"
 import { DefaultLayout } from "../../layouts/DefaultLayout"
 import { PageProps } from "../../types/PageProps"
 
@@ -68,76 +62,54 @@ const ITSecurityPage = ({ data, location }: ITSecurityPageProps) => {
         description={frontmatter.seoDescription}
         pathname={location.pathname}
       />
-      <Vertical spacing={spacing.large}>
-        <MainHeading>{frontmatter.heading}</MainHeading>
-        <Lead>{frontmatter.lead}</Lead>
+      <Hero variant="text" heading={frontmatter.heading} lead={frontmatter.lead} />
 
-        <Horizontal
-          breakpoint={width.tablet}
-          distribute={true}
-          spacing={spacing.large}
-          alignVertical={types.Alignment.Start}
-        >
-          <Vertical spacing={spacing.small}>
-            <ContentHeading>{frontmatter.whatWeDo.heading}</ContentHeading>
-            <Text>
-              <ul>
-                {frontmatter.whatWeDo.items.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </Text>
-          </Vertical>
+      <Section spaceTop={96}>
+        <Grid $columns={2}>
+          <Stack $gap={16}>
+            <Typography variant="h3" as="h2">
+              {frontmatter.whatWeDo.heading}
+            </Typography>
+            <BulletList items={frontmatter.whatWeDo.items} />
+          </Stack>
+          <Stack $gap={16}>
+            <Typography variant="h3" as="h2">
+              {frontmatter.areas.heading}
+            </Typography>
+            {frontmatter.areas.groups.map((group) => (
+              <Stack key={group.title} $gap={8}>
+                <Typography variant="subtitle" as="h3">
+                  {group.title}
+                </Typography>
+                <BulletList items={group.items} />
+              </Stack>
+            ))}
+          </Stack>
+        </Grid>
+      </Section>
 
-          <Vertical spacing={spacing.small}>
-            <ContentHeading>{frontmatter.areas.heading}</ContentHeading>
-            <Text>
-              {frontmatter.areas.groups.map((group, index) => (
-                <React.Fragment key={index}>
-                  <p>{group.title}</p>
-                  <ul>
-                    {group.items.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-                </React.Fragment>
-              ))}
-            </Text>
-          </Vertical>
-        </Horizontal>
-
-        <Vertical spacing={spacing.small} style={{ marginTop: spacing.large }}>
-          <SectionHeading>{frontmatter.packagedOffers.heading}</SectionHeading>
-          <Text>
-            <p>{frontmatter.packagedOffers.text}</p>
-          </Text>
-        </Vertical>
-
-        <Horizontal
-          breakpoint={width.tablet}
-          distribute={true}
-          spacing={spacing.large}
-          alignVertical={types.Alignment.Start}
-        >
-          {frontmatter.packagedOffers.offers.map((offer, index) => (
-            <Vertical key={index} spacing={spacing.small}>
-              <Link to={offer.url} style={{ textDecoration: "none", color: "inherit" }}>
-                <ContentHeading>{offer.title}</ContentHeading>
-              </Link>
-              <Text>
-                <p>{offer.text}</p>
-              </Text>
-            </Vertical>
-          ))}
-        </Horizontal>
-
-        <CallToAction
-          heading={frontmatter.cta.heading}
-          content={frontmatter.cta.content}
-          buttonText={frontmatter.cta.buttonText}
-          buttonHref={frontmatter.cta.buttonUrl}
+      <Section>
+        <PackagedOffers
+          heading={frontmatter.packagedOffers.heading}
+          text={frontmatter.packagedOffers.text}
+          offers={frontmatter.packagedOffers.offers}
         />
-      </Vertical>
+      </Section>
+
+      <ContactBand
+        heading={frontmatter.cta.heading}
+        text={frontmatter.cta.content}
+        action={
+          <Link
+            href={frontmatter.cta.buttonUrl}
+            variant="button"
+            buttonVariant="primary"
+            size="large"
+          >
+            {frontmatter.cta.buttonText}
+          </Link>
+        }
+      />
     </DefaultLayout>
   )
 }

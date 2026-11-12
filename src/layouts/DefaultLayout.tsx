@@ -1,67 +1,22 @@
-import {
-  Breakout,
-  Footer,
-  GlobalStyles as GlobalComponentStyles,
-  Header,
-  LinkContext,
-  spacing,
-  types,
-  Vertical,
-  width,
-  Wrapper
-} from "@kokitotsos/react-components"
-// import { SiteHeader } from "../components/SiteHeader"
 import { graphql, useStaticQuery } from "gatsby"
-import { Link } from "gatsby"
 import * as React from "react"
 import { Helmet } from "react-helmet"
-import { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
+
+// Global CSS i samma ordning på alla sidor: grundåterställning, kartans stilar (LocationMap) och
+// sist kits-ui. Importeras kartans CSS bara där kartan används blir ordningen olika mellan sidorna.
+import "normalize.css"
+import "mapbox-gl/dist/mapbox-gl.css"
+import "@kokitotsos/kits-ui/styles.css"
 
 import { ContentYamlConnection } from "../../gatsby-types"
 import { Breadcrumbs } from "../components/Breadcrumbs"
-
-const GlobalSiteStyles = createGlobalStyle`
-  html {
-    background-color: var(--background1);
-    box-sizing: border-box;
-    height: 100%;
-  }
-
-  body {
-    height: 100%;
-    overflow-x: hidden;
-  }
-
-  #___gatsby {
-    height: 100%;
-
-    & > * {
-      height: 100%;
-    }
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-
-  .is-centered {
-    text-align: center;
-  }
-
-  .is-flexed {
-    flex: 1 1 auto;
-  }
-
-  .max-100 {
-    max-width: 100%;
-  }
-
-  strong, b {
-    font-weight: 700;
-  }
-`
+import { Container } from "../components/web/Container"
+import { KitsRouter } from "../components/web/KitsRouter"
+import { SiteFooter } from "../components/web/SiteFooter"
+import { SiteHeader } from "../components/web/SiteHeader"
+import "../styles/fonts.css"
+import { SiteGlobalStyles } from "../styles/SiteGlobalStyles"
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
@@ -69,6 +24,10 @@ interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   }
   children: React.ReactNode
 }
+
+const BreadcrumbBar = styled(Container)`
+  padding-top: var(--spacing-24);
+`
 
 interface QueryResult {
   kits: ContentYamlConnection
@@ -78,45 +37,29 @@ export class DefaultLayout extends React.PureComponent<DefaultLayoutProps> {
   public render() {
     return (
       <>
-        <GlobalComponentStyles />
-        <GlobalSiteStyles />
-        <LinkContext.Provider
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          value={{ linkComponent: Link as any, navLinkComponent: Link as any }}
-        >
+        <SiteGlobalStyles />
+        <KitsRouter>
           <Helmet>
             <html lang="sv" />
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
             />
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="icon" href="/favicon.ico" sizes="any" />
+            <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
           </Helmet>
-          <Wrapper spacing={spacing.huge} style={{ minHeight: "100%" }}>
-            <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
-            <Breakout>
-              <Header
-                breakpoint={width.mobileMenu}
-                links={[
-                  { text: "Tjänster", href: "/tjanster" },
-                  { text: "Keep IT Simple", href: "/teknik-och-utveckling" },
-                  { text: "Keep IT Secure", href: "/cybersakerhet" },
-                  { text: "Karriär", href: "/karriar" },
-                  { text: "KitsCon", href: "/kitscon" },
-                  { text: "Om oss", href: "/om-oss" }
-                ]}
-              />
-            </Breakout>
-            <Vertical spacing={spacing.huge} style={{ flex: "1 1 auto", marginTop: 120 }}>
-              <Breadcrumbs location={this.props.location} />
-              {this.props.children}
-            </Vertical>
-            <Breakout style={{ flex: 0 }}>
-              <KitsFooter />
-            </Breakout>
-          </Wrapper>
-        </LinkContext.Provider>
+          <Helmet defaultTitle="KITS" titleTemplate="%s | KITS" />
+          <SiteHeader currentPath={this.props.location.pathname} />
+          <main>
+            {this.props.location.pathname !== "/" && (
+              <BreadcrumbBar>
+                <Breadcrumbs location={this.props.location} />
+              </BreadcrumbBar>
+            )}
+            {this.props.children}
+          </main>
+          <KitsFooter />
+        </KitsRouter>
       </>
     )
   }
@@ -126,22 +69,12 @@ function KitsFooter() {
   const renderFooter = ({ kits }: QueryResult) => {
     const kitsInfo = kits.edges[0].node
     return (
-      <Footer
-        info={{
-          name: kitsInfo.name,
-          street: kitsInfo.address.street,
-          postalCode: new types.PostalCode(kitsInfo.address.postalCode),
-          city: kitsInfo.address.city,
-          social: {
-            github: new types.Username(kitsInfo.social.github, types.SocialType.GitHub),
-            linkedin: new types.Username(kitsInfo.social.linkedin, types.SocialType.LinkedIn)
-          }
-        }}
-        contactLink={{
-          target: "_self",
-          url: "/kontakt",
-          text: "Kontakta oss"
-        }}
+      <SiteFooter
+        name={kitsInfo.name}
+        street={kitsInfo.address.street}
+        postalCode={kitsInfo.address.postalCode}
+        city={kitsInfo.address.city}
+        email={kitsInfo.email}
       />
     )
   }
@@ -160,14 +93,7 @@ const query = graphql`
             postalCode
             city
           }
-          phone
           email
-          social {
-            facebook
-            github
-            linkedin
-            twitter
-          }
         }
       }
     }

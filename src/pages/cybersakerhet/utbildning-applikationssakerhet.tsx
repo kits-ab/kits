@@ -1,17 +1,20 @@
-import {
-  ContentHeading,
-  Lead,
-  MainHeading,
-  spacing,
-  Text,
-  Vertical
-} from "@kokitotsos/react-components"
+import { Typography } from "@kokitotsos/kits-ui"
 import { graphql } from "gatsby"
 import * as React from "react"
+import styled from "styled-components"
 
 import { Seo } from "../../components/Seo"
+import { BulletList } from "../../components/web/BulletList"
+import { Hero } from "../../components/web/Hero"
+import { readableMaxWidth } from "../../components/web/layout"
+import { Section } from "../../components/web/Section"
+import { Stack } from "../../components/web/Stack"
 import { DefaultLayout } from "../../layouts/DefaultLayout"
 import { PageProps } from "../../types/PageProps"
+
+const Readable = styled.div`
+  max-width: ${readableMaxWidth}px;
+`
 
 interface AppSecTrainingPageProps extends PageProps {
   data: {
@@ -42,30 +45,28 @@ const AppSecTrainingPage = ({ data, location }: AppSecTrainingPageProps) => {
         description={frontmatter.seoDescription}
         pathname={location.pathname}
       />
-      <Vertical spacing={spacing.large}>
-        <MainHeading>{frontmatter.heading}</MainHeading>
-        <Lead>{frontmatter.lead}</Lead>
+      <Hero variant="text" heading={frontmatter.heading} lead={frontmatter.lead} />
 
-        <Vertical spacing={spacing.medium}>
-          <Text>
-            <p>{frontmatter.text1}</p>
-          </Text>
-          <Text>
-            <p>{frontmatter.text2}</p>
-          </Text>
-        </Vertical>
-
-        <Vertical spacing={spacing.medium}>
-          <ContentHeading>{frontmatter.trainingContent.heading}</ContentHeading>
-          <Text>
-            <ul>
-              {frontmatter.trainingContent.items.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </Text>
-        </Vertical>
-      </Vertical>
+      <Section spaceTop={96}>
+        <Readable>
+          <Stack $gap={48}>
+            <Stack $gap={16}>
+              <Typography variant="body" color="secondary">
+                {frontmatter.text1}
+              </Typography>
+              <Typography variant="body" color="secondary">
+                {frontmatter.text2}
+              </Typography>
+            </Stack>
+            <Stack $gap={16}>
+              <Typography variant="h3" as="h2">
+                {frontmatter.trainingContent.heading}
+              </Typography>
+              <BulletList items={frontmatter.trainingContent.items} />
+            </Stack>
+          </Stack>
+        </Readable>
+      </Section>
     </DefaultLayout>
   )
 }

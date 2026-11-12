@@ -1,50 +1,6 @@
-import { colors, fonts, spacing } from "@kokitotsos/react-components"
-import { Link } from "gatsby"
+import { Breadcrumbs as KitsBreadcrumbs } from "@kokitotsos/kits-ui"
 import * as React from "react"
 import { Helmet } from "react-helmet"
-import styled from "styled-components"
-
-const BreadcrumbContainer = styled.nav`
-  margin-bottom: ${spacing.small}px;
-  font-family: ${fonts.light};
-  font-size: 14px;
-  color: ${colors.text2};
-  color: var(--text2);
-`
-
-const BreadcrumbList = styled.ol`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-`
-
-const BreadcrumbItem = styled.li`
-  display: flex;
-  align-items: center;
-
-  &:not(:last-child)::after {
-    content: "/";
-    margin: 0 ${spacing.small}px;
-    color: ${colors.text2};
-    color: var(--text2);
-  }
-`
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: ${colors.text1};
-  color: var(--text1);
-  &:hover {
-    text-decoration: underline;
-  }
-`
-
-const CurrentPage = styled.span`
-  color: ${colors.text2};
-  color: var(--text2);
-`
 
 interface BreadcrumbsProps {
   location: {
@@ -70,12 +26,20 @@ const nameMap: { [key: string]: string } = {
   "utbildning-applikationssakerhet": "Utbildning AppSec"
 }
 
+const toName = (segment: string) =>
+  nameMap[segment] || segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, " ")
+
 export const Breadcrumbs = ({ location }: BreadcrumbsProps) => {
   if (!location) return null
 
   const pathnames = location.pathname.split("/").filter((x) => x)
 
-  if (pathnames.length === 0) return null // Don't show on home page if handled there, or if empty
+  if (pathnames.length === 0) return null
+
+  const crumbs = pathnames.map((segment, index) => ({
+    href: `/${pathnames.slice(0, index + 1).join("/")}`,
+    name: toName(segment)
+  }))
 
   const breadcrumbListSchema = {
     "@context": "https://schema.org",
@@ -87,46 +51,26 @@ export const Breadcrumbs = ({ location }: BreadcrumbsProps) => {
         name: "Hem",
         item: typeof window !== "undefined" ? window.location.origin : ""
       },
-      ...pathnames.map((value, index) => {
-        const to = `/${pathnames.slice(0, index + 1).join("/")}`
-        const name =
-          nameMap[value] || value.charAt(0).toUpperCase() + value.slice(1).replace(/-/g, " ")
-        return {
-          "@type": "ListItem",
-          position: index + 2,
-          name: name,
-          item: typeof window !== "undefined" ? `${window.location.origin}${to}` : to
-        }
-      })
+      ...crumbs.map((crumb, index) => ({
+        "@type": "ListItem",
+        position: index + 2,
+        name: crumb.name,
+        item: typeof window !== "undefined" ? `${window.location.origin}${crumb.href}` : crumb.href
+      }))
     ]
   }
 
   return (
-    <BreadcrumbContainer aria-label="breadcrumb">
+    <>
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumbListSchema)}</script>
       </Helmet>
-      <BreadcrumbList>
-        <BreadcrumbItem>
-          <StyledLink to="/">Hem</StyledLink>
-        </BreadcrumbItem>
-        {pathnames.map((value, index) => {
-          const to = `/${pathnames.slice(0, index + 1).join("/")}`
-          const isLast = index === pathnames.length - 1
-          const name =
-            nameMap[value] || value.charAt(0).toUpperCase() + value.slice(1).replace(/-/g, " ")
-
-          return (
-            <BreadcrumbItem key={to}>
-              {isLast ? (
-                <CurrentPage aria-current="page">{name}</CurrentPage>
-              ) : (
-                <StyledLink to={to}>{name}</StyledLink>
-              )}
-            </BreadcrumbItem>
-          )
-        })}
-      </BreadcrumbList>
-    </BreadcrumbContainer>
+      <KitsBreadcrumbs
+        items={[
+          { key: "/", label: "Hem", href: "/" },
+          ...crumbs.map((crumb) => ({ key: crumb.href, label: crumb.name, href: crumb.href }))
+        ]}
+      />
+    </>
   )
 }

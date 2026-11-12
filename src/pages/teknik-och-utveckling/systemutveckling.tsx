@@ -1,18 +1,21 @@
-import {
-  ContentHeading,
-  Lead,
-  MainHeading,
-  spacing,
-  Text,
-  Vertical
-} from "@kokitotsos/react-components"
+import { Link, Typography } from "@kokitotsos/kits-ui"
 import { graphql } from "gatsby"
 import * as React from "react"
+import styled from "styled-components"
 
-import { CallToAction } from "../../components/CallToAction"
 import { Seo } from "../../components/Seo"
+import { BulletList } from "../../components/web/BulletList"
+import { ContactBand } from "../../components/web/ContactBand"
+import { Hero } from "../../components/web/Hero"
+import { readableMaxWidth } from "../../components/web/layout"
+import { Section } from "../../components/web/Section"
+import { Stack } from "../../components/web/Stack"
 import { DefaultLayout } from "../../layouts/DefaultLayout"
 import { PageProps } from "../../types/PageProps"
+
+const Readable = styled.div`
+  max-width: ${readableMaxWidth}px;
+`
 
 interface SystemutvecklingPageProps extends PageProps {
   data: {
@@ -56,43 +59,54 @@ const SystemutvecklingPage = ({ data, location }: SystemutvecklingPageProps) => 
         description={frontmatter.seoDescription}
         pathname={location.pathname}
       />
-      <Vertical spacing={spacing.large}>
-        <MainHeading>{frontmatter.heading}</MainHeading>
-        <Lead>{frontmatter.lead}</Lead>
+      <Hero variant="text" heading={frontmatter.heading} lead={frontmatter.lead} />
 
-        <Vertical spacing={spacing.medium}>
-          <ContentHeading>{frontmatter.section1.heading}</ContentHeading>
-          <Text>
-            <p>{frontmatter.section1.text1}</p>
-            <p>{frontmatter.section1.text2}</p>
-          </Text>
-        </Vertical>
+      <Section spaceTop={96}>
+        <Readable>
+          <Stack $gap={48}>
+            <Stack $gap={16}>
+              <Typography variant="h3" as="h2">
+                {frontmatter.section1.heading}
+              </Typography>
+              <Typography variant="body" color="secondary">
+                {frontmatter.section1.text1}
+              </Typography>
+              <Typography variant="body" color="secondary">
+                {frontmatter.section1.text2}
+              </Typography>
+            </Stack>
+            <Stack $gap={16}>
+              <Typography variant="h3" as="h2">
+                {frontmatter.section2.heading}
+              </Typography>
+              <BulletList items={frontmatter.section2.items} />
+            </Stack>
+            <Stack $gap={16}>
+              <Typography variant="h3" as="h2">
+                {frontmatter.section3.heading}
+              </Typography>
+              <Typography variant="body" color="secondary">
+                {frontmatter.section3.text}
+              </Typography>
+            </Stack>
+          </Stack>
+        </Readable>
+      </Section>
 
-        <Vertical spacing={spacing.medium}>
-          <ContentHeading>{frontmatter.section2.heading}</ContentHeading>
-          <Text>
-            <ul>
-              {frontmatter.section2.items.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </Text>
-        </Vertical>
-
-        <Vertical spacing={spacing.medium}>
-          <ContentHeading>{frontmatter.section3.heading}</ContentHeading>
-          <Text>
-            <p>{frontmatter.section3.text}</p>
-          </Text>
-        </Vertical>
-
-        <CallToAction
-          heading={frontmatter.cta.heading}
-          content={frontmatter.cta.content}
-          buttonText={frontmatter.cta.buttonText}
-          buttonHref={frontmatter.cta.buttonUrl}
-        />
-      </Vertical>
+      <ContactBand
+        heading={frontmatter.cta.heading}
+        text={frontmatter.cta.content}
+        action={
+          <Link
+            href={frontmatter.cta.buttonUrl}
+            variant="button"
+            buttonVariant="primary"
+            size="large"
+          >
+            {frontmatter.cta.buttonText}
+          </Link>
+        }
+      />
     </DefaultLayout>
   )
 }

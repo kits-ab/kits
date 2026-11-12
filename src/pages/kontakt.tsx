@@ -1,22 +1,16 @@
-import {
-  Breakout,
-  Button,
-  ContentHeading,
-  Horizontal,
-  Lead,
-  Location,
-  MainHeading,
-  spacing,
-  Text,
-  types,
-  Vertical,
-  width
-} from "@kokitotsos/react-components"
+import { Link, Typography } from "@kokitotsos/kits-ui"
 import { graphql } from "gatsby"
 import * as React from "react"
 
 import { ContentYamlConnection } from "../../gatsby-types"
 import { Seo } from "../components/Seo"
+import { ContactCard } from "../components/web/ContactCard"
+import { Grid } from "../components/web/Grid"
+import { Hero } from "../components/web/Hero"
+import { LocationMap } from "../components/web/LocationMap"
+import { Section } from "../components/web/Section"
+import { Stack } from "../components/web/Stack"
+import { TextLink } from "../components/web/TextLink"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 
@@ -80,82 +74,88 @@ const ContactPage = ({ data, location }: ContactPageProps) => {
         description={frontmatter.seoDescription}
         pathname={location.pathname}
       />
-      <Vertical spacing={spacing.large}>
-        <MainHeading>{frontmatter.heading}</MainHeading>
-        <Lead>{frontmatter.lead}</Lead>
+      <Hero variant="text" heading={frontmatter.heading} lead={frontmatter.lead} />
 
-        <Horizontal
-          breakpoint={width.tablet}
-          distribute={true}
-          spacing={spacing.large}
-          alignVertical={types.Alignment.Start}
-        >
-          <Vertical spacing={spacing.medium}>
-            <ContentHeading>{frontmatter.generalContact.heading}</ContentHeading>
-            <Text>
-              <p>
-                <a href={`mailto:${frontmatter.generalContact.email}`}>
-                  {frontmatter.generalContact.email}
-                </a>
-              </p>
-            </Text>
+      <Section spaceTop={96}>
+        <Stack $gap={64}>
+          <Stack $gap={16}>
+            <Typography variant="h3" as="h2">
+              {frontmatter.generalContact.heading}
+            </Typography>
+            <Typography variant="body">
+              <TextLink href={`mailto:${frontmatter.generalContact.email}`}>
+                {frontmatter.generalContact.email}
+              </TextLink>
+            </Typography>
+            <Typography variant="body">
+              {metadata.node.name}
+              <br />
+              {metadata.node.address.street}
+              <br />
+              {frontmatter.address.city}
+            </Typography>
+          </Stack>
 
-            <Text>
-              <p>
-                {metadata.node.name}
-                <br />
-                {metadata.node.address.street}
-                <br />
-                {frontmatter.address.city}
-              </p>
-            </Text>
-          </Vertical>
+          <Stack $gap={24}>
+            <Typography variant="h3" as="h2">
+              {frontmatter.directContact.heading}
+            </Typography>
+            <Grid $columns={2}>
+              {[frontmatter.directContact.sales, frontmatter.directContact.management].map(
+                (person) => (
+                  <ContactCard
+                    key={person.email}
+                    name={person.name}
+                    phone={person.phone}
+                    email={person.email}
+                  />
+                )
+              )}
+            </Grid>
+          </Stack>
+        </Stack>
+      </Section>
 
-          <Vertical spacing={spacing.medium}>
-            <ContentHeading>{frontmatter.directContact.heading}</ContentHeading>
-            <Text>
-              <p>
-                {frontmatter.directContact.sales.name}
-                <br />
-                Telefon: {frontmatter.directContact.sales.phone}
-                <br />
-                E-post:{" "}
-                <a href={`mailto:${frontmatter.directContact.sales.email}`}>
-                  {frontmatter.directContact.sales.email}
-                </a>
-              </p>
-              <p>
-                {frontmatter.directContact.management.name}
-                <br />
-                Telefon: {frontmatter.directContact.management.phone}
-                <br />
-                E-post:{" "}
-                <a href={`mailto:${frontmatter.directContact.management.email}`}>
-                  {frontmatter.directContact.management.email}
-                </a>
-              </p>
-            </Text>
-          </Vertical>
-        </Horizontal>
+      <LocationMap
+        coordinates={metadata.node.coordinates}
+        title={metadata.node.name}
+        subtitle={metadata.node.address.street}
+      />
 
-        <Breakout>
-          <Location
-            coordinates={metadata.node.coordinates}
-            title={metadata.node.name}
-            subtitle={metadata.node.address.street}
-          />
-        </Breakout>
-
-        <Vertical spacing={spacing.medium} alignHorizontal={types.Alignment.Center}>
-          <ContentHeading>{frontmatter.cta.career.heading}</ContentHeading>
-          <Button href={frontmatter.cta.career.url}>{frontmatter.cta.career.buttonText}</Button>
-        </Vertical>
-
-        <Vertical spacing={spacing.medium} alignHorizontal={types.Alignment.Center}>
-          <ContentHeading>{frontmatter.cta.services.heading}</ContentHeading>
-          <Button href={frontmatter.cta.services.url}>{frontmatter.cta.services.buttonText}</Button>
-        </Vertical>
-      </Vertical>
+      <Section>
+        <Grid $columns={2}>
+          <Stack $gap={24}>
+            <Typography variant="h2" as="h2">
+              {frontmatter.cta.career.heading}
+            </Typography>
+            <div>
+              <Link
+                href={frontmatter.cta.career.url}
+                variant="button"
+                buttonVariant="accent"
+                size="large"
+              >
+                {frontmatter.cta.career.buttonText}
+              </Link>
+            </div>
+          </Stack>
+          <Stack $gap={24}>
+            <Typography variant="h2" as="h2">
+              {frontmatter.cta.services.heading}
+            </Typography>
+            <div>
+              <Link
+                href={frontmatter.cta.services.url}
+                variant="button"
+                buttonVariant="primary"
+                size="large"
+              >
+                {frontmatter.cta.services.buttonText}
+              </Link>
+            </div>
+          </Stack>
+        </Grid>
+      </Section>
     </DefaultLayout>
   )
 }

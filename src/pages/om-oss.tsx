@@ -1,39 +1,54 @@
-import {
-  Breakout,
-  Contact,
-  Horizontal,
-  Lead,
-  Location,
-  MainHeading,
-  spacing,
-  Text,
-  types,
-  Vertical,
-  width
-} from "@kokitotsos/react-components"
 import { graphql } from "gatsby"
 import * as React from "react"
+import styled from "styled-components"
 
-import { ContentYamlConnection, MarkdownRemarkConnection } from "../../gatsby-types"
+import {
+  ContentYamlConnection,
+  MarkdownRemark,
+  MarkdownRemarkConnection,
+  MarkdownRemarkEdge
+} from "../../gatsby-types"
 import { Seo } from "../components/Seo"
+import { ContactCard } from "../components/web/ContactCard"
+import { Grid } from "../components/web/Grid"
+import { Hero } from "../components/web/Hero"
+import { onMobile } from "../components/web/layout"
+import { LocationMap } from "../components/web/LocationMap"
+import { Prose } from "../components/web/Prose"
+import { Section } from "../components/web/Section"
+import { Stack } from "../components/web/Stack"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
-import { edgeToPerson, findPersonById } from "../utils/personUtils"
+import { edgeToPerson } from "../utils/personUtils"
+
+// contacts.person kopplas till personen i gatsby-node.js (createSchemaCustomization), så att
+// sidan bara hämtar kontaktpersonernas uppgifter och inte alla medarbetares.
+interface Contact {
+  role: string
+  person: MarkdownRemark | null
+}
 
 interface AboutPageProps extends PageProps {
   data: {
     page: MarkdownRemarkConnection
     metadata: ContentYamlConnection
-    persons: MarkdownRemarkConnection
   }
 }
+
+// Skissen drar in brödtexten från rubrikkanten och har den i primär textfärg.
+const Story = styled(Prose)`
+  padding-left: var(--spacing-96);
+  color: var(--text-primary);
+
+  ${onMobile} {
+    padding-left: 0;
+  }
+`
 
 export default ({ data, location }: AboutPageProps) => {
   const page = data.page.edges[0]
   const metadata = data.metadata.edges[0]
-  const persons = data.persons.edges
-    .map((edge) => edgeToPerson(edge))
-    .filter((person) => person !== undefined) as types.Person[]
+  const contacts = metadata.node.contacts as unknown as Contact[]
 
   return (
     <DefaultLayout location={location}>
@@ -42,36 +57,42 @@ export default ({ data, location }: AboutPageProps) => {
         description={page.node.frontmatter.seoDescription}
         pathname={location.pathname}
       />
+      <Hero
+        variant="text"
+        heading={page.node.frontmatter.heading}
+        lead={page.node.frontmatter.lead}
+      />
 
-      <Vertical spacing={spacing.large}>
-        <MainHeading>{page.node.frontmatter.heading}</MainHeading>
-        <Lead>{page.node.frontmatter.lead}</Lead>
-      </Vertical>
+      <Section spaceTop={64}>
+        <Stack $gap={96}>
+          <Story html={page.node.html} />
+          <Grid $columns={2}>
+            {contacts.map((contact) => {
+              const person = contact.person
+                ? edgeToPerson({ node: contact.person } as MarkdownRemarkEdge)
+                : undefined
+              if (person === undefined) {
+                return null
+              }
+              return (
+                <ContactCard
+                  key={person.id}
+                  role={contact.role}
+                  name={person.name}
+                  phone={person.phone?.toString()}
+                  email={person.email?.toString()}
+                />
+              )
+            })}
+          </Grid>
+        </Stack>
+      </Section>
 
-      <Breakout>
-        <Location
-          coordinates={metadata.node.coordinates}
-          title={metadata.node.name}
-          subtitle={metadata.node.address.street}
-        />
-      </Breakout>
-
-      <Horizontal breakpoint={width.tablet} separator={true} spacing={spacing.large}>
-        <Text>{page.node.html}</Text>
-
-        <Vertical spacing={spacing.medium}>
-          {metadata.node.contacts.map((contact) => {
-            const person = findPersonById(persons, contact.personId)
-            if (person === undefined) {
-              return null
-            }
-            person.role = contact.role
-            return (
-              <Contact key={`contact_${person.id}`} info={person} type={types.ContactType.Role} />
-            )
-          })}
-        </Vertical>
-      </Horizontal>
+      <LocationMap
+        coordinates={metadata.node.coordinates}
+        title={metadata.node.name}
+        subtitle={metadata.node.address.street}
+      />
     </DefaultLayout>
   )
 }
@@ -104,18 +125,18 @@ export const pageQuery = graphql`
           }
           contacts {
             role
-            personId
+            person {
+              fields {
+                href
+              }
+              frontmatter {
+                id
+                title
+                phone
+                email
+              }
+            }
           }
-        }
-      }
-    }
-    persons: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "person" }, alumni: { ne: true } } }
-      sort: { frontmatter: { title: ASC } }
-    ) {
-      edges {
-        node {
-          ...PersonFragment
         }
       }
     }

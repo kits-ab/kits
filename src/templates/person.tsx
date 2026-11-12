@@ -1,24 +1,16 @@
-import {
-  Breakout,
-  ContentHeading,
-  Horizontal,
-  Image,
-  MainHeading,
-  SectionHeading,
-  Social,
-  spacing,
-  Tag,
-  Text,
-  Vertical,
-  width,
-  Wrapper
-} from "@kokitotsos/react-components"
+import { Tag, Typography } from "@kokitotsos/kits-ui"
+import { graphql } from "gatsby"
 import * as React from "react"
-import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 import { FileConnection, MarkdownRemark, MarkdownRemarkEdge, O365User } from "../../gatsby-types"
 import { PersonList } from "../components/PersonList"
+import { Seo } from "../components/Seo"
+import { onMobile } from "../components/web/layout"
+import { Prose } from "../components/web/Prose"
+import { Section } from "../components/web/Section"
+import { Stack } from "../components/web/Stack"
+import { TextLink } from "../components/web/TextLink"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 import { findImageByRelativePath } from "../utils/imageUtils"
@@ -32,39 +24,37 @@ interface PersonPageProps extends PageProps {
   }
 }
 
-const StyledImage = styled(Image)`
-  height: 400px !important;
-  flex: 0 0 300px;
-  max-width: 300px;
-  min-width: 300px;
+const Profile = styled.div`
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--spacing-64);
+  align-items: start;
 
-  @media (max-width: ${width.tablet}px) {
-    height: 300px;
-    flex: 0 0 200px;
-    max-width: 200px;
-    min-width: 200px;
-  }
-
-  @media (max-width: ${width.mobileMenu}px) {
-    border-left: 0;
-    border-right: 0;
-    flex: auto;
-    height: auto;
-    left: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    max-width: none;
-    min-width: auto;
-    position: relative;
-    right: 50%;
-    width: 100vw;
+  ${onMobile} {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-32);
   }
 `
 
-const StyledTag = styled(Tag)`
-  margin-bottom: 5px;
-  margin-right: 5px;
+const Portrait = styled.img`
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
 `
+
+const Row = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-8) var(--spacing-24);
+`
+
+const socialNames: Record<string, string> = {
+  github: "GitHub",
+  linkedin: "LinkedIn",
+  keybase: "Keybase",
+  twitter: "Twitter"
+}
 
 export default ({ data, location }: PersonPageProps) => {
   const person = edgeToPerson({ node: data.person } as MarkdownRemarkEdge)!
@@ -74,59 +64,64 @@ export default ({ data, location }: PersonPageProps) => {
     findImageByRelativePath(images.edges, person.imageSrc) ||
     findImageByRelativePath(images.edges, "/assets/medarbetare_default.jpg")
   enrichPersonWithO365(person, data.o365person)
+  const social = Object.entries(person.social ?? {}).filter(([, username]) => username)
 
   return (
     <DefaultLayout location={location}>
-      <Helmet title={person.name} />
+      <Seo title={person.name} pathname={location.pathname} />
 
-      <Horizontal breakpoint={width.mobileMenu} spacing={spacing.large}>
-        <StyledImage src={image && image.src} srcSet={image && image.srcSet} />
-        <Vertical spacing={spacing.medium} style={{ flex: "1 1 0%" }}>
-          <MainHeading style={{ fontSize: 48, textAlign: "left" }}>{person.name}</MainHeading>
-          <ContentHeading>{person.tagLine}</ContentHeading>
-
-          {person.tags && (
-            <Horizontal wrapRows={true}>
-              {person.tags.map((tag: string, index: number) => (
-                <StyledTag key={index}>{tag}</StyledTag>
-              ))}
-            </Horizontal>
-          )}
-          <Text>{data.person.html}</Text>
-          <Horizontal breakpoint={350} separator={true} spacing={spacing.small}>
-            {person.phone && (
-              <Text>
-                <p>
-                  <a href={person.phone.toLink()}>{person.phone.toString()}</a>
-                </p>
-              </Text>
+      <Section spaceTop={64}>
+        <Profile>
+          {image && <Portrait src={image.src} srcSet={image.srcSet} alt="" />}
+          <Stack $gap={24}>
+            <Stack $gap={8}>
+              <Typography variant="h1" as="h1">
+                {person.name}
+              </Typography>
+              <Typography variant="subtitle" color="secondary">
+                {person.tagLine}
+              </Typography>
+            </Stack>
+            {person.tags && (
+              <Row>
+                {person.tags.map((tag: string) => (
+                  <Tag key={tag} variant="neutral" label={tag} slim />
+                ))}
+              </Row>
             )}
-            {person.email && (
-              <Text>
-                <p>
-                  <a href={person.email.toLink()}>{person.email.toString()}</a>
-                </p>
-              </Text>
-            )}
-          </Horizontal>
-          {person.social && <Social info={person.social} />}
-        </Vertical>
-      </Horizontal>
+            <Prose html={data.person.html} />
+            <Typography variant="mono" as="div">
+              <Row>
+                {person.phone && (
+                  <TextLink href={person.phone.toLink()}>{person.phone.toString()}</TextLink>
+                )}
+                {person.email && (
+                  <TextLink href={person.email.toLink()}>{person.email.toString()}</TextLink>
+                )}
+                {social.map(([type, username]) => (
+                  <TextLink key={type} href={username!.toLink()}>
+                    {socialNames[type] ?? type}
+                  </TextLink>
+                ))}
+              </Row>
+            </Typography>
+          </Stack>
+        </Profile>
+      </Section>
 
-      <Breakout>
-        <Wrapper maxWidth={width.max} spacing={spacing.large}>
-          <SectionHeading>
+      <Section tone="raised">
+        <Stack $gap={48}>
+          <Typography variant="h2" as="h2">
             {firstname}
             {firstname.endsWith("s") ? "" : "s"} kollegor
-          </SectionHeading>
+          </Typography>
           <PersonList />
-        </Wrapper>
-      </Breakout>
+        </Stack>
+      </Section>
     </DefaultLayout>
   )
 }
 
-/*
 export const query = graphql`
   query PersonPageQuery($href: String, $email: String) {
     person: markdownRemark(fields: { href: { eq: $href } }) {
@@ -148,10 +143,9 @@ export const query = graphql`
     ) {
       edges {
         node {
-          ...ImageFragment
+          ...ImageFragmentWide
         }
       }
     }
   }
 `
-*/

@@ -1,5 +1,6 @@
 {
   "name": "@kokitotsos/kits",
+  "private": true,
   "version": "3.0.0",
   "license": "Apache-2.0",
   "repository": {
@@ -24,7 +25,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@kokitotsos/react-components": "4.2.0",
+    "@kokitotsos/kits-ui": "0.1.1",
     "babel-plugin-styled-components": "2.1.4",
     "date-fns": "4.1.0",
     "decap-cms-app": "3.6.4",

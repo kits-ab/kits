@@ -1,4 +1,5 @@
 const { createFilePath } = require("gatsby-source-filesystem")
+const fs = require("fs")
 const path = require("path")
 const slugify = require("slugify")
 
@@ -83,6 +84,16 @@ exports.createPages = ({ graphql, actions: { createPage, createRedirect } }) => 
             }
           })
           */
+          if (process.env.NODE_ENV !== "production") {
+            createPage({
+              path: `/vilande${node.fields.href}`,
+              component: path.resolve("./src/templates/person.tsx"),
+              context: {
+                href: node.fields.href,
+                email: node.frontmatter.email ? node.frontmatter.email : ""
+              }
+            })
+          }
         } else if (node.frontmatter && node.frontmatter.type === "conference") {
           createPage({
             path: node.fields.href,
@@ -142,9 +153,54 @@ exports.createPages = ({ graphql, actions: { createPage, createRedirect } }) => 
         redirectInBrowser: true
       })
 
+      // Vilande sidor (_-prefix i src/pages och personsidorna ovan) går att granska under
+      // /vilande/ i dev-servern. De skapas aldrig i produktionsbygget.
+      if (process.env.NODE_ENV !== "production") {
+        ;["blogg", "cyberakademi", "erbjudanden", "keepitsecure", "keepotsecure"].forEach(
+          (name) => {
+            createPage({
+              path: `/vilande/${name}`,
+              component: path.resolve(`./src/pages/_${name}.tsx`)
+            })
+          }
+        )
+      }
+
       resolve()
     })
   })
+}
+
+// Demosidan för profil 2026 finns bara i dev-servern, aldrig i produktionsbygget.
+exports.onCreatePage = ({ page, actions: { deletePage } }) => {
+  if (process.env.NODE_ENV === "production" && page.path.startsWith("/profil-demo")) {
+    deletePage(page)
+  }
+}
+
+// Kartans publika Mapbox-token. Gatsby skickar bara med GATSBY_-variabler till webbläsaren, och
+// variabeln heter MAPBOX_KEY i Netlify.
+exports.onCreateWebpackConfig = ({ actions, plugins }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.define({ "process.env.MAPBOX_KEY": JSON.stringify(process.env.MAPBOX_KEY ?? "") })
+    ]
+  })
+}
+
+// React 18 kan lägga in ett NUL-tecken före ett tecken som å eller ä när server-renderingen delar
+// strömmen mitt i det. Webbläsare tar bort det, men det hör inte hemma i HTML:en.
+exports.onPostBuild = () => {
+  const dir = path.join(__dirname, "public")
+  for (const entry of fs.readdirSync(dir, { recursive: true, withFileTypes: true })) {
+    if (entry.isFile() && entry.name.endsWith(".html")) {
+      const file = path.join(entry.parentPath, entry.name)
+      const html = fs.readFileSync(file, "utf8")
+      if (html.includes("\u0000")) {
+        fs.writeFileSync(file, html.replaceAll("\u0000", ""))
+      }
+    }
+  }
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -170,6 +226,14 @@ exports.createSchemaCustomization = ({ actions }) => {
     type TeamtailorJobLinks {
       careersite_job_apply_url: String
       careersite_job_url: String
+    }
+
+    # Kontaktpersonerna i content/kits.yml kopplas till sina personfiler, så att Om oss bara
+    # hämtar deras uppgifter och inte alla medarbetares.
+    type ContentYamlContacts {
+      role: String
+      personId: String
+      person: MarkdownRemark @link(by: "frontmatter.id", from: "personId")
     }
   `
   createTypes(typeDefs)

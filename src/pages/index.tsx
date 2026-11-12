@@ -1,99 +1,83 @@
-import {
-  Breakout,
-  Button,
-  colors,
-  ContentHeading,
-  Horizontal,
-  Lead,
-  MainHeading,
-  spacing,
-  SubHeading,
-  Text,
-  types,
-  Vertical,
-  width,
-  Wrapper
-} from "@kokitotsos/react-components"
+import { Link, Typography } from "@kokitotsos/kits-ui"
 import { graphql } from "gatsby"
 import * as React from "react"
-import styled from "styled-components"
 
 import { MarkdownRemarkConnection } from "../../gatsby-types"
 import { Seo } from "../components/Seo"
+import { ContactBand } from "../components/web/ContactBand"
+import { Hero } from "../components/web/Hero"
+import { Section } from "../components/web/Section"
+import { SectionIntro } from "../components/web/SectionIntro"
+import { SplitSection } from "../components/web/SplitSection"
+import { Stack } from "../components/web/Stack"
 import { DefaultLayout } from "../layouts/DefaultLayout"
 import { PageProps } from "../types/PageProps"
 
 interface IndexPageProps extends PageProps {
   data: {
     page: MarkdownRemarkConnection
+    services: {
+      frontmatter: {
+        kitsec: { heading: string; url: string; text: string }
+      }
+    }
   }
 }
 
-const StyledBreakout = styled(Breakout)`
-  background-color: ${colors.background2};
-  background-color: var(--background2);
-  padding-bottom: ${spacing.large}px;
-  padding-top: ${spacing.large}px;
-`
-
 export default ({ data, location }: IndexPageProps) => {
-  const page = data.page.edges[0]
+  const { frontmatter } = data.page.edges[0].node
+  const { kitsec } = data.services.frontmatter
+  const section2Image = frontmatter.images?.[0]
 
   return (
     <DefaultLayout location={location}>
       <Seo
-        title={page.node.frontmatter.title}
-        description={page.node.frontmatter.seoDescription}
+        title={frontmatter.title}
+        description={frontmatter.seoDescription}
         pathname={location.pathname}
       />
+      <Hero
+        variant="image"
+        image="/assets/framsida_partiklar.jpg"
+        heading={frontmatter.heading}
+        lead={frontmatter.lead}
+        action={
+          <Link href="/tjanster" variant="button" buttonVariant="accent" size="large">
+            Läs mer om våra tjänster
+          </Link>
+        }
+      />
 
-      <Vertical spacing={spacing.large}>
-        <MainHeading>{page.node.frontmatter.heading}</MainHeading>
-        <Lead>{page.node.frontmatter.lead}</Lead>
-      </Vertical>
+      <Section tone="light">
+        <SectionIntro heading={kitsec.heading} url={kitsec.url} text={kitsec.text} />
+      </Section>
 
-      <StyledBreakout>
-        <Wrapper>
-          <Horizontal
-            breakpoint={width.tablet}
-            distribute={true}
-            separator={true}
-            spacing={spacing.large}
-            style={{ alignItems: "stretch" }}
-          >
-            <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.large}>
-              <Vertical
-                alignHorizontal={types.Alignment.Center}
-                spacing={spacing.small}
-                className="max-100"
-                style={{ flexGrow: 1 }}
-              >
-                <SubHeading>{page.node.frontmatter.section1.subheading}</SubHeading>
-                <ContentHeading>{page.node.frontmatter.section1.heading}</ContentHeading>
-                <Text className="is-flexed is-centered max-100">
-                  <p>{page.node.frontmatter.section1.content}</p>
-                </Text>
-              </Vertical>
-              <Button href="/tjanster">Läs mer om våra tjänster</Button>
-            </Vertical>
-            <Vertical alignHorizontal={types.Alignment.Center} spacing={spacing.large}>
-              <Vertical
-                alignHorizontal={types.Alignment.Center}
-                spacing={spacing.small}
-                className="max-100"
-                style={{ flexGrow: 1 }}
-              >
-                <SubHeading>{page.node.frontmatter.section2.subheading}</SubHeading>
-                <ContentHeading>{page.node.frontmatter.section2.heading}</ContentHeading>
-                <Text className="is-flexed is-centered max-100">
-                  <p>{page.node.frontmatter.section2.content}</p>
-                </Text>
-              </Vertical>
-              <Button href="/karriar">Läs mer om att jobba på KITS</Button>
-            </Vertical>
-          </Horizontal>
-        </Wrapper>
-      </StyledBreakout>
+      <Section>
+        <SplitSection image={section2Image ? { src: section2Image } : undefined} imageSide="right">
+          <Stack $gap={24}>
+            <Typography variant="mono" color="brand">
+              {frontmatter.section2.subheading}
+            </Typography>
+            <Typography variant="h2" as="h2">
+              {frontmatter.section2.heading}
+            </Typography>
+            <Typography variant="body" color="secondary">
+              {frontmatter.section2.content}
+            </Typography>
+            <div>
+              <Link href="/karriar" variant="button" buttonVariant="primary" size="large">
+                Läs mer om att jobba på KITS
+              </Link>
+            </div>
+          </Stack>
+        </SplitSection>
+      </Section>
+
+      <ContactBand
+        label={frontmatter.section1.subheading}
+        heading={frontmatter.section1.heading}
+        text={frontmatter.section1.content}
+      />
     </DefaultLayout>
   )
 }
@@ -118,7 +102,17 @@ export const pageQuery = graphql`
               heading
               content
             }
+            images
           }
+        }
+      }
+    }
+    services: markdownRemark(frontmatter: { type: { eq: "servicesPage" } }) {
+      frontmatter {
+        kitsec {
+          heading
+          url
+          text
         }
       }
     }

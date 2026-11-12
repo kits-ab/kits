@@ -44,6 +44,16 @@ export const imageFragmentAvatar = graphql`
   }
 `
 
+// Profil 2026: bilder som fyller en kolumn, srcSet med breddangivelser upp till 960 px.
+export const imageFragmentWide = graphql`
+  fragment ImageFragmentWide on File {
+    relativePath
+    childImageSharp {
+      gatsbyImageData(layout: CONSTRAINED, width: 960, quality: 85)
+    }
+  }
+`
+
 export const imageFragmentSmall = graphql`
   fragment ImageFragmentSmall on File {
     relativePath
@@ -59,9 +69,12 @@ export const findImageByRelativePath = (images: FileEdge[], relativePath: string
   }
   const img = images.find((image) => `/assets/${image.node.relativePath}` === relativePath)
   if (img) {
+    const data = img.node.childImageSharp.gatsbyImageData
     return {
-      src: img.node.childImageSharp.gatsbyImageData.images.fallback.src,
-      srcSet: img.node.childImageSharp.gatsbyImageData.images.fallback.srcSet
+      src: data.images.fallback.src,
+      srcSet: data.images.fallback.srcSet,
+      width: data.width as number,
+      height: data.height as number
     }
   } else {
     return undefined
@@ -72,6 +85,11 @@ export const findImagesByRelativePaths = (images: FileEdge[], relativePaths: str
   return relativePaths
     ? (relativePaths
         .map((relativePath) => findImageByRelativePath(images, relativePath))
-        .filter((image) => image !== undefined) as { src: string; srcSet: string }[])
+        .filter((image) => image !== undefined) as {
+        src: string
+        srcSet: string
+        width: number
+        height: number
+      }[])
     : []
 }
