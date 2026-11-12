@@ -11,10 +11,9 @@ export interface LocationMapProps {
   subtitle?: string
 }
 
-// Publik Mapbox-token (pk.), samma som det gamla biblioteket använde. Den hamnar i webbläsaren
-// oavsett, så den är ingen hemlighet.
-const mapboxAccessToken =
-  process.env.MAPBOX_KEY
+// Publik Mapbox-token (pk.) från miljövariabeln MAPBOX_KEY (Netlify, lokalt i .env). Den läggs in
+// i webbläsarkoden vid bygget, se onCreateWebpackConfig i gatsby-node.js.
+const mapboxAccessToken = process.env.MAPBOX_KEY
 
 // Kartan följer sidans tema.
 const mapStyles = {

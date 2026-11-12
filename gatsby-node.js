@@ -178,6 +178,16 @@ exports.onCreatePage = ({ page, actions: { deletePage } }) => {
   }
 }
 
+// Kartans publika Mapbox-token. Gatsby skickar bara med GATSBY_-variabler till webbläsaren, och
+// variabeln heter MAPBOX_KEY i Netlify.
+exports.onCreateWebpackConfig = ({ actions, plugins }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.define({ "process.env.MAPBOX_KEY": JSON.stringify(process.env.MAPBOX_KEY ?? "") })
+    ]
+  })
+}
+
 // React 18 kan lägga in ett NUL-tecken före ett tecken som å eller ä när server-renderingen delar
 // strömmen mitt i det. Webbläsare tar bort det, men det hör inte hemma i HTML:en.
 exports.onPostBuild = () => {
