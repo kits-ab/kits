@@ -78,11 +78,11 @@ schema:
   - winner: false
     start: 2026-11-13 11:45
     end: 2026-11-13 12:00
-    title: "KonsultGPT: nya funktioner och nya utvecklingsmetoder"
-    details: Vad har hänt med KonsultGPT sedan sist, hur har agentbaserad utveckling hjälpt projektet och vad betyder TypeSafe AIs nya modell Jev för det?
+    title: AI i hemautomationen
+    details: Hur AI kan göra hemmet smartare, från att förstå vad som händer i huset till att styra belysning, värme och apparater utan att allt behöver programmeras i förväg.
     type: presentation
     presenters:
-      - christoffermedin
+      - bjornlexell
 
   - winner: false
     start: 2026-11-13 12:00
@@ -171,41 +171,7 @@ schema:
 
   - winner: false
     start: 2026-11-14 09:00
-    end: 2026-11-14 09:20
-    title: "Spec-driven development: gammalt arbetssätt, ny relevans?"
-    details: När AI-agenter skriver allt mer av koden blir beskrivningen av vad vi vill bygga viktigare. Får ett äldre arbetssätt nytt liv i AI-eran?
-    type: presentation
-    presenters:
-      - victordavidsson
-
-  - winner: false
-    start: 2026-11-14 09:20
-    end: 2026-11-14 09:40
-    title: Social Engineering
-    details: Psykologin, metoderna och knepen bakom social engineering, och hur en förståelse för attackerna hjälper oss att förebygga dem.
-    type: presentation
-    presenters:
-      - jonathanlindqvist
-
-  - winner: false
-    start: 2026-11-14 09:40
-    end: 2026-11-14 10:00
-    title: AI i hemautomationen
-    details: Hur AI kan göra hemmet smartare, från att förstå vad som händer i huset till att styra belysning, värme och apparater utan att allt behöver programmeras i förväg.
-    type: presentation
-    presenters:
-      - bjornlexell
-
-  - winner: false
-    start: 2026-11-14 10:00
-    end: 2026-11-14 10:15
-    title: Utcheckning och fika
-    details: Vi checkar ut från rummen och fikar samtidigt.
-    type: hotel
-
-  - winner: false
-    start: 2026-11-14 10:15
-    end: 2026-11-14 11:00
+    end: 2026-11-14 09:45
     title: System One Models
     details: En ny sorts AI-modeller som svarar på typade frågor med sannolikheter i stället för att generera text, byggda för snabba beslut mellan system. Vad är de, hur skiljer de sig från vanliga LLM:er och när passar de bäst?
     type: presentation
@@ -213,8 +179,24 @@ schema:
       - pierresandboge
 
   - winner: false
-    start: 2026-11-14 11:00
-    end: 2026-11-14 11:15
+    start: 2026-11-14 09:45
+    end: 2026-11-14 10:00
+    title: "KonsultGPT: nya funktioner och nya utvecklingsmetoder"
+    details: Vad har hänt med KonsultGPT sedan sist, hur har agentbaserad utveckling hjälpt projektet och vad betyder TypeSafe AIs nya modell Jev för det?
+    type: presentation
+    presenters:
+      - christoffermedin
+
+  - winner: false
+    start: 2026-11-14 10:00
+    end: 2026-11-14 10:30
+    title: Utcheckning och fika
+    details: Vi checkar ut från rummen och fikar samtidigt.
+    type: hotel
+
+  - winner: false
+    start: 2026-11-14 10:30
+    end: 2026-11-14 10:45
     title: Den uppkopplade morgonen
     details: Upptäck hur hemautomation kan ta hand om hela din morgon, från smart belysning och automatiska rullgardiner till personanpassade nyheter, väder och trafikinformation, så att du kan starta dagen på autopilot. Och nej, det här föredraget innehåller inte ett enda ord om AI.
     type: presentation
@@ -222,8 +204,35 @@ schema:
       - antonlundh
 
   - winner: false
-    start: 2026-11-14 11:15
-    end: 2026-11-14 11:35
+    start: 2026-11-14 10:45
+    end: 2026-11-14 11:05
+    title: "Spec-driven development: gammalt arbetssätt, ny relevans?"
+    details: När AI-agenter skriver allt mer av koden blir beskrivningen av vad vi vill bygga viktigare. Får ett äldre arbetssätt nytt liv i AI-eran?
+    type: presentation
+    presenters:
+      - victordavidsson
+
+  - winner: false
+    start: 2026-11-14 11:05
+    end: 2026-11-14 11:25
+    title: Social Engineering
+    details: Psykologin, metoderna och knepen bakom social engineering, och hur en förståelse för attackerna hjälper oss att förebygga dem.
+    type: presentation
+    presenters:
+      - jonathanlindqvist
+
+  - winner: false
+    start: 2026-11-14 11:25
+    end: 2026-11-14 11:40
+    title: KITS state of the Nation
+    details: En lägesrapport om KITS, var vi står i dag och vart vi är på väg.
+    type: presentation
+    presenters:
+      - patriknilsson
+
+  - winner: false
+    start: 2026-11-14 11:40
+    end: 2026-11-14 12:00
     title: Encrypted Traffic Deanonymization
     details: Krypterad trafik är väl hemlig? Om hur trafikmönster ändå kan avslöja vad någon strömmar.
     type: externalpresentation
@@ -232,7 +241,7 @@ schema:
       avatarSrc: /assets/atmanemansour_webb.jpg
 
   - winner: false
-    start: 2026-11-14 11:35
+    start: 2026-11-14 12:00
     end: 2026-11-14 13:00
     title: Lunch
     type: food
