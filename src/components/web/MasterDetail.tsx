@@ -80,13 +80,18 @@ const Panel = styled.div`
   border-radius: var(--radius-sm);
   background-color: var(--bg-surface);
 
+  &[hidden] {
+    display: none;
+  }
+
   ${onMobile} {
     padding: var(--spacing-32) var(--spacing-24);
   }
 `
 
 // Lista till vänster, detalj till höger. Listan är en vertikal flikgrupp: piltangenter, Home och
-// End flyttar mellan raderna, och vald rad visar sin detalj. Länkar ligger i detaljen.
+// End flyttar mellan raderna, och vald rad visar sin detalj. Länkar ligger i detaljen. Alla detaljer
+// renderas, de som inte är valda med hidden, så att allt innehåll finns i den byggda HTML:en.
 export const MasterDetail = ({ items, label }: MasterDetailProps) => {
   const [activeId, setActiveId] = React.useState(items[0]?.id)
   const rowRefs = React.useRef<(HTMLButtonElement | null)[]>([])
@@ -131,7 +136,7 @@ export const MasterDetail = ({ items, label }: MasterDetailProps) => {
               role="tab"
               id={`${baseId}-tab-${item.id}`}
               aria-selected={selected}
-              aria-controls={`${baseId}-panel`}
+              aria-controls={`${baseId}-panel-${item.id}`}
               tabIndex={selected ? 0 : -1}
               onClick={() => setActiveId(item.id)}
               onKeyDown={(event) => onKeyDown(event, index)}
@@ -146,14 +151,18 @@ export const MasterDetail = ({ items, label }: MasterDetailProps) => {
           )
         })}
       </List>
-      <Panel
-        role="tabpanel"
-        id={`${baseId}-panel`}
-        aria-labelledby={`${baseId}-tab-${active.id}`}
-        tabIndex={0}
-      >
-        {active.content}
-      </Panel>
+      {items.map((item) => (
+        <Panel
+          key={item.id}
+          role="tabpanel"
+          id={`${baseId}-panel-${item.id}`}
+          aria-labelledby={`${baseId}-tab-${item.id}`}
+          tabIndex={0}
+          hidden={item.id !== active.id}
+        >
+          {item.content}
+        </Panel>
+      ))}
     </Layout>
   )
 }
